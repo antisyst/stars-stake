@@ -1,1 +1,0 @@
-export const STAR_USD = 0.0199;

@@ -6,7 +6,6 @@ import { doc, updateDoc, increment } from 'firebase/firestore';
 import { db } from '@/configs/firebaseConfig';
 import TelegramStarIcon from '@/assets/star.svg';
 import { ToastContext } from '@/contexts/ToastContext';
-import { Spinner } from '../Spinner/Spinner';
 import styles from './PaymentButton.module.scss';
 import { formatNumber } from '@/utils/formatNumber';
 
@@ -181,7 +180,7 @@ export const PaymentButton: React.FC<PaymentButtonProps> = ({
       className={styles.buyButton}
     >
       {processing ? (
-        <Spinner size={18} />
+        <p>Loading...</p>
       ) : (
         <>
           <img

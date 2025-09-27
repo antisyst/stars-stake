@@ -4,12 +4,10 @@
   box-sizing: border-box;
   color: var(--white);
   user-select: none;
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: 'SF Pro Display', sans-serif !important;
 }
 
 :root {
-  --black: #000000;
-  --white: #FFFF;
   --family: 'SF Pro Display', sans-serif;;
 }
 

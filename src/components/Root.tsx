@@ -26,7 +26,7 @@ export function Root() {
     <ErrorBoundary fallback={ErrorBoundaryError}>
       <TonConnectUIProvider manifestUrl={publicUrl('tonconnect-manifest.json')}>
             <ToastProvider>
-                <App />
+              <App />
             </ToastProvider>
       </TonConnectUIProvider>
     </ErrorBoundary>
