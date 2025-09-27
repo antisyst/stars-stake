@@ -5,8 +5,9 @@ import styles from './HomePage.module.scss';
 export const HomePage = () => {
   return (
     <Page back={false}>
-      <div className={styles.homePage}></div>
-      <StakeSection/>
+      <div className={styles.homePage}>
+       <StakeSection/>
+      </div>
     </Page>
   )
 }
