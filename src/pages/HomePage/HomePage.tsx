@@ -1,7 +1,10 @@
-import { Text } from "@telegram-apps/telegram-ui"
+import { Text } from "@telegram-apps/telegram-ui";
+import { Page } from "@/components/Page";
 
 export const HomePage = () => {
   return (
-    <Text>HomePage</Text>
+    <Page back={false}>
+        <Text>HomePage</Text>
+    </Page>
   )
 }
