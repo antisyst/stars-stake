@@ -1,0 +1,36 @@
+*:not(tc-root *):not(tc-root) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--white);
+  user-select: none;
+  font-family: 'SF Pro Display', sans-serif;
+}
+
+:root {
+  --black: #000000;
+  --white: #FFFF;
+  --family: 'SF Pro Display', sans-serif;;
+}
+
+body {
+  background: var(--tg-theme-secondary-bg-color, white);
+}
+
+.state-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 30vh;
+}
+
+.empty-state {
+  font-size: 14px;
+  text-align: center;
+  height: 30vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,23 @@
+.buyButton {
+    display: inline-flex;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    max-width: 400px;
+    background: var(--blue-color);
+    padding: 13px 15px;
+    border-radius: 8px;
+    justify-content: center;
+
+    span {
+      font-weight: bold;
+      margin-left: 3px;
+      font-size: 15px;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+}

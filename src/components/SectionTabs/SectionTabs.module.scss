@@ -1,0 +1,41 @@
+.sectionTabs {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10px;
+          
+  .tab {
+    padding: 10px 2px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    margin: 0 10px;
+    font-family: var(--family) !important;
+    cursor: pointer;
+    color: var(--white);
+    font-weight: 700;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 3px;
+        border-radius: 2px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+    }
+
+    &.active {
+      color: var(--white);
+      font-weight: 700;
+      position: relative;
+
+      &::after {
+        background-color: var(--blue-color);
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.toast {
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  width: calc(100% - 40px);
+  background: var(--table-color);
+  backdrop-filter: blur(20px);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10001;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .title {
+    font-size: 14.5px;
+    font-weight: 500;
+    font-family: var(--family) !important;
+    line-height: 1.3;
+    flex: 1;
+  }
+}
