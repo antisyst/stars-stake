@@ -1,10 +1,10 @@
-import { Button } from "@telegram-apps/telegram-ui";
+import { StakeSection } from "@/components/StakeSection/StakeSection";
 import { Page } from "@/components/Page";
 
 export const HomePage = () => {
   return (
     <Page back={false}>
-        <Button size="m">Deposit</Button>
+      <StakeSection/>
     </Page>
   )
 }
