@@ -20,54 +20,6 @@
     <div id="root"></div>
     <script src="/src/index.tsx" type="module"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        if (window.Telegram?.WebApp) {
-          const webApp = window.Telegram.WebApp;
-          
-          webApp.setBackgroundColor('#0a0a0a');
-          
-          if (webApp.setBottomBarColor) {
-            webApp.setBottomBarColor('#0a0a0a');
-            console.log('Bottom bar color set to #0a0a0a.');
-          } else {
-            console.warn('setBottomBarColor is not supported on this platform.');
-          }
-
-          if (webApp.disableVerticalSwipes) {
-            webApp.disableVerticalSwipes();
-            console.log('Vertical swipes disabled.');
-          } else {
-            console.warn('disableVerticalSwipes is not supported on this platform.');
-          }
-
-          const applySafeAreaInsets = () => {
-            const { top, bottom, left, right } = webApp.safeAreaInset;
-            document.documentElement.style.setProperty('--tg-safe-area-inset-top', `${top}px`);
-            document.documentElement.style.setProperty('--tg-safe-area-inset-bottom', `${bottom}px`);
-            document.documentElement.style.setProperty('--tg-safe-area-inset-left', `${left}px`);
-            document.documentElement.style.setProperty('--tg-safe-area-inset-right', `${right}px`);
-            
-            const { top: cTop, bottom: cBottom, left: cLeft, right: cRight } = webApp.contentSafeAreaInset;
-            document.documentElement.style.setProperty('--tg-content-safe-area-inset-top', `${cTop}px`);
-            document.documentElement.style.setProperty('--tg-content-safe-area-inset-bottom', `${cBottom}px`);
-            document.documentElement.style.setProperty('--tg-content-safe-area-inset-left', `${cLeft}px`);
-            document.documentElement.style.setProperty('--tg-content-safe-area-inset-right', `${cRight}px`);
-            
-            console.log('Safe area insets applied:', { top, bottom, left, right });
-            console.log('Content safe area insets applied:', { cTop, cBottom, cLeft, cRight });
-          };
-
-          applySafeAreaInsets();
-          webApp.onEvent('safeAreaChanged', applySafeAreaInsets);
-          webApp.onEvent('contentSafeAreaChanged', applySafeAreaInsets);
-
-          console.log('Telegram Web App initialized successfully with #0a0a0a theme.');
-        } else {
-          console.warn('Telegram Web App is not available.');
-        }
-      });
-    </script>
-    <script>
       function initAnalytics() {
         window.telegramAnalytics.init({
           token: 'eyJhcHBfbmFtZSI6ImdpZnRoIiwiYXBwX3VybCI6Imh0dHBzOi8vdC5tZS9naWZ0aF9ib3QiLCJhcHBfZG9tYWluIjoiaHR0cHM6Ly9naWZ0aC52ZXJjZWwuYXBwLyJ9!2x7wAesmqnI2hQsrLfNa2Da2g6b7OHUxN/7s3pcbwtQ=', 
