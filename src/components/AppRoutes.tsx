@@ -8,7 +8,6 @@ import { ToastProvider } from '@/contexts/ToastContext';
 import { useTelegramSdk } from '@/hooks/useTelegramSdk';
 import { icons } from '@/configs/icons';
 import { usePreloadImages } from '@/hooks/usePreloadImages';
-import { Layout } from './Layout';
 
 const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -39,6 +38,7 @@ const AppRoutesInner: React.FC = () => {
   }, [iconsLoaded]);
 
   const navigate = useNavigate();
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -78,6 +78,7 @@ const AppRoutesInner: React.FC = () => {
         if (cancelled) return;
 
         setLoading(false);
+
         navigate('/home', { replace: true });
       } catch (err) {
         console.error('User init error:', err);
@@ -91,12 +92,14 @@ const AppRoutesInner: React.FC = () => {
     return () => {
       cancelled = true;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
     return (
-      <div role="status" aria-live="polite">
+      <div
+        role="status"
+        aria-live="polite"
+      >
         Loading...
       </div>
     );
@@ -104,14 +107,16 @@ const AppRoutesInner: React.FC = () => {
 
   return (
     <ToastProvider>
-      <Routes>
-        <Route element={<Layout />}>
-          {routes.map(({ path, Component }) => (
-            <Route key={path} path={path} element={<Component />} />
-          ))}
-          <Route path="*" element={<Navigate to="/home" replace />} />
-        </Route>
-      </Routes>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+        <div style={{ flex: 1, overflowY: 'auto' }}>
+          <Routes>
+            {routes.map(({ path, Component }) => (
+              <Route key={path} path={path} element={<Component />} />
+            ))}
+            <Route path="*" element={<Navigate to="/home" replace />} />
+          </Routes>
+        </div>
+      </div>
     </ToastProvider>
   );
 };
