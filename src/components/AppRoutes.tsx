@@ -24,6 +24,9 @@ const waitFor = async (
   return predicate();
 };
 
+const readCssVar = (name: string) =>
+  getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
 export const AppRoutes: React.FC = () => {
   useTelegramSdk();
   return <AppRoutesInner />;
@@ -38,13 +41,33 @@ const AppRoutesInner: React.FC = () => {
   }, [iconsLoaded]);
 
   const navigate = useNavigate();
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
 
+    const ensureThemeReady = async () => {
+      await waitFor(() => {
+        const v = readCssVar('--tg-theme-secondary-bg-color');
+        return Boolean(v);
+      }, 2000, 50);
+
+      const cssVar = readCssVar('--tg-theme-secondary-bg-color');
+      const fallback = readCssVar('--secondary-bg-color-fallback');
+      if (!cssVar && !fallback) {
+        const tp =
+          (window as any)?.Telegram?.WebApp?.themeParams ?? {};
+        const hex =
+          tp?.secondary_bg_color ||
+          tp?.bg_color ||
+          '#121212';
+        document.documentElement.style.setProperty('--secondary-bg-color-fallback', hex);
+      }
+    };
+
     const boot = async () => {
+      await ensureThemeReady();
+
       try {
         await waitFor(() => Boolean(initDataState?.user), 10000, 50);
         if (cancelled) return;
@@ -78,7 +101,6 @@ const AppRoutesInner: React.FC = () => {
         if (cancelled) return;
 
         setLoading(false);
-
         navigate('/home', { replace: true });
       } catch (err) {
         console.error('User init error:', err);
@@ -88,18 +110,14 @@ const AppRoutesInner: React.FC = () => {
     };
 
     boot();
-
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, []); 
 
   if (loading) {
     return (
-      <div
-        role="status"
-        aria-live="polite"
-      >
+      <div role="status" aria-live="polite">
         Loading...
       </div>
     );
@@ -107,7 +125,7 @@ const AppRoutesInner: React.FC = () => {
 
   return (
     <ToastProvider>
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', background: 'var(--tg-theme-secondary-bg-color, var(--secondary-bg-color-fallback))' }}>
         <div style={{ flex: 1, overflowY: 'auto' }}>
           <Routes>
             {routes.map(({ path, Component }) => (

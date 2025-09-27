@@ -8,30 +8,39 @@ import {
   backButton,
 } from '@telegram-apps/sdk';
 
+function resolveThemeHex(token: 'bg_color' | 'secondary_bg_color', fallback = '#121212') {
+  const tp = (window as any)?.Telegram?.WebApp?.themeParams ?? {};
+  const raw = tp?.[token];
+  if (typeof raw === 'string' && raw.length > 0) {
+    const hex = raw.startsWith('#') ? raw : `#${raw}`;
+    return hex;
+  }
+  return fallback;
+}
+
 export const useTelegramSdk = () => {
   useEffect(() => {
-    let gestureHandler: (() => void) | null = null;
+    let themeChangedUnsub: (() => void) | null = null;
 
-    const waitFor = (predicate: () => boolean, timeoutMs = 2000, intervalMs = 50) =>
-      new Promise<void>((resolve, reject) => {
-        const start = Date.now();
-        const tick = () => {
-          if (predicate()) return resolve();
-          if (Date.now() - start >= timeoutMs) return reject(new Error('timeout'));
-          setTimeout(tick, intervalMs);
-        };
-        tick();
-      });
+    const applyBackgroundNow = () => {
+      const hex = resolveThemeHex('secondary_bg_color');
+      try {
+        miniApp.setHeaderColor(hex as any);
+        miniApp.setBackgroundColor(hex as any);
+      } catch (err) {
+        console.warn('miniApp color set error:', err);
+      }
+      document.documentElement.style.setProperty('--secondary-bg-color-fallback', hex);
+    };
 
     (async () => {
       try {
-        miniApp.setHeaderColor('secondary_bg_color');
-        miniApp.setBackgroundColor('secondary_bg_color');
-        miniApp.setBottomBarColor('secondary_bg_color');
-        init();
+        init({ acceptCustomStyles: true } as any);
       } catch (err) {
         console.error('Init error:', err);
       }
+
+      applyBackgroundNow();
 
       try {
         try {
@@ -53,39 +62,22 @@ export const useTelegramSdk = () => {
       }
 
       try {
-        await waitFor(() => viewport.isMounted(), 2000);
-      } catch {
-        console.warn('Viewport did not report mounted in time; some features will be skipped.');
-      }
-
-      try {
-        if (viewport.isMounted()) {
-          viewport.bindCssVars();
-        }
+        viewport.bindCssVars();
       } catch (err) {
         console.warn('bindCssVars error:', err);
       }
 
       try {
-        if (viewport.isMounted()) {
-          viewport.expand();
-        }
+        viewport.expand();
       } catch (err) {
         console.warn('expand error:', err);
       }
 
       try {
         closingBehavior.mount();
-      } catch (err: unknown) {
-        const msg = (err as Error)?.message ?? '';
-        if (!/already mounting|already mounted/i.test(msg)) {
-          console.warn('ClosingBehavior mount error:', err);
-        }
-      }
-      try {
         closingBehavior.enableConfirmation();
       } catch (err) {
-        console.warn('enableConfirmation error:', err);
+        console.warn('ClosingBehavior error:', err);
       }
 
       try {
@@ -94,23 +86,31 @@ export const useTelegramSdk = () => {
       } catch (err) {
         console.warn('SwipeBehavior error:', err);
       }
+
+      try {
+        const WA = (window as any)?.Telegram?.WebApp;
+        if (WA?.onEvent && WA?.offEvent) {
+          const handler = () => {
+            applyBackgroundNow();
+          };
+          WA.onEvent('themeChanged', handler);
+          themeChangedUnsub = () => {
+            try { WA.offEvent('themeChanged', handler); } catch { /* ignore */ }
+          };
+        }
+      } catch {
+        /* ignore */
+      }
     })();
 
     return () => {
-      if (gestureHandler) {
-        document.removeEventListener('click', gestureHandler);
-        document.removeEventListener('touchend', gestureHandler);
-      }
-      (async () => {
-        try {
-          await viewport.exitFullscreen();
-        } catch {
-          /* ignore */
-        }
-      })();
       try {
+        viewport.exitFullscreen();
       } catch {
         /* ignore */
+      }
+      if (themeChangedUnsub) {
+        try { themeChangedUnsub(); } catch { /* ignore */ }
       }
     };
   }, []);
