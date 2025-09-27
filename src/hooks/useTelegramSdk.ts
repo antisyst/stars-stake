@@ -72,6 +72,28 @@ export const useTelegramSdk = () => {
         console.warn('expand error:', err);
       }
 
+      try {
+        if (viewport.isMounted()) {
+          await viewport.requestFullscreen();
+          console.log('Fullscreen enabled:', viewport.isFullscreen());
+        }
+      } catch (err) {
+        console.warn('Immediate fullscreen failed; will retry on first tap/click.', err);
+        gestureHandler = async () => {
+          try {
+            await viewport.requestFullscreen();
+            console.log('Fullscreen after gesture:', viewport.isFullscreen());
+          } catch (e) {
+            console.warn('Fullscreen still failed:', e);
+          } finally {
+            document.removeEventListener('click', gestureHandler!);
+            document.removeEventListener('touchend', gestureHandler!);
+            gestureHandler = null;
+          }
+        };
+        document.addEventListener('click', gestureHandler, { once: true });
+        document.addEventListener('touchend', gestureHandler, { once: true });
+      }
 
       try {
         closingBehavior.mount();

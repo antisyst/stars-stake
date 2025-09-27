@@ -33,7 +33,7 @@ export const Layout: FC = () => {
           overflowX: 'hidden',
         }}
       >
-        <div style={{ padding: `${insets.top + 30}px 13px ${insets.bottom + 100}px 13px` }}>
+        <div style={{ padding: `${insets.top + 40}px 13px ${insets.bottom + 100}px 13px` }}>
           <Outlet />
         </div>
       </div>
