@@ -26,6 +26,8 @@ export const useTelegramSdk = () => {
     (async () => {
       try {
         miniApp.setHeaderColor('secondary_bg_color');
+        miniApp.setBackgroundColor('secondary_bg_color');
+        miniApp.setBottomBarColor('secondary_bg_color');
         init();
       } catch (err) {
         console.error('Init error:', err);
