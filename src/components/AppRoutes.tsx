@@ -25,8 +25,8 @@ const waitFor = async (
 };
 
 export const AppRoutes: React.FC = () => {
-  return <AppRoutesInner />;
   useTelegramSdk();
+  return <AppRoutesInner />;
 };
 
 const AppRoutesInner: React.FC = () => {

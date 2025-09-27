@@ -37,6 +37,7 @@ export function App() {
     <AppRoot
       appearance={isDark ? "dark" : "light"}
       platform={['macos', 'ios'].includes(lp.platform) ? 'ios' : 'base'}
+      style={{ background: 'transparent' }}
     >
       <HashRouter
         future={{

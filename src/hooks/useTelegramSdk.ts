@@ -10,41 +10,65 @@ import {
 
 export const useTelegramSdk = () => {
   useEffect(() => {
-    let gestureHandler: (() => void) | null = null;
+    let removeThemeListener: (() => void) | null = null;
+    let visibilityHandler: (() => void) | null = null;
 
-    const waitFor = (predicate: () => boolean, timeoutMs = 2000, intervalMs = 50) =>
-      new Promise<void>((resolve, reject) => {
-        const start = Date.now();
-        const tick = () => {
-          if (predicate()) return resolve();
-          if (Date.now() - start >= timeoutMs) return reject(new Error('timeout'));
-          setTimeout(tick, intervalMs);
-        };
-        tick();
-      });
-
-    (async () => {
+    const readCssVar = (name: string) => {
       try {
-        miniApp.setHeaderColor('secondary_bg_color');
-        miniApp.setBackgroundColor('secondary_bg_color');
-        miniApp.setBottomBarColor('secondary_bg_color');
-        init();
+        return getComputedStyle(document.documentElement)
+          .getPropertyValue(name)
+          .trim();
+      } catch {
+        return '';
+      }
+    };
+
+    const getPreferredBg = (token: 'bg' | 'secondary_bg' = 'secondary_bg') => {
+      // 1) after bindCssVars, these exist
+      const cssVar =
+        token === 'bg'
+          ? readCssVar('--tg-theme-bg-color')
+          : readCssVar('--tg-theme-secondary-bg-color');
+
+      if (cssVar) return cssVar;
+
+      // 2) fallback to your own variable
+      const fallback =
+        token === 'bg'
+          ? readCssVar('--bg-color-fallback')
+          : readCssVar('--secondary-bg-color-fallback');
+      if (fallback) return fallback;
+
+      // 3) last resort: untyped Telegram object (snake_case key names)
+      const tp = (window as any)?.Telegram?.WebApp?.themeParams;
+      const raw =
+        token === 'bg' ? tp?.bg_color : tp?.secondary_bg_color; // e.g. "#0a0a0a"
+      return typeof raw === 'string' && raw ? raw : '';
+    };
+
+    const applyColors = (usePrimary = false) => {
+      const tokenName = usePrimary ? 'bg_color' : 'secondary_bg_color';
+
+      try {
+        // Tell Telegram to style chrome with its theme token
+        miniApp.setHeaderColor(tokenName);
+        miniApp.setBackgroundColor(tokenName);
+        miniApp.setBottomBarColor(tokenName);
       } catch (err) {
-        console.error('Init error:', err);
+        console.warn('applyColors (set*) error:', err);
       }
 
-      try {
-        try {
-          backButton.mount();
-        } catch (err) {
-          console.warn('backButton.mount() failed (continuing):', err);
-        }
-      } catch (err) {
-        console.warn('backButton mount error:', err);
+      // Ensure the document background is in sync immediately (prevents any black flash).
+      const hardColor = getPreferredBg(usePrimary ? 'bg' : 'secondary_bg');
+      if (hardColor) {
+        document.documentElement.style.backgroundColor = hardColor;
+        document.body.style.backgroundColor = hardColor;
       }
+    };
 
+    const bindThemeVars = async () => {
       try {
-        await viewport.mount();
+        await viewport.mount(); // idempotent-safe
       } catch (err: unknown) {
         const msg = (err as Error)?.message ?? '';
         if (!/already mounting|already mounted/i.test(msg)) {
@@ -53,53 +77,87 @@ export const useTelegramSdk = () => {
       }
 
       try {
-        await waitFor(() => viewport.isMounted(), 2000);
-      } catch {
-        console.warn('Viewport did not report mounted in time; some features will be skipped.');
-      }
-
-      try {
-        if (viewport.isMounted()) {
-          viewport.bindCssVars();
-        }
+        viewport.bindCssVars(); // exposes --tg-theme-* on :root
       } catch (err) {
         console.warn('bindCssVars error:', err);
       }
+    };
 
+    (async () => {
       try {
-        if (viewport.isMounted()) {
+        // 1) init Telegram webapp env
+        init();
+
+        // 2) wait until Telegram is ready before touching chrome colors
+        if (typeof (miniApp as any).ready === 'function') {
+          await (miniApp as any).ready();
+        }
+
+        // 3) bind CSS vars first, then 4) apply colors
+        await bindThemeVars();
+        applyColors(false); // use secondary tone by default; flip to true to use primary
+
+        // 5) expand viewport
+        try {
           viewport.expand();
+        } catch (err) {
+          console.warn('expand error:', err);
         }
-      } catch (err) {
-        console.warn('expand error:', err);
-      }
 
-      try {
-        closingBehavior.mount();
-      } catch (err: unknown) {
-        const msg = (err as Error)?.message ?? '';
-        if (!/already mounting|already mounted/i.test(msg)) {
-          console.warn('ClosingBehavior mount error:', err);
+        // back button
+        try {
+          backButton.mount();
+        } catch (err) {
+          console.warn('backButton.mount() failed (continuing):', err);
         }
-      }
-      try {
-        closingBehavior.enableConfirmation();
-      } catch (err) {
-        console.warn('enableConfirmation error:', err);
-      }
 
-      try {
-        swipeBehavior.mount();
-        swipeBehavior.disableVertical();
+        // confirm on close & swipe behavior
+        try {
+          closingBehavior.mount();
+          closingBehavior.enableConfirmation();
+        } catch (err) {
+          console.warn('ClosingBehavior init error:', err);
+        }
+        try {
+          swipeBehavior.mount();
+          swipeBehavior.disableVertical();
+        } catch (err) {
+          console.warn('SwipeBehavior error:', err);
+        }
+
+        // Re-apply on theme change (use untyped onEvent API to avoid TS issues)
+        try {
+          const handler = async () => {
+            await bindThemeVars();
+            applyColors(false);
+          };
+          (window as any)?.Telegram?.WebApp?.onEvent?.('themeChanged', handler);
+          removeThemeListener = () => {
+            (window as any)?.Telegram?.WebApp?.offEvent?.('themeChanged', handler);
+          };
+        } catch {
+          /* ignore */
+        }
+
+        // iOS resume case
+        visibilityHandler = async () => {
+          if (document.visibilityState === 'visible') {
+            await bindThemeVars();
+            applyColors(false);
+          }
+        };
+        document.addEventListener('visibilitychange', visibilityHandler);
       } catch (err) {
-        console.warn('SwipeBehavior error:', err);
+        console.error('Init error:', err);
       }
     })();
 
     return () => {
-      if (gestureHandler) {
-        document.removeEventListener('click', gestureHandler);
-        document.removeEventListener('touchend', gestureHandler);
+      try {
+        removeThemeListener?.();
+      } catch {}
+      if (visibilityHandler) {
+        document.removeEventListener('visibilitychange', visibilityHandler);
       }
       (async () => {
         try {
@@ -108,10 +166,6 @@ export const useTelegramSdk = () => {
           /* ignore */
         }
       })();
-      try {
-      } catch {
-        /* ignore */
-      }
     };
   }, []);
 };
