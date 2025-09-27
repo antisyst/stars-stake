@@ -25,7 +25,7 @@ export const useTelegramSdk = () => {
 
     (async () => {
       try {
-        miniApp.setHeaderColor('#1a2026');
+        miniApp.setHeaderColor('#ff0000');
         init();
       } catch (err) {
         console.error('Init error:', err);
