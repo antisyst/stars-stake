@@ -1,0 +1,379 @@
+I'm creating telegram mini app with react tsx and firebase, and I never worked with firebase, I just got help from you, I mean chatgpt. And so I don't use any backend, just firebase, and I started with the telegram mini apps react template. And we have to do a lot of things. So you see the some codes:
+
+App.tsx:
+
+import { useEffect } from "react";
+import { useLaunchParams, miniApp, useSignal } from "@telegram-apps/sdk-react";
+import { AppRoot } from "@telegram-apps/telegram-ui";
+import { AppRoutes } from "./AppRoutes";
+import { HashRouter } from "react-router-dom";
+import { useTelegramSdk } from "@/hooks/useTelegramSdk";
+
+export function App() {
+  useTelegramSdk();
+
+  const lp = useLaunchParams();
+  const isDark = useSignal(miniApp.isDark);
+  const isSupportedPlatform = ["ios", "android"].includes(lp.platform);
+
+  useEffect(() => {
+    const disableScrolling = () => {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+    };
+
+    const enableScrolling = () => {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+    };
+
+    disableScrolling();
+    return () => {
+      enableScrolling();
+    };
+  }, []);
+
+  return (
+    <AppRoot
+      appearance={isDark ? "dark" : "light"}
+      platform={['macos', 'ios'].includes(lp.platform) ? 'ios' : 'base'}
+    >
+      <HashRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
+        {isSupportedPlatform ? <AppRoutes /> : <AppRoutes />}
+      </HashRouter>
+    </AppRoot>
+  );
+}
+
+AppRoutes.tsx:
+
+import React, { useEffect, useRef, useState } from 'react';
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import { useSignal, initData } from '@telegram-apps/sdk-react';
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from '@/configs/firebaseConfig';
+import { routes } from '@/navigation/routes';
+import { ToastProvider } from '@/contexts/ToastContext';
+import { useTelegramSdk } from '@/hooks/useTelegramSdk';
+import { icons } from '@/configs/icons';
+import { usePreloadImages } from '@/hooks/usePreloadImages';
+
+const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+const waitFor = async (
+  predicate: () => boolean,
+  timeoutMs = 8000,
+  intervalMs = 50
+) => {
+  const start = Date.now();
+  while (Date.now() - start < timeoutMs) {
+    if (predicate()) return true;
+    await wait(intervalMs);
+  }
+  return predicate();
+};
+
+export const AppRoutes: React.FC = () => {
+  useTelegramSdk();
+  return <AppRoutesInner />;
+};
+
+const AppRoutesInner: React.FC = () => {
+  const initDataState = useSignal(initData.state);
+  const iconsLoaded = usePreloadImages(icons);
+  const iconsLoadedRef = useRef(iconsLoaded);
+  useEffect(() => {
+    iconsLoadedRef.current = iconsLoaded;
+  }, [iconsLoaded]);
+
+  const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const boot = async () => {
+      try {
+        await waitFor(() => Boolean(initDataState?.user), 10000, 50);
+        if (cancelled) return;
+
+        const user = initDataState?.user;
+        if (!user?.id) {
+          if (!cancelled) {
+            setLoading(false);
+            navigate('/home', { replace: true });
+          }
+          return;
+        }
+
+        const uid = String(user.id);
+        const userRef = doc(db, 'users', uid);
+
+        const payload = {
+          id: user.id,
+          username:
+            user.username ||
+            `${user.firstName} ${user.lastName || ''}`.trim() ||
+            'Anonymous',
+          languageCode: user.languageCode || '',
+          photoUrl: user.photoUrl || '',
+          firstName: user.firstName || '',
+          lastName: user.lastName || '',
+        };
+
+        await setDoc(userRef, payload, { merge: true });
+
+        if (cancelled) return;
+
+        setLoading(false);
+
+        navigate('/home', { replace: true });
+      } catch (err) {
+        console.error('User init error:', err);
+        setLoading(false);
+        navigate('/home', { replace: true });
+      }
+    };
+
+    boot();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (loading) {
+    return (
+      <div
+        role="status"
+        aria-live="polite"
+      >
+        Loading...
+      </div>
+    );
+  }
+
+  return (
+    <ToastProvider>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+        <div style={{ flex: 1, overflowY: 'auto' }}>
+          <Routes>
+            {routes.map(({ path, Component }) => (
+              <Route key={path} path={path} element={<Component />} />
+            ))}
+            <Route path="*" element={<Navigate to="/home" replace />} />
+          </Routes>
+        </div>
+      </div>
+    </ToastProvider>
+  );
+};
+
+useTelegramSdk.ts:
+
+import { useEffect } from 'react';
+import { miniApp } from '@telegram-apps/sdk-react';
+import {
+  init,
+  viewport,
+  closingBehavior,
+  swipeBehavior,
+  backButton,
+} from '@telegram-apps/sdk';
+
+export const useTelegramSdk = () => {
+  useEffect(() => {
+    let gestureHandler: (() => void) | null = null;
+
+    const waitFor = (predicate: () => boolean, timeoutMs = 2000, intervalMs = 50) =>
+      new Promise<void>((resolve, reject) => {
+        const start = Date.now();
+        const tick = () => {
+          if (predicate()) return resolve();
+          if (Date.now() - start >= timeoutMs) return reject(new Error('timeout'));
+          setTimeout(tick, intervalMs);
+        };
+        tick();
+      });
+
+    (async () => {
+      try {
+        miniApp.setHeaderColor('secondary_bg_color');
+        miniApp.setBackgroundColor('secondary_bg_color');
+        miniApp.setBottomBarColor('secondary_bg_color');
+        init();
+      } catch (err) {
+        console.error('Init error:', err);
+      }
+
+      try {
+        try {
+          backButton.mount();
+        } catch (err) {
+          console.warn('backButton.mount() failed (continuing):', err);
+        }
+      } catch (err) {
+        console.warn('backButton mount error:', err);
+      }
+
+      try {
+        await viewport.mount();
+      } catch (err: unknown) {
+        const msg = (err as Error)?.message ?? '';
+        if (!/already mounting|already mounted/i.test(msg)) {
+          console.warn('Viewport mount error:', err);
+        }
+      }
+
+      try {
+        await waitFor(() => viewport.isMounted(), 2000);
+      } catch {
+        console.warn('Viewport did not report mounted in time; some features will be skipped.');
+      }
+
+      try {
+        if (viewport.isMounted()) {
+          viewport.bindCssVars();
+        }
+      } catch (err) {
+        console.warn('bindCssVars error:', err);
+      }
+
+      try {
+        if (viewport.isMounted()) {
+          viewport.expand();
+        }
+      } catch (err) {
+        console.warn('expand error:', err);
+      }
+
+      try {
+        closingBehavior.mount();
+      } catch (err: unknown) {
+        const msg = (err as Error)?.message ?? '';
+        if (!/already mounting|already mounted/i.test(msg)) {
+          console.warn('ClosingBehavior mount error:', err);
+        }
+      }
+      try {
+        closingBehavior.enableConfirmation();
+      } catch (err) {
+        console.warn('enableConfirmation error:', err);
+      }
+
+      try {
+        swipeBehavior.mount();
+        swipeBehavior.disableVertical();
+      } catch (err) {
+        console.warn('SwipeBehavior error:', err);
+      }
+    })();
+
+    return () => {
+      if (gestureHandler) {
+        document.removeEventListener('click', gestureHandler);
+        document.removeEventListener('touchend', gestureHandler);
+      }
+      (async () => {
+        try {
+          await viewport.exitFullscreen();
+        } catch {
+          /* ignore */
+        }
+      })();
+      try {
+      } catch {
+        /* ignore */
+      }
+    };
+  }, []);
+};
+
+index.scss:
+
+*:not(tc-root *):not(tc-root) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--white);
+  user-select: none;
+  font-family: 'SF Pro Display', sans-serif !important;
+}
+
+:root {
+  --family: 'SF Pro Display', sans-serif;
+}
+
+body {
+  background: var(--tg-theme-secondary-bg-color,var(--secondary-bg-color-fallback));
+  padding: 20px 16px !important;
+}
+
+.state-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 30vh;
+}
+
+.empty-state {
+  font-size: 14px;
+  text-align: center;
+  height: 30vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+init.ts:
+
+import {
+  backButton,
+  viewport,
+  themeParams,
+  miniApp,
+  initData,
+  $debug,
+  init as initSDK,
+} from '@telegram-apps/sdk-react';
+
+
+export function init(debug: boolean): void {
+  $debug.set(debug);
+
+
+  initSDK();
+  if (!backButton.isSupported() || !miniApp.isSupported()) {
+    throw new Error('ERR_NOT_SUPPORTED');
+  }
+
+  backButton.mount();
+  miniApp.mount();
+  themeParams.mount();
+  initData.restore();
+  void viewport
+    .mount()
+    .catch(e => {
+      console.error('Something went wrong mounting the viewport', e);
+    })
+    .then(() => {
+      viewport.bindCssVars();
+    });
+
+  miniApp.bindCssVars();
+  themeParams.bindCssVars();
+}
+
+So you see current codes. So something very strange is happening here. When I open the mini app and after the user data is successfully sent to firestore and then navigate to the main route i.e. home page, the header color is exactly as I want, but the background color is completely black if I don't make a hex error and in this case the header color and background color are different colors even though the same color is set. But the strange thing is that when I close telegram on ios (not close it completely, just change the window) and log in again seconds later, it changes to the color I want, which is the same color as the header. Solve this problem in the strongest way. Please set up and give me all updated codes.
