@@ -6,11 +6,10 @@ import { HashRouter } from "react-router-dom";
 import { useTelegramSdk } from "@/hooks/useTelegramSdk";
 
 export function App() {
-  useTelegramSdk();
-
   const lp = useLaunchParams();
   const isDark = useSignal(miniApp.isDark);
   const isSupportedPlatform = ["ios", "android"].includes(lp.platform);
+  useTelegramSdk();
 
   useEffect(() => {
     const disableScrolling = () => {

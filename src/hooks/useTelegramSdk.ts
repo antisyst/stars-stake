@@ -8,103 +8,102 @@ import {
   backButton,
 } from '@telegram-apps/sdk';
 
-const tokenToCssVar: Record<'bg_color' | 'secondary_bg_color', string> = {
-  bg_color: '--tg-theme-bg-color',
-  secondary_bg_color: '--tg-theme-secondary-bg-color',
-};
+const TOKEN: 'bg_color' | 'secondary_bg_color' = 'secondary_bg_color';
 
-function readCssVar(varName: string): string | null {
+function cssColorFromToken(token: 'bg_color' | 'secondary_bg_color') {
+  const varName =
+    token === 'bg_color' ? '--tg-theme-bg-color' : '--tg-theme-secondary-bg-color';
   const v = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
-  return v || null;
+  return v || '#111111';
 }
 
-function applyHtmlBackgroundFromToken(token: 'bg_color' | 'secondary_bg_color') {
-  const cssVar = tokenToCssVar[token];
-  const color = readCssVar(cssVar) || '#111111';
+function paintRoot(color: string) {
   document.documentElement.style.backgroundColor = color;
   document.body.style.backgroundColor = color;
   const root = document.querySelector('tc-root, #root') as HTMLElement | null;
   if (root) root.style.backgroundColor = color;
 }
 
-async function applyTelegramColors(token: 'bg_color' | 'secondary_bg_color') {
-  applyHtmlBackgroundFromToken(token);
+/**
+ * Hard resync that mimics iOS app background -> foreground.
+ * Use this right after first navigation to your main screen.
+ */
+export async function resyncTelegramChrome(): Promise<void> {
+  const targetCssColor = cssColorFromToken(TOKEN);
 
-  try { miniApp.setHeaderColor(token); } catch {}
-  try { miniApp.setBackgroundColor(token); } catch {}
-  try { miniApp.setBottomBarColor(token); } catch {}
+  // 1) Paint DOM immediately.
+  paintRoot(targetCssColor);
 
-  setTimeout(() => {
-    try { miniApp.setBackgroundColor(token); } catch {}
-  }, 16);
+  // 2) Force Telegram system bars to update:
+  //    flip to a dummy hex then back to token (this “jolts” iOS to repaint).
+  try {
+    miniApp.setHeaderColor('#010101');
+    miniApp.setBackgroundColor('#010101');
+    miniApp.setBottomBarColor('#010101');
+  } catch {}
+
+  await new Promise((r) => setTimeout(r, 24));
 
   try {
-    await viewport.expand();
-    applyHtmlBackgroundFromToken(token);
-    try { miniApp.setBackgroundColor(token); } catch {}
-  } catch {
-    // ignore
-  }
+    miniApp.setHeaderColor(TOKEN);
+    miniApp.setBackgroundColor(TOKEN);
+    miniApp.setBottomBarColor(TOKEN);
+  } catch {}
+
+  // 3) Bounce viewport to ensure insets/expansion commit on iOS.
+  try { await viewport.expand(); } catch {}
+
+  // 4) Brutal repaint: hide/show + reflow + composite bump.
+  const html = document.documentElement;
+  const prevTransform = html.style.transform;
+  html.style.visibility = 'hidden';
+  // trigger reflow
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  html.offsetHeight;
+  html.style.transform = 'translateZ(0)'; // new composite layer
+  html.style.visibility = '';
+  requestAnimationFrame(() => {
+    html.style.transform = prevTransform;
+    paintRoot(targetCssColor); // final paint with the correct color
+  });
+}
+
+async function applyInitialChrome() {
+  const c = cssColorFromToken(TOKEN);
+  paintRoot(c);
+  try { miniApp.setHeaderColor(TOKEN); } catch {}
+  try { miniApp.setBackgroundColor(TOKEN); } catch {}
+  try { miniApp.setBottomBarColor(TOKEN); } catch {}
 }
 
 export const useTelegramSdk = () => {
   useEffect(() => {
     let mounted = true;
 
-    const token: 'bg_color' | 'secondary_bg_color' = 'secondary_bg_color';
-
-    const safeWaitFor = (pred: () => boolean, timeoutMs = 2000, intervalMs = 50) =>
-      new Promise<void>((resolve) => {
-        const start = Date.now();
-        const tick = () => {
-          if (!mounted) return resolve();
-          if (pred()) return resolve();
-          if (Date.now() - start >= timeoutMs) return resolve();
-          setTimeout(tick, intervalMs);
-        };
-        tick();
-      });
-
-    const onThemeChanged = () => {
-      void applyTelegramColors(token);
-    };
-
-    const onVisibilityOrFocus = () => {
-      void applyTelegramColors(token);
-    };
-
-    const onPageShow = (_e: PageTransitionEvent) => {
-      void applyTelegramColors(token);
-    };
-
     (async () => {
-      try { init(); } catch (err) { console.error('Init error:', err); }
-
+      try { init(); } catch (e) { console.error('Init error:', e); }
       try { backButton.mount(); } catch {}
-
       try { await viewport.mount(); } catch {}
-
       try { viewport.bindCssVars(); } catch {}
 
-      await safeWaitFor(() => true, 50);
-      await applyTelegramColors(token);
+      await applyInitialChrome();
 
       try { closingBehavior.mount(); closingBehavior.enableConfirmation(); } catch {}
       try { swipeBehavior.mount(); swipeBehavior.disableVertical(); } catch {}
     })();
 
-    window.addEventListener('focus', onVisibilityOrFocus);
-    document.addEventListener('visibilitychange', onVisibilityOrFocus);
-    window.addEventListener('pageshow', onPageShow);
-
-    window.addEventListener('theme_changed', onThemeChanged as EventListener);
+    const reapply = () => { if (mounted) void resyncTelegramChrome(); };
+    window.addEventListener('pageshow', reapply);
+    window.addEventListener('focus', reapply);
+    document.addEventListener('visibilitychange', reapply);
+    window.addEventListener('theme_changed', reapply as EventListener);
 
     return () => {
       mounted = false;
-      window.removeEventListener('focus', onVisibilityOrFocus);
-      document.removeEventListener('visibilitychange', onVisibilityOrFocus);
-      window.removeEventListener('pageshow', onPageShow);
-      window.removeEventListener('theme_changed', onThemeChanged as EventListener);
+      window.removeEventListener('pageshow', reapply);
+      window.removeEventListener('focus', reapply);
+      document.removeEventListener('visibilitychange', reapply);
+      window.removeEventListener('theme_changed', reapply as EventListener);
       (async () => { try { await viewport.exitFullscreen(); } catch {} })();
     };
   }, []);
