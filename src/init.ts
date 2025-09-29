@@ -1,3 +1,4 @@
+// init.ts
 import {
   mountBackButton,
   restoreInitData,
@@ -11,22 +12,16 @@ import {
 } from '@telegram-apps/sdk-react';
 
 import {
-  miniApp,
   setDebug,
   emitEvent,
   mockTelegramEnv,
 } from '@telegram-apps/sdk';
-
-let started = false;
 
 export async function init(options: {
   debug: boolean;
   eruda: boolean;
   mockForMacOS: boolean;
 }): Promise<void> {
-  if (started) return;
-  started = true;
-
   setDebug(options.debug);
   initSDKReact();
 
@@ -40,6 +35,7 @@ export async function init(options: {
   if (options.mockForMacOS) {
     let firstThemeSent = false;
     type SDKEvent = [method: string, ...args: unknown[]];
+
     mockTelegramEnv({
       onEvent(event: SDKEvent, next: () => void) {
         const [method] = event;
@@ -67,21 +63,21 @@ export async function init(options: {
     });
   }
 
+  // Standard bootstrap
   mountBackButton.ifAvailable();
   restoreInitData();
 
+  // This is enough to get Telegram theme params into CSS variables.
+  // No need for miniApp.mountSync.
   try {
-    // @ts-ignore optional
-    if (miniApp.mountSync?.isAvailable?.()) {
-      // @ts-ignore
-      miniApp.mountSync();
-    }
-  } catch {}
+    bindThemeParamsCssVars();
+  } catch {
+    // Some clients can throw before the first theme is available; it's safe to ignore.
+  }
 
-  try { bindThemeParamsCssVars(); } catch {}
-
+  // Mount viewport early so viewport CSS vars are available too.
   if (mountViewport.isAvailable()) {
-    try { await mountViewport(); } catch {}
-    try { bindViewportCssVars(); } catch {}
+    await mountViewport();
+    bindViewportCssVars();
   }
 }
