@@ -8,103 +8,110 @@ import {
   backButton,
 } from '@telegram-apps/sdk';
 
-const TOKEN: 'bg_color' | 'secondary_bg_color' = 'secondary_bg_color';
-
-function cssColorFromToken(token: 'bg_color' | 'secondary_bg_color') {
-  const varName =
-    token === 'bg_color' ? '--tg-theme-bg-color' : '--tg-theme-secondary-bg-color';
-  const v = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
-  return v || '#111111';
-}
-
-function paintRoot(color: string) {
-  document.documentElement.style.backgroundColor = color;
-  document.body.style.backgroundColor = color;
-  const root = document.querySelector('tc-root, #root') as HTMLElement | null;
-  if (root) root.style.backgroundColor = color;
-}
-
-/**
- * Hard resync that mimics iOS app background -> foreground.
- * Use this right after first navigation to your main screen.
- */
-export async function resyncTelegramChrome(): Promise<void> {
-  const targetCssColor = cssColorFromToken(TOKEN);
-
-  // 1) Paint DOM immediately.
-  paintRoot(targetCssColor);
-
-  // 2) Force Telegram system bars to update:
-  //    flip to a dummy hex then back to token (this “jolts” iOS to repaint).
-  try {
-    miniApp.setHeaderColor('#010101');
-    miniApp.setBackgroundColor('#010101');
-    miniApp.setBottomBarColor('#010101');
-  } catch {}
-
-  await new Promise((r) => setTimeout(r, 24));
-
-  try {
-    miniApp.setHeaderColor(TOKEN);
-    miniApp.setBackgroundColor(TOKEN);
-    miniApp.setBottomBarColor(TOKEN);
-  } catch {}
-
-  // 3) Bounce viewport to ensure insets/expansion commit on iOS.
-  try { await viewport.expand(); } catch {}
-
-  // 4) Brutal repaint: hide/show + reflow + composite bump.
-  const html = document.documentElement;
-  const prevTransform = html.style.transform;
-  html.style.visibility = 'hidden';
-  // trigger reflow
-  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-  html.offsetHeight;
-  html.style.transform = 'translateZ(0)'; // new composite layer
-  html.style.visibility = '';
-  requestAnimationFrame(() => {
-    html.style.transform = prevTransform;
-    paintRoot(targetCssColor); // final paint with the correct color
-  });
-}
-
-async function applyInitialChrome() {
-  const c = cssColorFromToken(TOKEN);
-  paintRoot(c);
-  try { miniApp.setHeaderColor(TOKEN); } catch {}
-  try { miniApp.setBackgroundColor(TOKEN); } catch {}
-  try { miniApp.setBottomBarColor(TOKEN); } catch {}
-}
-
 export const useTelegramSdk = () => {
   useEffect(() => {
-    let mounted = true;
+    let gestureHandler: (() => void) | null = null;
+
+    const waitFor = (predicate: () => boolean, timeoutMs = 2000, intervalMs = 50) =>
+      new Promise<void>((resolve, reject) => {
+        const start = Date.now();
+        const tick = () => {
+          if (predicate()) return resolve();
+          if (Date.now() - start >= timeoutMs) return reject(new Error('timeout'));
+          setTimeout(tick, intervalMs);
+        };
+        tick();
+      });
 
     (async () => {
-      try { init(); } catch (e) { console.error('Init error:', e); }
-      try { backButton.mount(); } catch {}
-      try { await viewport.mount(); } catch {}
-      try { viewport.bindCssVars(); } catch {}
+      try {
+        miniApp.setHeaderColor('secondary_bg_color');
+        miniApp.setBackgroundColor('secondary_bg_color');
+        miniApp.setBottomBarColor('secondary_bg_color');
+        init();
+      } catch (err) {
+        console.error('Init error:', err);
+      }
 
-      await applyInitialChrome();
+      try {
+        try {
+          backButton.mount();
+        } catch (err) {
+          console.warn('backButton.mount() failed (continuing):', err);
+        }
+      } catch (err) {
+        console.warn('backButton mount error:', err);
+      }
 
-      try { closingBehavior.mount(); closingBehavior.enableConfirmation(); } catch {}
-      try { swipeBehavior.mount(); swipeBehavior.disableVertical(); } catch {}
+      try {
+        await viewport.mount();
+      } catch (err: unknown) {
+        const msg = (err as Error)?.message ?? '';
+        if (!/already mounting|already mounted/i.test(msg)) {
+          console.warn('Viewport mount error:', err);
+        }
+      }
+
+      try {
+        await waitFor(() => viewport.isMounted(), 2000);
+      } catch {
+        console.warn('Viewport did not report mounted in time; some features will be skipped.');
+      }
+
+      try {
+        if (viewport.isMounted()) {
+          viewport.bindCssVars();
+        }
+      } catch (err) {
+        console.warn('bindCssVars error:', err);
+      }
+
+      try {
+        if (viewport.isMounted()) {
+          viewport.expand();
+        }
+      } catch (err) {
+        console.warn('expand error:', err);
+      }
+
+      try {
+        closingBehavior.mount();
+      } catch (err: unknown) {
+        const msg = (err as Error)?.message ?? '';
+        if (!/already mounting|already mounted/i.test(msg)) {
+          console.warn('ClosingBehavior mount error:', err);
+        }
+      }
+      try {
+        closingBehavior.enableConfirmation();
+      } catch (err) {
+        console.warn('enableConfirmation error:', err);
+      }
+
+      try {
+        swipeBehavior.mount();
+        swipeBehavior.disableVertical();
+      } catch (err) {
+        console.warn('SwipeBehavior error:', err);
+      }
     })();
 
-    const reapply = () => { if (mounted) void resyncTelegramChrome(); };
-    window.addEventListener('pageshow', reapply);
-    window.addEventListener('focus', reapply);
-    document.addEventListener('visibilitychange', reapply);
-    window.addEventListener('theme_changed', reapply as EventListener);
-
     return () => {
-      mounted = false;
-      window.removeEventListener('pageshow', reapply);
-      window.removeEventListener('focus', reapply);
-      document.removeEventListener('visibilitychange', reapply);
-      window.removeEventListener('theme_changed', reapply as EventListener);
-      (async () => { try { await viewport.exitFullscreen(); } catch {} })();
+      if (gestureHandler) {
+        document.removeEventListener('click', gestureHandler);
+        document.removeEventListener('touchend', gestureHandler);
+      }
+      (async () => {
+        try {
+          await viewport.exitFullscreen();
+        } catch {
+          /* ignore */
+        }
+      })();
+      try {
+      } catch {
+        /* ignore */
+      }
     };
   }, []);
 };

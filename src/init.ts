@@ -17,11 +17,16 @@ import {
   mockTelegramEnv,
 } from '@telegram-apps/sdk';
 
+let started = false;
+
 export async function init(options: {
   debug: boolean;
   eruda: boolean;
   mockForMacOS: boolean;
 }): Promise<void> {
+  if (started) return;
+  started = true;
+
   setDebug(options.debug);
   initSDKReact();
 
@@ -34,9 +39,7 @@ export async function init(options: {
 
   if (options.mockForMacOS) {
     let firstThemeSent = false;
-
     type SDKEvent = [method: string, ...args: unknown[]];
-
     mockTelegramEnv({
       onEvent(event: SDKEvent, next: () => void) {
         const [method] = event;
@@ -67,19 +70,18 @@ export async function init(options: {
   mountBackButton.ifAvailable();
   restoreInitData();
 
-  if (miniApp.mountSync?.isAvailable?.()) {
-    miniApp.mountSync();
-    bindThemeParamsCssVars();
-  } else {
-    try {
-      bindThemeParamsCssVars();
-    } catch {
-      /* no-op */
+  try {
+    // @ts-ignore optional
+    if (miniApp.mountSync?.isAvailable?.()) {
+      // @ts-ignore
+      miniApp.mountSync();
     }
-  }
+  } catch {}
+
+  try { bindThemeParamsCssVars(); } catch {}
 
   if (mountViewport.isAvailable()) {
-    await mountViewport();
-    bindViewportCssVars();
+    try { await mountViewport(); } catch {}
+    try { bindViewportCssVars(); } catch {}
   }
 }
