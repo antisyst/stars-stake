@@ -18,6 +18,9 @@ const waitFor = async (pred: () => boolean, t = 1500, step = 50) => {
 
 export function App() {
   useTelegramSdk();
+
+  miniApp.setBackgroundColor('secondary_bg_color');
+  miniApp.setBottomBarColor('secondary_bg_color');
   miniApp.setHeaderColor('secondary_bg_color');
 
   const lp = useLaunchParams();
