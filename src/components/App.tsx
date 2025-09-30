@@ -9,6 +9,8 @@ import { UnsupportedPlatform } from './UnsupportedPlatform/UnsupportedPlatform';
 export function App() {
   useTelegramSdk();
 
+  miniApp.setHeaderColor('secondary_bg_color')
+  
   const lp = useLaunchParams();
   const isDark = useSignal(miniApp.isDark);
   const isSupportedPlatform = useMemo(

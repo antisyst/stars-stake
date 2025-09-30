@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
-import { miniApp, useSignal, initData } from '@telegram-apps/sdk-react';
+import { useSignal, initData } from '@telegram-apps/sdk-react';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '@/configs/firebaseConfig';
 import { routes } from '@/navigation/routes';
@@ -80,7 +80,6 @@ const AppRoutesInner: React.FC = () => {
         setLoading(false);
 
         navigate('/home', { replace: true });
-        miniApp.setHeaderColor('secondary_bg_color')
       } catch (err) {
         console.error('User init error:', err);
         setLoading(false);
