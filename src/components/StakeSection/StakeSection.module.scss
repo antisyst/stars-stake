@@ -39,14 +39,15 @@
     }
 
     .buttonsContainer {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
-        button {
-            width: 50%;
-        }
+    button {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
     }
 }
