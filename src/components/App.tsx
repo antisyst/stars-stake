@@ -1,4 +1,3 @@
-// App.tsx
 import { useEffect, useMemo } from 'react';
 import { useLaunchParams, miniApp, useSignal } from '@telegram-apps/sdk-react';
 import { viewport } from '@telegram-apps/sdk';
@@ -28,15 +27,12 @@ export function App() {
   );
 
   useEffect(() => {
-    // Run AFTER SDK mounting to avoid the dropped call
     (async () => {
-      // make sure viewport/miniApp are mounted first
       await waitFor(() => {
         try { return (viewport.isMounted?.() ?? true); } catch { return true; }
-      }, 1500, 50);
+      }, 500, 50);
 
       try {
-        // Use bucket (required), then best-effort tint if available
         miniApp.setHeaderColor('secondary_bg_color');
         if (typeof (miniApp as any).setBackgroundColor === 'function') {
           const color = getComputedStyle(document.documentElement)
@@ -48,7 +44,7 @@ export function App() {
         console.warn('setHeaderColor early failed:', e);
       }
     })();
-  }, [isDark]); // also re-apply on scheme flips
+  }, [isDark]); 
 
   useEffect(() => {
     const disableScrolling = () => {
