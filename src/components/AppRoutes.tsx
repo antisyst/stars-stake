@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
-import { useSignal, initData } from '@telegram-apps/sdk-react';
+import { Navigate, Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import { useSignal, initData, miniApp } from '@telegram-apps/sdk-react';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '@/configs/firebaseConfig';
 import { routes } from '@/navigation/routes';
@@ -8,6 +8,7 @@ import { ToastProvider } from '@/contexts/ToastContext';
 import { useTelegramSdk } from '@/hooks/useTelegramSdk';
 import { icons } from '@/configs/icons';
 import { usePreloadImages } from '@/hooks/usePreloadImages';
+import { setHeaderFromCssVar } from '@/theme/setHeader';
 
 const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -31,6 +32,7 @@ export const AppRoutes: React.FC = () => {
 
 const AppRoutesInner: React.FC = () => {
   const initDataState = useSignal(initData.state);
+  const isDark = useSignal(miniApp.isDark);
   const iconsLoaded = usePreloadImages(icons);
   const iconsLoadedRef = useRef(iconsLoaded);
   useEffect(() => {
@@ -38,8 +40,9 @@ const AppRoutesInner: React.FC = () => {
   }, [iconsLoaded]);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
@@ -54,6 +57,7 @@ const AppRoutesInner: React.FC = () => {
           if (!cancelled) {
             setLoading(false);
             navigate('/home', { replace: true });
+            setHeaderFromCssVar('--app-secondary-bg');
           }
           return;
         }
@@ -80,10 +84,12 @@ const AppRoutesInner: React.FC = () => {
         setLoading(false);
 
         navigate('/home', { replace: true });
+        setHeaderFromCssVar('--app-secondary-bg');
       } catch (err) {
         console.error('User init error:', err);
         setLoading(false);
         navigate('/home', { replace: true });
+        setHeaderFromCssVar('--app-secondary-bg');
       }
     };
 
@@ -94,6 +100,10 @@ const AppRoutesInner: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    setHeaderFromCssVar('--app-secondary-bg');
+  }, [isDark, location.pathname]);
+
   if (loading) {
     return (
       <div
@@ -101,6 +111,7 @@ const AppRoutesInner: React.FC = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          height: '100vh',
           fontSize: 18,
         }}
         role="status"

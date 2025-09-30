@@ -1,10 +1,11 @@
 import { getPalette, Platform, Scheme } from './palettes';
-import { miniApp } from '@telegram-apps/sdk-react';
-
 
 export function applyTheme(platform: Platform, scheme: Scheme) {
   const root = document.documentElement;
   const p = getPalette(platform, scheme);
+
+  root.setAttribute('data-platform', platform);
+  root.setAttribute('data-scheme', scheme);
 
   root.style.setProperty('--app-bg', p.bg);
   root.style.setProperty('--app-secondary-bg', p.secondaryBg);
@@ -21,20 +22,6 @@ export function applyTheme(platform: Platform, scheme: Scheme) {
   root.style.setProperty('--app-destructive-text', p.destructiveText);
   root.style.setProperty('--app-section-separator', p.sectionSeparator);
   root.style.setProperty('--app-bottom-bar-bg', p.bottomBarBg);
-
-  try {
-    miniApp.setHeaderColor('bg_color');
-  } catch (e) {
-    // ignore
-  }
-
-  try {
-    if (typeof (miniApp as any).setBackgroundColor === 'function') {
-      (miniApp as any).setBackgroundColor(p.headerBg);
-    }
-  } catch {
-    // ignore
-  }
 
   document.body.style.backgroundColor = p.secondaryBg;
 }
