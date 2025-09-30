@@ -9,10 +9,26 @@
 
 :root {
   --family: 'SF Pro Display', sans-serif;
+  --app-bg: #000;
+  --app-secondary-bg: #000;
+  --app-section-bg: #000;
+  --app-header-bg: #000;
+  --app-text: #fff;
+  --app-subtitle: #aaa;
+  --app-hint: #aaa;
+  --app-link: #888;
+  --app-accent-text: #888;
+  --app-button: #888;
+  --app-button-text: #fff;
+  --app-section-header-text: #888;
+  --app-destructive-text: #ff595a;
+  --app-section-separator: #333;
+  --app-bottom-bar-bg: #000;
 }
 
+
 body {
-  background: var(--tg-theme-secondary-bg-color), white;
+  background: var(--app-secondary-bg);
   padding: 20px 16px !important;
 }
 

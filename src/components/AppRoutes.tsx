@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
-import { useSignal, initData, themeParamsState } from '@telegram-apps/sdk-react';
+import { useSignal, initData } from '@telegram-apps/sdk-react';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '@/configs/firebaseConfig';
 import { routes } from '@/navigation/routes';
@@ -24,82 +24,88 @@ const waitFor = async (
   return predicate();
 };
 
-const isThemeCssReady = () => {
-  const root = document.documentElement;
-  const bg = getComputedStyle(root).getPropertyValue('--tg-theme-bg-color').trim();
-  const sec = getComputedStyle(root).getPropertyValue('--tg-theme-secondary-bg-color').trim();
-  return Boolean(bg || sec);
-};
-
 export const AppRoutes: React.FC = () => {
   useTelegramSdk();
   return <AppRoutesInner />;
 };
 
 const AppRoutesInner: React.FC = () => {
-  const initDataSig = useSignal(initData.state);
-  const themeSig = useSignal(themeParamsState);
+  const initDataState = useSignal(initData.state);
   const iconsLoaded = usePreloadImages(icons);
   const iconsLoadedRef = useRef(iconsLoaded);
-  useEffect(() => { iconsLoadedRef.current = iconsLoaded; }, [iconsLoaded]);
+  useEffect(() => {
+    iconsLoadedRef.current = iconsLoaded;
+  }, [iconsLoaded]);
 
   const navigate = useNavigate();
 
-  const [booting, setBooting] = useState(true);
-
-  const themeReady = useMemo(() => {
-    return Boolean(themeSig) || isThemeCssReady();
-  }, [themeSig]);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     let cancelled = false;
 
     const boot = async () => {
       try {
-        await waitFor(() => themeReady, 6000, 50);
-
+        await waitFor(() => Boolean(initDataState?.user), 10000, 50);
         if (cancelled) return;
 
-        await waitFor(() => Boolean(useSignal(initData.state)?.user) || true, 10000, 50);
-
-        if (cancelled) return;
-
-        const user = initDataSig?.user;
-        if (user?.id) {
-          const uid = String(user.id);
-          const userRef = doc(db, 'users', uid);
-          const payload = {
-            id: user.id,
-            username:
-              user.username ||
-              `${user.firstName} ${user.lastName || ''}`.trim() ||
-              'Anonymous',
-            languageCode: user.languageCode || '',
-            photoUrl: user.photoUrl || '',
-            firstName: user.firstName || '',
-            lastName: user.lastName || '',
-          };
-          await setDoc(userRef, payload, { merge: true });
+        const user = initDataState?.user;
+        if (!user?.id) {
+          if (!cancelled) {
+            setLoading(false);
+            navigate('/home', { replace: true });
+          }
+          return;
         }
 
+        const uid = String(user.id);
+        const userRef = doc(db, 'users', uid);
+
+        const payload = {
+          id: user.id,
+          username:
+            user.username ||
+            `${user.firstName} ${user.lastName || ''}`.trim() ||
+            'Anonymous',
+          languageCode: user.languageCode || '',
+          photoUrl: user.photoUrl || '',
+          firstName: user.firstName || '',
+          lastName: user.lastName || '',
+        };
+
+        await setDoc(userRef, payload, { merge: true });
+
         if (cancelled) return;
 
-        setBooting(false);
+        setLoading(false);
+
         navigate('/home', { replace: true });
       } catch (err) {
-        console.error('Boot error:', err);
-        setBooting(false);
+        console.error('User init error:', err);
+        setLoading(false);
         navigate('/home', { replace: true });
       }
     };
 
     boot();
-    return () => { cancelled = true; };
-  }, [themeReady]);
 
-  if (booting) {
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (loading) {
     return (
-      <div role="status" aria-live="polite">
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: 18,
+        }}
+        role="status"
+        aria-live="polite"
+      >
         Loading...
       </div>
     );
