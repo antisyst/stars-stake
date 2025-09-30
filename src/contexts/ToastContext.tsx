@@ -14,7 +14,6 @@ export const ToastContext = createContext<ToastContextType>({
   showError: () => {},
 })
 
-
 export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
   const [toast, setToast] = useState<(ToastOptions & { id: number }) | null>(null)
 

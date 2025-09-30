@@ -18,6 +18,7 @@ const waitFor = async (pred: () => boolean, t = 1500, step = 50) => {
 
 export function App() {
   useTelegramSdk();
+  miniApp.setHeaderColor('secondary_bg_color');
 
   const lp = useLaunchParams();
   const isDark = useSignal(miniApp.isDark);
@@ -33,7 +34,6 @@ export function App() {
       }, 500);
 
       try {
-        miniApp.setHeaderColor('secondary_bg_color');
         if (typeof (miniApp as any).setBackgroundColor === 'function') {
           const color = getComputedStyle(document.documentElement)
             .getPropertyValue('--app-secondary-bg')

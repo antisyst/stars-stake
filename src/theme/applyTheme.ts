@@ -23,12 +23,6 @@ export function applyTheme(platform: Platform, scheme: Scheme) {
   root.style.setProperty('--app-bottom-bar-bg', p.bottomBarBg);
 
   try {
-    miniApp.setHeaderColor('bg_color');
-  } catch (e) {
-    // ignore
-  }
-
-  try {
     if (typeof (miniApp as any).setBackgroundColor === 'function') {
       (miniApp as any).setBackgroundColor(p.headerBg);
     }
