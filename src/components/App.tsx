@@ -30,7 +30,7 @@ export function App() {
     (async () => {
       await waitFor(() => {
         try { return (viewport.isMounted?.() ?? true); } catch { return true; }
-      }, 500, 50);
+      }, 500);
 
       try {
         miniApp.setHeaderColor('secondary_bg_color');
