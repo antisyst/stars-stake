@@ -18,7 +18,6 @@ export const StakeSection = () => {
       <div className={styles.buttonsContainer}>
         <Button size="l" mode="filled">Stake Stars</Button>
       </div>
-
     </div>
   )
 }

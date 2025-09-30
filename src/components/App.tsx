@@ -19,35 +19,19 @@ const waitFor = async (pred: () => boolean, t = 1500, step = 50) => {
 export function App() {
   useTelegramSdk();
 
-  miniApp.setBackgroundColor('secondary_bg_color');
-  miniApp.setBottomBarColor('secondary_bg_color');
-  miniApp.setHeaderColor('secondary_bg_color');
+  useEffect(() => {
+    miniApp.setBackgroundColor('secondary_bg_color');
+    miniApp.setBottomBarColor('secondary_bg_color');
+    miniApp.setHeaderColor('bg_color');
+  }, []);
 
   const lp = useLaunchParams();
   const isDark = useSignal(miniApp.isDark);
+
   const isSupportedPlatform = useMemo(
     () => ['ios', 'android', 'web', 'weba'].includes(lp.platform),
     [lp.platform]
   );
-
-  useEffect(() => {
-    (async () => {
-      await waitFor(() => {
-        try { return (viewport.isMounted?.() ?? true); } catch { return true; }
-      }, 500);
-
-      try {
-        if (typeof (miniApp as any).setBackgroundColor === 'function') {
-          const color = getComputedStyle(document.documentElement)
-            .getPropertyValue('--app-secondary-bg')
-            .trim();
-          if (color) (miniApp as any).setBackgroundColor(color);
-        }
-      } catch (e) {
-        console.warn('setHeaderColor early failed:', e);
-      }
-    })();
-  }, [isDark]); 
 
   useEffect(() => {
     const disableScrolling = () => {
@@ -64,6 +48,15 @@ export function App() {
     };
     disableScrolling();
     return enableScrolling;
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      await waitFor(() => {
+        try { return (viewport.isMounted?.() ?? true); } catch { return true; }
+      }, 500);
+      try { viewport.expand(); } catch {}
+    })();
   }, []);
 
   return (

@@ -1,8 +1,6 @@
-import { getPalette, Platform, Scheme } from './palettes';
-import { miniApp } from '@telegram-apps/sdk-react';
+import { getPalette, Platform, Scheme, Palette } from './palettes';
 
-
-export function applyTheme(platform: Platform, scheme: Scheme) {
+export function applyTheme(platform: Platform, scheme: Scheme): Palette {
   const root = document.documentElement;
   const p = getPalette(platform, scheme);
 
@@ -22,13 +20,7 @@ export function applyTheme(platform: Platform, scheme: Scheme) {
   root.style.setProperty('--app-section-separator', p.sectionSeparator);
   root.style.setProperty('--app-bottom-bar-bg', p.bottomBarBg);
 
-  try {
-    if (typeof (miniApp as any).setBackgroundColor === 'function') {
-      (miniApp as any).setBackgroundColor(p.headerBg);
-    }
-  } catch {
-    // ignore
-  }
-
   document.body.style.backgroundColor = p.secondaryBg;
+
+  return p;
 }
