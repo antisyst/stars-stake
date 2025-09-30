@@ -22,7 +22,7 @@ export function App() {
   useEffect(() => {
     miniApp.setBackgroundColor('secondary_bg_color');
     miniApp.setBottomBarColor('secondary_bg_color');
-    miniApp.setHeaderColor('bg_color');
+    miniApp.setHeaderColor('secondary_bg_color');
   }, []);
 
   const lp = useLaunchParams();
