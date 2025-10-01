@@ -12,7 +12,7 @@ export default defineConfig({
   ],
   publicDir: './public',
   server: {
-    host: '172.20.10.9', 
+    host: '192.168.0.106', 
     port: 5173, 
     https: undefined,
     proxy: {

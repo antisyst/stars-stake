@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     justify-content: center;
 
     .columnItem {
@@ -16,37 +16,63 @@
         width: 100%;
 
         .mutedText {
-            color: var(--tg-theme-hint-color);
+            color: var(--app-hint);
             font-size: 15px;
         }
 
-        .starsBalance {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 6px;
+        .apyTitle {
+            font-size: 14px;
+            border-radius: 30px;
+            font-weight: 500;
+            background: var(--app-button);
+            padding: 5px 10px;
 
-            img {
-                width: 26px;
-                height: 26px;
-            }
-
-            .balanceAmount {
-                font-weight: 700;
-                font-size: 19px;
-            }
         }
     }
 
-    .buttonsContainer {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    .starsBalance {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 5px;
 
-    button {
-        width: 100%;
+            .starAmount {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 6px;
+
+                img {
+                    width: 26px;
+                    height: 26px;
+                }
+
+                .balanceAmount {
+                    font-weight: 700;
+                    font-size: 19px;
+                }
+            }
+
+            .value {
+                font-size: 14px;
+                color: var(--app-hint);
+            }
     }
+
+    .buttonsContainer {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 4px;
+
+        button {
+            width: 100%;
+            border-radius: 12px;
+        }
     }
 }

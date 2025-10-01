@@ -7,16 +7,19 @@ export const StakeSection = () => {
     <div className={styles.stakeSection}>
       <div className={styles.columnItem}>
         <p className={styles.mutedText}>Balance</p>
-        <p className={styles.mutedText}>APY</p>
+        <p className={styles.apyTitle}>48% APY</p>
       </div>
-      <div className={styles.columnItem}>
-        <div className={styles.starsBalance}>
+      <div className={styles.starsBalance}>
+         <div className={styles.starAmount}>
           <img src={StarIcon} alt="Star" />
-          <span className={styles.balanceAmount}>0</span>
-        </div>
+          <span className={styles.balanceAmount}>12.450</span>
+         </div>
+         <span className={styles.value}>≈$1,112.42</span>
       </div>
       <div className={styles.buttonsContainer}>
-        <Button size="l" mode="filled">Stake Stars</Button>
+        <Button size="l" mode="filled">
+          Stake Stars
+        </Button>
       </div>
     </div>
   )
