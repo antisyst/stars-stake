@@ -8,6 +8,7 @@
     align-items: center;
     gap: 6px;
     justify-content: center;
+    overflow: hidden;
 
     .columnItem {
         display: flex;
@@ -26,6 +27,7 @@
             font-weight: 500;
             background: var(--app-button);
             padding: 5px 10px;
+            filter: drop-shadow(0 0 1.2rem var(--app-button));
 
         }
     }
@@ -46,19 +48,20 @@
                 gap: 6px;
 
                 img {
-                    width: 26px;
-                    height: 26px;
+                    width: 27px;
+                    height: 27px;
                 }
 
                 .balanceAmount {
                     font-weight: 700;
-                    font-size: 19px;
+                    font-size: 24px;
                 }
             }
 
             .value {
                 font-size: 14px;
                 color: var(--app-hint);
+                margin-top: 2px;
             }
     }
 
@@ -71,9 +74,15 @@
         margin-top: 4px;
 
         button {
-            flex: 0 0 50%;
-            max-width: 50%;
-            border-radius: 12px;
+            width: 100%;
+
+            h6 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 4px;
+                font-size: 16px;
+            }
         }
     }
 }

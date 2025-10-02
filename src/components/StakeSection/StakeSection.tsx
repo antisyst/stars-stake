@@ -1,5 +1,6 @@
 import { Button } from '@telegram-apps/telegram-ui';
 import StarIcon from '@/assets/star-gradient.svg';
+import AddIcon from '@/assets/add.svg';
 import styles from './StakeSection.module.scss';
 
 export const StakeSection = () => {
@@ -17,11 +18,9 @@ export const StakeSection = () => {
          <span className={styles.value}>≈$1,112.42</span>
       </div>
       <div className={styles.buttonsContainer}>
-        <Button size="l" mode="filled">
+        <Button size="m" mode="filled">
+          <img src={AddIcon} alt="" />
           Stake
-        </Button>
-        <Button size='l' mode='bezeled'>
-          Unstake
         </Button>
       </div>
     </div>
