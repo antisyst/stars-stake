@@ -7,56 +7,8 @@ export interface UserData {
   username?: string;
   languageCode?: string;
   photoUrl?: string;
-  savedGifts?: string[];
-}
-
-export interface Referral {
-  id: number;
-  firstName: string;
-  lastName?: string;
-  username?: string;
-  photoUrl?: string;
-  createdAt: string;
-}
-
-export interface GiftType {
-  slug:    string;
-  name:    string;
-  price:   number;
-  status:  'for-sale'|'sold'|'not-for-sale'|'available'|'on-auction';
-}
-
-export type StatusOption = 'all' | 'on-auction' | 'sold' | 'for-sale';
-
-export type PriceSortOption = 'high-to-low' | 'low-to-high';
-
-export interface PurchaseType {
-  slug: string
-  name: string
-  image: string
-  status: 'sold'
-  purchasedAt: string
-  priceStars: number
-}
-
-export interface GiftDetail extends GiftType {
-  description: string;
-  image: string;
-  attributes: { trait_type: string; value: string }[];
-  lottie: string;
-}
-
-export interface LoaderScreenProps {
-  progress: number;
-}
-
-export interface SpinnerProps {
-  size?: number;
-}
-
-export interface SwitchProps {
-  isOn: boolean;
-  onToggle: () => void;
+  starsBalance: number; 
+  currentApy: number; 
 }
 
 export type ToastStatus = 'success' | 'error';
@@ -84,6 +36,11 @@ export interface ToastProviderProps {
   children: ReactNode;
 }
 
+export type Faq = {
+  question: string;
+  answer: string;
+};
+
 export interface Insets {
   top: number;
   bottom: number;
@@ -91,9 +48,71 @@ export interface Insets {
   right: number;
 }
 
+export type FaqSectionProps = {
+  variant?: 'home' | 'full';
+  homeCount?: number;
+  title?: string;
+};
+
+export type ModalProps = {
+  isOpen: boolean;
+  title: string;
+  button?: string;
+  content?: string;
+  onClose: () => void;
+  children?: React.ReactNode;
+  mainButtonBgVar?: string;
+  mainButtonTextVar?: string;
+};
+
+export type ProgressiveTiersBarProps = {
+  widths: [number, number, number, number];
+  topLabels: [string, string, string, string];  
+  colors?: [string, string, string, string]; 
+  ariaLabel?: string;
+  durationPerSeg?: number;
+  stagger?: number; 
+};
+
 export interface Route {
   path: string;
   Component: ComponentType;
   title?: string;
   icon?: JSX.Element;
 }
+
+export interface GlobalStats {
+  totalStaked: number;  
+  exchangeRate: number; 
+  systemHealth: 'Stable' | 'Degraded' | 'Critical';
+}
+
+export interface Position {
+  id?: string;
+  amount: number;
+  apy: number;   
+  tier: 1 | 2 | 3 | 4;
+  createdAt: any;  
+  unlockAt: any; 
+}
+
+export type ActivityType = 'stake' | 'unstake';
+
+export interface Activity {
+  id?: string;
+  type: ActivityType;
+  amount: number; 
+  apy: number;      
+  createdAt: any;
+}
+
+export type AppDataContextType = {
+  loading: boolean;
+  uid: string | null;
+  user: UserData | null;
+  stats: GlobalStats | null;
+  positions: Position[];
+  effectiveApy: number; 
+  exchangeRate: number;
+  balanceUsd: number;
+};

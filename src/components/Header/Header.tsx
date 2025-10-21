@@ -1,0 +1,16 @@
+import styles from './Header.module.scss';
+import StarIcon from '@/assets/icons/star.svg?react';
+
+export const Header = () => {
+  return (
+    <div className={styles.mainHeader}>
+        <div className={`${styles.iconWrapper} gradient-move`}>
+         <StarIcon  />
+        </div>
+        <div className={styles.headerText}>
+            <h2 className={styles.title}>Stars Stake</h2>
+            <p className={styles.subtitle}>Earn up to 48% APY through staking</p>
+        </div>
+    </div>
+  )
+}

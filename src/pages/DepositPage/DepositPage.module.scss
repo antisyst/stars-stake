@@ -1,0 +1,151 @@
+.depositPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: flex-start;
+
+  .depositLayout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--app-section-bg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .depositTag {
+    position: absolute;
+    z-index: 1000;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    background: var(--app-secondary-bg);
+    justify-content: center;
+    gap: 2px;
+    padding: 0 1px;
+    height: 24px;
+    border-radius: 12px;
+
+    svg { width: 22px; height: 22px; }
+
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      padding-right: 6px;
+    }
+  }
+
+  .mainDepositContainer {
+    height: calc(var(--tg-viewport-stable-height) - 45px);
+    transition: height 0.2s linear;
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+
+    .inputCard {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+
+      svg { width: 47px; height: 47px; }
+
+      .inputWrapper {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+
+        .amountText {
+          font-family: 'SF Pro Rounded', inherit !important;
+          font-size: 44px;
+          font-weight: 700 !important;
+          line-height: 1.2;
+          letter-spacing: inherit;
+        }
+
+        .sizer {
+          position: absolute;
+          visibility: hidden;
+          pointer-events: none;
+          white-space: pre;
+        }
+
+        input {
+          border: none;
+          background: transparent;
+          font-family: 'SF Pro Rounded' !important;
+          color: var(--app-text);
+          outline: none;
+          padding: 0;
+          margin: 0;
+          caret-color: var(--app-text);
+
+          &.hasValueStroke { 
+            -webkit-text-stroke: 1px var(--app-text);
+          }
+
+          &:placeholder-shown { -webkit-text-stroke: 0 !important; }
+
+          @supports (-webkit-touch-callout: none) {
+            font-size: 36px;
+          }
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          &::placeholder {
+            color: var(--app-text);
+            opacity: 1;
+            -webkit-text-stroke: 1px var(--app-text);
+          }
+        }
+      }
+    }
+
+    .infoTitle {
+      width: 100%;
+      margin-top: 5px;
+      text-align: center;
+
+      .usdNote {
+        font-family: 'SF Pro Rounded' !important;
+        font-weight: bold !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 16px;
+        color: var(--app-hint);
+
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .warning {
+        text-align: center;
+        width: 100%;
+        color: var(--app-destructive-text);
+        font-size: 16px;
+        font-family: 'SF Pro Rounded' !important;
+        font-weight: bold !important;
+      }
+    }
+  }
+}

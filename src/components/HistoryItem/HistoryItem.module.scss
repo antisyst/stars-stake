@@ -1,0 +1,103 @@
+.item {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  gap: 12px;
+  width: 100%;
+  border-bottom: 1px solid var(--app-secondary-bg); 
+
+  .iconWrapper {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--app-accent-text); 
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .itemBody {
+    flex: 1 1 auto;    
+    min-width: 0;      
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .rowTop,
+    .rowBottom {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .rowTop {
+      .type {
+        font-family: 'SF Pro Rounded' !important;
+        font-weight: bold !important;
+        font-size: 17px;
+        line-height: 1.1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .amount {
+        white-space: nowrap;
+        font-size: 17px;
+        display: flex;
+        justify-content: flex-end;
+        font-family: 'SF Pro Rounded' !important;
+        font-weight: bold !important;
+        align-items: flex-start;
+        gap: 4px;
+
+        svg {
+          width: 18px;
+          height: 18px;
+          transform: translateY(1px);
+        }
+      }
+    }
+
+    .rowBottom { 
+      margin-top: 2px;
+
+      .meta {
+        color: var(--app-hint);
+        font-size: 14px;
+        line-height: 1.1;
+        font-family: 'SF Pro Rounded' !important;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .apy {
+        font-size: 14px;
+        white-space: nowrap;
+        font-family: 'SF Pro Rounded' !important;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .amountPositive { 
+    color: var(--app-green);
+  }
+
+  .amountNegative {
+    color: var(--app-destructive-text); 
+  }
+}

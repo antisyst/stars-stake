@@ -1,0 +1,52 @@
+.historySection {
+    width: 100%;
+    padding: 12px;
+    background: var(--app-section-bg);
+    border-radius: var(--br-section);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    justify-content: space-between;
+
+    .historyTitle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+
+        .iconWrapper {
+            width: 36px;
+            height: 36px;
+            background: var(--tgui--secondary_fill);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 36px;
+
+            svg {
+                width: 23px;
+                height: 23px;
+                display: block;
+            }
+        }
+
+        .historyLabel {
+            font-size: 16.5px;
+            font-weight: 500;
+        }
+    }
+
+    .arrowWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+        }   
+    }
+}

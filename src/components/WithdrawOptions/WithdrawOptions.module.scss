@@ -1,0 +1,57 @@
+.withdrawOptions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 26px;
+    justify-content: flex-start;
+    gap: 4px;
+
+    .withdrawSection {
+        width: 100%;
+        padding: 0 12px;
+        background: var(--app-section-bg);
+        border-radius: var(--br-section);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        gap: 2px;
+        justify-content: center;
+        overflow: hidden;
+
+        .item {
+            width: 100%;
+            font-size: 16.5px;
+            font-weight: 500;
+            display: flex;
+            padding: 12px 0;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+
+            &:first-child {
+              border-bottom: 1px solid var(--app-secondary-bg);
+            }
+
+            svg {
+                width: 33px;
+                height: 33px;
+            }
+        }
+
+        .helpWrapper {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}

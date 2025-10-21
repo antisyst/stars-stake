@@ -1,18 +1,30 @@
 import { useNavigate } from 'react-router-dom';
-import { backButton } from '@telegram-apps/sdk-react';
-import { PropsWithChildren, useEffect } from 'react';
+import {
+  showBackButton,
+  hideBackButton,
+  onBackButtonClick,
+} from '@telegram-apps/sdk';
+import { type PropsWithChildren, useEffect } from 'react';
 
 export function Page({ children, back = true }: PropsWithChildren<{ back?: boolean }>) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (back) {
-      backButton.show();
-      const off = backButton.onClick(() => navigate(-1));
-      return off;
-    } else {
-      backButton.hide();
-    }
+    let off: (() => void) | undefined;
+
+    try {
+      if (back) {
+        // Show and bind; rely on runtime guards inside SDK
+        try { showBackButton(); } catch {}
+        try { off = onBackButtonClick(() => navigate(-1)); } catch {}
+      } else {
+        try { hideBackButton(); } catch {}
+      }
+    } catch {}
+
+    return () => {
+      try { off?.(); } catch {}
+    };
   }, [back, navigate]);
 
   return <>{children}</>;

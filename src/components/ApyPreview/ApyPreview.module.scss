@@ -1,0 +1,171 @@
+.apyLine {
+  position: absolute;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  left: 16px;
+  width: calc(100% - 32px);
+  z-index: 1001;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: visible;
+
+  .row {
+    width: 100%;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .apyInfo {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    .label {
+      font-family: 'SF Pro Rounded' !important;
+      font-size: 16px;
+      font-weight: 700 !important;
+    }
+
+    .value {
+      color: var(--app-green);
+
+      .title {
+        padding: 2px 4px;
+        border-radius: 6px;
+        margin-right: 6px;
+        background: rgba(34, 197, 94, 0.12);
+        font-size: 15px !important;
+        font-family: 'SF Pro Rounded' !important;
+        font-weight: 700 !important;
+      }
+    }
+  }
+
+  .rowRightSide {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    font-weight: 700 !important;
+
+    .gainProfitValue {
+      .yearlyGain {
+        font-size: 16px;
+        font-family: 'SF Pro Rounded' !important;
+        font-weight: 700 !important;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        svg {
+          width: 19px;
+          overflow: hidden;
+          height: 19px;
+          margin: 0 4px;
+        }
+      }
+    }
+
+    .toggle {
+      display: flex;
+      position: relative;
+      width: 36px;
+      background: var(--app-button);
+      padding: 0;
+      height: 25px;
+      min-width: 36px;
+      border: none;
+      align-items: center;
+      border-radius: 16px;
+      justify-content: center;
+
+      .chevronWrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 19px;
+          height: 19px;
+          transform-box: fill-box;
+        }
+      }
+    }
+  }
+
+  .details {
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 12px;
+    background: var(--app-section-bg);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    will-change: transform, filter, opacity, height, border-radius;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 6px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-height: 24px;
+
+        .itemLabel {
+          color: var(--app-hint);
+          font-size: 15px;
+          font-weight: 700;
+          font-family: 'SF Pro Rounded' !important;
+          white-space: nowrap;
+        }
+
+        .itemValue {
+          display: inline-flex;
+          align-items: center;
+          gap: 3px;
+          font-size: 15px;
+          font-weight: 700;
+          font-family: 'SF Pro Rounded' !important;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          svg { width: 16px; height: 16px; }
+          .sep { opacity: 0.6; margin: 0 2px; font-weight: 600; }
+        }
+
+        .apyTitle {
+            font-size: 14.5px !important;
+            font-family: 'SF Pro Rounded' !important;
+            border-radius: 6px;
+            padding: 2px 4px;
+            color: var(--app-green);
+            background: rgba(34, 197, 94, 0.12);
+            font-weight: 700 !important;
+        }
+      }
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(var(--app-section-bg), 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: default;
+}

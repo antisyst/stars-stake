@@ -56,21 +56,21 @@ const iosLight: Palette = {
 };
 
 const androidDark: Palette = {
-  bg: '#1e1e1e',
-  sectionBg: '#181819',
-  secondaryBg: '#000000',
+  bg: '#212d3b',
+  sectionBg: '#1d2733',
+  secondaryBg: '#151e27',
   text: '#ffffff',
-  hint: '#7d7d7d',
-  link: '#57a7e0',
+  hint: '#7d8b99',
+  link: '#5eabe1',
   button: '#50a8eb',
   buttonText: '#ffffff',
-  headerBg: '#232326',
+  headerBg: '#242d39',
   accentText: '#64b5ef',
-  sectionHeaderText: '#6cb6f8',
-  subtitle: '#7e7e7f',
+  sectionHeaderText: '#79c4fc',
+  subtitle: '#7b8790',
   destructiveText: '#ee686f',
-  sectionSeparator: '#000000',
-  bottomBarBg: '#000000',
+  sectionSeparator: '#0d1218',
+  bottomBarBg: '#151e27',
 };
 
 const androidLight: Palette = {

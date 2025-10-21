@@ -1,0 +1,44 @@
+.emptySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 20px;
+  background: var(--app-section-bg);
+  border-radius: var(--br-section);
+  text-align: center;
+  color: var(--text-color);
+
+  .iconWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+
+    .lottie,
+    .img,
+    .iconNode {
+      display: block;
+      user-select: none;
+    }
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 4px 0 2px;
+    font-family: 'SF Pro Rounded' !important;
+    font-weight: bold !important;
+    -webkit-text-stroke: 0.4px var(--app-text);
+  }
+
+  .subtitle {
+    font-size: 15px;
+    font-family: 'SF Pro Rounded' !important;
+    color: var(--app-hint);
+  }
+  
+  .error {
+    text-align: center;
+    color: var(--app-destructive-text); 
+  }
+}

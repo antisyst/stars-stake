@@ -1,0 +1,86 @@
+.ecosystemBenefits {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 26px;
+  justify-content: flex-start;
+  gap: 4px;
+
+  .ecosystemContainer {
+    width: 100%;
+    padding: 0 12px;
+    background: var(--app-section-bg);
+    border-radius: var(--br-section);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    gap: 2px;
+    justify-content: center;
+    overflow: hidden;
+
+    .containerItem {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      justify-content: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--app-secondary-bg);
+      gap: 10px;
+
+      .icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 36px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          display: block;
+        }
+      }
+
+      .title {
+        font-size: 16.5px;
+        line-height: 1.2;
+        font-weight: 500;
+      }
+
+      .arrowWrapper {
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:nth-child(1) .icon {
+        background: rgba(0, 122, 255, 0.12); 
+      }
+
+      &:nth-child(2) .icon {
+        background: rgba(34, 197, 94, 0.12);
+      }
+
+      &:nth-child(3) .icon {
+        background: rgba(255, 159, 26, 0.12);
+      }
+    }
+  }
+}

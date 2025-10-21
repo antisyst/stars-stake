@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import Toast from '@/components/Toast/Toast';
+import { Toast } from '@/components/Toast/Toast';
 import type {
   ToastOptions,
   ToastContextType,

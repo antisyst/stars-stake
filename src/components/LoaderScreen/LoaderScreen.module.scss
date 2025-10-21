@@ -1,0 +1,25 @@
+.loaderScreen {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    background: var(--app-secondary-bg);
+    align-items: center;
+    justify-content: center;
+
+    .iconWrapper {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background: var(--app-button);
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 65px;
+            height: 65px;
+        }
+    }
+}

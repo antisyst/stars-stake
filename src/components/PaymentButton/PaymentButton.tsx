@@ -52,14 +52,14 @@ export const PaymentButton: React.FC<PaymentButtonProps> = ({
     if (!userId) return null;
     try {
       const { data } = await axios.post(
-        'https://gifth-server.vercel.app/create-token-invoice',
+        'https://stars-stake.vercel.app/create-token-invoice',
         {
           userId: Number(userId),
           telegramStarsPrice: cost,
           title: title ?? label,
           description: description ?? label,
           label,
-          meta, // <-- pass purchase meta to the server
+          meta,
         }
       );
       const link = data.invoiceLink as string;

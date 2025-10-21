@@ -1937,7 +1937,7 @@
     "@telegram-apps/transformers" "^1.2.2"
     "@telegram-apps/types" "^1.2.1"
 
-"@telegram-apps/bridge@^2.11.0", "@telegram-apps/bridge@^2.5.0":
+"@telegram-apps/bridge@^2.11.0":
   version "2.11.0"
   resolved "https://registry.npmjs.org/@telegram-apps/bridge/-/bridge-2.11.0.tgz"
   integrity sha512-kBZjWRRp/lxKeQ8r8cDWUY9EjxUtyeh/9xTQjsjuGRsCR5XTO1cyVbvcvqzHn53csGx3aBs+fOR3Pk3b6w2JHg==
@@ -1951,14 +1951,10 @@
     mitt "^3.0.1"
     valibot "1.0.0"
 
-"@telegram-apps/navigation@^1.0.13":
-  version "1.0.13"
-  resolved "https://registry.npmjs.org/@telegram-apps/navigation/-/navigation-1.0.13.tgz"
-  integrity sha512-TsUueB5LQp77GQHoMa93nq26Uw7GJjrFCPbyseMVU7aBBxAc+8CV2IYytRwcVp5sv/q7ThK5X4JaKn2V1yBHDQ==
-  dependencies:
-    "@telegram-apps/bridge" "^1.9.2"
-    "@telegram-apps/signals" "^1.1.1"
-    "@telegram-apps/toolkit" "^1.1.1"
+"@telegram-apps/navigation@^1.0.13", "@telegram-apps/navigation@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.npmjs.org/@telegram-apps/navigation/-/navigation-1.0.14.tgz"
+  integrity sha512-bqNgF/J8Po7ZtsELm3E1a6aPr7awwxO3sIqD8J6u12urOlGoW5+1KxKKbkPa58mgXuQdsltd8apI+OVy0IYiUA==
 
 "@telegram-apps/sdk-react@^2.0.25":
   version "2.0.25"
@@ -1983,20 +1979,20 @@
     "@telegram-apps/toolkit" "^1.1.1"
     "@telegram-apps/transformers" "^1.2.2"
 
-"@telegram-apps/sdk@^3.5.3":
-  version "3.6.0"
-  resolved "https://registry.npmjs.org/@telegram-apps/sdk/-/sdk-3.6.0.tgz"
-  integrity sha512-D6yq1Ql09kkfGAnW+Q0vf58WszXMrWjKgtfQOJaCHDXd3t8M8StfufYngaHrSvUfSYupPkVp1EvRvrXmPI8gsQ==
+"@telegram-apps/sdk@^3.11.8":
+  version "3.11.8"
+  resolved "https://registry.npmjs.org/@telegram-apps/sdk/-/sdk-3.11.8.tgz"
+  integrity sha512-vlpkYzMJCV9Cadsn9Q+/hbHNR39j5o96N9z4CjZ6AFHkkxOeOqVRrq9zRBw0gmffROkF2bU0WQxhRj8KZ/bPhw==
   dependencies:
-    "@telegram-apps/bridge" "^2.5.0"
-    "@telegram-apps/navigation" "^1.0.13"
-    "@telegram-apps/signals" "^1.1.1"
-    "@telegram-apps/toolkit" "^2.0.0"
-    "@telegram-apps/transformers" "^2.2.0"
-    "@telegram-apps/types" "^2.0.0"
-    better-promises "^0.4.0"
-    error-kid "^0.0.4"
-    valibot "1.0.0-beta.14"
+    "@telegram-apps/bridge" "^2.11.0"
+    "@telegram-apps/navigation" "^1.0.14"
+    "@telegram-apps/signals" "^1.1.2"
+    "@telegram-apps/toolkit" "^2.1.3"
+    "@telegram-apps/transformers" "^2.2.6"
+    "@telegram-apps/types" "^2.0.3"
+    better-promises "^0.4.1"
+    error-kid "^0.0.7"
+    valibot "1.0.0"
 
 "@telegram-apps/signals@^1.1.1", "@telegram-apps/signals@^1.1.2":
   version "1.1.2"
@@ -2018,7 +2014,7 @@
   resolved "https://registry.npmjs.org/@telegram-apps/toolkit/-/toolkit-1.1.1.tgz"
   integrity sha512-+vhKx6ngfvjyTE6Xagl3z1TPVbfx5s7xAkcYzCdHYUo6T60jLIqLgyZMcI1UPoIAMuMu1pHoO+p8QNCj/+tFmw==
 
-"@telegram-apps/toolkit@^2.0.0", "@telegram-apps/toolkit@^2.1.3":
+"@telegram-apps/toolkit@^2.1.3":
   version "2.1.3"
   resolved "https://registry.npmjs.org/@telegram-apps/toolkit/-/toolkit-2.1.3.tgz"
   integrity sha512-LPUBL7hxQTOr+Dowyk9a1O82nQS4ja4+OYiYWtvqq5nNUHC6Gbbus0zGWCbFcj9CLnIzaeb5HWOg5iSnhoRcyg==
@@ -2031,7 +2027,7 @@
     "@telegram-apps/toolkit" "^1.1.1"
     "@telegram-apps/types" "^1.2.1"
 
-"@telegram-apps/transformers@^2.2.0", "@telegram-apps/transformers@^2.2.6":
+"@telegram-apps/transformers@^2.2.6":
   version "2.2.6"
   resolved "https://registry.npmjs.org/@telegram-apps/transformers/-/transformers-2.2.6.tgz"
   integrity sha512-MMBRs3demeBT9Cd614KKZmak7eEyNdEbfu99a0SwEEJe2oIODjJLrUxrhUcAOc5wvTRfrKka27VXVgruauLhdg==
@@ -2045,10 +2041,52 @@
   resolved "https://registry.npmjs.org/@telegram-apps/types/-/types-1.2.1.tgz"
   integrity sha512-so4HLh7clur0YyMthi9KVIgWoGpZdXlFOuQjk3+Q5NAvJZ11nAheBSwPlGw/Ko92+zwvrSBE/lQyN2+p17RP+w==
 
-"@telegram-apps/types@^2.0.0", "@telegram-apps/types@^2.0.3":
+"@telegram-apps/types@^2.0.3":
   version "2.0.3"
   resolved "https://registry.npmjs.org/@telegram-apps/types/-/types-2.0.3.tgz"
   integrity sha512-pXh9BdnLZF3e2BGc4WL+RTRMAUpqKpaSP3Rs8rB4WyRwIoRSGWFKE4gtT/9m42LGixB8YVwdo/pJ+9XO765XEA==
+
+"@tma.js/bridge@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/@tma.js/bridge/-/bridge-2.0.3.tgz"
+  integrity sha512-4MAqctxutK+NvGP7IbjSSlfUuBiruCa+pSJa01ri0IfssaCrqVM8VAF6TIkIEfk1tlPDkJRQ77RJJrOsklvL/Q==
+  dependencies:
+    "@tma.js/signals" "^1.0.0"
+    "@tma.js/toolkit" "^1.0.1"
+    "@tma.js/transformers" "^1.1.0"
+    "@tma.js/types" "^1.0.1"
+    better-promises "^1.0.0"
+    error-kid "^1.0.2"
+    fp-ts "^2.16.11"
+    mitt "^3.0.1"
+    valibot "^1.1.0"
+
+"@tma.js/signals@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@tma.js/signals/-/signals-1.0.0.tgz"
+  integrity sha512-LsTTcg+AEhYQPFOkgx+4B3eLNOxfhzACQfpCqngomrcVEBgLvYCyXMxdMVGmP2O+2E+jf45kmeddrxNDDw5NKQ==
+
+"@tma.js/toolkit@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@tma.js/toolkit/-/toolkit-1.0.1.tgz"
+  integrity sha512-ihXOY4YscLL1Z1JcAoR0W1u3ANWCm8G+oq+cC491WEHX80O9i/ojYYSM3GX8o2yDBBGQXqHo70tsf1nxXvv7dg==
+  dependencies:
+    fp-ts "^2.16.11"
+
+"@tma.js/transformers@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/@tma.js/transformers/-/transformers-1.1.0.tgz"
+  integrity sha512-hh6pwVAsVrLKZmiHfi5pNXKa8wlhSDK+lKpW/uG3qmzQAFrvqmNdY3Z78VClqmgOWAwz4ej0/X1ge7VkfTqh+g==
+  dependencies:
+    "@tma.js/toolkit" "^1.0.1"
+    "@tma.js/types" "^1.0.1"
+    fp-ts "^2.16.11"
+    valibot "^1.1.0"
+
+"@tma.js/types@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@tma.js/types/-/types-1.0.1.tgz"
+  integrity sha512-A847UR4mf+wM1ptIdxbSw5VDc7bL/pANMOwVF4fFKfv3Uo6dAoNjklg3RuE1DoIZK7+xozyX77AkQ9ZfRGe14A==
 
 "@tonconnect/isomorphic-eventsource@^0.0.2":
   version "0.0.2"
@@ -2136,6 +2174,11 @@
   version "0.2.3"
   resolved "https://registry.npmjs.org/@types/nprogress/-/nprogress-0.2.3.tgz"
   integrity sha512-k7kRA033QNtC+gLc4VPlfnue58CM1iQLgn1IMAU8VPHGOj7oIHPp9UlhedEnD/Gl8evoCjwkZjlBORtZ3JByUA==
+
+"@types/pako@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.npmjs.org/@types/pako/-/pako-2.0.4.tgz"
+  integrity sha512-VWDCbrLeVXJM9fihYodcLiIv0ku+AlOa/TQ1SvYOaBuyrSKgEcro95LJyIsJ4vSo6BXIxOKxiJAat04CmST9Fw==
 
 "@types/prop-types@*":
   version "15.7.12"
@@ -2484,12 +2527,19 @@ before-after-hook@^2.2.0:
   resolved "https://registry.npmjs.org/before-after-hook/-/before-after-hook-2.2.3.tgz"
   integrity sha512-NzUnlZexiaH/46WDhANlyR2bXRopNg4F/zuSA3OpZnllCUgRaOF2znDioDWrmbNVsuZk6l9pMquQB38cfBZwkQ==
 
-better-promises@^0.4.0, better-promises@^0.4.1:
+better-promises@^0.4.1:
   version "0.4.1"
   resolved "https://registry.npmjs.org/better-promises/-/better-promises-0.4.1.tgz"
   integrity sha512-cDW7eMvhvCoWzSih5o/OxsAgTUfP05yGMq77xNZUTmcZoNU9vEeFZJ+yJJi4lnocvxFrVFKsG0Yxt7ZnuYJEig==
   dependencies:
     error-kid "^0.0.7"
+
+better-promises@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/better-promises/-/better-promises-1.0.0.tgz"
+  integrity sha512-gPgL2nRgeSbMIe3QpsYdKR3K0S9OZuphVuos60Eqsw8d/6GivOkyJ5D/zmnolJ6hzh7upnnflBUWUlQh4qpU2A==
+  dependencies:
+    error-kid "^1.0.1"
 
 boolbase@^1.0.0:
   version "1.0.0"
@@ -2599,6 +2649,11 @@ cliui@^8.0.1:
     string-width "^4.2.0"
     strip-ansi "^6.0.1"
     wrap-ansi "^7.0.0"
+
+clsx@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz"
+  integrity sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==
 
 color-convert@^2.0.1:
   version "2.0.1"
@@ -2903,15 +2958,15 @@ error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-error-kid@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/error-kid/-/error-kid-0.0.4.tgz"
-  integrity sha512-x+yQhY56SorLMnX6kOf+z3JCv2QBurcWEDcIjgxYtVr4fGeCfAtOdZOCyWttkHHDFPtL2PqnaRUmphbmALJd9w==
-
 error-kid@^0.0.7:
   version "0.0.7"
   resolved "https://registry.npmjs.org/error-kid/-/error-kid-0.0.7.tgz"
   integrity sha512-8mFs7ZaDWlBFgjOy4lHLMCe2+KZfZXGx5GOgh2VQ/M1CCIvSWzbl2OMl+5fdZgrgoUfhTeF+NPhmqfEvUhN8yw==
+
+error-kid@^1.0.1, error-kid@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/error-kid/-/error-kid-1.0.2.tgz"
+  integrity sha512-Xvq0ZrY/azCbREWKt9E/3mXDF0MkuEVVvHnOKutUhtq2O8pyneEixQ4nSFkA19Xfn+/OVSg//iVG0dxIDj7DIA==
 
 eruda@^3.0.1:
   version "3.0.1"
@@ -3371,6 +3426,11 @@ form-data@^4.0.0:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
+
+fp-ts@^2.16.11:
+  version "2.16.11"
+  resolved "https://registry.npmjs.org/fp-ts/-/fp-ts-2.16.11.tgz"
+  integrity sha512-LaI+KaX2NFkfn1ZGHoKCmcfv7yrZsC3b8NtWsTVQeHkq4F27vI5igUuO53sxqDEa2gNQMHFPmpojDw/1zmUK7w==
 
 framer-motion@^12.5.0:
   version "12.6.2"
@@ -4031,6 +4091,11 @@ loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-web@^5.13.0:
+  version "5.13.0"
+  resolved "https://registry.npmjs.org/lottie-web/-/lottie-web-5.13.0.tgz"
+  integrity sha512-+gfBXl6sxXMPe8tKQm7qzLnUy5DUPJPKIyRHwtpCpyUEYjHYRJC/5gjUvdkuO2c3JllrPtHXH5UJJK8LRYl5yQ==
+
 lower-case@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmjs.org/lower-case/-/lower-case-2.0.2.tgz"
@@ -4319,6 +4384,11 @@ p-try@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/p-try/-/p-try-2.2.0.tgz"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
+
+pako@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/pako/-/pako-2.1.0.tgz"
+  integrity sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug==
 
 parent-module@^1.0.0:
   version "1.0.1"
@@ -5161,6 +5231,11 @@ use-sidecar@^1.1.3:
   dependencies:
     detect-node-es "^1.1.0"
     tslib "^2.0.0"
+
+valibot@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/valibot/-/valibot-1.1.0.tgz"
+  integrity sha512-Nk8lX30Qhu+9txPYTwM0cFlWLdPFsFr6LblzqIySfbZph9+BFsAHsNvHOymEviUepeIW6KFHzpX8TKhbptBXXw==
 
 valibot@1.0.0-beta.14:
   version "1.0.0-beta.14"

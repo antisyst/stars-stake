@@ -1,12 +1,12 @@
 .stakeSection {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
     background: var(--app-section-bg);
-    border-radius: 8px;
+    border-radius: var(--br-section);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
     justify-content: center;
     overflow: hidden;
 
@@ -23,19 +23,39 @@
 
         .apyTitle {
             font-size: 14px;
-            border-radius: 30px;
-            font-weight: 500;
-            background: var(--app-button);
-            padding: 5px 10px;
-            filter: drop-shadow(0 0 1.2rem var(--app-button));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 3px;
 
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+
+    .rowItem {
+        display: flex;
+        width: 100%;
+        margin-top: 4px;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 6px;
+
+        .currentApy {
+            color: #41bd58;
+            font-family: 'SF Pro Rounded' !important;
+            font-weight: bold !important;
+            font-size: 21px;
+            -webkit-text-stroke: 0.2px #41bd58;
         }
     }
 
     .starsBalance {
             display: flex;
             align-items: flex-start;
-            width: 100%;
             flex-direction: column;
             justify-content: flex-start;
             gap: 5px;
@@ -47,21 +67,22 @@
                 justify-content: flex-start;
                 gap: 6px;
 
-                img {
+                svg {
                     width: 27px;
                     height: 27px;
                 }
 
                 .balanceAmount {
-                    font-weight: 700;
                     font-size: 24px;
+                    font-family: 'SF Pro Rounded' !important;
+                    font-weight: bold !important;
+                    -webkit-text-stroke: 0.6px var(--app-text);
                 }
             }
 
             .value {
                 font-size: 14px;
                 color: var(--app-hint);
-                margin-top: 2px;
             }
     }
 
@@ -71,17 +92,53 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
-        margin-top: 4px;
+        margin-top: 8px;
 
         button {
             width: 100%;
+            overflow: hidden;
+            height: 47px;
 
             h6 {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                gap: 4px;
-                font-size: 16px;
+                gap: 5px;
+                font-size: 17px;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+
+    .buttonsContainerRow {
+        display: flex;
+        margin-top: 8px;
+        flex-direction: row;
+        gap: 8px;
+        width: 100%;
+        flex-wrap: nowrap;
+        width: 100%;
+
+        button {
+            flex: 1;
+            height: 47px;
+            width: 50%;
+
+            h6 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                font-size: 17px;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
             }
         }
     }

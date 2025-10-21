@@ -1,0 +1,1 @@
+export const formatForInput = (n: number) => (Number.isFinite(n) ? n.toLocaleString('en-US') : '');

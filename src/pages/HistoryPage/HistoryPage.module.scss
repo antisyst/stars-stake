@@ -1,0 +1,21 @@
+.historyPage {
+  width: 100%;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  
+  .list {
+    width: 100%;
+    border-radius: 16px;
+    background: var(--app-section-bg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .empty {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
