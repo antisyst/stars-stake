@@ -24,6 +24,13 @@ export default defineConfig({
     tsconfigPaths(),
     mkcert(),
   ],
+  ssr: {
+    noExternal: [
+      '@telegram-apps/toolkit',
+      '@telegram-apps/sdk',
+      '@telegram-apps/sdk-react',
+    ],
+  },
   publicDir: './public',
   server: {
     host: '192.168.0.104', 
