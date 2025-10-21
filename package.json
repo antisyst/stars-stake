@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "packageManager": "pnpm@8.15.8",
+  "packageManager": "pnpm@9.0.0",
   "engines": { "node": ">=20 <21" },
   "homepage": "https://telegram-mini-apps.github.io/reactjs-template",
   "scripts": {
