@@ -20,7 +20,7 @@ export const HistoryItem: React.FC<Props> = ({ data }) => {
       aria-label={isStake ? 'Stake' : 'Unstake'}
     >
        <div className={styles.iconWrapper} aria-hidden>
-        <ArrowDownIcon />
+        <ArrowDownIcon className='white-icon'/>
       </div>
       <div className={styles.itemBody}>
         <div className={styles.rowTop}>
