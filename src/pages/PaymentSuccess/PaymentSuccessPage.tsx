@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Page } from '@/components/Page';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, type Variants, type Transition } from 'framer-motion';
 import { useAppData } from '@/contexts/AppDataContext';
 import { useRates } from '@/contexts/RatesContext';
 import { formatNumber } from '@/utils/formatNumber';
@@ -26,14 +26,17 @@ export const PaymentSuccessPage: React.FC = () => {
   const usdVal = useMemo(() => (exchangeRate ? paid * exchangeRate : 0), [paid, exchangeRate]);
   const tonVal = useMemo(() => (tonUsd > 0 ? usdVal / tonUsd : 0), [usdVal, tonUsd]);
 
-  const shellVariants = {
+  const easeOutExpo: NonNullable<Transition['ease']> =
+    [0.16, 1, 0.3, 1]; 
+
+  const shellVariants: Variants = {
     initial: { opacity: 0, y: 24, scale: 0.98, filter: 'blur(8px)' },
     animate: {
       opacity: 1,
       y: 0,
       scale: 1,
       filter: 'blur(0px)',
-      transition: { duration: 0.22, ease: 'easeOut' }
+      transition: { duration: 0.22, ease: easeOutExpo }
     }
   };
 
@@ -50,8 +53,10 @@ export const PaymentSuccessPage: React.FC = () => {
           <div className={styles.iconWrap} aria-hidden="true">
             <SuccessCheck size={130} />
           </div>
+
           <h2 className={styles.title}>Stake Confirmed</h2>
           <p className={styles.subtitle}>Your deposit has been locked for {lockDays} days.</p>
+
           <div className={styles.detailsCard} role="list">
             <div className={styles.item} role="listitem">
               <span className={styles.itemLabel}>APY</span>
@@ -59,6 +64,7 @@ export const PaymentSuccessPage: React.FC = () => {
                 {Number.isFinite(apy) ? apy.toFixed(1) : '—'}%
               </span>
             </div>
+
             <div className={styles.item} role="listitem">
               <span className={styles.itemLabel}>Staked Stars</span>
               <span className={styles.itemValue}>
@@ -66,23 +72,28 @@ export const PaymentSuccessPage: React.FC = () => {
                 <strong>{formatNumber(paid)}</strong>
               </span>
             </div>
+
             <div className={styles.item} role="listitem">
               <span className={styles.itemLabel}>≈ USD</span>
               <span className={styles.itemValue}>${formatNumber(Number(usdVal.toFixed(2)))}</span>
             </div>
+
             <div className={styles.item} role="listitem">
               <span className={styles.itemLabel}>≈ TON</span>
               <span className={styles.itemValue}>{tonVal ? tonVal.toFixed(3) : '—'} TON</span>
             </div>
+
             <div className={styles.item} role="listitem">
               <span className={styles.itemLabel}>Lock Period</span>
               <span className={styles.itemValue}>{lockDays} days</span>
             </div>
+
             <div className={styles.item} role="listitem">
               <span className={styles.itemLabel}>Unlock Date</span>
               <span className={styles.itemValue}>{unlock || '—'}</span>
             </div>
           </div>
+
           <button
             className={styles.primaryBtn}
             onClick={() => navigate('/home', { replace: true })}
@@ -90,6 +101,7 @@ export const PaymentSuccessPage: React.FC = () => {
           >
             Back to Overview
           </button>
+
           {requested > paid ? (
             <p className={styles.note}>
               Requested: {formatNumber(requested)} Stars · Payable charged: {formatNumber(paid)} Stars
