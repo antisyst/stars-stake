@@ -3,8 +3,9 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "packageManager": "pnpm@9.0.0",
-  "engines": { "node": ">=20 <21" },
+  "engines": {
+    "node": ">=20 <21"
+  },
   "homepage": "https://telegram-mini-apps.github.io/reactjs-template",
   "scripts": {
     "deploy": "gh-pages -d dist",

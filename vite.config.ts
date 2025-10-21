@@ -29,6 +29,7 @@ export default defineConfig({
       '@telegram-apps/toolkit',
       '@telegram-apps/sdk',
       '@telegram-apps/sdk-react',
+      '@telegram-apps/telegram-ui',
     ],
   },
   publicDir: './public',
