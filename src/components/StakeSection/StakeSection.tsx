@@ -18,8 +18,8 @@ export const StakeSection = () => {
   const { showError } = useContext(ToastContext);
   const navigate = useNavigate();
 
-  const balance = user?.starsBalance ?? 0;
-  const apyStr = formatApy(effectiveApy); 
+  const balanceInt = user?.starsBalance ?? 0;
+  const apyStr = formatApy(effectiveApy);
 
   const apyContent = [
     'APY stands for Annual Percentage Yield, representing the total yearly return including compound rewards.',
@@ -31,12 +31,12 @@ export const StakeSection = () => {
   const goDeposit = () => navigate('/deposit');
 
   const handleWithdraw = async () => {
-    if (balance <= 0) {
+    if (balanceInt <= 0) {
       showError('You have no balance to withdraw');
       return;
     }
-    if (balance < 100) {
-      showError('You need at least 100 Stars to make a withdrawal.');
+    if (balanceInt < 100) {
+      showError('You need at least 200 Stars to make a withdrawal.');
       return;
     }
   };
@@ -56,10 +56,12 @@ export const StakeSection = () => {
           <div className={styles.starsBalance}>
             <div className={styles.starAmount}>
               <StarIcon />
-              <span className={styles.balanceAmount}>{formatNumber(balance)}</span>
+              <span className={styles.balanceAmount}>{formatNumber(balanceInt)}</span>
             </div>
           </div>
-          <h2 className={styles.currentApy}>{apyStr}%</h2>
+          <h2 className={styles.currentApy}>
+            {apyStr}%
+          </h2>
         </div>
 
         <div className={styles.rowItem}>
@@ -67,7 +69,7 @@ export const StakeSection = () => {
           <span className="muted-text">Minimum Lock: 30 Days</span>
         </div>
 
-        {balance <= 0 ? (
+        {balanceInt <= 0 ? (
           <div className={styles.buttonsContainer}>
             <Button size="m" mode="filled" onClick={goDeposit}>
               <AddIcon className="add-icon" />

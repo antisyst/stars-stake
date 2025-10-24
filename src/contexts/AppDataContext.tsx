@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useSignal, initData } from '@telegram-apps/sdk-react';
 import { db } from '@/configs/firebaseConfig';
 import {
@@ -15,6 +15,7 @@ import type { GlobalStats, UserData, Position } from '@/types';
 import { useTelegramSdk } from '@/hooks/useTelegramSdk';
 import { weightedApy } from '@/utils/apy';
 import { AppDataContextType } from '@/types';
+import { applyDailyAccrualTx } from '@/utils/accrual';
 
 const AppDataContext = createContext<AppDataContextType>({
   loading: true,
@@ -22,12 +23,32 @@ const AppDataContext = createContext<AppDataContextType>({
   user: null,
   stats: null,
   positions: [],
-  effectiveApy: 48.7,
+  effectiveApy: 58.6, 
   exchangeRate: 0.0199,
   balanceUsd: 0,
 });
 
 export const useAppData = () => useContext(AppDataContext);
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+async function runAccrualWithRetry(uid: string, attempts = 4) {
+  let lastErr: unknown;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      await applyDailyAccrualTx(uid);
+      return;
+    } catch (e: any) {
+      lastErr = e;
+      const isConflict =
+        e?.code === 'failed-precondition' ||
+        typeof e?.message === 'string' && e.message.includes('failed-precondition');
+      if (!isConflict) throw e;
+      await sleep(150 * Math.pow(2, i));
+    }
+  }
+  console.error('Accrual permanently failed after retries:', lastErr);
+}
 
 export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   useTelegramSdk();
@@ -38,6 +59,8 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
   const [user, setUser] = useState<UserData | null>(null);
   const [stats, setStats] = useState<GlobalStats | null>(null);
   const [positions, setPositions] = useState<Position[]>([]);
+
+  const accrualOnceRef = useRef(false);
 
   useEffect(() => {
     const tgUser = initDataState?.user;
@@ -62,18 +85,23 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
               username: u?.username || '',
               languageCode: u?.languageCode || '',
               photoUrl: u?.photoUrl || '',
+              starsCents: 0,
               starsBalance: 0,
-              currentApy: 48.7,
+              currentApy: 58.6,
               createdAt: serverTimestamp(),
               updatedAt: serverTimestamp(),
             },
             { merge: true }
           );
         } else {
-          const data = userSnap.data() as Partial<UserData>;
-          const patch: Partial<UserData> & { updatedAt?: any } = {};
-          if (typeof data.starsBalance !== 'number') patch.starsBalance = 0;
-          if (typeof data.currentApy !== 'number') patch.currentApy = 48.7;
+          const data = userSnap.data() as Partial<UserData> & { starsCents?: number };
+          const patch: any = {};
+          if (!Number.isFinite(data.starsCents)) {
+            const sb = typeof (data as any).starsBalance === 'number' ? (data as any).starsBalance : 0;
+            patch.starsCents = Math.max(0, Math.floor(sb * 100));
+          }
+          if (typeof (data as any).starsBalance !== 'number') patch.starsBalance = 0;
+          if (typeof data.currentApy !== 'number') patch.currentApy = 58.6;
           if (Object.keys(patch).length) {
             patch.updatedAt = serverTimestamp();
             await setDoc(userRef, patch, { merge: true });
@@ -111,7 +139,7 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
     const userRef = doc(db, 'users', uid);
     const statsRef = doc(db, 'stats', 'global');
     const posRef = collection(db, 'users', uid, 'positions');
-    const posQ = query(posRef, orderBy('createdAt', 'asc')); 
+    const posQ = query(posRef, orderBy('createdAt', 'asc'));
 
     let gotUser = false;
     let gotStats = false;
@@ -124,7 +152,14 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
     const unsubUser = onSnapshot(
       userRef,
       (snap) => {
-        if (snap.exists()) setUser(snap.data() as UserData);
+        if (snap.exists()) {
+          const u = snap.data() as any;
+          const cents = Number.isFinite(u.starsCents)
+            ? u.starsCents
+            : Math.max(0, Math.floor((u.starsBalance || 0) * 100));
+          const mirrInt = Math.floor(cents / 100);
+          setUser({ ...(u as UserData), starsCents: cents, starsBalance: mirrInt });
+        }
         gotUser = true; maybeDone();
       },
       (err) => { console.error('User onSnapshot error:', err); gotUser = true; maybeDone(); }
@@ -155,24 +190,38 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
     };
   }, [uid]);
 
+  useEffect(() => {
+    if (!uid) return;
+    if (loading) return;
+    if (accrualOnceRef.current) return;
+    accrualOnceRef.current = true;
+
+    runAccrualWithRetry(uid).catch((e) => {
+      console.error('applyDailyAccrualTx failed after retries:', e);
+    });
+  }, [uid, loading]);
+
   const exchangeRate = stats?.exchangeRate ?? 0.0199;
-  const balance = user?.starsBalance ?? 0;
+  const cents = Number.isFinite((user as any)?.starsCents)
+    ? (user as any).starsCents
+    : Math.max(0, Math.floor((user?.starsBalance || 0) * 100));
+  const balanceIntDisplay = Math.floor(cents / 100);
+  const balanceUsd = (cents / 100) * exchangeRate;
 
   const effectiveApy = useMemo(() => weightedApy(positions), [positions]);
-  const balanceUsd = balance * exchangeRate;
 
   const value = useMemo(
     () => ({
       loading,
       uid,
-      user,
+      user: user ? { ...user, starsBalance: balanceIntDisplay, starsCents: cents } as any : null,
       stats,
       positions,
       effectiveApy,
       exchangeRate,
       balanceUsd,
     }),
-    [loading, uid, user, stats, positions, effectiveApy, exchangeRate, balanceUsd]
+    [loading, uid, user, stats, positions, effectiveApy, exchangeRate, balanceUsd, balanceIntDisplay, cents]
   );
 
   return <AppDataContext.Provider value={value}>{children}</AppDataContext.Provider>;

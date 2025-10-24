@@ -36,7 +36,7 @@
       .title {
         padding: 2px 4px;
         border-radius: 6px;
-        margin-right: 6px;
+        margin-left: 2px;
         background: rgba(34, 197, 94, 0.12);
         font-size: 15px !important;
         font-family: 'SF Pro Rounded' !important;
@@ -105,6 +105,7 @@
     backdrop-filter: blur(10px);
     overflow: hidden;
     will-change: transform, filter, opacity, height, border-radius;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
 
   .list {

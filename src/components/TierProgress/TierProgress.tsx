@@ -10,38 +10,38 @@ export const TierProgress: React.FC = () => {
 
   const tierContent = [
     'System uses a dynamic tier model, where your APY increases as your total staked balance grows.',
-    'Each tier unlocks a higher yield rate, starting from 48.7% and reaching up to 56.8% APY at the highest level.',
+    'Each tier unlocks a higher yield rate, starting from 58.6% and reaching up to 83.7% APY at the highest level.',
     'When you stake additional Stars and move to a higher tier, your overall APY is recalculated instantly based on the new total.',
     'Your current and next tier thresholds are displayed in real-time, allowing you to track your progress toward the next APY boost.'
   ].join('\n');
 
   return (
     <>
-    <div
-     className={styles.tierProgress}
-     onClick={() => setIsTierOpen(true)}
-     aria-label="Boosted Rewards"
-    >
-      <h2 className="section-title">Boosted Rewards</h2>
-      <div className={styles.tierProgressBody}>
-        <h2 className={styles.tierTitle}>
-          <span>APY updates automatically as your stake grows</span>
-          <HelpIcon className="icon" />
-        </h2>
-        <ProgressiveTiersBar
-          widths={[46, 18, 18, 18]}
-          topLabels={['48.7%', '+3.2%', '+5.4%', '+8.1%']}
-        />
-        <TierRanges/>
+      <div
+        className={styles.tierProgress}
+        onClick={() => setIsTierOpen(true)}
+        aria-label="Boosted Rewards"
+      >
+        <h2 className="section-title">Boosted Rewards</h2>
+        <div className={styles.tierProgressBody}>
+          <h2 className={styles.tierTitle}>
+            <span>APY updates automatically as your stake grows</span>
+            <HelpIcon className="icon" />
+          </h2>
+          <ProgressiveTiersBar
+            widths={[46, 17, 17, 20]}
+            topLabels={['58.6%', '+8.3%', '+7.4%', '+9.4%']}
+          />
+          <TierRanges/>
+        </div>
       </div>
-    </div>
-    <Modal
+      <Modal
         isOpen={isTierOpen}
         title="Boosted Rewards"
         button="Got it"
         content={tierContent}
         onClose={() => setIsTierOpen(false)}
-    />
+      />
     </>
   );
 };

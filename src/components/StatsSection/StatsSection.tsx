@@ -27,7 +27,12 @@ export const StatsSection = () => {
             1 ≈ <span className={styles.inlineValue}>${exchangeRate.toFixed(4)}</span>
           </span>
         </div>
-
+        <div className={styles.statItem}>
+          <div className={styles.statLabel}>Protocol</div>
+          <span className={styles.statValue}>
+              Stars Stake Protocol
+          </span>
+        </div>
         <div className={styles.statItem}>
           <div className={styles.statLabel}>System Health</div>
           <span className={styles.statValue}>

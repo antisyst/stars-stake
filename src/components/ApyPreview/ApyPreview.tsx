@@ -212,10 +212,6 @@ export const ApyPreview: React.FC<Props> = ({
                 animate="expanded"
                 exit="collapsed"
                 variants={detailsVariants}
-                style={{
-                  boxShadow:
-                    '0 14px 36px rgba(0,0,0,0.22), 0 2px 10px rgba(0,0,0,0.12)'
-                }}
               >
                 <div className={styles.list} role="list">
                   <div className={styles.item} role="listitem">

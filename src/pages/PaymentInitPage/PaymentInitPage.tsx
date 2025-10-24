@@ -1,4 +1,3 @@
-// PaymentInitPage.tsx
 import React, { useEffect, useMemo, useRef, useContext } from 'react';
 import { Page } from '@/components/Page';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -64,15 +63,20 @@ export const PaymentInitPage: React.FC = () => {
     switch (status) {
       case 'paid': {
         (async () => {
-          let apyUsed = 48.7;
+          let apyUsed = 58.6;
           try {
             if (userId) {
               const userRef = doc(db, 'users', userId);
               const statsRef = doc(db, 'stats', 'global');
 
               const userSnap = await getDoc(userRef);
-              const preBalance = Number(userSnap.data()?.starsBalance ?? 0);
-              const newTotal = preBalance + payable;
+              const u = userSnap.data() || {};
+              const curCents = Number.isFinite(u.starsCents)
+                ? Number(u.starsCents)
+                : Math.max(0, Math.floor((u.starsBalance || 0) * 100));
+              const preBalanceInt = Math.floor(curCents / 100);
+
+              const newTotal = preBalanceInt + payable;
               const { tier, apy } = tierForTotal(newTotal);
               apyUsed = apy;
 
@@ -87,6 +91,9 @@ export const PaymentInitPage: React.FC = () => {
                   tier,
                   createdAt: serverTimestamp(),
                   unlockAt: Timestamp.fromDate(unlock),
+                  lastAccruedAt: serverTimestamp(),
+                  accruedDays: 0,
+                  fracCarryCents: 0,
                 }),
                 addDoc(historyCol, {
                   type: 'stake',
@@ -95,7 +102,8 @@ export const PaymentInitPage: React.FC = () => {
                   createdAt: serverTimestamp(),
                 }),
                 updateDoc(userRef, {
-                  starsBalance: increment(payable),
+                  starsCents: (curCents + payable * 100),
+                  starsBalance: Math.floor((curCents + payable * 100) / 100),
                   currentApy: apy,
                   updatedAt: serverTimestamp(),
                 }),
@@ -107,12 +115,10 @@ export const PaymentInitPage: React.FC = () => {
             }
           } catch (e) {
             console.error('Firestore update error:', e);
-            // We still continue to success page but inform user to refresh if needed
           }
 
           const { short } = computeUnlockDates();
           showSuccess('Payment successful!');
-          // ✅ pass APY used
           navigate(
             `/payment/success?paid=${payable}&unlock=${encodeURIComponent(short)}&requested=${requestedAmount}&apy=${apyUsed}`,
             { replace: true }

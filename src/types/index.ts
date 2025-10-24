@@ -7,8 +7,9 @@ export interface UserData {
   username?: string;
   languageCode?: string;
   photoUrl?: string;
-  starsBalance: number; 
-  currentApy: number; 
+  starsBalance: number;
+  currentApy: number;
+  starsCents?: number;
 }
 
 export type ToastStatus = 'success' | 'error';
@@ -54,6 +55,8 @@ export type FaqSectionProps = {
   title?: string;
 };
 
+export type ModalVariant = 'info' | 'history';
+
 export type ModalProps = {
   isOpen: boolean;
   title: string;
@@ -63,6 +66,8 @@ export type ModalProps = {
   children?: React.ReactNode;
   mainButtonBgVar?: string;
   mainButtonTextVar?: string;
+  variant?: ModalVariant;
+  historyItem?: ActivityWithExtras | null;
 };
 
 export type ProgressiveTiersBarProps = {
@@ -90,13 +95,18 @@ export interface GlobalStats {
 export interface Position {
   id?: string;
   amount: number;
-  apy: number;   
+  apy: number;
   tier: 1 | 2 | 3 | 4;
-  createdAt: any;  
-  unlockAt: any; 
+  createdAt: any;
+  unlockAt: any;
+
+  lastAccruedAt?: any;
+  accruedDays?: number;
+  earned?: number;
+  fracCarryCents?: number;
 }
 
-export type ActivityType = 'stake' | 'unstake';
+export type ActivityType = 'stake' | 'unstake' | 'reward';
 
 export interface Activity {
   id?: string;
@@ -105,6 +115,11 @@ export interface Activity {
   apy: number;      
   createdAt: any;
 }
+
+export type ActivityWithExtras = Activity & {
+  unlockAt?: any;
+  lockDays?: number;
+};
 
 export type AppDataContextType = {
   loading: boolean;

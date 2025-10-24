@@ -4,7 +4,26 @@ import { mainButton } from '@telegram-apps/sdk';
 import { splitContent } from '@/utils/strings';
 import { ModalProps } from '@/types';
 import { resolveCssVarToHex } from '@/utils/css';
+import { useRates } from '@/contexts/RatesContext';
+import { useAppData } from '@/contexts/AppDataContext';
+import { formatNumber } from '@/utils/formatNumber';
+import { toDate } from '@/utils/toDate';
+import StarIcon from '@/assets/icons/star-gradient.svg?react';
+import Table, { type TableRow } from '@/components/Table/Table';
 import styles from './Modal.module.scss';
+
+const ADD_DAYS = (d: Date, days: number) => {
+  const x = new Date(d.getTime());
+  x.setDate(x.getDate() + days);
+  return x;
+};
+
+const formatMDYDots = (date: Date) => {
+  const mm = String(date.getMonth() + 1).padStart(2, '0');
+  const dd = String(date.getDate()).padStart(2, '0');
+  const yyyy = String(date.getFullYear());
+  return `${mm}.${dd}.${yyyy}`;
+};
 
 export const Modal: React.FC<ModalProps> = ({
   isOpen,
@@ -15,6 +34,8 @@ export const Modal: React.FC<ModalProps> = ({
   children,
   mainButtonBgVar = '--app-button',
   mainButtonTextVar = '--app-button-text',
+  variant = 'info',
+  historyItem = null,
 }) => {
   const offClickRef = useRef<null | (() => void)>(null);
   const lines = useMemo(() => splitContent(content), [content]);
@@ -30,7 +51,6 @@ export const Modal: React.FC<ModalProps> = ({
     const lock = () => {
       const el = document.querySelector<HTMLElement>('.page-layout');
       scrollContainerRef.current = el || null;
-
       if (el) {
         prevScrollTopRef.current = el.scrollTop;
         prevOverflowRef.current = el.style.overflow || '';
@@ -39,7 +59,6 @@ export const Modal: React.FC<ModalProps> = ({
         el.style.touchAction = 'none';
       }
     };
-
     const unlock = () => {
       const el = scrollContainerRef.current;
       if (el) {
@@ -48,10 +67,7 @@ export const Modal: React.FC<ModalProps> = ({
         el.scrollTop = prevScrollTopRef.current;
       }
     };
-
-    if (isOpen) lock();
-    else unlock();
-
+    if (isOpen) lock(); else unlock();
     return () => {
       const el = scrollContainerRef.current;
       if (el) {
@@ -74,9 +90,7 @@ export const Modal: React.FC<ModalProps> = ({
       if (offClickRef.current) { offClickRef.current(); offClickRef.current = null; }
       return;
     }
-
     const { bg, fg } = resolveMbColors();
-
     try { mainButton.mount(); } catch {}
     try {
       mainButton.setParams({
@@ -88,7 +102,6 @@ export const Modal: React.FC<ModalProps> = ({
         ...(fg ? { textColor: fg } : {}),
       } as any);
     } catch {}
-
     try {
       const off = mainButton.onClick(() => {
         try { mainButton.setParams({ isVisible: false, isLoaderVisible: false }); } catch {}
@@ -97,7 +110,6 @@ export const Modal: React.FC<ModalProps> = ({
       });
       offClickRef.current = off;
     } catch {}
-
     return () => {
       if (offClickRef.current) { offClickRef.current(); offClickRef.current = null; }
       try { mainButton.setParams({ isVisible: false, isLoaderVisible: false }); } catch {}
@@ -107,6 +119,58 @@ export const Modal: React.FC<ModalProps> = ({
 
   const stopScrollPropagation = (e: React.UIEvent | React.MouseEvent | React.TouchEvent) => {
     e.stopPropagation();
+  };
+
+  const { exchangeRate } = useAppData();
+  const { tonUsd } = useRates();
+
+  const usdVal = useMemo(() => {
+    if (variant !== 'history' || !historyItem) return 0;
+    return exchangeRate ? historyItem.amount * exchangeRate : 0;
+  }, [variant, historyItem, exchangeRate]);
+
+  const tonVal = useMemo(() => {
+    if (variant !== 'history' || !historyItem) return 0;
+    return tonUsd > 0 ? usdVal / tonUsd : 0;
+  }, [variant, historyItem, usdVal, tonUsd]);
+
+  const historyRows: TableRow[] | null = useMemo(() => {
+    if (variant !== 'history' || !historyItem) return null;
+
+    const created = toDate(historyItem.createdAt);
+    const unlockDate = historyItem.unlockAt ? toDate(historyItem.unlockAt) : ADD_DAYS(created, 30);
+    const unlockStr = formatMDYDots(unlockDate);
+
+    return [
+      { label: 'APY', value: `${Number(historyItem.apy).toFixed(1)}%` },
+      {
+        label: historyItem.type === 'stake' ? 'Staked Stars' : 'Amount',
+        value: (
+          <>
+            <StarIcon />
+            <strong>{formatNumber(historyItem.amount)}</strong>
+          </>
+        ),
+      },
+      { label: '≈ USD', value: `$${formatNumber(Number(usdVal.toFixed(2)))}` },
+      { label: '≈ TON', value: tonVal ? `${tonVal.toFixed(3)} TON` : '—' },
+      { label: 'Lock Period', value: '30 days' },
+      { label: 'Unlock Date', value: unlockStr }
+    ];
+  }, [variant, historyItem, usdVal, tonVal]);
+
+  const renderBody = () => {
+    if (variant === 'history' && historyItem && historyRows) {
+      return <Table rows={historyRows} />;
+    }
+    if ((lines?.length ?? 0) > 0) {
+      return (
+        <ul className={styles.list}>
+          {lines.map((txt, i) => (<li key={i}>{txt}</li>))}
+        </ul>
+      );
+    }
+    return children;
   };
 
   return (
@@ -144,13 +208,7 @@ export const Modal: React.FC<ModalProps> = ({
               )}
             </div>
             <div className={styles.content}>
-              {lines.length ? (
-                <ul className={styles.list}>
-                  {lines.map((txt, i) => (<li key={i}>{txt}</li>))}
-                </ul>
-              ) : (
-                children
-              )}
+              {renderBody()}
             </div>
           </motion.div>
         </motion.div>
