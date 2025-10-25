@@ -1,5 +1,5 @@
 export type Scheme = 'dark' | 'light';
-export type Platform = 'ios' | 'android' | 'web';
+export type Platform = 'ios' | 'android' | 'web' | 'tdesktop';
 
 export interface Palette {
   bg: string;
@@ -55,6 +55,7 @@ const iosLight: Palette = {
   subtitle: '#8e8e93',
 };
 
+/** Android */
 const androidDark: Palette = {
   bg: '#212d3b',
   sectionBg: '#1d2733',
@@ -109,8 +110,45 @@ const webDark: Palette = {
   bottomBarBg: '#181818',
 };
 
+const tdesktopLight: Palette = {
+  accentText: '#168acd',
+  bg: '#ffffff',
+  bottomBarBg: '#ffffff',
+  button: '#40a7e3',
+  buttonText: '#ffffff',
+  destructiveText: '#d14e4e',
+  headerBg: '#ffffff',
+  hint: '#999999',
+  link: '#168acd',
+  secondaryBg: '#f1f1f1',
+  sectionBg: '#ffffff',
+  sectionHeaderText: '#168acd',
+  sectionSeparator: '#e7e7e7',
+  subtitle: '#999999',
+  text: '#000000',
+};
+
+const tdesktopDark: Palette = {
+  accentText: '#6ab2f2',
+  bg: '#17212b',
+  bottomBarBg: '#17212b',
+  button: '#5288c1',
+  buttonText: '#ffffff',
+  destructiveText: '#ec3942',
+  headerBg: '#17212b',
+  hint: '#708499',
+  link: '#6ab3f3',
+  secondaryBg: '#232e3c',
+  sectionBg: '#17212b',
+  sectionHeaderText: '#6ab3f3',
+  sectionSeparator: '#111921',
+  subtitle: '#708499',
+  text: '#f5f5f5',
+};
+
 export function getPalette(platform: Platform, scheme: Scheme): Palette {
   if (platform === 'ios') return scheme === 'dark' ? iosDark : iosLight;
   if (platform === 'android') return scheme === 'dark' ? androidDark : androidLight;
+  if (platform === 'tdesktop') return scheme === 'dark' ? tdesktopDark : tdesktopLight;
   return webDark;
 }

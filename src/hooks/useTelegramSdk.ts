@@ -12,12 +12,14 @@ import type { Platform, Scheme } from '@/theme/palettes';
 
 export const useTelegramSdk = () => {
   const lp = useLaunchParams();
-  const isDarkSig = useSignal(miniApp.isDark);
-  const scheme: Scheme = isDarkSig ? 'dark' : 'light';
+
+  const isDark = useSignal(miniApp.isDark);
+  const scheme: Scheme = isDark ? 'dark' : 'light';
 
   const platform: Platform =
     lp.platform === 'ios' ? 'ios'
     : lp.platform === 'android' ? 'android'
+    : lp.platform === 'tdesktop' ? 'tdesktop'
     : 'web';
 
   useEffect(() => {
