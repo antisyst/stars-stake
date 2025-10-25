@@ -21,12 +21,14 @@ export const DepositPage: React.FC = () => {
   const { user, exchangeRate } = useAppData();
   const { tonUsd } = useRates();
   const lp = useLaunchParams();
+
   const isMobile = ['ios', 'android'].includes(lp.platform);
+  const isTDesktop = lp.platform === 'tdesktop';
 
   const [raw, setRaw] = useState<string>('');
   const amount = useMemo(() => parseAmountInput(raw), [raw]);
   const valid = isValidDeposit(amount);
-  const [focused, setFocused] = useState(false)
+  const [focused, setFocused] = useState(false);
 
   const hasStakedBefore = (user?.starsBalance ?? 0) > 0;
   const buttonText = hasStakedBefore ? 'Deposit' : 'Confirm Stake';
@@ -34,8 +36,11 @@ export const DepositPage: React.FC = () => {
 
   const enabledBg = resolveCssVarToHex('--app-button') || undefined;
   const enabledFg = resolveCssVarToHex('--app-button-text') || undefined;
-  const disabledBg = resolveCssVarToHex('--app-header-bg') || undefined;
-  const disabledFg = resolveCssVarToHex('--app-section-separator') || undefined;
+
+  const disabledBgVar = isTDesktop ? '--app-secondary-bg' : '--app-header-bg';
+  const disabledFgVar = isTDesktop ? '--app-subtitle' : '--app-section-separator';
+  const disabledBg = resolveCssVarToHex(disabledBgVar) || undefined;
+  const disabledFg = resolveCssVarToHex(disabledFgVar) || undefined;
 
   const mountedRef = useRef(false);
 
@@ -53,8 +58,12 @@ export const DepositPage: React.FC = () => {
         isEnabled: enabled,
         isLoaderVisible: false,
         hasShineEffect: enabled,
-        ...(enabled ? (enabledBg ? { backgroundColor: enabledBg } : {}) : (disabledBg ? { backgroundColor: disabledBg } : {})),
-        ...(enabled ? (enabledFg ? { textColor: enabledFg } : {}) : (disabledFg ? { textColor: disabledFg } : {})),
+        ...(enabled
+          ? (enabledBg ? { backgroundColor: enabledBg } : {})
+          : (disabledBg ? { backgroundColor: disabledBg } : {})),
+        ...(enabled
+          ? (enabledFg ? { textColor: enabledFg } : {})
+          : (disabledFg ? { textColor: disabledFg } : {})),
       } as any);
     } catch {}
   };
@@ -82,7 +91,7 @@ export const DepositPage: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => { applyButtonStyle(valid); }, [valid, buttonText]);
+  useEffect(() => { applyButtonStyle(valid); }, [valid, buttonText, enabledBg, enabledFg, disabledBg, disabledFg]);
 
   useEffect(() => {
     let off: (() => void) | undefined;
