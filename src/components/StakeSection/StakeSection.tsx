@@ -35,8 +35,8 @@ export const StakeSection = () => {
       showError('You have no balance to withdraw');
       return;
     }
-    if (balanceInt < 100) {
-      showError('You need at least 200 Stars to make a withdrawal.');
+    if (balanceInt < 300) {
+      showError('You need at least 300 Stars to make a withdrawal.');
       return;
     }
   };

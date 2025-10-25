@@ -142,13 +142,19 @@ export const Modal: React.FC<ModalProps> = ({
     const unlockStr = formatMDYDots(unlockDate);
 
     return [
-      { label: 'APY', value: `${Number(historyItem.apy).toFixed(1)}%` },
+      { label: 'APY', 
+        value: (
+         <span className='apy-title'>
+          {Number(historyItem.apy).toFixed(1)}%
+         </span>
+        ) 
+      },
       {
         label: historyItem.type === 'stake' ? 'Staked Stars' : 'Amount',
         value: (
           <>
             <StarIcon />
-            <strong>{formatNumber(historyItem.amount)}</strong>
+            {formatNumber(historyItem.amount)}
           </>
         ),
       },

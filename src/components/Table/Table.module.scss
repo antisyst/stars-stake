@@ -4,42 +4,39 @@
   background: var(--app-section-bg);
   border-radius: 12px;
   overflow: hidden;
-}
 
-.row {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
+  .row {
+    border-bottom: 1px solid var(--app-secondary-bg);
 
-.row:last-child {
-  border-bottom: none;
-}
+    &:last-child {
+      border-bottom: none;
+    }
 
-.label {
-  width: 45%;
-  padding: 10px 12px;
-  font-size: 14px;
-  color: var(--app-muted-text, #9aa0a6);
-  vertical-align: middle;
-}
+    .label {
+      width: 45%;
+      padding: 10px 0;
+      font-size: 15px;
+      color: var(--app-hint);
+      font-weight: 500;
+      vertical-align: middle;
+    }
 
-.value {
-  width: 55%;
-  padding: 10px 12px;
-  font-size: 15px;
-  font-weight: 600;
-  text-align: right;
-  vertical-align: middle;
+    .value {
+      width: 55%;
+      padding: 10px 0;
+      font-size: 15px;
+      font-family: 'SF Pro Rounded' !important;
+      font-weight: bold !important;
+      -webkit-text-stroke: 0.05px var(--app-text);
+      text-align: right;
+      vertical-align: middle;
 
-  svg {
-    width: 16px;
-    height: 16px;
-    vertical-align: -3px;
-    margin-right: 4px;
+      svg {
+        width: 18px;
+        height: 18px;
+        vertical-align: -3px;
+        margin-right: 4px;
+      }
+    }
   }
-}
-
-.fullLabel {
-  padding: 10px 12px;
-  font-size: 15px;
-  font-weight: 600;
 }

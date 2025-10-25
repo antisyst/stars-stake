@@ -94,10 +94,6 @@ export const HistoryPage: React.FC = () => {
     setSelected(null);
   };
 
-  const title = selected
-    ? (selected.type === 'stake' ? 'Stake Details' : 'Withdraw Details')
-    : 'Details';
-
   return (
     <Page back={true}>
       <div className={styles.historyPage}>
@@ -120,7 +116,7 @@ export const HistoryPage: React.FC = () => {
       </div>
       <Modal
         isOpen={isOpen}
-        title={title}
+        title="Transaction Details"
         button="Close"
         variant="history"
         historyItem={selected}

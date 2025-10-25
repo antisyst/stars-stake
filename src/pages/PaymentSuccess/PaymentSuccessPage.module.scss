@@ -10,8 +10,6 @@
     padding: 20px 0 0;
     position: relative;
     overflow: hidden;
-
-    /* ensure final state is cleanly rasterized (prevents AA fringe on children) */
     will-change: auto;
     filter: none;
     transform: none;

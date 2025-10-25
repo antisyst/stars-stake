@@ -93,7 +93,7 @@ export const faqs: Faq[] = [
   {
     question: 'What is the minimum and maximum amount I can stake?',
     answer: [
-      'The minimum amount to participate in staking is 200 Stars.',
+      'The minimum amount to participate in staking is 300 Stars.',
       'The maximum per single deposit is 100,000 Stars.',
       'Higher amounts automatically unlock higher tiers and better APY rates.',
       'This flexible system rewards both new and long-term users fairly.'

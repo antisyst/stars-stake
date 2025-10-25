@@ -7,7 +7,7 @@ export const CampaignSection = () => {
   const [isCampaignOpen, setIsCampaignOpen] = useState(false);
 
    const campaignContent = [
-    'The campaign allows staking from a minimum of 200 Stars, with no upper limit on the maximum stake.',
+    'The campaign allows staking from a minimum of 300 Stars, with no upper limit on the maximum stake.',
     'All deposits contribute directly to the active staking pool and start generating rewards immediately upon confirmation.'
   ].join('\n');
 
@@ -19,7 +19,7 @@ export const CampaignSection = () => {
             <div className={styles.campaignItem}>
                 <span className={styles.campaignValue}>
                     <StarIcon />
-                    200
+                    300
                 </span>
                 <span className={styles.campaignLabel}>Min. Stake</span>
             </div>

@@ -169,3 +169,14 @@ body.modal-open {
       background-position: -150% 0;
   }
 }
+
+.apy-title {
+  font-size: 15px !important;
+  font-family: 'SF Pro Rounded' !important;
+  border-radius: 6px;
+  -webkit-text-stroke: 0.05px var(--app-green);
+  padding: 2px 4px;
+  color: var(--app-green) !important;
+  background: rgba(34, 197, 94, 0.12);
+  font-weight: 700 !important;
+}
