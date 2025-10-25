@@ -56,7 +56,8 @@
       .yearlyGain {
         font-size: 16px;
         font-family: 'SF Pro Rounded' !important;
-        font-weight: 700 !important;
+        font-weight: bold !important;
+        -webkit-text-stroke: 0.05px var(--app-text);
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -134,8 +135,9 @@
           align-items: center;
           gap: 3px;
           font-size: 15px;
-          font-weight: 700;
           font-family: 'SF Pro Rounded' !important;
+          font-weight: bold !important;
+          -webkit-text-stroke: 0.05px var(--app-text);
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
