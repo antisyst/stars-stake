@@ -63,8 +63,9 @@
     .itemLabel {
       font-size: 15px;
       color: var(--app-hint);
-      font-weight: 700;
       font-family: 'SF Pro Rounded' !important;
+      font-weight: bold !important;
+      -webkit-text-stroke: 0.05px var(--app-hint);
       white-space: nowrap;
     }
 
@@ -73,8 +74,9 @@
       align-items: center;
       gap: 4px;
       font-size: 15px;
-      font-weight: 700;
       font-family: 'SF Pro Rounded' !important;
+      font-weight: bold !important;
+      -webkit-text-stroke: 0.05px var(--app-text);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
