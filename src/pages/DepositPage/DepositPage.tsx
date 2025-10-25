@@ -12,6 +12,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useRates } from '@/contexts/RatesContext';
 import { formatForInput } from '@/utils/formatForInput';
 import { tdesktopInputShields } from '@/utils/tdesktopShields';
+import { inputNoSelectGuards, composeInputProps } from '@/utils/inputGuards';
 import AddIcon from '@/assets/icons/add.svg?react';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import styles from './DepositPage.module.scss';
@@ -116,7 +117,12 @@ export const DepositPage: React.FC = () => {
     setRaw(n === 0 ? '' : String(n));
   };
 
+  const noSelect = useMemo(() => inputNoSelectGuards(), []);
   const shields = useMemo(() => tdesktopInputShields(isTDesktop), [isTDesktop]);
+  const inputProps = useMemo(
+    () => composeInputProps(noSelect, shields),
+    [noSelect, shields]
+  );
 
   const sizerRef = useRef<HTMLSpanElement>(null);
   const [inputWidth, setInputWidth] = useState<number>(0);
@@ -148,56 +154,56 @@ export const DepositPage: React.FC = () => {
             <span>{tagText}</span>
           </div>
 
-        <div className={styles.mainDepositContainer}>
-          <div className={styles.inputCard}>
-            <StarIcon />
-            <div className={styles.inputWrapper}>
-              <span ref={sizerRef} className={`${styles.sizer} ${styles.amountText}`} aria-hidden="true" />
-              <input
-                id="amount"
-                type="text"
-                inputMode="numeric"
-                pattern="[0-9]*"
-                className={`${styles.input} ${styles.amountText} ${displayValue !== '' ? styles.hasValueStroke : ''}`}
-                placeholder="0"
-                value={displayValue}
-                onChange={onChange}
-                onFocus={() => setFocused(true)}
-                onBlur={() => setFocused(false)}
-                aria-label="Stake amount in Stars"
-                style={{ width: inputWidth ? `${inputWidth}px` : undefined }}
-                {...shields}
-              />
+          <div className={styles.mainDepositContainer}>
+            <div className={styles.inputCard}>
+              <StarIcon />
+              <div className={styles.inputWrapper}>
+                <span ref={sizerRef} className={`${styles.sizer} ${styles.amountText}`} aria-hidden="true" />
+                <input
+                  id="amount"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  className={`${styles.input} ${styles.amountText} ${displayValue !== '' ? styles.hasValueStroke : ''}`}
+                  placeholder="0"
+                  value={displayValue}
+                  onChange={onChange}
+                  onFocus={() => setFocused(true)}
+                  onBlur={() => setFocused(false)}
+                  aria-label="Stake amount in Stars"
+                  style={{ width: inputWidth ? `${inputWidth}px` : undefined }}
+                  {...inputProps}
+                />
+              </div>
             </div>
+            <div className={styles.infoTitle}>
+              {displayValue === '' ? (
+                <p className={styles.usdNote}>
+                  1&nbsp;<StarIcon />&nbsp;≈&nbsp;{formatNumber(Number((exchangeRate ?? 0.0199).toFixed(4)))}
+                </p>
+              ) : amount > 0 && amount < MIN_DEPOSIT ? (
+                <p className={styles.warning}>Minimum deposit is {formatNumber(MIN_DEPOSIT)} Stars.</p>
+              ) : valid ? (
+                <p className={styles.usdNote}>
+                  ≈ ${formatNumber(Number(usdVal.toFixed(2)))}&nbsp;≈ {tonVal ? (tonVal.toFixed(3)) : '—'} TON
+                </p>
+              ) : (
+                <p className={styles.usdNote}>≈ ${formatNumber(Number(usdVal.toFixed(2)))}</p>
+              )}
+            </div>
+            <AnimatePresence initial={false} mode="wait">
+              {isValidDeposit(amount) ? (
+                <ApyPreview
+                  key={`apy-${apyKey}-${amount}`}
+                  currentBalance={currentBalance}
+                  inputAmount={amount}
+                  exchangeRate={exchangeRate}
+                  inputId="amount"
+                  inputFocused={focused}
+                />
+              ) : null}
+            </AnimatePresence>
           </div>
-          <div className={styles.infoTitle}>
-            {displayValue === '' ? (
-              <p className={styles.usdNote}>
-                1&nbsp;<StarIcon />&nbsp;≈&nbsp;{formatNumber(Number((exchangeRate ?? 0.0199).toFixed(4)))}
-              </p>
-            ) : amount > 0 && amount < MIN_DEPOSIT ? (
-              <p className={styles.warning}>Minimum deposit is {formatNumber(MIN_DEPOSIT)} Stars.</p>
-            ) : valid ? (
-              <p className={styles.usdNote}>
-                ≈ ${formatNumber(Number(usdVal.toFixed(2)))}&nbsp;≈ {tonVal ? (tonVal.toFixed(3)) : '—'} TON
-              </p>
-            ) : (
-              <p className={styles.usdNote}>≈ ${formatNumber(Number(usdVal.toFixed(2)))}</p>
-            )}
-          </div>
-          <AnimatePresence initial={false} mode="wait">
-            {isValidDeposit(amount) ? (
-              <ApyPreview
-                key={`apy-${apyKey}-${amount}`}
-                currentBalance={currentBalance}
-                inputAmount={amount}
-                exchangeRate={exchangeRate}
-                inputId="amount"
-                inputFocused={focused}
-              />
-            ) : null}
-          </AnimatePresence>
-        </div>
         </div>
       </div>
     </Page>
