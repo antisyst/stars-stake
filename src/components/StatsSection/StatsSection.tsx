@@ -8,7 +8,7 @@ export const StatsSection = () => {
 
   const totalStaked = stats?.totalStaked ?? 0;
   const exchangeRate = stats?.exchangeRate ?? 0.0199;
-  const systemHealth = stats?.systemHealth ?? 'Stable';
+  // const systemHealth = stats?.systemHealth ?? 'Stable';
 
   return (
     <div className={styles.statsBody}>
@@ -33,13 +33,13 @@ export const StatsSection = () => {
               Stars Stake Protocol
           </span>
         </div>
-        <div className={styles.statItem}>
+        {/* <div className={styles.statItem}>
           <div className={styles.statLabel}>System Health</div>
           <span className={styles.statValue}>
             <div className={styles.positiveStatus}/>
             {systemHealth}
           </span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
