@@ -13,33 +13,27 @@ import type { Platform, Scheme } from '@/theme/palettes';
 export const useTelegramSdk = () => {
   const lp = useLaunchParams();
 
-  const isDark = useSignal(miniApp.isDark);
-  const scheme: Scheme = isDark ? 'dark' : 'light';
+  const isDarkValue = Boolean(useSignal(miniApp.isDark) ?? false);
+  const scheme: Scheme = isDarkValue ? 'dark' : 'light';
 
+  const host = lp.platform;
   const platform: Platform =
-    lp.platform === 'ios' ? 'ios'
-    : lp.platform === 'android' ? 'android'
-    : lp.platform === 'tdesktop' ? 'tdesktop'
+    host === 'ios' || host === 'macos' ? 'ios'
+    : host === 'android' ? 'android'
     : 'web';
 
   useEffect(() => {
     (async () => {
-      try {
-        init();
-      } catch (err) {
-        console.error('Init error:', err);
-      }
+      try { init(); } catch (err) { console.error('Init error:', err); }
 
       try {
-        try { backButton.mount(); } catch (err) { /* ignore */ }
-
+        try { backButton.mount(); } catch {}
         await viewport.mount().catch((err) => {
           const msg = (err as Error)?.message ?? '';
           if (!/already mounting|already mounted/i.test(msg)) {
             console.warn('Viewport mount error:', err);
           }
         });
-
         try { viewport.bindCssVars(); } catch {}
         try { viewport.expand(); } catch {}
 
@@ -47,9 +41,9 @@ export const useTelegramSdk = () => {
         try { swipeBehavior.mount(); swipeBehavior.disableVertical(); } catch {}
       } catch (err) {
         console.warn('SDK setup warning:', err);
+      } finally {
+        applyTheme(platform, scheme);
       }
-
-      applyTheme(platform, scheme);
     })();
 
     return () => {
@@ -57,7 +51,7 @@ export const useTelegramSdk = () => {
         try { await viewport.exitFullscreen(); } catch {}
       })();
     };
-  }, []);
+  }, []); 
 
   useEffect(() => {
     applyTheme(platform, scheme);
