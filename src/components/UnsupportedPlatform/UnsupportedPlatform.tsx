@@ -1,8 +1,26 @@
+import { useEffect } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
+import { miniApp } from '@telegram-apps/sdk-react';
 import styles from './UnsupportedPlatform.module.scss';
-import starsBaseLogoUrl from '@/assets/brand/stars-base-logo.svg?url';
+import starsBaseLogoUrl from '../../../public/stars-base.png';
 
 export function UnsupportedPlatform() {
+  useEffect(() => {
+    try {
+      miniApp.setBackgroundColor('secondary_bg_color');
+      miniApp.setBottomBarColor('secondary_bg_color');
+      miniApp.setHeaderColor('secondary_bg_color');
+    } catch {}
+
+    return () => {
+      try {
+        miniApp.setBackgroundColor('bg_color');
+        miniApp.setBottomBarColor('bg_color');
+        miniApp.setHeaderColor('bg_color');
+      } catch {}
+    };
+  }, []);
+
   return (
     <div className={styles.unsupportedLayout}>
       <div className={styles.qrWrapper}>
@@ -21,8 +39,10 @@ export function UnsupportedPlatform() {
           className={styles.qrLogo}
         />
       </div>
-      <h1>Unsupported Platform</h1>
-      <p>Only available on mobile. Please open it on your phone to continue.</p>
+      <div className={styles.content}>
+        <h1>Unsupported Platform</h1>
+        <p>Only available on mobile. Please open it on your phone to continue.</p>
+      </div>
     </div>
   );
 }
