@@ -27,16 +27,16 @@ import {
 import { tierForTotal } from '@/utils/apy';
 import { useAppData } from '@/contexts/AppDataContext';
 import { useRates } from '@/contexts/RatesContext';
-import { formatNumber } from '@/utils/formatNumber';
+import { formatEnUS } from '@/utils/formatEnUS';
 import styles from './PaymentInitPage.module.scss';
+
 
 export const PaymentInitPage: React.FC = () => {
   const location = useLocation();
   const { search, state } = location as { search: string; state?: { from?: string } };
   const navigate = useNavigate();
   const { showError, showSuccess } = useContext(ToastContext);
-
-  const { user, exchangeRate } = useAppData(); // ⬅ we need current balance for APY hint
+  const { exchangeRate } = useAppData();
   const { tonUsd } = useRates();
 
   useEffect(() => {
@@ -150,22 +150,16 @@ export const PaymentInitPage: React.FC = () => {
         return;
       }
 
-      // 1) Formatted label: "Stake 1,500 Stars"
-      const label = `Stake ${formatNumber(payable)} Stars`;
+      const formatted = formatEnUS(payable); 
+      const title = `Stake ${formatted} Stars`;
+      const label = `Stake ${formatted} Stars`;
 
-      // 2) Compact extras for bot
       const lockDays = 30;
       const usd = (exchangeRate ?? 0) * payable;
       const usdCents = Math.max(0, Math.round(usd * 100));
       const ton = (tonUsd > 0) ? (usd / tonUsd) : 0;
       const tonMilli = ton > 0 ? Math.round(ton * 1000) : 0;
-
-      // APY hint from projected total (current + payable)
-      const currentBalanceInt = user?.starsBalance ?? 0;
-      const apyHint = (() => {
-        const { apy } = tierForTotal(currentBalanceInt + payable);
-        return Math.round(apy * 10); // apy*10 int
-      })();
+      const apyHint = 0;
 
       try {
         const { data } = await axios.post(
@@ -173,16 +167,17 @@ export const PaymentInitPage: React.FC = () => {
           {
             userId: Number(userId),
             telegramStarsPrice: payable,
-            title: 'Stake Stars',
+            title,
             description: `Stake deposit (30-day lock). Requested: ${requestedAmount}, Payable: ${payable}.`,
             label,
             meta: {
               kind: 'stake',
               slug: 'stake-deposit',
-              name: 'Stars Stake Deposit',
+              name: 'Stars Base Deposit',
               extras: { p: payable, a: apyHint, u: usdCents, t: tonMilli, d: lockDays }
             }
-          }
+          },
+          { headers: { 'Content-Type': 'application/json' } }
         );
 
         const link = data?.invoiceLink as string | undefined;
@@ -225,7 +220,7 @@ export const PaymentInitPage: React.FC = () => {
       try { offInvoice?.(); } catch {}
       try { visHandler?.(); } catch {}
     };
-  }, [requestedAmount, payable, user?.starsBalance, userId, exchangeRate, tonUsd]);
+  }, [requestedAmount, payable, userId, exchangeRate, tonUsd]);
 
   return (
     <Page back={false}>

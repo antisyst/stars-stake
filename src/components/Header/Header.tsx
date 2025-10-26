@@ -8,7 +8,7 @@ export const Header = () => {
          <StarIcon  />
         </div>
         <div className={styles.headerText}>
-            <h2 className={styles.title}>Stars Stake</h2>
+            <h2 className={styles.title}>Stars Base</h2>
             <p className={styles.subtitle}>Earn up to 83.7% APY through staking</p>
         </div>
     </div>

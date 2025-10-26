@@ -121,6 +121,9 @@ body.modal-open {
   color: #41bd58;
 }
 
+.error-icon {
+  color: var(--tgui--secondary_fill);
+}
 .muted-text {
   color: var(--app-hint);
   font-size: 15px;

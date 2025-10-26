@@ -30,7 +30,7 @@ export const StatsSection = () => {
         <div className={styles.statItem}>
           <div className={styles.statLabel}>Protocol</div>
           <span className={styles.statValue}>
-              Stars Stake Protocol
+              Stars Base Protocol
           </span>
         </div>
         {/* <div className={styles.statItem}>

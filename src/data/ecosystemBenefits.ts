@@ -13,7 +13,7 @@ export const ecosystemBenefits: Benefit[] = [
     title: 'Marketplace Liquidity Support',
     Icon: BarChartUpIcon,
     content: [
-      'The Stars Stake system contributes to maintaining stable liquidity across the Telegram Stars Marketplace.',
+      'The Stars Base system contributes to maintaining stable liquidity across the Telegram Stars Marketplace.',
       'By temporarily locking Stars in staking pools, the circulating supply decreases, helping stabilize market activity.',
       'This ensures consistent buying power, smoother transactions, and a healthier trading environment for all participants.',
       'A balanced liquidity model keeps the Stars ecosystem sustainable and resistant to sudden market fluctuations.',

@@ -9,6 +9,7 @@ import { LoaderScreen } from './LoaderScreen/LoaderScreen';
 import { icons } from '@/configs/icons';
 import { fonts } from '@/configs/fonts';
 import { usePreloadImages } from '@/hooks/usePreloadImages';
+import { ToastProvider } from '@/contexts/ToastContext';
 import { usePreloadFonts } from '@/hooks/usePreloadFonts';
 import { waitFor } from '@/utils/wait';
 import { mainButton } from '@telegram-apps/sdk';
@@ -131,16 +132,18 @@ const AppRoutesInner: React.FC = () => {
 
   return (
     <DataGate>
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-        <div className="page-layout" ref={pageLayoutRef}>
-          <Routes>
-            {routes.map(({ path, Component }) => (
-              <Route key={path} path={path} element={<Component />} />
-            ))}
-            <Route path="*" element={<Navigate to="/home" replace />} />
-          </Routes>
+      <ToastProvider>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+          <div className="page-layout" ref={pageLayoutRef}>
+            <Routes>
+              {routes.map(({ path, Component }) => (
+                <Route key={path} path={path} element={<Component />} />
+              ))}
+              <Route path="*" element={<Navigate to="/home" replace />} />
+            </Routes>
+          </div>
         </div>
-      </div>
+      </ToastProvider>
     </DataGate>
   );
 };

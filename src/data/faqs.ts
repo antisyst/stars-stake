@@ -2,9 +2,9 @@ import { Faq } from "@/types";
 
 export const faqs: Faq[] = [
   {
-    question: 'Where do rewards for Stars Stake come from?',
+    question: 'Where do rewards for Stars Base come from?',
     answer: [
-      'Rewards are generated through the Stars Stake ecosystem’s yield distribution model.',
+      'Rewards are generated through the Stars Base ecosystem’s yield distribution model.',
       'Each staking pool contributes to liquidity stability and network infrastructure, which in turn creates sustainable reward cycles.',
       'Part of the yield comes from ecosystem growth, marketplace activity, and staking incentives distributed over time.',
       'No speculative sources are involved, all rewards are backed by real ecosystem value.',
@@ -52,9 +52,9 @@ export const faqs: Faq[] = [
     ].join('\n'),
   },
   {
-    question: 'How does Stars Stake benefit the Telegram ecosystem?',
+    question: 'How does Stars Base benefit the Telegram ecosystem?',
     answer: [
-      'Stars Stake helps maintain liquidity and stability within the Telegram Stars Marketplace.',
+      'Stars Base helps maintain liquidity and stability within the Telegram Stars Marketplace.',
       'It also supports anti-inflation measures by reducing the number of circulating Stars.',
       'A portion of all staking activity contributes to payment and staking infrastructure development.',
       'This enables faster payments, higher scalability, and a sustainable economic loop.',
@@ -74,7 +74,7 @@ export const faqs: Faq[] = [
   {
     question: 'Is there any risk of losing my Stars?',
     answer: [
-      'Stars Stake operates under a non-custodial structure, meaning you retain ownership of your assets.',
+      'Stars Base operates under a non-custodial structure, meaning you retain ownership of your assets.',
       'Your funds remain securely locked and verifiable at all times.',
       'The system’s architecture prioritizes transparency and security.',
       'The primary variable is yield fluctuation, not the safety of your funds.'
@@ -83,7 +83,7 @@ export const faqs: Faq[] = [
   {
     question: 'Is my APY fixed or does it change over time?',
     answer: [
-      'APY in Stars Stake is dynamic and depends on your total staked amount and system liquidity.',
+      'APY in Stars Base is dynamic and depends on your total staked amount and system liquidity.',
       'While the base APY starts at 58.6%, it can increase as you move through higher staking tiers.',
       'In rare cases, network or liquidity adjustments may slightly influence the yield rate.',
       'All rate changes are transparent and reflected instantly in your dashboard.',
@@ -100,9 +100,9 @@ export const faqs: Faq[] = [
     ].join('\n'),
   },
   {
-    question: 'What makes Stars Stake different from regular staking platforms?',
+    question: 'What makes Stars Base different from regular staking platforms?',
     answer: [
-      'Stars Stake is an ecosystem-native staking model built around Telegram Stars.',
+      'Stars Base is an ecosystem-native staking model built around Telegram Stars.',
       'It combines high APY rewards with real utility, supporting marketplace liquidity and infrastructure.',
       'Unlike speculative staking apps, value flows remain within the ecosystem.',
       'This ensures transparency, long-term sustainability, and real-world impact for every user.'
@@ -145,7 +145,7 @@ export const faqs: Faq[] = [
     ].join('\n'),
   },
   {
-    question: 'Why does Stars Stake use a lock period?',
+    question: 'Why does Stars Base use a lock period?',
     answer: [
       'The 30-day minimum lock period helps maintain market liquidity and prevents rapid inflows and outflows that can destabilize the system.',
       'It ensures reward rates remain fair and consistent for all participants.',
@@ -163,7 +163,7 @@ export const faqs: Faq[] = [
     ].join('\n'),
   },
   {
-    question: 'How does compounding work in Stars Stake?',
+    question: 'How does compounding work in Stars Base?',
     answer: [
       'Compounding means your daily rewards are added to your balance automatically.',
       'Each new day, your yield is calculated on the updated precise balance (tracked with two decimals), while the Stake page shows the integer amount.',
