@@ -16,20 +16,19 @@ import { ToastContext } from '@/contexts/ToastContext';
 import { db } from '@/configs/firebaseConfig';
 import {
   doc,
+  increment,
+  updateDoc,
   getDoc,
   collection,
   addDoc,
-  updateDoc,
-  increment,
   serverTimestamp,
   Timestamp
 } from 'firebase/firestore';
 import { tierForTotal } from '@/utils/apy';
 import { useAppData } from '@/contexts/AppDataContext';
 import { useRates } from '@/contexts/RatesContext';
+import { formatNumber } from '@/utils/formatNumber';
 import styles from './PaymentInitPage.module.scss';
-
-const fmtInt = (n: number) => n.toLocaleString('en-US');
 
 export const PaymentInitPage: React.FC = () => {
   const location = useLocation();
@@ -37,7 +36,7 @@ export const PaymentInitPage: React.FC = () => {
   const navigate = useNavigate();
   const { showError, showSuccess } = useContext(ToastContext);
   const { exchangeRate } = useAppData();
-  const { tonUsd } = useRates();      
+  const { tonUsd } = useRates();
 
   useEffect(() => {
     try { mainButton.setParams({ isVisible: false, isLoaderVisible: false, isEnabled: false }); } catch {}
@@ -150,51 +149,29 @@ export const PaymentInitPage: React.FC = () => {
         return;
       }
 
+      const label = `Stake ${formatNumber(payable)} Stars`;
+
+      const lockDays = 30;
+      const usd = (exchangeRate ?? 0) * payable;
+      const usdCents = Math.max(0, Math.round(usd * 100));
+      const ton = (tonUsd > 0) ? (usd / tonUsd) : 0;
+      const tonMilli = ton > 0 ? Math.round(ton * 1000) : 0;
+      const apyHint = 0; 
+
       try {
-        let apyExpected = 58.6;
-        try {
-          const userRef = doc(db, 'users', userId);
-          const snap = await getDoc(userRef);
-          const u = snap.data() || {};
-          const curCents = Number.isFinite(u.starsCents)
-            ? Number(u.starsCents)
-            : Math.max(0, Math.floor((u.starsBalance || 0) * 100));
-          const preBalanceInt = Math.floor(curCents / 100);
-          const { apy } = tierForTotal(preBalanceInt + payable);
-          apyExpected = apy;
-        } catch {}
-
-        const { short } = computeUnlockDates();
-        const lockDays = 30;
-        const ex = Number(exchangeRate || 0);
-        const tu = Number(tonUsd || 0);  
-        const usdValue = ex > 0 ? payable * ex : 0;
-        const tonValue = (tu > 0 && usdValue > 0) ? (usdValue / tu) : 0;
-
-        const details = [
-          `a=${payable}`,
-          `y=${Math.round(apyExpected * 10)}`,   
-          `u=${encodeURIComponent(short)}`,       
-          `e=${Math.round(usdValue * 100)}`,   
-          `t=${Math.round(tonValue * 1000)}`,     
-          `d=${lockDays}`
-        ].join('&');
-
-        const priceLabel = `Stake ${fmtInt(payable)} Stars`;
-
         const { data } = await axios.post(
           'https://starstake-server.vercel.app/create-token-invoice',
           {
             userId: Number(userId),
             telegramStarsPrice: payable,
             title: 'Stake Stars',
-            description: `Stake deposit (${lockDays}-day lock). Requested: ${requestedAmount}, Payable: ${payable}.`,
-            label: priceLabel,
+            description: `Stake deposit (30-day lock). Requested: ${requestedAmount}, Payable: ${payable}.`,
+            label,
             meta: {
               kind: 'stake',
               slug: 'stake-deposit',
               name: 'Stars Stake Deposit',
-              details
+              extras: { p: payable, a: apyHint, u: usdCents, t: tonMilli, d: lockDays }
             }
           }
         );
