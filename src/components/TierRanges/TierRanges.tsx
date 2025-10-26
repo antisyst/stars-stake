@@ -3,7 +3,7 @@ import styles from './TierRanges.module.scss';
 
 export const TierRanges: React.FC = () => {
   const tiers = [
-    { color: '#007aff', range: '0 – 19,999',     apy: '58.6' },
+    { color: 'var(--app-button)', range: '0 – 19,999',  apy: '58.6' },
     { color: '#22c55e', range: '20,000 – 49,999', apy: '66.9' },
     { color: '#ff9f1a', range: '50,000 – 99,999', apy: '74.3' },
     { color: '#a855f7', range: '100,000 +',       apy: '83.7' },
