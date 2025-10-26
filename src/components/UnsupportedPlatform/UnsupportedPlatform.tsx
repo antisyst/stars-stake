@@ -10,7 +10,7 @@ export function UnsupportedPlatform() {
         size={160}
         level="H"
         bgColor="transparent"
-        fgColor="var(--app-button)"
+        fgColor="#ffff"
         includeMargin={false}
         title="Stars Base"
         imageSettings={{
