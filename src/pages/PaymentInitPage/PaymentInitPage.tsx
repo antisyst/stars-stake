@@ -3,7 +3,7 @@ import { Page } from '@/components/Page';
 import { useLocation, useNavigate } from 'react-router-dom';
 import WebApp from '@twa-dev/sdk';
 import axios from 'axios';
-import { useSignal, initData, useLaunchParams } from '@telegram-apps/sdk-react';
+import { useSignal, initData } from '@telegram-apps/sdk-react';
 import { mainButton } from '@telegram-apps/sdk';
 import { Spinner } from '@telegram-apps/telegram-ui';
 import {
@@ -32,9 +32,6 @@ export const PaymentInitPage: React.FC = () => {
   const { search, state } = location as { search: string; state?: { from?: string } };
   const navigate = useNavigate();
   const { showError, showSuccess } = useContext(ToastContext);
-
-  const lp = useLaunchParams();
-  const isDesktopLike = lp.platform === 'tdesktop' || lp.platform === 'macos';
 
   useEffect(() => {
     try { mainButton.setParams({ isVisible: false, isLoaderVisible: false, isEnabled: false }); } catch {}
@@ -139,52 +136,9 @@ export const PaymentInitPage: React.FC = () => {
     }
   };
 
-  const attachDesktopInvoiceBridge = () => {
-    const forward = (eventType: string, eventData: any) => {
-      const t = String(eventType || '');
-      if (t === 'invoice_closed' || t === 'invoiceClosed') {
-        const st = (eventData && (eventData.status as any)) || 'pending';
-        const status = (['paid','failed','pending','cancelled'] as const).includes(st) ? st : 'pending';
-        settle(status);
-      }
-    };
-
-    const original = {
-      game: (window as any).TelegramGameProxy?.receiveEvent as ((t: string, d: any) => void) | undefined,
-      webview: (window as any).Telegram?.WebView?.receiveEvent as ((t: string, d: any) => void) | undefined,
-      wp: (window as any).TelegramGameProxy_receiveEvent as ((t: string, d: any) => void) | undefined,
-    };
-
-    (window as any).TelegramGameProxy = (window as any).TelegramGameProxy || {};
-    (window as any).Telegram = (window as any).Telegram || {};
-    (window as any).Telegram.WebView = (window as any).Telegram.WebView || {};
-
-    (window as any).TelegramGameProxy.receiveEvent = (t: string, d: any) => {
-      try { forward(t, d); } catch {}
-      try { original.game?.(t, d); } catch {}
-    };
-    (window as any).Telegram.WebView.receiveEvent = (t: string, d: any) => {
-      try { forward(t, d); } catch {}
-      try { original.webview?.(t, d); } catch {}
-    };
-    (window as any).TelegramGameProxy_receiveEvent = (t: string, d: any) => {
-      try { forward(t, d); } catch {}
-      try { original.wp?.(t, d); } catch {}
-    };
-
-    return () => {
-      if (original.game) (window as any).TelegramGameProxy.receiveEvent = original.game;
-      if (original.webview) (window as any).Telegram.WebView.receiveEvent = original.webview;
-      if (original.wp) (window as any).TelegramGameProxy_receiveEvent = original.wp;
-    };
-  };
-
   useEffect(() => {
     let offInvoice: (() => void) | undefined;
-    let offInvoiceSnake: (() => void) | undefined;
     let visHandler: (() => void) | undefined;
-    let detachDesktopBridge: (() => void) | undefined;
-    let safetyTimer: number | undefined;
 
     (async () => {
       if (!userId || !isValidDeposit(requestedAmount)) {
@@ -213,31 +167,11 @@ export const PaymentInitPage: React.FC = () => {
           return;
         }
 
-        const handlerCamel = (event: { status: 'paid' | 'cancelled' | 'failed' | 'pending' }) => {
+        const handler = (event: { status: 'paid' | 'cancelled' | 'failed' | 'pending' }) => {
           settle(event.status);
         };
-        const handlerSnake = (event: { status: 'paid' | 'cancelled' | 'failed' | 'pending' }) => {
-          settle(event.status);
-        };
-
-        try {
-          WebApp.onEvent('invoiceClosed', handlerCamel);
-          offInvoice = () => WebApp.offEvent('invoiceClosed', handlerCamel);
-        } catch {}
-
-        try {
-          // @ts-expect-error: invoice_closed not in types; present at runtime on some builds
-          WebApp.onEvent('invoice_closed', handlerSnake);
-          // @ts-expect-error
-          offInvoiceSnake = () => WebApp.offEvent('invoice_closed', handlerSnake);
-        } catch {}
-
-        if (isDesktopLike) {
-          detachDesktopBridge = attachDesktopInvoiceBridge();
-          safetyTimer = window.setTimeout(() => {
-            if (!settledRef.current) settle('cancelled');
-          }, 3 * 60 * 1000);
-        }
+        WebApp.onEvent('invoiceClosed', handler);
+        offInvoice = () => WebApp.offEvent('invoiceClosed', handler);
 
         const onVis = () => {
           if (document.visibilityState === 'hidden') {
@@ -264,12 +198,9 @@ export const PaymentInitPage: React.FC = () => {
 
     return () => {
       try { offInvoice?.(); } catch {}
-      try { offInvoiceSnake?.(); } catch {}
       try { visHandler?.(); } catch {}
-      try { detachDesktopBridge?.(); } catch {}
-      if (safetyTimer) { try { window.clearTimeout(safetyTimer); } catch {} }
     };
-  }, [requestedAmount, payable, userId, isDesktopLike]);
+  }, [requestedAmount, payable, userId]);
 
   return (
     <Page back={false}>
