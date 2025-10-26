@@ -12,18 +12,18 @@
   padding: 10px;
   text-align: center;
 
-    img {
+  img {
       width: 65px;
       height: 65px;
-    }
+  }
 
-  h1 {
+  .title {
     font-size: 20px;
     font-weight: 700;
     margin: 10px 0;
   }
 
-  p {
+  .subtitle {
     font-size: 16px;
     color: var(--white);
     max-width: 84%;

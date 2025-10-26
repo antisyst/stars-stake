@@ -5,6 +5,7 @@ import { AppRoot } from '@telegram-apps/telegram-ui';
 import { AppRoutes } from './AppRoutes';
 import { HashRouter } from 'react-router-dom';
 import { useTelegramSdk } from '@/hooks/useTelegramSdk';
+import { UnsupportedPlatform } from './UnsupportedPlatform/UnsupportedPlatform';
 
 const waitFor = async (pred: () => boolean, t = 1500, step = 50) => {
   const start = Date.now();
@@ -66,7 +67,7 @@ export function App() {
     <AppRoot appearance={isDark ? 'dark' : 'light'}
       platform={['macos', 'ios'].includes(lp.platform) ? 'ios' : 'base'}>
       <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        {isSupportedPlatform ? <AppRoutes /> : <div>Unsupported platform</div>}
+        {isSupportedPlatform ? <AppRoutes /> : <UnsupportedPlatform/> }
       </HashRouter>
     </AppRoot>
   );
