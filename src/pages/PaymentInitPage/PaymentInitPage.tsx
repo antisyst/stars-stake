@@ -35,7 +35,8 @@ export const PaymentInitPage: React.FC = () => {
   const { search, state } = location as { search: string; state?: { from?: string } };
   const navigate = useNavigate();
   const { showError, showSuccess } = useContext(ToastContext);
-  const { exchangeRate } = useAppData();
+
+  const { user, exchangeRate } = useAppData(); // ⬅ we need current balance for APY hint
   const { tonUsd } = useRates();
 
   useEffect(() => {
@@ -149,14 +150,22 @@ export const PaymentInitPage: React.FC = () => {
         return;
       }
 
+      // 1) Formatted label: "Stake 1,500 Stars"
       const label = `Stake ${formatNumber(payable)} Stars`;
 
+      // 2) Compact extras for bot
       const lockDays = 30;
       const usd = (exchangeRate ?? 0) * payable;
       const usdCents = Math.max(0, Math.round(usd * 100));
       const ton = (tonUsd > 0) ? (usd / tonUsd) : 0;
       const tonMilli = ton > 0 ? Math.round(ton * 1000) : 0;
-      const apyHint = 0; 
+
+      // APY hint from projected total (current + payable)
+      const currentBalanceInt = user?.starsBalance ?? 0;
+      const apyHint = (() => {
+        const { apy } = tierForTotal(currentBalanceInt + payable);
+        return Math.round(apy * 10); // apy*10 int
+      })();
 
       try {
         const { data } = await axios.post(
@@ -216,7 +225,7 @@ export const PaymentInitPage: React.FC = () => {
       try { offInvoice?.(); } catch {}
       try { visHandler?.(); } catch {}
     };
-  }, [requestedAmount, payable, userId, exchangeRate, tonUsd]);
+  }, [requestedAmount, payable, user?.starsBalance, userId, exchangeRate, tonUsd]);
 
   return (
     <Page back={false}>
