@@ -27,8 +27,6 @@ import {
 import { tierForTotal } from '@/utils/apy';
 import styles from './PaymentInitPage.module.scss';
 
-type InvoiceStatus = 'paid' | 'cancelled' | 'failed' | 'pending';
-
 export const PaymentInitPage: React.FC = () => {
   const location = useLocation();
   const { search, state } = location as { search: string; state?: { from?: string } };
@@ -58,7 +56,7 @@ export const PaymentInitPage: React.FC = () => {
     navigate('/deposit', { replace: true });
   };
 
-  const settle = (status: InvoiceStatus) => {
+  const settle = (status: 'paid' | 'cancelled' | 'failed' | 'pending') => {
     if (settledRef.current) return;
     settledRef.current = true;
 
@@ -128,6 +126,9 @@ export const PaymentInitPage: React.FC = () => {
         })();
         break;
       }
+      case 'cancelled':
+      case 'failed':
+      case 'pending':
       default:
         showError('Payment cancelled');
         goBackSafely();
@@ -136,72 +137,7 @@ export const PaymentInitPage: React.FC = () => {
   };
 
   useEffect(() => {
-    const bridge = (eventType: string, eventData: any) => {
-      const type = String(eventType || '').toLowerCase();
-      if (type === 'invoice_closed' || type === 'invoiceclosed') {
-        const status = String(eventData?.status || '').toLowerCase() as InvoiceStatus;
-        if (status === 'paid' || status === 'cancelled' || status === 'failed' || status === 'pending') {
-          settle(status);
-        }
-      }
-    };
-
-    const tgAny: any = (window as any).Telegram || ((window as any).Telegram = {});
-    tgAny.WebView = tgAny.WebView || {};
-    const prevIOSAndroid = tgAny.WebView.receiveEvent;
-    tgAny.WebView.receiveEvent = (et: string, ed: unknown) => {
-      try { bridge(et, ed); } finally { try { prevIOSAndroid?.(et, ed); } catch {} }
-    };
-
-    const prevDesktop = (window as any).TelegramGameProxy?.receiveEvent;
-    if (!(window as any).TelegramGameProxy) (window as any).TelegramGameProxy = {};
-    (window as any).TelegramGameProxy.receiveEvent = (et: string, ed: unknown) => {
-      try { bridge(et, ed); } finally { try { prevDesktop?.(et, ed); } catch {} }
-    };
-
-    const prevWP = (window as any).TelegramGameProxy_receiveEvent;
-    (window as any).TelegramGameProxy_receiveEvent = (et: string, ed: unknown) => {
-      try { bridge(et, ed); } finally { try { prevWP?.(et, ed); } catch {} }
-    };
-
-    const onMessage = (evt: MessageEvent) => {
-      const data = evt?.data;
-      if (typeof data === 'string') {
-        try {
-          const parsed = JSON.parse(data);
-          if (parsed && typeof parsed === 'object') {
-            bridge(parsed.eventType, parsed.eventData);
-          }
-        } catch { /* ignore */ }
-      } else if (data && typeof data === 'object' && 'eventType' in data) {
-        bridge((data as any).eventType, (data as any).eventData);
-      }
-    };
-    window.addEventListener('message', onMessage);
-
     let offInvoice: (() => void) | undefined;
-    try {
-      const handler = (event: { status: InvoiceStatus }) => settle(event.status);
-      WebApp.onEvent('invoiceClosed', handler);
-      offInvoice = () => WebApp.offEvent('invoiceClosed', handler);
-    } catch {}
-
-    return () => {
-      try { tgAny.WebView.receiveEvent = prevIOSAndroid; } catch {}
-      try {
-        if (prevDesktop) (window as any).TelegramGameProxy.receiveEvent = prevDesktop;
-        else delete (window as any).TelegramGameProxy?.receiveEvent;
-      } catch {}
-      try {
-        if (prevWP) (window as any).TelegramGameProxy_receiveEvent = prevWP;
-        else delete (window as any).TelegramGameProxy_receiveEvent;
-      } catch {}
-      window.removeEventListener('message', onMessage);
-      try { offInvoice?.(); } catch {}
-    };
-  },);
-
-  useEffect(() => {
     let visHandler: (() => void) | undefined;
 
     (async () => {
@@ -231,6 +167,12 @@ export const PaymentInitPage: React.FC = () => {
           return;
         }
 
+        const handler = (event: { status: 'paid' | 'cancelled' | 'failed' | 'pending' }) => {
+          settle(event.status);
+        };
+        WebApp.onEvent('invoiceClosed', handler);
+        offInvoice = () => WebApp.offEvent('invoiceClosed', handler);
+
         const onVis = () => {
           if (document.visibilityState === 'hidden') {
             becameHiddenRef.current = true;
@@ -255,6 +197,7 @@ export const PaymentInitPage: React.FC = () => {
     })();
 
     return () => {
+      try { offInvoice?.(); } catch {}
       try { visHandler?.(); } catch {}
     };
   }, [requestedAmount, payable, userId]);
