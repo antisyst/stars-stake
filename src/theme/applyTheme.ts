@@ -22,9 +22,9 @@ export function applyTheme(platform: Platform, scheme: Scheme) {
   root.style.setProperty('--app-bottom-bar-bg', p.bottomBarBg);
 
   try {
-    if (typeof (miniApp as any).setBackgroundColor === 'function') {
-      (miniApp as any).setBackgroundColor(p.headerBg);
-    }
+    (miniApp as any).setBackgroundColor?.(p.headerBg);
+    (miniApp as any).setHeaderColor?.(p.headerBg);
+    (miniApp as any).setBottomBarColor?.(p.bottomBarBg);
   } catch {
     // ignore
   }

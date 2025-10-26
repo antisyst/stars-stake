@@ -21,12 +21,12 @@ export const WithdrawOptions = () => {
         <h2 className="section-title">Withdraw Options</h2>
         <div className={styles.withdrawSection}>
             <div className={styles.item}>
-                <StarIcon/>
-                <div className={styles.title}>Telegram Stars</div>
-            </div>
-            <div className={styles.item}>
                 <TonIcon/>
                 <div className={styles.title}>Toncoin</div>
+            </div>
+            <div className={styles.item}>
+                <StarIcon/>
+                <div className={styles.title}>Telegram Stars</div>
             </div>
             <div className={styles.helpWrapper}>
                 <HelpIcon className='icon'/>

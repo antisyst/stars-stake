@@ -1,5 +1,5 @@
 export type Scheme = 'dark' | 'light';
-export type Platform = 'ios' | 'android' | 'web' | 'tdesktop';
+export type Platform = 'ios' | 'android' | 'web';
 
 export interface Palette {
   bg: string;
@@ -19,6 +19,7 @@ export interface Palette {
   bottomBarBg: string;
 }
 
+/** iOS */
 const iosDark: Palette = {
   bg: '#000000',
   secondaryBg: '#1c1c1d',
@@ -110,45 +111,26 @@ const webDark: Palette = {
   bottomBarBg: '#181818',
 };
 
-const tdesktopLight: Palette = {
-  accentText: '#168acd',
-  bg: '#ffffff',
-  bottomBarBg: '#ffffff',
-  button: '#40a7e3',
-  buttonText: '#ffffff',
-  destructiveText: '#d14e4e',
-  headerBg: '#ffffff',
-  hint: '#999999',
-  link: '#168acd',
-  secondaryBg: '#f1f1f1',
-  sectionBg: '#ffffff',
-  sectionHeaderText: '#168acd',
-  sectionSeparator: '#e7e7e7',
-  subtitle: '#999999',
-  text: '#000000',
-};
-
-const tdesktopDark: Palette = {
-  accentText: '#6ab2f2',
-  bg: '#17212b',
-  bottomBarBg: '#17212b',
-  button: '#5288c1',
-  buttonText: '#ffffff',
-  destructiveText: '#ec3942',
-  headerBg: '#17212b',
-  hint: '#708499',
-  link: '#6ab3f3',
-  secondaryBg: '#232e3c',
-  sectionBg: '#17212b',
-  sectionHeaderText: '#6ab3f3',
-  sectionSeparator: '#111921',
-  subtitle: '#708499',
-  text: '#f5f5f5',
+const webLight: Palette = {
+  bg: '#ffffff',               
+  button: '#3390ec',
+  buttonText: '#ffffff',     
+  hint: '#707579',            
+  link: '#00488f',       
+  secondaryBg: '#f4f4f5',     
+  text: '#000000',           
+  headerBg: '#ffffff',       
+  accentText: '#3390ec',     
+  sectionBg: '#ffffff',        
+  sectionHeaderText: '#3390ec',    
+  subtitle: '#707579',        
+  destructiveText: '#df3f40',
+  sectionSeparator: '#e5e5e5',
+  bottomBarBg: '#f4f4f5',
 };
 
 export function getPalette(platform: Platform, scheme: Scheme): Palette {
   if (platform === 'ios') return scheme === 'dark' ? iosDark : iosLight;
   if (platform === 'android') return scheme === 'dark' ? androidDark : androidLight;
-  if (platform === 'tdesktop') return scheme === 'dark' ? tdesktopDark : tdesktopLight;
-  return webDark;
+  return scheme === 'dark' ? webDark : webLight;
 }
