@@ -1,0 +1,8 @@
+.backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: flex; align-items: flex-end; z-index: 2000; }
+.sheet { width: 100%; background: var(--app-section-bg, #111); border-top-left-radius: 16px; border-top-right-radius: 16px; padding: 16px; }
+.header { display:flex; justify-content: space-between; align-items:center; margin-bottom: 8px; }
+.x { background: transparent; border: 0; font-size: 18px; color: var(--app-text,#fff); }
+.caption { opacity:.8; margin: 6px 0 14px; }
+.actions { display: grid; gap: 10px; }
+.primary { width:100%; padding:12px 16px; border-radius:12px; border:0; font-weight:600; background: var(--app-button,#2a6); color: var(--app-button-text,#fff); }
+.secondary { width:100%; padding:12px 16px; border-radius:12px; border:1px solid var(--app-section-separator,#333); background: var(--app-secondary-bg,#181818); color: var(--app-text,#fff); }
