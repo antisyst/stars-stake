@@ -13,7 +13,6 @@ import { useRates } from '@/contexts/RatesContext';
 import { formatForInput } from '@/utils/formatForInput';
 import { tdesktopInputShields } from '@/utils/tdesktopShields';
 import { inputNoSelectGuards, composeInputProps } from '@/utils/inputGuards';
-import { PaymentMethodModal } from '@/components/PaymentMethodModal/PaymentMethodModal';
 import AddIcon from '@/assets/icons/add.svg?react';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import styles from './DepositPage.module.scss';
@@ -96,31 +95,18 @@ export const DepositPage: React.FC = () => {
 
   useEffect(() => { applyButtonStyle(valid); }, [valid, buttonText, enabledBg, enabledFg, disabledBg, disabledFg]);
 
-  // === Payment method modal (Stars vs TON) ===
-  const [methodOpen, setMethodOpen] = useState(false);
-
   useEffect(() => {
     let off: (() => void) | undefined;
     try {
       off = mainButton.onClick(() => {
         if (!mountedRef.current || !valid) return;
-        setMethodOpen(true);
+        try { mainButton.setParams({ isLoaderVisible: true, isEnabled: false }); } catch {}
+        navigate(`/payment/init?amount=${amount}`, { state: { from: location.pathname } });
       });
     } catch {}
     return () => { try { off?.(); } catch {} };
-  }, [valid]);
+  }, [valid, amount, navigate, location.pathname]);
 
-  const onChooseStars = () => {
-    setMethodOpen(false);
-    navigate(`/payment/init?amount=${amount}`, { state: { from: location.pathname } });
-  };
-
-  const onChooseTon = () => {
-    setMethodOpen(false);
-    navigate(`/payment/ton?amount=${amount}`, { state: { from: location.pathname } });
-  };
-
-  // ====== input value & helpers ======
   const displayValue = raw === '' ? '' : formatForInput(parseAmountInput(raw));
   const usdVal = (amount || 0) * (exchangeRate ?? 0);
   const tonVal = (tonUsd > 0 && usdVal > 0) ? (usdVal / tonUsd) : 0;
@@ -159,10 +145,6 @@ export const DepositPage: React.FC = () => {
 
   const apyKey = isMobile ? (focused ? 'focus' : 'blur') : 'stable';
 
-  const modalLabel = amount > 0
-    ? `${formatNumber(amount)} Stars ≈ $${formatNumber(Number(usdVal.toFixed(2)))}${tonVal ? ` ≈ ${tonVal.toFixed(3)} TON` : ''}`
-    : '—';
-
   return (
     <Page back>
       <div className={styles.depositPage} key={`deposit-${location.key}`}>
@@ -194,7 +176,6 @@ export const DepositPage: React.FC = () => {
                 />
               </div>
             </div>
-
             <div className={styles.infoTitle}>
               {displayValue === '' ? (
                 <p className={styles.usdNote}>
@@ -210,7 +191,6 @@ export const DepositPage: React.FC = () => {
                 <p className={styles.usdNote}>≈ ${formatNumber(Number(usdVal.toFixed(2)))}</p>
               )}
             </div>
-
             <AnimatePresence initial={false} mode="wait">
               {isValidDeposit(amount) ? (
                 <ApyPreview
@@ -226,14 +206,6 @@ export const DepositPage: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <PaymentMethodModal
-        open={methodOpen}
-        onClose={() => setMethodOpen(false)}
-        onChooseStars={onChooseStars}
-        onChooseTon={onChooseTon}
-        starsAmountLabel={modalLabel}
-      />
     </Page>
   );
 };
