@@ -69,7 +69,7 @@ export const PaymentInitPage: React.FC = () => {
     switch (status) {
       case 'paid': {
         (async () => {
-          let apyUsed = 36.8;
+          let apyUsed = 28.9;
           try {
             if (userId) {
               const userRef = doc(db, 'users', userId);
