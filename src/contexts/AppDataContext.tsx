@@ -23,7 +23,7 @@ const AppDataContext = createContext<AppDataContextType>({
   user: null,
   stats: null,
   positions: [],
-  effectiveApy: 58.6, 
+  effectiveApy: 36.8, 
   exchangeRate: 0.0199,
   balanceUsd: 0,
 });
@@ -87,7 +87,7 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
               photoUrl: u?.photoUrl || '',
               starsCents: 0,
               starsBalance: 0,
-              currentApy: 58.6,
+              currentApy: 36.8,
               createdAt: serverTimestamp(),
               updatedAt: serverTimestamp(),
             },
@@ -101,7 +101,7 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
             patch.starsCents = Math.max(0, Math.floor(sb * 100));
           }
           if (typeof (data as any).starsBalance !== 'number') patch.starsBalance = 0;
-          if (typeof data.currentApy !== 'number') patch.currentApy = 58.6;
+          if (typeof data.currentApy !== 'number') patch.currentApy = 36.8;
           if (Object.keys(patch).length) {
             patch.updatedAt = serverTimestamp();
             await setDoc(userRef, patch, { merge: true });

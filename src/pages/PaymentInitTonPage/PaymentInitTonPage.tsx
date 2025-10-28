@@ -154,7 +154,7 @@ export const PaymentInitTonPage: React.FC = () => {
 
           showSuccess('TON payment successful!');
           navigate(
-            `/payment/success?paid=${payable}&unlock=${encodeURIComponent(short)}&requested=${requestedAmount}&apy=${58.6}`,
+            `/payment/success?paid=${payable}&unlock=${encodeURIComponent(short)}&requested=${requestedAmount}&apy=${36.8}`,
             { replace: true }
           );
         } catch (e) {

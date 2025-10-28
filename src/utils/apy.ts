@@ -1,17 +1,17 @@
 export type TierId = 1 | 2 | 3 | 4;
 
 export const TIER_TABLE = [
-  { id: 1 as TierId, min: 0,       max: 19_999,   apy: 58.6 },
-  { id: 2 as TierId, min: 20_000,  max: 49_999,   apy: 66.9 },
-  { id: 3 as TierId, min: 50_000,  max: 99_999,   apy: 74.3 },
-  { id: 4 as TierId, min: 100_000, max: Infinity, apy: 83.7 },
+  { id: 1 as TierId, min: 0,       max: 19_999,   apy: 36.8 },
+  { id: 2 as TierId, min: 20_000,  max: 49_999,   apy: 39.7 },
+  { id: 3 as TierId, min: 50_000,  max: 99_999,   apy: 42.5 },
+  { id: 4 as TierId, min: 100_000, max: Infinity, apy: 45.9 },
 ];
 
 export function tierForTotal(total: number) {
   for (const t of TIER_TABLE) {
     if (total >= t.min && total <= t.max) return { tier: t.id, apy: t.apy };
   }
-  return { tier: 1 as TierId, apy: 58.6 };
+  return { tier: 1 as TierId, apy: 36.8 };
 }
 
 export function formatApy(apy: number): string {
@@ -20,7 +20,7 @@ export function formatApy(apy: number): string {
 
 export function weightedApy(positions: { amount: number; apy: number }[]): number {
   const total = positions.reduce((s, p) => s + (p.amount || 0), 0);
-  if (total <= 0) return 58.6;
+  if (total <= 0) return 36.8;
   const sum = positions.reduce((s, p) => s + (p.amount * p.apy), 0);
   return sum / total;
 }
