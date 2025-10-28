@@ -25,7 +25,7 @@ export const faqs: Faq[] = [
     question: 'How are rewards calculated?',
     answer: [
       'Rewards are based on your total staked balance and the tier level you currently hold.',
-      'Each tier offers a higher Annual Percentage Yield (APY), starting at 36.8% and going up to 45.9% for higher commitments.',
+      'Each tier offers a higher Annual Percentage Yield (APY), starting at 36.8% and going up to 46.8% for higher commitments.',
       'APY dynamically adjusts as you increase your stake; larger stakes unlock higher yield rates.',
       'The system automatically recalculates your effective APY in real time.',
       'All reward calculations are transparent and verifiable within the app’s dashboard.'

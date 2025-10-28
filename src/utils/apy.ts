@@ -4,7 +4,7 @@ export const TIER_TABLE = [
   { id: 1 as TierId, min: 0,       max: 19_999,   apy: 36.8 },
   { id: 2 as TierId, min: 20_000,  max: 49_999,   apy: 39.7 },
   { id: 3 as TierId, min: 50_000,  max: 99_999,   apy: 42.5 },
-  { id: 4 as TierId, min: 100_000, max: Infinity, apy: 45.9 },
+  { id: 4 as TierId, min: 100_000, max: Infinity, apy: 46.8 },
 ];
 
 export function tierForTotal(total: number) {

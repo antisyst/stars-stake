@@ -9,7 +9,7 @@ export const Header = () => {
         </div>
         <div className={styles.headerText}>
             <h2 className={styles.title}>Stars Base</h2>
-            <p className={styles.subtitle}>Earn up to 45.9% APY through staking</p>
+            <p className={styles.subtitle}>Earn up to 46.8% APY through staking</p>
         </div>
     </div>
   )

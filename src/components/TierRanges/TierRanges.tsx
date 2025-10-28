@@ -6,7 +6,7 @@ export const TierRanges: React.FC = () => {
     { color: 'var(--app-button)', range: '0 – 19,999',  apy: '36.8' },
     { color: '#22c55e', range: '20,000 – 49,999', apy: '39.7' },
     { color: '#ff9f1a', range: '50,000 – 99,999', apy: '42.5' },
-    { color: '#a855f7', range: '100,000 +',       apy: '45.9' },
+    { color: '#a855f7', range: '100,000 +',       apy: '46.8' },
   ];
 
   return (

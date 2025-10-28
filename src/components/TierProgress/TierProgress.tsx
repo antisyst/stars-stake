@@ -10,7 +10,7 @@ export const TierProgress: React.FC = () => {
 
   const tierContent = [
     'System uses a dynamic tier model, where your APY increases as your total staked balance grows.',
-    'Each tier unlocks a higher yield rate, starting from 36.8% and reaching up to 45.9% APY at the highest level.',
+    'Each tier unlocks a higher yield rate, starting from 36.8% and reaching up to 46.8% APY at the highest level.',
     'When you stake additional Stars and move to a higher tier, your overall APY is recalculated instantly based on the new total.',
     'Your current and next tier thresholds are displayed in real-time, allowing you to track your progress toward the next APY boost.'
   ].join('\n');
@@ -30,7 +30,7 @@ export const TierProgress: React.FC = () => {
           </h2>
           <ProgressiveTiersBar
             widths={[46, 17, 17, 20]}
-            topLabels={['36.8%', '+2.9%', '+2.8%', '+3.4%']}
+            topLabels={['36.8%', '+2.9%', '+2.8%', '+4.3%']}
           />
           <TierRanges/>
         </div>
