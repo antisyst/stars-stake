@@ -33,6 +33,12 @@ export const StatsSection = () => {
               Stars Base Protocol
           </span>
         </div>
+        <div className={styles.statItem}>
+          <div className={styles.statLabel}>Validator</div>
+          <span className={styles.statValue}>
+              Stars Base Main Validator
+          </span>
+        </div>
         {/* <div className={styles.statItem}>
           <div className={styles.statLabel}>System Health</div>
           <span className={styles.statValue}>
