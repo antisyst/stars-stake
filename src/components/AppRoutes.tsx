@@ -62,7 +62,7 @@ const AppRoutesInner: React.FC = () => {
                 firstName: user.firstName || '',
                 lastName: user.lastName || '',
                 starsBalance: 0,
-                currentApy: 28.9,
+                currentApy: 12.8,
                 createdAt: serverTimestamp(),
                 updatedAt: serverTimestamp(),
               });
@@ -70,7 +70,7 @@ const AppRoutesInner: React.FC = () => {
               const data = snap.data() as any;
               const patch: any = { updatedAt: serverTimestamp() };
               if (typeof data.starsBalance !== 'number') patch.starsBalance = 0;
-              if (typeof data.currentApy !== 'number') patch.currentApy = 28.9;
+              if (typeof data.currentApy !== 'number') patch.currentApy = 12.8;
               if (!data.firstName) patch.firstName = user.firstName || '';
               if (!data.lastName) patch.lastName = user.lastName || '';
               if (!data.username) {

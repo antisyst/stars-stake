@@ -25,7 +25,7 @@ export const faqs: Faq[] = [
     question: 'How are rewards calculated?',
     answer: [
       'Rewards are based on your total staked balance and the tier level you currently hold.',
-      'Each tier offers a higher Annual Percentage Yield (APY), starting at 28.9% and going up to 39.8% for higher commitments.',
+      'Each tier offers a higher Annual Percentage Yield (APY), starting at 12.8% and going up to 28.7% for higher commitments.',
       'APY dynamically adjusts as you increase your stake; larger stakes unlock higher yield rates.',
       'The system automatically recalculates your effective APY in real time.',
       'All reward calculations are transparent and verifiable within the app’s dashboard.'
@@ -65,7 +65,7 @@ export const faqs: Faq[] = [
     question: 'How does APY affect daily and monthly rewards?',
     answer: [
       'APY (Annual Percentage Yield) represents your yearly return, but rewards are calculated and added daily.',
-      'For example, a 28.9% APY corresponds to roughly ~2.40% per month (compounded). If you stake 1,000 Stars, you’ll see about 1,039 after one month (before rounding on display).',
+      'For example, a 12.8% APY corresponds to roughly ~2.40% per month (compounded). If you stake 1,000 Stars, you’ll see about 1,039 after one month (before rounding on display).',
       'Your balance increases every day; compounding works automatically — each day’s yield builds upon the last.',
       'We credit rewards daily with two-decimal precision, while the Stake screen shows the integer balance.',
       'In short, the longer you stake, the more your returns compound over time.'
@@ -84,7 +84,7 @@ export const faqs: Faq[] = [
     question: 'Is my APY fixed or does it change over time?',
     answer: [
       'APY in Stars Base is dynamic and depends on your total staked amount and system liquidity.',
-      'While the base APY starts at 28.9%, it can increase as you move through higher staking tiers.',
+      'While the base APY starts at 12.8%, it can increase as you move through higher staking tiers.',
       'In rare cases, network or liquidity adjustments may slightly influence the yield rate.',
       'All rate changes are transparent and reflected instantly in your dashboard.',
       'The system aims to keep returns stable and competitive under varying conditions.'
