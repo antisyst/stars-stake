@@ -65,7 +65,7 @@ export const faqs: Faq[] = [
     question: 'How does APY affect daily and monthly rewards?',
     answer: [
       'APY (Annual Percentage Yield) represents your yearly return, but rewards are calculated and added daily.',
-      'For example, a 12.8% APY corresponds to roughly ~2.40% per month (compounded). If you stake 1,000 Stars, you’ll see about 1,039 after one month (before rounding on display).',
+      'For example, a 12.8% APY corresponds to roughly ~1.06% per month (compounded). If you stake 1,000 Stars, you’ll see about 1,039 after one month (before rounding on display).',
       'Your balance increases every day; compounding works automatically — each day’s yield builds upon the last.',
       'We credit rewards daily with two-decimal precision, while the Stake screen shows the integer balance.',
       'In short, the longer you stake, the more your returns compound over time.'

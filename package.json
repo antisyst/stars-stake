@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "engines": {
-    "node": ">=20 <21"
+    "node": ">=20"
   },
   "homepage": "https://telegram-mini-apps.github.io/reactjs-template",
   "scripts": {
