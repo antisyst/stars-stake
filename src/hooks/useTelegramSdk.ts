@@ -8,7 +8,7 @@ import {
   backButton,
 } from '@telegram-apps/sdk';
 import { applyTheme } from '@/theme/applyTheme';
-import type { Platform, Scheme } from '@/theme/palettes';
+import type { Platform, Scheme } from '@/types';
 
 export const useTelegramSdk = () => {
   const lp = useLaunchParams();
