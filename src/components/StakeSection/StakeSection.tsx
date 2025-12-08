@@ -6,10 +6,12 @@ import { useAppData } from '@/contexts/AppDataContext';
 import { formatNumber } from '@/utils/formatNumber';
 import { ToastContext } from '@/contexts/ToastContext';
 import { formatApy } from '@/utils/apy';
+import { useTonAddress, useTonConnectUI } from '@tonconnect/ui-react';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import HelpIcon from '@/assets/icons/help.svg?react';
 import AddIcon from '@/assets/icons/add.svg?react';
 import MinusIcon from '@/assets/icons/minus.svg?react';
+import { useCurrency } from '@/contexts/CurrencyContext';
 import styles from './StakeSection.module.scss';
 
 export const StakeSection = () => {
@@ -17,21 +19,34 @@ export const StakeSection = () => {
   const { user, balanceUsd, exchangeRate, effectiveApy, positions } = useAppData();
   const { showError } = useContext(ToastContext);
   const navigate = useNavigate();
+  const [tonConnectUI] = useTonConnectUI();
+  const wallet = useTonAddress();
+  const { formatFromUsd } = useCurrency();
 
   const balanceInt = user?.starsBalance ?? 0;
   const apyStr = formatApy(effectiveApy);
-
   const apyContent = [
     'APY stands for Annual Percentage Yield, representing the total yearly return including compound rewards.',
     'Rates are tiered and assigned per stake (lot); your displayed APY is a weighted average across all open lots.',
     `Your current effective APY: ${apyStr}%`,
-    `Current price: $${exchangeRate.toFixed(4)} per Star.`,
+    `Current price: ${formatFromUsd(exchangeRate, 4)} per Star.`,
   ].join('\n');
 
-  const goDeposit = () => navigate('/deposit');
+  const ensureConnected = (): boolean => {
+    if (!wallet) {
+      tonConnectUI.openModal();
+      return false;
+    }
+    return true;
+  };
+
+  const handleStakeEarnOrDeposit = () => {
+    if (ensureConnected()) {
+      navigate('/deposit');
+    }
+  };
 
   const now = useMemo(() => new Date(), [positions?.length]);
-
   const toDate = (v: any): Date | null => {
     if (!v) return null;
     if (typeof v?.toDate === 'function') return v.toDate();
@@ -44,7 +59,7 @@ export const StakeSection = () => {
     }
     if (v instanceof Date) return v;
     return null;
-    };
+  };
 
   const anyUnlocked = useMemo(() => {
     if (!positions || positions.length === 0) return false;
@@ -62,23 +77,22 @@ export const StakeSection = () => {
     });
   }, [positions, now]);
 
-  const handleWithdraw = async () => {
-    if (balanceInt <= 0) {
-      showError('You have no balance to withdraw');
-      return;
+  const handleWithdraw = () => {
+    if (ensureConnected()) {
+      if (balanceInt <= 0) {
+        showError('You have no balance to withdraw');
+        return;
+      }
+      if (allLocked) {
+        showError('Your lock period hasn’t ended yet.');
+        return;
+      }
+      if (anyUnlocked) {
+        showError('Stars Base locker is not yet active');
+        return;
+      }
+      showError('Withdrawal is not available right now.');
     }
-
-    if (allLocked) {
-      showError('Your lock period hasn’t ended yet.');
-      return;
-    }
-
-    if (anyUnlocked) {
-      showError('Stars Base locker is not yet active');
-      return;
-    }
-
-    showError('Withdrawal is not available right now.');
   };
 
   return (
@@ -91,7 +105,6 @@ export const StakeSection = () => {
             <HelpIcon className="icon" />
           </div>
         </div>
-
         <div className={styles.rowItem}>
           <div className={styles.starsBalance}>
             <div className={styles.starAmount}>
@@ -103,22 +116,20 @@ export const StakeSection = () => {
             {apyStr}%
           </h2>
         </div>
-
         <div className={styles.rowItem}>
-          <span className="muted-text">≈${formatNumber(Number(balanceUsd.toFixed(2)))}</span>
+          <span className="muted-text">≈{formatFromUsd(balanceUsd, 2)}</span>
           <span className="muted-text">Minimum Lock: 30 Days</span>
         </div>
-
         {balanceInt <= 0 ? (
           <div className={styles.buttonsContainer}>
-            <Button size="m" mode="filled" onClick={goDeposit}>
+            <Button size="m" mode="filled" onClick={handleStakeEarnOrDeposit}>
               <AddIcon className="add-icon" />
               Stake &amp; Earn
             </Button>
           </div>
         ) : (
           <div className={styles.buttonsContainerRow}>
-            <Button size="m" mode="bezeled" onClick={goDeposit}>
+            <Button size="m" mode="bezeled" onClick={handleStakeEarnOrDeposit}>
               <AddIcon className="accent-icon" />
               Deposit
             </Button>
@@ -129,7 +140,6 @@ export const StakeSection = () => {
           </div>
         )}
       </div>
-
       <Modal
         isOpen={isApyOpen}
         title="What is APY?"

@@ -8,6 +8,7 @@ import { formatNumber } from '@/utils/formatNumber';
 import SuccessCheck from '@/components/SuccessCheck/SuccessCheck';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import styles from './PaymentSuccessPage.module.scss';
+import { useCurrency } from '@/contexts/CurrencyContext';
 
 export const PaymentSuccessPage: React.FC = () => {
   const { search } = useLocation();
@@ -22,12 +23,15 @@ export const PaymentSuccessPage: React.FC = () => {
 
   const { exchangeRate } = useAppData();
   const { tonUsd } = useRates();
+  const { formatFromUsd } = useCurrency();
 
   const usdVal = useMemo(() => (exchangeRate ? paid * exchangeRate : 0), [paid, exchangeRate]);
   const tonVal = useMemo(() => (tonUsd > 0 ? usdVal / tonUsd : 0), [usdVal, tonUsd]);
 
+  const formattedFiat = useMemo(() => formatFromUsd(usdVal, 2), [formatFromUsd, usdVal]);
+
   const easeOutExpo: NonNullable<Transition['ease']> =
-    [0.16, 1, 0.3, 1]; 
+    [0.16, 1, 0.3, 1];
 
   const shellVariants: Variants = {
     initial: { opacity: 0, y: 24, scale: 0.98, filter: 'blur(8px)' },
@@ -74,8 +78,8 @@ export const PaymentSuccessPage: React.FC = () => {
             </div>
 
             <div className={styles.item} role="listitem">
-              <span className={styles.itemLabel}>≈ USD</span>
-              <span className={styles.itemValue}>${formatNumber(Number(usdVal.toFixed(2)))}</span>
+              <span className={styles.itemLabel}>≈ {formattedFiat.split(/\s/)[0]}</span>
+              <span className={styles.itemValue}>{formattedFiat}</span>
             </div>
 
             <div className={styles.item} role="listitem">

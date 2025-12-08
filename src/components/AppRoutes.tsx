@@ -53,6 +53,7 @@ const AppRoutesInner: React.FC = () => {
 
           await runTransaction(db, async (tx) => {
             const snap = await tx.get(userRef);
+
             if (!snap.exists()) {
               tx.set(userRef, {
                 id: user.id,
@@ -63,20 +64,28 @@ const AppRoutesInner: React.FC = () => {
                 lastName: user.lastName || '',
                 starsBalance: 0,
                 currentApy: 12.8,
+                walletConnected: false,
+                walletAddress: '',
                 createdAt: serverTimestamp(),
                 updatedAt: serverTimestamp(),
               });
             } else {
               const data = snap.data() as any;
               const patch: any = { updatedAt: serverTimestamp() };
-              if (typeof data.starsBalance !== 'number') patch.starsBalance = 0;
-              if (typeof data.currentApy !== 'number') patch.currentApy = 12.8;
-              if (!data.firstName) patch.firstName = user.firstName || '';
-              if (!data.lastName) patch.lastName = user.lastName || '';
-              if (!data.username) {
-                patch.username = user.username || `${user.firstName} ${user.lastName || ''}`.trim() || 'Anonymous';
+
+              if ((user.firstName || '') !== (data.firstName || '')) patch.firstName = user.firstName || '';
+              if ((user.lastName || '') !== (data.lastName || '')) patch.lastName = user.lastName || '';
+              if ((user.username || '') !== (data.username || '')) patch.username = user.username || `${user.firstName} ${user.lastName || ''}`.trim() || 'Anonymous';
+              if ((user.photoUrl || '') !== (data.photoUrl || '')) patch.photoUrl = user.photoUrl || '';
+              if ((user.languageCode || '') !== (data.languageCode || '')) patch.languageCode = user.languageCode || '';
+
+              if (typeof data.walletConnected !== 'boolean') patch.walletConnected = false;
+              if (typeof data.walletAddress !== 'string') patch.walletAddress = '';
+
+              const keys = Object.keys(patch);
+              if (keys.length > 0) {
+                tx.update(userRef, patch);
               }
-              tx.update(userRef, patch);
             }
           });
 

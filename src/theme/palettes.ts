@@ -1,25 +1,5 @@
-export type Scheme = 'dark' | 'light';
-export type Platform = 'ios' | 'android' | 'web';
+import { Scheme, Platform, Palette } from '@/types';
 
-export interface Palette {
-  bg: string;
-  secondaryBg: string;
-  sectionBg: string;
-  headerBg: string;
-  text: string;
-  subtitle: string;
-  hint: string;
-  link: string;
-  accentText: string;
-  button: string;
-  buttonText: string;
-  sectionHeaderText: string;
-  destructiveText: string;
-  sectionSeparator: string;
-  bottomBarBg: string;
-}
-
-/** iOS */
 const iosDark: Palette = {
   bg: '#000000',
   secondaryBg: '#1c1c1d',
@@ -56,7 +36,6 @@ const iosLight: Palette = {
   subtitle: '#8e8e93',
 };
 
-/** Android */
 const androidDark: Palette = {
   bg: '#212d3b',
   sectionBg: '#1d2733',

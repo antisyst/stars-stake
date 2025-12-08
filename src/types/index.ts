@@ -10,9 +10,34 @@ export interface UserData {
   starsBalance: number;
   currentApy: number;
   starsCents?: number;
+  walletAddress?: string;
+  walletConnected?: boolean;
+  defaultCurrency?: 'USD' | 'EUR' | 'RUB' | 'INR' | 'BRL' | 'IDR' | 'TRY' | 'UAH' | 'KZT';
 }
 
 export type ToastStatus = 'success' | 'error';
+
+export type Scheme = 'dark' | 'light';
+
+export type Platform = 'ios' | 'android' | 'web';
+
+export interface Palette {
+  bg: string;
+  secondaryBg: string;
+  sectionBg: string;
+  headerBg: string;
+  text: string;
+  subtitle: string;
+  hint: string;
+  link: string;
+  accentText: string;
+  button: string;
+  buttonText: string;
+  sectionHeaderText: string;
+  destructiveText: string;
+  sectionSeparator: string;
+  bottomBarBg: string;
+}
 
 export interface ToastProps {
   title: string;
@@ -131,3 +156,17 @@ export type AppDataContextType = {
   exchangeRate: number;
   balanceUsd: number;
 };
+
+interface DropdownItem {
+  label: string;
+  icon: React.ReactNode;
+  onClick: () => void;
+}
+
+export interface DropdownProps {
+  isOpen: boolean;
+  onClose: () => void;
+  items: DropdownItem[];
+  position?: 'left' | 'right' | 'center';
+  triggerRef?: React.RefObject<HTMLElement>;
+}

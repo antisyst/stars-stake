@@ -1,0 +1,32 @@
+.linkList {
+  display: flex;
+  flex-direction: column;
+  background: var(--app-section-bg);
+  border-radius: 26px;
+  width: 100%;
+  padding: 2px 16px;
+  box-sizing: border-box;
+
+  .row {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    border-bottom: 0.7px solid var(--app-section-separator);
+    transition: background 120ms ease, color 120ms ease;
+    outline: none;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      font-size: 17px;
+      color: var(--app-link);
+      line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

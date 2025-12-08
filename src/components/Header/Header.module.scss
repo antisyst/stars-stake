@@ -2,41 +2,43 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 12px;
     margin-bottom: 18px;
     margin-top: 18px;
 
-    .iconWrapper {
-        width: 53px;
-        height: 53px;
-        border-radius: 50%;
-        background: var(--app-button);
+    .profileWrapper {
         display: flex;
-        position: relative;
         align-items: center;
         justify-content: center;
-
-        svg {
-            width: 30px;
-            height: 30px;
-        }
     }
+ 
+    .walletButtonWrapper {
+       position: relative;
 
-    .headerText {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-
-        .title {
-            font-size: 24px;
-            color: var(--app-accent-text);
+       .walletButton {
+        border-radius: 100px;
+        overflow: hidden;
+        height: 40px;
+        padding: 0 12px;
+      
+        h6 {
+          font-family: 'SF Pro Rounded' !important;
+          font-size: 15px;
+          font-weight: 700 !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0 4px;
         }
 
-        .subtitle {
-            color: var(--app-hint);
-            font-size: 16px;
+        &.bezeled {
+           -webkit-text-stroke: 0.05px var(--app-link);
         }
+
+        &.filled {
+           -webkit-text-stroke: 0.05px var(--app-button-text);
+        }
+       }
     }
 }

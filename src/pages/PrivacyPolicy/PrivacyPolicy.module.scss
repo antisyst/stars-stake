@@ -1,0 +1,75 @@
+.privacyPage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 4px;
+  box-sizing: border-box;
+
+    .container {
+        width: 100%;
+        max-width: 900px;
+        background: transparent;
+        padding-top: 6px;
+        padding-bottom: 16px;
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            border-bottom: 0.2px solid var(--app-section-separator);
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 5px;
+            padding-bottom: 10px;
+        }
+
+        .meta {
+            font-size: 15px;
+            margin-top: 16px;
+            color: var(--app-hint);
+            width: 100%;
+            text-align: left;
+        }
+
+        .content {
+            color: var(--app-text);
+            line-height: 1.55;
+            font-size: 17px;
+            text-align: left;
+            width: 100%;
+
+            h3 {
+                margin-top: 18px;
+                margin-bottom: 8px;
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            p {
+                margin: 8px 0;
+            }
+
+            ol {
+                margin: 8px 0 12px 20px;
+            }
+
+            ol[type="A"] {
+                margin-top: 6px;
+            }
+
+            li {
+                margin: 6px 0;
+            }
+
+            strong {
+                font-weight: 600;
+            }
+
+            ol ol {
+                margin-top: 6px;
+                margin-left: 16px;
+            }
+        }
+    }
+}

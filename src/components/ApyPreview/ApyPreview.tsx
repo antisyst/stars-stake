@@ -7,6 +7,7 @@ import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { useLaunchParams } from '@telegram-apps/sdk-react';
 import { useRates } from '@/contexts/RatesContext';
 import styles from './ApyPreview.module.scss';
+import { useCurrency } from '@/contexts/CurrencyContext';
 
 type Props = {
   currentBalance: number;
@@ -73,6 +74,7 @@ export const ApyPreview: React.FC<Props> = ({
   const lp = useLaunchParams();
   const isMobile = ['ios', 'android'].includes(lp.platform);
   const baseRotation = lp.platform === 'ios' ? 90 : 0;
+  const { formatFromUsd } = useCurrency();
 
   const [expanded, setExpanded] = useState(false);
   const wasFocusedRef = useRef(false);
@@ -222,7 +224,7 @@ export const ApyPreview: React.FC<Props> = ({
                     <span className={styles.itemLabel}>Yearly</span>
                     <span className={styles.itemValue}>
                       +{formatNumber(view.yearlyGain)} <StarIcon />
-                      <span className={styles.sep}>·</span>${formatNumber(Number(view.usd.y.toFixed(2)))}
+                      <span className={styles.sep}>·</span>{formatFromUsd(view.usd.y, 2)}
                       <span className={styles.sep}>·</span>{view.ton.y ? view.ton.y.toFixed(3) : '—'} TON
                     </span>
                   </div>
@@ -230,7 +232,7 @@ export const ApyPreview: React.FC<Props> = ({
                     <span className={styles.itemLabel}>Monthly</span>
                     <span className={styles.itemValue}>
                       +{formatNumber(view.monthlyGain)} <StarIcon />
-                      <span className={styles.sep}>·</span>${formatNumber(Number(view.usd.m.toFixed(2)))}
+                      <span className={styles.sep}>·</span>{formatFromUsd(view.usd.m, 2)}
                       <span className={styles.sep}>·</span>{view.ton.m ? view.ton.m.toFixed(3) : '—'} TON
                     </span>
                   </div>
@@ -238,7 +240,7 @@ export const ApyPreview: React.FC<Props> = ({
                     <span className={styles.itemLabel}>Daily</span>
                     <span className={styles.itemValue}>
                       +{formatNumber(view.dailyGain)} <StarIcon />
-                      <span className={styles.sep}>·</span>${formatNumber(Number(view.usd.d.toFixed(2)))}
+                      <span className={styles.sep}>·</span>{formatFromUsd(view.usd.d, 2)}
                       <span className={styles.sep}>·</span>{view.ton.d ? view.ton.d.toFixed(3) : '—'} TON
                     </span>
                   </div>

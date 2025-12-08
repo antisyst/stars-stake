@@ -1,0 +1,68 @@
+.profilePage {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   padding-top: 22px;
+   align-items: center;
+   justify-content: flex-start;
+
+    .headerRow {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      justify-content: flex-start;
+      gap: 8px;
+
+      .avatarWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .userInfo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .name {
+          font-size: 23px;
+          font-weight: 700;
+        }
+
+        .username {
+            color: var(--app-hint);
+            font-size: 15px;
+        }
+      }
+    }
+
+    .sectionGroup {
+      width: 100%;
+      display: flex;
+      margin-top: 12px;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+
+      .sectionItem {
+        width: 100%;
+
+        .connect {
+          height: 30px;
+          padding: 0 12px;
+        }
+
+        .subtitle {
+          padding-top: 10px;
+          padding-left: 2px;
+          font-size: 14px;
+          color: var(--app-hint);
+          width: 100%;
+          text-align: left;
+        }
+      }
+    }
+}

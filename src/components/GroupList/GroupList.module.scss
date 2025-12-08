@@ -1,0 +1,73 @@
+.groupList {
+  display: flex;
+  flex-direction: column;
+  background: var(--app-section-bg);
+  border-radius: 26px;
+  padding: 2px 0;
+  width: 100%;
+  
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 53px;
+    padding: 0 16px;
+    gap: 14px;
+    width: 100%;
+
+    &:last-child {
+      .right {
+        border-bottom: none;
+      }
+    }
+
+    .iconWrapper {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      gap: 8px;
+      width: 100%;
+      border-bottom: 0.7px solid var(--app-section-separator); 
+
+      .label {
+        font-size: 16px;
+      }
+
+      .value {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: var(--app-hint);
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: right;
+
+        svg {
+          margin-left: 2px;
+          vertical-align: middle;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}

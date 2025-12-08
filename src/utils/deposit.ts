@@ -32,7 +32,7 @@ export function computeUnlockDates(now = new Date()) {
 
 export function calcPayable(requested: number): number {
   if (!Number.isFinite(requested) || requested <= 0) return 0;
-  return requested === 100_000 ? 99_999 : requested;
+  return requested === 100_000 ? 100_000 : requested;
 }
 
 

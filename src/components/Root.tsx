@@ -4,6 +4,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary.tsx';
 import { AppDataProvider } from '@/contexts/AppDataContext';
 import { RatesProvider } from '@/contexts/RatesContext';
 import { HistoryProvider } from '@/contexts/HistoryContext';
+import { CurrencyProvider } from '@/contexts/CurrencyContext';
 import { publicUrl } from '@/helpers/publicUrl.ts';
 
 function ErrorBoundaryError({ error }: { error: unknown }) {
@@ -28,11 +29,13 @@ export function Root() {
     <ErrorBoundary fallback={ErrorBoundaryError}>
       <TonConnectUIProvider manifestUrl={publicUrl('tonconnect-manifest.json')}>
         <AppDataProvider>
-          <HistoryProvider>
-              <RatesProvider>
-                  <App />
-              </RatesProvider>
-          </HistoryProvider>
+          <CurrencyProvider>
+            <HistoryProvider>
+                <RatesProvider>
+                    <App />
+                </RatesProvider>
+            </HistoryProvider>
+          </CurrencyProvider>
         </AppDataProvider>
       </TonConnectUIProvider>
     </ErrorBoundary>

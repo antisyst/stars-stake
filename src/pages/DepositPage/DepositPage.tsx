@@ -16,6 +16,7 @@ import { inputNoSelectGuards, composeInputProps } from '@/utils/inputGuards';
 import AddIcon from '@/assets/icons/add.svg?react';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import styles from './DepositPage.module.scss';
+import { useCurrency } from '@/contexts/CurrencyContext';
 
 export const DepositPage: React.FC = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ export const DepositPage: React.FC = () => {
   const { user, exchangeRate } = useAppData();
   const { tonUsd } = useRates();
   const lp = useLaunchParams();
+  const { formatFromUsd } = useCurrency();
 
   const isMobile = ['ios', 'android'].includes(lp.platform);
   const isTDesktop = lp.platform === 'tdesktop';
@@ -179,16 +181,16 @@ export const DepositPage: React.FC = () => {
             <div className={styles.infoTitle}>
               {displayValue === '' ? (
                 <p className={styles.usdNote}>
-                  1&nbsp;<StarIcon />&nbsp;≈&nbsp;{formatNumber(Number((exchangeRate ?? 0.0199).toFixed(4)))}
+                  1&nbsp;<StarIcon />&nbsp;≈&nbsp;{formatFromUsd(exchangeRate, 4)}
                 </p>
               ) : amount > 0 && amount < MIN_DEPOSIT ? (
                 <p className={styles.warning}>Minimum deposit is {formatNumber(MIN_DEPOSIT)} Stars.</p>
               ) : valid ? (
                 <p className={styles.usdNote}>
-                  ≈ ${formatNumber(Number(usdVal.toFixed(2)))}&nbsp;≈ {tonVal ? (tonVal.toFixed(3)) : '—'} TON
+                  ≈ {formatFromUsd(usdVal, 2)}&nbsp;≈ {tonVal ? (tonVal.toFixed(3)) : '—'} TON
                 </p>
               ) : (
-                <p className={styles.usdNote}>≈ ${formatNumber(Number(usdVal.toFixed(2)))}</p>
+                <p className={styles.usdNote}>≈ {formatFromUsd(usdVal, 2)}</p>
               )}
             </div>
             <AnimatePresence initial={false} mode="wait">

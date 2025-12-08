@@ -2,9 +2,11 @@ import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import styles from './StatsSection.module.scss';
 import { useAppData } from '@/contexts/AppDataContext';
 import { formatNumber } from '@/utils/formatNumber';
+import { useCurrency } from '@/contexts/CurrencyContext';
 
 export const StatsSection = () => {
   const { stats } = useAppData();
+  const { formatFromUsd } = useCurrency();
 
   const totalStaked = stats?.totalStaked ?? 0;
   const exchangeRate = stats?.exchangeRate ?? 0.0199;
@@ -24,7 +26,7 @@ export const StatsSection = () => {
           <div className={styles.statLabel}>Exchange Rate</div>
           <span className={styles.statValue}>
             <StarIcon />
-            1 ≈ <span className={styles.inlineValue}>${exchangeRate.toFixed(4)}</span>
+            1 ≈ <span className={styles.inlineValue}>{formatFromUsd(exchangeRate, 4)}</span>
           </span>
         </div>
         <div className={styles.statItem}>

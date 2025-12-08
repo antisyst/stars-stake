@@ -1,4 +1,5 @@
-import { getPalette, Platform, Scheme } from './palettes';
+import { getPalette } from './palettes';
+import { Platform, Scheme } from '@/types';
 import { miniApp } from '@telegram-apps/sdk-react';
 
 export function applyTheme(platform: Platform, scheme: Scheme) {

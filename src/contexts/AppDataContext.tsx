@@ -10,6 +10,7 @@ import {
   collection,
   query,
   orderBy,
+  updateDoc,
 } from 'firebase/firestore';
 import type { GlobalStats, UserData, Position } from '@/types';
 import { useTelegramSdk } from '@/hooks/useTelegramSdk';
@@ -23,7 +24,7 @@ const AppDataContext = createContext<AppDataContextType>({
   user: null,
   stats: null,
   positions: [],
-  effectiveApy: 12.8, 
+  effectiveApy: 12.8,
   exchangeRate: 0.0199,
   balanceUsd: 0,
 });
@@ -74,27 +75,31 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
       try {
         const userRef = doc(db, 'users', uid);
         const userSnap = await getDoc(userRef);
+        const tgUser = initDataState?.user;
+
         if (!userSnap.exists()) {
-          const u = initDataState?.user;
           await setDoc(
             userRef,
             {
-              id: u?.id ?? Number(uid),
-              firstName: u?.firstName || '',
-              lastName: u?.lastName || '',
-              username: u?.username || '',
-              languageCode: u?.languageCode || '',
-              photoUrl: u?.photoUrl || '',
+              id: tgUser?.id ?? Number(uid),
+              firstName: tgUser?.firstName || '',
+              lastName: tgUser?.lastName || '',
+              username: tgUser?.username || '',
+              languageCode: tgUser?.languageCode || '',
+              photoUrl: tgUser?.photoUrl || '',
               starsCents: 0,
               starsBalance: 0,
               currentApy: 12.8,
+              walletConnected: false,
+              walletAddress: '',
+              defaultCurrency: 'USD',
               createdAt: serverTimestamp(),
               updatedAt: serverTimestamp(),
             },
             { merge: true }
           );
         } else {
-          const data = userSnap.data() as Partial<UserData> & { starsCents?: number };
+          const data = userSnap.data() as Partial<UserData> & { starsCents?: number; defaultCurrency?: string };
           const patch: any = {};
           if (!Number.isFinite(data.starsCents)) {
             const sb = typeof (data as any).starsBalance === 'number' ? (data as any).starsBalance : 0;
@@ -102,6 +107,26 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
           }
           if (typeof (data as any).starsBalance !== 'number') patch.starsBalance = 0;
           if (typeof data.currentApy !== 'number') patch.currentApy = 12.8;
+          if (!data.defaultCurrency) patch.defaultCurrency = 'USD';
+
+          if (tgUser) {
+            const updates: any = {};
+            if (typeof tgUser.firstName === 'string' && tgUser.firstName !== data.firstName) updates.firstName = tgUser.firstName;
+            if (typeof tgUser.lastName === 'string' && tgUser.lastName !== data.lastName) updates.lastName = tgUser.lastName;
+            if (typeof tgUser.username === 'string' && tgUser.username !== data.username) updates.username = tgUser.username;
+            if (typeof tgUser.languageCode === 'string' && tgUser.languageCode !== data.languageCode) updates.languageCode = tgUser.languageCode;
+            if (typeof tgUser.photoUrl === 'string' && tgUser.photoUrl !== data.photoUrl) updates.photoUrl = tgUser.photoUrl;
+
+            if (Object.keys(updates).length) {
+              updates.updatedAt = serverTimestamp();
+              try {
+                await updateDoc(userRef, updates);
+              } catch (e) {
+                await setDoc(userRef, updates, { merge: true });
+              }
+            }
+          }
+
           if (Object.keys(patch).length) {
             patch.updatedAt = serverTimestamp();
             await setDoc(userRef, patch, { merge: true });
@@ -124,7 +149,7 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
           );
         }
       } catch (e) {
-        console.error('Ensure defaults failed:', e);
+        console.error('Ensure defaults / sync failed:', e);
       } finally {
         if (!cancelled) {
           // no-op

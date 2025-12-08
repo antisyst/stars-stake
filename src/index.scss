@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none;
   user-select: none;
   font-family: 'SF Pro Display', sans-serif !important;
 }
@@ -124,9 +128,18 @@ body.modal-open {
 .error-icon {
   color: var(--tgui--secondary_fill);
 }
+
 .muted-text {
   color: var(--app-hint);
   font-size: 15px;
+}
+
+.text-icon {
+  color: var(--app-text);
+}
+
+.destructive-icon {
+  color: var(--app-destructive-text);
 }
 
 .subtitle {

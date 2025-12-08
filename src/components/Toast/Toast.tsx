@@ -3,10 +3,11 @@ import { motion, type Variants } from 'framer-motion'
 import { IconButton } from '@telegram-apps/telegram-ui'
 import styles from './Toast.module.scss'
 import type { ToastProps, ToastStatus } from '@/types'
-import ErrorIcon from '@/assets/icons/error.svg?react'
+import ErrorIcon from '@/assets/icons/error.svg?react';
+import CheckIcon from '@/assets/icons/check.svg?react';
 
 const icons: Record<ToastStatus, React.ReactNode> = {
-  success: <ErrorIcon className="icon" />,
+  success: <CheckIcon className="icon" />,
   error: <ErrorIcon className="icon" />,
 }
 
