@@ -16,7 +16,7 @@ export const HistorySection = () => {
     >
         <div className={styles.historyTitle}>
             <div className={styles.iconWrapper}>
-              <HistoryIcon className='icon' />
+              <HistoryIcon className='history-icon' />
             </div>
             <div className={styles.historyLabel}>History</div>
         </div>

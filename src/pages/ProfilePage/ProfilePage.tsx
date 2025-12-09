@@ -6,6 +6,8 @@ import { GroupList, GroupListItem } from '@/components/GroupList/GroupList';
 import LinkList, { LinkListItem } from '@/components/LinkList/LinkList';
 import WalletIcon from '@/assets/icons/wallet.svg?react';
 import CurrencyIcon from '@/assets/icons/currency.svg?react';
+import ChatIcon from '@/assets/icons/chat.svg?react';
+import HistoryIcon from '@/assets/icons/history.svg?react';
 import FaqIcon from '@/assets/icons/faq.svg?react';
 import { useTonAddress, useTonConnectUI } from '@tonconnect/ui-react';
 import { truncateAddress } from '@/utils/truncateAddress';
@@ -14,6 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContext } from '@/contexts/ToastContext';
 import { copyTextToClipboard } from '@telegram-apps/sdk';
 import { useCurrency, CURRENCY_OPTIONS, CurrencyCode } from '@/contexts/CurrencyContext';
+import { openTelegramLink } from '@telegram-apps/sdk';
 
 export const ProfilePage = () => {
   const { user } = useAppData();
@@ -148,6 +151,35 @@ export const ProfilePage = () => {
         onClick: () => navigate('/faq'),
         ariaLabel: 'Open FAQ',
       },
+      {
+        key: 'contact_support',
+        label: 'Contact Support',
+        value: '',
+        icon: <ChatIcon/>,
+        iconBg: '#ff9f43',
+        onClick: () => {
+          try {
+            openTelegramLink('https://t.me/starsbasesupport_bot');
+          } catch (e) {
+            console.error('Failed to open telegram link', e);
+          }
+        },
+        ariaLabel: 'Contact Stars Base support on Telegram',
+      },
+    ];
+  }, [navigate]);
+
+  const historyGroupItems: GroupListItem[] = useMemo(() => {
+    return [
+      {
+        key: 'history',
+        label: 'History',
+        value: '',
+        icon: <HistoryIcon/>,
+        iconBg: '#8e8e93',
+        onClick: () => navigate('/history'),
+        ariaLabel: 'Open History',
+      },
     ];
   }, [navigate]);
 
@@ -182,6 +214,9 @@ export const ProfilePage = () => {
 
           <div className={styles.sectionItem}>
             <GroupList items={secondaryItems} />
+          </div>
+          <div className={styles.sectionItem}>
+            <GroupList items={historyGroupItems} />
           </div>
           <div className={styles.sectionItem}>
             <LinkList items={policyLinks} />

@@ -1,4 +1,3 @@
-// Header.tsx (replace your existing Header.tsx)
 import styles from './Header.module.scss';
 import { useSignal, initData } from '@telegram-apps/sdk-react';
 import { popup, copyTextToClipboard } from '@telegram-apps/sdk';
@@ -13,7 +12,7 @@ import CopyIcon from '@/assets/icons/copy.svg?react';
 import DisconnectIcon from '@/assets/icons/disconnect.svg?react';
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/configs/firebaseConfig';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Header = () => {
   const initDataState = useSignal(initData.state);
@@ -24,6 +23,9 @@ export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const avatarRedirectedForRef = useRef<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -91,6 +93,44 @@ export const Header = () => {
 
     return () => { cancelled = true; };
   }, [wallet, user?.id, user?.firstName, user?.lastName, user?.username, showSuccess]);
+
+  useEffect(() => {
+    const photoUrl = user?.photoUrl ? String(user.photoUrl).trim() : '';
+    if (!photoUrl) return;
+
+    if (avatarRedirectedForRef.current === photoUrl) return;
+
+    if (location.pathname === '/home') {
+      avatarRedirectedForRef.current = photoUrl;
+      return;
+    }
+
+    let img = new Image();
+    let cleanedUp = false;
+
+    img.onload = () => {
+      if (cleanedUp) return;
+      avatarRedirectedForRef.current = photoUrl;
+      try {
+        navigate('/home', { replace: true });
+      } catch (e) {
+        console.error('Navigation to /home failed after avatar load:', e);
+      }
+    };
+    img.onerror = (err) => {
+      avatarRedirectedForRef.current = photoUrl;
+      console.warn('Avatar image failed to load', err);
+    };
+
+    img.src = photoUrl;
+
+    return () => {
+      cleanedUp = true;
+      img.onload = null;
+      img.onerror = null;
+      img = null as any;
+    };
+  }, [user?.photoUrl, location.pathname, navigate]);
 
   const handleWalletClick = () => {
     if (!wallet) {

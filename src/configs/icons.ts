@@ -5,6 +5,7 @@ import ArrowDownIcon from '@/assets/icons/arrow-down.svg';
 import BarChartUpIcon from '@/assets/icons/bar-chart-up.svg';
 import ShieldIcon from '@/assets/icons/shield.svg';
 import WalletIcon from '@/assets/icons/wallet.svg';
+import ChatIcon from '@/assets/icons/chat.svg';
 import HistoryIcon from '@/assets/icons/history.svg';
 import ChevronUp from '@/assets/icons/chevron-up.svg';
 import CurrencyIcon from '@/assets/icons/currency.svg';
@@ -27,6 +28,7 @@ export const icons = [
   TonIcon,
   TonSimple,
   FaqIcon,
+  ChatIcon,
   HistoryIcon,
   WalletIcon,
   CurrencyIcon,

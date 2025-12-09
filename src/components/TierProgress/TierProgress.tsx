@@ -10,7 +10,7 @@ export const TierProgress: React.FC = () => {
 
   const tierContent = [
     'System uses a dynamic tier model, where your APY increases as your total staked balance grows.',
-    'Each tier unlocks a higher yield rate, starting from 12.8% and reaching up to 39.8% APY at the highest level.',
+    'Each tier unlocks a higher yield rate, starting from 12.8% and reaching up to 28.7% APY at the highest level.',
     'When you stake additional Stars and move to a higher tier, your overall APY is recalculated instantly based on the new total.',
     'Your current and next tier thresholds are displayed in real-time, allowing you to track your progress toward the next APY boost.'
   ].join('\n');
