@@ -21,28 +21,50 @@ export const AppRoutes: React.FC = () => {
   return <AppRoutesInner />;
 };
 
-const resolveStartParamToPath = (param?: string | null): string | null => {
-  if (!param) return null;
-  const s = String(param).trim().toLowerCase();
+const mapStartParamToRoute = (raw?: unknown): string | null => {
+  if (raw == null) return null;
 
-  const privacyKeys = ['privacy', 'privacy-policy', 'privacy_policy', 'policy'];
-  const agreementKeys = [
-    'user-agreement',
-    'useragreement',
-    'agreement',
-    'terms',
-    'terms-of-service',
-    'tos',
-    'user-terms',
-  ];
+  const str =
+    typeof raw === 'string'
+      ? raw
+      : typeof raw === 'number'
+      ? String(raw)
+      : typeof raw === 'boolean'
+      ? raw ? 'true' : 'false'
+      : typeof raw === 'object' && (raw as any).toString
+      ? String((raw as any).toString())
+      : null;
 
-  if (privacyKeys.some(k => s === k || s.includes(k))) return '/privacy-policy';
-  if (agreementKeys.some(k => s === k || s.includes(k))) return '/user-agreement';
+  if (!str) return null;
+  const v = str.trim().toLowerCase();
 
-  if (s.startsWith('/')) return s;
+  if (v === 'privacy-policy' || v === 'privacy' || v.includes('privacy')) return '/privacy-policy';
+  if (v === 'user-agreement' || v === 'useragreement' || v === 'agreement' || v.includes('user')) return '/user-agreement';
 
   return null;
 };
+
+const getStartRouteFromLaunchParams = (): string | null => {
+  try {
+    const lp = retrieveLaunchParams?.() ?? ({} as Record<string, any>);
+    const candidates: unknown[] = [
+      lp?.tgWebAppStartParam,
+      lp?.startapp,
+      lp?.start,
+      lp?.tgStartParam,
+    ];
+
+    for (const c of candidates) {
+      const mapped = mapStartParamToRoute(c);
+      if (mapped) return mapped;
+    }
+    return null;
+  } catch (e) {
+    console.warn('retrieveLaunchParams failed', e);
+    return null;
+  }
+};
+
 
 const AppRoutesInner: React.FC = () => {
   const initDataState = useSignal(initData.state);
@@ -130,30 +152,17 @@ const AppRoutesInner: React.FC = () => {
 
         if (!bootedRef.current) {
           bootedRef.current = true;
+
           const path = location.pathname.replace(/^#?/, '');
-          if (path && path !== '/' && path !== '') {
-            return;
-          }
 
-          try {
-            const launchParams: any = retrieveLaunchParams();
-            const rawParam = launchParams?.tgWebAppStartParam ?? launchParams?.startapp ?? launchParams?.start ?? null;
-
-            const startParam: string | null =
-              rawParam == null
-                ? null
-                : (typeof rawParam === 'string' ? rawParam : String(rawParam));
-
-            const resolved = resolveStartParamToPath(startParam);
-            if (resolved) {
-              navigate(resolved, { replace: true });
-              return;
+          if (!path || path === '/' || path === '') {
+            const startRoute = getStartRouteFromLaunchParams();
+            if (startRoute) {
+              navigate(startRoute, { replace: true });
+            } else {
+              navigate('/home', { replace: true });
             }
-          } catch (err) {
-            console.warn('Failed to retrieve launch params or map to route:', err);
           }
-
-          navigate('/home', { replace: true });
         }
       } catch (err) {
         console.error('User init error:', err);
@@ -162,7 +171,12 @@ const AppRoutesInner: React.FC = () => {
           bootedRef.current = true;
           const path = location.pathname.replace(/^#?/, '');
           if (!path || path === '/' || path === '') {
-            navigate('/home', { replace: true });
+            const startRoute = getStartRouteFromLaunchParams();
+            if (startRoute) {
+              navigate(startRoute, { replace: true });
+            } else {
+              navigate('/home', { replace: true });
+            }
           }
         }
       }
@@ -200,3 +214,5 @@ const AppRoutesInner: React.FC = () => {
     </DataGate>
   );
 };
+
+export default AppRoutes;
