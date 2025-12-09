@@ -14,10 +14,34 @@ import { usePreloadFonts } from '@/hooks/usePreloadFonts';
 import { waitFor } from '@/utils/wait';
 import { mainButton } from '@telegram-apps/sdk';
 import { DataGate } from '@/components/DataGate';
+import { retrieveLaunchParams } from '@telegram-apps/sdk';
 
 export const AppRoutes: React.FC = () => {
   useTelegramSdk();
   return <AppRoutesInner />;
+};
+
+const resolveStartParamToPath = (param?: string | null): string | null => {
+  if (!param) return null;
+  const s = String(param).trim().toLowerCase();
+
+  const privacyKeys = ['privacy', 'privacy-policy', 'privacy_policy', 'policy'];
+  const agreementKeys = [
+    'user-agreement',
+    'useragreement',
+    'agreement',
+    'terms',
+    'terms-of-service',
+    'tos',
+    'user-terms',
+  ];
+
+  if (privacyKeys.some(k => s === k || s.includes(k))) return '/privacy-policy';
+  if (agreementKeys.some(k => s === k || s.includes(k))) return '/user-agreement';
+
+  if (s.startsWith('/')) return s;
+
+  return null;
 };
 
 const AppRoutesInner: React.FC = () => {
@@ -107,9 +131,29 @@ const AppRoutesInner: React.FC = () => {
         if (!bootedRef.current) {
           bootedRef.current = true;
           const path = location.pathname.replace(/^#?/, '');
-          if (!path || path === '/' || path === '') {
-            navigate('/home', { replace: true });
+          if (path && path !== '/' && path !== '') {
+            return;
           }
+
+          try {
+            const launchParams: any = retrieveLaunchParams();
+            const rawParam = launchParams?.tgWebAppStartParam ?? launchParams?.startapp ?? launchParams?.start ?? null;
+
+            const startParam: string | null =
+              rawParam == null
+                ? null
+                : (typeof rawParam === 'string' ? rawParam : String(rawParam));
+
+            const resolved = resolveStartParamToPath(startParam);
+            if (resolved) {
+              navigate(resolved, { replace: true });
+              return;
+            }
+          } catch (err) {
+            console.warn('Failed to retrieve launch params or map to route:', err);
+          }
+
+          navigate('/home', { replace: true });
         }
       } catch (err) {
         console.error('User init error:', err);
