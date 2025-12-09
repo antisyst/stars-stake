@@ -14,57 +14,11 @@ import { usePreloadFonts } from '@/hooks/usePreloadFonts';
 import { waitFor } from '@/utils/wait';
 import { mainButton } from '@telegram-apps/sdk';
 import { DataGate } from '@/components/DataGate';
-import { retrieveLaunchParams } from '@telegram-apps/sdk';
 
 export const AppRoutes: React.FC = () => {
   useTelegramSdk();
   return <AppRoutesInner />;
 };
-
-const mapStartParamToRoute = (raw?: unknown): string | null => {
-  if (raw == null) return null;
-
-  const str =
-    typeof raw === 'string'
-      ? raw
-      : typeof raw === 'number'
-      ? String(raw)
-      : typeof raw === 'boolean'
-      ? raw ? 'true' : 'false'
-      : typeof raw === 'object' && (raw as any).toString
-      ? String((raw as any).toString())
-      : null;
-
-  if (!str) return null;
-  const v = str.trim().toLowerCase();
-
-  if (v === 'privacy-policy' || v === 'privacy' || v.includes('privacy')) return '/privacy-policy';
-  if (v === 'user-agreement' || v === 'useragreement' || v === 'agreement' || v.includes('user')) return '/user-agreement';
-
-  return null;
-};
-
-const getStartRouteFromLaunchParams = (): string | null => {
-  try {
-    const lp = retrieveLaunchParams?.() ?? ({} as Record<string, any>);
-    const candidates: unknown[] = [
-      lp?.tgWebAppStartParam,
-      lp?.startapp,
-      lp?.start,
-      lp?.tgStartParam,
-    ];
-
-    for (const c of candidates) {
-      const mapped = mapStartParamToRoute(c);
-      if (mapped) return mapped;
-    }
-    return null;
-  } catch (e) {
-    console.warn('retrieveLaunchParams failed', e);
-    return null;
-  }
-};
-
 
 const AppRoutesInner: React.FC = () => {
   const initDataState = useSignal(initData.state);
@@ -152,16 +106,9 @@ const AppRoutesInner: React.FC = () => {
 
         if (!bootedRef.current) {
           bootedRef.current = true;
-
           const path = location.pathname.replace(/^#?/, '');
-
           if (!path || path === '/' || path === '') {
-            const startRoute = getStartRouteFromLaunchParams();
-            if (startRoute) {
-              navigate(startRoute, { replace: true });
-            } else {
-              navigate('/home', { replace: true });
-            }
+            navigate('/home', { replace: true });
           }
         }
       } catch (err) {
@@ -171,12 +118,7 @@ const AppRoutesInner: React.FC = () => {
           bootedRef.current = true;
           const path = location.pathname.replace(/^#?/, '');
           if (!path || path === '/' || path === '') {
-            const startRoute = getStartRouteFromLaunchParams();
-            if (startRoute) {
-              navigate(startRoute, { replace: true });
-            } else {
-              navigate('/home', { replace: true });
-            }
+            navigate('/home', { replace: true });
           }
         }
       }
@@ -214,5 +156,3 @@ const AppRoutesInner: React.FC = () => {
     </DataGate>
   );
 };
-
-export default AppRoutes;
