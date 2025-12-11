@@ -14,9 +14,8 @@ import { truncateAddress } from '@/utils/truncateAddress';
 import { useMemo, useContext, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContext } from '@/contexts/ToastContext';
-import { copyTextToClipboard } from '@telegram-apps/sdk';
+import { copyTextToClipboard, openTelegramLink } from '@telegram-apps/sdk';
 import { useCurrency, CURRENCY_OPTIONS, CurrencyCode } from '@/contexts/CurrencyContext';
-// import { openTelegramLink } from '@telegram-apps/sdk';
 
 export const ProfilePage = () => {
   const { user } = useAppData();
@@ -159,15 +158,16 @@ export const ProfilePage = () => {
         iconBg: '#ff9f43',
         onClick: () => {
           try {
-            showSuccess('Support service is launching soon.');
+            openTelegramLink('https://t.me/starsbase_support');
           } catch (e) {
-            console.error('Failed to show support toast', e);
+            console.error('Failed to open telegram link', e);
+            showError('Failed to open Telegram link');
           }
         },
         ariaLabel: 'Contact Stars Base support on Telegram',
       },
     ];
-  }, [navigate, showSuccess]);
+  }, [navigate, showError]);
 
   const historyGroupItems: GroupListItem[] = useMemo(() => {
     return [
