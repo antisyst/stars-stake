@@ -219,7 +219,7 @@ export const ProfilePage = () => {
         key: 'history',
         label: t('profile.history'),
         value: '',
-        icon: <HistoryIcon />,
+        icon: <HistoryIcon className='white-icon'/>,
         iconBg: '#8e8e93',
         onClick: () => navigate('/history'),
         ariaLabel: 'Open History',
