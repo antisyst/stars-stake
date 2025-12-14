@@ -176,6 +176,13 @@ body.modal-open {
   color: var(--app-subtitle);
 }
 
+.language-section-title {
+  padding: 0 16px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--app-subtitle);
+}
+
 @keyframes GradientMove {
   0% {
       background-position: 150% 0;

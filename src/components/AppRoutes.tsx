@@ -77,7 +77,10 @@ const AppRoutesInner: React.FC = () => {
               if ((user.lastName || '') !== (data.lastName || '')) patch.lastName = user.lastName || '';
               if ((user.username || '') !== (data.username || '')) patch.username = user.username || `${user.firstName} ${user.lastName || ''}`.trim() || 'Anonymous';
               if ((user.photoUrl || '') !== (data.photoUrl || '')) patch.photoUrl = user.photoUrl || '';
-              if ((user.languageCode || '') !== (data.languageCode || '')) patch.languageCode = user.languageCode || '';
+
+              if (!data.languageCode || data.languageCode === '') {
+                if (user.languageCode) patch.languageCode = user.languageCode;
+              }
 
               if (typeof data.walletConnected !== 'boolean') patch.walletConnected = false;
               if (typeof data.walletAddress !== 'string') patch.walletAddress = '';

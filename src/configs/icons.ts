@@ -8,6 +8,7 @@ import WalletIcon from '@/assets/icons/wallet.svg';
 import ChatIcon from '@/assets/icons/chat.svg';
 import HistoryIcon from '@/assets/icons/history.svg';
 import ChevronUp from '@/assets/icons/chevron-up.svg';
+import GlobeIcon from '@/assets/icons/globe.svg';
 import CurrencyIcon from '@/assets/icons/currency.svg';
 import MinusIcon from '@/assets/icons/minus.svg';
 import CopyIcon from '@/assets/icons/copy.svg';
@@ -24,6 +25,7 @@ export const icons = [
   HelpIcon,
   CopyIcon,
   DisconnectIcon,
+  GlobeIcon,
   StarIcon,
   TonIcon,
   TonSimple,

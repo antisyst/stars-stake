@@ -1,0 +1,244 @@
+{
+  "profile": {
+    "unknown": "Desconocido",
+    "wallet": "Billetera",
+    "connect": "Conectar",
+    "defaultCurrency": "Moneda predeterminada",
+    "language": "Idioma",
+    "contactSupport": "Contactar soporte",
+    "faq": "FAQ",
+    "history": "Historial",
+    "userAgreement": "Acuerdo de usuario",
+    "privacyPolicy": "Política de privacidad",
+    "supportNotice": "La mini app es operada por Stars Base Digital Services Provider. El servicio es independiente y no está afiliado a Telegram.",
+    "currencyUpdated": "Moneda actualizada"
+  },
+  "stake": {
+    "apyTitle": "¿Qué es el APY?",
+    "apyLine1": "APY significa Annual Percentage Yield (rendimiento porcentual anual) y representa el rendimiento total anual incluyendo los intereses compuestos.",
+    "apyLine2": "Las tasas están por niveles y se asignan por stake (lote); el APY que ves es un promedio ponderado de todos los lotes abiertos.",
+    "apyLine3": "Tu APY efectivo actual: {apy}%",
+    "apyLine4": "Precio actual: {price} por estrella.",
+    "noBalance": "No tienes saldo para retirar",
+    "lockNotEnded": "Tu periodo de bloqueo no ha terminado aún.",
+    "lockerNotActive": "El locker de Stars Base aún no está activo",
+    "withdrawUnavailable": "El retiro no está disponible en este momento.",
+    "minimumLock": "Bloqueo mínimo: 30 días",
+    "balance": "Saldo",
+    "apy": "APY",
+    "stakeEarn": "Apostar y ganar",
+    "deposit": "Depositar",
+    "withdraw": "Retirar"
+  },
+  "common": {
+    "copiedToClipboard": "Copiado al portapapeles",
+    "copyFailed": "Copia fallida",
+    "noWallet": "No hay dirección de billetera disponible",
+    "failedOpenLink": "No se pudo abrir el enlace de Telegram",
+    "openFaq": "Abrir FAQ",
+    "gotIt": "Entendido"
+  },
+  "stats": {
+    "title": "Resumen del sistema",
+    "totalStaked": "Total apostado",
+    "exchangeRate": "Tipo de cambio",
+    "protocol": "Protocolo",
+    "protocolValue": "Protocolo Stars Base"
+  },
+  "tier": {
+    "title": "Recompensas mejoradas",
+    "apyUpdates": "El APY se actualiza automáticamente conforme aumenta tu stake",
+    "line1": "El sistema usa un modelo de niveles dinámico, donde tu APY aumenta al crecer el balance total apostado.",
+    "line2": "Cada nivel desbloquea una tasa más alta, comenzando en 12.8% y llegando hasta 28.7% APY en el nivel más alto.",
+    "line3": "Cuando apuestas estrellas adicionales y subes de nivel, tu APY total se recalcula instantáneamente según el nuevo total.",
+    "line4": "Los umbrales de tu nivel actual y el siguiente se muestran en tiempo real para que puedas seguir el progreso hacia el próximo aumento de APY."
+  },
+  "withdraw": {
+    "title": "Opciones de retiro",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Telegram estrellas",
+    "subtitle": "Al retirar en TON, puede aplicarse una pequeña comisión de red de hasta 1%, según el monto del retiro.",
+    "line1": "Puedes retirar tus recompensas directamente en Telegram estrellas o en Toncoin (TON), según prefieras.",
+    "line2": "Al retirar en TON, puede aplicarse una pequeña comisión de red de hasta 1% dependiendo del monto total.",
+    "line3": "Todos los retiros se procesan de forma segura y normalmente se completan en minutos tras la confirmación.",
+    "line4": "Antes de proceder con un retiro en TON, asegúrate de que tu billetera TON esté conectada."
+  },
+  "campaign": {
+    "title": "Detalles de la campaña",
+    "minStakeLabel": "Apuesta mínima",
+    "maxStakeLabel": "Apuesta máxima",
+    "line1": "La campaña permite stake desde un mínimo de 300 estrellas, sin límite máximo en la apuesta.",
+    "line2": "Todos los depósitos contribuyen directamente al pool de staking activo y comienzan a generar recompensas inmediatamente tras la confirmación."
+  },
+  "header": {
+    "walletConnected": "Billetera conectada",
+    "copyAddress": "Copiar dirección",
+    "disconnect": "Desconectar",
+    "disconnectConfirmTitle": "Desconectar billetera",
+    "disconnectConfirmMessage": "¿Estás seguro de que deseas desconectar la billetera?"
+  },
+  "ecosystem": {
+    "title": "Beneficios del ecosistema",
+    "items": {
+      "marketplace": {
+        "title": "Soporte de liquidez del Marketplace",
+        "content": "El sistema Stars Base contribuye a mantener una liquidez estable en el Marketplace de Telegram estrellas.\nAl bloquear temporalmente estrellas en pools de staking, la oferta circulante disminuye, ayudando a estabilizar la actividad del mercado.\nEsto asegura poder adquisitivo consistente, transacciones más fluidas y un entorno comercial más sano para todos los participantes.\nUn modelo de liquidez balanceado mantiene el ecosistema de estrellas sostenible y resistente a fluctuaciones bruscas.\nLa estabilidad de la liquidez también refuerza la confianza entre usuarios y desarrolladores que integran pagos con estrellas."
+      },
+      "antiInflation": {
+        "title": "Sistema antiinflación",
+        "content": "El staking apoya directamente las mecánicas antiinflación del ecosistema al reducir el volumen de estrellas en circulación.\nA medida que más usuarios apuestan sus estrellas, la contracción de la oferta ayuda a preservar el valor del activo a largo plazo.\nEste proceso crea una economía autoequilibrada donde el crecimiento se mantiene estable y orgánico.\nEl sistema asegura que tanto participantes tempranos como a largo plazo se beneficien de condiciones de rendimiento consistentes y justas.\nAl minimizar la inflación descontrolada, el ecosistema protege la sostenibilidad de las recompensas para todos los usuarios."
+      },
+      "infrastructure": {
+        "title": "Financiamiento de infraestructura",
+        "content": "Una parte de la actividad de staking apoya el desarrollo continuo de la infraestructura de pagos y staking de Telegram.\nEsto incluye el mantenimiento de transacciones seguras, sistemas de procesamiento eficientes y una escalabilidad confiable para millones de usuarios.\nAl participar en el staking, los usuarios contribuyen indirectamente a mejorar el rendimiento y la resiliencia del ecosistema.\nEl financiamiento de infraestructura asegura que la red de estrellas se mantenga rápida, segura y preparada para el futuro.\nEstos recursos permiten actualizaciones continuas, mantenimiento técnico y futuras expansiones de funciones."
+      }
+    }
+  },
+  "modal": {
+    "close": "Cerrar",
+    "apy": "APY",
+    "stakedStars": "estrellas apostadas",
+    "amount": "Cantidad",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Periodo de bloqueo",
+    "unlockDate": "Fecha de desbloqueo",
+    "lockPeriodValue": "{days} días"
+  },
+  "payment": {
+    "processing": "Procesando…",
+    "invalidRequest": "Solicitud no válida.",
+    "unableStart": "No se pudo iniciar el pago. Intenta de nuevo.",
+    "unableOpen": "No se pudo abrir el pago. Intenta de nuevo.",
+    "paymentSuccessful": "¡Pago exitoso!",
+    "paymentCancelled": "Pago cancelado",
+    "stakeTitle": "Apostar {amount} estrellas",
+    "stakeLabel": "Apostar {amount} estrellas"
+  },
+  "paymentSuccess": {
+    "title": "Stake confirmado",
+    "subtitle": "Tu depósito ha sido bloqueado por {days} días.",
+    "apy": "APY",
+    "stakedStars": "estrellas apostadas",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Periodo de bloqueo",
+    "unlockDate": "Fecha de desbloqueo",
+    "back": "Volver al resumen",
+    "note": "Solicitado: {requested} estrellas · Cobrados: {paid} estrellas"
+  },
+  "faqs": {
+    "pageTitle": "Preguntas frecuentes",
+    "learnMore": "Aprende más",
+    "items": {
+      "q1": {
+        "question": "¿De dónde provienen las recompensas de Stars Base?",
+        "answer": "Las recompensas se generan a través del modelo de distribución de rendimiento del ecosistema Stars Base.\nCada pool de staking contribuye a la estabilidad de la liquidez y a la infraestructura de la red, lo que a su vez crea ciclos de recompensas sostenibles.\nParte del rendimiento proviene del crecimiento del ecosistema, la actividad del marketplace y los incentivos de staking distribuidos a lo largo del tiempo.\nNo intervienen fuentes especulativas; todas las recompensas están respaldadas por valor real del ecosistema.\nEsta estructura garantiza equidad, sostenibilidad a largo plazo y transparencia para todos los participantes."
+      },
+      "q2": {
+        "question": "¿Qué es el staking y es seguro?",
+        "answer": "El staking es el proceso de bloquear tus estrellas para apoyar el ecosistema y ganar recompensas pasivas a cambio.\nCuando realizas staking, tus activos permanecen vinculados a tu cuenta y nunca se transfieren a terceros.\nEl sistema se basa en la infraestructura de pagos segura de Telegram y opera con cifrado y transparencia completos.\nTodas las transacciones se verifican y son auditable, asegurando seguridad e inmutabilidad.\nEs un mecanismo de bajo riesgo diseñado para el crecimiento del valor a largo plazo y la contribución al ecosistema."
+      },
+      "q3": {
+        "question": "¿Cómo se calculan las recompensas?",
+        "answer": "Las recompensas se basan en tu balance total apostado y en el nivel (tier) que actualmente posees.\nCada nivel ofrece un APY más alto, comenzando en 12.8% y llegando hasta 28.7% para compromisos mayores.\nEl APY se ajusta dinámicamente a medida que aumentas tu stake; stakes más grandes desbloquean tasas más altas.\nEl sistema recalcula automáticamente tu APY efectivo en tiempo real.\nTodos los cálculos de recompensas son transparentes y verificables desde el panel de la app."
+      },
+      "q4": {
+        "question": "¿Puedo retirar mis estrellas en cualquier momento?",
+        "answer": "Sí, los retiros están disponibles en cualquier momento después de que termine tu periodo mínimo de bloqueo.\nPuedes elegir retirar directamente en Telegram estrellas o en Toncoin (TON), según prefieras.\nLos retiros en TON pueden incluir una pequeña comisión de red según el monto.\nTodas las transacciones se procesan automáticamente y de forma segura en minutos.\nEl sistema garantiza una experiencia fluida con trazabilidad completa."
+      },
+      "q5": {
+        "question": "¿Qué pasa si apuesto más estrellas después?",
+        "answer": "Cuando añades más estrellas a tu stake existente, tu balance total se actualiza instantáneamente.\nEl sistema evalúa automáticamente tu nuevo nivel y aplica el correspondiente aumento de APY.\nTus recompensas previas permanecen sin cambios, mientras que tus rendimientos futuros aumentan en consecuencia.\nEsto hace que la experiencia de staking sea dinámica: cuanto más apuestes, más ganas.\nNo hay penalizaciones ni retrasos al incrementar tu monto de stake."
+      },
+      "q6": {
+        "question": "¿Cómo beneficia Stars Base al ecosistema de Telegram?",
+        "answer": "Stars Base ayuda a mantener la liquidez y estabilidad dentro del Marketplace de Telegram estrellas.\nTambién apoya medidas antiinflación al reducir el número de estrellas en circulación.\nUna parte de toda la actividad de staking contribuye al desarrollo de la infraestructura de pagos y staking.\nEsto permite pagos más rápidos, mayor escalabilidad y un ciclo económico sostenible.\nAl hacer staking, los usuarios no solo obtienen recompensas sino que también ayudan a fortalecer la base a largo plazo de todo el ecosistema Stars."
+      },
+      "q7": {
+        "question": "¿Cómo afecta el APY a las recompensas diarias y mensuales?",
+        "answer": "El APY (Annual Percentage Yield) representa tu rendimiento anual, pero las recompensas se calculan y añaden diariamente.\nPor ejemplo, un APY del 12.8% corresponde aproximadamente a ~1.06% por mes (compuesto). Si apuestas 1,000 estrellas, verás alrededor de 1,039 después de un mes (antes del redondeo en la pantalla).\nTu balance aumenta cada día; la capitalización funciona automáticamente: cada día el rendimiento se suma al saldo para el cálculo del día siguiente.\nAcreditamos recompensas diariamente con precisión a dos decimales, mientras la pantalla Stake muestra el saldo entero.\nEn resumen, cuanto más tiempo apuestes, más se componen tus retornos con el tiempo."
+      },
+      "q8": {
+        "question": "¿Existe riesgo de perder mis estrellas?",
+        "answer": "Stars Base opera bajo una estructura no custodia (non-custodial), lo que significa que mantienes la propiedad de tus activos.\nTus fondos permanecen bloqueados de forma segura y verificable en todo momento.\nLa arquitectura del sistema prioriza la transparencia y la seguridad.\nLa principal variable es la fluctuación del rendimiento, no la seguridad de tus fondos."
+      },
+      "q9": {
+        "question": "¿Mi APY es fijo o cambia con el tiempo?",
+        "answer": "El APY en Stars Base es dinámico y depende de tu total apostado y de la liquidez del sistema.\nSi bien el APY base comienza en 12.8%, puede aumentar a medida que pasas a niveles de staking superiores.\nEn casos raros, ajustes de red o de liquidez pueden influir ligeramente en la tasa.\nTodos los cambios de tasa son transparentes y se reflejan instantáneamente en tu panel.\nEl sistema busca mantener retornos estables y competitivos bajo diferentes condiciones."
+      },
+      "q10": {
+        "question": "¿Cuál es la cantidad mínima y máxima que puedo apostar?",
+        "answer": "La cantidad mínima para participar en el staking es 300 estrellas.\nEl máximo por depósito único es 100,000 estrellas.\nMontos mayores desbloquean automáticamente niveles superiores y mejores tasas APY.\nEste sistema flexible recompensa tanto a usuarios nuevos como a participantes a largo plazo de forma justa."
+      },
+      "q11": {
+        "question": "¿Qué diferencia a Stars Base de las plataformas de staking comunes?",
+        "answer": "Stars Base es un modelo de staking nativo del ecosistema construido alrededor de las Telegram estrellas.\nCombina altos APY con utilidad real, apoyando la liquidez del marketplace y la infraestructura.\nA diferencia de aplicaciones de staking especulativas, el flujo de valor permanece dentro del ecosistema.\nEsto asegura transparencia, sostenibilidad a largo plazo e impacto real para cada usuario."
+      },
+      "q12": {
+        "question": "¿Qué sucede con mis estrellas durante el periodo de bloqueo?",
+        "answer": "Tus estrellas permanecen apostadas de forma segura dentro del sistema durante la duración del periodo mínimo de bloqueo de 30 días.\nDurante ese tiempo, continúan generando recompensas sin riesgo de pérdida ni transferencias externas.\nPuedes monitorear el crecimiento de tus rendimientos en tiempo real desde el panel.\nUna vez finalizado el periodo de bloqueo, puedes retirar o volver a apostar en cualquier momento con control total."
+      },
+      "q13": {
+        "question": "¿Puedo cancelar mi staking anticipadamente?",
+        "answer": "No es posible el unstake anticipado durante el periodo mínimo inicial de 30 días para mantener la estabilidad del ecosistema.\nEsta regla protege a todos los participantes asegurando la consistencia de la liquidez y la distribución justa de rendimientos.\nTras este periodo, puedes retirar o volver a apostar cuando gustes.\nEl sistema está diseñado para equilibrar flexibilidad y sostenibilidad."
+      },
+      "q14": {
+        "question": "¿Las recompensas se distribuyen automáticamente?",
+        "answer": "Sí, las recompensas se distribuyen automáticamente y se actualizan diariamente en tu saldo.\nNo es necesario reclamarlas manualmente ni hacer transferencias externas.\nTus recompensas acumuladas pueden seguirse en tiempo real desde el panel de staking.\nEsta automatización garantiza máxima conveniencia y transparencia para todos los usuarios."
+      },
+      "q15": {
+        "question": "¿Con qué frecuencia se actualiza el APY?",
+        "answer": "Las tasas APY se recalculan según tu nivel activo y la salud de la liquidez del sistema.\nCuando apuestas o agregas nuevas estrellas, la actualización se aplica instantáneamente.\nEsto asegura que tus recompensas siempre reflejen tu nivel de stake más reciente.\nTambién evita que aparezcan datos de rendimiento obsoletos o retrasados."
+      },
+      "q16": {
+        "question": "¿Por qué Stars Base utiliza un periodo de bloqueo?",
+        "answer": "El periodo mínimo de bloqueo de 30 días ayuda a mantener la liquidez del mercado y evita flujos rápidos de entrada y salida que podrían desestabilizar el sistema.\nGarantiza que las tasas de rendimiento permanezcan justas y coherentes para todos los participantes.\nLos periodos de bloqueo son habituales en la mayoría de sistemas de staking para proteger la integridad del ecosistema.\nAl finalizar el bloqueo, eres libre de retirar o volver a apostar sin límites."
+      },
+      "q17": {
+        "question": "¿Qué factores pueden influir en la tasa APY?",
+        "answer": "El APY depende de la liquidez general del ecosistema, el volumen total apostado y la demanda interna del mercado.\nCuando más usuarios hacen staking, el pool crece, permitiendo ajustes en las tasas para mantener el equilibrio.\nAdemás, la salud del sistema y la estabilidad del mercado se monitorean continuamente para optimizar los rendimientos.\nTodos los ajustes son algorítmicos y transparentes para mantener la equidad."
+      },
+      "q18": {
+        "question": "¿Cómo funciona la capitalización (compounding) en Stars Base?",
+        "answer": "La capitalización significa que tus recompensas diarias se añaden automáticamente a tu saldo.\nCada día, tu rendimiento se calcula sobre el saldo preciso actualizado (rastreado con dos decimales), mientras la pantalla Stake muestra el monto en enteros.\nEsto crea un efecto de crecimiento compuesto con el tiempo, aumentando los rendimientos a largo plazo."
+      },
+      "q19": {
+        "question": "¿Pueden las actualizaciones del sistema afectar mi saldo de staking?",
+        "answer": "No, las actualizaciones o las operaciones de mantenimiento no afectan tu monto apostado ni las recompensas acumuladas.\nTodos los datos de staking se almacenan de forma segura y se sincronizan.\nEn raros casos pueden producirse retrasos temporales en la visualización, pero tus fondos permanecen seguros.\nRecibirás una notificación si se planifica mantenimiento programado."
+      }
+    }
+  },
+  "history": {
+    "title": "Historial de transacciones",
+    "empty": {
+      "title": "Aún no hay historial",
+      "subtitle": "Una vez que empieces a realizar transacciones, aparecerán aquí."
+    },
+    "detailsTitle": "Detalles de la transacción",
+    "deposit": "Depósito",
+    "withdraw": "Retiro",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Depositar",
+    "buttonConfirmStake": "Confirmar staking",
+    "tagDeposit": "Depósito",
+    "tagStake": "Stake",
+    "stakeAmountAria": "Cantidad a stake en estrellas",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "El depósito mínimo es {min} estrellas.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Rendimiento estimado",
+    "perYear": "por año",
+    "collapseDetails": "Colapsar detalles",
+    "expandDetails": "Expandir detalles",
+    "yearly": "Anual",
+    "monthly": "Mensual",
+    "daily": "Diario",
+    "minimumLock": "Bloqueo mínimo",
+    "minimumLockValue": "{days} días"
+  }
+}

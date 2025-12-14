@@ -9,6 +9,7 @@ import SuccessCheck from '@/components/SuccessCheck/SuccessCheck';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import styles from './PaymentSuccessPage.module.scss';
 import { useCurrency } from '@/contexts/CurrencyContext';
+import { useI18n } from '@/i18n';
 
 export const PaymentSuccessPage: React.FC = () => {
   const { search } = useLocation();
@@ -24,6 +25,7 @@ export const PaymentSuccessPage: React.FC = () => {
   const { exchangeRate } = useAppData();
   const { tonUsd } = useRates();
   const { formatFromUsd } = useCurrency();
+  const { t } = useI18n();
 
   const usdVal = useMemo(() => (exchangeRate ? paid * exchangeRate : 0), [paid, exchangeRate]);
   const tonVal = useMemo(() => (tonUsd > 0 ? usdVal / tonUsd : 0), [usdVal, tonUsd]);
@@ -58,19 +60,19 @@ export const PaymentSuccessPage: React.FC = () => {
             <SuccessCheck size={130} />
           </div>
 
-          <h2 className={styles.title}>Stake Confirmed</h2>
-          <p className={styles.subtitle}>Your deposit has been locked for {lockDays} days.</p>
+          <h2 className={styles.title}>{t('paymentSuccess.title')}</h2>
+          <p className={styles.subtitle}>{t('paymentSuccess.subtitle').replace('{days}', String(lockDays))}</p>
 
           <div className={styles.detailsCard} role="list">
             <div className={styles.item} role="listitem">
-              <span className={styles.itemLabel}>APY</span>
+              <span className={styles.itemLabel}>{t('paymentSuccess.apy')}</span>
               <span className={`${styles.itemValue} ${styles.apyTitle}`}>
                 {Number.isFinite(apy) ? apy.toFixed(1) : '—'}%
               </span>
             </div>
 
             <div className={styles.item} role="listitem">
-              <span className={styles.itemLabel}>Staked Stars</span>
+              <span className={styles.itemLabel}>{t('paymentSuccess.stakedStars')}</span>
               <span className={styles.itemValue}>
                 <StarIcon />
                 <strong>{formatNumber(paid)}</strong>
@@ -78,22 +80,22 @@ export const PaymentSuccessPage: React.FC = () => {
             </div>
 
             <div className={styles.item} role="listitem">
-              <span className={styles.itemLabel}>≈ {formattedFiat.split(/\s/)[0]}</span>
+              <span className={styles.itemLabel}>{t('paymentSuccess.approxFiatLabel').replace('{fiat}', formattedFiat.split(/\s/)[0])}</span>
               <span className={styles.itemValue}>{formattedFiat}</span>
             </div>
 
             <div className={styles.item} role="listitem">
-              <span className={styles.itemLabel}>≈ TON</span>
+              <span className={styles.itemLabel}>{t('paymentSuccess.approxTonLabel')}</span>
               <span className={styles.itemValue}>{tonVal ? tonVal.toFixed(3) : '—'} TON</span>
             </div>
 
             <div className={styles.item} role="listitem">
-              <span className={styles.itemLabel}>Lock Period</span>
+              <span className={styles.itemLabel}>{t('paymentSuccess.lockPeriod')}</span>
               <span className={styles.itemValue}>{lockDays} days</span>
             </div>
 
             <div className={styles.item} role="listitem">
-              <span className={styles.itemLabel}>Unlock Date</span>
+              <span className={styles.itemLabel}>{t('paymentSuccess.unlockDate')}</span>
               <span className={styles.itemValue}>{unlock || '—'}</span>
             </div>
           </div>
@@ -101,14 +103,14 @@ export const PaymentSuccessPage: React.FC = () => {
           <button
             className={styles.primaryBtn}
             onClick={() => navigate('/home', { replace: true })}
-            aria-label="Go to Home"
+            aria-label={t('paymentSuccess.back')}
           >
-            Back to Overview
+            {t('paymentSuccess.back')}
           </button>
 
           {requested > paid ? (
             <p className={styles.note}>
-              Requested: {formatNumber(requested)} Stars · Payable charged: {formatNumber(paid)} Stars
+              {t('paymentSuccess.note').replace('{requested}', String(requested)).replace('{paid}', String(paid))}
             </p>
           ) : null}
         </motion.div>

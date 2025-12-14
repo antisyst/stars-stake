@@ -6,6 +6,7 @@ import { PaymentSuccessPage } from '@/pages/PaymentSuccess/PaymentSuccessPage';
 import { ProfilePage } from '@/pages/ProfilePage/ProfilePage';
 import { FaqPage } from '@/pages/FaqPage/FaqPage';
 import { UserAgreement } from '@/pages/UserAgreement/UserAgreement';
+import { LanguagePage } from '@/pages/LanguagePage/LanguagePage';
 import { PrivacyPolicy } from '@/pages/PrivacyPolicy/PrivacyPolicy';
 import { Route } from '@/types';
 
@@ -17,6 +18,7 @@ export const routes: Route[] = [
   { path: '/payment/success', Component: PaymentSuccessPage, title: 'Payment Success' },
   { path: '/faq', Component: FaqPage, title: 'FAQ' },
   { path: '/profile', Component: ProfilePage, title: 'Profile' },
-  { path: '/privacy-policy', Component: PrivacyPolicy, title: 'User Agreement' },
-  { path: '/user-agreement', Component: UserAgreement, title: 'User Agreement' }
+  { path: '/privacy-policy', Component: PrivacyPolicy, title: 'Privacy Policy' },
+  { path: '/user-agreement', Component: UserAgreement, title: 'User Agreement' },
+  { path: '/language', Component: LanguagePage, title: 'Language' }
 ];

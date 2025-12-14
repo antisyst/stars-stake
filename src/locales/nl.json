@@ -1,0 +1,244 @@
+{
+  "profile": {
+    "unknown": "Onbekend",
+    "wallet": "Portemonnee",
+    "connect": "Verbinden",
+    "defaultCurrency": "Standaardvaluta",
+    "language": "Taal",
+    "contactSupport": "Contact opnemen met ondersteuning",
+    "faq": "FAQ",
+    "history": "Geschiedenis",
+    "userAgreement": "Gebruikersovereenkomst",
+    "privacyPolicy": "Privacybeleid",
+    "supportNotice": "De mini-app wordt beheerd door Stars Base Digital Services Provider. De dienst is onafhankelijk en niet gelieerd aan Telegram.",
+    "currencyUpdated": "Valuta bijgewerkt"
+  },
+  "stake": {
+    "apyTitle": "Wat is APY?",
+    "apyLine1": "APY staat voor Annual Percentage Yield en geeft het totale jaarlijkse rendement weer, inclusief samengestelde beloningen.",
+    "apyLine2": "De tarieven zijn ingedeeld in niveaus en toegewezen per stake (lot); de getoonde APY is een gewogen gemiddelde over alle openstaande loten.",
+    "apyLine3": "Je huidige effectieve APY: {apy}%",
+    "apyLine4": "Huidige prijs: {price} per ster.",
+    "noBalance": "Je hebt geen saldo om op te nemen",
+    "lockNotEnded": "Je lock-periode is nog niet afgelopen.",
+    "lockerNotActive": "De Stars Base locker is nog niet actief",
+    "withdrawUnavailable": "Opname is momenteel niet beschikbaar.",
+    "minimumLock": "Minimale blokkering: 30 dagen",
+    "balance": "Saldo",
+    "apy": "APY",
+    "stakeEarn": "Staken & Verdienen",
+    "deposit": "Storten",
+    "withdraw": "Opnemen"
+  },
+  "common": {
+    "copiedToClipboard": "Gekopieerd naar klembord",
+    "copyFailed": "Kopiëren mislukt",
+    "noWallet": "Geen portemonneeadres beschikbaar",
+    "failedOpenLink": "Openen van Telegram-link mislukt",
+    "openFaq": "Open FAQ",
+    "gotIt": "Begrepen"
+  },
+  "stats": {
+    "title": "Systeemoverzicht",
+    "totalStaked": "Totaal gestaked",
+    "exchangeRate": "Wisselkoers",
+    "protocol": "Protocol",
+    "protocolValue": "Stars Base Protocol"
+  },
+  "tier": {
+    "title": "Verhoogde beloningen",
+    "apyUpdates": "APY wordt automatisch bijgewerkt naarmate je stake groeit",
+    "line1": "Het systeem gebruikt een dynamisch niveaumodel: je APY stijgt naarmate je totale gestakede balans toeneemt.",
+    "line2": "Elk niveau ontgrendelt een hogere opbrengstpercentage, te beginnen bij 12.8% en oplopend tot 28.7% APY op het hoogste niveau.",
+    "line3": "Wanneer je extra sterren stake en naar een hoger niveau gaat, wordt je totale APY direct opnieuw berekend op basis van het nieuwe totaal.",
+    "line4": "De drempels voor je huidige en volgende niveau worden in realtime weergegeven, zodat je je voortgang naar de volgende APY-boost kunt volgen."
+  },
+  "withdraw": {
+    "title": "Opname-opties",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Telegram sterren",
+    "subtitle": "Bij opname in TON kan een kleine netwerkvergoeding tot 1% van toepassing zijn, afhankelijk van het opnamebedrag.",
+    "line1": "Je kunt je beloningen opnemen in Telegram sterren of in Toncoin (TON), afhankelijk van je voorkeur.",
+    "line2": "Bij opname in TON kan een kleine netwerkvergoeding tot 1% worden toegepast, afhankelijk van het totale bedrag.",
+    "line3": "Alle opnames worden veilig verwerkt en zijn meestal binnen enkele minuten na bevestiging voltooid.",
+    "line4": "Voordat je een opname in TON uitvoert, zorg ervoor dat je TON-portemonnee is verbonden."
+  },
+  "campaign": {
+    "title": "Campagnedetails",
+    "minStakeLabel": "Min. stake",
+    "maxStakeLabel": "Max. stake",
+    "line1": "De campagne staat staking toe vanaf minimaal 300 sterren, zonder bovengrens voor het maximale stakebedrag.",
+    "line2": "Alle stortingen dragen direct bij aan het actieve staking-pool en beginnen onmiddellijk beloningen te genereren na bevestiging."
+  },
+  "header": {
+    "walletConnected": "Portemonnee verbonden",
+    "copyAddress": "Adres kopiëren",
+    "disconnect": "Ontkoppelen",
+    "disconnectConfirmTitle": "Portemonnee ontkoppelen",
+    "disconnectConfirmMessage": "Weet je zeker dat je de portemonnee wilt ontkoppelen?"
+  },
+  "ecosystem": {
+    "title": "Voordelen van het ecosysteem",
+    "items": {
+      "marketplace": {
+        "title": "Ondersteuning van marktliquiditeit",
+        "content": "Het Stars Base-systeem draagt bij aan het behouden van stabiele liquiditeit op de Telegram sterren-marktplaats.\nDoor sterren tijdelijk te blokkeren in staking-pools, vermindert het circulerende aanbod, wat helpt om de markta ctiviteit te stabiliseren.\nDit zorgt voor consistente koopkracht, soepelere transacties en een gezondere handelsomgeving voor alle deelnemers.\nEen gebalanceerd liquiditeitsmodel houdt het sterren-ecosysteem duurzaam en bestand tegen plotselinge marktfluctuaties.\nLiquiditeitsstabiliteit versterkt ook het vertrouwen van zowel gebruikers als ontwikkelaars die betalingen met sterren integreren."
+      },
+      "antiInflation": {
+        "title": "Anti-inflatiesysteem",
+        "content": "Staking ondersteunt direct de anti-inflatiemechanieken van het sterren-ecosysteem door het volume van sterren in omloop te verminderen.\nNaarmate meer gebruikers hun sterren staken, helpt de krimp van het aanbod de langetermijnwaarde van het activum te behouden.\nDit proces creëert een zelfbalancerende economie waarin groei stabiel en organisch blijft.\nHet systeem zorgt ervoor dat zowel vroege als langetermijndeelnemers profiteren van consistente en eerlijke opbrengstvoorwaarden.\nDoor ongecontroleerde inflatie te minimaliseren, behoudt het ecosysteem de duurzaamheid van beloningen voor alle gebruikers."
+      },
+      "infrastructure": {
+        "title": "Infrastructuurfinanciering",
+        "content": "Een deel van de staking-activiteit ondersteunt de voortdurende ontwikkeling van de betalings- en stakinginfrastructuur van Telegram.\nDit omvat het onderhouden van veilige transacties, efficiënte verwerkingssysteemmen en betrouwbare schaalbaarheid voor miljoenen gebruikers.\nDoor deel te nemen aan staking dragen gebruikers indirect bij aan het verbeteren van de prestaties en veerkracht van het ecosysteem.\nInfrastructuurfinanciering zorgt ervoor dat het sterren-netwerk snel, veilig en klaar voor de toekomst blijft.\nDeze middelen maken continue upgrades, technisch onderhoud en toekomstige functieuzeen mogelijk."
+      }
+    }
+  },
+  "modal": {
+    "close": "Sluiten",
+    "apy": "APY",
+    "stakedStars": "gestakede sterren",
+    "amount": "Bedrag",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Lock-periode",
+    "unlockDate": "Datum ontgrendeling",
+    "lockPeriodValue": "{days} dagen"
+  },
+  "payment": {
+    "processing": "Bezig met verwerken…",
+    "invalidRequest": "Ongeldig verzoek.",
+    "unableStart": "Kan betaling niet starten. Probeer het opnieuw.",
+    "unableOpen": "Kan betaling niet openen. Probeer het opnieuw.",
+    "paymentSuccessful": "Betaling geslaagd!",
+    "paymentCancelled": "Betaling geannuleerd",
+    "stakeTitle": "Stake {amount} sterren",
+    "stakeLabel": "Stake {amount} sterren"
+  },
+  "paymentSuccess": {
+    "title": "Stake bevestigd",
+    "subtitle": "Je storting is vergrendeld voor {days} dagen.",
+    "apy": "APY",
+    "stakedStars": "gestakede sterren",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Lock-periode",
+    "unlockDate": "Datum ontgrendeling",
+    "back": "Terug naar overzicht",
+    "note": "Aangevraagd: {requested} sterren · In rekening gebracht: {paid} sterren"
+  },
+  "faqs": {
+    "pageTitle": "Veelgestelde vragen",
+    "learnMore": "Meer informatie",
+    "items": {
+      "q1": {
+        "question": "Waar komen de beloningen voor Stars Base vandaan?",
+        "answer": "Beloningen worden gegenereerd via het yield-distributiemodel van het Stars Base-ecosysteem.\nElke staking-pool draagt bij aan liquiditeitsstabiliteit en netwerk-infrastructuur, wat weer duurzame beloningscycli creëert.\nEen deel van de opbrengst komt van ecosysteemgroei, marktplaatsactiviteit en staking-incentives die in de loop van de tijd worden verdeeld.\nEr zijn geen speculatieve bronnen betrokken; alle beloningen worden ondersteund door reële ecosysteemwaarde.\nDeze structuur zorgt voor eerlijkheid, langetermijnduurzaamheid en transparantie voor alle deelnemers."
+      },
+      "q2": {
+        "question": "Wat is staking en is het veilig?",
+        "answer": "Staking is het proces waarbij je je sterren vergrendelt om het ecosysteem te ondersteunen en passieve beloningen te verdienen.\nWanneer je stake, blijven je activa veilig gekoppeld aan je account en worden ze nooit aan derden overgedragen.\nHet systeem is gebouwd op de beveiligde betaalinfrastructuur van Telegram en werkt met volledige encryptie en transparantie.\nAlle transacties worden geverifieerd en zijn auditbaar, wat veiligheid en onveranderlijkheid garandeert.\nHet is een laag-risico mechanisme ontworpen voor langetermijngroei van waarde en bijdrage aan het ecosysteem."
+      },
+      "q3": {
+        "question": "Hoe worden beloningen berekend?",
+        "answer": "Beloningen zijn gebaseerd op je totale gestakede balans en het niveau (tier) dat je momenteel hebt.\nElk niveau biedt een hogere Annual Percentage Yield (APY), beginnend bij 12.8% en oplopend tot 28.7% voor hogere verplichtingen.\nAPY past zich dynamisch aan wanneer je je stake vergroot; grotere stakes ontgrendelen hogere opbrengstpercentages.\nHet systeem herberekent automatisch je effectieve APY in realtime.\nAlle beloningsberekeningen zijn transparant en verifieerbaar binnen het dashboard van de app."
+      },
+      "q4": {
+        "question": "Kan ik mijn sterren op elk moment opnemen?",
+        "answer": "Ja, opnames zijn op elk moment beschikbaar nadat je minimale lock-periode is verstreken.\nJe kunt kiezen om direct in Telegram sterren of in Toncoin (TON) op te nemen, afhankelijk van je voorkeur.\nOpnames in TON kunnen een kleine netwerkvergoeding bevatten, afhankelijk van het bedrag.\nAlle transacties worden automatisch en veilig verwerkt binnen enkele minuten.\nHet systeem zorgt voor een soepele ervaring met volledige traceerbaarheid."
+      },
+      "q5": {
+        "question": "Wat gebeurt er als ik later meer sterren stake?",
+        "answer": "Wanneer je meer sterren toevoegt aan je bestaande stake, wordt je totale balans direct bijgewerkt.\nHet systeem beoordeelt automatisch je nieuwe niveau en past de bijbehorende APY-boost toe.\nJe eerdere beloningen blijven onaangetast, terwijl je toekomstige opbrengst overeenkomstig toeneemt.\nDit maakt je staking-ervaring dynamisch — hoe meer je stake, hoe meer je verdient.\nEr zijn geen boetes of vertragingen bij het verhogen van je stakebedrag."
+      },
+      "q6": {
+        "question": "Hoe profiteert Stars Base het Telegram-ecosysteem?",
+        "answer": "Stars Base helpt de liquiditeit en stabiliteit binnen de Telegram sterren-marktplaats te behouden.\nHet ondersteunt ook anti-inflatiemaatregelen door het aantal circulerende sterren te verminderen.\nEen deel van alle staking-activiteit draagt bij aan de ontwikkeling van betalings- en stakinginfrastructuur.\nDit zorgt voor snellere betalingen, hogere schaalbaarheid en een duurzaam economisch model.\nDoor te staken verdienen gebruikers niet alleen, maar helpen ze ook de langetermijnfundamenten van het hele Stars-ecosysteem te versterken."
+      },
+      "q7": {
+        "question": "Hoe beïnvloedt APY dagelijkse en maandelijkse beloningen?",
+        "answer": "APY (Annual Percentage Yield) geeft je jaarlijkse rendement weer, maar beloningen worden dagelijks berekend en toegevoegd.\nBijvoorbeeld: een APY van 12.8% komt ruwweg overeen met ~1.06% per maand (samengesteld). Als je 1.000 sterren staket, zie je ongeveer 1.039 na één maand (voor afronding op het scherm).\nJe saldo groeit elke dag; samenstelling werkt automatisch — elke dag wordt de opbrengst toegevoegd aan de volgende berekening.\nWe crediteren beloningen dagelijks met twee decimalen nauwkeurigheid, terwijl het Stake-scherm het gehele saldo toont.\nKortom: hoe langer je stake, hoe meer je rendementen door samengestelde groei toenemen."
+      },
+      "q8": {
+        "question": "Is er een risico mijn sterren te verliezen?",
+        "answer": "Stars Base werkt onder een non-custodial structuur, wat betekent dat je eigendom behoudt over je activa.\nJe fondsen blijven te allen tijde veilig vergrendeld en controleerbaar.\nDe architectuur van het systeem geeft prioriteit aan transparantie en veiligheid.\nDe belangrijkste variabele is opbrengstschommelingen, niet de veiligheid van je fondsen."
+      },
+      "q9": {
+        "question": "Is mijn APY vast of verandert het door de tijd?",
+        "answer": "APY in Stars Base is dynamisch en hangt af van je totale gestakede bedrag en de liquiditeit van het systeem.\nHoewel de basis-APY start bij 12.8%, kan deze toenemen wanneer je naar hogere staking-levels gaat.\nIn zeldzame gevallen kunnen netwerk- of liquiditeitsaanpassingen de tarief iets beïnvloeden.\nAlle tariefwijzigingen zijn transparant en worden direct in je dashboard weergegeven.\nHet systeem streeft ernaar om rendementen stabiel en concurrerend te houden onder verschillende omstandigheden."
+      },
+      "q10": {
+        "question": "Wat is het minimale en maximale bedrag dat ik kan staken?",
+        "answer": "Het minimale bedrag om te participeren in staking is 300 sterren.\nHet maximum per enkele storting is 100.000 sterren.\nHogere bedragen ontgrendelen automatisch hogere niveaus en betere APY-tarieven.\nDit flexibele systeem beloont zowel nieuwe als langetermijngebruikers eerlijk."
+      },
+      "q11": {
+        "question": "Wat maakt Stars Base anders dan reguliere staking-platforms?",
+        "answer": "Stars Base is een ecosysteem-native stakingmodel, gebouwd rondom Telegram sterren.\nHet combineert hoge APY-beloningen met echte bruikbaarheid en ondersteunt marktliquiditeit en infrastructuur.\nIn tegenstelling tot speculatieve staking-apps blijven waarde-stromen binnen het ecosysteem.\nDit zorgt voor transparantie, duurzaamheid op lange termijn en echte impact voor elke gebruiker."
+      },
+      "q12": {
+        "question": "Wat gebeurt er met mijn sterren tijdens de lock-periode?",
+        "answer": "Je sterren blijven veilig gestaked binnen het systeem gedurende de minimale lock-periode van 30 dagen.\nGedurende deze tijd blijven ze beloningen genereren zonder risico op verlies of externe overdracht.\nJe kunt je opbrengsten in realtime volgen via het dashboard.\nZodra de lock-periode voorbij is, kun je op elk moment opnemen of opnieuw staken."
+      },
+      "q13": {
+        "question": "Kan ik mijn staking vroegtijdig annuleren?",
+        "answer": "Vroegtijdig unstaken is niet beschikbaar tijdens de initiële minimale lock-periode van 30 dagen om de stabiliteit van het ecosysteem te waarborgen.\nDeze regel beschermt alle deelnemers door consistentie in liquiditeit en eerlijke verdeling van opbrengsten te garanderen.\nNa deze periode kun je vrij opnemen of opnieuw staken.\nHet systeem is ontworpen om flexibiliteit en duurzaamheid in balans te houden."
+      },
+      "q14": {
+        "question": "Worden beloningen automatisch verdeeld?",
+        "answer": "Ja, beloningen worden automatisch verdeeld en dagelijks bijgewerkt in je accountsaldo.\nEr is geen handmatige claim of externe overdracht vereist.\nJe cumulatieve beloningen kunnen in realtime worden gevolgd vanaf het staking-dashboard.\nDeze automatisering zorgt voor maximale gebruiksvriendelijkheid en transparantie voor alle gebruikers."
+      },
+      "q15": {
+        "question": "Hoe vaak wordt APY bijgewerkt?",
+        "answer": "APY-tarieven worden herberekend op basis van je actieve niveau en de liquiditeitsgezondheid van het systeem.\nWanneer je stake of nieuwe sterren toevoegt, wordt de update onmiddellijk toegepast.\nDit zorgt ervoor dat je beloningen altijd je meest recente stake-level weerspiegelen.\nHet voorkomt ook dat verouderde of vertraagde opbrengstgegevens op je account verschijnen."
+      },
+      "q16": {
+        "question": "Waarom gebruikt Stars Base een lock-periode?",
+        "answer": "De minimale lock-periode van 30 dagen helpt de marktliquiditeit te behouden en voorkomt snelle instromen/uitstromen die het systeem kunnen destabiliseren.\nHet zorgt ervoor dat de beloningstarieven eerlijk en consistent blijven voor alle deelnemers.\nLock-periodes zijn standaard in de meeste staking-systemen om de integriteit van het ecosysteem te beschermen.\nNa afloop van de lock kun je opnemen of opnieuw staken zonder beperkingen."
+      },
+      "q17": {
+        "question": "Welke factoren kunnen de APY beïnvloeden?",
+        "answer": "De APY hangt af van de algehele liquiditeit van het ecosysteem, het totaal gestakede volume en de interne marktvraag.\nWanneer meer gebruikers staken, groeit het pool, waardoor opbrengstaanpassingen mogelijk zijn om het evenwicht te behouden.\nDaarnaast worden systeemgezondheid en marktstabiliteit continu gemonitord om opbrengsten te optimaliseren.\nAlle aanpassingen zijn algoritmisch en transparant om eerlijkheid te waarborgen."
+      },
+      "q18": {
+        "question": "Hoe werkt samengestelde groei (compounding) in Stars Base?",
+        "answer": "Compounding betekent dat je dagelijkse beloningen automatisch aan je saldo worden toegevoegd.\nElke dag wordt je opbrengst berekend op basis van het geüpdate nauwkeurige saldo (met twee decimalen), terwijl de Stake-pagina het gehele bedrag toont.\nDit creëert over tijd een samengesteld groeieffect en verhoogt de langetermijnopbrengsten."
+      },
+      "q19": {
+        "question": "Kunnen systeemupdates mijn staking-saldo beïnvloeden?",
+        "answer": "Nee, updates of onderhoudsacties beïnvloeden je gestakede bedrag of opgebouwde beloningen niet.\nAlle staking-gegevens worden veilig opgeslagen en gesynchroniseerd.\nIn zeldzame gevallen kunnen tijdelijke weergavevertragingen optreden, maar je fondsen blijven veilig.\nJe ontvangt een melding als gepland onderhoud wordt uitgevoerd."
+      }
+    }
+  },
+  "history": {
+    "title": "Transactiegeschiedenis",
+    "empty": {
+      "title": "Nog geen geschiedenis",
+      "subtitle": "Zodra je transacties uitvoert, verschijnen ze hier."
+    },
+    "detailsTitle": "Transactiedetails",
+    "deposit": "Storting",
+    "withdraw": "Opname",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Storten",
+    "buttonConfirmStake": "Stake bevestigen",
+    "tagDeposit": "Storting",
+    "tagStake": "Stake",
+    "stakeAmountAria": "Stake-bedrag in sterren",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Minimale storting is {min} sterren.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Geschat rendement",
+    "perYear": "per jaar",
+    "collapseDetails": "Details inklappen",
+    "expandDetails": "Details uitklappen",
+    "yearly": "Jaarlijks",
+    "monthly": "Maandelijks",
+    "daily": "Dagelijks",
+    "minimumLock": "Minimale blokkering",
+    "minimumLockValue": "{days} dagen"
+  }
+}

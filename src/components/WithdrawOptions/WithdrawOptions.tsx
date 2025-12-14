@@ -4,40 +4,42 @@ import TonIcon from '@/assets/icons/toncoin.svg?react';
 import HelpIcon from '@/assets/icons/help.svg?react';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import { Modal } from '../Modal/Modal';
+import { useI18n } from '@/i18n';
 
 export const WithdrawOptions = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useI18n();
 
   const modalContent = [
-    'You can withdraw your rewards either directly in Telegram Stars or in Toncoin ( TON ) based on your preference.',
-    'When withdrawing in TON, a small network fee of up to 1% may apply depending on the total amount.',
-    'All withdrawals are processed securely and typically completed within minutes after confirmation.',
-    'Before proceeding with a TON withdrawal, please ensure your TON wallet is connected.'
+    t('withdraw.line1'),
+    t('withdraw.line2'),
+    t('withdraw.line3'),
+    t('withdraw.line4'),
   ].join('\n');
 
   return (
     <>
      <div className={styles.withdrawOptions} onClick={() => setIsModalOpen(true)}>
-        <h2 className="section-title">Withdraw Options</h2>
+        <h2 className="section-title">{t('withdraw.title')}</h2>
         <div className={styles.withdrawSection}>
             <div className={styles.item}>
                 <TonIcon/>
-                <div className={styles.title}>Toncoin</div>
+                <div className={styles.title}>{t('withdraw.tonLabel')}</div>
             </div>
             <div className={styles.item}>
                 <StarIcon/>
-                <div className={styles.title}>Telegram Stars</div>
+                <div className={styles.title}>{t('withdraw.starsLabel')}</div>
             </div>
             <div className={styles.helpWrapper}>
                 <HelpIcon className='icon'/>
             </div>
         </div>
-        <span className='subtitle'>When withdrawing in TON, a small network fee of up to 1% may apply, depending on the withdrawal amount.</span>
+        <span className='subtitle'>{t('withdraw.subtitle')}</span>
      </div>
      <Modal
         isOpen={isModalOpen}
-        title="Withdraw Options"
-        button="Got it"
+        title={t('withdraw.title')}
+        button={t('common.gotIt')}
         content={modalContent}
         onClose={() => setIsModalOpen(false)}
      />

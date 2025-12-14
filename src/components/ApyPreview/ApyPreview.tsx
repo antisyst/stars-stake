@@ -8,6 +8,7 @@ import { useLaunchParams } from '@telegram-apps/sdk-react';
 import { useRates } from '@/contexts/RatesContext';
 import styles from './ApyPreview.module.scss';
 import { useCurrency } from '@/contexts/CurrencyContext';
+import { useI18n } from '@/i18n';
 
 type Props = {
   currentBalance: number;
@@ -75,6 +76,7 @@ export const ApyPreview: React.FC<Props> = ({
   const isMobile = ['ios', 'android'].includes(lp.platform);
   const baseRotation = lp.platform === 'ios' ? 90 : 0;
   const { formatFromUsd } = useCurrency();
+  const { t } = useI18n();
 
   const [expanded, setExpanded] = useState(false);
   const wasFocusedRef = useRef(false);
@@ -143,7 +145,7 @@ export const ApyPreview: React.FC<Props> = ({
             animate="animate"
             exit="exit"
             variants={overlayVariants}
-            aria-label="Close details"
+            aria-label={t('apy.collapseDetails')}
             onClick={() => handleToggle()}
           />
         )}
@@ -164,7 +166,7 @@ export const ApyPreview: React.FC<Props> = ({
         >
           <div className={styles.row}>
             <div className={styles.apyInfo}>
-              <span className={styles.label}>Estimated Yield</span>
+              <span className={styles.label}>{t('apy.estimatedYield')}</span>
 
               <motion.span
                 className={styles.value}
@@ -182,7 +184,7 @@ export const ApyPreview: React.FC<Props> = ({
                 animate={expanded ? 'hide' : 'show'}
               >
                 <span className={styles.yearlyGain}>
-                  +{formatNumber(view.yearlyGain)} <StarIcon /> / year
+                  +{formatNumber(view.yearlyGain)} <StarIcon /> {t('apy.perYear')}
                 </span>
               </motion.span>
 
@@ -193,7 +195,7 @@ export const ApyPreview: React.FC<Props> = ({
                 onTouchStart={(e) => { e.preventDefault(); }}
                 onClick={handleToggle}
                 aria-expanded={expanded}
-                aria-label={expanded ? 'Collapse details' : 'Expand details'}
+                aria-label={expanded ? t('apy.collapseDetails') : t('apy.expandDetails')}
               >
                 <motion.span
                   className={styles.chevronWrap}
@@ -217,11 +219,11 @@ export const ApyPreview: React.FC<Props> = ({
               >
                 <div className={styles.list} role="list">
                   <div className={styles.item} role="listitem">
-                    <span className={styles.itemLabel}>APY</span>
+                    <span className={styles.itemLabel}>{t('apy.estimatedYield')}</span>
                     <span className={`${styles.itemValue} ${styles.apyTitle}`}>{formatApy(view.apy)}%</span>
                   </div>
                   <div className={styles.item} role="listitem">
-                    <span className={styles.itemLabel}>Yearly</span>
+                    <span className={styles.itemLabel}>{t('apy.yearly')}</span>
                     <span className={styles.itemValue}>
                       +{formatNumber(view.yearlyGain)} <StarIcon />
                       <span className={styles.sep}>·</span>{formatFromUsd(view.usd.y, 2)}
@@ -229,7 +231,7 @@ export const ApyPreview: React.FC<Props> = ({
                     </span>
                   </div>
                   <div className={styles.item} role="listitem">
-                    <span className={styles.itemLabel}>Monthly</span>
+                    <span className={styles.itemLabel}>{t('apy.monthly')}</span>
                     <span className={styles.itemValue}>
                       +{formatNumber(view.monthlyGain)} <StarIcon />
                       <span className={styles.sep}>·</span>{formatFromUsd(view.usd.m, 2)}
@@ -237,16 +239,18 @@ export const ApyPreview: React.FC<Props> = ({
                     </span>
                   </div>
                   <div className={styles.item} role="listitem">
-                    <span className={styles.itemLabel}>Daily</span>
+                    <span className={styles.itemLabel}>{t('apy.daily')}</span>
                     <span className={styles.itemValue}>
                       +{formatNumber(view.dailyGain)} <StarIcon />
                       <span className={styles.sep}>·</span>{formatFromUsd(view.usd.d, 2)}
                       <span className={styles.sep}>·</span>{view.ton.d ? view.ton.d.toFixed(3) : '—'} TON
                     </span>
                   </div>
-                  <div className={styles.item} role="listitem" aria-label="Minimum lock">
-                    <span className={styles.itemLabel}>Minimum Lock</span>
-                    <span className={styles.itemValue}>30 days</span>
+                  <div className={styles.item} role="listitem" aria-label={t('apy.minimumLock')}>
+                    <span className={styles.itemLabel}>{t('apy.minimumLock')}</span>
+                    <span className={styles.itemValue}>
+                      {t('apy.minimumLockValue').replace('{days}', '30')}
+                    </span>
                   </div>
                 </div>
               </motion.div>

@@ -1,0 +1,244 @@
+{
+  "profile": {
+    "unknown": "Tidak diketahui",
+    "wallet": "Dompet",
+    "connect": "Hubungkan",
+    "defaultCurrency": "Mata uang default",
+    "language": "Bahasa",
+    "contactSupport": "Hubungi dukungan",
+    "faq": "FAQ",
+    "history": "Riwayat",
+    "userAgreement": "Perjanjian Pengguna",
+    "privacyPolicy": "Kebijakan Privasi",
+    "supportNotice": "Aplikasi mini dioperasikan oleh Stars Base Digital Services Provider. Layanan ini mandiri dan tidak terkait dengan Telegram.",
+    "currencyUpdated": "Mata uang diperbarui"
+  },
+  "stake": {
+    "apyTitle": "Apa itu APY?",
+    "apyLine1": "APY adalah Annual Percentage Yield (Persentase Hasil Tahunan), yang mewakili total pengembalian tahunan termasuk imbal hasil majemuk.",
+    "apyLine2": "Tingkat dibagi bertingkat dan ditetapkan per stake (lot); APY yang ditampilkan adalah rata-rata tertimbang dari semua lot yang terbuka.",
+    "apyLine3": "APY efektif Anda saat ini: {apy}%",
+    "apyLine4": "Harga saat ini: {price} per bintang.",
+    "noBalance": "Anda tidak memiliki saldo untuk ditarik",
+    "lockNotEnded": "Periode kunci Anda belum berakhir.",
+    "lockerNotActive": "Locker Stars Base belum aktif",
+    "withdrawUnavailable": "Penarikan tidak tersedia saat ini.",
+    "minimumLock": "Kunci minimal: 30 Hari",
+    "balance": "Saldo",
+    "apy": "APY",
+    "stakeEarn": "Stake & Dapatkan",
+    "deposit": "Deposit",
+    "withdraw": "Tarik"
+  },
+  "common": {
+    "copiedToClipboard": "Disalin ke clipboard",
+    "copyFailed": "Salin gagal",
+    "noWallet": "Alamat dompet tidak tersedia",
+    "failedOpenLink": "Gagal membuka tautan Telegram",
+    "openFaq": "Buka FAQ",
+    "gotIt": "Mengerti"
+  },
+  "stats": {
+    "title": "Ikhtisar Sistem",
+    "totalStaked": "Total yang di-stake",
+    "exchangeRate": "Kurs",
+    "protocol": "Protokol",
+    "protocolValue": "Protokol Stars Base"
+  },
+  "tier": {
+    "title": "Hadiah Ditingkatkan",
+    "apyUpdates": "APY diperbarui secara otomatis saat stake Anda meningkat",
+    "line1": "Sistem menggunakan model tingkat dinamis, di mana APY Anda meningkat seiring dengan pertumbuhan total saldo yang di-stake.",
+    "line2": "Setiap tingkat membuka tingkat hasil yang lebih tinggi, mulai dari 12.8% hingga 28.7% APY pada level tertinggi.",
+    "line3": "Ketika Anda men-stake tambahan bintang dan pindah ke tingkat yang lebih tinggi, APY keseluruhan Anda dihitung ulang secara instan berdasarkan total baru.",
+    "line4": "Ambang tingkat Anda saat ini dan berikutnya ditampilkan secara real-time, memungkinkan Anda melacak kemajuan menuju peningkatan APY berikutnya."
+  },
+  "withdraw": {
+    "title": "Opsi Penarikan",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Telegram bintang",
+    "subtitle": "Saat menarik dalam TON, biaya jaringan kecil hingga 1% dapat dikenakan, tergantung pada jumlah penarikan.",
+    "line1": "Anda dapat menarik hadiah Anda baik langsung dalam Telegram bintang atau dalam Toncoin (TON) sesuai preferensi.",
+    "line2": "Saat menarik dalam TON, biaya jaringan kecil hingga 1% dapat dikenakan tergantung pada jumlah total.",
+    "line3": "Semua penarikan diproses dengan aman dan biasanya selesai dalam beberapa menit setelah konfirmasi.",
+    "line4": "Sebelum melanjutkan penarikan TON, pastikan dompet TON Anda terhubung."
+  },
+  "campaign": {
+    "title": "Detail Kampanye",
+    "minStakeLabel": "Stake Min.",
+    "maxStakeLabel": "Stake Maks.",
+    "line1": "Kampanye memungkinkan staking dari minimal 300 bintang, tanpa batas atas pada stake maksimum.",
+    "line2": "Semua deposit berkontribusi langsung ke kumpulan staking aktif dan mulai menghasilkan hadiah segera setelah konfirmasi."
+  },
+  "header": {
+    "walletConnected": "Dompet terhubung",
+    "copyAddress": "Salin alamat",
+    "disconnect": "Putuskan",
+    "disconnectConfirmTitle": "Putuskan Dompet",
+    "disconnectConfirmMessage": "Apakah Anda yakin ingin memutuskan dompet?"
+  },
+  "ecosystem": {
+    "title": "Manfaat Ekosistem",
+    "items": {
+      "marketplace": {
+        "title": "Dukungan Likuiditas Marketplace",
+        "content": "Sistem Stars Base berkontribusi dalam menjaga likuiditas yang stabil di Marketplace Telegram bintang.\nDengan mengunci sementara bintang di pool staking, pasokan yang beredar berkurang, membantu menstabilkan aktivitas pasar.\nIni memastikan daya beli yang konsisten, transaksi yang lebih lancar, dan lingkungan perdagangan yang lebih sehat bagi semua peserta.\nModel likuiditas yang seimbang menjaga ekosistem bintang tetap berkelanjutan dan tahan terhadap fluktuasi pasar yang tiba-tiba.\nStabilitas likuiditas juga meningkatkan kepercayaan di antara pengguna dan pengembang yang mengintegrasikan pembayaran bintang."
+      },
+      "antiInflation": {
+        "title": "Sistem Anti-Inflasi",
+        "content": "Staking mendukung mekanik anti-inflasi ekosistem bintang dengan mengurangi volume bintang yang beredar.\nSaat lebih banyak pengguna melakukan staking bintang mereka, kontraksi pasokan membantu mempertahankan nilai jangka panjang aset.\nProses ini menciptakan ekonomi yang menyeimbangkan dirinya sendiri di mana pertumbuhan tetap stabil dan organik.\nSistem memastikan bahwa baik peserta awal maupun jangka panjang mendapat manfaat dari kondisi hasil yang konsisten dan adil.\nDengan meminimalkan inflasi yang tidak terkendali, ekosistem menjaga keberlanjutan hadiah untuk semua pengguna."
+      },
+      "infrastructure": {
+        "title": "Pendanaan Infrastruktur",
+        "content": "Sebagian dari aktivitas staking mendukung pengembangan infrastruktur pembayaran dan staking Telegram yang berkelanjutan.\nIni mencakup pemeliharaan transaksi yang aman, sistem pemrosesan yang efisien, dan skalabilitas yang andal untuk jutaan pengguna.\nDengan berpartisipasi dalam staking, pengguna secara tidak langsung berkontribusi meningkatkan kinerja dan ketahanan ekosistem.\nPendanaan infrastruktur memastikan jaringan bintang tetap cepat, aman, dan siap untuk masa depan.\nSumber daya ini memungkinkan pembaruan berkelanjutan, pemeliharaan teknis, dan ekspansi fitur di masa depan."
+      }
+    }
+  },
+  "modal": {
+    "close": "Tutup",
+    "apy": "APY",
+    "stakedStars": "bintang yang di-stake",
+    "amount": "Jumlah",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Periode kunci",
+    "unlockDate": "Tanggal buka kunci",
+    "lockPeriodValue": "{days} hari"
+  },
+  "payment": {
+    "processing": "Memproses…",
+    "invalidRequest": "Permintaan tidak valid.",
+    "unableStart": "Tidak dapat memulai pembayaran. Coba lagi.",
+    "unableOpen": "Tidak dapat membuka pembayaran. Coba lagi.",
+    "paymentSuccessful": "Pembayaran berhasil!",
+    "paymentCancelled": "Pembayaran dibatalkan",
+    "stakeTitle": "Stake {amount} bintang",
+    "stakeLabel": "Stake {amount} bintang"
+  },
+  "paymentSuccess": {
+    "title": "Stake Dikonfirmasi",
+    "subtitle": "Deposit Anda dikunci selama {days} hari.",
+    "apy": "APY",
+    "stakedStars": "bintang yang di-stake",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Periode kunci",
+    "unlockDate": "Tanggal buka kunci",
+    "back": "Kembali ke Ikhtisar",
+    "note": "Diminta: {requested} bintang · Dikenakan: {paid} bintang"
+  },
+  "faqs": {
+    "pageTitle": "Pertanyaan yang Sering Diajukan",
+    "learnMore": "Pelajari lebih lanjut",
+    "items": {
+      "q1": {
+        "question": "Dari mana hadiah untuk Stars Base berasal?",
+        "answer": "Hadiah dihasilkan melalui model distribusi hasil ekosistem Stars Base.\nSetiap pool staking berkontribusi pada stabilitas likuiditas dan infrastruktur jaringan, yang pada gilirannya menciptakan siklus hadiah yang berkelanjutan.\nSebagian hasil berasal dari pertumbuhan ekosistem, aktivitas marketplace, dan insentif staking yang didistribusikan dari waktu ke waktu.\nTidak ada sumber spekulatif yang terlibat, semua hadiah didukung oleh nilai ekosistem yang nyata.\nStruktur ini memastikan keadilan, keberlanjutan jangka panjang, dan transparansi bagi semua peserta."
+      },
+      "q2": {
+        "question": "Apa itu staking dan apakah aman?",
+        "answer": "Staking adalah proses mengunci bintang Anda untuk mendukung ekosistem dan mendapatkan hadiah pasif sebagai imbalannya.\nSaat Anda stake, aset Anda tetap terkait dengan akun Anda dan tidak pernah dipindahkan ke pihak ketiga.\nSistem dibangun di atas infrastruktur pembayaran Telegram yang aman dan beroperasi dengan enkripsi penuh serta transparansi.\nSemua transaksi diverifikasi dan dapat diaudit, memastikan keamanan dan ketidakberubahan.\nIni adalah mekanisme berisiko rendah yang dirancang untuk pertumbuhan nilai jangka panjang dan kontribusi terhadap ekosistem."
+      },
+      "q3": {
+        "question": "Bagaimana hadiah dihitung?",
+        "answer": "Hadiah didasarkan pada total saldo yang di-stake dan tingkat (tier) yang Anda miliki saat ini.\nSetiap tingkat menawarkan APY yang lebih tinggi, mulai dari 12.8% hingga 28.7% untuk komitmen yang lebih tinggi.\nAPY disesuaikan secara dinamis saat Anda menambah stake; stake yang lebih besar membuka tingkat hasil yang lebih tinggi.\nSistem secara otomatis menghitung ulang APY efektif Anda secara real-time.\nSemua perhitungan hadiah transparan dan dapat diverifikasi di dashboard aplikasi."
+      },
+      "q4": {
+        "question": "Bisakah saya menarik bintang saya kapan saja?",
+        "answer": "Ya, penarikan tersedia kapan saja setelah periode kunci minimal Anda berakhir.\nAnda dapat memilih untuk menarik langsung dalam Telegram bintang atau dalam Toncoin (TON) sesuai preferensi Anda.\nPenarikan dalam TON mungkin termasuk biaya jaringan kecil tergantung pada jumlahnya.\nSemua transaksi diproses secara otomatis dan aman dalam beberapa menit.\nSistem memastikan pengalaman yang lancar dengan pelacakan penuh."
+      },
+      "q5": {
+        "question": "Apa yang terjadi jika saya men-stake lebih banyak bintang nanti?",
+        "answer": "Saat Anda menambahkan lebih banyak bintang ke stake yang ada, total saldo Anda akan diperbarui secara instan.\nSistem secara otomatis mengevaluasi tingkat Anda yang baru dan menerapkan kenaikan APY yang sesuai.\nHadiah sebelumnya tetap tidak terpengaruh, sementara hasil masa depan meningkat sesuai.\nIni membuat pengalaman staking Anda dinamis — semakin banyak Anda stake, semakin banyak Anda hasilkan.\nTidak ada penalti atau penundaan saat menambah jumlah stake."
+      },
+      "q6": {
+        "question": "Bagaimana Stars Base menguntungkan ekosistem Telegram?",
+        "answer": "Stars Base membantu menjaga likuiditas dan stabilitas di Marketplace Telegram bintang.\nIni juga mendukung langkah anti-inflasi dengan mengurangi jumlah bintang yang beredar.\nSebagian dari semua aktivitas staking berkontribusi pada pengembangan infrastruktur pembayaran dan staking.\nIni memungkinkan pembayaran lebih cepat, skalabilitas lebih tinggi, dan loop ekonomi yang berkelanjutan.\nDengan men-stake, pengguna tidak hanya memperoleh keuntungan tetapi juga membantu memperkuat fondasi jangka panjang seluruh ekosistem Stars."
+      },
+      "q7": {
+        "question": "Bagaimana APY memengaruhi hadiah harian dan bulanan?",
+        "answer": "APY (Annual Percentage Yield) mewakili pengembalian tahunan Anda, tetapi hadiah dihitung dan ditambahkan setiap hari.\nMisalnya, APY 12.8% kira-kira setara ~1.06% per bulan (terkompaun). Jika Anda men-stake 1.000 bintang, Anda akan melihat sekitar 1.039 setelah satu bulan (sebelum pembulatan pada tampilan).\nSaldo Anda meningkat setiap hari; kompaun bekerja otomatis — hasil setiap hari membangun atas hasil hari sebelumnya.\nKami memberikan hadiah harian dengan presisi dua desimal, sementara layar Stake menampilkan saldo sebagai bilangan bulat.\nSingkatnya, semakin lama Anda men-stake, semakin banyak pengembalian Anda terkompaun seiring waktu."
+      },
+      "q8": {
+        "question": "Adakah risiko kehilangan bintang saya?",
+        "answer": "Stars Base beroperasi dalam struktur non-custodial, artinya Anda mempertahankan kepemilikan aset Anda.\nDana Anda tetap dikunci dengan aman dan dapat diverifikasi kapan saja.\nArsitektur sistem memprioritaskan transparansi dan keamanan.\nVariabel utama adalah fluktuasi hasil, bukan keamanan dana Anda."
+      },
+      "q9": {
+        "question": "Apakah APY saya tetap atau berubah seiring waktu?",
+        "answer": "APY di Stars Base bersifat dinamis dan bergantung pada total yang Anda stake dan likuiditas sistem.\nMeskipun APY dasar dimulai pada 12.8%, itu dapat meningkat saat Anda melewati tingkat staking yang lebih tinggi.\nDalam kasus langka, penyesuaian jaringan atau likuiditas dapat sedikit mempengaruhi tingkat hasil.\nSemua perubahan tingkat bersifat transparan dan tercermin secara instan di dashboard Anda.\nSistem bertujuan menjaga pengembalian tetap stabil dan kompetitif di berbagai kondisi."
+      },
+      "q10": {
+        "question": "Berapa jumlah minimum dan maksimum yang dapat saya stake?",
+        "answer": "Jumlah minimum untuk berpartisipasi dalam staking adalah 300 bintang.\nMaksimum per deposit tunggal adalah 100.000 bintang.\nJumlah yang lebih besar secara otomatis membuka tingkat yang lebih tinggi dan tingkat APY yang lebih baik.\nSistem yang fleksibel ini memberi penghargaan pada pengguna baru dan jangka panjang secara adil."
+      },
+      "q11": {
+        "question": "Apa yang membedakan Stars Base dari platform staking biasa?",
+        "answer": "Stars Base adalah model staking yang bersifat native ekosistem yang dibangun di sekitar Telegram bintang.\nIa menggabungkan APY tinggi dengan utilitas nyata, mendukung likuiditas marketplace dan infrastruktur.\nBerbeda dengan aplikasi staking spekulatif, aliran nilai tetap berada di dalam ekosistem.\nIni memastikan transparansi, keberlanjutan jangka panjang, dan dampak dunia nyata bagi setiap pengguna."
+      },
+      "q12": {
+        "question": "Apa yang terjadi pada bintang saya selama periode kunci?",
+        "answer": "Bintang Anda tetap di-stake dengan aman di dalam sistem selama durasi periode kunci minimum 30 hari.\nSelama waktu ini, mereka terus menghasilkan hadiah tanpa risiko kehilangan atau transfer eksternal.\nAnda dapat memantau pertumbuhan hasil Anda secara real-time melalui dashboard.\nSetelah periode kunci berakhir, Anda dapat menarik atau men-stake kembali kapan saja dengan kendali penuh."
+      },
+      "q13": {
+        "question": "Bisakah saya membatalkan staking lebih awal?",
+        "answer": "Unstaking lebih awal tidak tersedia selama periode kunci minimal awal 30 hari untuk menjaga stabilitas ekosistem.\nAturan ini melindungi semua peserta dengan memastikan konsistensi likuiditas dan distribusi hadiah yang adil.\nSetelah periode ini, Anda bebas menarik atau men-stake kapan saja.\nSistem dirancang untuk menyeimbangkan fleksibilitas dan keberlanjutan."
+      },
+      "q14": {
+        "question": "Apakah hadiah didistribusikan secara otomatis?",
+        "answer": "Ya, hadiah didistribusikan secara otomatis dan diperbarui setiap hari dalam saldo akun Anda.\nTidak perlu klaim manual atau transfer eksternal.\nTotal hadiah Anda dapat dilacak secara real-time dari dashboard staking.\nOtomatisasi ini memastikan kenyamanan dan transparansi maksimal untuk semua pengguna."
+      },
+      "q15": {
+        "question": "Seberapa sering APY diperbarui?",
+        "answer": "Tingkat APY dihitung ulang berdasarkan tingkat Anda yang aktif dan kesehatan likuiditas sistem.\nSaat Anda stake atau menambahkan bintang baru, pembaruan diterapkan secara instan.\nIni memastikan hadiah Anda selalu mencerminkan tingkat stake terbaru Anda.\nIni juga mencegah tampilan data hasil yang usang atau tertunda."
+      },
+      "q16": {
+        "question": "Mengapa Stars Base menggunakan periode kunci?",
+        "answer": "Periode kunci minimum 30 hari membantu menjaga likuiditas pasar dan mencegah aliran masuk/keluar cepat yang dapat mengguncang sistem.\nIni memastikan tingkat hadiah tetap adil dan konsisten bagi semua peserta.\nPeriode kunci umum digunakan di sebagian besar sistem staking untuk melindungi integritas ekosistem.\nSetelah kunci berakhir, Anda bebas menarik atau men-stake ulang tanpa batas."
+      },
+      "q17": {
+        "question": "Faktor apa yang dapat mempengaruhi tingkat APY?",
+        "answer": "APY bergantung pada likuiditas ekosistem secara keseluruhan, volume total yang di-stake, dan permintaan internal pasar.\nSaat lebih banyak pengguna melakukan staking, pool berkembang, memungkinkan penyesuaian hasil untuk menjaga keseimbangan.\nSelain itu, kesehatan sistem dan stabilitas pasar dipantau terus menerus untuk mengoptimalkan hasil.\nSemua penyesuaian bersifat algoritmik dan transparan untuk menjaga keadilan."
+      },
+      "q18": {
+        "question": "Bagaimana compounding bekerja di Stars Base?",
+        "answer": "Compounding berarti hadiah harian Anda ditambahkan secara otomatis ke saldo Anda.\nSetiap hari, hasil Anda dihitung pada saldo presisi yang diperbarui (dilacak dengan dua desimal), sementara halaman Stake menampilkan jumlah bulat.\nIni menciptakan efek pertumbuhan majemuk dari waktu ke waktu, meningkatkan hasil jangka panjang."
+      },
+      "q19": {
+        "question": "Apakah pembaruan sistem dapat mempengaruhi saldo staking saya?",
+        "answer": "Tidak, pembaruan atau operasi pemeliharaan tidak mempengaruhi jumlah yang di-stake atau hadiah yang terakumulasi.\nSemua data staking disimpan dengan aman dan disinkronkan.\nDalam kasus yang jarang terjadi, mungkin terjadi keterlambatan tampilan sementara, tetapi dana Anda tetap aman.\nAnda akan menerima pemberitahuan jika ada pemeliharaan terjadwal."
+      }
+    }
+  },
+  "history": {
+    "title": "Riwayat Transaksi",
+    "empty": {
+      "title": "Belum ada riwayat",
+      "subtitle": "Setelah Anda mulai melakukan transaksi, mereka akan muncul di sini."
+    },
+    "detailsTitle": "Rincian Transaksi",
+    "deposit": "Deposit",
+    "withdraw": "Tarik",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Deposit",
+    "buttonConfirmStake": "Konfirmasi Stake",
+    "tagDeposit": "Deposit",
+    "tagStake": "Stake",
+    "stakeAmountAria": "Jumlah stake dalam bintang",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Deposit minimum adalah {min} bintang.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Perkiraan Hasil",
+    "perYear": "per tahun",
+    "collapseDetails": "Tutup rincian",
+    "expandDetails": "Perluas rincian",
+    "yearly": "Tahunan",
+    "monthly": "Bulanan",
+    "daily": "Harian",
+    "minimumLock": "Kunci minimal",
+    "minimumLockValue": "{days} hari"
+  }
+}

@@ -10,6 +10,7 @@ import { Modal } from '@/components/Modal/Modal';
 import type { ActivityWithExtras, Position } from '@/types';
 import { useAppData } from '@/contexts/AppDataContext';
 import { toDate } from '@/utils/toDate';
+import { useI18n } from '@/i18n';
 
 export const HistoryPage: React.FC = () => {
   const { ready, items } = useHistoryData();
@@ -18,6 +19,8 @@ export const HistoryPage: React.FC = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<ActivityWithExtras | null>(null);
+
+  const { t } = useI18n();
 
   const filtered = useMemo(
     () => items.filter((it) => it.type === 'stake' || it.type === 'unstake'),
@@ -97,13 +100,13 @@ export const HistoryPage: React.FC = () => {
   return (
     <Page back={true}>
       <div className={styles.historyPage}>
-        <div className="section-title">Transaction History</div>
+        <div className="section-title">{t('history.title')}</div>
         {ready && filtered.length === 0 ? (
           <div className={styles.empty}>
             <EmptySection
               icon={duckTgs}
-              title="No History Yet"
-              subtitle="Once you start making transactions, they will appear here."
+              title={t('history.empty.title')}
+              subtitle={t('history.empty.subtitle')}
             />
           </div>
         ) : (
@@ -116,8 +119,8 @@ export const HistoryPage: React.FC = () => {
       </div>
       <Modal
         isOpen={isOpen}
-        title="Transaction Details"
-        button="Close"
+        title={t('history.detailsTitle')}
+        button={t('modal.close')}
         variant="history"
         historyItem={selected}
         onClose={closeDetails}

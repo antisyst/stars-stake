@@ -4,15 +4,17 @@ import { ProgressiveTiersBar } from '../ProgressiveTiersBar/ProgressiveTiersBar'
 import { TierRanges } from '../TierRanges/TierRanges';
 import { Modal } from '../Modal/Modal';
 import HelpIcon from '@/assets/icons/help.svg?react';
+import { useI18n } from '@/i18n';
 
 export const TierProgress: React.FC = () => {
   const [isTierOpen, setIsTierOpen] = useState(false);
+  const { t } = useI18n();
 
   const tierContent = [
-    'System uses a dynamic tier model, where your APY increases as your total staked balance grows.',
-    'Each tier unlocks a higher yield rate, starting from 12.8% and reaching up to 28.7% APY at the highest level.',
-    'When you stake additional Stars and move to a higher tier, your overall APY is recalculated instantly based on the new total.',
-    'Your current and next tier thresholds are displayed in real-time, allowing you to track your progress toward the next APY boost.'
+    t('tier.line1'),
+    t('tier.line2'),
+    t('tier.line3'),
+    t('tier.line4'),
   ].join('\n');
 
   return (
@@ -22,10 +24,10 @@ export const TierProgress: React.FC = () => {
         onClick={() => setIsTierOpen(true)}
         aria-label="Boosted Rewards"
       >
-        <h2 className="section-title">Boosted Rewards</h2>
+        <h2 className="section-title">{t('tier.title')}</h2>
         <div className={styles.tierProgressBody}>
           <h2 className={styles.tierTitle}>
-            <span>APY updates automatically as your stake grows</span>
+            <span>{t('tier.apyUpdates')}</span>
             <HelpIcon className="icon" />
           </h2>
           <ProgressiveTiersBar
@@ -37,8 +39,8 @@ export const TierProgress: React.FC = () => {
       </div>
       <Modal
         isOpen={isTierOpen}
-        title="Boosted Rewards"
-        button="Got it"
+        title={t('tier.title')}
+        button={t('common.gotIt')}
         content={tierContent}
         onClose={() => setIsTierOpen(false)}
       />

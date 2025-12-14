@@ -1,0 +1,244 @@
+{
+  "profile": {
+    "unknown": "Okänt",
+    "wallet": "Plånbok",
+    "connect": "Anslut",
+    "defaultCurrency": "Standardvaluta",
+    "language": "Språk",
+    "contactSupport": "Kontakta support",
+    "faq": "FAQ",
+    "history": "Historik",
+    "userAgreement": "Användaravtal",
+    "privacyPolicy": "Integritetspolicy",
+    "supportNotice": "Mini-appen drivs av Stars Base Digital Services Provider. Tjänsten är fristående och är inte ansluten till Telegram.",
+    "currencyUpdated": "Valuta uppdaterad"
+  },
+  "stake": {
+    "apyTitle": "Vad är APY?",
+    "apyLine1": "APY står för Annual Percentage Yield och visar den totala årliga avkastningen inklusive sammansatta belöningar.",
+    "apyLine2": "Satsen är indelad i nivåer och tilldelas per stake (lot); den visade APY är ett viktat genomsnitt över alla öppna lotter.",
+    "apyLine3": "Din nuvarande effektiva APY: {apy}%",
+    "apyLine4": "Aktuellt pris: {price} per stjärna.",
+    "noBalance": "Du har inget saldo att ta ut",
+    "lockNotEnded": "Din låsperiod är ännu inte avslutad.",
+    "lockerNotActive": "Stars Base locker är ännu inte aktiv",
+    "withdrawUnavailable": "Uttag är inte tillgängligt just nu.",
+    "minimumLock": "Minsta låsperiod: 30 dagar",
+    "balance": "Saldo",
+    "apy": "APY",
+    "stakeEarn": "Staka & Tjäna",
+    "deposit": "Insättning",
+    "withdraw": "Ta ut"
+  },
+  "common": {
+    "copiedToClipboard": "Kopierat till urklipp",
+    "copyFailed": "Kopiering misslyckades",
+    "noWallet": "Ingen plånboksadress tillgänglig",
+    "failedOpenLink": "Misslyckades att öppna Telegram-länken",
+    "openFaq": "Öppna FAQ",
+    "gotIt": "Förstått"
+  },
+  "stats": {
+    "title": "Systemöversikt",
+    "totalStaked": "Totalt stakat",
+    "exchangeRate": "Växelkurs",
+    "protocol": "Protokoll",
+    "protocolValue": "Stars Base-protokoll"
+  },
+  "tier": {
+    "title": "Förstärkta belöningar",
+    "apyUpdates": "APY uppdateras automatiskt när din stake växer",
+    "line1": "Systemet använder en dynamisk nivåmodell där din APY ökar när ditt totala stakade saldo växer.",
+    "line2": "Varje nivå låser upp en högre avkastningsnivå, med start på 12.8% och upp till 28.7% APY på högsta nivån.",
+    "line3": "När du stakar ytterligare stjärnor och går upp en nivå, beräknas din totala APY omedelbart utifrån det nya totalvärdet.",
+    "line4": "Dina nuvarande och nästa nivågränser visas i realtid så att du kan följa hur nära du är nästa APY-ökning."
+  },
+  "withdraw": {
+    "title": "Uttagsalternativ",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Telegram-stjärnor",
+    "subtitle": "Vid uttag i TON kan en liten nätverksavgift upp till 1% tillkomma, beroende på uttagsbeloppet.",
+    "line1": "Du kan ta ut dina belöningar antingen direkt i Telegram-stjärnor eller i Toncoin (TON), beroende på vad du föredrar.",
+    "line2": "Vid uttag i TON kan en liten nätverksavgift upp till 1% tillkomma beroende på det totala beloppet.",
+    "line3": "Alla uttag behandlas säkert och slutförs vanligtvis inom några minuter efter bekräftelse.",
+    "line4": "Innan du gör ett uttag i TON, säkerställ att din TON-plånbok är ansluten."
+  },
+  "campaign": {
+    "title": "Kampanjdetaljer",
+    "minStakeLabel": "Min. stake",
+    "maxStakeLabel": "Max. stake",
+    "line1": "Kampanjen tillåter staking från minst 300 stjärnor, utan övre gräns för maximal stake.",
+    "line2": "Alla insättningar bidrar direkt till det aktiva staking-poolen och börjar generera belöningar omedelbart efter bekräftelse."
+  },
+  "header": {
+    "walletConnected": "Plånbok ansluten",
+    "copyAddress": "Kopiera adress",
+    "disconnect": "Koppla från",
+    "disconnectConfirmTitle": "Koppla från plånbok",
+    "disconnectConfirmMessage": "Är du säker på att du vill koppla från plånboken?"
+  },
+  "ecosystem": {
+    "title": "Ekosystemfördelar",
+    "items": {
+      "marketplace": {
+        "title": "Stöd för marketplace-likviditet",
+        "content": "Stars Base-systemet bidrar till att upprätthålla stabil likviditet på Telegram-stjärnornas marknadsplats.\nGenom att tillfälligt låsa stjärnor i staking-pooler minskar det cirkulerande utbudet, vilket hjälper till att stabilisera marknadsaktiviteten.\nDetta säkerställer jämn köpkraft, smidigare transaktioner och en hälsosammare handelsmiljö för alla deltagare.\nEn balanserad likviditetsmodell håller stjärnekoystemet hållbart och motståndskraftigt mot plötsliga marknadsfluktuationer.\nLikviditetsstabilitet ökar dessutom förtroendet hos både användare och utvecklare som integrerar betalningar med stjärnor."
+      },
+      "antiInflation": {
+        "title": "Anti-inflationssystem",
+        "content": "Staking stödjer direkt anti-inflationsmekanismerna i stjärnekoystemet genom att minska volymen stjärnor i omlopp.\nNär fler användare stakar sina stjärnor hjälper minskat utbud till att bevara tillgångens långsiktiga värde.\nDenna process skapar en självbalanserande ekonomi där tillväxt förblir stabil och organiskt.\nSystemet ser till att både tidiga och långsiktiga deltagare gynnas av konsekventa och rättvisa avkastningsvillkor.\nGenom att minimera okontrollerad inflation skyddar ekosystemet belöningshållbarheten för alla användare."
+      },
+      "infrastructure": {
+        "title": "Infrastrukturfinansiering",
+        "content": "En del av staking-aktiviteten stödjer den löpande utvecklingen av Telegrams betalnings- och stakinginfrastruktur.\nDetta innefattar att upprätthålla säkra transaktioner, effektiva bearbetningssystem och tillförlitlig skalbarhet för miljontals användare.\nGenom att delta i staking bidrar användarna indirekt till att förbättra ekosystemets prestanda och motståndskraft.\nInfrastrukturfinansiering säkerställer att stjärnans nätverk förblir snabbt, säkert och framtidssäkert.\nDessa resurser möjliggör kontinuerliga uppgraderingar, tekniskt underhåll och framtida funktionsutvidgningar."
+      }
+    }
+  },
+  "modal": {
+    "close": "Stäng",
+    "apy": "APY",
+    "stakedStars": "stakade stjärnor",
+    "amount": "Belopp",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Låsningsperiod",
+    "unlockDate": "Upplåsningsdatum",
+    "lockPeriodValue": "{days} dagar"
+  },
+  "payment": {
+    "processing": "Bearbetar…",
+    "invalidRequest": "Ogiltig begäran.",
+    "unableStart": "Kunde inte starta betalningen. Försök igen.",
+    "unableOpen": "Kunde inte öppna betalningen. Försök igen.",
+    "paymentSuccessful": "Betalning lyckades!",
+    "paymentCancelled": "Betalning avbröts",
+    "stakeTitle": "Staka {amount} stjärnor",
+    "stakeLabel": "Staka {amount} stjärnor"
+  },
+  "paymentSuccess": {
+    "title": "Stake bekräftad",
+    "subtitle": "Din insättning har låsts i {days} dagar.",
+    "apy": "APY",
+    "stakedStars": "stakade stjärnor",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Låsningsperiod",
+    "unlockDate": "Upplåsningsdatum",
+    "back": "Tillbaka till översikten",
+    "note": "Begärt: {requested} stjärnor · Debiterat: {paid} stjärnor"
+  },
+  "faqs": {
+    "pageTitle": "Vanliga frågor",
+    "learnMore": "Läs mer",
+    "items": {
+      "q1": {
+        "question": "Var kommer belöningarna för Stars Base ifrån?",
+        "answer": "Belöningar genereras genom Stars Base-ekosystemets modell för avkastningsdistribution.\nVarje staking-pool bidrar till likviditetsstabilitet och nätverksinfrastruktur, vilket i sin tur skapar hållbara belöningscykler.\nEn del av avkastningen kommer från ekosystemets tillväxt, marknadsplatsaktivitet och staking-incitament som fördelas över tid.\nInga spekulativa källor är inblandade — alla belöningar stöds av verkligt ekosystemvärde.\nDenna struktur säkerställer rättvisa, långsiktig hållbarhet och transparens för alla deltagare."
+      },
+      "q2": {
+        "question": "Vad är staking och är det säkert?",
+        "answer": "Staking är processen att låsa dina stjärnor för att stödja ekosystemet och i gengäld få passiva belöningar.\nNär du stakar förblir dina tillgångar knutna till ditt konto och överförs aldrig till tredje part.\nSystemet är byggt på Telegrams säkra betalningsinfrastruktur och fungerar med full kryptering och transparens.\nAlla transaktioner verifieras och är möjliga att granska, vilket garanterar säkerhet och oföränderlighet.\nDet är en låg-risk-mekanism utformad för långsiktig värdetillväxt och bidrag till ekosystemet."
+      },
+      "q3": {
+        "question": "Hur beräknas belöningarna?",
+        "answer": "Belöningarna baseras på ditt totala stakade saldo och den nivå (tier) du för närvarande har.\nVarje nivå erbjuder en högre Annual Percentage Yield (APY), från 12.8% upp till 28.7% för större åtaganden.\nAPY justeras dynamiskt när du ökar din stake; större stakes låser upp högre avkastningsnivåer.\nSystemet beräknar automatiskt din effektiva APY i realtid.\nAlla belöningsberäkningar är transparenta och går att verifiera i appens instrumentpanel."
+      },
+      "q4": {
+        "question": "Kan jag ta ut mina stjärnor när som helst?",
+        "answer": "Ja, uttag är tillgängliga när som helst efter att din minimala låsperiod har avslutats.\nDu kan välja att ta ut direkt i Telegram-stjärnor eller i Toncoin (TON) beroende på vad du föredrar.\nUttag i TON kan inkludera en liten nätverksavgift beroende på beloppet.\nAlla transaktioner behandlas automatiskt och säkert inom några minuter.\nSystemet säkerställer en smidig upplevelse med full spårbarhet."
+      },
+      "q5": {
+        "question": "Vad händer om jag stakar fler stjärnor senare?",
+        "answer": "När du lägger till fler stjärnor till din befintliga stake uppdateras ditt totala saldo omedelbart.\nSystemet utvärderar automatiskt din nya nivå och tillämpar motsvarande APY-ökning.\nDina tidigare belöningar påverkas inte, medan dina framtida intäkter ökar i enlighet med det nya saldot.\nDetta gör stakingupplevelsen dynamisk — ju mer du stakar, desto mer tjänar du.\nDet finns inga straffavgifter eller förseningar när du ökar ditt stake-belopp."
+      },
+      "q6": {
+        "question": "Hur gynnar Stars Base Telegram-ekosystemet?",
+        "answer": "Stars Base hjälper till att upprätthålla likviditet och stabilitet i Telegram-stjärnornas marknadsplats.\nDet stödjer också anti-inflationsåtgärder genom att minska antalet cirkulerande stjärnor.\nEn del av all staking-aktivitet bidrar till utveckling av betalnings- och stakinginfrastruktur.\nDetta möjliggör snabbare betalningar, högre skalbarhet och en hållbar ekonomisk cykel.\nGenom att staka tjänar användare inte bara, utan hjälper också till att stärka ekosystemets långsiktiga grund."
+      },
+      "q7": {
+        "question": "Hur påverkar APY dagliga och månatliga belöningar?",
+        "answer": "APY (Annual Percentage Yield) representerar din årliga avkastning, men belöningar beräknas och läggs till dagligen.\nTill exempel motsvarar en APY på 12.8% ungefär ~1.06% per månad (med sammansatt ränta). Om du stakar 1 000 stjärnor blir det cirka 1 039 efter en månad (före avrundning i visning).\nDitt saldo ökar varje dag; sammansättning sker automatiskt — varje dags avkastning bygger på föregående dags saldo.\nVi krediterar belöningar dagligen med två decimalers precision, medan Stake-skärmen visar heltalsvärdet.\nKort sagt: ju längre du stakar, desto mer växer dina avkastningar genom ränta-på-ränta."
+      },
+      "q8": {
+        "question": "Finns det någon risk att förlora mina stjärnor?",
+        "answer": "Stars Base fungerar under en non-custodial modell, vilket innebär att du behåller äganderätten till dina tillgångar.\nDina medel förblir säkert låsta och kan verifieras när som helst.\nSystemets arkitektur prioriterar transparens och säkerhet.\nDen primära variabeln är avkastningsfluktuationer, inte säkerheten för dina medel."
+      },
+      "q9": {
+        "question": "Är min APY fast eller ändras den över tid?",
+        "answer": "APY i Stars Base är dynamisk och beror på ditt totala stakade belopp och systemets likviditet.\nÄven om baskursen börjar på 12.8% kan den öka när du avancerar till högre staking-nivåer.\nI sällsynta fall kan nätverks- eller likviditetsjusteringar påverka räntesatsen något.\nAlla ändringar i räntesatser är transparenta och syns omedelbart i din instrumentpanel.\nSystemet strävar efter att hålla avkastningen stabil och konkurrenskraftig under varierande förhållanden."
+      },
+      "q10": {
+        "question": "Vilket är minsta och största belopp jag kan staka?",
+        "answer": "Minsta belopp för att delta i staking är 300 stjärnor.\nMaximalt per enskild insättning är 100 000 stjärnor.\nStörre belopp låser automatiskt upp högre nivåer och bättre APY-satser.\nDetta flexibla system belönar både nya och långsiktiga användare rättvist."
+      },
+      "q11": {
+        "question": "Vad skiljer Stars Base från vanliga staking-plattformar?",
+        "answer": "Stars Base är en ekosystems-native stakingmodell byggd kring Telegram-stjärnor.\nDen kombinerar höga APY-belöningar med verklig nytta och stödjer marknadsplatsens likviditet samt infrastruktur.\nTill skillnad från spekulativa staking-appar förblir värdeflödena inom ekosystemet.\nDetta säkerställer transparens, långsiktig hållbarhet och verklig påverkan för varje användare."
+      },
+      "q12": {
+        "question": "Vad händer med mina stjärnor under låsperioden?",
+        "answer": "Dina stjärnor förblir säkert stakade i systemet under den minimala låsperioden på 30 dagar.\nUnder denna tid fortsätter de att generera belöningar utan risk för förlust eller extern överföring.\nDu kan övervaka dina intjänade belöningar i realtid via instrumentpanelen.\nNär låsperioden är slut kan du ta ut eller åter-staka när som helst med full kontroll."
+      },
+      "q13": {
+        "question": "Kan jag avbryta staking i förtid?",
+        "answer": "Tidigt unstake är inte tillgängligt under den initiala minimala låsperioden på 30 dagar för att upprätthålla ekosystemets stabilitet.\nDenna regel skyddar alla deltagare genom att garantera likviditetskonsistens och rättvis fördelning av belöningar.\nEfter denna period kan du fritt ta ut eller åter-staka när som helst.\nSystemet är utformat för att balansera flexibilitet och hållbarhet."
+      },
+      "q14": {
+        "question": "Distribueras belöningarna automatiskt?",
+        "answer": "Ja, belöningarna distribueras automatiskt och uppdateras dagligen i ditt kontosaldo.\nDet finns inget behov av manuella krav eller externa överföringar.\nDina ackumulerade belöningar kan följas i realtid från staking-instrumentpanelen.\nDenna automatisering garanterar maximal bekvämlighet och transparens för alla användare."
+      },
+      "q15": {
+        "question": "Hur ofta uppdateras APY?",
+        "answer": "APY-satser beräknas om baserat på din aktiva nivå och systemets likviditetshälsa.\nNär du stakar eller lägger till nya stjärnor tillämpas uppdateringen omedelbart.\nDetta säkerställer att dina belöningar alltid speglar din senaste stake-nivå.\nDet förhindrar också att föråldrade eller fördröjda avkastningsdata visas på ditt konto."
+      },
+      "q16": {
+        "question": "Varför använder Stars Base en låsperiod?",
+        "answer": "Den minimala låsperioden på 30 dagar hjälper till att bevara marknadens likviditet och förhindrar snabba inflöden/utflöden som kan destabilisera systemet.\nDet säkerställer att belöningssatserna förblir rättvisa och konsekventa för alla deltagare.\nLåsperioder är standard i de flesta staking-system för att skydda ekosystemets integritet.\nNär låsningen upphört är du fri att ta ut eller åter-staka utan begränsningar."
+      },
+      "q17": {
+        "question": "Vilka faktorer kan påverka APY-räntan?",
+        "answer": "APY beror på den totala likviditeten i ekosystemet, totalt stakat volym och intern marknadsefterfrågan.\nNär fler användare stakar expanderar poolen, vilket möjliggör justeringar av avkastningen för att bibehålla balans.\nDessutom övervakas systemhälsa och marknadsstabilitet kontinuerligt för att optimera avkastning.\nAlla justeringar är algoritmiska och transparenta för att upprätthålla rättvisa."
+      },
+      "q18": {
+        "question": "Hur fungerar ränta-på-ränta (compounding) i Stars Base?",
+        "answer": "Compounding innebär att dina dagliga belöningar automatiskt läggs till ditt saldo.\nVarje dag beräknas din avkastning på det uppdaterade exakta saldot (spåras med två decimaler), medan Stake-sidan visar heltalsbeloppet.\nDetta skapar en sammansatt tillväxteffekt över tid och ökar den långsiktiga avkastningen."
+      },
+      "q19": {
+        "question": "Kan systemuppdateringar påverka mitt stake-saldo?",
+        "answer": "Nej, uppdateringar eller underhållsåtgärder påverkar inte ditt stakade belopp eller ackumulerade belöningar.\nAll staking-data lagras säkert och synkroniseras.\nI sällsynta fall kan tillfälliga visningsförseningar uppstå, men dina medel förblir säkra.\nDu kommer att få en notis om planerat underhåll."
+      }
+    }
+  },
+  "history": {
+    "title": "Transaktionshistorik",
+    "empty": {
+      "title": "Ingen historik än",
+      "subtitle": "När du börjar göra transaktioner kommer de att visas här."
+    },
+    "detailsTitle": "Transaktionsdetaljer",
+    "deposit": "Insättning",
+    "withdraw": "Ta ut",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Sätt in",
+    "buttonConfirmStake": "Bekräfta stake",
+    "tagDeposit": "Insättning",
+    "tagStake": "Stake",
+    "stakeAmountAria": "Stake-belopp i stjärnor",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Minsta insättning är {min} stjärnor.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Uppskattad avkastning",
+    "perYear": "per år",
+    "collapseDetails": "Dölj detaljer",
+    "expandDetails": "Visa detaljer",
+    "yearly": "Årlig",
+    "monthly": "Månadsvis",
+    "daily": "Daglig",
+    "minimumLock": "Minsta lås",
+    "minimumLockValue": "{days} dagar"
+  }
+}

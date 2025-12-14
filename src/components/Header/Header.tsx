@@ -13,6 +13,7 @@ import DisconnectIcon from '@/assets/icons/disconnect.svg?react';
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/configs/firebaseConfig';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useI18n } from '@/i18n';
 
 export const Header = () => {
   const initDataState = useSignal(initData.state);
@@ -24,6 +25,7 @@ export const Header = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useI18n();
 
   const avatarRedirectedForRef = useRef<string | null>(null);
 
@@ -53,7 +55,7 @@ export const Header = () => {
             { merge: true }
           );
 
-          if (!cancelled) showSuccess('Wallet connected');
+          if (!cancelled) showSuccess(t('header.walletConnected'));
           return;
         }
 
@@ -62,7 +64,7 @@ export const Header = () => {
         const existingAddress = typeof data?.walletAddress === 'string' ? data.walletAddress : '';
 
         if (!alreadyConnected) {
-          if (!cancelled) showSuccess('Wallet connected');
+          if (!cancelled) showSuccess(t('header.walletConnected'));
         }
 
         const needUpdate =
@@ -92,7 +94,7 @@ export const Header = () => {
     handleFirstSuccessfulConnect();
 
     return () => { cancelled = true; };
-  }, [wallet, user?.id, user?.firstName, user?.lastName, user?.username, showSuccess]);
+  }, [wallet, user?.id, user?.firstName, user?.lastName, user?.username, showSuccess, t]);
 
   useEffect(() => {
     const photoUrl = user?.photoUrl ? String(user.photoUrl).trim() : '';
@@ -145,7 +147,7 @@ export const Header = () => {
     if (toCopy) {
       try {
         await copyTextToClipboard(toCopy);
-        showSuccess('Copied to clipboard');
+        showSuccess(t('common.copiedToClipboard'));
       } catch (err) {
         console.error('Failed to copy:', err);
       }
@@ -156,10 +158,10 @@ export const Header = () => {
   const handleDisconnect = () => {
     setIsDropdownOpen(false);
     popup.open({
-      title: 'Disconnect Wallet',
-      message: 'Are you sure you want to disconnect wallet?',
+      title: t('header.disconnectConfirmTitle'),
+      message: t('header.disconnectConfirmMessage'),
       buttons: [
-        { id: 'disconnect', type: 'destructive', text: 'Disconnect' },
+        { id: 'disconnect', type: 'destructive', text: t('header.disconnect') },
         { type: 'cancel' },
       ],
     }).then((buttonId) => {
@@ -173,12 +175,12 @@ export const Header = () => {
 
   const dropdownItems = [
     {
-      label: 'Copy address',
+      label: t('header.copyAddress'),
       icon: <CopyIcon className="text-icon" />,
       onClick: handleCopy,
     },
     {
-      label: 'Disconnect',
+      label: t('header.disconnect'),
       icon: <DisconnectIcon className="destructive-icon" />,
       onClick: handleDisconnect,
     },
@@ -222,7 +224,7 @@ export const Header = () => {
           ) : (
             <>
               <TonIcon className="icon" />
-              Connect
+              {t('profile.connect')}
             </>
           )}
         </Button>

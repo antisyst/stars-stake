@@ -17,6 +17,7 @@ import AddIcon from '@/assets/icons/add.svg?react';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import styles from './DepositPage.module.scss';
 import { useCurrency } from '@/contexts/CurrencyContext';
+import { useI18n } from '@/i18n';
 
 export const DepositPage: React.FC = () => {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export const DepositPage: React.FC = () => {
   const { tonUsd } = useRates();
   const lp = useLaunchParams();
   const { formatFromUsd } = useCurrency();
+  const { t } = useI18n();
 
   const isMobile = ['ios', 'android'].includes(lp.platform);
   const isTDesktop = lp.platform === 'tdesktop';
@@ -35,8 +37,8 @@ export const DepositPage: React.FC = () => {
   const [focused, setFocused] = useState(false);
 
   const hasStakedBefore = (user?.starsBalance ?? 0) > 0;
-  const buttonText = hasStakedBefore ? 'Deposit' : 'Confirm Stake';
-  const tagText = hasStakedBefore ? 'Deposit' : 'Stake';
+  const buttonText = hasStakedBefore ? t('deposit.buttonDeposit') : t('deposit.buttonConfirmStake');
+  const tagText = hasStakedBefore ? t('deposit.tagDeposit') : t('deposit.tagStake');
 
   const enabledBg = resolveCssVarToHex('--app-button') || undefined;
   const enabledFg = resolveCssVarToHex('--app-button-text') || undefined;
@@ -93,6 +95,7 @@ export const DepositPage: React.FC = () => {
       try { if (mainButton.isMounted?.()) mainButton.unmount(); } catch {}
       mountedRef.current = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => { applyButtonStyle(valid); }, [valid, buttonText, enabledBg, enabledFg, disabledBg, disabledFg]);
@@ -172,7 +175,7 @@ export const DepositPage: React.FC = () => {
                   onChange={onChange}
                   onFocus={() => setFocused(true)}
                   onBlur={() => setFocused(false)}
-                  aria-label="Stake amount in Stars"
+                  aria-label={t('deposit.stakeAmountAria')}
                   style={{ width: inputWidth ? `${inputWidth}px` : undefined }}
                   {...inputProps}
                 />
@@ -184,7 +187,7 @@ export const DepositPage: React.FC = () => {
                   1&nbsp;<StarIcon />&nbsp;≈&nbsp;{formatFromUsd(exchangeRate, 4)}
                 </p>
               ) : amount > 0 && amount < MIN_DEPOSIT ? (
-                <p className={styles.warning}>Minimum deposit is {formatNumber(MIN_DEPOSIT)} Stars.</p>
+                <p className={styles.warning}>{t('deposit.minDepositWarning').replace('{min}', String(formatNumber(MIN_DEPOSIT)))}</p>
               ) : valid ? (
                 <p className={styles.usdNote}>
                   ≈ {formatFromUsd(usdVal, 2)}&nbsp;≈ {tonVal ? (tonVal.toFixed(3)) : '—'} TON

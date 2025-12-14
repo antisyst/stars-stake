@@ -5,6 +5,7 @@ import { AppDataProvider } from '@/contexts/AppDataContext';
 import { RatesProvider } from '@/contexts/RatesContext';
 import { HistoryProvider } from '@/contexts/HistoryContext';
 import { CurrencyProvider } from '@/contexts/CurrencyContext';
+import { I18nProvider } from '@/i18n';
 import { publicUrl } from '@/helpers/publicUrl.ts';
 
 function ErrorBoundaryError({ error }: { error: unknown }) {
@@ -28,15 +29,17 @@ export function Root() {
   return (
     <ErrorBoundary fallback={ErrorBoundaryError}>
       <TonConnectUIProvider manifestUrl={publicUrl('tonconnect-manifest.json')}>
-        <AppDataProvider>
-          <CurrencyProvider>
-            <HistoryProvider>
-                <RatesProvider>
-                    <App />
-                </RatesProvider>
-            </HistoryProvider>
-          </CurrencyProvider>
-        </AppDataProvider>
+        <I18nProvider>
+          <AppDataProvider>
+            <CurrencyProvider>
+              <HistoryProvider>
+                  <RatesProvider>
+                      <App />
+                  </RatesProvider>
+              </HistoryProvider>
+            </CurrencyProvider>
+          </AppDataProvider>
+        </I18nProvider>
       </TonConnectUIProvider>
     </ErrorBoundary>
   );

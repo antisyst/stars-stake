@@ -29,7 +29,7 @@ import { useAppData } from '@/contexts/AppDataContext';
 import { useRates } from '@/contexts/RatesContext';
 import { formatEnUS } from '@/utils/formatEnUS';
 import styles from './PaymentInitPage.module.scss';
-
+import { useI18n } from '@/i18n';
 
 export const PaymentInitPage: React.FC = () => {
   const location = useLocation();
@@ -38,6 +38,7 @@ export const PaymentInitPage: React.FC = () => {
   const { showError, showSuccess } = useContext(ToastContext);
   const { exchangeRate } = useAppData();
   const { tonUsd } = useRates();
+  const { t } = useI18n();
 
   useEffect(() => {
     try { mainButton.setParams({ isVisible: false, isLoaderVisible: false, isEnabled: false }); } catch {}
@@ -124,7 +125,7 @@ export const PaymentInitPage: React.FC = () => {
           }
 
           const { short } = computeUnlockDates();
-          showSuccess('Payment successful!');
+          showSuccess(t('payment.paymentSuccessful'));
           navigate(
             `/payment/success?paid=${payable}&unlock=${encodeURIComponent(short)}&requested=${requestedAmount}&apy=${apyUsed}`,
             { replace: true }
@@ -133,7 +134,7 @@ export const PaymentInitPage: React.FC = () => {
         break;
       }
       default:
-        showError('Payment cancelled');
+        showError(t('payment.paymentCancelled'));
         goBackSafely();
         break;
     }
@@ -145,14 +146,14 @@ export const PaymentInitPage: React.FC = () => {
 
     (async () => {
       if (!userId || !isValidDeposit(requestedAmount)) {
-        showError('Invalid request.');
+        showError(t('payment.invalidRequest'));
         goBackSafely();
         return;
       }
 
-      const formatted = formatEnUS(payable); 
-      const title = `Stake ${formatted} Stars`;
-      const label = `Stake ${formatted} Stars`;
+      const formatted = formatEnUS(payable);
+      const title = t('payment.stakeTitle').replace('{amount}', String(formatted));
+      const label = t('payment.stakeLabel').replace('{amount}', String(formatted));
 
       const lockDays = 30;
       const usd = (exchangeRate ?? 0) * payable;
@@ -182,7 +183,7 @@ export const PaymentInitPage: React.FC = () => {
 
         const link = data?.invoiceLink as string | undefined;
         if (!link) {
-          showError('Unable to start payment. Try again.');
+          showError(t('payment.unableStart'));
           goBackSafely();
           return;
         }
@@ -211,7 +212,7 @@ export const PaymentInitPage: React.FC = () => {
         }
       } catch (e) {
         console.error(e);
-        showError('Unable to open payment. Try again.');
+        showError(t('payment.unableOpen'));
         goBackSafely();
       }
     })();
@@ -220,13 +221,14 @@ export const PaymentInitPage: React.FC = () => {
       try { offInvoice?.(); } catch {}
       try { visHandler?.(); } catch {}
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [requestedAmount, payable, userId, exchangeRate, tonUsd]);
 
   return (
     <Page back={false}>
       <div className={styles.paymentInitLayout}>
         <Spinner size='m' />
-        <h3>Processing…</h3>
+        <h3>{t('payment.processing')}</h3>
       </div>
     </Page>
   );

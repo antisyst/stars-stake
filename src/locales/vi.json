@@ -1,0 +1,244 @@
+{
+  "profile": {
+    "unknown": "Không rõ",
+    "wallet": "Ví",
+    "connect": "Kết nối",
+    "defaultCurrency": "Tiền tệ mặc định",
+    "language": "Ngôn ngữ",
+    "contactSupport": "Liên hệ hỗ trợ",
+    "faq": "FAQ",
+    "history": "Lịch sử",
+    "userAgreement": "Thỏa thuận người dùng",
+    "privacyPolicy": "Chính sách bảo mật",
+    "supportNotice": "Ứng dụng mini được vận hành bởi Stars Base Digital Services Provider. Dịch vụ độc lập và không liên kết với Telegram.",
+    "currencyUpdated": "Tiền tệ đã được cập nhật"
+  },
+  "stake": {
+    "apyTitle": "APY là gì?",
+    "apyLine1": "APY (Annual Percentage Yield) là tỷ suất lợi nhuận hàng năm, biểu thị tổng lợi nhuận trong năm bao gồm lãi kép.",
+    "apyLine2": "Mức lãi được chia theo bậc và áp dụng cho từng lần stake (lô); APY hiển thị là trung bình có trọng số của tất cả các lô đang mở.",
+    "apyLine3": "APY hiệu dụng hiện tại của bạn: {apy}%",
+    "apyLine4": "Giá hiện tại: {price} cho mỗi sao.",
+    "noBalance": "Bạn không có số dư để rút",
+    "lockNotEnded": "Thời gian khóa của bạn chưa kết thúc.",
+    "lockerNotActive": "Locker của Stars Base chưa hoạt động",
+    "withdrawUnavailable": "Hiện không thể rút.",
+    "minimumLock": "Thời gian khóa tối thiểu: 30 ngày",
+    "balance": "Số dư",
+    "apy": "APY",
+    "stakeEarn": "Đặt cọc & Kiếm",
+    "deposit": "Nạp",
+    "withdraw": "Rút"
+  },
+  "common": {
+    "copiedToClipboard": "Đã sao chép vào khay nhớ tạm",
+    "copyFailed": "Sao chép thất bại",
+    "noWallet": "Không có địa chỉ ví",
+    "failedOpenLink": "Mở liên kết Telegram thất bại",
+    "openFaq": "Mở FAQ",
+    "gotIt": "Đã hiểu"
+  },
+  "stats": {
+    "title": "Tổng quan hệ thống",
+    "totalStaked": "Tổng số đã stake",
+    "exchangeRate": "Tỷ giá",
+    "protocol": "Giao thức",
+    "protocolValue": "Giao thức Stars Base"
+  },
+  "tier": {
+    "title": "Phần thưởng tăng cường",
+    "apyUpdates": "APY tự động cập nhật khi số dư stake của bạn tăng",
+    "line1": "Hệ thống sử dụng mô hình bậc động — APY của bạn tăng khi tổng số đã stake tăng lên.",
+    "line2": "Mỗi bậc mở khóa tỷ lệ lợi nhuận cao hơn, bắt đầu từ 12.8% và lên đến 28.7% APY ở bậc cao nhất.",
+    "line3": "Khi bạn stake thêm sao và lên bậc cao hơn, APY tổng sẽ được tính lại ngay lập tức dựa trên tổng mới.",
+    "line4": "Ngưỡng bậc hiện tại và bậc tiếp theo được hiển thị theo thời gian thực để bạn theo dõi tiến độ đến lần tăng APY tiếp theo."
+  },
+  "withdraw": {
+    "title": "Tùy chọn rút",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Telegram sao",
+    "subtitle": "Khi rút bằng TON, có thể áp dụng phí mạng nhỏ lên đến 1% tùy theo số tiền rút.",
+    "line1": "Bạn có thể rút phần thưởng trực tiếp bằng Telegram sao hoặc Toncoin (TON) theo tùy chọn.",
+    "line2": "Khi rút bằng TON, có thể áp dụng phí mạng nhỏ lên đến 1% tùy theo tổng số tiền.",
+    "line3": "Tất cả giao dịch rút đều được xử lý an toàn và thường hoàn thành trong vài phút sau khi xác nhận.",
+    "line4": "Trước khi rút TON, hãy đảm bảo ví TON của bạn đã được kết nối."
+  },
+  "campaign": {
+    "title": "Chi tiết chiến dịch",
+    "minStakeLabel": "Stake tối thiểu",
+    "maxStakeLabel": "Stake tối đa",
+    "line1": "Chiến dịch cho phép stake từ tối thiểu 300 sao, không giới hạn tối đa.",
+    "line2": "Tất cả khoản nạp đóng góp trực tiếp vào pool staking đang hoạt động và bắt đầu sinh phần thưởng ngay khi được xác nhận."
+  },
+  "header": {
+    "walletConnected": "Ví đã kết nối",
+    "copyAddress": "Sao chép địa chỉ",
+    "disconnect": "Ngắt kết nối",
+    "disconnectConfirmTitle": "Ngắt kết nối ví",
+    "disconnectConfirmMessage": "Bạn có chắc muốn ngắt kết nối ví không?"
+  },
+  "ecosystem": {
+    "title": "Lợi ích hệ sinh thái",
+    "items": {
+      "marketplace": {
+        "title": "Hỗ trợ thanh khoản Marketplace",
+        "content": "Hệ thống Stars Base góp phần duy trì thanh khoản ổn định trên Marketplace Telegram sao.\nBằng cách tạm thời khóa sao trong các pool staking, lượng cung lưu thông giảm, giúp ổn định hoạt động thị trường.\nĐiều này đảm bảo sức mua ổn định, giao dịch mượt mà hơn và môi trường giao dịch lành mạnh cho tất cả người tham gia.\nMô hình thanh khoản cân bằng giữ cho hệ sinh thái sao bền vững và chống chịu với biến động đột ngột của thị trường.\nSự ổn định thanh khoản cũng tăng cường niềm tin giữa người dùng và nhà phát triển tích hợp thanh toán bằng sao."
+      },
+      "antiInflation": {
+        "title": "Hệ thống chống lạm phát",
+        "content": "Staking trực tiếp hỗ trợ cơ chế chống lạm phát của hệ sinh thái bằng cách giảm lượng sao đang lưu thông.\nKhi nhiều người dùng stake sao, việc co lại cung cấp giúp bảo toàn giá trị tài sản về lâu dài.\nQuá trình này tạo nên một nền kinh tế tự cân bằng, nơi tăng trưởng giữ được tính ổn định và tự nhiên.\nHệ thống đảm bảo cả người tham gia sớm và dài hạn đều hưởng lợi từ điều kiện lợi suất nhất quán và công bằng.\nBằng cách giảm lạm phát không kiểm soát, hệ sinh thái bảo vệ tính bền vững của phần thưởng cho tất cả người dùng."
+      },
+      "infrastructure": {
+        "title": "Tài trợ hạ tầng",
+        "content": "Một phần hoạt động staking hỗ trợ phát triển liên tục hạ tầng thanh toán và staking của Telegram.\nĐiều này bao gồm duy trì giao dịch an toàn, hệ thống xử lý hiệu quả và khả năng mở rộng đáng tin cậy cho hàng triệu người dùng.\nTham gia staking, người dùng gián tiếp góp phần cải thiện hiệu suất và độ bền của hệ sinh thái.\nTài trợ hạ tầng đảm bảo mạng sao luôn nhanh, an toàn và sẵn sàng cho tương lai.\nCác nguồn lực này cho phép nâng cấp liên tục, bảo trì kỹ thuật và mở rộng tính năng trong tương lai."
+      }
+    }
+  },
+  "modal": {
+    "close": "Đóng",
+    "apy": "APY",
+    "stakedStars": "sao đã stake",
+    "amount": "Số lượng",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Thời hạn khóa",
+    "unlockDate": "Ngày mở khóa",
+    "lockPeriodValue": "{days} ngày"
+  },
+  "payment": {
+    "processing": "Đang xử lý…",
+    "invalidRequest": "Yêu cầu không hợp lệ.",
+    "unableStart": "Không thể bắt đầu thanh toán. Thử lại.",
+    "unableOpen": "Không thể mở thanh toán. Thử lại.",
+    "paymentSuccessful": "Thanh toán thành công!",
+    "paymentCancelled": "Thanh toán bị hủy",
+    "stakeTitle": "Stake {amount} sao",
+    "stakeLabel": "Stake {amount} sao"
+  },
+  "paymentSuccess": {
+    "title": "Stake đã được xác nhận",
+    "subtitle": "Khoản nạp của bạn đã bị khóa trong {days} ngày.",
+    "apy": "APY",
+    "stakedStars": "sao đã stake",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Thời hạn khóa",
+    "unlockDate": "Ngày mở khóa",
+    "back": "Quay lại tổng quan",
+    "note": "Yêu cầu: {requested} sao · Đã trừ: {paid} sao"
+  },
+  "faqs": {
+    "pageTitle": "Câu hỏi thường gặp",
+    "learnMore": "Tìm hiểu thêm",
+    "items": {
+      "q1": {
+        "question": "Phần thưởng cho Stars Base đến từ đâu?",
+        "answer": "Phần thưởng được sinh ra thông qua mô hình phân phối lợi suất của hệ sinh thái Stars Base.\nMỗi pool staking góp phần vào sự ổn định thanh khoản và hạ tầng mạng, từ đó tạo ra chu kỳ phần thưởng bền vững.\nMột phần lợi suất đến từ tăng trưởng hệ sinh thái, hoạt động marketplace và các ưu đãi staking được phân phối theo thời gian.\nKhông có nguồn đầu tư mang tính đầu cơ; tất cả phần thưởng được đảm bảo bằng giá trị thực của hệ sinh thái.\nCấu trúc này đảm bảo tính công bằng, bền vững dài hạn và minh bạch cho mọi người tham gia."
+      },
+      "q2": {
+        "question": "Staking là gì và có an toàn không?",
+        "answer": "Staking là quá trình khóa sao của bạn để hỗ trợ hệ sinh thái và nhận phần thưởng thụ động đổi lại.\nKhi bạn stake, tài sản vẫn gắn với tài khoản của bạn và không bao giờ được chuyển cho bên thứ ba.\nHệ thống được xây dựng trên hạ tầng thanh toán an toàn của Telegram và hoạt động với mã hoá và minh bạch đầy đủ.\nTất cả giao dịch được xác minh và có thể kiểm toán, đảm bảo an toàn và tính bất biến.\nĐây là cơ chế rủi ro thấp, thiết kế cho tăng trưởng giá trị dài hạn và đóng góp cho hệ sinh thái."
+      },
+      "q3": {
+        "question": "Phần thưởng được tính như thế nào?",
+        "answer": "Phần thưởng dựa trên tổng số dư bạn đã stake và bậc (tier) bạn đang nắm giữ.\nMỗi bậc cung cấp APY cao hơn, bắt đầu từ 12.8% và lên đến 28.7% cho các cam kết lớn hơn.\nAPY điều chỉnh động khi bạn tăng stake; stake lớn hơn mở khóa tỷ lệ lợi nhuận cao hơn.\nHệ thống tự động tính lại APY hiệu dụng của bạn theo thời gian thực.\nTất cả phép tính phần thưởng đều minh bạch và có thể xác minh trên bảng điều khiển ứng dụng."
+      },
+      "q4": {
+        "question": "Tôi có thể rút sao bất cứ lúc nào không?",
+        "answer": "Có, việc rút khả dụng bất cứ lúc nào sau khi thời hạn khóa tối thiểu đã kết thúc.\nBạn có thể chọn rút trực tiếp bằng Telegram sao hoặc bằng Toncoin (TON) theo sở thích.\nRút bằng TON có thể bao gồm một khoản phí mạng nhỏ tùy theo số tiền.\nTất cả giao dịch được xử lý tự động và an toàn trong vài phút.\nHệ thống đảm bảo trải nghiệm trơn tru với tính minh bạch đầy đủ."
+      },
+      "q5": {
+        "question": "Nếu tôi stake thêm sao sau này thì sao?",
+        "answer": "Khi bạn thêm sao vào stake hiện có, tổng số dư sẽ được cập nhật ngay lập tức.\nHệ thống tự động đánh giá bậc mới và áp dụng tăng APY tương ứng.\nPhần thưởng đã có trước đó không bị ảnh hưởng, trong khi lợi nhuận tương lai sẽ tăng lên.\nĐiều này làm cho trải nghiệm staking trở nên động — bạn stake càng nhiều, bạn càng kiếm được nhiều.\nKhông có phạt hay trì hoãn khi tăng số tiền stake."
+      },
+      "q6": {
+        "question": "Stars Base mang lại lợi ích gì cho hệ sinh thái Telegram?",
+        "answer": "Stars Base giúp duy trì thanh khoản và sự ổn định trong Marketplace Telegram sao.\nNó cũng hỗ trợ các biện pháp chống lạm phát bằng cách giảm số lượng sao đang lưu thông.\nMột phần hoạt động staking đóng góp cho phát triển hạ tầng thanh toán và staking.\nĐiều này cho phép thanh toán nhanh hơn, khả năng mở rộng cao hơn và vòng kinh tế bền vững.\nBằng cách stake, người dùng không chỉ kiếm được mà còn góp phần củng cố nền tảng dài hạn của toàn bộ hệ sinh thái Stars."
+      },
+      "q7": {
+        "question": "APY ảnh hưởng thế nào đến phần thưởng hàng ngày và hàng tháng?",
+        "answer": "APY (Annual Percentage Yield) biểu thị lợi nhuận hàng năm của bạn, nhưng phần thưởng được tính và cộng hàng ngày.\nVí dụ, APY 12.8% tương đương khoảng ~1.06% mỗi tháng (có lãi kép). Nếu bạn stake 1.000 sao, bạn sẽ thấy khoảng 1.039 sau một tháng (trước khi làm tròn hiển thị).\nSố dư của bạn tăng mỗi ngày; lãi kép hoạt động tự động — lợi nhuận mỗi ngày được cộng vào cho ngày tiếp theo.\nChúng tôi ghi có phần thưởng hàng ngày với độ chính xác hai chữ số thập phân, trong khi màn hình Stake hiển thị số nguyên.\nTóm lại, bạn stake càng lâu, lợi nhuận của bạn càng tăng do lãi kép."
+      },
+      "q8": {
+        "question": "Có nguy cơ mất sao không?",
+        "answer": "Stars Base hoạt động theo mô hình non-custodial, nghĩa là bạn giữ quyền sở hữu tài sản của mình.\nQuỹ của bạn được khóa an toàn và có thể kiểm chứng bất cứ lúc nào.\nKiến trúc hệ thống ưu tiên tính minh bạch và an toàn.\nYếu tố chính có thể biến động là lợi suất, chứ không phải độ an toàn của quỹ."
+      },
+      "q9": {
+        "question": "APY của tôi có cố định hay thay đổi theo thời gian?",
+        "answer": "APY trong Stars Base là động và phụ thuộc vào tổng số bạn đã stake và thanh khoản hệ thống.\nMặc dù APY cơ bản bắt đầu từ 12.8%, nó có thể tăng khi bạn lên các bậc stake cao hơn.\nTrong những trường hợp hiếm hoi, điều chỉnh mạng hoặc thanh khoản có thể ảnh hưởng nhẹ đến tỷ lệ.\nTất cả thay đổi về tỷ lệ đều minh bạch và phản ánh ngay lập tức trên bảng điều khiển.\nHệ thống hướng tới giữ lợi nhuận ổn định và cạnh tranh trong các điều kiện khác nhau."
+      },
+      "q10": {
+        "question": "Số tiền tối thiểu và tối đa tôi có thể stake là bao nhiêu?",
+        "answer": "Số tiền tối thiểu để tham gia staking là 300 sao.\nTối đa cho một lần nạp là 100.000 sao.\nSố tiền lớn hơn tự động mở khóa bậc cao hơn và tỷ lệ APY tốt hơn.\nHệ thống linh hoạt này thưởng công công bằng cho cả người dùng mới và lâu dài."
+      },
+      "q11": {
+        "question": "Stars Base khác gì so với các nền tảng staking thông thường?",
+        "answer": "Stars Base là mô hình staking bản địa của hệ sinh thái xây dựng xung quanh Telegram sao.\nNó kết hợp APY cao với tính ứng dụng thực tế, hỗ trợ thanh khoản marketplace và hạ tầng.\nKhác với các ứng dụng staking mang tính đầu cơ, luồng giá trị vẫn nằm trong hệ sinh thái.\nĐiều này đảm bảo tính minh bạch, bền vững lâu dài và tác động thực tế cho mỗi người dùng."
+      },
+      "q12": {
+        "question": "Sao của tôi sẽ ra sao trong thời gian khóa?",
+        "answer": "Sao của bạn vẫn được stake an toàn trong hệ thống trong thời gian khóa tối thiểu 30 ngày.\nTrong thời gian này, chúng tiếp tục sinh phần thưởng mà không có rủi ro mất mát hay chuyển nhượng ra bên ngoài.\nBạn có thể theo dõi tăng trưởng lợi nhuận theo thời gian thực qua bảng điều khiển.\nSau khi thời hạn khóa kết thúc, bạn có thể rút hoặc stake lại bất kỳ lúc nào."
+      },
+      "q13": {
+        "question": "Tôi có thể huỷ stake sớm không?",
+        "answer": "Không thể unstake sớm trong thời hạn khóa tối thiểu ban đầu 30 ngày để giữ ổn định cho hệ sinh thái.\nQuy định này bảo vệ tất cả người tham gia bằng cách đảm bảo tính nhất quán của thanh khoản và phân phối phần thưởng công bằng.\nSau thời hạn này, bạn có thể rút hoặc stake lại tự do bất cứ lúc nào.\nHệ thống cân bằng giữa tính linh hoạt và tính bền vững."
+      },
+      "q14": {
+        "question": "Phần thưởng có được phân phối tự động không?",
+        "answer": "Có, phần thưởng được phân phối tự động và cập nhật hàng ngày vào số dư của bạn.\nKhông cần yêu cầu thủ công hay chuyển khoản bên ngoài.\nPhần thưởng tích luỹ của bạn có thể theo dõi theo thời gian thực từ bảng điều khiển staking.\nTự động hóa này đảm bảo sự thuận tiện và minh bạch tối đa cho mọi người dùng."
+      },
+      "q15": {
+        "question": "APY được cập nhật bao lâu một lần?",
+        "answer": "Tỷ lệ APY được tính lại dựa trên bậc hoạt động của bạn và tình trạng thanh khoản hệ thống.\nKhi bạn stake hoặc thêm sao mới, cập nhật được áp dụng ngay lập tức.\nĐiều này đảm bảo phần thưởng luôn phản ánh cấp độ stake mới nhất của bạn.\nNó cũng ngăn chặn việc hiển thị dữ liệu lợi suất cũ hoặc chậm trễ."
+      },
+      "q16": {
+        "question": "Tại sao Stars Base sử dụng thời hạn khóa?",
+        "answer": "Thời hạn khóa tối thiểu 30 ngày giúp duy trì thanh khoản thị trường và ngăn chặn dòng tiền vào/ra nhanh khiến hệ thống mất ổn định.\nNó đảm bảo tỷ lệ phần thưởng công bằng và nhất quán cho tất cả người tham gia.\nThời hạn khóa là chuẩn mực trong hầu hết hệ thống staking để bảo vệ tính toàn vẹn của hệ sinh thái.\nSau khi khóa kết thúc, bạn có thể rút hoặc stake lại mà không giới hạn."
+      },
+      "q17": {
+        "question": "Những yếu tố nào có thể ảnh hưởng đến tỷ lệ APY?",
+        "answer": "APY phụ thuộc vào tổng thanh khoản hệ sinh thái, tổng khối lượng đã stake và nhu cầu nội bộ của thị trường.\nKhi nhiều người dùng stake, pool mở rộng, cho phép điều chỉnh lợi suất nhằm giữ cân bằng.\nBên cạnh đó, tình trạng hệ thống và độ ổn định thị trường được giám sát liên tục để tối ưu hóa lợi suất.\nTất cả điều chỉnh đều được thực hiện bằng thuật toán và minh bạch để duy trì sự công bằng."
+      },
+      "q18": {
+        "question": "Lãi kép (compounding) hoạt động như thế nào ở Stars Base?",
+        "answer": "Lãi kép nghĩa là phần thưởng hàng ngày của bạn sẽ tự động được cộng vào số dư.\nMỗi ngày, lợi nhuận được tính trên số dư chính xác đã cập nhật (theo dõi với hai chữ số thập phân), trong khi trang Stake hiển thị số nguyên.\nĐiều này tạo hiệu ứng tăng trưởng theo cấp số nhân theo thời gian, tăng lợi suất dài hạn."
+      },
+      "q19": {
+        "question": "Các bản cập nhật hệ thống có thể ảnh hưởng đến số dư staking không?",
+        "answer": "Không, các bản cập nhật hoặc thao tác bảo trì không ảnh hưởng đến số tiền bạn đã stake hoặc phần thưởng đã tích luỹ.\nTất cả dữ liệu staking được lưu trữ an toàn và đồng bộ hóa.\nTrong một số trường hợp hiếm hoi, có thể xảy ra độ trễ hiển thị tạm thời, nhưng quỹ của bạn vẫn an toàn.\nBạn sẽ nhận được thông báo nếu có bảo trì định kỳ."
+      }
+    }
+  },
+  "history": {
+    "title": "Lịch sử giao dịch",
+    "empty": {
+      "title": "Chưa có lịch sử",
+      "subtitle": "Khi bạn bắt đầu giao dịch, chúng sẽ hiển thị ở đây."
+    },
+    "detailsTitle": "Chi tiết giao dịch",
+    "deposit": "Nạp",
+    "withdraw": "Rút",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Nạp",
+    "buttonConfirmStake": "Xác nhận stake",
+    "tagDeposit": "Nạp",
+    "tagStake": "Stake",
+    "stakeAmountAria": "Số lượng stake bằng sao",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Số tiền nạp tối thiểu là {min} sao.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Lợi suất ước tính",
+    "perYear": "trên năm",
+    "collapseDetails": "Thu gọn chi tiết",
+    "expandDetails": "Mở rộng chi tiết",
+    "yearly": "Hàng năm",
+    "monthly": "Hàng tháng",
+    "daily": "Hàng ngày",
+    "minimumLock": "Khóa tối thiểu",
+    "minimumLockValue": "{days} ngày"
+  }
+}

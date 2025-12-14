@@ -13,6 +13,7 @@ import AddIcon from '@/assets/icons/add.svg?react';
 import MinusIcon from '@/assets/icons/minus.svg?react';
 import { useCurrency } from '@/contexts/CurrencyContext';
 import styles from './StakeSection.module.scss';
+import { useI18n } from '@/i18n';
 
 export const StakeSection = () => {
   const [isApyOpen, setIsApyOpen] = useState(false);
@@ -22,19 +23,25 @@ export const StakeSection = () => {
   const [tonConnectUI] = useTonConnectUI();
   const wallet = useTonAddress();
   const { formatFromUsd } = useCurrency();
+  const { t } = useI18n();
 
   const balanceInt = user?.starsBalance ?? 0;
   const apyStr = formatApy(effectiveApy);
+
   const apyContent = [
-    'APY stands for Annual Percentage Yield, representing the total yearly return including compound rewards.',
-    'Rates are tiered and assigned per stake (lot); your displayed APY is a weighted average across all open lots.',
-    `Your current effective APY: ${apyStr}%`,
-    `Current price: ${formatFromUsd(exchangeRate, 4)} per Star.`,
+    t('stake.apyLine1'),
+    t('stake.apyLine2'),
+    t('stake.apyLine3').replace('{apy}', String(apyStr)),
+    t('stake.apyLine4').replace('{price}', formatFromUsd(exchangeRate, 4)),
   ].join('\n');
 
   const ensureConnected = (): boolean => {
     if (!wallet) {
-      tonConnectUI.openModal();
+      try {
+        tonConnectUI.openModal();
+      } catch (e) {
+        console.error('Failed to open connect modal', e);
+      }
       return false;
     }
     return true;
@@ -63,7 +70,7 @@ export const StakeSection = () => {
 
   const anyUnlocked = useMemo(() => {
     if (!positions || positions.length === 0) return false;
-    return positions.some(p => {
+    return positions.some((p) => {
       const d = toDate(p.unlockAt);
       return d ? d.getTime() <= now.getTime() : false;
     });
@@ -71,7 +78,7 @@ export const StakeSection = () => {
 
   const allLocked = useMemo(() => {
     if (!positions || positions.length === 0) return true;
-    return positions.every(p => {
+    return positions.every((p) => {
       const d = toDate(p.unlockAt);
       return d ? d.getTime() > now.getTime() : true;
     });
@@ -80,18 +87,18 @@ export const StakeSection = () => {
   const handleWithdraw = () => {
     if (ensureConnected()) {
       if (balanceInt <= 0) {
-        showError('You have no balance to withdraw');
+        showError(t('stake.noBalance'));
         return;
       }
       if (allLocked) {
-        showError('Your lock period hasn’t ended yet.');
+        showError(t('stake.lockNotEnded'));
         return;
       }
       if (anyUnlocked) {
-        showError('Stars Base locker is not yet active');
+        showError(t('stake.lockerNotActive'));
         return;
       }
-      showError('Withdrawal is not available right now.');
+      showError(t('stake.withdrawUnavailable'));
     }
   };
 
@@ -99,9 +106,9 @@ export const StakeSection = () => {
     <>
       <div className={styles.stakeSection}>
         <div className={styles.columnItem}>
-          <p className={styles.mutedText}>Balance</p>
-          <div className={styles.apyTitle} onClick={() => setIsApyOpen(true)} aria-label="APY details">
-            <span className={styles.apyTitle}>APY</span>
+          <p className={styles.mutedText}>{t('stake.balance')}</p>
+          <div className={styles.apyTitle} onClick={() => setIsApyOpen(true)} aria-label={t('stake.apyTitle')}>
+            <span className={styles.apyTitle}>{t('stake.apy')}</span>
             <HelpIcon className="icon" />
           </div>
         </div>
@@ -112,41 +119,39 @@ export const StakeSection = () => {
               <span className={styles.balanceAmount}>{formatNumber(balanceInt)}</span>
             </div>
           </div>
-          <h2 className={styles.currentApy}>
-            {apyStr}%
-          </h2>
+          <h2 className={styles.currentApy}>{apyStr}%</h2>
         </div>
         <div className={styles.rowItem}>
           <span className="muted-text">≈{formatFromUsd(balanceUsd, 2)}</span>
-          <span className="muted-text">Minimum Lock: 30 Days</span>
+          <span className="muted-text">{t('stake.minimumLock')}</span>
         </div>
         {balanceInt <= 0 ? (
           <div className={styles.buttonsContainer}>
             <Button size="m" mode="filled" onClick={handleStakeEarnOrDeposit}>
               <AddIcon className="add-icon" />
-              Stake &amp; Earn
+              {t('stake.stakeEarn')}
             </Button>
           </div>
         ) : (
           <div className={styles.buttonsContainerRow}>
             <Button size="m" mode="bezeled" onClick={handleStakeEarnOrDeposit}>
               <AddIcon className="accent-icon" />
-              Deposit
+              {t('stake.deposit')}
             </Button>
             <Button size="m" mode="bezeled" onClick={handleWithdraw}>
               <MinusIcon className="accent-icon" />
-              Withdraw
+              {t('stake.withdraw')}
             </Button>
           </div>
         )}
       </div>
       <Modal
         isOpen={isApyOpen}
-        title="What is APY?"
-        button="Got it"
+        title={t('stake.apyTitle')}
+        button={t('common.gotIt')}
         content={apyContent}
         onClose={() => setIsApyOpen(false)}
       />
     </>
   );
-}
+};

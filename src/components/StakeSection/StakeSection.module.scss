@@ -48,7 +48,7 @@
             color: #41bd58;
             font-family: 'SF Pro Rounded' !important;
             font-weight: bold !important;
-            font-size: 21px;
+            font-size: 23px;
             -webkit-text-stroke: 0.2px #41bd58;
         }
     }
@@ -98,6 +98,7 @@
             width: 100%;
             overflow: hidden;
             height: 47px;
+            border-radius: 10px;
 
             h6 {
                 display: flex;

@@ -1,0 +1,244 @@
+{
+  "profile": {
+    "unknown": "Noma'lum",
+    "wallet": "Hamyon",
+    "connect": "Ulanish",
+    "defaultCurrency": "Standart valyuta",
+    "language": "Tillar",
+    "contactSupport": "Qo'llab-quvvatlash bilan bog'lanish",
+    "faq": "FAQ",
+    "history": "Tarix",
+    "userAgreement": "Foydalanuvchi kelishuvi",
+    "privacyPolicy": "Maxfiylik siyosati",
+    "supportNotice": "Mini ilova Stars Base Digital Services Provider tomonidan boshqariladi. Xizmat mustaqil bo'lib, Telegram bilan bog'liq emas.",
+    "currencyUpdated": "Valyuta yangilandi"
+  },
+  "stake": {
+    "apyTitle": "APY nima?",
+    "apyLine1": "APY — Annual Percentage Yield (yillik foiz daromadi), foizlarni hisobga olgan holda yillik umumiy daromadni ifodalaydi.",
+    "apyLine2": "Stavkalar bosqichma-bosqich boʻlib, har bir stake (lot) uchun belgilanadi; ko'rsatilgan APY barcha ochiq lottalarning og'irliklangan o'rtachasidir.",
+    "apyLine3": "Sizning amaldagi samarali APY: {apy}%",
+    "apyLine4": "Hozirgi narx: {price} bir yulduz uchun.",
+    "noBalance": "Sizda yechib olish uchun balans yo'q",
+    "lockNotEnded": "Bloklash muddati hali tugamadi.",
+    "lockerNotActive": "Stars Base locker hali faol emas",
+    "withdrawUnavailable": "Hozirda yechib olish mavjud emas.",
+    "minimumLock": "Minimal bloklash: 30 kun",
+    "balance": "Balans",
+    "apy": "APY",
+    "stakeEarn": "Stake qiling va daromad oling",
+    "deposit": "Depozit",
+    "withdraw": "Yechib olish"
+  },
+  "common": {
+    "copiedToClipboard": "Clipboardga nusxalandi",
+    "copyFailed": "Nusxalash muvaffaqiyatsiz",
+    "noWallet": "Hamyon manzili mavjud emas",
+    "failedOpenLink": "Telegram havolasini ochib bo'lmadi",
+    "openFaq": "FAQni ochish",
+    "gotIt": "Tushunarli"
+  },
+  "stats": {
+    "title": "Tizim umumiy ko'rinishi",
+    "totalStaked": "Jami stake qilingan",
+    "exchangeRate": "Almashtirish kursi",
+    "protocol": "Protokol",
+    "protocolValue": "Stars Base protokoli"
+  },
+  "tier": {
+    "title": "Kuchaytirilgan mukofotlar",
+    "apyUpdates": "Sizning stake miqdoringiz oshgan sari APY avtomatik yangilanadi",
+    "line1": "Tizim dinamik bosqich modelidan foydalanadi: jami stake qilingan balans oshgani sayin APY ortadi.",
+    "line2": "Har bir bosqich yuqori daromad stavkasini ochadi, boshlang'ich 12.8% dan eng yuqori darajada 28.7% APY gacha.",
+    "line3": "Qo'shimcha yulduzlarni stake qilganingizda va yuqori bosqichga o'tganingizda, umumiy APY yangi jami miqdorga qarab darhol qayta hisoblanadi.",
+    "line4": "Joriy va keyingi bosqich chegaralari real vaqt rejimida ko'rsatiladi, shunda keyingi APY oshishiga qancha qolganini kuzatishingiz mumkin."
+  },
+  "withdraw": {
+    "title": "Yechib olish variantlari",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Telegram yulduzlari",
+    "subtitle": "TONda yechib olishda tranzaksiya summasiga qarab tarmoq to'lovi 1% gacha bo'lishi mumkin.",
+    "line1": "Siz mukofotlaringizni to'g'ridan-to'g'ri Telegram yulduzlari yoki Toncoin (TON) shaklida olishingiz mumkin.",
+    "line2": "TONda yechib olishda, umumiy miqdorga qarab, 1% gacha tarmoq to'lovi qo'llanilishi mumkin.",
+    "line3": "Barcha yechib olishlar xavfsiz tarzda qayta ishlanadi va odatda tasdiqdan keyin bir necha daqiqa ichida yakunlanadi.",
+    "line4": "TON bo'yicha yechib olishni boshlashdan oldin TON hamyoningiz ulanayotganiga ishonch hosil qiling."
+  },
+  "campaign": {
+    "title": "Kampaniya tafsilotlari",
+    "minStakeLabel": "Minimal stake",
+    "maxStakeLabel": "Maksimal stake",
+    "line1": "Kampaniya 300 yulduzdan boshlangan stake imkonini beradi, maksimal stake bo'yicha cheklov yo'q.",
+    "line2": "Barcha depozitlar faol staking pooliga to'g'ridan-to'g'ri qo'shiladi va tasdiqlangandan so'ng darhol mukofotlar ishlab chiqarishni boshlaydi."
+  },
+  "header": {
+    "walletConnected": "Hamyon ulangan",
+    "copyAddress": "Manzilni nusxalash",
+    "disconnect": "Ulanishni uzish",
+    "disconnectConfirmTitle": "Hamyonni uzish",
+    "disconnectConfirmMessage": "Hamyonni uzmoqchimisiz?"
+  },
+  "ecosystem": {
+    "title": "Ekotizim foydalari",
+    "items": {
+      "marketplace": {
+        "title": "Marketplace likvidligini qo'llab-quvvatlash",
+        "content": "Stars Base tizimi Telegram yulduzlar Marketplace likvidligini barqaror saqlashga hissa qo'shadi.\nYulduzlarni vaqtincha staking pool-larda bloklash orqali aylanishdagi taklif kamayadi va bu bozor faoliyatini barqarorlashtirishga yordam beradi.\nBu barcha ishtirokchilar uchun doimiy xarid quvvati, silliq tranzaksiyalar va sog'lom savdo muhiti ta'minlaydi.\nBalanslangan likvidlik modeli Stars ekotizimini barqaror va to'satdan tebranishlarga chidamli qiladi.\nLikvidlik barqarorligi, shuningdek, yulduzlar to'lovlarini integratsiyalovchi foydalanuvchilar va ishlab chiquvchilar ishonchini mustahkamlaydi."
+      },
+      "antiInflation": {
+        "title": "Inflatsiyaga qarshi tizim",
+        "content": "Staking Stars ekotizimining inflatsiyaga qarshi mexanikasini qo'llab-quvvatlaydi va aylanishdagi yulduzlar hajmini kamaytiradi.\nKo'proq foydalanuvchilar yulduzlarini stake qilganda, taklifning qisqarishi aktivning uzoq muddatli qiymatini saqlab qolishga yordam beradi.\nBu jarayon o'z-o'zini muvozanatlovchi iqtisodiyotni yaratadi, unda o'sish barqaror va organik bo'lib qoladi.\nTizim boshlang'ich va uzoq muddatli ishtirokchilarning adolatli va doimiy shartlardan foyda olishini ta'minlaydi.\nNazoratsiz inflyatsiyani kamaytirish orqali ekotizim barcha foydalanuvchilar uchun mukofotlarning barqarorligini himoya qiladi."
+      },
+      "infrastructure": {
+        "title": "Infratuzilma moliyalashtiruvi",
+        "content": "Staking faoliyatining bir qismi Telegramning Stars to'lov va staking infratuzilmasini rivojlantirishni qo'llab-quvvatlaydi.\nBunga xavfsiz tranzaksiyalarni saqlash, samarali ishlov berish tizimlari va millionlab foydalanuvchilar uchun ishonchli shkalalash kiradi.\nStakingda ishtirok etish orqali foydalanuvchilar bilvosita ekotizimning ishlashini va chidamliligini yaxshilashga hissa qo'shadilar.\nInfratuzilma moliyalashtiruvi stars tarmog'ining tez, xavfsiz va kelajakka tayyor bo'lishini ta'minlaydi.\nBu resurslar doimiy yangilanishlarni, texnik xizmatni va kelajakdagi funksiyalar kengayishini imkonini beradi."
+      }
+    }
+  },
+  "modal": {
+    "close": "Yopish",
+    "apy": "APY",
+    "stakedStars": "stake qilingan yulduzlar",
+    "amount": "Miqdor",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Bloklash muddati",
+    "unlockDate": "Ochilish sanasi",
+    "lockPeriodValue": "{days} kun"
+  },
+  "payment": {
+    "processing": "Qayta ishlanmoqda…",
+    "invalidRequest": "Noto'g'ri so'rov.",
+    "unableStart": "To'lovni boshlashning iloji yo'q. Qaytadan urinib ko'ring.",
+    "unableOpen": "To'lovni ochib bo'lmadi. Qaytadan urinib ko'ring.",
+    "paymentSuccessful": "To'lov muvaffaqiyatli!",
+    "paymentCancelled": "To'lov bekor qilindi",
+    "stakeTitle": "{amount} yulduz stake qilish",
+    "stakeLabel": "{amount} yulduz stake qilish"
+  },
+  "paymentSuccess": {
+    "title": "Stake tasdiqlandi",
+    "subtitle": "Sizning depozitingiz {days} kun muddatga bloklandi.",
+    "apy": "APY",
+    "stakedStars": "stake qilingan yulduzlar",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Bloklash muddati",
+    "unlockDate": "Ochilish sanasi",
+    "back": "Umumiy ko'rinishga qaytish",
+    "note": "Talab qilindi: {requested} yulduz · Hisoblangan: {paid} yulduz"
+  },
+  "faqs": {
+    "pageTitle": "Ko'p so'raladigan savollar",
+    "learnMore": "Ko'proq ma'lumot",
+    "items": {
+      "q1": {
+        "question": "Stars Base uchun mukofotlar qayerdan keladi?",
+        "answer": "Mukofotlar Stars Base ekotizimining daromad taqsimoti modeli orqali yaratiladi.\nHar bir staking pool likvidlik va tarmoq infratuzilmasini qo'llab-quvvatlaydi, bu esa barqaror mukofot aylanishlarini yaratadi.\nDaromadning bir qismi ekotizim o'sishi, marketplace faoliyati va vaqt o'tishi bilan tarqatiladigan staking rag'batlaridan keladi.\nSpekulyativ manbalar ishtirok etmaydi — barcha mukofotlar ekotizimning real qiymati bilan qo'llab-quvvatlanadi.\nBu struktur barcha ishtirokchilar uchun adolat, uzoq muddatli barqarorlik va shaффoflikni ta'minlaydi."
+      },
+      "q2": {
+        "question": "Staking nima va u xavfsizmi?",
+        "answer": "Staking — bu ekotizimni qo'llab-quvvatlash uchun yulduzlarni bloklash va buning evaziga passiv mukofotlar olish jarayonidir.\nStaking qilganingizda, aktivlaringiz hisobingizga bog'lanib qoladi va hech qachon uchinchi tomonlarga o'tkazilmaydi.\nTizim Telegramning xavfsiz to'lov infratuzilmasi asosida qurilgan va to'liq shifrlash va shaффoflik bilan ishlaydi.\nBarcha tranzaksiyalar tekshiriladi va kuzatiladi, bu esa xavfsizlik va o'zgarmaslikni ta'minlaydi.\nBu uzoq muddatli qiymat o'sishi va ekotizimga hissa qo'shish uchun mo'ljallangan past xavfli mexanizmdir."
+      },
+      "q3": {
+        "question": "Mukofotlar qanday hisoblanadi?",
+        "answer": "Mukofotlar sizning jami stake qilingan balansingiz va hozirgi bosqichingizga asoslanadi.\nHar bir bosqich yuqori APY taklif qiladi, boshlang'ich 12.8% dan katta majburiyatlar uchun 28.7% gacha.\nAPY siz stake qo'shganda dinamik tarzda moslashadi; katta stake-lar yuqori daromad stavkalarini ochadi.\nTizim amaldagi APY ni real vaqtda avtomatik qayta hisoblaydi.\nBarcha mukofot hisob-kitoblari ilova dashboardida shaффof va tekshirilishi mumkin."
+      },
+      "q4": {
+        "question": "Men yulduzlarimni istalgan vaqtda yechib olsam bo'ladimi?",
+        "answer": "Ha, minimal bloklash muddati tugagach, yechib olish istalgan vaqtda mavjud.\nSiz Telegram yulduzlari yoki Toncoin (TON) da to'g'ridan-to'g'ri yechib olishingiz mumkin.\nTON da yechib olishda miqdorga qarab kichik tarmoq to'lovi bo'lishi mumkin.\nBarcha tranzaksiyalar avtomatik va xavfsiz tarzda bir necha daqiqa ichida qayta ishlanadi.\nTizim qulay va to'liq kuzatiladigan tajribani ta'minlaydi."
+      },
+      "q5": {
+        "question": "Agar keyinchalik ko'proq yulduz stake qilsam nima bo'ladi?",
+        "answer": "Mavjud stake-ga qo'shimcha yulduzlar qo'shsangiz, jami balansingiz darhol yangilanadi.\nTizim avtomatik ravishda yangi bosqichni baholaydi va mos APY oshishini qo'llaydi.\nOldingi to'plangan mukofotlar o'zgarmaydi, kelajakdagi daromadlar esa oshadi.\nBu stake tajribasini dinamik qiladi — qancha ko'p stake qilsangiz, shuncha ko'p daromad olasiz.\nStake miqdorini oshirishda jarima yoki kechikish mavjud emas."
+      },
+      "q6": {
+        "question": "Stars Base Telegram ekotizimiga qanday foyda keltiradi?",
+        "answer": "Stars Base Telegram yulduzlar Marketplace ichida likvidlik va barqarorlikni saqlashga yordam beradi.\nShuningdek, u aylanishdagi yulduzlar sonini kamaytirish orqali inflatsiyaga qarshi choralarni qo'llab-quvvatlaydi.\nBarcha staking faoliyatining bir qismi to'lov va staking infratuzilmasini rivojlantirishga hissa qo'shadi.\nBu tezroq to'lovlar, yuqori shkalalash va barqaror iqtisodiy aylanishni ta'minlaydi.\nStake qilgan foydalanuvchilar daromad olish bilan birga butun Stars ekotizimining uzoq muddatli asosini mustahkamlashga yordam beradi."
+      },
+      "q7": {
+        "question": "APY har kunlik va oylik mukofotlarga qanday ta'sir qiladi?",
+        "answer": "APY (Annual Percentage Yield) yillik daromadni ifodalaydi, ammo mukofotlar kundalik hisoblanadi va qo'shiladi.\nMasalan, 12.8% APY taxminan oyiga ~1.06% ga teng (kompoundlangan). Agar siz 1,000 yulduz stake qilsangiz, bir oy o'tgach taxminan 1,039 ko'rasiz (ko'rsatishda yaxlitlashdan oldin).\nBalansingiz har kuni oshadi; birikma avtomatik ishlaydi — har kunning daromadi keyingi kun hisob-kitobiga qo'shiladi.\nBiz mukofotlarni kundalik ikkita o'nlik aniqlik bilan hisoblaymiz, Stake sahifasi esa butun sonni ko'rsatadi.\nQisqasi, qancha uzoq stake qilsangiz, shuncha ko'p daromad kompound orqali oshadi."
+      },
+      "q8": {
+        "question": "Yulduzlarimni yo'qotish xavfi bormi?",
+        "answer": "Stars Base non-custodial tuzilishga ega, ya'ni aktivlar sizning nazoratingizda qoladi.\nJamg'armalaringiz xavfsiz tarzda bloklanadi va har doim tekshirilishi mumkin bo'ladi.\nTizim arxitekturasi shaффoflik va xavfsizlikni ustuvor qiladi.\nAsosiy o'zgaruvchan narsa daromad o'zgarishi bo'lib, mablag'larning xavfsizligiga ta'sir qilmaydi."
+      },
+      "q9": {
+        "question": "APY doimiymi yoki vaqt o'tishi bilan o'zgaradimi?",
+        "answer": "Stars Base dagi APY dinamik bo'lib, sizning jami stake va tizim likvidligiga bog'liq.\nAsosiy APY 12.8% dan boshlansa ham, siz yuqori bosqichlarga o'tganingizda u oshishi mumkin.\nKamdan-kam hollarda tarmoq yoki likvidlik sozlamalari daromad stavkasiga ozgina ta'sir qilishi mumkin.\nBarcha stavka o'zgarishlari shaффof va darhol dashboard-ga aks etadi.\nTizim turli sharoitlarda barqaror va raqobatbardosh daromadni saqlashga intiladi."
+      },
+      "q10": {
+        "question": "Qancha minimal va maksimal miqdorni stake qilish mumkin?",
+        "answer": "Stake ishtirok etish uchun minimal miqdor 300 yulduz.\nBir depozit uchun maksimal miqdor 100,000 yulduz.\nYuqori miqdorlar avtomatik ravishda yuqori bosqichlarni va yaxshiroq APY stavkalarini ochadi.\nBu moslashuvchan tizim yangi va uzoq muddatli foydalanuvchilarni adolatli ravishda mukofotlaydi."
+      },
+      "q11": {
+        "question": "Stars Base oddiy staking platformalaridan qanday farq qiladi?",
+        "answer": "Stars Base Telegram yulduzlari atrofida qurilgan ekotizimga xos staking modelidir.\nU yuqori APY va real foydalanishni birlashtirib, marketplace likvidligi va infratuzilmani qo'llab-quvvatlaydi.\nSpekulyativ staking ilovalaridan farqli o'laroq, qiymat oqimi ekotizim ichida qoladi.\nBu har bir foydalanuvchi uchun shaффoflik, uzoq muddatli barqarorlik va real ta'sirni kafolatlaydi."
+      },
+      "q12": {
+        "question": "Bloklash davrida yulduzlarim bilan nima bo'ladi?",
+        "answer": "Sizning yulduzlaringiz 30 kunlik minimal bloklash muddati davomida tizimda xavfsiz tarzda stake qilingan holda qoladi.\nBu davr mobaynida ular rewards ishlab chiqarishda davom etadi va tashqi o'tkazish yoki yo'qotilish xavfi yo'q.\nSiz merrni real vaqt rejimida dashboard orqali kuzatishingiz mumkin.\nBloklash muddati tugagach, siz istalgan vaqtda yechib olishingiz yoki qaytadan stake qilishingiz mumkin."
+      },
+      "q13": {
+        "question": "Stakingni erta bekor qilish mumkinmi?",
+        "answer": "Boshlang'ich 30 kunlik minimal bloklash davrida erta sponlash (unstake) mumkin emas — bu ekotizim barqarorligini ta'minlash uchun kerak.\nUshbu qoida barcha ishtirokchilarni himoya qilib, likvidlikni va mukofotlarni adolatli tarqatishni ta'minlaydi.\nUshbu davrdan so'ng, siz istalgan vaqtda yechib olishingiz yoki qayta stake qilishingiz mumkin.\nTizim moslashuvchanlik va barqarorlikni muvozanatlashtirish uchun mo'ljallangan."
+      },
+      "q14": {
+        "question": "Mukofotlar avtomatik tarqatiladimi?",
+        "answer": "Ha, mukofotlar avtomatik tarzda tarqatiladi va kundalik yangilanadi.\nQo'lda talab qilish yoki tashqi o'tkazmalar zarur emas.\nJami mukofotlar staking dashboardidan real vaqt rejimida kuzatilishi mumkin.\nBu avtomatlashtirish barcha foydalanuvchilar uchun maksimal qulaylik va shaффoflikni ta'minlaydi."
+      },
+      "q15": {
+        "question": "APY qanchalik tez yangilanadi?",
+        "answer": "APY stavkalari faol bosqichingiz va tizim likvidligi holatiga asoslanib qayta hisoblanadi.\nSiz stake qilganingiz yoki yangi yulduzlar qo'shganda, yangilanish darhol qo'llanadi.\nBu sizning mukofotlaringiz doimo so'nggi stake darajangizni aks ettirishini ta'minlaydi.\nShu bilan birga, eskirgan yoki kechikkan daromad ma'lumotlarining ko'rsatilishini oldini oladi."
+      },
+      "q16": {
+        "question": "Nima uchun Stars Base bloklash muddatidan foydalanadi?",
+        "answer": "30 kunlik minimal bloklash muddati bozor likvidligini saqlashga va tizimni beqaror qilishi mumkin bo'lgan tez pul oqimlarini oldini olishga yordam beradi.\nBu barcha ishtirokchilar uchun adolatli va barqaror mukofot stavkalarini ta'minlaydi.\nKo'p staking tizimlarida bloklash davrlari ekotizimning butunligini himoya qilish uchun standart hisoblanadi.\nBloklash tugagach, siz istalgan vaqtda yechib olishingiz yoki qayta stake qilishingiz mumkin."
+      },
+      "q17": {
+        "question": "APY stavkasiga qanday omillar ta'sir qiladi?",
+        "answer": "APY umumiy ekotizim likvidligi, jami stake qilingan hajm va ichki bozor talabiga bog'liq.\nKo'proq foydalanuvchilar stake qilganda, pool kengayadi va daromadlarni muvozanatda saqlash uchun stavkalar moslashtiriladi.\nBundan tashqari, tizim sog'ligi va bozor barqarorligi doimiy ravishda kuzatiladi va daromadlarni optimallashtirish uchun ishlatiladi.\nBarcha moslashuvlar algoritmik va shaффof tarzda amalga oshiriladi."
+      },
+      "q18": {
+        "question": "Stars Base da kompaud (compounding) qanday ishlaydi?",
+        "answer": "Kompaud — bu kundalik mukofotlaringiz avtomatik ravishda balansingizga qo'shilishi degani.\nHar kuni daromad aniq hisoblangan yangilangan balansga (ikki o'nlik bilan) asoslanadi, while Stake sahifasi butun sonni ko'rsatadi.\nBu vaqt o'tishi bilan o'sishning birikma effektini yaratadi va uzoq muddatli daromadlarni oshiradi."
+      },
+      "q19": {
+        "question": "Tizim yangilanishlari mening staking balansimga ta'sir qilishi mumkinmi?",
+        "answer": "Yo'q, tizim yangilanishlari yoki texnik xizmat ko'rsatish staking summangizga yoki to'plangan mukofotlarga ta'sir qilmaydi.\nBarcha staking ma'lumotlari xavfsiz saqlanadi va sinxronizatsiya qilinadi.\nNodir holatlarda ko'rsatishda vaqtinchalik kechikishlar bo'lishi mumkin, lekin jamg'armalaringiz xavfsiz qoladi.\nAgar rejalashtirilgan texnik xizmat mavjud bo'lsa, sizga xabar beriladi."
+      }
+    }
+  },
+  "history": {
+    "title": "Tranzaksiya tarixi",
+    "empty": {
+      "title": "Hali tarix yo'q",
+      "subtitle": "Tranzaksiyalarni boshlaganingizdan so'ng ular shu yerda ko'rinadi."
+    },
+    "detailsTitle": "Tranzaksiya tafsilotlari",
+    "deposit": "Depozit",
+    "withdraw": "Yechib olish",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Depozit",
+    "buttonConfirmStake": "Stakingni tasdiqlash",
+    "tagDeposit": "Depozit",
+    "tagStake": "Stake",
+    "stakeAmountAria": "Yulduzlarda stake miqdori",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Minimal depozit {min} yulduz.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Taxminiy daromad",
+    "perYear": "yiliga",
+    "collapseDetails": "Tafsilotlarni yopish",
+    "expandDetails": "Tafsilotlarni kengaytirish",
+    "yearly": "Yillik",
+    "monthly": "Oylik",
+    "daily": "Kunlik",
+    "minimumLock": "Minimal bloklash",
+    "minimumLockValue": "{days} kun"
+  }
+}

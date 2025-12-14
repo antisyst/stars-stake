@@ -6,6 +6,7 @@ import { toDate } from '@/utils/toDate';
 import { formatDMY } from '@/utils/formatDMY';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import ArrowDownIcon from '@/assets/icons/arrow-down.svg?react';
+import { useI18n } from '@/i18n';
 
 type Props = {
   data: Activity;
@@ -15,6 +16,7 @@ type Props = {
 export const HistoryItem: React.FC<Props> = ({ data, onOpen }) => {
   const isStake = data.type === 'stake';
   const dateStr = formatDMY(toDate(data.createdAt));
+  const { t } = useI18n();
 
   const handleClick = () => {
     if (onOpen) onOpen(data);
@@ -24,7 +26,7 @@ export const HistoryItem: React.FC<Props> = ({ data, onOpen }) => {
     <div
       className={styles.item}
       role="listitem"
-      aria-label={isStake ? 'Stake' : 'Unstake'}
+      aria-label={isStake ? t('history.deposit') : t('history.withdraw')}
       onClick={handleClick}
       tabIndex={0}
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleClick(); }}
@@ -35,7 +37,7 @@ export const HistoryItem: React.FC<Props> = ({ data, onOpen }) => {
       </div>
       <div className={styles.itemBody}>
         <div className={styles.rowTop}>
-          <span className={styles.type}>{isStake ? 'Deposit' : 'Withdraw'}</span>
+          <span className={styles.type}>{isStake ? t('history.deposit') : t('history.withdraw')}</span>
           <span
             className={`${styles.amount} ${
               isStake ? styles.amountPositive : styles.amountNegative
@@ -52,7 +54,7 @@ export const HistoryItem: React.FC<Props> = ({ data, onOpen }) => {
               isStake ? styles.amountPositive : styles.amountNegative
             }`}
           >
-            {Number(data.apy).toFixed(1)}% APY
+            {Number(data.apy).toFixed(1)}% {t('history.apySuffix')}
           </span>
         </div>
       </div>

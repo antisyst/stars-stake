@@ -1,0 +1,244 @@
+{
+  "profile": {
+    "unknown": "Necunoscut",
+    "wallet": "Portofel",
+    "connect": "Conectează",
+    "defaultCurrency": "Monedă implicită",
+    "language": "Limbă",
+    "contactSupport": "Contactează asistența",
+    "faq": "FAQ",
+    "history": "Istoric",
+    "userAgreement": "Acordul utilizatorului",
+    "privacyPolicy": "Politica de confidențialitate",
+    "supportNotice": "Miniaplicația este operată de Stars Base Digital Services Provider. Serviciul este independent și nu este afiliat cu Telegram.",
+    "currencyUpdated": "Monedă actualizată"
+  },
+  "stake": {
+    "apyTitle": "Ce este APY?",
+    "apyLine1": "APY înseamnă Annual Percentage Yield (randament procentual anual) și reprezintă randamentul total anual, inclusiv câștigurile compuse.",
+    "apyLine2": "Ratele sunt împărțite pe niveluri și se aplică pentru fiecare stake (lot); APY afișat este o medie ponderată a tuturor loturilor deschise.",
+    "apyLine3": "APY efectiv curent: {apy}%",
+    "apyLine4": "Preț curent: {price} pe stea.",
+    "noBalance": "Nu aveți sold pentru retragere",
+    "lockNotEnded": "Perioada de blocare nu s-a încheiat încă.",
+    "lockerNotActive": "Locker-ul Stars Base nu este încă activ",
+    "withdrawUnavailable": "Retragerea nu este disponibilă momentan.",
+    "minimumLock": "Perioadă minimă de blocare: 30 zile",
+    "balance": "Sold",
+    "apy": "APY",
+    "stakeEarn": "Stakează & Câștigă",
+    "deposit": "Depozit",
+    "withdraw": "Retragere"
+  },
+  "common": {
+    "copiedToClipboard": "Copiat în clipboard",
+    "copyFailed": "Copiere eșuată",
+    "noWallet": "Adresa portofelului nu este disponibilă",
+    "failedOpenLink": "Deschiderea linkului Telegram a eșuat",
+    "openFaq": "Deschide FAQ",
+    "gotIt": "Am înțeles"
+  },
+  "stats": {
+    "title": "Prezentare generală a sistemului",
+    "totalStaked": "Total blocat",
+    "exchangeRate": "Curs de schimb",
+    "protocol": "Protocol",
+    "protocolValue": "Protocolul Stars Base"
+  },
+  "tier": {
+    "title": "Recompense sporite",
+    "apyUpdates": "APY se actualizează automat pe măsură ce crește stake-ul dvs.",
+    "line1": "Sistemul folosește un model dinamic pe niveluri, în care APY-ul dvs. crește odată cu mărirea soldului total blocat.",
+    "line2": "Fiecare nivel deblochează o rată de randament mai mare, începând de la 12.8% și ajungând până la 28.7% APY la cel mai înalt nivel.",
+    "line3": "Când adăugați stele în stake și treceți la un nivel superior, APY-ul total este recalculat imediat pe baza noului total.",
+    "line4": "Nivelurile curente și următoare sunt afișate în timp real, astfel încât să puteți urmări progresul către următoarea creștere a APY-ului."
+  },
+  "withdraw": {
+    "title": "Opțiuni de retragere",
+    "tonLabel": "Toncoin",
+    "starsLabel": "stele Telegram",
+    "subtitle": "La retragerea în TON, se poate aplica o taxă mică de rețea de până la 1%, în funcție de suma retrasă.",
+    "line1": "Puteți retrage recompensele direct în stele Telegram sau în Toncoin (TON), în funcție de preferință.",
+    "line2": "La retragerea în TON, se poate aplica o taxă mică de rețea de până la 1% în funcție de suma totală.",
+    "line3": "Toate retragerile sunt procesate în siguranță și, de regulă, se finalizează în câteva minute după confirmare.",
+    "line4": "Înainte de a efectua o retragere în TON, asigurați-vă că portofelul TON este conectat."
+  },
+  "campaign": {
+    "title": "Detalii campanie",
+    "minStakeLabel": "Stake minim",
+    "maxStakeLabel": "Stake maxim",
+    "line1": "Campania permite staking începând de la minimum 300 de stele, fără limită superioară a sumei maxime.",
+    "line2": "Toate depozitele contribuie direct la pool-ul de staking activ și încep să genereze recompense imediat după confirmare."
+  },
+  "header": {
+    "walletConnected": "Portofel conectat",
+    "copyAddress": "Copiază adresa",
+    "disconnect": "Deconectează",
+    "disconnectConfirmTitle": "Deconectează portofelul",
+    "disconnectConfirmMessage": "Sunteți sigur că doriți să deconectați portofelul?"
+  },
+  "ecosystem": {
+    "title": "Beneficii ale ecosistemului",
+    "items": {
+      "marketplace": {
+        "title": "Sprijin pentru lichiditatea marketplace-ului",
+        "content": "Sistemul Stars Base contribuie la menținerea unei lichidități stabile pe Marketplace-ul stelelor Telegram.\nPrin blocarea temporară a stelelor în pool-urile de staking, oferta în circulație scade, ceea ce ajută la stabilizarea activității pieței.\nAcest lucru asigură putere de cumpărare constantă, tranzacții mai fluide și un mediu de tranzacționare mai sănătos pentru toți participanții.\nUn model echilibrat de lichiditate menține ecosistemul stelelor durabil și rezistent la fluctuații bruște ale pieței.\nStabilitatea lichidității consolidează, de asemenea, încrederea atât a utilizatorilor, cât și a dezvoltatorilor care integrează plăți cu stele."
+      },
+      "antiInflation": {
+        "title": "Sistem anti-inflație",
+        "content": "Staking-ul susține direct mecanicile anti-inflație ale ecosistemului stelelor prin reducerea volumului de stele în circulație.\nPe măsură ce mai mulți utilizatori stake-uiesc stelele, contracția ofertei contribuie la păstrarea valorii pe termen lung a activului.\nAcest proces creează o economie auto-reglabilă, în care creșterea rămâne stabilă și organică.\nSistemul asigură că atât participanții timpurii, cât și cei pe termen lung beneficiază de condiții de randament consistente și corecte.\nMinimizând inflația necontrolată, ecosistemul protejează sustenabilitatea recompenselor pentru toți utilizatorii."
+      },
+      "infrastructure": {
+        "title": "Finanțarea infrastructurii",
+        "content": "O parte din activitatea de staking sprijină dezvoltarea continuă a infrastructurii de plăți și staking a Telegram.\nAceasta include menținerea tranzacțiilor sigure, sisteme eficiente de procesare și scalabilitate fiabilă pentru milioane de utilizatori.\nParticipând la staking, utilizatorii contribuie indirect la îmbunătățirea performanței și rezilienței ecosistemului.\nFinanțarea infrastructurii asigură că rețeaua stelelor rămâne rapidă, sigură și pregătită pentru viitor.\nAceste resurse permit actualizări continue, întreținere tehnică și extinderi de funcționalitate în viitor."
+      }
+    }
+  },
+  "modal": {
+    "close": "Închide",
+    "apy": "APY",
+    "stakedStars": "stele blocate",
+    "amount": "Sumă",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Perioadă de blocare",
+    "unlockDate": "Dată de deblocare",
+    "lockPeriodValue": "{days} zile"
+  },
+  "payment": {
+    "processing": "Se procesează…",
+    "invalidRequest": "Cerere invalidă.",
+    "unableStart": "Nu s-a putut porni plata. Încercați din nou.",
+    "unableOpen": "Nu s-a putut deschide plata. Încercați din nou.",
+    "paymentSuccessful": "Plata a reușit!",
+    "paymentCancelled": "Plata a fost anulată",
+    "stakeTitle": "Stake {amount} stele",
+    "stakeLabel": "Stake {amount} stele"
+  },
+  "paymentSuccess": {
+    "title": "Stake confirmat",
+    "subtitle": "Depozitul dvs. a fost blocat pentru {days} zile.",
+    "apy": "APY",
+    "stakedStars": "stele blocate",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Perioadă de blocare",
+    "unlockDate": "Dată de deblocare",
+    "back": "Înapoi la prezentare generală",
+    "note": "Solicitat: {requested} stele · Taxat: {paid} stele"
+  },
+  "faqs": {
+    "pageTitle": "Întrebări frecvente",
+    "learnMore": "Află mai multe",
+    "items": {
+      "q1": {
+        "question": "De unde provin recompensele pentru Stars Base?",
+        "answer": "Recompensele sunt generate prin modelul de distribuție a randamentului al ecosistemului Stars Base.\nFiecare pool de staking contribuie la stabilitatea lichidității și la infrastructura rețelei, ceea ce, la rândul său, creează cicluri de recompense sustenabile.\nO parte din randament provine din creșterea ecosistemului, activitatea din marketplace și stimulentele de staking distribuite în timp.\nNu sunt implicate surse speculative; toate recompensele sunt susținute de valoarea reală a ecosistemului.\nAceastă structură asigură corectitudine, sustenabilitate pe termen lung și transparență pentru toți participanții."
+      },
+      "q2": {
+        "question": "Ce este staking-ul și este sigur?",
+        "answer": "Staking-ul este procesul de blocare a stelelor tale pentru a susține ecosistemul și a câștiga recompense pasive în schimb.\nCând faci staking, activele rămân legate de contul tău și nu sunt transferate unor terți.\nSistemul este construit pe infrastructura de plăți securizată a Telegram și funcționează cu criptare și transparență completă.\nToate tranzacțiile sunt verificate și auditable, asigurând securitate și imutabilitate.\nEste un mecanism cu risc scăzut, conceput pentru creștere de valoare pe termen lung și contribuție la ecosistem."
+      },
+      "q3": {
+        "question": "Cum se calculează recompensele?",
+        "answer": "Recompensele se calculează în funcție de soldul total blocat și de nivelul (tier) pe care îl deții.\nFiecare nivel oferă un APY mai mare, începând de la 12.8% și până la 28.7% pentru angajamente mai mari.\nAPY se ajustează dinamic pe măsură ce îți mărești stake-ul; stake-urile mai mari deblochează rate de randament mai mari.\nSistemul recalculează automat APY-ul efectiv în timp real.\nToate calculele recompenselor sunt transparente și verificabile în tabloul de bord al aplicației."
+      },
+      "q4": {
+        "question": "Pot să-mi retrag stelele oricând?",
+        "answer": "Da, retragerile sunt disponibile oricând după încheierea perioadei minime de blocare.\nPoți alege să retragi direct în stele Telegram sau în Toncoin (TON), în funcție de preferință.\nRetragerile în TON pot include o taxă mică de rețea, în funcție de sumă.\nToate tranzacțiile sunt procesate automat și în siguranță, de obicei în câteva minute.\nSistemul oferă o experiență fluidă, cu trasabilitate completă."
+      },
+      "q5": {
+        "question": "Ce se întâmplă dacă stake-uiesc mai multe stele mai târziu?",
+        "answer": "Când adaugi mai multe stele la un stake existent, soldul total se actualizează instantaneu.\nSistemul evaluează automat noul nivel și aplică boost-ul APY corespunzător.\nRecompensele anterioare rămân neafectate, iar randamentul viitor crește corespunzător.\nAcest lucru face experiența de staking dinamică — cu cât stake-uiești mai mult, cu atât câștigi mai mult.\nNu există penalizări sau întârzieri la creșterea sumei stake-uite."
+      },
+      "q6": {
+        "question": "Cum ajută Stars Base ecosistemul Telegram?",
+        "answer": "Stars Base contribuie la menținerea lichidității și stabilității în Marketplace-ul stelelor Telegram.\nDe asemenea, sprijină măsurile anti-inflație prin reducerea numărului de stele în circulație.\nO parte din activitatea de staking contribuie la dezvoltarea infrastructurii de plăți și staking.\nAcest lucru permite plăți mai rapide, o scalabilitate mai bună și un ciclu economic sustenabil.\nPrin staking, utilizatorii nu numai că obțin recompense, ci și ajută la consolidarea fundației pe termen lung a întregului ecosistem Stars."
+      },
+      "q7": {
+        "question": "Cum afectează APY recompensele zilnice și lunare?",
+        "answer": "APY (Annual Percentage Yield) reprezintă randamentul tău anual, dar recompensele sunt calculate și adăugate zilnic.\nDe exemplu, un APY de 12.8% corespunde aproximativ ~1.06% pe lună (compus). Dacă stake-uiești 1.000 de stele, vei avea ~1.039 după o lună (înainte de rotunjire la afișare).\nSoldul tău crește în fiecare zi; compunerea funcționează automat — fiecare zi de câștig se adaugă la următorul calcul.\nCredităm recompensele zilnic cu precizie la două zecimale, în timp ce ecranul Stake afișează valoarea întreagă.\nPe scurt: cu cât stake-uiești mai mult timp, cu atât crește randamentul datorită compunerii."
+      },
+      "q8": {
+        "question": "Există riscul de a-mi pierde stelele?",
+        "answer": "Stars Base funcționează într-un model non-custodial, ceea ce înseamnă că tu păstrezi proprietatea asupra activelor tale.\nFondurile tale rămân blocate în siguranță și verificabile în orice moment.\nArhitectura sistemului prioritizează transparența și securitatea.\nVariabila principală este fluctuația randamentului, nu siguranța fondurilor tale."
+      },
+      "q9": {
+        "question": "APY-ul meu este fix sau se schimbă în timp?",
+        "answer": "APY în Stars Base este dinamic și depinde de suma totală blocată și de lichiditatea sistemului.\nDeși APY-ul de bază pornește de la 12.8%, acesta poate crește pe măsură ce treci la niveluri superioare de staking.\nÎn cazuri rare, ajustările de rețea sau lichiditate pot influența ușor rata.\nToate modificările de rată sunt transparente și reflectate imediat în tabloul tău de bord.\nSistemul urmărește menținerea unor randamente stabile și competitive în condiții variate."
+      },
+      "q10": {
+        "question": "Care este suma minimă și maximă pe care o pot stake-ui?",
+        "answer": "Suma minimă pentru a participa la staking este de 300 de stele.\nMaximul pentru un singur depozit este de 100.000 de stele.\nSume mai mari deblochează automat niveluri superioare și rate APY mai bune.\nAcest sistem flexibil recompensează corect atât utilizatorii noi, cât și pe cei pe termen lung."
+      },
+      "q11": {
+        "question": "Ce diferențiază Stars Base de platformele obișnuite de staking?",
+        "answer": "Stars Base este un model de staking nativ ecosistemului, construit în jurul stelelor Telegram.\nCombină APY ridicat cu utilitate reală, susținând lichiditatea marketplace-ului și infrastructura.\nSpre deosebire de aplicațiile speculative de staking, fluxurile de valoare rămân în interiorul ecosistemului.\nAceasta asigură transparență, sustenabilitate pe termen lung și impact real pentru fiecare utilizator."
+      },
+      "q12": {
+        "question": "Ce se întâmplă cu stelele mele în perioada de blocare?",
+        "answer": "Stelele tale rămân blocate în sistem pe durata minimă de 30 de zile.\nÎn această perioadă, ele continuă să genereze recompense fără riscul pierderii sau transferului extern.\nPoți monitoriza creșterea câștigurilor în timp real prin tabloul de bord.\nDupă încheierea perioadei de blocare, poți retrage sau re-stake-ui oricând cu control complet."
+      },
+      "q13": {
+        "question": "Pot anula staking-ul înainte de termen?",
+        "answer": "De-stakingul anticipat nu este disponibil în perioada inițială minimă de blocare de 30 de zile, pentru a menține stabilitatea ecosistemului.\nAceastă regulă protejează toți participanții, asigurând coerența lichidității și distribuirea corectă a recompenselor.\nDupă această perioadă, poți retrage sau re-stake-ui liber oricând.\nSistemul este proiectat pentru a echilibra flexibilitatea cu sustenabilitatea."
+      },
+      "q14": {
+        "question": "Recompensele sunt distribuite automat?",
+        "answer": "Da, recompensele sunt distribuite automat și actualizate zilnic în soldul contului tău.\nNu este nevoie de revendicare manuală sau transferuri externe.\nRecompensele cumulate pot fi urmărite în timp real din tabloul de bord de staking.\nAceastă automatizare asigură confort și transparență maxime pentru toți utilizatorii."
+      },
+      "q15": {
+        "question": "Cât de des se actualizează APY-ul?",
+        "answer": "Ratele APY sunt recalculate pe baza nivelului activ și a sănătății lichidității sistemului.\nCând faci stake sau adaugi stele noi, actualizarea se aplică imediat.\nAcest lucru asigură că recompensele reflectă întotdeauna cel mai recent nivel al stake-ului tău.\nDe asemenea, previne afișarea datelor de randament învechite sau întârziate."
+      },
+      "q16": {
+        "question": "De ce folosește Stars Base o perioadă de blocare?",
+        "answer": "Perioada minimă de blocare de 30 de zile ajută la menținerea lichidității pieței și previne fluxurile rapide care ar putea destabiliza sistemul.\nEa asigură că ratele de recompensă rămân corecte și consistente pentru toți participanții.\nPerioadele de blocare sunt standard în majoritatea sistemelor de staking pentru a proteja integritatea ecosistemului.\nDupă încheierea blocării poți retrage sau re-stake-ui fără restricții."
+      },
+      "q17": {
+        "question": "Ce factori pot influența rata APY?",
+        "answer": "APY depinde de lichiditatea generală a ecosistemului, de volumul total blocat și de cererea internă a pieței.\nCând mai mulți utilizatori stake-uiesc, pool-ul se extinde, permițând ajustări ale randamentului pentru a menține echilibrul.\nDe asemenea, sănătatea sistemului și stabilitatea pieței sunt monitorizate continuu pentru optimizarea randamentelor.\nToate ajustările sunt algoritmice și transparente pentru a menține corectitudinea."
+      },
+      "q18": {
+        "question": "Cum funcționează compunerea (compounding) în Stars Base?",
+        "answer": "Compunerea înseamnă că recompensele tale zilnice sunt adăugate automat la sold.\nÎn fiecare zi, randamentul este calculat pe baza soldului precis actualizat (urmărit cu două zecimale), în timp ce pagina Stake afișează valoarea întreagă.\nAcest lucru creează un efect de creștere compusă în timp, sporind randamentele pe termen lung."
+      },
+      "q19": {
+        "question": "Pot afecta actualizările de sistem soldul meu de staking?",
+        "answer": "Nu, actualizările sau operațiunile de întreținere nu afectează suma ta staked sau recompensele acumulate.\nToate datele de staking sunt stocate în siguranță și sincronizate.\nÎn cazuri rare pot apărea întârzieri temporare la afișare, dar fondurile tale rămân protejate.\nVei primi o notificare în cazul în care este planat un întreținere programată."
+      }
+    }
+  },
+  "history": {
+    "title": "Istoricul tranzacțiilor",
+    "empty": {
+      "title": "Nicio istorie încă",
+      "subtitle": "Odată ce începi să faci tranzacții, acestea vor apărea aici."
+    },
+    "detailsTitle": "Detalii tranzacție",
+    "deposit": "Depunere",
+    "withdraw": "Retragere",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Depune",
+    "buttonConfirmStake": "Confirmă stake-ul",
+    "tagDeposit": "Depunere",
+    "tagStake": "Stake",
+    "stakeAmountAria": "Sumă de stake în stele",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Depunerea minimă este {min} stele.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Randament estimat",
+    "perYear": "pe an",
+    "collapseDetails": "Restrânge detaliile",
+    "expandDetails": "Extinde detaliile",
+    "yearly": "Anual",
+    "monthly": "Lunar",
+    "daily": "Zilnic",
+    "minimumLock": "Blocare minimă",
+    "minimumLockValue": "{days} zile"
+  }
+}

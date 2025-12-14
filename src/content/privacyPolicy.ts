@@ -229,4 +229,4 @@ export const PRIVACY_POLICY_HTML = `
   </ol>
 
   <p>Thank you for using Stars Base. We are committed to maintaining strong privacy standards while delivering secure, transparent and high-quality staking services within Telegram.</p>
-`;
+  `;

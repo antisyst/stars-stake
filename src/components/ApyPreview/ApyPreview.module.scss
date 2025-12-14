@@ -20,28 +20,48 @@
   }
 
   .apyInfo {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 4px; 
+    flex: 1 1 auto;
+    min-width: 0;
 
     .label {
       font-family: 'SF Pro Rounded' !important;
       font-size: 16px;
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 175px;
+      color: var(--app-text);
       -webkit-text-stroke: 0.02px var(--app-text);
-      font-weight: 700 !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     .value {
-      color: var(--app-green);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex: 0 0 auto;
+      white-space: nowrap;
+      margin-left: 0;
 
       .title {
         padding: 2px 4px;
-        border-radius: 6px;
-        margin-left: 2px;
+        border-radius: 8px;
         background: rgba(34, 197, 94, 0.12);
-        font-size: 15px !important;
+        color: var(--app-green);
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 1;
         font-family: 'SF Pro Rounded' !important;
-        font-weight: 700 !important;
+        -webkit-text-stroke: 0.02px var(--app-green);
       }
     }
   }
@@ -51,24 +71,31 @@
     align-items: center;
     justify-content: flex-end;
     gap: 8px;
-    font-weight: 700 !important;
+    flex: 0 0 auto;
+    min-width: 0;
+    white-space: nowrap;
 
     .gainProfitValue {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex: 0 0 auto;
+
       .yearlyGain {
         font-size: 16px;
-        font-family: 'SF Pro Rounded' !important;
-        font-weight: bold !important;
-        -webkit-text-stroke: 0.05px var(--app-text);
-        display: flex;
+        font-weight: 700;
+        display: inline-flex;
         align-items: center;
-        justify-content: flex-end;
+        gap: 6px;
+        white-space: nowrap;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'SF Pro Rounded' !important;
+        -webkit-text-stroke: 0.05px var(--app-text-color);
+      }
 
-        svg {
-          width: 19px;
-          overflow: hidden;
-          height: 19px;
-          margin: 0 4px;
-        }
+      svg {
+        width: 18px;
+        height: 18px;
       }
     }
 
@@ -76,25 +103,26 @@
       display: flex;
       position: relative;
       width: 36px;
+      height: 28px;
       background: var(--app-button);
       padding: 0;
-      height: 25px;
       min-width: 36px;
       border: none;
       align-items: center;
       border-radius: 16px;
       justify-content: center;
+      flex: 0 0 auto;
+    }
 
-      .chevronWrap {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .chevronWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-        svg {
-          width: 19px;
-          height: 19px;
-          transform-box: fill-box;
-        }
+      svg {
+        width: 18px;
+        height: 18px;
+        transform-box: fill-box;
       }
     }
   }
@@ -116,49 +144,58 @@
     padding: 12px;
     gap: 6px;
 
-      .item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 8px;
-        min-height: 24px;
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 24px;
 
-        .itemLabel {
-          color: var(--app-hint);
-          font-size: 15px;
-          font-weight: 700;
-          -webkit-text-stroke: 0.02px var(--app-hint);
-          font-family: 'SF Pro Rounded' !important;
-          white-space: nowrap;
-        }
+      .itemLabel {
+        font-family: 'SF Pro Rounded' !important;
+        -webkit-text-stroke: 0.02px var(--app-hint);
+        color: var(--app-hint);
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
-        .itemValue {
-          display: inline-flex;
-          align-items: center;
-          gap: 3px;
-          font-size: 15px;
-          font-family: 'SF Pro Rounded' !important;
-          font-weight: bold !important;
-          -webkit-text-stroke: 0.05px var(--app-text);
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-
-          svg { width: 16px; height: 16px; }
-          .sep { opacity: 0.6; margin: 0 2px; font-weight: 600; }
-        }
-
-        .apyTitle {
-            font-size: 14.5px !important;
-            font-family: 'SF Pro Rounded' !important;
-            font-weight: bold !important;
-            -webkit-text-stroke: 0.05px var(--app-green);
-            border-radius: 6px;
-            padding: 2px 4px;
-            color: var(--app-green);
-            background: rgba(34, 197, 94, 0.12);
-        }
+        flex: 1 1 auto;
+        min-width: 0;
+        margin-right: 8px; 
       }
+
+      .itemValue {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 15px;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 0 0 auto;
+        font-family: 'SF Pro Rounded' !important;
+        -webkit-text-stroke: 0.05px var(--app-text-color);
+        svg { width: 16px; height: 16px; }
+
+        .sep { opacity: 0.6; font-weight: 600; }
+      }
+
+      .apyTitle {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: var(--app-green);
+        background: rgba(34, 197, 94, 0.12);
+        padding: 2px 6px;
+        border-radius: 6px;
+        white-space: nowrap;
+        font-family: 'SF Pro Rounded' !important;
+        -webkit-text-stroke: 0.05px var(--app-green);
+      }
+    }
   }
 }
 
@@ -169,7 +206,7 @@
   border: none;
   padding: 0;
   margin: 0;
-  background: rgba(var(--app-section-bg), 0.2);
+  background: rgba(0,0,0,0.12);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   cursor: default;

@@ -3,8 +3,11 @@ import HelpIcon from '@/assets/icons/help.svg?react';
 import { FaqSection } from '@/components/FaqSection/FaqSection';
 import { motion } from 'framer-motion';
 import styles from './FaqPage.module.scss';
+import { useI18n } from '@/i18n';
 
 export const FaqPage = () => {
+  const { t } = useI18n();
+
   return (
     <Page back>
       <div className={styles.faqPage}>
@@ -22,7 +25,7 @@ export const FaqPage = () => {
           <HelpIcon className="icon" />
         </motion.div>
 
-        <FaqSection variant="full" title="Frequently Asked Questions" />
+        <FaqSection variant="full" title={t('faqs.pageTitle')} />
       </div>
     </Page>
   );

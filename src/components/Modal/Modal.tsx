@@ -11,6 +11,7 @@ import { toDate } from '@/utils/toDate';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import Table, { type TableRow } from '@/components/Table/Table';
 import styles from './Modal.module.scss';
+import { useI18n } from '@/i18n';
 
 const ADD_DAYS = (d: Date, days: number) => {
   const x = new Date(d.getTime());
@@ -44,6 +45,8 @@ export const Modal: React.FC<ModalProps> = ({
   const prevScrollTopRef = useRef(0);
   const prevOverflowRef = useRef<string>('');
   const prevTouchActionRef = useRef<string>('');
+
+  const { t } = useI18n();
 
   const showCloseBtn = (title ?? '').trim().length <= 30;
 
@@ -142,15 +145,16 @@ export const Modal: React.FC<ModalProps> = ({
     const unlockStr = formatMDYDots(unlockDate);
 
     return [
-      { label: 'APY', 
+      {
+        label: t('modal.apy'),
         value: (
-         <span className='apy-title'>
-          {Number(historyItem.apy).toFixed(1)}%
-         </span>
-        ) 
+          <span className='apy-title'>
+            {Number(historyItem.apy).toFixed(1)}%
+          </span>
+        )
       },
       {
-        label: historyItem.type === 'stake' ? 'Staked Stars' : 'Amount',
+        label: historyItem.type === 'stake' ? t('modal.stakedStars') : t('modal.amount'),
         value: (
           <>
             <StarIcon />
@@ -158,12 +162,12 @@ export const Modal: React.FC<ModalProps> = ({
           </>
         ),
       },
-      { label: '≈ USD', value: `$${formatNumber(Number(usdVal.toFixed(2)))}` },
-      { label: '≈ TON', value: tonVal ? `${tonVal.toFixed(3)} TON` : '—' },
-      { label: 'Lock Period', value: '30 days' },
-      { label: 'Unlock Date', value: unlockStr }
+      { label: t('modal.approxUsd'), value: `$${formatNumber(Number(usdVal.toFixed(2)))}` },
+      { label: t('modal.approxTon'), value: tonVal ? `${tonVal.toFixed(3)} TON` : '—' },
+      { label: t('modal.lockPeriod'), value: t('modal.lockPeriodValue').replace('{days}', '30') },
+      { label: t('modal.unlockDate'), value: unlockStr }
     ];
-  }, [variant, historyItem, usdVal, tonVal]);
+  }, [variant, historyItem, usdVal, tonVal, t]);
 
   const renderBody = () => {
     if (variant === 'history' && historyItem && historyRows) {
@@ -207,9 +211,9 @@ export const Modal: React.FC<ModalProps> = ({
                   className={styles.closeBtn}
                   onClick={onClose}
                   type="button"
-                  aria-label="Close"
+                  aria-label={t('modal.close')}
                 >
-                  Close
+                  {t('modal.close')}
                 </button>
               )}
             </div>

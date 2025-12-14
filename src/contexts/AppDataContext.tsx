@@ -114,8 +114,11 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
             if (typeof tgUser.firstName === 'string' && tgUser.firstName !== data.firstName) updates.firstName = tgUser.firstName;
             if (typeof tgUser.lastName === 'string' && tgUser.lastName !== data.lastName) updates.lastName = tgUser.lastName;
             if (typeof tgUser.username === 'string' && tgUser.username !== data.username) updates.username = tgUser.username;
-            if (typeof tgUser.languageCode === 'string' && tgUser.languageCode !== data.languageCode) updates.languageCode = tgUser.languageCode;
             if (typeof tgUser.photoUrl === 'string' && tgUser.photoUrl !== data.photoUrl) updates.photoUrl = tgUser.photoUrl;
+
+            if ((!data.languageCode || data.languageCode === '') && typeof tgUser.languageCode === 'string' && tgUser.languageCode) {
+              updates.languageCode = tgUser.languageCode;
+            }
 
             if (Object.keys(updates).length) {
               updates.updatedAt = serverTimestamp();
@@ -152,7 +155,7 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
         console.error('Ensure defaults / sync failed:', e);
       } finally {
         if (!cancelled) {
-          // no-op
+          // nothing
         }
       }
     })();
