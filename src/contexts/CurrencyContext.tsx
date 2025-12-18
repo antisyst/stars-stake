@@ -7,7 +7,6 @@ export type CurrencyCode =
   | 'USD'
   | 'EUR'
   | 'RUB'
-  | 'INR'
   | 'BRL'
   | 'IDR'
   | 'TRY'
@@ -18,7 +17,6 @@ export const CURRENCY_OPTIONS: { code: CurrencyCode; label: string }[] = [
   { code: 'USD', label: 'USD — US Dollar' },
   { code: 'EUR', label: 'EUR — Euro' },
   { code: 'RUB', label: 'RUB — Russian Ruble' },
-  { code: 'INR', label: 'INR — Indian Rupee' },
   { code: 'BRL', label: 'BRL — Brazilian Real' },
   { code: 'IDR', label: 'IDR — Indonesian Rupiah' },
   { code: 'TRY', label: 'TRY — Turkish Lira' },
@@ -44,7 +42,6 @@ const SYMBOLS: Record<CurrencyCode, string> = {
   USD: '$',
   EUR: '€',
   RUB: '₽',
-  INR: '₹',
   BRL: 'R$',
   IDR: 'Rp',
   TRY: '₺',
@@ -56,7 +53,6 @@ const LOCALES: Record<CurrencyCode, string> = {
   USD: 'en-US',
   EUR: 'de-DE',
   RUB: 'ru-RU',
-  INR: 'en-IN',
   BRL: 'pt-BR',
   IDR: 'id-ID',
   TRY: 'tr-TR',
@@ -140,7 +136,7 @@ export const CurrencyProvider: React.FC<React.PropsWithChildren> = ({ children }
         style: 'currency',
         currency: selected,
         maximumFractionDigits: digits,
-        minimumFractionDigits: 0,
+        minimumFractionDigits: selected === 'USD' ? 2 : 0,
       }).format(value);
     } catch {
       return `${SYMBOLS[selected]}${Number.isInteger(value) ? value.toFixed(0) : value.toFixed(digits)}`;

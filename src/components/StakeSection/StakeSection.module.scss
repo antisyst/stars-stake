@@ -44,6 +44,18 @@
         justify-content: space-between;
         gap: 6px;
 
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 2px;
+
+            svg {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
         .currentApy {
             color: #41bd58;
             font-family: 'SF Pro Rounded' !important;

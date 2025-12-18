@@ -19,6 +19,7 @@ import StarIcon from '@/assets/icons/star-gradient.svg';
 import StarIcon2 from '@/assets/icons/star.svg';
 import TonIcon from '@/assets/icons/toncoin.svg';
 import TonSimple from '@/assets/icons/toncoin-simple.svg';
+import TonSymbol from '@/assets/icons/toncoin-symbol.svg';
 
 export const icons = [
   AddIcon,
@@ -26,6 +27,7 @@ export const icons = [
   CopyIcon,
   DisconnectIcon,
   GlobeIcon,
+  TonSymbol,
   StarIcon,
   TonIcon,
   TonSimple,

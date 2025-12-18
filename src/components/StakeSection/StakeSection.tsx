@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import { Button } from '@telegram-apps/telegram-ui';
 import { useNavigate } from 'react-router-dom';
 import { Modal } from '@/components/Modal/Modal';
@@ -12,10 +12,12 @@ import HelpIcon from '@/assets/icons/help.svg?react';
 import AddIcon from '@/assets/icons/add.svg?react';
 import MinusIcon from '@/assets/icons/minus.svg?react';
 import { useCurrency } from '@/contexts/CurrencyContext';
-import styles from './StakeSection.module.scss';
+import { useRates } from '@/contexts/RatesContext';
 import { useI18n } from '@/i18n';
+import styles from './StakeSection.module.scss';
+import TonSymbolIcon from '@/assets/icons/toncoin-symbol.svg?react';
 
-export const StakeSection = () => {
+export const StakeSection: React.FC = () => {
   const [isApyOpen, setIsApyOpen] = useState(false);
   const { user, balanceUsd, exchangeRate, effectiveApy, positions } = useAppData();
   const { showError } = useContext(ToastContext);
@@ -23,6 +25,7 @@ export const StakeSection = () => {
   const [tonConnectUI] = useTonConnectUI();
   const wallet = useTonAddress();
   const { formatFromUsd } = useCurrency();
+  const { tonUsd } = useRates();
   const { t } = useI18n();
 
   const balanceInt = user?.starsBalance ?? 0;
@@ -102,6 +105,14 @@ export const StakeSection = () => {
     }
   };
 
+  const totalTon = useMemo(() => {
+    if (!tonUsd || tonUsd <= 0) return null;
+    const ton = (balanceUsd || 0) / tonUsd;
+    return ton;
+  }, [balanceUsd, tonUsd]);
+
+  const formattedTon = totalTon === null ? '—' : Number(totalTon).toFixed(4);
+
   return (
     <>
       <div className={styles.stakeSection}>
@@ -123,7 +134,7 @@ export const StakeSection = () => {
         </div>
         <div className={styles.rowItem}>
           <span className="muted-text">≈{formatFromUsd(balanceUsd, 2)}</span>
-          <span className="muted-text">{t('stake.minimumLock')}</span>
+          <span className="muted-text"><TonSymbolIcon className='muted-text'/>{formattedTon}</span>
         </div>
         {balanceInt <= 0 ? (
           <div className={styles.buttonsContainer}>
