@@ -9,4 +9,9 @@
     touch-action: none;
     flex-direction: column;
     gap: 5px;
+
+    h3 {
+      font-family: 'SF Pro Rounded' !important;
+      font-weight: 600;
+    }
 }
