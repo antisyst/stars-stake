@@ -233,6 +233,7 @@
   "apy": {
     "estimatedYield": "Ожидаемая доходность",
     "perYear": "в год",
+    "year": "Год",
     "collapseDetails": "Свернуть",
     "expandDetails": "Развернуть",
     "yearly": "Годовой",

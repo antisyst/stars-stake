@@ -25,19 +25,11 @@
         h6 {
           font-family: 'SF Pro Rounded' !important;
           font-size: 15px;
-          font-weight: 700 !important;
+          font-weight: 600 !important;
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 0 4px;
-        }
-
-        &.bezeled {
-           -webkit-text-stroke: 0.05px var(--app-link);
-        }
-
-        &.filled {
-           -webkit-text-stroke: 0.05px var(--app-button-text);
         }
        }
     }

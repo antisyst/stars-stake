@@ -111,7 +111,11 @@ export const StakeSection: React.FC = () => {
     return ton;
   }, [balanceUsd, tonUsd]);
 
-  const formattedTon = totalTon === null ? '—' : Number(totalTon).toFixed(4);
+  const formattedTon = useMemo(() => {
+    if (balanceInt === 0) return '0';
+    if (totalTon === null) return '—';
+    return Number(totalTon).toFixed(4);
+  }, [balanceInt, totalTon]);
 
   return (
     <>

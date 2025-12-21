@@ -60,7 +60,7 @@
       justify-content: center;
       gap: 6px;
 
-      svg { width: 47px; height: 47px; }
+      svg { width: 49px; height: 49px; }
 
       .inputWrapper {
         position: relative;
@@ -69,7 +69,7 @@
 
         .amountText {
           font-family: 'SF Pro Rounded', inherit !important;
-          font-size: 44px;
+          font-size: 46px;
           font-weight: 700 !important;
           line-height: 1.2;
           letter-spacing: inherit;
@@ -86,15 +86,12 @@
           border: none;
           background: transparent;
           font-family: 'SF Pro Rounded' !important;
+          font-weight: 700;
           color: var(--app-text);
           outline: none;
           padding: 0;
           margin: 0;
           caret-color: var(--app-text);
-
-          &.hasValueStroke { 
-            -webkit-text-stroke: 1px var(--app-text);
-          }
 
           &:placeholder-shown { -webkit-text-stroke: 0 !important; }
 
@@ -124,8 +121,7 @@
 
       .usdNote {
         font-family: 'SF Pro Rounded' !important;
-        font-weight: bold !important;
-        -webkit-text-stroke: 0.03px var(--app-hint);
+        font-weight: 500 !important;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -145,7 +141,7 @@
         color: var(--app-destructive-text);
         font-size: 16px;
         font-family: 'SF Pro Rounded' !important;
-        font-weight: bold !important;
+        font-weight: 500 !important;
       }
     }
   }

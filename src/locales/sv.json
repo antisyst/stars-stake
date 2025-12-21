@@ -233,6 +233,7 @@
   "apy": {
     "estimatedYield": "Uppskattad avkastning",
     "perYear": "per år",
+    "year": "År",
     "collapseDetails": "Dölj detaljer",
     "expandDetails": "Visa detaljer",
     "yearly": "Årlig",

@@ -233,6 +233,7 @@
   "apy": {
     "estimatedYield": "Retorno estimado",
     "perYear": "por ano",
+    "year": "Ano",
     "collapseDetails": "Recolher detalhes",
     "expandDetails": "Expandir detalhes",
     "yearly": "Anual",

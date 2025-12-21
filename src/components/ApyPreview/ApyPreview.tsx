@@ -184,7 +184,7 @@ export const ApyPreview: React.FC<Props> = ({
                 animate={expanded ? 'hide' : 'show'}
               >
                 <span className={styles.yearlyGain}>
-                  +{formatNumber(view.yearlyGain)} <StarIcon /> {t('apy.perYear')}
+                  {view.ton.y ? view.ton.y.toFixed(3) : '—'} TON <span>/{t('apy.year')}</span>
                 </span>
               </motion.span>
 

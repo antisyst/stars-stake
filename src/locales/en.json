@@ -232,6 +232,7 @@
   },
   "apy": {
     "estimatedYield": "Estimated Yield",
+    "year": "Year",
     "perYear": "per year",
     "collapseDetails": "Collapse details",
     "expandDetails": "Expand details",

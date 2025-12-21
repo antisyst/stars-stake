@@ -2,7 +2,7 @@ import { Scheme, Platform, Palette } from '@/types';
 
 const iosDark: Palette = {
   bg: '#000000',
-  secondaryBg: '#1c1c1d',
+  secondaryBg: '#1a1a1a',
   sectionBg: '#2c2c2e',
   headerBg: '#1a1a1a',
   text: '#ffffff',

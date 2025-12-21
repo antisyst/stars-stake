@@ -12,8 +12,34 @@
 
 @font-face {
   font-family: 'SF Pro Rounded';
-  src: url('./assets/fonts/SF-Pro-Rounded-Regular.otf') format('opentype');
+  src: url('https://tgusd-miniapp.torch.finance/fonts/SF-Pro-Rounded-Regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Rounded';
+  src: url('https://tgusd-miniapp.torch.finance/fonts/SF-Pro-Rounded-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Rounded';
+  src: url('https://tgusd-miniapp.torch.finance/fonts/SF-Pro-Rounded-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Rounded';
+  src: url('https://tgusd-miniapp.torch.finance/fonts/SF-Pro-Rounded-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {

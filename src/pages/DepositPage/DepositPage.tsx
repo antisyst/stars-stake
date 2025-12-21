@@ -36,6 +36,8 @@ export const DepositPage: React.FC = () => {
   const valid = isValidDeposit(amount);
   const [focused, setFocused] = useState(false);
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const hasStakedBefore = (user?.starsBalance ?? 0) > 0;
   const buttonText = hasStakedBefore ? t('deposit.buttonDeposit') : t('deposit.buttonConfirmStake');
   const tagText = hasStakedBefore ? t('deposit.tagDeposit') : t('deposit.tagStake');
@@ -54,6 +56,17 @@ export const DepositPage: React.FC = () => {
     const hex = resolveCssVarToHex('--app-section-bg');
     try { miniApp.setHeaderColor((hex || 'secondary_bg_color') as any); } catch {}
     return () => { try { miniApp.setHeaderColor('secondary_bg_color'); } catch {} };
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (inputRef.current) {
+        inputRef.current.focus();
+        
+        inputRef.current.click(); 
+      }
+    }, 150); 
+    return () => clearTimeout(timer);
   }, []);
 
   const applyButtonStyle = (enabled: boolean) => {
@@ -165,6 +178,7 @@ export const DepositPage: React.FC = () => {
               <div className={styles.inputWrapper}>
                 <span ref={sizerRef} className={`${styles.sizer} ${styles.amountText}`} aria-hidden="true" />
                 <input
+                  ref={inputRef}
                   id="amount"
                   type="text"
                   inputMode="numeric"
@@ -177,6 +191,7 @@ export const DepositPage: React.FC = () => {
                   onBlur={() => setFocused(false)}
                   aria-label={t('deposit.stakeAmountAria')}
                   style={{ width: inputWidth ? `${inputWidth}px` : undefined }}
+                  autoFocus
                   {...inputProps}
                 />
               </div>

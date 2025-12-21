@@ -29,11 +29,10 @@
     .label {
       font-family: 'SF Pro Rounded' !important;
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 1.15;
       max-width: 175px;
       color: var(--app-text);
-      -webkit-text-stroke: 0.02px var(--app-text);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -57,11 +56,10 @@
         border-radius: 8px;
         background: rgba(34, 197, 94, 0.12);
         color: var(--app-green);
-        font-weight: 700;
+        font-weight: 500;
         font-size: 15px;
         line-height: 1;
         font-family: 'SF Pro Rounded' !important;
-        -webkit-text-stroke: 0.02px var(--app-green);
       }
     }
   }
@@ -84,13 +82,24 @@
       .yearlyGain {
         font-size: 16px;
         font-weight: 700;
+        position: relative;
         display: inline-flex;
         align-items: center;
-        gap: 6px;
+        gap: 3px;
         white-space: nowrap;
         -webkit-font-smoothing: antialiased;
         font-family: 'SF Pro Rounded' !important;
-        -webkit-text-stroke: 0.05px var(--app-text-color);
+        font-weight: 600;
+
+        &::before {
+          content: "+";
+          font-family: 'SF Pro Rounded' !important;
+        }
+
+        span {
+          text-transform: lowercase;
+          font-family: 'SF Pro Rounded' !important;
+        }
       }
 
       svg {
@@ -153,10 +162,9 @@
 
       .itemLabel {
         font-family: 'SF Pro Rounded' !important;
-        -webkit-text-stroke: 0.02px var(--app-hint);
         color: var(--app-hint);
         font-size: 15px;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 1.1;
         white-space: nowrap;
         overflow: hidden;
@@ -172,13 +180,12 @@
         align-items: center;
         gap: 5px;
         font-size: 15px;
-        font-weight: 700;
+        font-weight: 500;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         flex: 0 0 auto;
         font-family: 'SF Pro Rounded' !important;
-        -webkit-text-stroke: 0.05px var(--app-text-color);
         svg { width: 16px; height: 16px; }
 
         .sep { opacity: 0.6; font-weight: 600; }
@@ -186,14 +193,13 @@
 
       .apyTitle {
         font-size: 14.5px;
-        font-weight: 700;
+        font-weight: 500;
         color: var(--app-green);
         background: rgba(34, 197, 94, 0.12);
         padding: 2px 6px;
         border-radius: 6px;
         white-space: nowrap;
         font-family: 'SF Pro Rounded' !important;
-        -webkit-text-stroke: 0.05px var(--app-green);
       }
     }
   }

@@ -59,9 +59,8 @@
         .currentApy {
             color: #41bd58;
             font-family: 'SF Pro Rounded' !important;
-            font-weight: bold !important;
+            font-weight: 500 !important;
             font-size: 23px;
-            -webkit-text-stroke: 0.2px #41bd58;
         }
     }
 
@@ -87,8 +86,7 @@
                 .balanceAmount {
                     font-size: 24px;
                     font-family: 'SF Pro Rounded' !important;
-                    font-weight: bold !important;
-                    -webkit-text-stroke: 0.6px var(--app-text);
+                    font-weight: 700 !important;
                 }
             }
 
@@ -148,6 +146,8 @@
                 justify-content: center;
                 gap: 5px;
                 font-size: 17px;
+                font-family: 'SF Pro Rounded' !important;
+                font-weight: bold;
 
                 svg {
                     width: 24px;
