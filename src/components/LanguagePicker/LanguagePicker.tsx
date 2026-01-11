@@ -57,7 +57,7 @@ export const LanguagePicker: React.FC<Props> = ({ className, onSelect }) => {
   };
 
   return (
-    <div className={`${styles.languagePicker} ${className ?? ''}`}>
+    <div className={`${styles.languagePicker} glass-card ${className ?? ''}`}>
       {languages.map((l: LangItem) => {
         const selected = l.code === lang;
 

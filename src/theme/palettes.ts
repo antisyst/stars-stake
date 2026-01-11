@@ -16,24 +16,28 @@ const iosDark: Palette = {
   destructiveText: '#eb5545',
   sectionSeparator: '#545458',
   bottomBarBg: '#1d1d1d',
+  glassBg: 'rgba(44, 44, 46, 0.7)',
+  glassBorder: 'rgba(255, 255, 255, 0.08)',
 };
 
 const iosLight: Palette = {
-  link: '#007aff',
   bg: '#ffffff',
-  accentText: '#007aff',
-  sectionBg: '#ffffff',
-  sectionSeparator: '#c8c7cc',
-  destructiveText: '#ff3b30',
-  hint: '#8e8e93',
-  button: '#007aff',
   secondaryBg: '#efeff4',
-  sectionHeaderText: '#6d6d72',
-  text: '#000000',
+  sectionBg: '#ffffff',
   headerBg: '#f8f8f8',
-  buttonText: '#ffffff',
-  bottomBarBg: '#f2f2f2',
+  text: '#000000',
   subtitle: '#8e8e93',
+  hint: '#8e8e93',
+  link: '#007aff',
+  accentText: '#007aff',
+  button: '#007aff',
+  buttonText: '#ffffff',
+  sectionHeaderText: '#6d6d72',
+  destructiveText: '#ff3b30',
+  sectionSeparator: '#c8c7cc',
+  bottomBarBg: '#f2f2f2',
+  glassBg: 'rgba(255, 255, 255, 0.7)',
+  glassBorder: 'rgba(0, 0, 0, 0.06)',
 };
 
 const androidDark: Palette = {
@@ -52,6 +56,8 @@ const androidDark: Palette = {
   destructiveText: '#ee686f',
   sectionSeparator: '#0d1218',
   bottomBarBg: '#151e27',
+  glassBg: 'rgba(29, 39, 51, 0.85)',
+  glassBorder: 'rgba(255, 255, 255, 0.05)',
 };
 
 const androidLight: Palette = {
@@ -70,6 +76,8 @@ const androidLight: Palette = {
   destructiveText: '#cc2929',
   sectionSeparator: '#d9d9d9',
   bottomBarBg: '#f0f0f0',
+  glassBg: 'rgba(255, 255, 255, 0.8)',
+  glassBorder: 'rgba(0, 0, 0, 0.05)',
 };
 
 const webDark: Palette = {
@@ -88,24 +96,28 @@ const webDark: Palette = {
   destructiveText: '#ff595a',
   sectionSeparator: '#545458',
   bottomBarBg: '#181818',
+  glassBg: 'rgba(33, 33, 33, 0.75)',
+  glassBorder: 'rgba(255, 255, 255, 0.1)',
 };
 
 const webLight: Palette = {
-  bg: '#ffffff',               
+  bg: '#ffffff',
+  secondaryBg: '#f4f4f5',
+  sectionBg: '#ffffff',
+  headerBg: '#ffffff',
+  text: '#000000',
+  subtitle: '#707579',
+  hint: '#707579',
+  link: '#00488f',
+  accentText: '#3390ec',
   button: '#3390ec',
-  buttonText: '#ffffff',     
-  hint: '#707579',            
-  link: '#00488f',       
-  secondaryBg: '#f4f4f5',     
-  text: '#000000',           
-  headerBg: '#ffffff',       
-  accentText: '#3390ec',     
-  sectionBg: '#ffffff',        
-  sectionHeaderText: '#3390ec',    
-  subtitle: '#707579',        
+  buttonText: '#ffffff',
+  sectionHeaderText: '#3390ec',
   destructiveText: '#df3f40',
   sectionSeparator: '#e5e5e5',
   bottomBarBg: '#f4f4f5',
+  glassBg: 'rgba(255, 255, 255, 0.75)',
+  glassBorder: 'rgba(0, 0, 0, 0.08)',
 };
 
 export function getPalette(platform: Platform, scheme: Scheme): Palette {

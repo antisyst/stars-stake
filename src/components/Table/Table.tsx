@@ -12,7 +12,7 @@ export interface TableProps {
 }
 
 export const Table: React.FC<TableProps> = ({ rows, className }) => (
-  <table className={[styles.table, className].filter(Boolean).join(' ')}>
+  <table className={`${[styles.table, className].filter(Boolean).join(' ')} glass-card`}>
     <tbody>
       {rows.map(({ label, value }, i) => (
         <tr

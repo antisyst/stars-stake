@@ -36,7 +36,7 @@ export const EcosystemBenefits = () => {
     <>
       <div className={styles.ecosystemBenefits}>
         <h2 className="section-title">{t('ecosystem.title')}</h2>
-        <div className={styles.ecosystemContainer}>
+        <div className={`${styles.ecosystemContainer} glass-card`}>
           {ecosystemBenefits.map(({ key, Icon }, index) => (
             <div
               key={key}

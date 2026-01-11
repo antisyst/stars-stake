@@ -19,7 +19,7 @@ type Props = {
 
 export const GroupList: React.FC<Props> = ({ items }) => {
   return (
-    <div className={styles.groupList}>
+    <div className={`${styles.groupList} glass-card`}>
       {items.map((item) => {
         const actionable = typeof item.onClick === 'function';
         const showChevron = actionable && !item.hideChevron;

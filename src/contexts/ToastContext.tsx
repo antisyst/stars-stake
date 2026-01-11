@@ -36,7 +36,6 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
   return (
     <ToastContext.Provider value={{ showToast, showSuccess, showError }}>
       {children}
-
       <AnimatePresence>
         {toast && (
           <Toast

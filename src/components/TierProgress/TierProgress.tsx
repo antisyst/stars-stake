@@ -25,7 +25,7 @@ export const TierProgress: React.FC = () => {
         aria-label="Boosted Rewards"
       >
         <h2 className="section-title">{t('tier.title')}</h2>
-        <div className={styles.tierProgressBody}>
+        <div className={`${styles.tierProgressBody} glass-card`}>
           <h2 className={styles.tierTitle}>
             <span>{t('tier.apyUpdates')}</span>
             <HelpIcon className="icon" />

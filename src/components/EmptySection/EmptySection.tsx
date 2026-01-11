@@ -89,7 +89,7 @@ export const EmptySection: React.FC<Props> = ({
   };
 
   return (
-    <div className={clsx(styles.emptySection, className)}>
+    <div className={`${clsx(styles.emptySection, className)} glass-card`}>
       <div className={styles.iconWrap}>{renderIcon()}</div>
       <div className={styles.title} role="heading" aria-level={2}>{title}</div>
       {subtitle ? <div className={styles.subtitle}>{subtitle}</div> : null}

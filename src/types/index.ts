@@ -37,6 +37,8 @@ export interface Palette {
   destructiveText: string;
   sectionSeparator: string;
   bottomBarBg: string;
+  glassBg: string;
+  glassBorder: string;
 }
 
 export interface ToastProps {

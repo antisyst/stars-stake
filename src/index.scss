@@ -233,3 +233,11 @@ body.modal-open {
   background: rgba(34, 197, 94, 0.12);
   font-weight: 700 !important;
 }
+
+.glass-card {
+  background: var(--app-glass-bg) !important;
+  backdrop-filter: blur(var(--app-glass-blur));
+  -webkit-backdrop-filter: blur(var(--app-glass-blur)); 
+  border: 1px solid var(--app-glass-border);
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.05);
+}

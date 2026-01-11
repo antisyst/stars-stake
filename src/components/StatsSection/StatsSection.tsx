@@ -22,7 +22,7 @@ export const StatsSection = () => {
   return (
     <div className={styles.statsBody}>
       <h2 className="section-title">{t('stats.title')}</h2>
-      <div className={styles.statsSection}>
+      <div className={`${styles.statsSection} glass-card`}>
         <div className={styles.statItem}>
           <div className={styles.statLabel}>{t('stats.totalStaked')}</div>
           <span className={styles.statValue}>

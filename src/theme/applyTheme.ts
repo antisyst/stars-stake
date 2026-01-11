@@ -22,8 +22,14 @@ export function applyTheme(platform: Platform, scheme: Scheme) {
   root.style.setProperty('--app-section-separator', p.sectionSeparator);
   root.style.setProperty('--app-bottom-bar-bg', p.bottomBarBg);
 
+  root.style.setProperty('--app-glass-bg', p.glassBg);
+  root.style.setProperty('--app-glass-border', p.glassBorder);
+  
+  const blurValue = platform === 'ios' ? '25px' : '15px';
+  root.style.setProperty('--app-glass-blur', blurValue);
+
   try {
-    (miniApp as any).setBackgroundColor?.(p.headerBg);
+    (miniApp as any).setBackgroundColor?.(p.secondaryBg);
     (miniApp as any).setHeaderColor?.(p.headerBg);
     (miniApp as any).setBottomBarColor?.(p.bottomBarBg);
   } catch {

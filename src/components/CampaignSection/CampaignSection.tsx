@@ -17,7 +17,7 @@ export const CampaignSection = () => {
     <>
      <div className={styles.campaignSection} onClick={() => setIsCampaignOpen(true)}>
         <h2 className='section-title'>{t('campaign.title')}</h2>
-        <div className={styles.campaignBody}>
+        <div className={`${styles.campaignBody} glass-card`}>
             <div className={styles.campaignItem}>
                 <span className={styles.campaignValue}>
                     <StarIcon />

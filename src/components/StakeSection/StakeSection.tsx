@@ -119,7 +119,7 @@ export const StakeSection: React.FC = () => {
 
   return (
     <>
-      <div className={styles.stakeSection}>
+      <div className={`${styles.stakeSection} glass-card`}>
         <div className={styles.columnItem}>
           <p className={styles.mutedText}>{t('stake.balance')}</p>
           <div className={styles.apyTitle} onClick={() => setIsApyOpen(true)} aria-label={t('stake.apyTitle')}>

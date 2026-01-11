@@ -22,7 +22,7 @@ export const LinkList: React.FC<Props> = ({ items, className }) => {
   };
 
   return (
-    <div className={`${styles.linkList} ${className ?? ''}`}>
+    <div className={`${styles.linkList} glass-card ${className ?? ''}`}>
       {items.map((item) => (
         <div
           key={item.key}

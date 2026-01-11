@@ -21,7 +21,7 @@ export const WithdrawOptions = () => {
     <>
      <div className={styles.withdrawOptions} onClick={() => setIsModalOpen(true)}>
         <h2 className="section-title">{t('withdraw.title')}</h2>
-        <div className={styles.withdrawSection}>
+        <div className={`${styles.withdrawSection} glass-card`}>
             <div className={styles.item}>
                 <TonIcon/>
                 <div className={styles.title}>{t('withdraw.tonLabel')}</div>

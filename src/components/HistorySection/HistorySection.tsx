@@ -12,7 +12,7 @@ export const HistorySection = () => {
 
   return (
     <div 
-      className={styles.historySection}
+      className={`${styles.historySection} glass-card`}
       role='button'
       onClick={navigateHistory}
     >

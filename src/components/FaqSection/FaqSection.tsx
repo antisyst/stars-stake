@@ -51,7 +51,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
       <div className={styles.faqSection}>
         <h2 className="section-title">{resolvedTitle}</h2>
 
-        <div className={styles.faqSectionContainer}>
+        <div className={`${styles.faqSectionContainer} glass-card`}>
           {visibleIndices.map((realIndex) => {
             const key = faqKeys[realIndex];
             const question = t(`${key}.question`);

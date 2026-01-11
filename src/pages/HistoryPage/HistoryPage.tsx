@@ -110,7 +110,7 @@ export const HistoryPage: React.FC = () => {
             />
           </div>
         ) : (
-          <div className={styles.list} role="list">
+          <div className={`${styles.list} glass-card`} role="list">
             {ready && visible.map(item => (
               <HistoryItem key={item.id} data={item} onOpen={openDetails} />
             ))}
