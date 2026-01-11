@@ -140,6 +140,7 @@
     width: 100%;
     margin-top: 8px;
     border-radius: 12px;
+    background: var(--app-section-bg);
     backdrop-filter: blur(10px);
     overflow: hidden;
     will-change: transform, filter, opacity, height, border-radius;
