@@ -67,7 +67,7 @@
     "title": "Detalii campanie",
     "minStakeLabel": "Stake minim",
     "maxStakeLabel": "Stake maxim",
-    "line1": "Campania permite staking începând de la minimum 300 de stele, fără limită superioară a sumei maxime.",
+    "line1": "Campania permite staking începând de la minimum 500 de stele, fără limită superioară a sumei maxime.",
     "line2": "Toate depozitele contribuie direct la pool-ul de staking activ și încep să genereze recompense imediat după confirmare."
   },
   "header": {
@@ -169,7 +169,7 @@
       },
       "q10": {
         "question": "Care este suma minimă și maximă pe care o pot stake-ui?",
-        "answer": "Suma minimă pentru a participa la staking este de 300 de stele.\nMaximul pentru un singur depozit este de 100.000 de stele.\nSume mai mari deblochează automat niveluri superioare și rate APY mai bune.\nAcest sistem flexibil recompensează corect atât utilizatorii noi, cât și pe cei pe termen lung."
+        "answer": "Suma minimă pentru a participa la staking este de 500 de stele.\nMaximul pentru un singur depozit este de 100.000 de stele.\nSume mai mari deblochează automat niveluri superioare și rate APY mai bune.\nAcest sistem flexibil recompensează corect atât utilizatorii noi, cât și pe cei pe termen lung."
       },
       "q11": {
         "question": "Ce diferențiază Stars Base de platformele obișnuite de staking?",

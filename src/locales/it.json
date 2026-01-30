@@ -67,7 +67,7 @@
     "title": "Dettagli della campagna",
     "minStakeLabel": "Puntata minima",
     "maxStakeLabel": "Puntata massima",
-    "line1": "La campagna permette di puntare da un minimo di 300 stelle, senza limite massimo sulla puntata.",
+    "line1": "La campagna permette di puntare da un minimo di 500 stelle, senza limite massimo sulla puntata.",
     "line2": "Tutti i depositi contribuiscono direttamente al pool di staking attivo e iniziano a generare ricompense immediatamente dopo la conferma."
   },
   "header": {
@@ -169,7 +169,7 @@
       },
       "q10": {
         "question": "Qual è l'importo minimo e massimo che posso puntare?",
-        "answer": "L'importo minimo per partecipare allo staking è 300 stelle.\nIl massimo per un singolo deposito è 100.000 stelle.\nImporti più elevati sbloccano automaticamente livelli superiori e migliori tassi APY.\nQuesto sistema flessibile premia sia i nuovi utenti sia i partecipanti a lungo termine in modo equo."
+        "answer": "L'importo minimo per partecipare allo staking è 500 stelle.\nIl massimo per un singolo deposito è 100.000 stelle.\nImporti più elevati sbloccano automaticamente livelli superiori e migliori tassi APY.\nQuesto sistema flessibile premia sia i nuovi utenti sia i partecipanti a lungo termine in modo equo."
       },
       "q11": {
         "question": "Cosa rende Stars Base diversa dalle normali piattaforme di staking?",

@@ -67,7 +67,7 @@
     "title": "Kampanjdetaljer",
     "minStakeLabel": "Min. stake",
     "maxStakeLabel": "Max. stake",
-    "line1": "Kampanjen tillåter staking från minst 300 stjärnor, utan övre gräns för maximal stake.",
+    "line1": "Kampanjen tillåter staking från minst 500 stjärnor, utan övre gräns för maximal stake.",
     "line2": "Alla insättningar bidrar direkt till det aktiva staking-poolen och börjar generera belöningar omedelbart efter bekräftelse."
   },
   "header": {
@@ -169,7 +169,7 @@
       },
       "q10": {
         "question": "Vilket är minsta och största belopp jag kan staka?",
-        "answer": "Minsta belopp för att delta i staking är 300 stjärnor.\nMaximalt per enskild insättning är 100 000 stjärnor.\nStörre belopp låser automatiskt upp högre nivåer och bättre APY-satser.\nDetta flexibla system belönar både nya och långsiktiga användare rättvist."
+        "answer": "Minsta belopp för att delta i staking är 500 stjärnor.\nMaximalt per enskild insättning är 100 000 stjärnor.\nStörre belopp låser automatiskt upp högre nivåer och bättre APY-satser.\nDetta flexibla system belönar både nya och långsiktiga användare rättvist."
       },
       "q11": {
         "question": "Vad skiljer Stars Base från vanliga staking-plattformar?",

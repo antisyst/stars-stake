@@ -67,7 +67,7 @@
     "title": "Detail Kampanye",
     "minStakeLabel": "Stake Min.",
     "maxStakeLabel": "Stake Maks.",
-    "line1": "Kampanye memungkinkan staking dari minimal 300 bintang, tanpa batas atas pada stake maksimum.",
+    "line1": "Kampanye memungkinkan staking dari minimal 500 bintang, tanpa batas atas pada stake maksimum.",
     "line2": "Semua deposit berkontribusi langsung ke kumpulan staking aktif dan mulai menghasilkan hadiah segera setelah konfirmasi."
   },
   "header": {
@@ -169,7 +169,7 @@
       },
       "q10": {
         "question": "Berapa jumlah minimum dan maksimum yang dapat saya stake?",
-        "answer": "Jumlah minimum untuk berpartisipasi dalam staking adalah 300 bintang.\nMaksimum per deposit tunggal adalah 100.000 bintang.\nJumlah yang lebih besar secara otomatis membuka tingkat yang lebih tinggi dan tingkat APY yang lebih baik.\nSistem yang fleksibel ini memberi penghargaan pada pengguna baru dan jangka panjang secara adil."
+        "answer": "Jumlah minimum untuk berpartisipasi dalam staking adalah 500 bintang.\nMaksimum per deposit tunggal adalah 100.000 bintang.\nJumlah yang lebih besar secara otomatis membuka tingkat yang lebih tinggi dan tingkat APY yang lebih baik.\nSistem yang fleksibel ini memberi penghargaan pada pengguna baru dan jangka panjang secara adil."
       },
       "q11": {
         "question": "Apa yang membedakan Stars Base dari platform staking biasa?",

@@ -67,7 +67,7 @@
     "title": "Campagnedetails",
     "minStakeLabel": "Min. stake",
     "maxStakeLabel": "Max. stake",
-    "line1": "De campagne staat staking toe vanaf minimaal 300 sterren, zonder bovengrens voor het maximale stakebedrag.",
+    "line1": "De campagne staat staking toe vanaf minimaal 500 sterren, zonder bovengrens voor het maximale stakebedrag.",
     "line2": "Alle stortingen dragen direct bij aan het actieve staking-pool en beginnen onmiddellijk beloningen te genereren na bevestiging."
   },
   "header": {
@@ -169,7 +169,7 @@
       },
       "q10": {
         "question": "Wat is het minimale en maximale bedrag dat ik kan staken?",
-        "answer": "Het minimale bedrag om te participeren in staking is 300 sterren.\nHet maximum per enkele storting is 100.000 sterren.\nHogere bedragen ontgrendelen automatisch hogere niveaus en betere APY-tarieven.\nDit flexibele systeem beloont zowel nieuwe als langetermijngebruikers eerlijk."
+        "answer": "Het minimale bedrag om te participeren in staking is 500 sterren.\nHet maximum per enkele storting is 100.000 sterren.\nHogere bedragen ontgrendelen automatisch hogere niveaus en betere APY-tarieven.\nDit flexibele systeem beloont zowel nieuwe als langetermijngebruikers eerlijk."
       },
       "q11": {
         "question": "Wat maakt Stars Base anders dan reguliere staking-platforms?",

@@ -21,7 +21,7 @@ export const CampaignSection = () => {
             <div className={styles.campaignItem}>
                 <span className={styles.campaignValue}>
                     <StarIcon />
-                    300
+                    500
                 </span>
                 <span className={styles.campaignLabel}>{t('campaign.minStakeLabel')}</span>
             </div>

@@ -67,7 +67,7 @@
     "title": "Kampagnen-Details",
     "minStakeLabel": "Mindeststake",
     "maxStakeLabel": "Max. Stake",
-    "line1": "Die Kampagne erlaubt Einzahlungen ab 300 Sternen; nach oben gibt es keine feste Grenze.",
+    "line1": "Die Kampagne erlaubt Einzahlungen ab 500 Sternen; nach oben gibt es keine feste Grenze.",
     "line2": "Alle Einzahlungen fließen direkt in den aktiven Staking-Pool und beginnen nach Bestätigung sofort mit der Ertragsgenerierung."
   },
   "header": {
@@ -169,7 +169,7 @@
       },
       "q10": {
         "question": "Was ist der minimale und maximale Betrag zum Staken?",
-        "answer": "Die Mindestteilnahme am Staking beträgt 300 Sterne.\nDer Maximalbetrag pro einzelner Einzahlung liegt bei 100.000 Sternen.\nHöhere Beträge schalten automatisch höhere Tiers und bessere APY-Stufen frei.\nDas System belohnt sowohl neue als auch langjährige Nutzer fair."
+        "answer": "Die Mindestteilnahme am Staking beträgt 500 Sterne.\nDer Maximalbetrag pro einzelner Einzahlung liegt bei 100.000 Sternen.\nHöhere Beträge schalten automatisch höhere Tiers und bessere APY-Stufen frei.\nDas System belohnt sowohl neue als auch langjährige Nutzer fair."
       },
       "q11": {
         "question": "Wodurch unterscheidet sich Stars Base von gewöhnlichen Staking-Plattformen?",

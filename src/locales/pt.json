@@ -67,7 +67,7 @@
     "title": "Detalhes da campanha",
     "minStakeLabel": "Stake mín.",
     "maxStakeLabel": "Stake máx.",
-    "line1": "A campanha permite staking a partir de um mínimo de 300 estrelas, sem limite superior para o stake máximo.",
+    "line1": "A campanha permite staking a partir de um mínimo de 500 estrelas, sem limite superior para o stake máximo.",
     "line2": "Todos os depósitos contribuem diretamente para o pool de staking ativo e começam a gerar recompensas imediatamente após a confirmação."
   },
   "header": {
@@ -169,7 +169,7 @@
       },
       "q10": {
         "question": "Qual é o valor mínimo e máximo que posso stakear?",
-        "answer": "O valor mínimo para participar do staking é 300 estrelas.\nO máximo por depósito único é 100.000 estrelas.\nValores maiores desbloqueiam automaticamente níveis superiores e melhores taxas de APY.\nEsse sistema flexível recompensa igualmente usuários novos e de longo prazo."
+        "answer": "O valor mínimo para participar do staking é 500 estrelas.\nO máximo por depósito único é 100.000 estrelas.\nValores maiores desbloqueiam automaticamente níveis superiores e melhores taxas de APY.\nEsse sistema flexível recompensa igualmente usuários novos e de longo prazo."
       },
       "q11": {
         "question": "O que diferencia o Stars Base de plataformas de staking comuns?",

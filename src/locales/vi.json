@@ -67,7 +67,7 @@
     "title": "Chi tiết chiến dịch",
     "minStakeLabel": "Stake tối thiểu",
     "maxStakeLabel": "Stake tối đa",
-    "line1": "Chiến dịch cho phép stake từ tối thiểu 300 sao, không giới hạn tối đa.",
+    "line1": "Chiến dịch cho phép stake từ tối thiểu 500 sao, không giới hạn tối đa.",
     "line2": "Tất cả khoản nạp đóng góp trực tiếp vào pool staking đang hoạt động và bắt đầu sinh phần thưởng ngay khi được xác nhận."
   },
   "header": {
@@ -169,7 +169,7 @@
       },
       "q10": {
         "question": "Số tiền tối thiểu và tối đa tôi có thể stake là bao nhiêu?",
-        "answer": "Số tiền tối thiểu để tham gia staking là 300 sao.\nTối đa cho một lần nạp là 100.000 sao.\nSố tiền lớn hơn tự động mở khóa bậc cao hơn và tỷ lệ APY tốt hơn.\nHệ thống linh hoạt này thưởng công công bằng cho cả người dùng mới và lâu dài."
+        "answer": "Số tiền tối thiểu để tham gia staking là 500 sao.\nTối đa cho một lần nạp là 100.000 sao.\nSố tiền lớn hơn tự động mở khóa bậc cao hơn và tỷ lệ APY tốt hơn.\nHệ thống linh hoạt này thưởng công công bằng cho cả người dùng mới và lâu dài."
       },
       "q11": {
         "question": "Stars Base khác gì so với các nền tảng staking thông thường?",

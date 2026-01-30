@@ -67,7 +67,7 @@
     "title": "Kampaniya tafsilotlari",
     "minStakeLabel": "Minimal stake",
     "maxStakeLabel": "Maksimal stake",
-    "line1": "Kampaniya 300 yulduzdan boshlangan stake imkonini beradi, maksimal stake bo'yicha cheklov yo'q.",
+    "line1": "Kampaniya 500 yulduzdan boshlangan stake imkonini beradi, maksimal stake bo'yicha cheklov yo'q.",
     "line2": "Barcha depozitlar faol staking pooliga to'g'ridan-to'g'ri qo'shiladi va tasdiqlangandan so'ng darhol mukofotlar ishlab chiqarishni boshlaydi."
   },
   "header": {
@@ -169,7 +169,7 @@
       },
       "q10": {
         "question": "Qancha minimal va maksimal miqdorni stake qilish mumkin?",
-        "answer": "Stake ishtirok etish uchun minimal miqdor 300 yulduz.\nBir depozit uchun maksimal miqdor 100,000 yulduz.\nYuqori miqdorlar avtomatik ravishda yuqori bosqichlarni va yaxshiroq APY stavkalarini ochadi.\nBu moslashuvchan tizim yangi va uzoq muddatli foydalanuvchilarni adolatli ravishda mukofotlaydi."
+        "answer": "Stake ishtirok etish uchun minimal miqdor 500 yulduz.\nBir depozit uchun maksimal miqdor 100,000 yulduz.\nYuqori miqdorlar avtomatik ravishda yuqori bosqichlarni va yaxshiroq APY stavkalarini ochadi.\nBu moslashuvchan tizim yangi va uzoq muddatli foydalanuvchilarni adolatli ravishda mukofotlaydi."
       },
       "q11": {
         "question": "Stars Base oddiy staking platformalaridan qanday farq qiladi?",
