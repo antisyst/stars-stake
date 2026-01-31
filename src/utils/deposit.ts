@@ -1,4 +1,4 @@
-export const MIN_DEPOSIT = 1;
+export const MIN_DEPOSIT = 500;
 export const MAX_DEPOSIT = 100_000;
 
 export function clampAmount(n: number): number {
