@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useContext } from 'react';
 import { Page } from '@/components/Page';
 import { useLocation, useNavigate } from 'react-router-dom';
-import WebApp from '@twa-dev/sdk';
 import axios from 'axios';
 import { useSignal, initData } from '@telegram-apps/sdk-react';
 import { mainButton } from '@telegram-apps/sdk';
@@ -30,6 +29,7 @@ import { useRates } from '@/contexts/RatesContext';
 import { formatEnUS } from '@/utils/formatEnUS';
 import styles from './PaymentInitPage.module.scss';
 import { useI18n } from '@/i18n';
+import { openInvoiceByLink, type InvoiceStatus } from '@/utils/invoice';
 
 export const PaymentInitPage: React.FC = () => {
   const location = useLocation();
@@ -55,15 +55,20 @@ export const PaymentInitPage: React.FC = () => {
 
   const openedRef = useRef(false);
   const settledRef = useRef(false);
-  const becameHiddenRef = useRef(false);
 
-  const goBackSafely = () => {
-    if (window.history.length > 1) { navigate(-1); return; }
-    if (state?.from) { navigate(state.from, { replace: true }); return; }
-    navigate('/deposit', { replace: true });
+    const redirectBack = (fallback: string = '/deposit') => {
+    const from = (state?.from && typeof state.from === 'string' && state.from.startsWith('/'))
+      ? state.from
+      : null;
+
+    const target = (from && from !== location.pathname) ? from : fallback;
+
+    setTimeout(() => {
+      navigate(target, { replace: true });
+    }, 0);
   };
 
-  const settle = (status: 'paid' | 'cancelled' | 'failed' | 'pending') => {
+  const settle = (status: InvoiceStatus) => {
     if (settledRef.current) return;
     settledRef.current = true;
 
@@ -133,36 +138,40 @@ export const PaymentInitPage: React.FC = () => {
         })();
         break;
       }
-      default:
+
+      case 'cancelled':
+      case 'failed':
+      case 'pending':
+      default: {
         showError(t('payment.paymentCancelled'));
-        goBackSafely();
+        redirectBack('/deposit');
         break;
+      }
     }
   };
 
   useEffect(() => {
-    let offInvoice: (() => void) | undefined;
-    let visHandler: (() => void) | undefined;
+    let cancelled = false;
 
     (async () => {
-      if (!userId || !isValidDeposit(requestedAmount)) {
-        showError(t('payment.invalidRequest'));
-        goBackSafely();
-        return;
-      }
-
-      const formatted = formatEnUS(payable);
-      const title = t('payment.stakeTitle').replace('{amount}', String(formatted));
-      const label = t('payment.stakeLabel').replace('{amount}', String(formatted));
-
-      const lockDays = 30;
-      const usd = (exchangeRate ?? 0) * payable;
-      const usdCents = Math.max(0, Math.round(usd * 100));
-      const ton = (tonUsd > 0) ? (usd / tonUsd) : 0;
-      const tonMilli = ton > 0 ? Math.round(ton * 1000) : 0;
-      const apyHint = 0;
-
       try {
+        if (!userId || !isValidDeposit(requestedAmount)) {
+          showError(t('payment.invalidRequest'));
+          redirectBack('/deposit');
+          return;
+        }
+
+        const formatted = formatEnUS(payable);
+        const title = t('payment.stakeTitle').replace('{amount}', String(formatted));
+        const label = t('payment.stakeLabel').replace('{amount}', String(formatted));
+
+        const lockDays = 30;
+        const usd = (exchangeRate ?? 0) * payable;
+        const usdCents = Math.max(0, Math.round(usd * 100));
+        const ton = (tonUsd > 0) ? (usd / tonUsd) : 0;
+        const tonMilli = ton > 0 ? Math.round(ton * 1000) : 0;
+        const apyHint = 0;
+
         const { data } = await axios.post(
           'https://starstake-server.vercel.app/create-token-invoice',
           {
@@ -184,43 +193,28 @@ export const PaymentInitPage: React.FC = () => {
         const link = data?.invoiceLink as string | undefined;
         if (!link) {
           showError(t('payment.unableStart'));
-          goBackSafely();
+          redirectBack('/deposit');
           return;
         }
 
-        const handler = (event: { status: 'paid' | 'cancelled' | 'failed' | 'pending' }) => {
-          settle(event.status);
-        };
-        WebApp.onEvent('invoiceClosed', handler);
-        offInvoice = () => WebApp.offEvent('invoiceClosed', handler);
+        if (cancelled) return;
+        if (openedRef.current) return;
+        openedRef.current = true;
 
-        const onVis = () => {
-          if (document.visibilityState === 'hidden') {
-            becameHiddenRef.current = true;
-          } else if (document.visibilityState === 'visible') {
-            setTimeout(() => {
-              if (!settledRef.current && becameHiddenRef.current) settle('cancelled');
-            }, 350);
-          }
-        };
-        document.addEventListener('visibilitychange', onVis);
-        visHandler = () => document.removeEventListener('visibilitychange', onVis);
+        const status = await openInvoiceByLink(link);
 
-        if (!openedRef.current) {
-          openedRef.current = true;
-          WebApp.openInvoice(link);
-        }
+        if (cancelled) return;
+        settle(status);
       } catch (e) {
         console.error(e);
-        showError(t('payment.unableOpen'));
-        goBackSafely();
+        if (!cancelled) {
+          showError(t('payment.unableOpen'));
+          redirectBack('/deposit');
+        }
       }
     })();
 
-    return () => {
-      try { offInvoice?.(); } catch {}
-      try { visHandler?.(); } catch {}
-    };
+    return () => { cancelled = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [requestedAmount, payable, userId, exchangeRate, tonUsd]);
 

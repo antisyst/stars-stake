@@ -119,7 +119,7 @@ export const DepositPage: React.FC = () => {
       off = mainButton.onClick(() => {
         if (!mountedRef.current || !valid) return;
         try { mainButton.setParams({ isLoaderVisible: true, isEnabled: false }); } catch {}
-        navigate(`/payment/init?amount=${amount}`, { state: { from: location.pathname } });
+navigate(`/payment/init?amount=${amount}`, { replace: true, state: { from: location.pathname } });
       });
     } catch {}
     return () => { try { off?.(); } catch {} };
@@ -164,7 +164,7 @@ export const DepositPage: React.FC = () => {
   const apyKey = isMobile ? (focused ? 'focus' : 'blur') : 'stable';
 
   return (
-    <Page back>
+    <Page back backTo="/home">
       <div className={styles.depositPage} key={`deposit-${location.key}`}>
         <div className={styles.depositLayout}>
           <div className={styles.depositTag}>
