@@ -33,7 +33,7 @@ export function App() {
   const isDark = useSignal(miniApp.isDark);
 
   const isSupportedPlatform = useMemo(
-    () => ['ios', 'android'].includes(lp.platform),
+    () => ['ios', 'android', 'weba'].includes(lp.platform),
     [lp.platform]
   );
 

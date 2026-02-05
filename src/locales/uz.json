@@ -241,5 +241,14 @@
     "daily": "Kunlik",
     "minimumLock": "Minimal bloklash",
     "minimumLockValue": "{days} kun"
+  },
+  "raffleModal": {
+    "title": "Raffle shartlari",
+    "p1": "Biz hamjamiyatimiz uchun ulkan, katta mukofotli raffleni ishga tushiryapmiz — markazlashmagan ekotizimimizning portlovchi o‘sishini nishonlash uchun.",
+    "b1": "Istalgan tierda 5 000+ Stars stake qiling — ishtirok etish uchun",
+    "b2": "Tasodifiy tanlangan 5 foydalanuvchi har biri 300 TON yutadi",
+    "b3": "Umumiy sovrin jamg‘armasi: 1 500 TON",
+    "p2": "Imkoniyat oynasi juda tor. Stake’ni oshiring, hamyon ulanishingizni tekshiring va eng katta dropga tayyor bo‘ling.",
+    "p3": "Natijalar keyingi haftada ilova ichida e’lon qilinadi, so‘ng barcha foydalanuvchilarga bevosita bildirishnoma yuboriladi."
   }
 }

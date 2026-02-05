@@ -241,5 +241,14 @@
     "daily": "Harian",
     "minimumLock": "Kunci minimal",
     "minimumLockValue": "{days} hari"
+  },
+  "raffleModal": {
+    "title": "Syarat Undian",
+    "p1": "Kami meluncurkan undian besar dengan hadiah bernilai tinggi untuk komunitas kami guna merayakan pertumbuhan eksplosif ekosistem terdesentralisasi kami.",
+    "b1": "Stake 5.000+ Stars di tier mana pun untuk memenuhi syarat",
+    "b2": "5 pengguna acak masing-masing akan memenangkan 300 TON",
+    "b3": "Total hadiah: 1.500 TON",
+    "p2": "Kesempatannya sangat sempit. Tingkatkan stake-mu, pastikan koneksi wallet-mu aktif, dan bersiap untuk drop terbesar.",
+    "p3": "Hasil akan dipublikasikan di aplikasi minggu depan, lalu semua pengguna akan menerima notifikasi langsung."
   }
 }

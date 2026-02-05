@@ -241,5 +241,14 @@
     "daily": "Daily",
     "minimumLock": "Minimum Lock",
     "minimumLockValue": "{days} days"
+  },
+  "raffleModal": {
+    "title": "Raffle Conditions",
+    "p1": "We\u2019re launching a massive, high-stakes raffle for our community to celebrate the explosive growth of our decentralized ecosystem.",
+    "b1": "Stake 5,000+ Stars in any tier to qualify",
+    "b2": "5 random users will each win 300 TON",
+    "b3": "Total prize pool: 1,500 TON",
+    "p2": "The window of opportunity is narrow. Increase your stake, verify your wallet connection, and prepare for the ultimate drop.",
+    "p3": "Results will be published in-app next week, followed by a direct notification to all users."
   }
 }

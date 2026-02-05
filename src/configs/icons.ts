@@ -20,8 +20,10 @@ import StarIcon2 from '@/assets/icons/star.svg';
 import TonIcon from '@/assets/icons/toncoin.svg';
 import TonSimple from '@/assets/icons/toncoin-simple.svg';
 import TonSymbol from '@/assets/icons/toncoin-symbol.svg';
+import RaffleIcon from '@/assets/icons/raffle-banner.png';
 
 export const icons = [
+  RaffleIcon,
   AddIcon,
   HelpIcon,
   CopyIcon,

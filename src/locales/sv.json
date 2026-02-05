@@ -241,5 +241,14 @@
     "daily": "Daglig",
     "minimumLock": "Minsta lås",
     "minimumLockValue": "{days} dagar"
+  },
+  "raffleModal": {
+    "title": "Villkor för utlottningen",
+    "p1": "Vi lanserar en massiv utlottning med höga insatser för vår community för att fira den explosiva tillväxten i vårt decentraliserade ekosystem.",
+    "b1": "Staka 5 000+ Stars i valfri nivå för att kvalificera dig",
+    "b2": "5 slumpmässiga användare vinner 300 TON var",
+    "b3": "Total prispott: 1 500 TON",
+    "p2": "Tidsfönstret är smalt. Öka din stake, verifiera din wallet-anslutning och förbered dig för den ultimata droppen.",
+    "p3": "Resultaten publiceras i appen nästa vecka, följt av en direkt notis till alla användare."
   }
 }

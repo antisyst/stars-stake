@@ -241,5 +241,14 @@
     "daily": "Täglich",
     "minimumLock": "Mindestdauer",
     "minimumLockValue": "{days} Tage"
+  },
+  "raffleModal": {
+    "title": "Teilnahmebedingungen der Verlosung",
+    "p1": "Wir starten eine riesige, hochkarätige Verlosung für unsere Community, um das explosive Wachstum unseres dezentralen Ökosystems zu feiern.",
+    "b1": "Stake 5.000+ Stars in einer beliebigen Stufe, um dich zu qualifizieren",
+    "b2": "5 zufällige Nutzer gewinnen jeweils 300 TON",
+    "b3": "Gesamtpreispool: 1.500 TON",
+    "p2": "Das Zeitfenster ist eng. Erhöhe deinen Stake, überprüfe deine Wallet-Verbindung und bereite dich auf den ultimativen Drop vor.",
+    "p3": "Die Ergebnisse werden nächste Woche in der App veröffentlicht, anschließend erhalten alle Nutzer eine direkte Benachrichtigung."
   }
 }

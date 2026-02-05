@@ -241,5 +241,14 @@
     "daily": "Diario",
     "minimumLock": "Bloqueo mínimo",
     "minimumLockValue": "{days} días"
+  },
+  "raffleModal": {
+    "title": "Condiciones del sorteo",
+    "p1": "Estamos lanzando un sorteo masivo y de alto impacto para nuestra comunidad para celebrar el crecimiento explosivo de nuestro ecosistema descentralizado.",
+    "b1": "Haz stake de 5.000+ Stars en cualquier nivel para calificar",
+    "b2": "5 usuarios al azar ganarán 300 TON cada uno",
+    "b3": "Pozo total: 1.500 TON",
+    "p2": "La ventana de oportunidad es estrecha. Aumenta tu stake, verifica la conexión de tu wallet y prepárate para el drop definitivo.",
+    "p3": "Los resultados se publicarán en la app la próxima semana y, después, todos los usuarios recibirán una notificación directa."
   }
 }

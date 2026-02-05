@@ -241,5 +241,14 @@
     "daily": "Hàng ngày",
     "minimumLock": "Khóa tối thiểu",
     "minimumLockValue": "{days} ngày"
+  },
+  "raffleModal": {
+    "title": "Điều kiện quay thưởng",
+    "p1": "Chúng tôi đang ra mắt một chương trình quay thưởng quy mô lớn, phần thưởng giá trị cao dành cho cộng đồng để kỷ niệm sự tăng trưởng bùng nổ của hệ sinh thái phi tập trung của chúng tôi.",
+    "b1": "Stake 5.000+ Stars ở bất kỳ tier nào để đủ điều kiện",
+    "b2": "5 người dùng ngẫu nhiên sẽ mỗi người thắng 300 TON",
+    "b3": "Tổng giải thưởng: 1.500 TON",
+    "p2": "Cửa sổ cơ hội rất hẹp. Hãy tăng stake, xác minh kết nối ví và chuẩn bị cho đợt drop đỉnh cao.",
+    "p3": "Kết quả sẽ được công bố trong ứng dụng vào tuần tới, sau đó tất cả người dùng sẽ nhận được thông báo trực tiếp."
   }
 }

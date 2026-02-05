@@ -241,5 +241,14 @@
     "daily": "Dagelijks",
     "minimumLock": "Minimale blokkering",
     "minimumLockValue": "{days} dagen"
+  },
+  "raffleModal": {
+    "title": "Raffelvoorwaarden",
+    "p1": "We lanceren een enorme raffle met hoge inzet voor onze community om de explosieve groei van ons gedecentraliseerde ecosysteem te vieren.",
+    "b1": "Stake 5.000+ Stars in elke tier om in aanmerking te komen",
+    "b2": "5 willekeurige gebruikers winnen elk 300 TON",
+    "b3": "Totale prijzenpot: 1.500 TON",
+    "p2": "Het kansenvenster is klein. Verhoog je stake, controleer je wallet-verbinding en bereid je voor op de ultieme drop.",
+    "p3": "De resultaten worden volgende week in de app gepubliceerd, waarna alle gebruikers een directe melding ontvangen."
   }
 }

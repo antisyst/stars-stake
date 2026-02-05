@@ -241,5 +241,14 @@
     "daily": "Giornaliero",
     "minimumLock": "Blocco minimo",
     "minimumLockValue": "{days} giorni"
+  },
+  "raffleModal": {
+    "title": "Condizioni della lotteria",
+    "p1": "Stiamo lanciando una lotteria enorme e ad alto valore per la nostra community per celebrare la crescita esplosiva del nostro ecosistema decentralizzato.",
+    "b1": "Metti in stake 5.000+ Stars in qualsiasi tier per qualificarti",
+    "b2": "5 utenti casuali vinceranno 300 TON ciascuno",
+    "b3": "Montepremi totale: 1.500 TON",
+    "p2": "La finestra di opportunità è stretta. Aumenta lo stake, verifica la connessione del wallet e preparati al drop definitivo.",
+    "p3": "I risultati saranno pubblicati nell’app la prossima settimana, seguiti da una notifica diretta a tutti gli utenti."
   }
 }

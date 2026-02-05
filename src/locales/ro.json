@@ -241,5 +241,14 @@
     "daily": "Zilnic",
     "minimumLock": "Blocare minimă",
     "minimumLockValue": "{days} zile"
+  },
+  "raffleModal": {
+    "title": "Condițiile tombolei",
+    "p1": "Lansăm o tombolă uriașă, cu miză mare, pentru comunitatea noastră, ca să sărbătorim creșterea explozivă a ecosistemului nostru descentralizat.",
+    "b1": "Stake 5.000+ Stars în orice nivel pentru a te califica",
+    "b2": "5 utilizatori aleatori vor câștiga câte 300 TON fiecare",
+    "b3": "Fond total de premii: 1.500 TON",
+    "p2": "Fereastra de oportunitate este îngustă. Mărește stake-ul, verifică conexiunea portofelului și pregătește-te pentru drop-ul suprem.",
+    "p3": "Rezultatele vor fi publicate în aplicație săptămâna viitoare, urmate de o notificare directă către toți utilizatorii."
   }
 }
