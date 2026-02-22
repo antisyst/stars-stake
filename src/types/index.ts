@@ -121,17 +121,21 @@ export interface GlobalStats {
 
 export interface Position {
   id?: string;
-  amount: number;
+  amount: number; 
   apy: number;
   tier: 1 | 2 | 3 | 4;
   createdAt: any;
   unlockAt: any;
-
   lastAccruedAt?: any;
   accruedDays?: number;
   earned?: number;
   fracCarryCents?: number;
+  baseAmount?: number;  
+  bonusAmount?: number;
+  promoEventId?: string;  
+  promoMultiplier?: number; 
 }
+
 
 export type ActivityType = 'stake' | 'unstake' | 'reward';
 
@@ -141,6 +145,10 @@ export interface Activity {
   amount: number; 
   apy: number;      
   createdAt: any;
+  baseAmount?: number;
+  bonusAmount?: number;
+  promoEventId?: string;
+  promoMultiplier?: number;
 }
 
 export type ActivityWithExtras = Activity & {

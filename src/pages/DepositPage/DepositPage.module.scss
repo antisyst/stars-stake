@@ -130,8 +130,8 @@
         color: var(--app-hint);
 
         svg {
-          width: 18px;
-          height: 18px;
+          width: 21px;
+          height: 21px;
         }
       }
 
@@ -145,4 +145,22 @@
       }
     }
   }
+}
+
+.boostLabel {
+  padding: 1px 4px;
+  margin-left: 6px;
+  font-family: 'SF Pro Rounded' !important;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--tgui--secondary_fill);
+  color: var(--tgui--link_color);
+}
+
+.stakePromoPreview {
+   font-family: 'SF Pro Rounded' !important;
+   font-size: 18px; 
+   font-weight: 600;
+   color: var(--app-text);
 }
