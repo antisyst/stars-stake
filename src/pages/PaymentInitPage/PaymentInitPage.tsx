@@ -16,12 +16,12 @@ import { db } from '@/configs/firebaseConfig';
 import {
   doc,
   increment,
+  updateDoc,
   getDoc,
   collection,
+  addDoc,
   serverTimestamp,
-  Timestamp,
-  setDoc,
-  runTransaction,
+  Timestamp
 } from 'firebase/firestore';
 import { tierForTotal } from '@/utils/apy';
 import { useAppData } from '@/contexts/AppDataContext';
@@ -30,15 +30,6 @@ import { formatEnUS } from '@/utils/formatEnUS';
 import styles from './PaymentInitPage.module.scss';
 import { useI18n } from '@/i18n';
 import { openInvoiceByLink, type InvoiceStatus } from '@/utils/invoice';
-import { getStakePromoResult } from '@/utils/stakePromo';
-
-async function getServerNow(uid: string): Promise<Date> {
-  const ref = doc(db, 'users', uid, 'meta', 'clock');
-  await setDoc(ref, { now: serverTimestamp() }, { merge: true });
-  const snap = await getDoc(ref);
-  const ts = snap.get('now') as Timestamp | undefined;
-  return ts ? ts.toDate() : new Date();
-}
 
 export const PaymentInitPage: React.FC = () => {
   const location = useLocation();
@@ -65,7 +56,7 @@ export const PaymentInitPage: React.FC = () => {
   const openedRef = useRef(false);
   const settledRef = useRef(false);
 
-  const redirectBack = (fallback: string = '/deposit') => {
+    const redirectBack = (fallback: string = '/deposit') => {
     const from = (state?.from && typeof state.from === 'string' && state.from.startsWith('/'))
       ? state.from
       : null;
@@ -85,55 +76,29 @@ export const PaymentInitPage: React.FC = () => {
       case 'paid': {
         (async () => {
           let apyUsed = 12.8;
-          let bonusUsed = 0;
-          let creditedUsed = payable;
-          let boostLabel: string | null = null;
-
           try {
             if (userId) {
-              const serverNow = await getServerNow(userId);
-              const promo = getStakePromoResult(payable, serverNow);
-
-              bonusUsed = promo.bonusAmount;
-              creditedUsed = promo.creditedAmount;
-              boostLabel = promo.boostLabel;
-
               const userRef = doc(db, 'users', userId);
               const statsRef = doc(db, 'stats', 'global');
 
+              const userSnap = await getDoc(userRef);
+              const u = userSnap.data() || {};
+              const curCents = Number.isFinite(u.starsCents)
+                ? Number(u.starsCents)
+                : Math.max(0, Math.floor((u.starsBalance || 0) * 100));
+              const preBalanceInt = Math.floor(curCents / 100);
+
+              const newTotal = preBalanceInt + payable;
+              const { tier, apy } = tierForTotal(newTotal);
+              apyUsed = apy;
+
+              const { unlock } = computeUnlockDates();
               const positionsCol = collection(db, 'users', userId, 'positions');
-              const historyCol = collection(db, 'users', userId, 'history');
+              const historyCol   = collection(db, 'users', userId, 'history');
 
-              const positionRef = doc(positionsCol);
-              const historyRef = doc(historyCol);
-
-              const { unlock } = computeUnlockDates(serverNow);
-
-              await runTransaction(db, async (tx) => {
-                const userSnap = await tx.get(userRef);
-                if (!userSnap.exists()) {
-                  throw new Error('User document not found');
-                }
-
-                const statsSnap = await tx.get(statsRef);
-
-                const u = userSnap.data() || {};
-                const curCents = Number.isFinite(u.starsCents)
-                  ? Number(u.starsCents)
-                  : Math.max(0, Math.floor((u.starsBalance || 0) * 100));
-                const preBalanceInt = Math.floor(curCents / 100);
-
-                // ✅ Tier hesabı credited amount-a görə (1.5X event üçün)
-                const newTotal = preBalanceInt + creditedUsed;
-                const { tier, apy } = tierForTotal(newTotal);
-                apyUsed = apy;
-
-                tx.set(positionRef, {
-                  amount: creditedUsed,               // ✅ staked amount with bonus
-                  baseAmount: payable,                // ✅ original paid
-                  bonusAmount: bonusUsed,             // ✅ bonus part
-                  promoEventId: promo.eventId,        // ✅ null if no promo
-                  promoMultiplier: promo.active ? 1.5 : 1,
+              await Promise.all([
+                addDoc(positionsCol, {
+                  amount: payable,
                   apy,
                   tier,
                   createdAt: serverTimestamp(),
@@ -141,56 +106,33 @@ export const PaymentInitPage: React.FC = () => {
                   lastAccruedAt: serverTimestamp(),
                   accruedDays: 0,
                   fracCarryCents: 0,
-                });
-
-                tx.set(historyRef, {
+                }),
+                addDoc(historyCol, {
                   type: 'stake',
-                  amount: creditedUsed,               // ✅ credited shown in history
-                  baseAmount: payable,
-                  bonusAmount: bonusUsed,
-                  promoEventId: promo.eventId,
-                  promoMultiplier: promo.active ? 1.5 : 1,
+                  amount: payable,
                   apy,
                   createdAt: serverTimestamp(),
-                });
-
-                tx.update(userRef, {
-                  starsCents: (curCents + creditedUsed * 100),
-                  starsBalance: Math.floor((curCents + creditedUsed * 100) / 100),
+                }),
+                updateDoc(userRef, {
+                  starsCents: (curCents + payable * 100),
+                  starsBalance: Math.floor((curCents + payable * 100) / 100),
                   currentApy: apy,
                   updatedAt: serverTimestamp(),
-                });
-
-                if (!statsSnap.exists()) {
-                  tx.set(statsRef, {
-                    totalStaked: creditedUsed,
-                    exchangeRate: 0.0199,
-                    systemHealth: 'Stable',
-                    promoBonusDistributed: bonusUsed,
-                    createdAt: serverTimestamp(),
-                    updatedAt: serverTimestamp(),
-                  });
-                } else {
-                  tx.update(statsRef, {
-                    totalStaked: increment(creditedUsed),
-                    promoBonusDistributed: increment(bonusUsed),
-                    updatedAt: serverTimestamp(),
-                  });
-                }
-              });
+                }),
+                updateDoc(statsRef, {
+                  totalStaked: increment(payable),
+                  updatedAt: serverTimestamp(),
+                }),
+              ]);
             }
           } catch (e) {
             console.error('Firestore update error:', e);
-            showError(t('payment.unableOpen'));
-            redirectBack('/deposit');
-            return;
           }
 
           const { short } = computeUnlockDates();
           showSuccess(t('payment.paymentSuccessful'));
-
           navigate(
-            `/payment/success?paid=${payable}&credited=${creditedUsed}&bonus=${bonusUsed}&unlock=${encodeURIComponent(short)}&requested=${requestedAmount}&apy=${apyUsed}${boostLabel ? `&boost=${encodeURIComponent(boostLabel)}` : ''}`,
+            `/payment/success?paid=${payable}&unlock=${encodeURIComponent(short)}&requested=${requestedAmount}&apy=${apyUsed}`,
             { replace: true }
           );
         })();

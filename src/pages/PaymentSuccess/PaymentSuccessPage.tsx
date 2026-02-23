@@ -17,12 +17,9 @@ export const PaymentSuccessPage: React.FC = () => {
   const params = new URLSearchParams(search);
 
   const paid = Number(params.get('paid') ?? 0);
-  const credited = Number(params.get('credited') ?? paid);
-  const bonus = Number(params.get('bonus') ?? 0);
   const requested = Number(params.get('requested') ?? 0);
   const apy = Number(params.get('apy') ?? 0);
   const unlock = params.get('unlock') ?? '';
-  const boost = params.get('boost') ?? '';
   const lockDays = 30;
 
   const { exchangeRate } = useAppData();
@@ -30,12 +27,13 @@ export const PaymentSuccessPage: React.FC = () => {
   const { formatFromUsd } = useCurrency();
   const { t } = useI18n();
 
-  const usdVal = useMemo(() => (exchangeRate ? credited * exchangeRate : 0), [credited, exchangeRate]);
+  const usdVal = useMemo(() => (exchangeRate ? paid * exchangeRate : 0), [paid, exchangeRate]);
   const tonVal = useMemo(() => (tonUsd > 0 ? usdVal / tonUsd : 0), [usdVal, tonUsd]);
 
   const formattedFiat = useMemo(() => formatFromUsd(usdVal, 2), [formatFromUsd, usdVal]);
 
-  const easeOutExpo: NonNullable<Transition['ease']> = [0.16, 1, 0.3, 1];
+  const easeOutExpo: NonNullable<Transition['ease']> =
+    [0.16, 1, 0.3, 1];
 
   const shellVariants: Variants = {
     initial: { opacity: 0, y: 24, scale: 0.98, filter: 'blur(8px)' },
@@ -66,13 +64,6 @@ export const PaymentSuccessPage: React.FC = () => {
           <p className={styles.subtitle}>{t('paymentSuccess.subtitle').replace('{days}', String(lockDays))}</p>
 
           <div className={styles.detailsCard} role="list">
-            {bonus > 0 && boost ? (
-              <div className={styles.item} role="listitem">
-                <span className={styles.itemLabel}>Event Boost</span>
-                <span className={`${styles.itemValue} ${styles.apyTitle}`}>{boost}</span>
-              </div>
-            ) : null}
-
             <div className={styles.item} role="listitem">
               <span className={styles.itemLabel}>{t('paymentSuccess.apy')}</span>
               <span className={`${styles.itemValue} ${styles.apyTitle}`}>
@@ -81,28 +72,10 @@ export const PaymentSuccessPage: React.FC = () => {
             </div>
 
             <div className={styles.item} role="listitem">
-              <span className={styles.itemLabel}>Paid Stars</span>
-              <span className={styles.itemValue}>
-                <StarIcon />
-                <strong>{formatNumber(paid)}</strong>
-              </span>
-            </div>
-
-            {bonus > 0 ? (
-              <div className={styles.item} role="listitem">
-                <span className={styles.itemLabel}>Bonus Stars</span>
-                <span className={styles.itemValue}>
-                  <StarIcon />
-                  <strong>+{formatNumber(bonus)}</strong>
-                </span>
-              </div>
-            ) : null}
-
-            <div className={styles.item} role="listitem">
               <span className={styles.itemLabel}>{t('paymentSuccess.stakedStars')}</span>
               <span className={styles.itemValue}>
                 <StarIcon />
-                <strong>{formatNumber(credited)}</strong>
+                <strong>{formatNumber(paid)}</strong>
               </span>
             </div>
 
