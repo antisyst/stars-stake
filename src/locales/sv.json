@@ -13,6 +13,18 @@
     "supportNotice": "Mini-appen drivs av Stars Base Digital Services Provider. Tjänsten är fristående och är inte ansluten till Telegram.",
     "currencyUpdated": "Valuta uppdaterad"
   },
+    "socialBonus": {
+    "title": "Verifiera ditt inflytande",
+    "subtitle": "Följ oss på X och hämta din belöning direkt.",
+    "reward": "75",
+    "claimed": "Hämtad",
+    "connectAndClaim": "Anslut och hämta",
+    "userDataUnavailable": "Användardata är inte tillgängliga",
+    "bonusAlreadyClaimed": "Bonusen har redan hämtats",
+    "userDocumentNotFound": "Användardokument hittades inte",
+    "rewardAddedSuccessfully": "Belöning tillagd",
+    "failedToAddBonus": "Det gick inte att lägga till bonus"
+  },
   "stake": {
     "apyTitle": "Vad är APY?",
     "apyLine1": "APY står för Annual Percentage Yield och visar den totala årliga avkastningen inklusive sammansatta belöningar.",
@@ -28,7 +40,8 @@
     "apy": "APY",
     "stakeEarn": "Staka & Tjäna",
     "deposit": "Insättning",
-    "withdraw": "Ta ut"
+    "withdraw": "Ta ut",
+    "minimumWithdrawal": "Minsta uttag är 500 stjärnor"
   },
   "common": {
     "copiedToClipboard": "Kopierat till urklipp",

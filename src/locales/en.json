@@ -28,7 +28,20 @@
     "apy": "APY",
     "stakeEarn": "Stake & Earn",
     "deposit": "Deposit",
-    "withdraw": "Withdraw"
+    "withdraw": "Withdraw",
+    "minimumWithdrawal": "Minimum withdrawal is 500 stars"
+  },
+ "socialBonus": {
+    "title": "Verify Your Influence",
+    "subtitle": "Follow us on X and claim reward instantly.",
+    "reward": "75",
+    "claimed": "Claimed",
+    "connectAndClaim": "Connect & Claim",
+    "userDataUnavailable": "User data is unavailable",
+    "bonusAlreadyClaimed": "Bonus already claimed",
+    "userDocumentNotFound": "User document not found",
+    "rewardAddedSuccessfully": "Reward added successfully",
+    "failedToAddBonus": "Failed to add bonus"
   },
   "common": {
     "copiedToClipboard": "Copied to clipboard",

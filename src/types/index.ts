@@ -13,6 +13,9 @@ export interface UserData {
   walletAddress?: string;
   walletConnected?: boolean;
   defaultCurrency?: 'USD' | 'EUR' | 'RUB' | 'INR' | 'BRL' | 'IDR' | 'TRY' | 'UAH' | 'KZT';
+  hasClaimedTwitterBonus?: boolean;
+  twitterBonusStars?: number;
+  twitterBonusClaimedAt?: any;
 }
 
 export type ToastStatus = 'success' | 'error';

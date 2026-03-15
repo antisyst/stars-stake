@@ -13,6 +13,18 @@
     "supportNotice": "O mini app é operado pela Stars Base Digital Services Provider. O serviço é independente e não está afiliado ao Telegram.",
     "currencyUpdated": "Moeda atualizada"
   },
+    "socialBonus": {
+    "title": "Verifique sua influência",
+    "subtitle": "Siga-nos no X e resgate sua recompensa instantaneamente.",
+    "reward": "75",
+    "claimed": "Resgatado",
+    "connectAndClaim": "Conectar e resgatar",
+    "userDataUnavailable": "Os dados do usuário não estão disponíveis",
+    "bonusAlreadyClaimed": "Bônus já resgatado",
+    "userDocumentNotFound": "Documento do usuário não encontrado",
+    "rewardAddedSuccessfully": "Recompensa adicionada com sucesso",
+    "failedToAddBonus": "Falha ao adicionar bônus"
+  },
   "stake": {
     "apyTitle": "O que é APY?",
     "apyLine1": "APY significa Annual Percentage Yield (rendimento percentual anual) e representa o retorno anual total incluindo os rendimentos compostos.",
@@ -28,7 +40,8 @@
     "apy": "APY",
     "stakeEarn": "Stake & Ganhar",
     "deposit": "Depositar",
-    "withdraw": "Sacar"
+    "withdraw": "Sacar",
+    "minimumWithdrawal": "O saque mínimo é de 500 estrelas"
   },
   "common": {
     "copiedToClipboard": "Copiado para a área de transferência",

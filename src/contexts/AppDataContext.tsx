@@ -43,7 +43,7 @@ async function runAccrualWithRetry(uid: string, attempts = 4) {
       lastErr = e;
       const isConflict =
         e?.code === 'failed-precondition' ||
-        typeof e?.message === 'string' && e.message.includes('failed-precondition');
+        (typeof e?.message === 'string' && e.message.includes('failed-precondition'));
       if (!isConflict) throw e;
       await sleep(150 * Math.pow(2, i));
     }
@@ -70,6 +70,7 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
 
   useEffect(() => {
     let cancelled = false;
+
     (async () => {
       if (!uid) return;
       try {
@@ -93,13 +94,23 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
               walletConnected: false,
               walletAddress: '',
               defaultCurrency: 'USD',
+              hasClaimedTwitterBonus: false,
+              twitterBonusStars: 0,
+              twitterBonusClaimedAt: null,
               createdAt: serverTimestamp(),
               updatedAt: serverTimestamp(),
             },
             { merge: true }
           );
         } else {
-          const data = userSnap.data() as Partial<UserData> & { starsCents?: number; defaultCurrency?: string };
+          const data = userSnap.data() as Partial<UserData> & {
+            starsCents?: number;
+            defaultCurrency?: string;
+            hasClaimedTwitterBonus?: boolean;
+            twitterBonusStars?: number;
+            twitterBonusClaimedAt?: any;
+          };
+
           const patch: any = {};
           if (!Number.isFinite(data.starsCents)) {
             const sb = typeof (data as any).starsBalance === 'number' ? (data as any).starsBalance : 0;
@@ -108,6 +119,8 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
           if (typeof (data as any).starsBalance !== 'number') patch.starsBalance = 0;
           if (typeof data.currentApy !== 'number') patch.currentApy = 12.8;
           if (!data.defaultCurrency) patch.defaultCurrency = 'USD';
+          if (typeof data.hasClaimedTwitterBonus !== 'boolean') patch.hasClaimedTwitterBonus = false;
+          if (!Number.isFinite(data.twitterBonusStars)) patch.twitterBonusStars = 0;
 
           if (tgUser) {
             const updates: any = {};
@@ -155,11 +168,14 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
         console.error('Ensure defaults / sync failed:', e);
       } finally {
         if (!cancelled) {
-          // nothing
+          // no-op
         }
       }
     })();
-    return () => { cancelled = true; };
+
+    return () => {
+      cancelled = true;
+    };
   }, [uid, initDataState?.user]);
 
   useEffect(() => {
@@ -186,35 +202,60 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
             ? u.starsCents
             : Math.max(0, Math.floor((u.starsBalance || 0) * 100));
           const mirrInt = Math.floor(cents / 100);
-          setUser({ ...(u as UserData), starsCents: cents, starsBalance: mirrInt });
+
+          setUser({
+            ...(u as UserData),
+            starsCents: cents,
+            starsBalance: mirrInt,
+            hasClaimedTwitterBonus: Boolean(u.hasClaimedTwitterBonus),
+            twitterBonusStars: Number.isFinite(u.twitterBonusStars) ? u.twitterBonusStars : 0,
+            twitterBonusClaimedAt: u.twitterBonusClaimedAt ?? null,
+          });
         }
-        gotUser = true; maybeDone();
+        gotUser = true;
+        maybeDone();
       },
-      (err) => { console.error('User onSnapshot error:', err); gotUser = true; maybeDone(); }
+      (err) => {
+        console.error('User onSnapshot error:', err);
+        gotUser = true;
+        maybeDone();
+      }
     );
 
     const unsubStats = onSnapshot(
       statsRef,
       (snap) => {
         if (snap.exists()) setStats(snap.data() as GlobalStats);
-        gotStats = true; maybeDone();
+        gotStats = true;
+        maybeDone();
       },
-      (err) => { console.error('Stats onSnapshot error:', err); gotStats = true; maybeDone(); }
+      (err) => {
+        console.error('Stats onSnapshot error:', err);
+        gotStats = true;
+        maybeDone();
+      }
     );
 
     const unsubPos = onSnapshot(
       posQ,
       (qs) => {
         const arr: Position[] = [];
-        qs.forEach(d => arr.push({ id: d.id, ...(d.data() as any) }));
+        qs.forEach((d) => arr.push({ id: d.id, ...(d.data() as any) }));
         setPositions(arr);
-        gotPos = true; maybeDone();
+        gotPos = true;
+        maybeDone();
       },
-      (err) => { console.error('Positions onSnapshot error:', err); gotPos = true; maybeDone(); }
+      (err) => {
+        console.error('Positions onSnapshot error:', err);
+        gotPos = true;
+        maybeDone();
+      }
     );
 
     return () => {
-      unsubUser(); unsubStats(); unsubPos();
+      unsubUser();
+      unsubStats();
+      unsubPos();
     };
   }, [uid]);
 
@@ -242,7 +283,13 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
     () => ({
       loading,
       uid,
-      user: user ? { ...user, starsBalance: balanceIntDisplay, starsCents: cents } as any : null,
+      user: user
+        ? ({
+            ...user,
+            starsBalance: balanceIntDisplay,
+            starsCents: cents,
+          } as any)
+        : null,
       stats,
       positions,
       effectiveApy,

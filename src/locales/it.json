@@ -13,6 +13,18 @@
     "supportNotice": "La mini app è gestita da Stars Base Digital Services Provider. Il servizio è indipendente e non affiliato a Telegram.",
     "currencyUpdated": "Valuta aggiornata"
   },
+  "socialBonus": {
+    "title": "Verifica la tua influenza",
+    "subtitle": "Seguici su X e richiedi subito la ricompensa.",
+    "reward": "75",
+    "claimed": "Riscattato",
+    "connectAndClaim": "Connetti e riscatta",
+    "userDataUnavailable": "I dati utente non sono disponibili",
+    "bonusAlreadyClaimed": "Bonus già riscattato",
+    "userDocumentNotFound": "Documento utente non trovato",
+    "rewardAddedSuccessfully": "Ricompensa aggiunta con successo",
+    "failedToAddBonus": "Impossibile aggiungere il bonus"
+  },
   "stake": {
     "apyTitle": "Cos'è l'APY?",
     "apyLine1": "APY sta per Annual Percentage Yield (Rendimento Percentuale Annuale) e rappresenta il rendimento totale annuo includendo gli interessi composti.",
@@ -28,7 +40,8 @@
     "apy": "APY",
     "stakeEarn": "Punta e Guadagna",
     "deposit": "Deposita",
-    "withdraw": "Preleva"
+    "withdraw": "Preleva",
+    "minimumWithdrawal": "Il prelievo minimo è di 500 stelle"
   },
   "common": {
     "copiedToClipboard": "Copiato negli appunti",

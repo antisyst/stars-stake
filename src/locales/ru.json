@@ -13,6 +13,18 @@
     "supportNotice": "Мини-приложением управляет Stars Base Digital Services Provider. Сервис независим и не связан с Telegram.",
     "currencyUpdated": "Валюта обновлена"
   },
+    "socialBonus": {
+    "title": "Подтвердите своё влияние",
+    "subtitle": "Подпишитесь на нас в X и мгновенно получите награду.",
+    "reward": "75",
+    "claimed": "Получено",
+    "connectAndClaim": "Подключить и получить",
+    "userDataUnavailable": "Данные пользователя недоступны",
+    "bonusAlreadyClaimed": "Бонус уже получен",
+    "userDocumentNotFound": "Документ пользователя не найден",
+    "rewardAddedSuccessfully": "Награда успешно добавлена",
+    "failedToAddBonus": "Не удалось добавить бонус"
+  },
   "stake": {
     "apyTitle": "Что такое годовая ставка?",
     "apyLine1": "Годовая ставка — это годовая доходность с учётом сложных процентов.",
@@ -28,7 +40,8 @@
     "apy": "Годовая ставка",
     "stakeEarn": "Стейкинг и доход",
     "deposit": "Внести",
-    "withdraw": "Вывести"
+    "withdraw": "Вывести",
+    "minimumWithdrawal": "Минимальный вывод — 500 звёзд"
   },
   "common": {
     "copiedToClipboard": "Скопировано в буфер обмена",

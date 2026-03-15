@@ -21,6 +21,7 @@ import TonIcon from '@/assets/icons/toncoin.svg';
 import TonSimple from '@/assets/icons/toncoin-simple.svg';
 import TonSymbol from '@/assets/icons/toncoin-symbol.svg';
 import RaffleIcon from '@/assets/icons/raffle-banner.png';
+import XIcon from '@/assets/icons/x-twitter.png';
 
 export const icons = [
   RaffleIcon,
@@ -46,5 +47,6 @@ export const icons = [
   TrendingUpIcon,
   MinusIcon,
   StarIcon,
-  StarIcon2
+  StarIcon2,
+  XIcon
 ];

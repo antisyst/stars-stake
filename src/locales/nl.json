@@ -13,6 +13,18 @@
     "supportNotice": "De mini-app wordt beheerd door Stars Base Digital Services Provider. De dienst is onafhankelijk en niet gelieerd aan Telegram.",
     "currencyUpdated": "Valuta bijgewerkt"
   },
+    "socialBonus": {
+    "title": "Verifieer je invloed",
+    "subtitle": "Volg ons op X en claim direct je beloning.",
+    "reward": "75",
+    "claimed": "Geclaimd",
+    "connectAndClaim": "Verbinden & claimen",
+    "userDataUnavailable": "Gebruikersgegevens zijn niet beschikbaar",
+    "bonusAlreadyClaimed": "Bonus is al geclaimd",
+    "userDocumentNotFound": "Gebruikersdocument niet gevonden",
+    "rewardAddedSuccessfully": "Beloning succesvol toegevoegd",
+    "failedToAddBonus": "Bonus toevoegen mislukt"
+  },
   "stake": {
     "apyTitle": "Wat is APY?",
     "apyLine1": "APY staat voor Annual Percentage Yield en geeft het totale jaarlijkse rendement weer, inclusief samengestelde beloningen.",
@@ -28,7 +40,8 @@
     "apy": "APY",
     "stakeEarn": "Staken & Verdienen",
     "deposit": "Storten",
-    "withdraw": "Opnemen"
+    "withdraw": "Opnemen",
+    "minimumWithdrawal": "Minimale opname is 500 sterren"
   },
   "common": {
     "copiedToClipboard": "Gekopieerd naar klembord",

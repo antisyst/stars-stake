@@ -13,6 +13,18 @@
     "supportNotice": "Міні-додаток керується Stars Base Digital Services Provider. Сервіс є незалежним і не афілійований із Telegram.",
     "currencyUpdated": "Валюта оновлена"
   },
+    "socialBonus": {
+    "title": "Підтвердьте свій вплив",
+    "subtitle": "Підпишіться на нас у X і миттєво отримайте винагороду.",
+    "reward": "75",
+    "claimed": "Отримано",
+    "connectAndClaim": "Підключити й отримати",
+    "userDataUnavailable": "Дані користувача недоступні",
+    "bonusAlreadyClaimed": "Бонус уже отримано",
+    "userDocumentNotFound": "Документ користувача не знайдено",
+    "rewardAddedSuccessfully": "Винагороду успішно додано",
+    "failedToAddBonus": "Не вдалося додати бонус"
+  },
   "stake": {
     "apyTitle": "Що таке APY?",
     "apyLine1": "APY означає Annual Percentage Yield (річна процентна дохідність) і показує загальний річний прибуток з урахуванням складних нарахувань.",
@@ -28,7 +40,8 @@
     "apy": "APY",
     "stakeEarn": "Стейк і заробляй",
     "deposit": "Депозит",
-    "withdraw": "Зняти"
+    "withdraw": "Зняти",
+    "minimumWithdrawal": "Мінімальне виведення — 500 зірок"
   },
   "common": {
     "copiedToClipboard": "Скопійовано в буфер обміну",

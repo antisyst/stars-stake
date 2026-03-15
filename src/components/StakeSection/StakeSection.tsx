@@ -57,6 +57,7 @@ export const StakeSection: React.FC = () => {
   };
 
   const now = useMemo(() => new Date(), [positions?.length]);
+
   const toDate = (v: any): Date | null => {
     if (!v) return null;
     if (typeof v?.toDate === 'function') return v.toDate();
@@ -87,20 +88,34 @@ export const StakeSection: React.FC = () => {
     });
   }, [positions, now]);
 
+  const isBonusOnlyUser =
+    balanceInt > 0 &&
+    balanceInt < 500 &&
+    Boolean(user?.hasClaimedTwitterBonus) &&
+    positions.length === 0;
+
   const handleWithdraw = () => {
     if (ensureConnected()) {
       if (balanceInt <= 0) {
         showError(t('stake.noBalance'));
         return;
       }
+
+      if (isBonusOnlyUser) {
+        showError(t('stake.minimumWithdrawal'));
+        return;
+      }
+
       if (allLocked) {
         showError(t('stake.lockNotEnded'));
         return;
       }
+
       if (anyUnlocked) {
         showError(t('stake.lockerNotActive'));
         return;
       }
+
       showError(t('stake.withdrawUnavailable'));
     }
   };
@@ -127,6 +142,7 @@ export const StakeSection: React.FC = () => {
             <HelpIcon className="icon" />
           </div>
         </div>
+
         <div className={styles.rowItem}>
           <div className={styles.starsBalance}>
             <div className={styles.starAmount}>
@@ -136,10 +152,15 @@ export const StakeSection: React.FC = () => {
           </div>
           <h2 className={styles.currentApy}>{apyStr}%</h2>
         </div>
+
         <div className={styles.rowItem}>
           <span className="muted-text">≈{formatFromUsd(balanceUsd, 2)}</span>
-          <span className="muted-text"><TonSymbolIcon className='muted-text'/>{formattedTon}</span>
+          <span className="muted-text">
+            <TonSymbolIcon className="muted-text" />
+            {formattedTon}
+          </span>
         </div>
+
         {balanceInt <= 0 ? (
           <div className={styles.buttonsContainer}>
             <Button size="m" mode="filled" onClick={handleStakeEarnOrDeposit}>
@@ -160,6 +181,7 @@ export const StakeSection: React.FC = () => {
           </div>
         )}
       </div>
+
       <Modal
         isOpen={isApyOpen}
         title={t('stake.apyTitle')}

@@ -13,6 +13,18 @@
     "supportNotice": "Aplikasi mini dioperasikan oleh Stars Base Digital Services Provider. Layanan ini mandiri dan tidak terkait dengan Telegram.",
     "currencyUpdated": "Mata uang diperbarui"
   },
+    "socialBonus": {
+    "title": "Verifikasi Pengaruh Anda",
+    "subtitle": "Ikuti kami di X dan klaim hadiah secara instan.",
+    "reward": "75",
+    "claimed": "Sudah Diklaim",
+    "connectAndClaim": "Hubungkan & Klaim",
+    "userDataUnavailable": "Data pengguna tidak tersedia",
+    "bonusAlreadyClaimed": "Bonus sudah diklaim",
+    "userDocumentNotFound": "Dokumen pengguna tidak ditemukan",
+    "rewardAddedSuccessfully": "Hadiah berhasil ditambahkan",
+    "failedToAddBonus": "Gagal menambahkan bonus"
+  },
   "stake": {
     "apyTitle": "Apa itu APY?",
     "apyLine1": "APY adalah Annual Percentage Yield (Persentase Hasil Tahunan), yang mewakili total pengembalian tahunan termasuk imbal hasil majemuk.",
@@ -28,7 +40,8 @@
     "apy": "APY",
     "stakeEarn": "Stake & Dapatkan",
     "deposit": "Deposit",
-    "withdraw": "Tarik"
+    "withdraw": "Tarik",
+    "minimumWithdrawal": "Penarikan minimum adalah 500 bintang"
   },
   "common": {
     "copiedToClipboard": "Disalin ke clipboard",

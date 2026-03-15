@@ -13,6 +13,18 @@
     "supportNotice": "Ứng dụng mini được vận hành bởi Stars Base Digital Services Provider. Dịch vụ độc lập và không liên kết với Telegram.",
     "currencyUpdated": "Tiền tệ đã được cập nhật"
   },
+    "socialBonus": {
+    "title": "Xác minh tầm ảnh hưởng của bạn",
+    "subtitle": "Theo dõi chúng tôi trên X và nhận thưởng ngay lập tức.",
+    "reward": "75",
+    "claimed": "Đã nhận",
+    "connectAndClaim": "Kết nối & nhận thưởng",
+    "userDataUnavailable": "Dữ liệu người dùng không khả dụng",
+    "bonusAlreadyClaimed": "Phần thưởng đã được nhận",
+    "userDocumentNotFound": "Không tìm thấy tài liệu người dùng",
+    "rewardAddedSuccessfully": "Đã cộng thưởng thành công",
+    "failedToAddBonus": "Không thể cộng thưởng"
+  },
   "stake": {
     "apyTitle": "APY là gì?",
     "apyLine1": "APY (Annual Percentage Yield) là tỷ suất lợi nhuận hàng năm, biểu thị tổng lợi nhuận trong năm bao gồm lãi kép.",
@@ -28,7 +40,8 @@
     "apy": "APY",
     "stakeEarn": "Đặt cọc & Kiếm",
     "deposit": "Nạp",
-    "withdraw": "Rút"
+    "withdraw": "Rút",
+    "minimumWithdrawal": "Số tiền rút tối thiểu là 500 sao"
   },
   "common": {
     "copiedToClipboard": "Đã sao chép vào khay nhớ tạm",

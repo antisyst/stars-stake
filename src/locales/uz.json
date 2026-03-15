@@ -13,6 +13,18 @@
     "supportNotice": "Mini ilova Stars Base Digital Services Provider tomonidan boshqariladi. Xizmat mustaqil bo'lib, Telegram bilan bog'liq emas.",
     "currencyUpdated": "Valyuta yangilandi"
   },
+  "socialBonus": {
+    "title": "Ta'siringizni tasdiqlang",
+    "subtitle": "Bizni X’da kuzating va mukofotni darhol oling.",
+    "reward": "75",
+    "claimed": "Olingan",
+    "connectAndClaim": "Ulanish va olish",
+    "userDataUnavailable": "Foydalanuvchi ma'lumotlari mavjud emas",
+    "bonusAlreadyClaimed": "Bonus allaqachon olingan",
+    "userDocumentNotFound": "Foydalanuvchi hujjati topilmadi",
+    "rewardAddedSuccessfully": "Mukofot muvaffaqiyatli qo‘shildi",
+    "failedToAddBonus": "Bonusni qo‘shib bo‘lmadi"
+  },
   "stake": {
     "apyTitle": "APY nima?",
     "apyLine1": "APY — Annual Percentage Yield (yillik foiz daromadi), foizlarni hisobga olgan holda yillik umumiy daromadni ifodalaydi.",
@@ -28,7 +40,8 @@
     "apy": "APY",
     "stakeEarn": "Stake qiling va daromad oling",
     "deposit": "Depozit",
-    "withdraw": "Yechib olish"
+    "withdraw": "Yechib olish",
+    "minimumWithdrawal": "Minimal yechib olish 500 yulduz"
   },
   "common": {
     "copiedToClipboard": "Clipboardga nusxalandi",

@@ -13,6 +13,18 @@
     "supportNotice": "Miniaplicația este operată de Stars Base Digital Services Provider. Serviciul este independent și nu este afiliat cu Telegram.",
     "currencyUpdated": "Monedă actualizată"
   },
+  "socialBonus": {
+    "title": "Verifică-ți influența",
+    "subtitle": "Urmărește-ne pe X și revendică recompensa instant.",
+    "reward": "75",
+    "claimed": "Revendicat",
+    "connectAndClaim": "Conectează-te și revendică",
+    "userDataUnavailable": "Datele utilizatorului nu sunt disponibile",
+    "bonusAlreadyClaimed": "Bonusul a fost deja revendicat",
+    "userDocumentNotFound": "Documentul utilizatorului nu a fost găsit",
+    "rewardAddedSuccessfully": "Recompensa a fost adăugată cu succes",
+    "failedToAddBonus": "Adăugarea bonusului a eșuat"
+  },
   "stake": {
     "apyTitle": "Ce este APY?",
     "apyLine1": "APY înseamnă Annual Percentage Yield (randament procentual anual) și reprezintă randamentul total anual, inclusiv câștigurile compuse.",
@@ -28,7 +40,8 @@
     "apy": "APY",
     "stakeEarn": "Stakează & Câștigă",
     "deposit": "Depozit",
-    "withdraw": "Retragere"
+    "withdraw": "Retragere",
+    "minimumWithdrawal": "Retragerea minimă este de 500 stele"
   },
   "common": {
     "copiedToClipboard": "Copiat în clipboard",

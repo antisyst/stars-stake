@@ -41,6 +41,7 @@ const AppRoutesInner: React.FC = () => {
 
   useEffect(() => {
     let cancelled = false;
+
     const boot = async () => {
       try {
         await waitFor(() => Boolean(initDataState?.user) && iconsLoaded && fontsLoaded, 10000, 50);
@@ -63,9 +64,13 @@ const AppRoutesInner: React.FC = () => {
                 firstName: user.firstName || '',
                 lastName: user.lastName || '',
                 starsBalance: 0,
+                starsCents: 0,
                 currentApy: 12.8,
                 walletConnected: false,
                 walletAddress: '',
+                hasClaimedTwitterBonus: false,
+                twitterBonusStars: 0,
+                twitterBonusClaimedAt: null,
                 createdAt: serverTimestamp(),
                 updatedAt: serverTimestamp(),
               });
@@ -75,7 +80,9 @@ const AppRoutesInner: React.FC = () => {
 
               if ((user.firstName || '') !== (data.firstName || '')) patch.firstName = user.firstName || '';
               if ((user.lastName || '') !== (data.lastName || '')) patch.lastName = user.lastName || '';
-              if ((user.username || '') !== (data.username || '')) patch.username = user.username || `${user.firstName} ${user.lastName || ''}`.trim() || 'Anonymous';
+              if ((user.username || '') !== (data.username || '')) {
+                patch.username = user.username || `${user.firstName} ${user.lastName || ''}`.trim() || 'Anonymous';
+              }
               if ((user.photoUrl || '') !== (data.photoUrl || '')) patch.photoUrl = user.photoUrl || '';
 
               if (!data.languageCode || data.languageCode === '') {
@@ -84,6 +91,13 @@ const AppRoutesInner: React.FC = () => {
 
               if (typeof data.walletConnected !== 'boolean') patch.walletConnected = false;
               if (typeof data.walletAddress !== 'string') patch.walletAddress = '';
+              if (!Number.isFinite(data.starsCents)) {
+                const safeBalance = typeof data.starsBalance === 'number' ? data.starsBalance : 0;
+                patch.starsCents = Math.max(0, Math.floor(safeBalance * 100));
+              }
+              if (typeof data.hasClaimedTwitterBonus !== 'boolean') patch.hasClaimedTwitterBonus = false;
+              if (!Number.isFinite(data.twitterBonusStars)) patch.twitterBonusStars = 0;
+              if (typeof data.currentApy !== 'number') patch.currentApy = 12.8;
 
               const keys = Object.keys(patch);
               if (keys.length > 0) {
@@ -128,7 +142,9 @@ const AppRoutesInner: React.FC = () => {
     };
 
     boot();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [initDataState, navigate, location.pathname, iconsLoaded, fontsLoaded]);
 
   useEffect(() => {
