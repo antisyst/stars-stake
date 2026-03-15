@@ -1,22 +1,18 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button } from '@telegram-apps/telegram-ui';
 import { openLink } from '@telegram-apps/sdk';
+import { doc, runTransaction, serverTimestamp } from 'firebase/firestore';
+import { db } from '@/configs/firebaseConfig';
 import { useAppData } from '@/contexts/AppDataContext';
 import { ToastContext } from '@/contexts/ToastContext';
 import { useI18n } from '@/i18n';
 import styles from './SocialBonusSection.module.scss';
 import XIcon from '@/assets/icons/x-twitter.png';
-import {
-  X_TARGET_URL,
-  createPendingChallenge,
-  savePendingChallenge,
-  markChallengeHidden,
-  markChallengeReturned,
-  canFinalizeChallenge,
-  completeChallenge,
-  clearPendingChallenge,
-  claimTwitterBonus,
-} from '@/utils/socialBonus';
+
+const BONUS_STARS = 75;
+const X_TARGET_USERNAME = 'starsbase_bot';
+const X_TARGET_URL = `https://x.com/${X_TARGET_USERNAME}`;
+const VISIT_FLAG_KEY = 'x_bonus_follow_visit_started';
 
 export const SocialBonusSection: React.FC = () => {
   const { uid, user } = useAppData();
@@ -24,79 +20,6 @@ export const SocialBonusSection: React.FC = () => {
   const { t } = useI18n();
 
   const [claiming, setClaiming] = useState(false);
-  const isMountedRef = useRef(true);
-  const claimInFlightRef = useRef(false);
-
-  const finalizeClaim = async () => {
-    if (!uid || claimInFlightRef.current || claiming) return;
-
-    claimInFlightRef.current = true;
-    setClaiming(true);
-
-    try {
-      await claimTwitterBonus(uid);
-      completeChallenge();
-      clearPendingChallenge();
-      showSuccess(t('socialBonus.rewardAddedSuccessfully'));
-    } catch (e: any) {
-      if (e?.message === 'ALREADY_CLAIMED') {
-        clearPendingChallenge();
-        showError(t('socialBonus.bonusAlreadyClaimed'));
-      } else if (e?.message === 'USER_DOCUMENT_NOT_FOUND') {
-        clearPendingChallenge();
-        showError(t('socialBonus.userDocumentNotFound'));
-      } else {
-        console.error('Twitter bonus claim failed:', e);
-        showError(t('socialBonus.failedToAddBonus'));
-      }
-    } finally {
-      claimInFlightRef.current = false;
-      if (isMountedRef.current) {
-        setClaiming(false);
-      }
-    }
-  };
-
-  useEffect(() => {
-    isMountedRef.current = true;
-
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'hidden') {
-        markChallengeHidden();
-        return;
-      }
-
-      if (document.visibilityState === 'visible') {
-        markChallengeReturned();
-        if (canFinalizeChallenge()) {
-          void finalizeClaim();
-        }
-      }
-    };
-
-    const handleWindowFocus = () => {
-      markChallengeReturned();
-      if (canFinalizeChallenge()) {
-        void finalizeClaim();
-      }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('focus', handleWindowFocus);
-
-    if (document.visibilityState === 'visible') {
-      markChallengeReturned();
-      if (canFinalizeChallenge()) {
-        void finalizeClaim();
-      }
-    }
-
-    return () => {
-      isMountedRef.current = false;
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('focus', handleWindowFocus);
-    };
-  }, [uid]);
 
   const handleConnectAndClaim = async () => {
     if (!uid) {
@@ -109,16 +32,9 @@ export const SocialBonusSection: React.FC = () => {
       return;
     }
 
-    if (claimInFlightRef.current || claiming) return;
-
     try {
-      const challenge = createPendingChallenge();
-      savePendingChallenge(challenge);
-    } catch (e) {
-      console.error('Failed to save pending X challenge:', e);
-      showError(t('socialBonus.failedToAddBonus'));
-      return;
-    }
+      sessionStorage.setItem(VISIT_FLAG_KEY, '1');
+    } catch {}
 
     try {
       openLink(X_TARGET_URL, {
@@ -127,8 +43,61 @@ export const SocialBonusSection: React.FC = () => {
       });
     } catch (e) {
       console.error('Failed to open X link:', e);
-      clearPendingChallenge();
       showError(t('socialBonus.failedToAddBonus'));
+      return;
+    }
+
+    setClaiming(true);
+
+    try {
+      const userRef = doc(db, 'users', uid);
+
+      await runTransaction(db, async (tx) => {
+        const snap = await tx.get(userRef);
+
+        if (!snap.exists()) {
+          throw new Error('USER_DOCUMENT_NOT_FOUND');
+        }
+
+        const data = snap.data() as any;
+
+        if (data.hasClaimedTwitterBonus) {
+          throw new Error('ALREADY_CLAIMED');
+        }
+
+        const currentCents = Number.isFinite(data.starsCents)
+          ? data.starsCents
+          : Math.max(0, Math.floor((data.starsBalance || 0) * 100));
+
+        const bonusCents = BONUS_STARS * 100;
+        const nextCents = currentCents + bonusCents;
+
+        tx.update(userRef, {
+          starsCents: nextCents,
+          starsBalance: Math.floor(nextCents / 100),
+          hasClaimedTwitterBonus: true,
+          twitterBonusStars: BONUS_STARS,
+          twitterBonusClaimedAt: serverTimestamp(),
+          updatedAt: serverTimestamp(),
+        });
+      });
+
+      try {
+        sessionStorage.removeItem(VISIT_FLAG_KEY);
+      } catch {}
+
+      showSuccess(t('socialBonus.rewardAddedSuccessfully'));
+    } catch (e: any) {
+      if (e?.message === 'ALREADY_CLAIMED') {
+        showError(t('socialBonus.bonusAlreadyClaimed'));
+      } else if (e?.message === 'USER_DOCUMENT_NOT_FOUND') {
+        showError(t('socialBonus.userDocumentNotFound'));
+      } else {
+        console.error('Twitter bonus claim failed:', e);
+        showError(t('socialBonus.failedToAddBonus'));
+      }
+    } finally {
+      setClaiming(false);
     }
   };
 
@@ -147,7 +116,7 @@ export const SocialBonusSection: React.FC = () => {
         mode="gray"
         stretched
         loading={claiming}
-        disabled={Boolean(user?.hasClaimedTwitterBonus) || claiming}
+        disabled={Boolean(user?.hasClaimedTwitterBonus)}
         onClick={handleConnectAndClaim}
       >
         {user?.hasClaimedTwitterBonus
