@@ -1,0 +1,258 @@
+{
+  "profile": {
+    "unknown": "Bilinmiyor",
+    "wallet": "Cüzdan",
+    "connect": "Bağla",
+    "defaultCurrency": "Varsayılan Para Birimi",
+    "language": "Dil",
+    "contactSupport": "Destek ile İletişime Geç",
+    "faq": "SSS",
+    "history": "Geçmiş",
+    "userAgreement": "Kullanıcı Sözleşmesi",
+    "privacyPolicy": "Gizlilik Politikası",
+    "supportNotice": "Mini uygulama, Stars Base Digital Services Provider tarafından işletilmektedir. Hizmet bağımsızdır ve Telegram ile herhangi bir bağlantısı yoktur.",
+    "currencyUpdated": "Para birimi güncellendi"
+  },
+  "stake": {
+    "apyTitle": "APY Nedir?",
+    "apyLine1": "APY, bileşik ödüller dahil toplam yıllık getiriyi temsil eden Yıllık Yüzde Getiri anlamına gelir.",
+    "apyLine2": "Oranlar kademeli olarak belirlenir ve her stake (lot) başına atanır; gösterilen APY, tüm açık lotlar üzerinden ağırlıklı ortalamadır.",
+    "apyLine3": "Mevcut efektif APY'niz: {apy}%",
+    "apyLine4": "Güncel fiyat: Her yıldız için {price}.",
+    "noBalance": "Çekilecek bakiyeniz yok",
+    "lockNotEnded": "Kilitleme süreniz henüz bitmedi.",
+    "lockerNotActive": "Stars Base kilitleyici henüz aktif değil",
+    "withdrawUnavailable": "Çekim şu an mevcut değil.",
+    "minimumLock": "Minimum Kilitleme: 30 Gün",
+    "balance": "Bakiye",
+    "apy": "APY",
+    "stakeEarn": "Stake Et & Kazan",
+    "deposit": "Yatır",
+    "withdraw": "Çek",
+    "minimumWithdrawal": "Minimum çekim miktarı 500 yıldızdır"
+  },
+  "socialBonus": {
+    "title": "Etkini Doğrula",
+    "subtitle": "X'te bizi takip et ve ödülünü hemen al",
+    "reward": "75",
+    "claimed": "Alındı",
+    "connectAndClaim": "Bağlan & Al",
+    "userDataUnavailable": "Kullanıcı verisi mevcut değil",
+    "bonusAlreadyClaimed": "Bonus zaten alındı",
+    "userDocumentNotFound": "Kullanıcı belgesi bulunamadı",
+    "rewardAddedSuccessfully": "Ödül başarıyla eklendi",
+    "failedToAddBonus": "Bonus eklenemedi"
+  },
+  "common": {
+    "copiedToClipboard": "Panoya kopyalandı",
+    "copyFailed": "Kopyalama başarısız",
+    "noWallet": "Cüzdan adresi mevcut değil",
+    "failedOpenLink": "Telegram bağlantısı açılamadı",
+    "openFaq": "SSS'yi Aç",
+    "gotIt": "Anladım"
+  },
+  "stats": {
+    "title": "Sistem Genel Bakışı",
+    "totalStaked": "Toplam Stake",
+    "exchangeRate": "Döviz Kuru",
+    "protocol": "Protokol",
+    "protocolValue": "Stars Base Protokolü"
+  },
+  "tier": {
+    "title": "Artırılmış Ödüller",
+    "apyUpdates": "Stake'iniz büyüdükçe APY otomatik olarak güncellenir",
+    "line1": "Sistem, toplam stake bakiyeniz büyüdükçe APY'nizin arttığı dinamik bir kademe modelini kullanır.",
+    "line2": "Her kademe daha yüksek bir getiri oranının kilidini açar; %12,8'den başlayarak en yüksek seviyede %28,7 APY'ye kadar çıkar.",
+    "line3": "Ek yıldız stake ettiğinizde ve daha yüksek bir kademeye geçtiğinizde, genel APY'niz yeni toplamı baz alarak anında yeniden hesaplanır.",
+    "line4": "Mevcut ve bir sonraki kademe eşikleri gerçek zamanlı olarak görüntülenir; bir sonraki APY artışına doğru ilerlemenizi takip edebilirsiniz."
+  },
+  "withdraw": {
+    "title": "Çekim Seçenekleri",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Telegram Yıldızları",
+    "subtitle": "TON cinsinden çekim yaparken, çekim miktarına bağlı olarak %1'e kadar küçük bir ağ ücreti uygulanabilir.",
+    "line1": "Ödüllerinizi tercihinize göre doğrudan Telegram yıldızları veya Toncoin (TON) olarak çekebilirsiniz.",
+    "line2": "TON cinsinden çekim yaparken, toplam miktara bağlı olarak %1'e kadar küçük bir ağ ücreti uygulanabilir.",
+    "line3": "Tüm çekimler güvenli bir şekilde işlenir ve onaydan sonra genellikle dakikalar içinde tamamlanır.",
+    "line4": "TON çekimiyle devam etmeden önce TON cüzdanınızın bağlı olduğundan emin olun."
+  },
+  "campaign": {
+    "title": "Kampanya Detayları",
+    "minStakeLabel": "Min. Stake",
+    "maxStakeLabel": "Maks. Stake",
+    "line1": "Kampanya, minimum 500 yıldızdan başlayarak stake yapmaya olanak tanır; maksimum stake miktarında herhangi bir sınır yoktur.",
+    "line2": "Tüm yatırımlar doğrudan aktif stake havuzuna katkıda bulunur ve onayın hemen ardından ödül üretmeye başlar."
+  },
+  "header": {
+    "walletConnected": "Cüzdan bağlandı",
+    "copyAddress": "Adresi kopyala",
+    "disconnect": "Bağlantıyı Kes",
+    "disconnectConfirmTitle": "Cüzdan Bağlantısını Kes",
+    "disconnectConfirmMessage": "Cüzdan bağlantısını kesmek istediğinizden emin misiniz?"
+  },
+  "ecosystem": {
+    "title": "Ekosistem Faydaları",
+    "items": {
+      "marketplace": {
+        "title": "Pazaryeri Likidite Desteği",
+        "content": "Stars Base sistemi, Telegram Yıldızları Pazaryeri genelinde stabil likiditenin korunmasına katkıda bulunur.\nStake havuzlarında yıldızları geçici olarak kilitleyerek dolaşımdaki arz azalır ve piyasa aktivitesinin istikrar kazanmasına yardımcı olur.\nBu, tüm katılımcılar için tutarlı satın alma gücü, daha akıcı işlemler ve daha sağlıklı bir ticaret ortamı sağlar.\nDengelenmiş bir likidite modeli, yıldız ekosistemini sürdürülebilir ve ani piyasa dalgalanmalarına karşı dirençli kılar.\nLikidite istikrarı, yıldız ödemelerini entegre eden hem kullanıcılar hem de geliştiriciler arasındaki güveni de pekiştirir."
+      },
+      "antiInflation": {
+        "title": "Enflasyona Karşı Sistem",
+        "content": "Stake etmek, dolaşımdaki yıldız hacmini azaltarak yıldız ekosisteminin enflasyona karşı mekanizmalarını doğrudan destekler.\nDaha fazla kullanıcı stake ettikçe, arz daralması varlığın uzun vadeli değerinin korunmasına yardımcı olur.\nBu süreç, büyümenin istikrarlı ve organik kaldığı kendiliğinden dengeleyici bir ekonomi yaratır.\nSistem, hem erken hem de uzun vadeli katılımcıların tutarlı ve adil getiri koşullarından faydalanmasını sağlar.\nKontrolsüz enflasyonu en aza indirerek ekosistem, tüm kullanıcılar için ödül sürdürülebilirliğini korur."
+      },
+      "infrastructure": {
+        "title": "Altyapı Finansmanı",
+        "content": "Stake faaliyetinin bir kısmı, Telegram'ın yıldız ödeme ve stake altyapısının süregelen gelişimini destekler.\nBu; milyonlarca kullanıcı için güvenli işlemlerin, verimli işleme sistemlerinin ve güvenilir ölçeklenebilirliğin korunmasını kapsar.\nStake'e katılarak kullanıcılar, ekosisteminin performansını ve dayanıklılığını dolaylı olarak iyileştirir.\nAltyapı finansmanı, yıldız ağının hızlı, güvenli ve geleceğe hazır kalmasını sağlar.\nBu kaynaklar, sürekli yükseltmeleri, teknik bakımı ve gelecekteki özellik genişletmelerini mümkün kılar."
+      }
+    }
+  },
+  "modal": {
+    "close": "Kapat",
+    "apy": "APY",
+    "stakedStars": "Stake Edilen Yıldızlar",
+    "amount": "Miktar",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Kilitleme Süresi",
+    "unlockDate": "Kilit Açılma Tarihi",
+    "lockPeriodValue": "{days} gün"
+  },
+  "payment": {
+    "processing": "İşleniyor…",
+    "invalidRequest": "Geçersiz istek.",
+    "unableStart": "Ödeme başlatılamadı. Tekrar deneyin.",
+    "unableOpen": "Ödeme açılamadı. Tekrar deneyin.",
+    "paymentSuccessful": "Ödeme başarılı!",
+    "paymentCancelled": "Ödeme iptal edildi",
+    "stakeTitle": "{amount} yıldız stake et",
+    "stakeLabel": "{amount} yıldız stake et"
+  },
+  "paymentSuccess": {
+    "title": "Stake Onaylandı",
+    "subtitle": "Yatırımınız {days} gün boyunca kilitlendi.",
+    "apy": "APY",
+    "stakedStars": "Stake Edilen Yıldızlar",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Kilitleme Süresi",
+    "unlockDate": "Kilit Açılma Tarihi",
+    "back": "Genel Bakışa Dön",
+    "note": "Talep edilen: {requested} yıldız · Ödenen tutar: {paid} yıldız"
+  },
+  "faqs": {
+    "pageTitle": "Sıkça Sorulan Sorular",
+    "learnMore": "Daha fazla bilgi",
+    "items": {
+      "q1": {
+        "question": "Stars Base ödülleri nereden geliyor?",
+        "answer": "Ödüller, Stars Base ekosisteminin getiri dağıtım modeli aracılığıyla elde edilir.\nHer stake havuzu likidite istikrarına ve ağ altyapısına katkıda bulunarak sürdürülebilir ödül döngüleri yaratır.\nGetirinin bir kısmı ekosistem büyümesinden, pazaryeri faaliyetlerinden ve zaman içinde dağıtılan stake teşviklerinden kaynaklanır.\nHiçbir spekülatif kaynak söz konusu değildir; tüm ödüller gerçek ekosistem değeriyle desteklenmektedir.\nBu yapı, tüm katılımcılar için adalet, uzun vadeli sürdürülebilirlik ve şeffaflığı güvence altına alır."
+      },
+      "q2": {
+        "question": "Stake nedir ve güvenli midir?",
+        "answer": "Stake etmek, ekosistemi desteklemek ve karşılığında pasif ödüller kazanmak için yıldızlarınızı kilitleme sürecidir.\nStake ettiğinizde varlıklarınız güvenli bir şekilde hesabınıza bağlı kalır ve asla üçüncü taraflara aktarılmaz.\nSistem, Telegram'ın güvenli ödeme altyapısı üzerine inşa edilmiş olup tam şifreleme ve şeffaflıkla çalışır.\nTüm işlemler doğrulanır ve denetlenebilir; bu da güvenlik ve değişmezliği garanti eder.\nUzun vadeli değer artışı ve ekosistem katkısı için tasarlanmış, düşük riskli bir mekanizmadır."
+      },
+      "q3": {
+        "question": "Ödüller nasıl hesaplanır?",
+        "answer": "Ödüller, toplam stake bakiyenize ve halihazırda bulunduğunuz kademe seviyesine göre belirlenir.\nHer kademe daha yüksek bir Yıllık Yüzde Getiri (APY) sunar; %12,8'den başlayarak daha yüksek taahhütler için %28,7'ye kadar çıkar.\nAPY, stake miktarınızı artırdıkça dinamik olarak güncellenir; daha büyük stake'ler daha yüksek getiri oranlarının kilidini açar.\nSistem, efektif APY'nizi gerçek zamanlı olarak otomatik yeniden hesaplar.\nTüm ödül hesaplamaları şeffaf ve uygulama panosundan doğrulanabilir niteliktedir."
+      },
+      "q4": {
+        "question": "Yıldızlarımı istediğim zaman çekebilir miyim?",
+        "answer": "Evet, minimum kilitleme süreniz sona erdikten sonra istediğiniz zaman çekim yapabilirsiniz.\nTercihinize göre doğrudan Telegram yıldızları veya Toncoin (TON) olarak çekmeyi seçebilirsiniz.\nTON cinsinden çekimler, miktara bağlı olarak küçük bir ağ ücreti içerebilir.\nTüm işlemler otomatik ve güvenli şekilde dakikalar içinde işlenir.\nSistem, tam izlenebilirlikle sorunsuz bir deneyim sunar."
+      },
+      "q5": {
+        "question": "Daha sonra daha fazla yıldız stake edersem ne olur?",
+        "answer": "Mevcut stake'inize daha fazla yıldız eklediğinizde, toplam bakiyeniz anında güncellenir.\nSistem, yeni kademe seviyenizi otomatik olarak değerlendirir ve karşılık gelen APY artışını uygular.\nÖnceki ödülleriniz etkilenmez; gelecekteki getiriniz ise buna göre artar.\nBu, stake deneyiminizi dinamik kılar — ne kadar çok stake ederseniz, o kadar çok kazanırsınız.\nStake miktarınızı artırırken herhangi bir ceza veya gecikme uygulanmaz."
+      },
+      "q6": {
+        "question": "Stars Base, Telegram ekosistemine nasıl fayda sağlar?",
+        "answer": "Stars Base, Telegram Yıldızları Pazaryeri içindeki likiditeyi ve istikrarı korumaya yardımcı olur.\nAyrıca dolaşımdaki yıldız sayısını azaltarak enflasyona karşı önlemleri destekler.\nTüm stake faaliyetinin bir kısmı, ödeme ve stake altyapısının geliştirilmesine katkıda bulunur.\nBu, daha hızlı ödemeleri, daha yüksek ölçeklenebilirliği ve sürdürülebilir bir ekonomik döngüyü mümkün kılar.\nStake ederek kullanıcılar yalnızca kazanmakla kalmaz, aynı zamanda tüm yıldız ekosisteminin uzun vadeli temelinin güçlenmesine de katkıda bulunur."
+      },
+      "q7": {
+        "question": "APY günlük ve aylık ödülleri nasıl etkiler?",
+        "answer": "APY (Yıllık Yüzde Getiri) yıllık getirinizi temsil eder; ancak ödüller günlük olarak hesaplanır ve eklenir.\nÖrneğin %12,8 APY, aylık yaklaşık ~%1,06'ya karşılık gelir (bileşik). 1.000 yıldız stake ederseniz, bir ay sonra yaklaşık 1.039 yıldıza sahip olursunuz (gösterimde yuvarlama öncesi).\nBakiyeniz her gün artar; bileşik otomatik olarak çalışır — her günün getirisi bir öncekinin üzerine eklenir.\nÖdülleri günlük olarak iki ondalık hassasiyetle hesaplıyoruz; Stake ekranı ise tam sayı bakiyeyi gösterir.\nKısacası, ne kadar uzun süre stake ederseniz, getiriniz zaman içinde o kadar fazla bileşik etkisi yaratır."
+      },
+      "q8": {
+        "question": "Yıldızlarımı kaybetme riskim var mı?",
+        "answer": "Stars Base, varlıklarınızın mülkiyetini elinizde tuttuğunuz anlamına gelen gözetim dışı bir yapı altında faaliyet gösterir.\nFonlarınız her zaman güvenli bir şekilde kilitli ve doğrulanabilir durumdadır.\nSistemin mimarisi şeffaflığı ve güvenliği ön planda tutar.\nTemel değişken, fonlarınızın güvenliği değil, getiri dalgalanmasıdır."
+      },
+      "q9": {
+        "question": "APY'im sabit mi yoksa zamanla değişiyor mu?",
+        "answer": "Stars Base'deki APY dinamiktir ve toplam stake miktarınıza ile sistemin likidite durumuna bağlıdır.\nBaz APY %12,8'den başlarken, daha yüksek stake kademelerine geçtikçe artabilir.\nNadir durumlarda ağ veya likidite ayarlamaları getiri oranını hafifçe etkileyebilir.\nTüm oran değişiklikleri şeffaf olup panonuza anında yansır.\nSistem, değişen koşullar altında getirileri stabil ve rekabetçi tutmayı hedefler."
+      },
+      "q10": {
+        "question": "Stake edebileceğim minimum ve maksimum miktar nedir?",
+        "answer": "Stake'e katılmak için minimum miktar 500 yıldızdır.\nTek seferde maksimum yatırım 100.000 yıldızdır.\nDaha yüksek miktarlar otomatik olarak daha yüksek kademelerin ve daha iyi APY oranlarının kilidini açar.\nBu esnek sistem, hem yeni hem de uzun vadeli kullanıcıları adil biçimde ödüllendirir."
+      },
+      "q11": {
+        "question": "Stars Base'i normal stake platformlarından ayıran nedir?",
+        "answer": "Stars Base, Telegram Yıldızları etrafında inşa edilmiş ekosisteme özgü bir stake modelidir.\nYüksek APY ödüllerini gerçek kullanım alanlarıyla birleştirir; pazaryeri likidite desteği ve altyapıya katkı sağlar.\nSpekülatif stake uygulamalarının aksine, değer akışları ekosistem içinde kalır.\nBu, her kullanıcı için şeffaflığı, uzun vadeli sürdürülebilirliği ve gerçek dünya etkisini güvence altına alır."
+      },
+      "q12": {
+        "question": "Kilitleme süresi boyunca yıldızlarıma ne olur?",
+        "answer": "Yıldızlarınız, 30 günlük minimum kilitleme süresi boyunca sistem içinde güvenle stake edilmiş olarak kalır.\nBu süre zarfında herhangi bir kayıp riski veya harici transfer söz konusu olmaksızın ödül üretmeye devam ederler.\nGetiri büyümenizi pano üzerinden gerçek zamanlı olarak takip edebilirsiniz.\nKilitleme süresi sona erdiğinde, dilediğiniz zaman tam kontrol sahibi olarak çekim yapabilir veya yeniden stake edebilirsiniz."
+      },
+      "q13": {
+        "question": "Stake'imi erken iptal edebilir miyim?",
+        "answer": "Ekosistem istikrarını korumak amacıyla ilk 30 günlük kilitleme süresinde erken çıkış mümkün değildir.\nBu kural, likidite tutarlılığını ve adil getiri dağılımını sağlayarak tüm katılımcıları korur.\nBu sürenin ardından istediğiniz zaman serbestçe çekim yapabilir veya yeniden stake edebilirsiniz.\nSistem, esnekliği sürdürülebilirlikle dengeleyecek şekilde tasarlanmıştır."
+      },
+      "q14": {
+        "question": "Ödüller otomatik olarak dağıtılıyor mu?",
+        "answer": "Evet, ödüller otomatik olarak dağıtılır ve hesap bakiyenizde günlük olarak güncellenir.\nManuel talep veya harici transfer gerekmez.\nBirikimli ödüllerinizi stake panonuzdan gerçek zamanlı olarak takip edebilirsiniz.\nBu otomasyon, tüm kullanıcılar için maksimum kolaylık ve şeffaflığı sağlar."
+      },
+      "q15": {
+        "question": "APY ne sıklıkla güncellenir?",
+        "answer": "APY oranları, aktif kademenize ve sistemin likidite durumuna göre yeniden hesaplanır.\nYeni yıldız stake ettiğinizde veya eklediğinizde güncelleme anında uygulanır.\nBu, ödüllerinizin her zaman en güncel stake seviyenizi yansıtmasını sağlar.\nAyrıca panonuzda güncel olmayan veya gecikmiş getiri verilerinin görünmesini önler."
+      },
+      "q16": {
+        "question": "Stars Base neden kilitleme süresi kullanıyor?",
+        "answer": "30 günlük minimum kilitleme süresi, sistemi dengesizleştirebilecek ani giriş ve çıkışları önleyerek piyasa likiditesinin korunmasına yardımcı olur.\nTüm katılımcılar için getiri oranlarının adil ve tutarlı kalmasını sağlar.\nKilitleme süreleri, ekosistem bütünlüğünü korumak için çoğu stake sisteminde standarttır.\nKilit sona erdikten sonra sınırsız şekilde çekim yapabilir veya yeniden stake edebilirsiniz."
+      },
+      "q17": {
+        "question": "APY oranını hangi faktörler etkileyebilir?",
+        "answer": "APY oranı, genel ekosistem likiditesine, toplam stake hacmine ve dahili piyasa talebine bağlıdır.\nDaha fazla kullanıcı stake ettikçe havuz genişler; bu da dengeyi korumak için getiri ayarlamalarına olanak tanır.\nEk olarak, sistem sağlığı ve piyasa istikrarı, getirileri optimize etmek için sürekli izlenir.\nTüm ayarlamalar adilliği korumak amacıyla algoritmik ve şeffaf şekilde yapılır."
+      },
+      "q18": {
+        "question": "Stars Base'de bileşik nasıl çalışır?",
+        "answer": "Bileşik, günlük ödüllerinizin bakiyenize otomatik olarak eklenmesi anlamına gelir.\nHer yeni gün getiriniz, iki ondalıklı olarak takip edilen güncellenmiş kesin bakiye üzerinden hesaplanır; Stake sayfası ise tam sayı miktarı gösterir.\nBu, zaman içinde bileşik bir büyüme etkisi yaratarak uzun vadeli getirileri artırır."
+      },
+      "q19": {
+        "question": "Sistem güncellemeleri stake bakiyemi etkileyebilir mi?",
+        "answer": "Hayır, güncellemeler veya bakım işlemleri stake edilen miktarınızı ya da biriken ödüllerinizi etkilemez.\nTüm stake verileri güvenli bir şekilde saklanır ve senkronize edilir.\nNadir durumlarda geçici görüntü gecikmeleri yaşanabilir; ancak fonlarınız güvende kalmaya devam eder.\nHerhangi bir planlı bakım söz konusu olduğunda bildirim alacaksınız."
+      }
+    }
+  },
+  "history": {
+    "title": "İşlem Geçmişi",
+    "empty": {
+      "title": "Henüz Geçmiş Yok",
+      "subtitle": "İşlem yapmaya başladığınızda buraya yansıyacak."
+    },
+    "detailsTitle": "İşlem Detayları",
+    "deposit": "Yatırım",
+    "withdraw": "Çekim",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Yatır",
+    "buttonConfirmStake": "Stake'i Onayla",
+    "tagDeposit": "Yatırım",
+    "tagStake": "Stake",
+    "stakeAmountAria": "Yıldız cinsinden stake miktarı",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Minimum yatırım {min} yıldızdır.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Tahmini Getiri",
+    "year": "Yıl",
+    "perYear": "yıllık",
+    "collapseDetails": "Detayları Gizle",
+    "expandDetails": "Detayları Göster",
+    "yearly": "Yıllık",
+    "monthly": "Aylık",
+    "daily": "Günlük",
+    "minimumLock": "Minimum Kilitleme",
+    "minimumLockValue": "{days} gün"
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "profile": {
+    "unknown": "Hindi Kilala",
+    "wallet": "Wallet",
+    "connect": "Ikonekta",
+    "defaultCurrency": "Default na Pera",
+    "language": "Wika",
+    "contactSupport": "Makipag-ugnayan sa Suporta",
+    "faq": "Mga Madalas Itanong",
+    "history": "Kasaysayan",
+    "userAgreement": "Kasunduan ng Gumagamit",
+    "privacyPolicy": "Patakaran sa Privacy",
+    "supportNotice": "Ang mini app na ito ay pinamamahalaan ng Stars Base Digital Services Provider. Ang serbisyo ay independyente at hindi kaanib ng Telegram.",
+    "currencyUpdated": "Na-update na ang pera"
+  },
+  "stake": {
+    "apyTitle": "Ano ang APY?",
+    "apyLine1": "Ang APY ay nangangahulugang Annual Percentage Yield, na kumakatawan sa kabuuang taunang kita kasama ang mga compound na gantimpala.",
+    "apyLine2": "Ang mga rate ay naka-tier at itinalaga bawat stake (lot); ang ipinapakitang APY ay isang weighted average sa lahat ng bukas na lot.",
+    "apyLine3": "Ang iyong kasalukuyang epektibong APY: {apy}%",
+    "apyLine4": "Kasalukuyang presyo: {price} bawat bituin.",
+    "noBalance": "Wala kang balanse na maaaring i-withdraw",
+    "lockNotEnded": "Hindi pa tapos ang iyong lock period.",
+    "lockerNotActive": "Hindi pa aktibo ang Stars Base locker",
+    "withdrawUnavailable": "Hindi available ang withdrawal sa ngayon.",
+    "minimumLock": "Minimum na Lock: 30 Araw",
+    "balance": "Balanse",
+    "apy": "APY",
+    "stakeEarn": "Mag-Stake at Kumita",
+    "deposit": "Mag-deposit",
+    "withdraw": "Mag-withdraw",
+    "minimumWithdrawal": "Ang minimum na withdrawal ay 500 bituin"
+  },
+  "socialBonus": {
+    "title": "I-verify ang Iyong Impluwensya",
+    "subtitle": "Sundan kami sa X at agad na kunin ang gantimpala",
+    "reward": "75",
+    "claimed": "Nakuha na",
+    "connectAndClaim": "Ikonekta at Kunin",
+    "userDataUnavailable": "Hindi available ang datos ng gumagamit",
+    "bonusAlreadyClaimed": "Nakuha na ang bonus",
+    "userDocumentNotFound": "Hindi nahanap ang dokumento ng gumagamit",
+    "rewardAddedSuccessfully": "Matagumpay na naidagdag ang gantimpala",
+    "failedToAddBonus": "Nabigong idagdag ang bonus"
+  },
+  "common": {
+    "copiedToClipboard": "Nakopya sa clipboard",
+    "copyFailed": "Nabigong kumopya",
+    "noWallet": "Walang available na wallet address",
+    "failedOpenLink": "Nabigong buksan ang Telegram link",
+    "openFaq": "Buksan ang FAQ",
+    "gotIt": "Naintindihan ko"
+  },
+  "stats": {
+    "title": "Pangkalahatang-tanaw ng Sistema",
+    "totalStaked": "Kabuuang Naka-stake",
+    "exchangeRate": "Palitang Halaga",
+    "protocol": "Protocol",
+    "protocolValue": "Stars Base Protocol"
+  },
+  "tier": {
+    "title": "Pinahusay na mga Gantimpala",
+    "apyUpdates": "Awtomatikong naa-update ang APY habang lumalaki ang iyong stake",
+    "line1": "Gumagamit ang sistema ng dynamic na tier model, kung saan tumataas ang iyong APY habang lumalaki ang iyong kabuuang naka-stake na balanse.",
+    "line2": "Bawat tier ay nagbubukas ng mas mataas na rate ng kita, simula sa 12.8% hanggang sa 28.7% APY sa pinakamataas na antas.",
+    "line3": "Kapag nag-stake ka ng karagdagang mga bituin at lumipat sa mas mataas na tier, agad na muling kinakalkula ang iyong kabuuang APY batay sa bagong kabuuan.",
+    "line4": "Ang iyong kasalukuyan at susunod na mga threshold ng tier ay ipinapakita nang real-time, na nagbibigay-daan sa iyo na subaybayan ang iyong pag-unlad patungo sa susunod na APY boost."
+  },
+  "withdraw": {
+    "title": "Mga Opsyon sa Withdrawal",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Mga Bituin ng Telegram",
+    "subtitle": "Kapag nag-withdraw sa TON, maaaring may maliit na bayad sa network na hanggang 1% depende sa halaga ng withdrawal.",
+    "line1": "Maaari mong i-withdraw ang iyong mga gantimpala nang direkta sa mga Bituin ng Telegram o sa Toncoin (TON) batay sa iyong kagustuhan.",
+    "line2": "Kapag nag-withdraw sa TON, maaaring may maliit na bayad sa network na hanggang 1% depende sa kabuuang halaga.",
+    "line3": "Lahat ng withdrawal ay pinoproseso nang ligtas at karaniwang natatagpuan sa loob ng ilang minuto pagkatapos ng kumpirmasyon.",
+    "line4": "Bago magpatuloy sa TON withdrawal, tiyaking nakakonekta ang iyong TON wallet."
+  },
+  "campaign": {
+    "title": "Mga Detalye ng Kampanya",
+    "minStakeLabel": "Min. Stake",
+    "maxStakeLabel": "Max. Stake",
+    "line1": "Pinapayagan ng kampanya ang pag-stake mula sa minimum na 500 bituin, nang walang itaas na limitasyon sa maximum na stake.",
+    "line2": "Lahat ng deposito ay direktang nag-aambag sa aktibong staking pool at nagsisimulang mag-generate ng mga gantimpala agad pagkatapos ng kumpirmasyon."
+  },
+  "header": {
+    "walletConnected": "Nakakonekta ang wallet",
+    "copyAddress": "Kopyahin ang address",
+    "disconnect": "Idiskonekta",
+    "disconnectConfirmTitle": "Idiskonekta ang Wallet",
+    "disconnectConfirmMessage": "Sigurado ka bang gusto mong idiskonekta ang wallet?"
+  },
+  "ecosystem": {
+    "title": "Mga Benepisyo ng Ecosystem",
+    "items": {
+      "marketplace": {
+        "title": "Suporta sa Liquidity ng Marketplace",
+        "content": "Ang Stars Base system ay nag-aambag sa pagpapanatili ng matatag na liquidity sa buong Telegram Stars Marketplace.\nSa pamamagitan ng pansamantalang pag-lock ng mga bituin sa mga staking pool, bumababa ang circulating supply, na tumutulong sa pag-stabilize ng aktibidad sa merkado.\nTinitiyak nito ang tuluy-tuloy na kapangyarihang bumili, mas maayos na mga transaksyon, at mas malusog na kapaligiran sa pangangalayon para sa lahat ng kalahok.\nAng balanseng modelo ng liquidity ay nagpapanatiling napapanatili ang ecosystem ng bituin at lumalaban sa biglaang pagbabago ng merkado.\nAng katatagan ng liquidity ay nagpapatibay din ng tiwala sa pagitan ng mga gumagamit at developer na nag-iintegrate ng mga pagbabayad ng bituin."
+      },
+      "antiInflation": {
+        "title": "Sistema Laban sa Inflation",
+        "content": "Ang pag-stake ay direktang sumusuporta sa mga mekanika ng laban sa inflation ng ecosystem ng bituin sa pamamagitan ng pagbabawas ng dami ng mga bituin sa sirkulasyon.\nHabang mas maraming gumagamit ang nag-stake, ang kontraksiyon ng supply ay natural na tumutulong sa pag-preserve ng pangmatagalang halaga ng asset.\nAng prosesong ito ay lumilikha ng self-balancing na ekonomiya kung saan ang paglago ay nananatiling matatag at organiko.\nTinitiyak ng sistema na ang parehong maagang at pangmatagalang kalahok ay nakikinabang mula sa pare-pareho at patas na mga kondisyon ng kita.\nSa pamamagitan ng pagpapaliit ng hindi kinokontrolang inflation, pinoprotektahan ng ecosystem ang sustainability ng gantimpala para sa lahat ng gumagamit."
+      },
+      "infrastructure": {
+        "title": "Pagpopondo ng Imprastraktura",
+        "content": "Ang isang bahagi ng aktibidad ng pag-stake ay sumusuporta sa patuloy na pag-unlad ng imprastraktura ng pagbabayad at pag-stake ng mga bituin ng Telegram.\nKasama dito ang pagpapanatili ng mga ligtas na transaksyon, mahusay na mga sistema ng pagproseso, at maaasahang scalability para sa milyun-milyong gumagamit.\nSa pamamagitan ng paglahok sa pag-stake, ang mga gumagamit ay hindi direktang nag-aambag sa pagpapabuti ng pagganap at katatagan ng ecosystem.\nAng pagpopondo ng imprastraktura ay tinitiyak na ang network ng bituin ay nananatiling mabilis, ligtas, at handa para sa hinaharap.\nAng mga mapagkukunang ito ay nagbibigay-daan sa patuloy na pag-upgrade, teknikal na pagpapanatili, at mga pagpapalawak ng tampok sa hinaharap."
+      }
+    }
+  },
+  "modal": {
+    "close": "Isara",
+    "apy": "APY",
+    "stakedStars": "Mga Naka-stake na Bituin",
+    "amount": "Halaga",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Lock Period",
+    "unlockDate": "Petsa ng Pag-unlock",
+    "lockPeriodValue": "{days} araw"
+  },
+  "payment": {
+    "processing": "Pinoproseso…",
+    "invalidRequest": "Di-wastong kahilingan.",
+    "unableStart": "Hindi masimulan ang pagbabayad. Subukan muli.",
+    "unableOpen": "Hindi mabuksan ang pagbabayad. Subukan muli.",
+    "paymentSuccessful": "Matagumpay ang pagbabayad!",
+    "paymentCancelled": "Nakansela ang pagbabayad",
+    "stakeTitle": "I-stake ang {amount} na Bituin",
+    "stakeLabel": "I-stake ang {amount} na Bituin"
+  },
+  "paymentSuccess": {
+    "title": "Nakumpirma ang Stake",
+    "subtitle": "Ang iyong deposito ay na-lock ng {days} araw.",
+    "apy": "APY",
+    "stakedStars": "Mga Naka-stake na Bituin",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Lock Period",
+    "unlockDate": "Petsa ng Pag-unlock",
+    "back": "Bumalik sa Pangkalahatang-tanaw",
+    "note": "Hiniling: {requested} na Bituin · Siningil: {paid} na Bituin"
+  },
+  "faqs": {
+    "pageTitle": "Mga Madalas Itanong",
+    "learnMore": "Matuto pa",
+    "items": {
+      "q1": {
+        "question": "Saan nagmumula ang mga gantimpala para sa Stars Base?",
+        "answer": "Ang mga gantimpala ay nalilikha sa pamamagitan ng modelo ng pamamahagi ng kita ng ecosystem ng Stars Base.\nBawat staking pool ay nag-aambag sa katatagan ng liquidity at imprastraktura ng network, na lumilikha ng mga napapanatiling cycle ng gantimpala.\nAng bahagi ng kita ay nagmumula sa paglago ng ecosystem, aktibidad sa marketplace, at mga insentibo sa pag-stake na ipinamamahagi sa paglipas ng panahon.\nWalang kasangkot na mga mapagkukunang pabago-bago; lahat ng gantimpala ay sinusuportahan ng tunay na halaga ng ecosystem.\nTinitiyak ng istrukturang ito ang pagiging patas, pangmatagalang sustainability, at transparency para sa lahat ng kalahok."
+      },
+      "q2": {
+        "question": "Ano ang pag-stake at ligtas ba ito?",
+        "answer": "Ang pag-stake ay ang proseso ng pag-lock ng iyong mga bituin para suportahan ang ecosystem at kumita ng mga passive na gantimpala kapalit.\nKapag nag-stake ka, ang iyong mga asset ay nananatiling ligtas na nakatali sa iyong account at hindi kailanman inililipat sa mga third party.\nAng sistema ay itinayo sa ligtas na imprastraktura ng pagbabayad ng Telegram at gumagana nang may buong encryption at transparency.\nLahat ng transaksyon ay napatunayan at naa-audit, na tinitiyak ang kaligtasan at hindi pagbabago.\nIto ay isang mababang-peligro na mekanismo na dinisenyo para sa pangmatagalang paglago ng halaga at kontribusyon sa ecosystem."
+      },
+      "q3": {
+        "question": "Paano kinakalkula ang mga gantimpala?",
+        "answer": "Ang mga gantimpala ay batay sa iyong kabuuang naka-stake na balanse at ang antas ng tier na hawak mo sa kasalukuyan.\nBawat tier ay nag-aalok ng mas mataas na Annual Percentage Yield (APY), simula sa 12.8% at aabot sa 28.7% para sa mas mataas na mga pangako.\nAng APY ay dinamikong nag-a-adjust habang pinapataas mo ang iyong stake; ang mas malalaking stake ay nagbubukas ng mas mataas na mga rate ng kita.\nAwtomatikong muling kinakalkula ng sistema ang iyong epektibong APY nang real-time.\nLahat ng kalkulasyon ng gantimpala ay transparent at mabe-verify sa loob ng dashboard ng app."
+      },
+      "q4": {
+        "question": "Maaari ko bang i-withdraw ang aking mga bituin anumang oras?",
+        "answer": "Oo, available ang mga withdrawal anumang oras pagkatapos matapos ang iyong minimum na lock period.\nMaaari kang pumili na mag-withdraw nang direkta sa mga Bituin ng Telegram o sa Toncoin (TON) batay sa iyong kagustuhan.\nAng mga withdrawal sa TON ay maaaring may kasamang maliit na bayad sa network depende sa halaga.\nLahat ng transaksyon ay awtomatiko at ligtas na pinoproseso sa loob ng ilang minuto.\nTinitiyak ng sistema ang maayos na karanasan na may kumpletong traceability."
+      },
+      "q5": {
+        "question": "Ano ang mangyayari kung mag-stake pa ako ng mga bituin mamaya?",
+        "answer": "Kapag nagdagdag ka ng mas maraming bituin sa iyong kasalukuyang stake, agad na naa-update ang iyong kabuuang balanse.\nAwtomatikong sinusuri ng sistema ang iyong bagong antas ng tier at inilalapat ang kaukulang APY boost.\nAng iyong mga nakaraang gantimpala ay hindi naaapektuhan, habang ang iyong hinaharap na kita ay tumataas nang naaayon.\nGinagawa nitong dynamic ang iyong karanasan sa pag-stake — habang mas marami kang i-stake, mas marami kang kikitain.\nWalang parusa o pagkaantala kapag pinapataas ang iyong halaga ng stake."
+      },
+      "q6": {
+        "question": "Paano nakikinabang ang Stars Base sa ecosystem ng Telegram?",
+        "answer": "Tinutulungan ng Stars Base na mapanatili ang liquidity at katatagan sa loob ng Telegram Stars Marketplace.\nSinusuportahan din nito ang mga hakbang laban sa inflation sa pamamagitan ng pagbabawas ng bilang ng mga bituin sa sirkulasyon.\nAng isang bahagi ng lahat ng aktibidad ng pag-stake ay nag-aambag sa pagpapaunlad ng imprastraktura ng pagbabayad at pag-stake.\nBinibigyang-daan nito ang mas mabilis na mga pagbabayad, mas mataas na scalability, at isang napapanatiling economic loop.\nSa pamamagitan ng pag-stake, hindi lamang kumikita ang mga gumagamit kundi tumutulong din sa pagpapalakas ng pangmatagalang pundasyon ng buong ecosystem ng bituin."
+      },
+      "q7": {
+        "question": "Paano nakakaapekto ang APY sa araw-araw at buwanang mga gantimpala?",
+        "answer": "Ang APY (Annual Percentage Yield) ay kumakatawan sa iyong taunang kita, ngunit ang mga gantimpala ay kinakalkula at idinaragdag araw-araw.\nHalimbawa, ang 12.8% APY ay katumbas ng humigit-kumulang ~1.06% bawat buwan (compound). Kung mag-stake ka ng 1,000 na bituin, makikita mo ang humigit-kumulang 1,039 pagkatapos ng isang buwan (bago mag-round sa display).\nTumataas ang iyong balanse araw-araw; awtomatikong gumagana ang compounding — ang kita ng bawat araw ay nagtatayo sa nakaraang araw.\nInikredit namin ang mga gantimpala araw-araw nang may katumpakan na dalawang decimal, habang ipinapakita ng screen ng Stake ang integer na balanse.\nSa madaling salita, habang mas matagal kang nag-stake, mas lumalaki ang compound ng iyong mga kita sa paglipas ng panahon."
+      },
+      "q8": {
+        "question": "May panganib ba na mawala ang aking mga bituin?",
+        "answer": "Ang Stars Base ay gumagana sa ilalim ng isang non-custodial na istruktura, na nangangahulugang pinapanatili mo ang pagmamay-ari ng iyong mga asset.\nAng iyong mga pondo ay nananatiling ligtas na naka-lock at nabe-verify sa lahat ng oras.\nInuuna ng arkitektura ng sistema ang transparency at seguridad.\nAng pangunahing variable ay pagbabago ng kita, hindi ang kaligtasan ng iyong mga pondo."
+      },
+      "q9": {
+        "question": "Naayos ba ang aking APY o nagbabago ito sa paglipas ng panahon?",
+        "answer": "Ang APY sa Stars Base ay dynamic at depende sa iyong kabuuang naka-stake na halaga at kalusugan ng liquidity ng sistema.\nHabang nagsisimula ang base APY sa 12.8%, maaari itong tumaas habang sumusulong ka sa mas mataas na mga tier ng pag-stake.\nSa mga bihirang kaso, ang mga pagsasaayos ng network o liquidity ay maaaring bahagyang maimpluwensyahan ang rate ng kita.\nLahat ng pagbabago ng rate ay transparent at agad na narerepresenta sa iyong dashboard.\nLayunin ng sistema na panatilihing matatag at mapagkumpetensya ang mga kita sa iba't ibang kundisyon."
+      },
+      "q10": {
+        "question": "Ano ang minimum at maximum na halaga na maaari kong i-stake?",
+        "answer": "Ang minimum na halaga para lumahok sa pag-stake ay 500 na bituin.\nAng maximum bawat solong deposito ay 100,000 na bituin.\nAng mas mataas na halaga ay awtomatikong nagbubukas ng mas mataas na mga tier at mas magagandang rate ng APY.\nAng flexible na sistemang ito ay patas na ginagantimpalaan ang parehong bago at pangmatagalang mga gumagamit."
+      },
+      "q11": {
+        "question": "Ano ang nagpapaiba sa Stars Base mula sa mga regular na platform ng pag-stake?",
+        "answer": "Ang Stars Base ay isang ecosystem-native na modelo ng pag-stake na itinayo sa paligid ng mga Bituin ng Telegram.\nPinagsasama nito ang mataas na mga gantimpala ng APY na may tunay na utility, sinusuportahan ang liquidity ng marketplace at imprastraktura.\nDi tulad ng mga speculative na app ng pag-stake, ang mga daloy ng halaga ay nananatili sa loob ng ecosystem.\nTinitiyak nito ang transparency, pangmatagalang sustainability, at tunay na epekto sa mundo para sa bawat gumagamit."
+      },
+      "q12": {
+        "question": "Ano ang mangyayari sa aking mga bituin sa panahon ng lock period?",
+        "answer": "Ang iyong mga bituin ay nananatiling ligtas na naka-stake sa loob ng sistema para sa tagal ng minimum na lock period na 30 araw.\nSa panahong ito, patuloy silang nagge-generate ng mga gantimpala nang walang anumang panganib ng pagkawala o panlabas na paglilipat.\nMaaari mong subaybayan ang iyong paglago ng kita nang real-time sa pamamagitan ng dashboard.\nKapag natapos na ang lock period, maaari kang mag-withdraw o mag-restake anumang oras nang may buong kontrol."
+      },
+      "q13": {
+        "question": "Maaari ko bang kanselahin ang aking pag-stake nang maaga?",
+        "answer": "Hindi available ang maagang pag-unstake sa panahon ng unang 30-araw na lock period para mapanatili ang katatagan ng ecosystem.\nAng panuntunang ito ay nagpoprotekta sa lahat ng kalahok sa pamamagitan ng pagtitiyak ng konsistensya ng liquidity at patas na pamamahagi ng kita.\nPagkatapos ng panahong ito, maaari kang mag-withdraw o mag-restake anumang oras nang malaya.\nAng sistema ay dinisenyo para balansehin ang flexibility sa sustainability."
+      },
+      "q14": {
+        "question": "Awtomatiko bang ipinamamahagi ang mga gantimpala?",
+        "answer": "Oo, awtomatikong ipinamamahagi ang mga gantimpala at araw-araw na ina-update sa loob ng iyong balanse ng account.\nWalang pangangailangan para sa manu-manong pag-claim o panlabas na paglilipat.\nAng iyong mga pinagsama-samang gantimpala ay maaaring subaybayan nang real-time mula sa iyong staking dashboard.\nTinitiyak ng automation na ito ang maximum na kaginhawaan at transparency para sa lahat ng gumagamit."
+      },
+      "q15": {
+        "question": "Gaano kadalas ina-update ang APY?",
+        "answer": "Ang mga rate ng APY ay muling kinakalkula batay sa iyong aktibong tier at kalusugan ng liquidity ng sistema.\nKapag nag-stake o nagdagdag ka ng mga bituin, agad na inilalapat ang update.\nTinitiyak nito na ang iyong mga gantimpala ay palaging sumasalamin sa iyong pinakabagong antas ng stake.\nPinoprotektahan din nito mula sa paglitaw ng luma o naantalang datos ng kita sa iyong account."
+      },
+      "q16": {
+        "question": "Bakit gumagamit ang Stars Base ng lock period?",
+        "answer": "Ang minimum na 30-araw na lock period ay tumutulong sa pagpapanatili ng liquidity ng merkado at pumipigil sa mabilis na mga daloy ng pondo na maaaring magpaunstable sa sistema.\nTinitiyak nito na ang mga rate ng kita ay nananatiling patas at pare-pareho para sa lahat ng kalahok.\nAng mga lock period ay pamantayan sa karamihan ng mga sistema ng pag-stake para protektahan ang integridad ng ecosystem.\nPagkatapos matapos ang lock, malaya kang mag-withdraw o mag-restake nang walang limitasyon."
+      },
+      "q17": {
+        "question": "Anong mga salik ang maaaring maimpluwensyahan ang rate ng APY?",
+        "answer": "Ang rate ng APY ay depende sa kabuuang liquidity ng ecosystem, kabuuang volume ng pag-stake, at panloob na demand sa merkado.\nKapag mas maraming gumagamit ang nag-stake, lumalaki ang pool, na nagbibigay-daan sa mga pagsasaayos ng kita para mapanatili ang balanse.\nBukod dito, ang kalusugan ng sistema at katatagan ng merkado ay patuloy na sinusubaybayan para i-optimize ang mga kita.\nLahat ng pagsasaayos ay algorithmic at transparent para mapanatili ang pagiging patas."
+      },
+      "q18": {
+        "question": "Paano gumagana ang compounding sa Stars Base?",
+        "answer": "Ang compounding ay nangangahulugang ang iyong mga araw-araw na gantimpala ay awtomatikong idinaragdag sa iyong balanse.\nBawat bagong araw, ang iyong kita ay kinakalkula sa na-update na eksaktong balanse (sinusubaybayan nang may dalawang decimal), habang ipinapakita ng pahina ng Stake ang integer na halaga.\nLumilikha ito ng compounding na epekto ng paglago sa paglipas ng panahon, na nagpapalakas ng pangmatagalang mga kita."
+      },
+      "q19": {
+        "question": "Maaari bang makaapekto ang mga update ng sistema sa aking naka-stake na balanse?",
+        "answer": "Hindi, ang mga update o operasyon ng pagpapanatili ay hindi nakakaapekto sa iyong naka-stake na halaga o naipon na mga gantimpala.\nLahat ng datos ng pag-stake ay ligtas na nakaimbak at naka-synchronize.\nSa mga bihirang kaso, maaaring mangyari ang mga pansamantalang pagkaantala sa display, ngunit nananatiling ligtas ang iyong mga pondo.\nMatatanggap mo ang isang abiso kung may naplanong pagpapanatili."
+      }
+    }
+  },
+  "history": {
+    "title": "Kasaysayan ng Transaksyon",
+    "empty": {
+      "title": "Wala Pang Kasaysayan",
+      "subtitle": "Kapag nagsimula kang gumawa ng mga transaksyon, lalabas ang mga ito dito."
+    },
+    "detailsTitle": "Mga Detalye ng Transaksyon",
+    "deposit": "Deposito",
+    "withdraw": "Withdrawal",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Mag-deposit",
+    "buttonConfirmStake": "Kumpirmahin ang Stake",
+    "tagDeposit": "Deposito",
+    "tagStake": "Stake",
+    "stakeAmountAria": "Halaga ng stake sa mga bituin",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Ang minimum na deposito ay {min} na bituin.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Tinatantyang Kita",
+    "year": "Taon",
+    "perYear": "bawat taon",
+    "collapseDetails": "I-collapse ang mga detalye",
+    "expandDetails": "I-expand ang mga detalye",
+    "yearly": "Taunang",
+    "monthly": "Buwanang",
+    "daily": "Araw-araw",
+    "minimumLock": "Minimum na Lock",
+    "minimumLockValue": "{days} araw"
+  }
+}

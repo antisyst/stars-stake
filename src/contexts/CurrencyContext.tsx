@@ -7,21 +7,65 @@ export type CurrencyCode =
   | 'USD'
   | 'EUR'
   | 'RUB'
-  | 'BRL'
-  | 'IDR'
   | 'TRY'
   | 'UAH'
-  | 'KZT';
+  | 'KZT'
+  | 'UZS'
+  | 'GBP'
+  | 'CNY'
+  | 'INR'
+  | 'JPY'
+  | 'KRW'
+  | 'BRL'
+  | 'IDR'
+  | 'SAR'
+  | 'AED'
+  | 'THB'
+  | 'PHP'
+  | 'EGP'
+  | 'NGN'
+  | 'PLN'
+  | 'CZK'
+  | 'HUF'
+  | 'RON'
+  | 'CHF'
+  | 'CAD'
+  | 'HKD'
+  | 'GEL'
+  | 'ARS'
+  | 'BDT';
 
 export const CURRENCY_OPTIONS: { code: CurrencyCode; label: string }[] = [
   { code: 'USD', label: 'USD — US Dollar' },
   { code: 'EUR', label: 'EUR — Euro' },
   { code: 'RUB', label: 'RUB — Russian Ruble' },
-  { code: 'BRL', label: 'BRL — Brazilian Real' },
-  { code: 'IDR', label: 'IDR — Indonesian Rupiah' },
   { code: 'TRY', label: 'TRY — Turkish Lira' },
   { code: 'UAH', label: 'UAH — Ukrainian Hryvnia' },
   { code: 'KZT', label: 'KZT — Kazakhstani Tenge' },
+  { code: 'UZS', label: 'UZS — Uzbekistani Som' },
+  { code: 'GBP', label: 'GBP — British Pound' },
+  { code: 'CNY', label: 'CNY — Chinese Yuan' },
+  { code: 'INR', label: 'INR — Indian Rupee' },
+  { code: 'JPY', label: 'JPY — Japanese Yen' },
+  { code: 'KRW', label: 'KRW — South Korean Won' },
+  { code: 'BRL', label: 'BRL — Brazilian Real' },
+  { code: 'IDR', label: 'IDR — Indonesian Rupiah' },
+  { code: 'SAR', label: 'SAR — Saudi Riyal' },
+  { code: 'AED', label: 'AED — UAE Dirham' },
+  { code: 'THB', label: 'THB — Thai Baht' },
+  { code: 'PHP', label: 'PHP — Philippine Peso' },
+  { code: 'EGP', label: 'EGP — Egyptian Pound' },
+  { code: 'NGN', label: 'NGN — Nigerian Naira' },
+  { code: 'PLN', label: 'PLN — Polish Złoty' },
+  { code: 'CZK', label: 'CZK — Czech Koruna' },
+  { code: 'HUF', label: 'HUF — Hungarian Forint' },
+  { code: 'RON', label: 'RON — Romanian Leu' },
+  { code: 'CHF', label: 'CHF — Swiss Franc' },
+  { code: 'CAD', label: 'CAD — Canadian Dollar' },
+  { code: 'HKD', label: 'HKD — Hong Kong Dollar' },
+  { code: 'GEL', label: 'GEL — Georgian Lari' },
+  { code: 'ARS', label: 'ARS — Argentine Peso' },
+  { code: 'BDT', label: 'BDT — Bangladeshi Taka' },
 ];
 
 type CurrencyState = {
@@ -42,23 +86,69 @@ const SYMBOLS: Record<CurrencyCode, string> = {
   USD: '$',
   EUR: '€',
   RUB: '₽',
-  BRL: 'R$',
-  IDR: 'Rp',
   TRY: '₺',
   UAH: '₴',
   KZT: '₸',
+  UZS: "soʻm",
+  GBP: '£',
+  CNY: '¥',
+  INR: '₹',
+  JPY: '¥',
+  KRW: '₩',
+  BRL: 'R$',
+  IDR: 'Rp',
+  SAR: '﷼',
+  AED: 'د.إ',
+  THB: '฿',
+  PHP: '₱',
+  EGP: 'E£',
+  NGN: '₦',
+  PLN: 'zł',
+  CZK: 'Kč',
+  HUF: 'Ft',
+  RON: 'lei',
+  CHF: 'CHF',
+  CAD: 'CA$',
+  HKD: 'HK$',
+  GEL: '₾',
+  ARS: '$',
+  BDT: '৳',
 };
 
 const LOCALES: Record<CurrencyCode, string> = {
   USD: 'en-US',
   EUR: 'de-DE',
   RUB: 'ru-RU',
-  BRL: 'pt-BR',
-  IDR: 'id-ID',
   TRY: 'tr-TR',
   UAH: 'uk-UA',
   KZT: 'kk-KZ',
+  UZS: 'uz-UZ',
+  GBP: 'en-GB',
+  CNY: 'zh-CN',
+  INR: 'en-IN',
+  JPY: 'ja-JP',
+  KRW: 'ko-KR',
+  BRL: 'pt-BR',
+  IDR: 'id-ID',
+  SAR: 'ar-SA',
+  AED: 'ar-AE',
+  THB: 'th-TH',
+  PHP: 'fil-PH',
+  EGP: 'ar-EG',
+  NGN: 'en-NG',
+  PLN: 'pl-PL',
+  CZK: 'cs-CZ',
+  HUF: 'hu-HU',
+  RON: 'ro-RO',
+  CHF: 'de-CH',
+  CAD: 'en-CA',
+  HKD: 'zh-HK',
+  GEL: 'ka-GE',
+  ARS: 'es-AR',
+  BDT: 'bn-BD',
 };
+
+const ZERO_DECIMAL: Set<CurrencyCode> = new Set(['JPY', 'KRW', 'IDR', 'HUF', 'UZS']);
 
 export const useCurrency = () => {
   const ctx = useContext(CurrencyContext);
@@ -131,15 +221,16 @@ export const CurrencyProvider: React.FC<React.PropsWithChildren> = ({ children }
 
   const formatFromUsd = (usd: number, digits = 2) => {
     const value = convertUsdToSelected(usd);
+    const effectiveDigits = ZERO_DECIMAL.has(selected) ? 0 : digits;
     try {
       return new Intl.NumberFormat(LOCALES[selected], {
         style: 'currency',
         currency: selected,
-        maximumFractionDigits: digits,
+        maximumFractionDigits: effectiveDigits,
         minimumFractionDigits: selected === 'USD' ? 2 : 0,
       }).format(value);
     } catch {
-      return `${SYMBOLS[selected]}${Number.isInteger(value) ? value.toFixed(0) : value.toFixed(digits)}`;
+      return `${SYMBOLS[selected]}${Number.isInteger(value) ? value.toFixed(0) : value.toFixed(effectiveDigits)}`;
     }
   };
 

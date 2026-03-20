@@ -5,30 +5,37 @@
   bottom: 30px;
   width: calc(100% - 26px);
   border-radius: 18px;
-  background: color-mix(in oklab, var(--app-section-bg) 78%, transparent);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  border: 1px solid color-mix(in oklab, var(--app-section-separator, #000) 12%, transparent);
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.24),
-    0 2px 8px rgba(0, 0, 0, 0.14);
+
+  background: var(--app-glass-bg);
+  backdrop-filter: blur(var(--app-glass-blur)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--app-glass-blur)) saturate(150%);
+  border: 1px solid var(--app-glass-border);
+
   padding: 10px 12px;
   display: flex;
   align-items: center;
   gap: 8px;
   z-index: 10001;
   pointer-events: none;
+  overflow: hidden;
 
-  &::before {
+  &::after {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -1px;
     border-radius: inherit;
     pointer-events: none;
-    mask: linear-gradient(to bottom, rgba(255,255,255,0.65), transparent 38%);
-    background:
-      radial-gradient(120% 60% at 50% -20%,
-        rgba(255,255,255,0.25), rgba(255,255,255,0.06) 45%, transparent 65%);
+    background: radial-gradient(
+      ellipse 80% 50% at 50% 110%,
+      var(--app-glass-glow),
+      transparent 70%
+    );
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
   }
 
   .icon {

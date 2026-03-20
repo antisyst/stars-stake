@@ -11,11 +11,20 @@ import uk from '@/locales/uk.json';
 import vi from '@/locales/vi.json';
 import nl from '@/locales/nl.json';
 import sv from '@/locales/sv.json';
+import tr from '@/locales/tr.json';
+import zh from '@/locales/zh.json';
+import ko from '@/locales/ko.json';
+import fa from '@/locales/fa.json';
+import tl from '@/locales/tl.json';
+import th from '@/locales/th.json';
+import fr from '@/locales/fr.json';
+import pl from '@/locales/pl.json';
+import he from '@/locales/he.json';
 import { useSignal, initData } from '@telegram-apps/sdk-react';
 import { db } from '@/configs/firebaseConfig';
 import { doc, onSnapshot, updateDoc, serverTimestamp, setDoc, getDoc } from 'firebase/firestore';
 
-export type LangCode = 'en' | 'ru' | 'de' | 'it' | 'uz' | 'id' | 'es' | 'pt' | 'uk' | 'vi' | 'nl' | 'sv' | string;
+export type LangCode = 'en' | 'ru' | 'de' | 'it' | 'uz' | 'id' | 'es' | 'pt' | 'uk' | 'vi' | 'nl' | 'sv' | 'tr' | 'zh' | 'ko' | 'fa' | 'tl' | 'th' | 'fr' | 'pl' | 'he' | string;
 
 export type LangItem = {
   code: LangCode;
@@ -33,18 +42,27 @@ interface TranslationObject {
 }
 
 export const LANGS: LangItem[] = [
-  { code: 'en', label: 'English', nativeLabel: 'English' },
-  { code: 'ru', label: 'Russian', nativeLabel: 'Русский' },
-  { code: 'de', label: 'German', nativeLabel: 'Deutsch' },
-  { code: 'it', label: 'Italian', nativeLabel: 'Italiano' },
-  { code: 'uz', label: 'Uzbek', nativeLabel: "Oʻzbekcha" },
-  { code: 'id', label: 'Indonesian', nativeLabel: 'Bahasa Indonesia' },
-  { code: 'es', label: 'Spanish', nativeLabel: 'Español' },
-  { code: 'pt', label: 'Portuguese', nativeLabel: 'Português' },
-  { code: 'uk', label: 'Ukrainian', nativeLabel: 'Українська' },
-  { code: 'vi', label: 'Vietnamese', nativeLabel: 'Tiếng Việt' },
-  { code: 'nl', label: 'Dutch', nativeLabel: 'Nederlands' },
-  { code: 'sv', label: 'Swedish', nativeLabel: 'Svenska' },
+  { code: 'en', label: 'English',              nativeLabel: 'English' },
+  { code: 'ru', label: 'Russian',              nativeLabel: 'Русский' },
+  { code: 'uk', label: 'Ukrainian',            nativeLabel: 'Українська' },
+  { code: 'tr', label: 'Turkish',              nativeLabel: 'Türkçe' },
+  { code: 'uz', label: 'Uzbek',                nativeLabel: "Oʻzbekcha" },
+  { code: 'fa', label: 'Persian',              nativeLabel: 'فارسی' },
+  { code: 'de', label: 'German',               nativeLabel: 'Deutsch' },
+  { code: 'es', label: 'Spanish',              nativeLabel: 'Español' },
+  { code: 'pt', label: 'Portuguese',           nativeLabel: 'Português' },
+  { code: 'zh', label: 'Chinese (Simplified)', nativeLabel: '简体中文' },
+  { code: 'id', label: 'Indonesian',           nativeLabel: 'Bahasa Indonesia' },
+  { code: 'vi', label: 'Vietnamese',           nativeLabel: 'Tiếng Việt' },
+  { code: 'tl', label: 'Filipino',             nativeLabel: 'Filipino' },
+  { code: 'ko', label: 'Korean',               nativeLabel: '한국어' },
+  { code: 'fr', label: 'French',               nativeLabel: 'Français' },
+  { code: 'it', label: 'Italian',              nativeLabel: 'Italiano' },
+  { code: 'pl', label: 'Polish',               nativeLabel: 'Polski' },
+  { code: 'nl', label: 'Dutch',                nativeLabel: 'Nederlands' },
+  { code: 'th', label: 'Thai',                 nativeLabel: 'ภาษาไทย' },
+  { code: 'sv', label: 'Swedish',              nativeLabel: 'Svenska' },
+  { code: 'he', label: 'Hebrew',               nativeLabel: 'עברית' },
 ];
 
 const TRANSLATIONS: Record<string, TranslationObject> = {
@@ -60,6 +78,15 @@ const TRANSLATIONS: Record<string, TranslationObject> = {
   vi,
   nl,
   sv,
+  tr,
+  zh,
+  ko,
+  fa,
+  tl,
+  th,
+  fr,
+  pl,
+  he,
 };
 
 type I18nContextType = {
@@ -100,6 +127,24 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
       ? 'nl'
       : tgLang.startsWith('sv')
       ? 'sv'
+      : tgLang.startsWith('tr')
+      ? 'tr'
+      : tgLang.startsWith('zh')
+      ? 'zh'
+      : tgLang.startsWith('ko')
+      ? 'ko'
+      : tgLang.startsWith('fa')
+      ? 'fa'
+      : tgLang.startsWith('tl')
+      ? 'tl'
+      : tgLang.startsWith('th')
+      ? 'th'
+      : tgLang.startsWith('fr')
+      ? 'fr'
+      : tgLang.startsWith('pl')
+      ? 'pl'
+      : tgLang.startsWith('he')
+      ? 'he'
       : tgLang.startsWith('en')
       ? 'en'
       : tgLang;
@@ -167,6 +212,24 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
             ? 'nl'
             : tgLang.startsWith('sv')
             ? 'sv'
+            : tgLang.startsWith('tr')
+            ? 'tr'
+            : tgLang.startsWith('zh')
+            ? 'zh'
+            : tgLang.startsWith('ko')
+            ? 'ko'
+            : tgLang.startsWith('fa')
+            ? 'fa'
+            : tgLang.startsWith('tl')
+            ? 'tl'
+            : tgLang.startsWith('th')
+            ? 'th'
+            : tgLang.startsWith('fr')
+            ? 'fr'
+            : tgLang.startsWith('pl')
+            ? 'pl'
+            : tgLang.startsWith('he')
+            ? 'he'
             : tgLang.startsWith('en')
             ? 'en'
             : tgLang;

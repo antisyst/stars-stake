@@ -1,0 +1,258 @@
+{
+  "profile": {
+    "unknown": "Nieznany",
+    "wallet": "Portfel",
+    "connect": "Połącz",
+    "defaultCurrency": "Domyślna waluta",
+    "language": "Język",
+    "contactSupport": "Skontaktuj się z pomocą",
+    "faq": "FAQ",
+    "history": "Historia",
+    "userAgreement": "Umowa użytkownika",
+    "privacyPolicy": "Polityka prywatności",
+    "supportNotice": "Mini aplikacja jest obsługiwana przez Stars Base Digital Services Provider. Usługa jest niezależna i nie jest powiązana z Telegramem.",
+    "currencyUpdated": "Waluta zaktualizowana"
+  },
+  "stake": {
+    "apyTitle": "Czym jest APY?",
+    "apyLine1": "APY oznacza Roczną Stopę Zwrotu i reprezentuje całkowity roczny zwrot uwzględniający składane nagrody.",
+    "apyLine2": "Stawki są podzielone na poziomy i przypisywane do każdej stawki (lot); wyświetlany APY to średnia ważona wszystkich otwartych lotów.",
+    "apyLine3": "Twoje obecne efektywne APY: {apy}%",
+    "apyLine4": "Aktualna cena: {price} za gwiazdkę.",
+    "noBalance": "Nie masz salda do wypłaty",
+    "lockNotEnded": "Twój okres blokady jeszcze się nie zakończył.",
+    "lockerNotActive": "Blokada Stars Base nie jest jeszcze aktywna",
+    "withdrawUnavailable": "Wypłata nie jest teraz dostępna.",
+    "minimumLock": "Minimalna blokada: 30 dni",
+    "balance": "Saldo",
+    "apy": "APY",
+    "stakeEarn": "Stakuj i zarabiaj",
+    "deposit": "Wpłać",
+    "withdraw": "Wypłać",
+    "minimumWithdrawal": "Minimalna wypłata to 500 gwiazdek"
+  },
+  "socialBonus": {
+    "title": "Zweryfikuj swój wpływ",
+    "subtitle": "Obserwuj nas na X i natychmiast odbierz nagrodę",
+    "reward": "75",
+    "claimed": "Odebrano",
+    "connectAndClaim": "Połącz i odbierz",
+    "userDataUnavailable": "Dane użytkownika są niedostępne",
+    "bonusAlreadyClaimed": "Bonus już odebrany",
+    "userDocumentNotFound": "Nie znaleziono dokumentu użytkownika",
+    "rewardAddedSuccessfully": "Nagroda dodana pomyślnie",
+    "failedToAddBonus": "Nie udało się dodać bonusu"
+  },
+  "common": {
+    "copiedToClipboard": "Skopiowano do schowka",
+    "copyFailed": "Kopiowanie nie powiodło się",
+    "noWallet": "Brak dostępnego adresu portfela",
+    "failedOpenLink": "Nie udało się otworzyć linku Telegram",
+    "openFaq": "Otwórz FAQ",
+    "gotIt": "Rozumiem"
+  },
+  "stats": {
+    "title": "Przegląd systemu",
+    "totalStaked": "Łącznie stakowane",
+    "exchangeRate": "Kurs wymiany",
+    "protocol": "Protokół",
+    "protocolValue": "Protokół Stars Base"
+  },
+  "tier": {
+    "title": "Zwiększone nagrody",
+    "apyUpdates": "APY aktualizuje się automatycznie wraz ze wzrostem Twojej stawki",
+    "line1": "System wykorzystuje dynamiczny model poziomów, w którym APY rośnie wraz ze wzrostem całkowitego zestakowanego salda.",
+    "line2": "Każdy poziom odblokowuje wyższą stopę zwrotu, zaczynając od 12,8% i osiągając do 28,7% APY na najwyższym poziomie.",
+    "line3": "Gdy stakujesz dodatkowe gwiazdki i przechodzisz na wyższy poziom, całkowite APY jest natychmiast przeliczane na podstawie nowej sumy.",
+    "line4": "Progi Twojego obecnego i następnego poziomu są wyświetlane w czasie rzeczywistym, umożliwiając śledzenie postępów w kierunku kolejnego wzrostu APY."
+  },
+  "withdraw": {
+    "title": "Opcje wypłaty",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Gwiazdki Telegram",
+    "subtitle": "Przy wypłacie w TON może zostać naliczona mała opłata sieciowa do 1%, zależnie od kwoty wypłaty.",
+    "line1": "Możesz wypłacić nagrody bezpośrednio w gwiazdkach Telegram lub w Toncoin (TON) według własnych preferencji.",
+    "line2": "Przy wypłacie w TON może zostać naliczona mała opłata sieciowa do 1%, zależnie od całkowitej kwoty.",
+    "line3": "Wszystkie wypłaty są przetwarzane bezpiecznie i zazwyczaj realizowane w ciągu kilku minut po potwierdzeniu.",
+    "line4": "Przed dokonaniem wypłaty w TON upewnij się, że Twój portfel TON jest podłączony."
+  },
+  "campaign": {
+    "title": "Szczegóły kampanii",
+    "minStakeLabel": "Min. stawka",
+    "maxStakeLabel": "Maks. stawka",
+    "line1": "Kampania umożliwia stakowanie od minimum 500 gwiazdek, bez górnego limitu maksymalnej stawki.",
+    "line2": "Wszystkie depozyty trafiają bezpośrednio do aktywnej puli stakowania i zaczynają generować nagrody natychmiast po potwierdzeniu."
+  },
+  "header": {
+    "walletConnected": "Portfel połączony",
+    "copyAddress": "Kopiuj adres",
+    "disconnect": "Rozłącz",
+    "disconnectConfirmTitle": "Rozłącz portfel",
+    "disconnectConfirmMessage": "Czy na pewno chcesz rozłączyć portfel?"
+  },
+  "ecosystem": {
+    "title": "Korzyści ekosystemu",
+    "items": {
+      "marketplace": {
+        "title": "Wsparcie płynności rynku",
+        "content": "System Stars Base przyczynia się do utrzymania stabilnej płynności na całym rynku gwiazdek Telegram.\nPoprzez tymczasowe blokowanie gwiazdek w pulach stakowania podaż w obiegu maleje, co pomaga stabilizować aktywność rynkową.\nZapewnia to uczestnikom stałą siłę nabywczą, płynniejsze transakcje i zdrowsze środowisko handlowe.\nZrównoważony model płynności utrzymuje ekosystem gwiazdek jako zrównoważony i odporny na nagłe wahania rynkowe.\nStabilność płynności wzmacnia również zaufanie między użytkownikami a programistami integrującymi płatności gwiazdkami."
+      },
+      "antiInflation": {
+        "title": "System antyinflacyjny",
+        "content": "Stakowanie bezpośrednio wspiera mechanizmy antyinflacyjne ekosystemu gwiazdek poprzez zmniejszenie wolumenu gwiazdek w obiegu.\nIm więcej użytkowników stakuje, tym bardziej kurczenie się podaży naturalnie pomaga zachować długoterminową wartość aktywa.\nProces ten tworzy gospodarkę samobalansującą się, w której wzrost pozostaje stabilny i organiczny.\nSystem zapewnia, że zarówno wcześni, jak i długoterminowi uczestnicy korzystają ze stałych i uczciwych warunków zwrotu.\nMinimalizując niekontrolowaną inflację, ekosystem chroni trwałość nagród dla wszystkich użytkowników."
+      },
+      "infrastructure": {
+        "title": "Finansowanie infrastruktury",
+        "content": "Część aktywności stakowania wspiera ciągły rozwój infrastruktury płatności i stakowania gwiazdek Telegram.\nObejmuje to utrzymanie bezpiecznych transakcji, wydajnych systemów przetwarzania i niezawodnej skalowalności dla milionów użytkowników.\nPrzez uczestnictwo w stakowania użytkownicy pośrednio przyczyniają się do poprawy wydajności i odporności ekosystemu.\nFinansowanie infrastruktury zapewnia, że sieć gwiazdek pozostaje szybka, bezpieczna i gotowa na przyszłość.\nZasoby te umożliwiają ciągłe ulepszenia, konserwację techniczną i przyszłe rozszerzenia funkcjonalności."
+      }
+    }
+  },
+  "modal": {
+    "close": "Zamknij",
+    "apy": "APY",
+    "stakedStars": "Zestakowane gwiazdki",
+    "amount": "Kwota",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Okres blokady",
+    "unlockDate": "Data odblokowania",
+    "lockPeriodValue": "{days} dni"
+  },
+  "payment": {
+    "processing": "Przetwarzanie…",
+    "invalidRequest": "Nieprawidłowe żądanie.",
+    "unableStart": "Nie można uruchomić płatności. Spróbuj ponownie.",
+    "unableOpen": "Nie można otworzyć płatności. Spróbuj ponownie.",
+    "paymentSuccessful": "Płatność zakończona sukcesem!",
+    "paymentCancelled": "Płatność anulowana",
+    "stakeTitle": "Stakuj {amount} gwiazdek",
+    "stakeLabel": "Stakuj {amount} gwiazdek"
+  },
+  "paymentSuccess": {
+    "title": "Stawka potwierdzona",
+    "subtitle": "Twój depozyt został zablokowany na {days} dni.",
+    "apy": "APY",
+    "stakedStars": "Zestakowane gwiazdki",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Okres blokady",
+    "unlockDate": "Data odblokowania",
+    "back": "Powrót do przeglądu",
+    "note": "Zamówiono: {requested} gwiazdek · Naliczono: {paid} gwiazdek"
+  },
+  "faqs": {
+    "pageTitle": "Często zadawane pytania",
+    "learnMore": "Dowiedz się więcej",
+    "items": {
+      "q1": {
+        "question": "Skąd pochodzą nagrody w Stars Base?",
+        "answer": "Nagrody są generowane przez model dystrybucji zysków ekosystemu Stars Base.\nKażda pula stakowania przyczynia się do stabilności płynności i infrastruktury sieciowej, co z kolei tworzy zrównoważone cykle nagród.\nCzęść zysku pochodzi z wzrostu ekosystemu, aktywności rynkowej i zachęt do stakowania dystrybuowanych w czasie.\nNie są zaangażowane żadne źródła spekulacyjne; wszystkie nagrody są wspierane przez rzeczywistą wartość ekosystemu.\nStruktura ta zapewnia uczciwość, długoterminową trwałość i przejrzystość dla wszystkich uczestników."
+      },
+      "q2": {
+        "question": "Czym jest stakowanie i czy jest bezpieczne?",
+        "answer": "Stakowanie to proces blokowania gwiazdek w celu wsparcia ekosystemu i uzyskiwania pasywnych nagród w zamian.\nPodczas stakowania Twoje aktywa pozostają bezpiecznie powiązane z Twoim kontem i nigdy nie są przekazywane osobom trzecim.\nSystem jest zbudowany na bezpiecznej infrastrukturze płatniczej Telegrama i działa z pełnym szyfrowaniem i przejrzystością.\nWszystkie transakcje są weryfikowane i audytowalne, zapewniając bezpieczeństwo i niezmienność.\nTo mechanizm niskiego ryzyka zaprojektowany dla długoterminowego wzrostu wartości i wkładu w ekosystem."
+      },
+      "q3": {
+        "question": "Jak obliczane są nagrody?",
+        "answer": "Nagrody są oparte na całkowitym zestakowanym saldzie i aktualnie posiadanym poziomie.\nKażdy poziom oferuje wyższe Roczne Oprocentowanie (APY), zaczynając od 12,8% i osiągając 28,7% dla wyższych zobowiązań.\nAPY dynamicznie dostosowuje się wraz ze zwiększaniem stawki; większe stawki odblokowują wyższe stopy zwrotu.\nSystem automatycznie przelicza Twoje efektywne APY w czasie rzeczywistym.\nWszystkie obliczenia nagród są przejrzyste i weryfikowalne w panelu aplikacji."
+      },
+      "q4": {
+        "question": "Czy mogę wypłacić gwiazdki w dowolnym momencie?",
+        "answer": "Tak, wypłaty są dostępne w dowolnym momencie po zakończeniu minimalnego okresu blokady.\nMożesz wybrać wypłatę bezpośrednio w gwiazdkach Telegram lub w Toncoin (TON) według własnych preferencji.\nWypłaty w TON mogą wiązać się z niewielką opłatą sieciową w zależności od kwoty.\nWszystkie transakcje są przetwarzane automatycznie i bezpiecznie w ciągu kilku minut.\nSystem zapewnia płynną obsługę z pełną możliwością śledzenia."
+      },
+      "q5": {
+        "question": "Co się stanie, jeśli później zestakuję więcej gwiazdek?",
+        "answer": "Gdy dodasz więcej gwiazdek do istniejącej stawki, całkowite saldo aktualizuje się natychmiast.\nSystem automatycznie ocenia Twój nowy poziom i stosuje odpowiednie zwiększenie APY.\nTwoje poprzednie nagrody nie są naruszane, a przyszłe zyski rosną odpowiednio.\nCzyni to Twoje doświadczenie ze stakowania dynamicznym — im więcej stakujesz, tym więcej zarabiasz.\nPrzy zwiększaniu kwoty stawki nie ma kar ani opóźnień."
+      },
+      "q6": {
+        "question": "Jak Stars Base przynosi korzyści ekosystemowi Telegram?",
+        "answer": "Stars Base pomaga utrzymać płynność i stabilność w ramach rynku gwiazdek Telegram.\nWspiera również działania antyinflacyjne poprzez zmniejszenie liczby gwiazdek w obiegu.\nCzęść całej aktywności stakowania przyczynia się do rozwoju infrastruktury płatności i stakowania.\nUmożliwia to szybsze płatności, wyższą skalowalność i zrównoważoną pętlę ekonomiczną.\nPrzez stakowanie użytkownicy nie tylko zarabiają, ale również pomagają wzmacniać długoterminowe fundamenty całego ekosystemu gwiazdek."
+      },
+      "q7": {
+        "question": "Jak APY wpływa na nagrody dzienne i miesięczne?",
+        "answer": "APY (Roczna Stopa Zwrotu) reprezentuje roczny zwrot, ale nagrody są obliczane i dodawane codziennie.\nNa przykład APY 12,8% odpowiada około ~1,06% miesięcznie (składane). Jeśli zestakujesz 1 000 gwiazdek, po miesiącu zobaczysz około 1 039 (przed zaokrągleniem w wyświetlaniu).\nSaldo rośnie każdego dnia; składanie działa automatycznie — zysk każdego dnia buduje się na poprzednim.\nNagrody zapisujemy codziennie z dokładnością do dwóch miejsc po przecinku, podczas gdy ekran stakowania pokazuje saldo całkowite.\nKrótko mówiąc, im dłużej stakujesz, tym bardziej Twoje zwroty składają się w czasie."
+      },
+      "q8": {
+        "question": "Czy istnieje ryzyko utraty gwiazdek?",
+        "answer": "Stars Base działa w ramach struktury bez powiernictwa, co oznacza, że zachowujesz własność swoich aktywów.\nTwoje środki pozostają bezpiecznie zablokowane i weryfikowalne w każdym momencie.\nArchitektura systemu stawia na pierwszym miejscu przejrzystość i bezpieczeństwo.\nGłówną zmienną są wahania zwrotów, a nie bezpieczeństwo Twoich środków."
+      },
+      "q9": {
+        "question": "Czy moje APY jest stałe, czy zmienia się w czasie?",
+        "answer": "APY w Stars Base jest dynamiczne i zależy od całkowitej zestakowanej kwoty i kondycji płynności systemu.\nChociaż bazowe APY zaczyna się od 12,8%, może wzrastać wraz z postępem na wyższe poziomy stakowania.\nW rzadkich przypadkach dostosowania sieci lub płynności mogą nieznacznie wpłynąć na stopę zwrotu.\nWszystkie zmiany stawek są przejrzyste i natychmiast odzwierciedlane w Twoim panelu.\nSystem dąży do utrzymania stabilnych i konkurencyjnych zwrotów w różnych warunkach."
+      },
+      "q10": {
+        "question": "Jaka jest minimalna i maksymalna kwota, którą mogę zestakować?",
+        "answer": "Minimalna kwota uczestnictwa w stakowania wynosi 500 gwiazdek.\nMaksimum na jeden depozyt to 100 000 gwiazdek.\nWyższe kwoty automatycznie odblokowują wyższe poziomy i lepsze stawki APY.\nTen elastyczny system sprawiedliwie nagradza zarówno nowych, jak i długoterminowych użytkowników."
+      },
+      "q11": {
+        "question": "Co wyróżnia Stars Base spośród zwykłych platform stakowania?",
+        "answer": "Stars Base to natywny dla ekosystemu model stakowania zbudowany wokół gwiazdek Telegram.\nŁączy wysokie nagrody APY z rzeczywistą użytecznością, wspierając płynność rynku i infrastrukturę.\nW przeciwieństwie do spekulatywnych aplikacji stakowania, przepływy wartości pozostają w ekosystemie.\nZapewnia to przejrzystość, długoterminową trwałość i realny wpływ dla każdego użytkownika."
+      },
+      "q12": {
+        "question": "Co dzieje się z moimi gwiazdkami podczas okresu blokady?",
+        "answer": "Twoje gwiazdki pozostają bezpiecznie zestakowane w systemie przez czas trwania minimalnego 30-dniowego okresu blokady.\nW tym czasie nadal generują nagrody bez żadnego ryzyka utraty lub zewnętrznego transferu.\nMożesz monitorować wzrost zysku w czasie rzeczywistym przez panel.\nPo zakończeniu okresu blokady możesz wypłacić lub ponownie stakować w dowolnym momencie z pełną kontrolą."
+      },
+      "q13": {
+        "question": "Czy mogę wcześniej anulować stakowanie?",
+        "answer": "Wcześniejsze wycofanie stakowania nie jest dostępne podczas początkowego 30-dniowego okresu blokady w celu utrzymania stabilności ekosystemu.\nZasada ta chroni wszystkich uczestników, zapewniając spójność płynności i sprawiedliwą dystrybucję zysku.\nPo tym czasie możesz swobodnie wypłacić lub ponownie stakować w dowolnym momencie.\nSystem jest zaprojektowany tak, aby równoważyć elastyczność z trwałością."
+      },
+      "q14": {
+        "question": "Czy nagrody są dystrybuowane automatycznie?",
+        "answer": "Tak, nagrody są dystrybuowane automatycznie i aktualizowane codziennie w saldzie Twojego konta.\nNie ma potrzeby ręcznego odbioru ani zewnętrznych transferów.\nSkumulowane nagrody można śledzić w czasie rzeczywistym z poziomu panelu stakowania.\nTa automatyzacja zapewnia maksymalną wygodę i przejrzystość dla wszystkich użytkowników."
+      },
+      "q15": {
+        "question": "Jak często aktualizowane jest APY?",
+        "answer": "Stawki APY są przeliczane na podstawie aktywnego poziomu i kondycji płynności systemu.\nGdy stakujesz lub dodajesz gwiazdki, aktualizacja jest stosowana natychmiast.\nZapewnia to, że Twoje nagrody zawsze odzwierciedlają Twój najnowszy poziom stakowania.\nZapobiega to również pojawianiu się przestarzałych lub opóźnionych danych o zysku na Twoim koncie."
+      },
+      "q16": {
+        "question": "Dlaczego Stars Base używa okresu blokady?",
+        "answer": "Minimalny 30-dniowy okres blokady pomaga utrzymać płynność rynku i zapobiega szybkiemu napływowi i odpływowi środków, które mogłyby zdestabilizować system.\nZapewnia uczciwe i stałe stopy zwrotu dla wszystkich uczestników.\nOkresy blokady są standardem w większości systemów stakowania, aby chronić integralność ekosystemu.\nPo zakończeniu blokady możesz swobodnie wypłacić lub ponownie stakować bez ograniczeń."
+      },
+      "q17": {
+        "question": "Jakie czynniki mogą wpływać na stopę APY?",
+        "answer": "Stopa APY zależy od ogólnej płynności ekosystemu, całkowitego wolumenu stakowania i wewnętrznego popytu rynkowego.\nGdy więcej użytkowników stakuje, pula rośnie, umożliwiając dostosowania zysku w celu utrzymania równowagi.\nPonadto kondycja systemu i stabilność rynku są stale monitorowane w celu optymalizacji zwrotów.\nWszystkie dostosowania są algorytmiczne i przejrzyste, aby zachować uczciwość."
+      },
+      "q18": {
+        "question": "Jak działa składanie w Stars Base?",
+        "answer": "Składanie oznacza, że Twoje dzienne nagrody są automatycznie dodawane do salda.\nKażdego nowego dnia zysk jest obliczany na podstawie zaktualizowanego dokładnego salda (śledzonego z dokładnością do dwóch miejsc po przecinku), podczas gdy strona stakowania wyświetla liczbę całkowitą.\nTworzy to efekt złożonego wzrostu w czasie, zwiększając długoterminowe zwroty."
+      },
+      "q19": {
+        "question": "Czy aktualizacje systemu mogą wpłynąć na moje saldo stakowania?",
+        "answer": "Nie, aktualizacje ani operacje konserwacyjne nie wpływają na Twoją zestakowaną kwotę ani zgromadzone nagrody.\nWszystkie dane stakowania są bezpiecznie przechowywane i synchronizowane.\nW rzadkich przypadkach mogą wystąpić tymczasowe opóźnienia w wyświetlaniu, ale Twoje środki pozostają bezpieczne.\nOtrzymasz powiadomienie, jeśli zaplanowana jest jakaś konserwacja."
+      }
+    }
+  },
+  "history": {
+    "title": "Historia transakcji",
+    "empty": {
+      "title": "Brak historii",
+      "subtitle": "Gdy zaczniesz dokonywać transakcji, pojawią się tutaj."
+    },
+    "detailsTitle": "Szczegóły transakcji",
+    "deposit": "Wpłata",
+    "withdraw": "Wypłata",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Wpłać",
+    "buttonConfirmStake": "Potwierdź stakowanie",
+    "tagDeposit": "Wpłata",
+    "tagStake": "Stakowanie",
+    "stakeAmountAria": "Kwota stakowania w gwiazdkach",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Minimalna wpłata to {min} gwiazdek.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Szacowany zysk",
+    "year": "Rok",
+    "perYear": "rocznie",
+    "collapseDetails": "Zwiń szczegóły",
+    "expandDetails": "Rozwiń szczegóły",
+    "yearly": "Roczny",
+    "monthly": "Miesięczny",
+    "daily": "Dzienny",
+    "minimumLock": "Minimalna blokada",
+    "minimumLockValue": "{days} dni"
+  }
+}

@@ -16,8 +16,11 @@ const iosDark: Palette = {
   destructiveText: '#eb5545',
   sectionSeparator: '#545458',
   bottomBarBg: '#1d1d1d',
-  glassBg: 'rgba(44, 44, 46, 0.7)',
-  glassBorder: 'rgba(255, 255, 255, 0.08)',
+  glassBg: 'rgba(30, 30, 32, 0.55)',
+  glassBorder: 'rgba(255, 255, 255, 0.10)',
+  glassHighlight: 'rgba(255, 255, 255, 0.07)',
+  glassShadow: '0 2px 0.5px rgba(255,255,255,0.06) inset, 0 8px 32px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.04) inset',
+  glassGlow: 'rgba(62, 136, 247, 0.08)',
 };
 
 const iosLight: Palette = {
@@ -36,8 +39,11 @@ const iosLight: Palette = {
   destructiveText: '#ff3b30',
   sectionSeparator: '#c8c7cc',
   bottomBarBg: '#f2f2f2',
-  glassBg: 'rgba(255, 255, 255, 0.7)',
-  glassBorder: 'rgba(0, 0, 0, 0.06)',
+  glassBg: 'rgba(255, 255, 255, 0.60)',
+  glassBorder: 'rgba(255, 255, 255, 0.80)',
+  glassHighlight: 'rgba(255, 255, 255, 0.90)',
+  glassShadow: '0 2px 1px rgba(255,255,255,0.9) inset, 0 8px 32px rgba(0,0,0,0.10), 0 1px 0 rgba(255,255,255,0.6) inset',
+  glassGlow: 'rgba(0, 122, 255, 0.06)',
 };
 
 const androidDark: Palette = {
@@ -56,8 +62,11 @@ const androidDark: Palette = {
   destructiveText: '#ee686f',
   sectionSeparator: '#0d1218',
   bottomBarBg: '#151e27',
-  glassBg: 'rgba(29, 39, 51, 0.85)',
-  glassBorder: 'rgba(255, 255, 255, 0.05)',
+  glassBg: 'rgba(22, 32, 44, 0.60)',
+  glassBorder: 'rgba(94, 171, 225, 0.12)',
+  glassHighlight: 'rgba(100, 181, 239, 0.06)',
+  glassShadow: '0 2px 0.5px rgba(100,181,239,0.07) inset, 0 8px 32px rgba(0,0,0,0.50), 0 1px 0 rgba(100,181,239,0.04) inset',
+  glassGlow: 'rgba(80, 168, 235, 0.09)',
 };
 
 const androidLight: Palette = {
@@ -76,8 +85,11 @@ const androidLight: Palette = {
   destructiveText: '#cc2929',
   sectionSeparator: '#d9d9d9',
   bottomBarBg: '#f0f0f0',
-  glassBg: 'rgba(255, 255, 255, 0.8)',
-  glassBorder: 'rgba(0, 0, 0, 0.05)',
+  glassBg: 'rgba(255, 255, 255, 0.65)',
+  glassBorder: 'rgba(80, 168, 235, 0.18)',
+  glassHighlight: 'rgba(255, 255, 255, 0.85)',
+  glassShadow: '0 2px 1px rgba(255,255,255,0.85) inset, 0 8px 28px rgba(38, 120, 182, 0.12), 0 1px 0 rgba(255,255,255,0.5) inset',
+  glassGlow: 'rgba(28, 147, 227, 0.07)',
 };
 
 const webDark: Palette = {
@@ -96,8 +108,11 @@ const webDark: Palette = {
   destructiveText: '#ff595a',
   sectionSeparator: '#545458',
   bottomBarBg: '#181818',
-  glassBg: 'rgba(33, 33, 33, 0.75)',
-  glassBorder: 'rgba(255, 255, 255, 0.1)',
+  glassBg: 'rgba(28, 28, 28, 0.58)',
+  glassBorder: 'rgba(135, 116, 225, 0.14)',
+  glassHighlight: 'rgba(135, 116, 225, 0.07)',
+  glassShadow: '0 2px 0.5px rgba(135,116,225,0.09) inset, 0 8px 32px rgba(0,0,0,0.52), 0 1px 0 rgba(135,116,225,0.05) inset',
+  glassGlow: 'rgba(135, 116, 225, 0.10)',
 };
 
 const webLight: Palette = {
@@ -116,8 +131,11 @@ const webLight: Palette = {
   destructiveText: '#df3f40',
   sectionSeparator: '#e5e5e5',
   bottomBarBg: '#f4f4f5',
-  glassBg: 'rgba(255, 255, 255, 0.75)',
-  glassBorder: 'rgba(0, 0, 0, 0.08)',
+  glassBg: 'rgba(255, 255, 255, 0.62)',
+  glassBorder: 'rgba(51, 144, 236, 0.16)',
+  glassHighlight: 'rgba(255, 255, 255, 0.88)',
+  glassShadow: '0 2px 1px rgba(255,255,255,0.88) inset, 0 8px 28px rgba(51, 144, 236, 0.10), 0 1px 0 rgba(255,255,255,0.55) inset',
+  glassGlow: 'rgba(51, 144, 236, 0.07)',
 };
 
 export function getPalette(platform: Platform, scheme: Scheme): Palette {

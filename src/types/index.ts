@@ -12,7 +12,7 @@ export interface UserData {
   starsCents?: number;
   walletAddress?: string;
   walletConnected?: boolean;
-  defaultCurrency?: 'USD' | 'EUR' | 'RUB' | 'INR' | 'BRL' | 'IDR' | 'TRY' | 'UAH' | 'KZT';
+  defaultCurrency?: 'USD' | 'EUR' | 'RUB' | 'TRY' | 'UAH' | 'KZT' | 'UZS' | 'GBP' | 'CNY' | 'INR' | 'JPY' | 'KRW' | 'BRL' | 'IDR' | 'SAR' | 'AED' | 'THB' | 'PHP' | 'EGP' | 'NGN' | 'PLN' | 'CZK' | 'HUF' | 'RON' | 'CHF' | 'CAD' | 'HKD' | 'GEL' | 'ARS' | 'BDT';
   hasClaimedTwitterBonus?: boolean;
   twitterBonusStars?: number;
   twitterBonusClaimedAt?: any;
@@ -42,6 +42,9 @@ export interface Palette {
   bottomBarBg: string;
   glassBg: string;
   glassBorder: string;
+  glassHighlight: string; 
+  glassShadow: string;   
+  glassGlow: string;
 }
 
 export interface ToastProps {

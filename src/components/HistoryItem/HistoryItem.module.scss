@@ -39,7 +39,7 @@
 
     .rowTop {
       .type {
-        font-family: 'SF Pro Rounded' !important;
+        font-family: var(--rounded) !important;
         font-weight: 600 !important;
         font-size: 17px;
         line-height: 1.1;
@@ -53,7 +53,7 @@
         font-size: 17px;
         display: flex;
         justify-content: flex-end;
-        font-family: 'SF Pro Rounded' !important;
+        font-family: var(--rounded) !important;
         font-weight: 600 !important;
         align-items: flex-start;
         gap: 4px;
@@ -73,7 +73,7 @@
         color: var(--app-hint);
         font-size: 14px;
         line-height: 1.1;
-        font-family: 'SF Pro Rounded' !important;
+        font-family: var(--rounded) !important;
         font-weight: 600;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -83,7 +83,7 @@
       .apy {
         font-size: 14px;
         white-space: nowrap;
-        font-family: 'SF Pro Rounded' !important;
+        font-family: var(--rounded) !important;
         font-weight: 600;
       }
     }

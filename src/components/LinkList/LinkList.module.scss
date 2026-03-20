@@ -5,18 +5,49 @@
   width: 100%;
   padding: 2px 16px;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+
+  background: var(--app-glass-bg) !important;
+  backdrop-filter: blur(var(--app-glass-blur));
+  -webkit-backdrop-filter: blur(var(--app-glass-blur));
+  border: 1px solid var(--app-glass-border);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 80% 50% at 50% 110%,
+      var(--app-glass-glow),
+      transparent 70%
+    );
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 
   .row {
     height: 48px;
     display: flex;
     align-items: center;
     user-select: none;
-    border-bottom: 0.7px solid var(--app-section-separator);
-    transition: background 120ms ease, color 120ms ease;
+    border-bottom: 1px solid var(--app-glass-border);
+    transition: opacity 120ms ease;
     outline: none;
+    cursor: pointer;
 
     &:last-child {
       border-bottom: none;
+    }
+
+    &:active {
+      opacity: 0.65;
     }
 
     .label {

@@ -1,0 +1,36 @@
+.depositTag {
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  left: 50%;
+  transform-origin: center center;
+  margin-left: 0;
+  translate: -50% 0;
+
+  display: inline-flex;
+  align-items: center;
+  background: var(--app-secondary-bg);
+  justify-content: center;
+  gap: 2px;
+  padding: 0 1px;
+  height: 24px;
+  border-radius: 12px;
+  will-change: transform, opacity, border-radius;
+
+  .iconWrap {
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .label {
+    font-weight: 500;
+    font-size: 14px;
+    padding-right: 6px;
+    will-change: opacity, transform, filter;
+  }
+}

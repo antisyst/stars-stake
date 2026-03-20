@@ -1,0 +1,258 @@
+{
+  "profile": {
+    "unknown": "未知",
+    "wallet": "钱包",
+    "connect": "连接",
+    "defaultCurrency": "默认货币",
+    "language": "语言",
+    "contactSupport": "联系客服",
+    "faq": "常见问题",
+    "history": "历史记录",
+    "userAgreement": "用户协议",
+    "privacyPolicy": "隐私政策",
+    "supportNotice": "本迷你应用由 Stars Base Digital Services Provider 运营，该服务独立运作，与 Telegram 无任何关联。",
+    "currencyUpdated": "货币已更新"
+  },
+  "stake": {
+    "apyTitle": "什么是 APY？",
+    "apyLine1": "APY 即年化收益率，表示含复利在内的年度总回报。",
+    "apyLine2": "利率按级别分层，每笔质押（批次）单独分配；显示的 APY 为所有未平仓批次的加权平均值。",
+    "apyLine3": "您当前的有效 APY：{apy}%",
+    "apyLine4": "当前价格：每颗星 {price}。",
+    "noBalance": "您没有可提取的余额",
+    "lockNotEnded": "您的锁定期尚未结束。",
+    "lockerNotActive": "Stars Base 锁仓功能尚未激活",
+    "withdrawUnavailable": "当前无法提取。",
+    "minimumLock": "最短锁定期：30 天",
+    "balance": "余额",
+    "apy": "APY",
+    "stakeEarn": "质押赚取",
+    "deposit": "充值",
+    "withdraw": "提取",
+    "minimumWithdrawal": "最低提取金额为 500 颗星"
+  },
+  "socialBonus": {
+    "title": "验证您的影响力",
+    "subtitle": "在 X 上关注我们，立即领取奖励",
+    "reward": "75",
+    "claimed": "已领取",
+    "connectAndClaim": "连接并领取",
+    "userDataUnavailable": "用户数据不可用",
+    "bonusAlreadyClaimed": "奖励已被领取",
+    "userDocumentNotFound": "未找到用户文档",
+    "rewardAddedSuccessfully": "奖励添加成功",
+    "failedToAddBonus": "添加奖励失败"
+  },
+  "common": {
+    "copiedToClipboard": "已复制到剪贴板",
+    "copyFailed": "复制失败",
+    "noWallet": "没有可用的钱包地址",
+    "failedOpenLink": "无法打开 Telegram 链接",
+    "openFaq": "打开常见问题",
+    "gotIt": "知道了"
+  },
+  "stats": {
+    "title": "系统概览",
+    "totalStaked": "总质押量",
+    "exchangeRate": "汇率",
+    "protocol": "协议",
+    "protocolValue": "Stars Base 协议"
+  },
+  "tier": {
+    "title": "增强奖励",
+    "apyUpdates": "随着您的质押增长，APY 自动更新",
+    "line1": "系统采用动态级别模型，随着您的总质押余额增长，APY 随之提升。",
+    "line2": "每个级别解锁更高的收益率，从 12.8% 起，最高级别可达 28.7% APY。",
+    "line3": "当您追加质押并进入更高级别时，整体 APY 会根据新的总量立即重新计算。",
+    "line4": "当前及下一级别的阈值实时显示，助您追踪距下一次 APY 提升的进度。"
+  },
+  "withdraw": {
+    "title": "提取选项",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Telegram 星",
+    "subtitle": "以 TON 提取时，根据提取金额，可能会收取最高 1% 的小额网络费用。",
+    "line1": "您可以根据偏好直接以 Telegram 星或 Toncoin（TON）提取奖励。",
+    "line2": "以 TON 提取时，根据总金额，可能会收取最高 1% 的小额网络费用。",
+    "line3": "所有提取均安全处理，确认后通常在数分钟内完成。",
+    "line4": "在进行 TON 提取前，请确保您的 TON 钱包已连接。"
+  },
+  "campaign": {
+    "title": "活动详情",
+    "minStakeLabel": "最低质押",
+    "maxStakeLabel": "最高质押",
+    "line1": "本次活动允许从最低 500 颗星开始质押，最高质押金额不设上限。",
+    "line2": "所有充值直接计入活跃质押池，确认后立即开始产生奖励。"
+  },
+  "header": {
+    "walletConnected": "钱包已连接",
+    "copyAddress": "复制地址",
+    "disconnect": "断开连接",
+    "disconnectConfirmTitle": "断开钱包连接",
+    "disconnectConfirmMessage": "您确定要断开钱包连接吗？"
+  },
+  "ecosystem": {
+    "title": "生态系统收益",
+    "items": {
+      "marketplace": {
+        "title": "市场流动性支持",
+        "content": "Stars Base 系统有助于在 Telegram 星市场中维持稳定流动性。\n通过将星暂时锁定在质押池中，流通供应量减少，有助于稳定市场活动。\n这确保了所有参与者拥有一致的购买力、更顺畅的交易和更健康的交易环境。\n均衡的流动性模型使星生态系统保持可持续性，并能抵御市场的突然波动。\n流动性稳定也增强了整合星支付的用户和开发者之间的信任。"
+      },
+      "antiInflation": {
+        "title": "抗通胀系统",
+        "content": "质押通过减少流通中的星数量，直接支持星生态系统的抗通胀机制。\n随着更多用户进行质押，供应收缩自然有助于维护资产的长期价值。\n这一过程创造了一个自我平衡的经济体，使增长保持稳定和有机。\n该系统确保早期和长期参与者都能从一致且公平的收益条件中受益。\n通过最小化失控通胀，生态系统为所有用户保障了奖励的可持续性。"
+      },
+      "infrastructure": {
+        "title": "基础设施资金",
+        "content": "一部分质押活动支持 Telegram 星支付和质押基础设施的持续开发。\n这包括为数百万用户维护安全交易、高效处理系统和可靠的可扩展性。\n通过参与质押，用户间接地提升了生态系统的性能和韧性。\n基础设施资金确保星网络保持快速、安全并面向未来。\n这些资源使持续升级、技术维护和未来功能扩展成为可能。"
+      }
+    }
+  },
+  "modal": {
+    "close": "关闭",
+    "apy": "APY",
+    "stakedStars": "已质押的星",
+    "amount": "金额",
+    "approxUsd": "≈ 美元",
+    "approxTon": "≈ TON",
+    "lockPeriod": "锁定期",
+    "unlockDate": "解锁日期",
+    "lockPeriodValue": "{days} 天"
+  },
+  "payment": {
+    "processing": "处理中…",
+    "invalidRequest": "无效请求。",
+    "unableStart": "无法启动付款，请重试。",
+    "unableOpen": "无法打开付款，请重试。",
+    "paymentSuccessful": "付款成功！",
+    "paymentCancelled": "付款已取消",
+    "stakeTitle": "质押 {amount} 颗星",
+    "stakeLabel": "质押 {amount} 颗星"
+  },
+  "paymentSuccess": {
+    "title": "质押已确认",
+    "subtitle": "您的充值已锁定 {days} 天。",
+    "apy": "APY",
+    "stakedStars": "已质押的星",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "锁定期",
+    "unlockDate": "解锁日期",
+    "back": "返回概览",
+    "note": "请求：{requested} 颗星 · 实际收费：{paid} 颗星"
+  },
+  "faqs": {
+    "pageTitle": "常见问题",
+    "learnMore": "了解更多",
+    "items": {
+      "q1": {
+        "question": "Stars Base 的奖励来自哪里？",
+        "answer": "奖励通过 Stars Base 生态系统的收益分配模型产生。\n每个质押池有助于流动性稳定和网络基础设施，从而创造可持续的奖励循环。\n部分收益来自生态系统增长、市场活动以及随时间分发的质押激励。\n不涉及任何投机性来源，所有奖励均由真实的生态系统价值支撑。\n这一结构确保了所有参与者的公平性、长期可持续性和透明度。"
+      },
+      "q2": {
+        "question": "什么是质押？它安全吗？",
+        "answer": "质押是锁定您的星以支持生态系统并获得被动奖励的过程。\n质押时，您的资产安全地绑定在您的账户上，绝不会转移给第三方。\n该系统基于 Telegram 安全的支付基础设施构建，采用完全加密和透明运作。\n所有交易均经过验证且可审计，确保安全性和不可篡改性。\n这是一种低风险机制，专为长期价值增长和生态系统贡献而设计。"
+      },
+      "q3": {
+        "question": "奖励如何计算？",
+        "answer": "奖励基于您的总质押余额和当前持有的级别。\n每个级别提供更高的年化收益率（APY），从 12.8% 起，更高投入可达 28.7%。\nAPY 随质押量增加动态调整；更大的质押解锁更高的收益率。\n系统实时自动重新计算您的有效 APY。\n所有奖励计算均透明，可在应用仪表板内验证。"
+      },
+      "q4": {
+        "question": "我可以随时提取我的星吗？",
+        "answer": "是的，最短锁定期结束后，您可以随时提取。\n您可以根据偏好选择直接以 Telegram 星或 Toncoin（TON）提取。\n以 TON 提取可能包含少量网络费用，具体取决于金额。\n所有交易自动安全处理，通常在数分钟内完成。\n系统确保全程可追溯的顺畅体验。"
+      },
+      "q5": {
+        "question": "如果我稍后质押更多星会怎样？",
+        "answer": "当您向现有质押中添加更多星时，总余额立即更新。\n系统自动评估您的新级别并应用相应的 APY 提升。\n您之前的奖励不受影响，未来收益相应增加。\n这使您的质押体验更具动态性——质押越多，收益越高。\n增加质押金额时不会有任何惩罚或延迟。"
+      },
+      "q6": {
+        "question": "Stars Base 如何使 Telegram 生态系统受益？",
+        "answer": "Stars Base 有助于维持 Telegram 星市场内的流动性和稳定性。\n它还通过减少流通星的数量来支持抗通胀措施。\n所有质押活动的一部分有助于支付和质押基础设施的开发。\n这实现了更快的支付、更高的可扩展性和可持续的经济循环。\n通过质押，用户不仅能赚取收益，还有助于加强整个星生态系统的长期基础。"
+      },
+      "q7": {
+        "question": "APY 如何影响每日和每月奖励？",
+        "answer": "APY（年化收益率）代表您的年度回报，但奖励每日计算并添加。\n例如，12.8% APY 对应每月约 ~1.06%（复利计算）。质押 1,000 颗星，一个月后约有 1,039 颗（显示取整前）。\n您的余额每天增加；复利自动运作——每天的收益叠加在前一天的基础上。\n我们每日以两位小数精度记录奖励，而质押页面显示整数余额。\n简而言之，质押时间越长，回报的复利效应越强。"
+      },
+      "q8": {
+        "question": "我有丢失星的风险吗？",
+        "answer": "Stars Base 采用非托管结构，这意味着您保留对资产的所有权。\n您的资金始终安全锁定且可随时验证。\n系统架构优先考虑透明度和安全性。\n主要变量是收益波动，而非您资金的安全性。"
+      },
+      "q9": {
+        "question": "我的 APY 是固定的还是会随时间变化？",
+        "answer": "Stars Base 中的 APY 是动态的，取决于您的总质押金额和系统的流动性状况。\n基础 APY 从 12.8% 开始，随着进入更高质押级别可以增加。\n在极少数情况下，网络或流动性调整可能会略微影响收益率。\n所有利率变化均透明，并立即反映在您的仪表板中。\n系统旨在在不同条件下保持回报稳定且具竞争力。"
+      },
+      "q10": {
+        "question": "我可以质押的最低和最高金额是多少？",
+        "answer": "参与质押的最低金额为 500 颗星。\n单次充值的最高金额为 100,000 颗星。\n更高金额自动解锁更高级别和更好的 APY 利率。\n这一灵活系统公平地奖励新用户和长期用户。"
+      },
+      "q11": {
+        "question": "Stars Base 与普通质押平台有何不同？",
+        "answer": "Stars Base 是围绕 Telegram 星构建的生态系统原生质押模型。\n它将高 APY 奖励与真实效用相结合，支持市场流动性和基础设施。\n与投机性质押应用不同，价值流动保持在生态系统内部。\n这确保了每位用户的透明度、长期可持续性和真实世界影响。"
+      },
+      "q12": {
+        "question": "锁定期间我的星会怎样？",
+        "answer": "在 30 天最短锁定期内，您的星安全地质押在系统中。\n在此期间，它们持续产生奖励，没有任何损失风险或外部转移。\n您可以通过仪表板实时监控收益增长。\n锁定期结束后，您可以随时完全自主地提取或重新质押。"
+      },
+      "q13": {
+        "question": "我可以提前取消质押吗？",
+        "answer": "为维护生态系统稳定性，在初始 30 天锁定期内不支持提前退出质押。\n这一规则通过确保流动性一致性和公平收益分配来保护所有参与者。\n此期限过后，您可以随时自由提取或重新质押。\n系统旨在平衡灵活性与可持续性。"
+      },
+      "q14": {
+        "question": "奖励会自动分配吗？",
+        "answer": "是的，奖励自动分配，并在您的账户余额中每日更新。\n无需手动领取或外部转账。\n您的累计奖励可通过质押仪表板实时追踪。\n这种自动化确保了所有用户的最大便利性和透明度。"
+      },
+      "q15": {
+        "question": "APY 多久更新一次？",
+        "answer": "APY 利率根据您的活跃级别和系统的流动性状况重新计算。\n当您质押或添加新的星时，更新立即生效。\n这确保您的奖励始终反映最新的质押级别。\n同时防止仪表板上出现过时或延迟的收益数据。"
+      },
+      "q16": {
+        "question": "Stars Base 为何使用锁定期？",
+        "answer": "30 天最短锁定期有助于维护市场流动性，防止可能使系统不稳定的快速资金流入流出。\n它确保所有参与者的收益率保持公平和一致。\n锁定期是大多数质押系统中保护生态系统完整性的标准做法。\n锁定结束后，您可以无限制地提取或重新质押。"
+      },
+      "q17": {
+        "question": "哪些因素会影响 APY 利率？",
+        "answer": "APY 利率取决于整体生态系统流动性、总质押量和内部市场需求。\n当更多用户质押时，池子扩大，允许调整收益以维持平衡。\n此外，系统健康和市场稳定性持续受到监控以优化回报。\n所有调整均以算法化和透明的方式进行以维护公平性。"
+      },
+      "q18": {
+        "question": "Stars Base 中的复利是如何运作的？",
+        "answer": "复利意味着您的每日奖励会自动添加到您的余额中。\n每个新的一天，您的收益基于更新的精确余额（以两位小数追踪）计算，而质押页面显示整数金额。\n这随时间产生复利增长效应，提升长期回报。"
+      },
+      "q19": {
+        "question": "系统更新会影响我的质押余额吗？",
+        "answer": "不会，更新或维护操作不会影响您的质押金额或累计奖励。\n所有质押数据均安全存储并同步。\n在极少数情况下，可能会出现临时显示延迟，但您的资金保持安全。\n如有任何计划维护，您将收到通知。"
+      }
+    }
+  },
+  "history": {
+    "title": "交易记录",
+    "empty": {
+      "title": "暂无历史记录",
+      "subtitle": "开始交易后，记录将显示在此处。"
+    },
+    "detailsTitle": "交易详情",
+    "deposit": "充值",
+    "withdraw": "提取",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "充值",
+    "buttonConfirmStake": "确认质押",
+    "tagDeposit": "充值",
+    "tagStake": "质押",
+    "stakeAmountAria": "以星为单位的质押金额",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "最低充值金额为 {min} 颗星。",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "预计收益",
+    "year": "年",
+    "perYear": "每年",
+    "collapseDetails": "收起详情",
+    "expandDetails": "展开详情",
+    "yearly": "年度",
+    "monthly": "月度",
+    "daily": "每日",
+    "minimumLock": "最短锁定期",
+    "minimumLockValue": "{days} 天"
+  }
+}

@@ -1,158 +1,222 @@
 .stakeSection {
-    width: 100%;
-    padding: 12px;
-    border-radius: var(--br-section);
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--br-section);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background: var(--app-glass-bg) !important;
+  backdrop-filter: blur(var(--app-glass-blur));
+  -webkit-backdrop-filter: blur(var(--app-glass-blur));
+  border: 1px solid var(--app-glass-border);
+  box-shadow: var(--app-glass-shadow);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+      160deg,
+      var(--app-glass-highlight) 0%,
+      transparent 45%
+    );
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 80% 50% at 50% 110%,
+      var(--app-glass-glow),
+      transparent 70%
+    );
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .columnItem {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 2px;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: space-between;
+    width: 100%;
 
-    .columnItem {
+    .mutedText {
+      color: var(--app-hint);
+      font-weight: 500;
+      z-index: 10;
+      font-family: var(--rounded) !important;
+      font-size: 15.5px;
+    }
+
+    .apyTitle {
+        font-size: 14px;
+        border-radius: 16px;
         display: flex;
+        font-weight: 500;
         align-items: center;
-        justify-content: space-between;
-        width: 100%;
+        justify-content: flex-start;
+        font-family: var(--rounded) !important;
+        gap: 3px;
 
-        .mutedText {
-            color: var(--app-hint);
-            font-size: 15px;
-        }
-
-        .apyTitle {
-            font-size: 14px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 3px;
-
-            svg {
-                width: 18px;
-                height: 18px;
-            }
+        svg {
+            width: 18px;
+            height: 18px;
         }
     }
+  }
 
-    .rowItem {
-        display: flex;
-        width: 100%;
-        margin-top: 2px;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 6px;
+  .rowItem {
+    display: flex;
+    width: 100%;
+    margin-top: 4px;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 6px;
 
-        span {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 2px;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2px;
 
-            svg {
-                width: 15px;
-                height: 15px;
-            }
-        }
-
-        .currentApy {
-            color: #41bd58;
-            font-family: 'SF Pro Rounded' !important;
-            font-weight: 500 !important;
-            font-size: 23px;
-        }
+      svg {
+        width: 14px;
+        height: 14px;
+        opacity: 0.65;
+      }
     }
 
-    .starsBalance {
+    .currentApy {
+      color: #41bd58;
+      font-family: var(--rounded) !important;
+      font-weight: 600 !important;
+      font-size: 24px;
+      letter-spacing: -0.3px;
+      text-shadow: 0 0 12px rgba(65, 189, 88, 0.35);
+    }
+  }
+
+  .starsBalance {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+
+    .starAmount {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 6px;
+
+      svg {
+        width: 27px;
+        height: 27px;
+      }
+
+      .balanceAmount {
+        font-size: 26px;
+        font-family: var(--rounded) !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.5px;
+      }
+    }
+
+    .value {
+      font-size: 14px;
+      color: var(--app-hint);
+    }
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    margin: 10px 0 4px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--app-glass-border) 30%,
+      var(--app-glass-border) 70%,
+      transparent
+    );
+  }
+
+  .buttonsContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+
+    button {
+        width: 100%;
+        overflow: hidden;
+        height: 48px;
+        border-radius: 14px;
+
+        h6 {
             display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-            justify-content: flex-start;
+            align-items: center;
+            justify-content: center;
             gap: 5px;
+            font-size: 17.5px;
+            font-family: var(--rounded) !important;
+            font-weight: bold;
 
-            .starAmount {
-                display: flex;
-                width: 100%;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 6px;
-
-                svg {
-                    width: 27px;
-                    height: 27px;
-                }
-
-                .balanceAmount {
-                    font-size: 25px;
-                    font-family: 'SF Pro Rounded' !important;
-                    font-weight: 700 !important;
-                }
+            svg {
+                width: 24px;
+                height: 24px;
             }
-
-            .value {
-                font-size: 14px;
-                color: var(--app-hint);
-            }
+        }
     }
+  }
 
-    .buttonsContainer {
+  .buttonsContainerRow {
+    display: flex;
+    margin-top: 10px;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: nowrap;
+
+    button {
+      flex: 1;
+      height: 48px;
+      border-radius: 130px;
+      width: 50%;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      h6 {
         display: flex;
-        width: 100%;
         align-items: center;
         justify-content: center;
-        gap: 8px;
-        margin-top: 8px;
+        gap: 5px;
+        font-size: 17px;
+        font-family: var(--rounded) !important;
+        font-weight: bold !important;
 
-        button {
-            width: 100%;
-            overflow: hidden;
-            height: 47px;
-            border-radius: 10px;
-
-            h6 {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 5px;
-                font-size: 17px;
-
-                svg {
-                    width: 24px;
-                    height: 24px;
-                }
-            }
+        svg {
+          width: 22px;
+          height: 22px;
         }
+      }
     }
-
-    .buttonsContainerRow {
-        display: flex;
-        margin-top: 8px;
-        flex-direction: row;
-        gap: 8px;
-        width: 100%;
-        flex-wrap: nowrap;
-        width: 100%;
-
-        button {
-            flex: 1;
-            height: 47px;
-            border-radius: 130px;
-            width: 50%;
-
-            h6 {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 5px;
-                font-size: 17px;
-                font-family: 'SF Pro Rounded' !important;
-                font-weight: bold;
-
-                svg {
-                    width: 24px;
-                    height: 24px;
-                }
-            }
-        }
-    }
+  }
 }

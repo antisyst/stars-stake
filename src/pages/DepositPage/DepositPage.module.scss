@@ -68,7 +68,7 @@
         align-items: center;
 
         .amountText {
-          font-family: 'SF Pro Rounded', inherit !important;
+          font-family: var(--rounded) !important;
           font-size: 46px;
           font-weight: 700 !important;
           line-height: 1.2;
@@ -85,7 +85,7 @@
         input {
           border: none;
           background: transparent;
-          font-family: 'SF Pro Rounded' !important;
+          font-family: var(--rounded) !important;
           font-weight: 700;
           color: var(--app-text);
           outline: none;
@@ -120,7 +120,7 @@
       text-align: center;
 
       .usdNote {
-        font-family: 'SF Pro Rounded' !important;
+        font-family: var(--rounded) !important;
         font-weight: 500 !important;
         display: flex;
         align-items: center;
@@ -140,7 +140,7 @@
         width: 100%;
         color: var(--app-destructive-text);
         font-size: 16px;
-        font-family: 'SF Pro Rounded' !important;
+        font-family: var(--rounded) !important;
         font-weight: 500 !important;
       }
     }
@@ -150,7 +150,7 @@
 .boostLabel {
   padding: 1px 4px;
   margin-left: 6px;
-  font-family: 'SF Pro Rounded' !important;
+  font-family: var(--rounded) !important;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
@@ -159,7 +159,7 @@
 }
 
 .stakePromoPreview {
-   font-family: 'SF Pro Rounded' !important;
+   font-family: var(--rounded) !important;
    font-size: 18px; 
    font-weight: 600;
    color: var(--app-text);

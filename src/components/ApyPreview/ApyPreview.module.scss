@@ -4,7 +4,6 @@
   left: 16px;
   width: calc(100% - 32px);
   z-index: 1001;
-
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -22,12 +21,12 @@
   .apyInfo {
     display: flex;
     align-items: center;
-    gap: 4px; 
+    gap: 4px;
     flex: 1 1 auto;
     min-width: 0;
 
     .label {
-      font-family: 'SF Pro Rounded' !important;
+      font-family: var(--rounded) !important;
       font-size: 16px;
       font-weight: 600;
       line-height: 1.15;
@@ -38,7 +37,6 @@
       text-overflow: ellipsis;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-
       flex: 1 1 auto;
       min-width: 0;
     }
@@ -59,7 +57,7 @@
         font-weight: 500;
         font-size: 15px;
         line-height: 1;
-        font-family: 'SF Pro Rounded' !important;
+        font-family: var(--rounded) !important;
       }
     }
   }
@@ -81,24 +79,23 @@
 
       .yearlyGain {
         font-size: 16px;
-        font-weight: 700;
         position: relative;
         display: inline-flex;
         align-items: center;
         gap: 3px;
         white-space: nowrap;
         -webkit-font-smoothing: antialiased;
-        font-family: 'SF Pro Rounded' !important;
+        font-family: var(--rounded) !important;
         font-weight: 600;
 
         &::before {
-          content: "+";
-          font-family: 'SF Pro Rounded' !important;
+          content: '+';
+          font-family: var(--rounded) !important;
         }
 
         span {
           text-transform: lowercase;
-          font-family: 'SF Pro Rounded' !important;
+          font-family: var(--rounded) !important;
         }
       }
 
@@ -140,11 +137,33 @@
     width: 100%;
     margin-top: 8px;
     border-radius: 12px;
-    background: var(--app-section-bg);
-    backdrop-filter: blur(10px);
     overflow: hidden;
+    position: relative;
     will-change: transform, filter, opacity, height, border-radius;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    background: var(--app-glass-bg);
+    backdrop-filter: blur(var(--app-glass-blur));
+    -webkit-backdrop-filter: blur(var(--app-glass-blur));
+    border: 1px solid var(--app-glass-border);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      pointer-events: none;
+      background: radial-gradient(
+        ellipse 80% 50% at 50% 110%,
+        var(--app-glass-glow),
+        transparent 70%
+      );
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
   }
 
   .list {
@@ -160,8 +179,13 @@
       gap: 8px;
       min-height: 24px;
 
+      & + .item {
+        border-top: 1px solid var(--app-glass-border);
+        padding-top: 6px;
+      }
+
       .itemLabel {
-        font-family: 'SF Pro Rounded' !important;
+        font-family: var(--rounded) !important;
         color: var(--app-hint);
         font-size: 15px;
         font-weight: 500;
@@ -169,10 +193,9 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-
         flex: 1 1 auto;
         min-width: 0;
-        margin-right: 8px; 
+        margin-right: 8px;
       }
 
       .itemValue {
@@ -185,10 +208,17 @@
         overflow: hidden;
         text-overflow: ellipsis;
         flex: 0 0 auto;
-        font-family: 'SF Pro Rounded' !important;
-        svg { width: 16px; height: 16px; }
+        font-family: var(--rounded) !important;
 
-        .sep { opacity: 0.6; font-weight: 600; }
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+
+        .sep {
+          opacity: 0.6;
+          font-weight: 600;
+        }
       }
 
       .apyTitle {
@@ -199,7 +229,7 @@
         padding: 2px 6px;
         border-radius: 6px;
         white-space: nowrap;
-        font-family: 'SF Pro Rounded' !important;
+        font-family: var(--rounded) !important;
       }
     }
   }
@@ -212,7 +242,7 @@
   border: none;
   padding: 0;
   margin: 0;
-  background: rgba(0,0,0,0.12);
+  background: rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   cursor: default;

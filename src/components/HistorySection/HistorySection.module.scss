@@ -1,51 +1,79 @@
 .historySection {
-    width: 100%;
-    padding: 12px;
-    border-radius: var(--br-section);
+  width: 100%;
+  padding: 12px 16px 12px 12px;
+  border-radius: var(--br-section);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  ;
+
+  background: var(--app-glass-bg) !important;
+  backdrop-filter: blur(var(--app-glass-blur));
+  -webkit-backdrop-filter: blur(var(--app-glass-blur));
+  border: 1px solid var(--app-glass-border);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 80% 50% at 50% 110%,
+      var(--app-glass-glow),
+      transparent 70%
+    );
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .historyTitle {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 8px;
-    margin-top: 24px;
-    justify-content: space-between;
 
-    .historyTitle {
+   .iconWrapper {
+        width: 40px;
+        height: 40px;
+        background: var(--tgui--secondary_fill);
+        border-radius: 16px;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        gap: 8px;
-
-        .iconWrapper {
-            width: 36px;
-            height: 36px;
-            background: var(--tgui--secondary_fill);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 0 0 36px;
-
-            svg {
-                width: 23px;
-                height: 23px;
-                display: block;
-            }
-        }
-
-        .historyLabel {
-            font-size: 16.5px;
-            font-weight: 500;
-        }
-    }
-
-    .arrowWrapper {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
+        flex: 0 0 40px;
 
         svg {
-            width: 16px;
-            height: 16px;
-            margin-top: 2px;
-        }   
+            width: 26px;
+            height: 26px;
+            display: block;
+        }
     }
+
+    .historyLabel {
+      font-size: 16.5px;
+      font-weight: 500;
+    }
+  }
+
+  .arrowWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      opacity: 0.45;
+    }
+  }
 }

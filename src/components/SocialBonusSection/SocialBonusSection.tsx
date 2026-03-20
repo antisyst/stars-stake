@@ -1,5 +1,7 @@
-import React, { useContext, useState } from 'react';
-import { Button } from '@telegram-apps/telegram-ui';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import CheckIcon from '@/assets/icons/check.svg?react'; 
+import ArrowRightIcon from '@/assets/icons/arrow-right.svg?react';
+import { Spinner } from '@telegram-apps/telegram-ui';
 import { openLink } from '@telegram-apps/sdk';
 import { doc, runTransaction, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/configs/firebaseConfig';
@@ -19,51 +21,38 @@ export const SocialBonusSection: React.FC = () => {
   const { showError, showSuccess } = useContext(ToastContext);
   const { t } = useI18n();
 
-  const [claiming, setClaiming] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'opening' | 'done'>('idle');
+  const claimingRef = useRef(false);
 
-  const handleConnectAndClaim = async () => {
-    if (!uid) {
-      showError(t('socialBonus.userDataUnavailable'));
-      return;
-    }
+  useEffect(() => {
+    if (!uid || !user) return;
+    if (user.hasClaimedTwitterBonus) return; 
 
-    if (user?.hasClaimedTwitterBonus) {
-      showError(t('socialBonus.bonusAlreadyClaimed'));
-      return;
-    }
-
+    let didVisit = false;
     try {
-      sessionStorage.setItem(VISIT_FLAG_KEY, '1');
+      didVisit = sessionStorage.getItem(VISIT_FLAG_KEY) === '1';
     } catch {}
 
-    try {
-      openLink(X_TARGET_URL, {
-        tryBrowser: 'chrome',
-        tryInstantView: true,
-      });
-    } catch (e) {
-      console.error('Failed to open X link:', e);
-      showError(t('socialBonus.failedToAddBonus'));
-      return;
+    if (didVisit && status === 'idle') {
+      setStatus('opening');
+      claimBonus(uid);
     }
+  }, [uid, user]);
 
-    setClaiming(true);
+  const claimBonus = async (uidArg: string) => {
+    if (claimingRef.current) return;
+    claimingRef.current = true;
 
     try {
-      const userRef = doc(db, 'users', uid);
+      const userRef = doc(db, 'users', uidArg);
 
       await runTransaction(db, async (tx) => {
         const snap = await tx.get(userRef);
 
-        if (!snap.exists()) {
-          throw new Error('USER_DOCUMENT_NOT_FOUND');
-        }
+        if (!snap.exists()) throw new Error('USER_DOCUMENT_NOT_FOUND');
 
         const data = snap.data() as any;
-
-        if (data.hasClaimedTwitterBonus) {
-          throw new Error('ALREADY_CLAIMED');
-        }
+        if (data.hasClaimedTwitterBonus) throw new Error('ALREADY_CLAIMED');
 
         const currentCents = Number.isFinite(data.starsCents)
           ? data.starsCents
@@ -82,47 +71,86 @@ export const SocialBonusSection: React.FC = () => {
         });
       });
 
-      try {
-        sessionStorage.removeItem(VISIT_FLAG_KEY);
-      } catch {}
+      try { sessionStorage.removeItem(VISIT_FLAG_KEY); } catch {}
 
+      setStatus('done');
       showSuccess(t('socialBonus.rewardAddedSuccessfully'));
     } catch (e: any) {
+      claimingRef.current = false;
       if (e?.message === 'ALREADY_CLAIMED') {
+        try { sessionStorage.removeItem(VISIT_FLAG_KEY); } catch {}
+        setStatus('done');
         showError(t('socialBonus.bonusAlreadyClaimed'));
       } else if (e?.message === 'USER_DOCUMENT_NOT_FOUND') {
+        setStatus('idle');
         showError(t('socialBonus.userDocumentNotFound'));
       } else {
         console.error('Twitter bonus claim failed:', e);
+        setStatus('idle');
         showError(t('socialBonus.failedToAddBonus'));
       }
-    } finally {
-      setClaiming(false);
     }
   };
 
-  return (
-    <div className={styles.socialBonusSection}>
-      <img src={XIcon} alt="" className={styles.backgroundIcon} />
-      <div className={styles.header}>
-        <div className={styles.textContent}>
-          <h3 className={styles.title}>{t('socialBonus.title')}</h3>
-          <p className={styles.subtitle}>{t('socialBonus.subtitle')}</p>
-        </div>
-      </div>
+  const handleClick = async () => {
+    if (!uid) {
+      showError(t('socialBonus.userDataUnavailable'));
+      return;
+    }
+    if (user?.hasClaimedTwitterBonus || status === 'done' || status === 'opening') return;
 
-      <Button
-        size="m"
-        mode="gray"
-        stretched
-        loading={claiming}
-        disabled={Boolean(user?.hasClaimedTwitterBonus)}
-        onClick={handleConnectAndClaim}
-      >
-        {user?.hasClaimedTwitterBonus
-          ? t('socialBonus.claimed')
-          : t('socialBonus.connectAndClaim')}
-      </Button>
+    try { sessionStorage.setItem(VISIT_FLAG_KEY, '1'); } catch {}
+
+    setStatus('opening');
+
+    try {
+      openLink(X_TARGET_URL, { tryBrowser: 'chrome', tryInstantView: true });
+    } catch (e) {
+      console.error('Failed to open X link:', e);
+      setStatus('idle');
+      try { sessionStorage.removeItem(VISIT_FLAG_KEY); } catch {}
+      showError(t('socialBonus.failedToAddBonus'));
+      return;
+    }
+
+    await claimBonus(uid);
+  };
+
+  if (user?.hasClaimedTwitterBonus) return null;
+
+  const renderTrailing = () => {
+    if (status === 'opening') {
+      return <Spinner size="s" />;
+    }
+    if (status === 'done') {
+      return (
+        <div className={styles.checkWrapper}>
+          <CheckIcon className={styles.checkIcon} />
+        </div>
+      );
+    }
+    return (
+      <div className={styles.arrowWrapper}>
+        <ArrowRightIcon className="white-icon" />
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className={styles.socialBonusSection}
+      onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && handleClick()}
+    >
+      <div className={styles.socialTitle}>
+        <div className={styles.iconWrapper}>
+          <img src={XIcon} alt="X (Twitter)" />
+        </div>
+        <div className={styles.socialLabel}>{t('socialBonus.subtitle')}</div>
+      </div>
+      {renderTrailing()}
     </div>
   );
 };

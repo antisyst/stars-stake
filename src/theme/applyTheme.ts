@@ -24,8 +24,11 @@ export function applyTheme(platform: Platform, scheme: Scheme) {
 
   root.style.setProperty('--app-glass-bg', p.glassBg);
   root.style.setProperty('--app-glass-border', p.glassBorder);
-  
-  const blurValue = platform === 'ios' ? '25px' : '15px';
+  root.style.setProperty('--app-glass-highlight', p.glassHighlight);
+  root.style.setProperty('--app-glass-shadow', p.glassShadow);
+  root.style.setProperty('--app-glass-glow', p.glassGlow);
+
+  const blurValue = platform === 'ios' ? '28px' : '18px';
   root.style.setProperty('--app-glass-blur', blurValue);
 
   try {

@@ -49,6 +49,7 @@ export const Modal: React.FC<ModalProps> = ({
   const { t } = useI18n();
 
   const showCloseBtn = (title ?? '').trim().length <= 30;
+  const isHistory = variant === 'history' && !!historyItem;
 
   useEffect(() => {
     const lock = () => {
@@ -128,20 +129,20 @@ export const Modal: React.FC<ModalProps> = ({
   const { tonUsd } = useRates();
 
   const usdVal = useMemo(() => {
-    if (variant !== 'history' || !historyItem) return 0;
-    return exchangeRate ? historyItem.amount * exchangeRate : 0;
-  }, [variant, historyItem, exchangeRate]);
+    if (!isHistory) return 0;
+    return exchangeRate ? historyItem!.amount * exchangeRate : 0;
+  }, [isHistory, historyItem, exchangeRate]);
 
   const tonVal = useMemo(() => {
-    if (variant !== 'history' || !historyItem) return 0;
+    if (!isHistory) return 0;
     return tonUsd > 0 ? usdVal / tonUsd : 0;
-  }, [variant, historyItem, usdVal, tonUsd]);
+  }, [isHistory, usdVal, tonUsd]);
 
   const historyRows: TableRow[] | null = useMemo(() => {
-    if (variant !== 'history' || !historyItem) return null;
+    if (!isHistory) return null;
 
-    const created = toDate(historyItem.createdAt);
-    const unlockDate = historyItem.unlockAt ? toDate(historyItem.unlockAt) : ADD_DAYS(created, 30);
+    const created = toDate(historyItem!.createdAt);
+    const unlockDate = historyItem!.unlockAt ? toDate(historyItem!.unlockAt) : ADD_DAYS(created, 30);
     const unlockStr = formatMDYDots(unlockDate);
 
     return [
@@ -149,38 +150,41 @@ export const Modal: React.FC<ModalProps> = ({
         label: t('modal.apy'),
         value: (
           <span className='apy-title'>
-            {Number(historyItem.apy).toFixed(1)}%
+            {Number(historyItem!.apy).toFixed(1)}%
           </span>
         )
       },
       {
-        label: historyItem.type === 'stake' ? t('modal.stakedStars') : t('modal.amount'),
+        label: historyItem!.type === 'stake' ? t('modal.stakedStars') : t('modal.amount'),
         value: (
           <>
             <StarIcon />
-            {formatNumber(historyItem.amount)}
+            {formatNumber(historyItem!.amount)}
           </>
         ),
       },
       { label: t('modal.approxUsd'), value: `$${formatNumber(Number(usdVal.toFixed(2)))}` },
       { label: t('modal.approxTon'), value: tonVal ? `${tonVal.toFixed(3)} TON` : '—' },
       { label: t('modal.lockPeriod'), value: t('modal.lockPeriodValue').replace('{days}', '30') },
-      { label: t('modal.unlockDate'), value: unlockStr }
+      { label: t('modal.unlockDate'), value: unlockStr },
     ];
-  }, [variant, historyItem, usdVal, tonVal, t]);
+  }, [isHistory, historyItem, usdVal, tonVal, t]);
 
   const renderBody = () => {
-    if (variant === 'history' && historyItem && historyRows) {
-      return <Table rows={historyRows} />;
+    // History: table rendered directly, no content wrapper
+    if (isHistory && historyRows) {
+      return <Table rows={historyRows} className={styles.historyTable} />;
     }
     if ((lines?.length ?? 0) > 0) {
       return (
-        <ul className={styles.list}>
-          {lines.map((txt, i) => (<li key={i}>{txt}</li>))}
-        </ul>
+        <div className={styles.content}>
+          <ul className={styles.list}>
+            {lines.map((txt, i) => <li key={i}>{txt}</li>)}
+          </ul>
+        </div>
       );
     }
-    return children;
+    return children ? <div className={styles.content}>{children}</div> : null;
   };
 
   return (
@@ -217,9 +221,8 @@ export const Modal: React.FC<ModalProps> = ({
                 </button>
               )}
             </div>
-            <div className={styles.content}>
-              {renderBody()}
-            </div>
+
+            {renderBody()}
           </motion.div>
         </motion.div>
       )}

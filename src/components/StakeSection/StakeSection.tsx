@@ -11,6 +11,7 @@ import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import HelpIcon from '@/assets/icons/help.svg?react';
 import AddIcon from '@/assets/icons/add.svg?react';
 import MinusIcon from '@/assets/icons/minus.svg?react';
+import { primeIosFocusBridge } from '@/utils/iosFocusBridge';
 import { useCurrency } from '@/contexts/CurrencyContext';
 import { useRates } from '@/contexts/RatesContext';
 import { useI18n } from '@/i18n';
@@ -51,10 +52,13 @@ export const StakeSection: React.FC = () => {
   };
 
   const handleStakeEarnOrDeposit = () => {
-    if (ensureConnected()) {
-      navigate('/deposit');
-    }
-  };
+  if (ensureConnected()) {
+    // Prime the bridge synchronously inside this click handler
+    // so iOS has an active focused input before we navigate
+    primeIosFocusBridge();
+    navigate('/deposit');
+  }
+};
 
   const now = useMemo(() => new Date(), [positions?.length]);
 

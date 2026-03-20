@@ -6,6 +6,7 @@ import { miniApp, useLaunchParams } from '@telegram-apps/sdk-react';
 import { useAppData } from '@/contexts/AppDataContext';
 import { formatNumber } from '@/utils/formatNumber';
 import { MIN_DEPOSIT, parseAmountInput, isValidDeposit } from '@/utils/deposit';
+import { DepositTag } from '@/components/DepositTag/DepositTag';
 import { resolveCssVarToHex } from '@/utils/css';
 import { ApyPreview } from '@/components/ApyPreview/ApyPreview';
 import { AnimatePresence } from 'framer-motion';
@@ -13,7 +14,7 @@ import { useRates } from '@/contexts/RatesContext';
 import { formatForInput } from '@/utils/formatForInput';
 import { tdesktopInputShields } from '@/utils/tdesktopShields';
 import { inputNoSelectGuards, composeInputProps } from '@/utils/inputGuards';
-import AddIcon from '@/assets/icons/add.svg?react';
+import { claimIosFocusBridge } from '@/utils/iosFocusBridge';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import styles from './DepositPage.module.scss';
 import { useCurrency } from '@/contexts/CurrencyContext';
@@ -28,6 +29,7 @@ export const DepositPage: React.FC = () => {
   const { formatFromUsd } = useCurrency();
   const { t } = useI18n();
 
+  const isIos = lp.platform === 'ios';
   const isMobile = ['ios', 'android'].includes(lp.platform);
   const isTDesktop = lp.platform === 'tdesktop';
 
@@ -37,6 +39,7 @@ export const DepositPage: React.FC = () => {
   const [focused, setFocused] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const mountedRef = useRef(false);
 
   const hasStakedBefore = (user?.starsBalance ?? 0) > 0;
   const buttonText = hasStakedBefore ? t('deposit.buttonDeposit') : t('deposit.buttonConfirmStake');
@@ -44,29 +47,32 @@ export const DepositPage: React.FC = () => {
 
   const enabledBg = resolveCssVarToHex('--app-button') || undefined;
   const enabledFg = resolveCssVarToHex('--app-button-text') || undefined;
-
   const disabledBgVar = isTDesktop ? '--app-secondary-bg' : '--app-header-bg';
   const disabledFgVar = isTDesktop ? '--app-subtitle' : '--app-section-separator';
   const disabledBg = resolveCssVarToHex(disabledBgVar) || undefined;
   const disabledFg = resolveCssVarToHex(disabledFgVar) || undefined;
 
-  const mountedRef = useRef(false);
+  useEffect(() => {
+    const el = inputRef.current;
+    if (!el) return;
+
+    if (isIos) {
+      const rafId = requestAnimationFrame(() => {
+        claimIosFocusBridge(el);
+      });
+      return () => cancelAnimationFrame(rafId);
+    } else {
+      const rafId = requestAnimationFrame(() => {
+        el.focus({ preventScroll: true });
+      });
+      return () => cancelAnimationFrame(rafId);
+    }
+  }, []);
 
   useEffect(() => {
     const hex = resolveCssVarToHex('--app-section-bg');
     try { miniApp.setHeaderColor((hex || 'secondary_bg_color') as any); } catch {}
     return () => { try { miniApp.setHeaderColor('secondary_bg_color'); } catch {} };
-  }, []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (inputRef.current) {
-        inputRef.current.focus();
-        
-        inputRef.current.click(); 
-      }
-    }, 150); 
-    return () => clearTimeout(timer);
   }, []);
 
   const applyButtonStyle = (enabled: boolean) => {
@@ -108,10 +114,11 @@ export const DepositPage: React.FC = () => {
       try { if (mainButton.isMounted?.()) mainButton.unmount(); } catch {}
       mountedRef.current = false;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => { applyButtonStyle(valid); }, [valid, buttonText, enabledBg, enabledFg, disabledBg, disabledFg]);
+  useEffect(() => {
+    applyButtonStyle(valid);
+  }, [valid, buttonText, enabledBg, enabledFg, disabledBg, disabledFg]);
 
   useEffect(() => {
     let off: (() => void) | undefined;
@@ -119,7 +126,7 @@ export const DepositPage: React.FC = () => {
       off = mainButton.onClick(() => {
         if (!mountedRef.current || !valid) return;
         try { mainButton.setParams({ isLoaderVisible: true, isEnabled: false }); } catch {}
-navigate(`/payment/init?amount=${amount}`, { replace: true, state: { from: location.pathname } });
+        navigate(`/payment/init?amount=${amount}`, { replace: true, state: { from: location.pathname } });
       });
     } catch {}
     return () => { try { off?.(); } catch {} };
@@ -167,11 +174,7 @@ navigate(`/payment/init?amount=${amount}`, { replace: true, state: { from: locat
     <Page back backTo="/home">
       <div className={styles.depositPage} key={`deposit-${location.key}`}>
         <div className={styles.depositLayout}>
-          <div className={styles.depositTag}>
-            <AddIcon className="green-icon" />
-            <span>{tagText}</span>
-          </div>
-
+          <DepositTag text={tagText} />
           <div className={styles.mainDepositContainer}>
             <div className={styles.inputCard}>
               <StarIcon />
@@ -202,10 +205,12 @@ navigate(`/payment/init?amount=${amount}`, { replace: true, state: { from: locat
                   1&nbsp;<StarIcon />&nbsp;≈&nbsp;{formatFromUsd(exchangeRate, 4)}
                 </p>
               ) : amount > 0 && amount < MIN_DEPOSIT ? (
-                <p className={styles.warning}>{t('deposit.minDepositWarning').replace('{min}', String(formatNumber(MIN_DEPOSIT)))}</p>
+                <p className={styles.warning}>
+                  {t('deposit.minDepositWarning').replace('{min}', String(formatNumber(MIN_DEPOSIT)))}
+                </p>
               ) : valid ? (
                 <p className={styles.usdNote}>
-                  ≈ {formatFromUsd(usdVal, 2)}&nbsp;≈ {tonVal ? (tonVal.toFixed(3)) : '—'} TON
+                  ≈ {formatFromUsd(usdVal, 2)}&nbsp;≈ {tonVal ? tonVal.toFixed(3) : '—'} TON
                 </p>
               ) : (
                 <p className={styles.usdNote}>≈ {formatFromUsd(usdVal, 2)}</p>

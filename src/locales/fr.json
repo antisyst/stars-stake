@@ -1,0 +1,258 @@
+{
+  "profile": {
+    "unknown": "Inconnu",
+    "wallet": "Portefeuille",
+    "connect": "Connecter",
+    "defaultCurrency": "Devise par défaut",
+    "language": "Langue",
+    "contactSupport": "Contacter le support",
+    "faq": "FAQ",
+    "history": "Historique",
+    "userAgreement": "Conditions d'utilisation",
+    "privacyPolicy": "Politique de confidentialité",
+    "supportNotice": "La mini application est exploitée par Stars Base Digital Services Provider. Le service est indépendant et n'est pas affilié à Telegram.",
+    "currencyUpdated": "Devise mise à jour"
+  },
+  "stake": {
+    "apyTitle": "Qu'est-ce que l'APY ?",
+    "apyLine1": "L'APY signifie Rendement en Pourcentage Annuel et représente le rendement annuel total incluant les récompenses composées.",
+    "apyLine2": "Les taux sont échelonnés et attribués par mise (lot) ; l'APY affiché est une moyenne pondérée de tous les lots ouverts.",
+    "apyLine3": "Votre APY effectif actuel : {apy}%",
+    "apyLine4": "Prix actuel : {price} par étoile.",
+    "noBalance": "Vous n'avez pas de solde à retirer",
+    "lockNotEnded": "Votre période de blocage n'est pas encore terminée.",
+    "lockerNotActive": "Le verrou Stars Base n'est pas encore actif",
+    "withdrawUnavailable": "Le retrait n'est pas disponible pour le moment.",
+    "minimumLock": "Blocage minimum : 30 jours",
+    "balance": "Solde",
+    "apy": "APY",
+    "stakeEarn": "Miser et Gagner",
+    "deposit": "Déposer",
+    "withdraw": "Retirer",
+    "minimumWithdrawal": "Le retrait minimum est de 500 étoiles"
+  },
+  "socialBonus": {
+    "title": "Vérifiez votre influence",
+    "subtitle": "Suivez-nous sur X et réclamez votre récompense instantanément",
+    "reward": "75",
+    "claimed": "Réclamé",
+    "connectAndClaim": "Connecter et réclamer",
+    "userDataUnavailable": "Les données utilisateur sont indisponibles",
+    "bonusAlreadyClaimed": "Bonus déjà réclamé",
+    "userDocumentNotFound": "Document utilisateur introuvable",
+    "rewardAddedSuccessfully": "Récompense ajoutée avec succès",
+    "failedToAddBonus": "Échec de l'ajout du bonus"
+  },
+  "common": {
+    "copiedToClipboard": "Copié dans le presse-papiers",
+    "copyFailed": "Échec de la copie",
+    "noWallet": "Aucune adresse de portefeuille disponible",
+    "failedOpenLink": "Impossible d'ouvrir le lien Telegram",
+    "openFaq": "Ouvrir la FAQ",
+    "gotIt": "Compris"
+  },
+  "stats": {
+    "title": "Vue d'ensemble du système",
+    "totalStaked": "Total misé",
+    "exchangeRate": "Taux de change",
+    "protocol": "Protocole",
+    "protocolValue": "Protocole Stars Base"
+  },
+  "tier": {
+    "title": "Récompenses boostées",
+    "apyUpdates": "L'APY se met à jour automatiquement à mesure que votre mise augmente",
+    "line1": "Le système utilise un modèle de niveaux dynamique, où votre APY augmente à mesure que votre solde total misé croît.",
+    "line2": "Chaque niveau débloque un taux de rendement plus élevé, à partir de 12,8 % et atteignant jusqu'à 28,7 % d'APY au niveau le plus élevé.",
+    "line3": "Lorsque vous misez des étoiles supplémentaires et passez à un niveau supérieur, votre APY global est recalculé instantanément sur la base du nouveau total.",
+    "line4": "Vos seuils de niveau actuel et suivant sont affichés en temps réel, vous permettant de suivre votre progression vers le prochain boost d'APY."
+  },
+  "withdraw": {
+    "title": "Options de retrait",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Étoiles Telegram",
+    "subtitle": "Lors d'un retrait en TON, de petits frais de réseau allant jusqu'à 1 % peuvent s'appliquer selon le montant retiré.",
+    "line1": "Vous pouvez retirer vos récompenses directement en étoiles Telegram ou en Toncoin (TON) selon vos préférences.",
+    "line2": "Lors d'un retrait en TON, de petits frais de réseau allant jusqu'à 1 % peuvent s'appliquer selon le montant total.",
+    "line3": "Tous les retraits sont traités de manière sécurisée et généralement finalisés en quelques minutes après confirmation.",
+    "line4": "Avant de procéder à un retrait en TON, assurez-vous que votre portefeuille TON est bien connecté."
+  },
+  "campaign": {
+    "title": "Détails de la campagne",
+    "minStakeLabel": "Mise min.",
+    "maxStakeLabel": "Mise max.",
+    "line1": "La campagne permet de miser à partir d'un minimum de 500 étoiles, sans limite supérieure pour le montant maximum.",
+    "line2": "Tous les dépôts contribuent directement au pool de mise actif et commencent à générer des récompenses immédiatement après confirmation."
+  },
+  "header": {
+    "walletConnected": "Portefeuille connecté",
+    "copyAddress": "Copier l'adresse",
+    "disconnect": "Déconnecter",
+    "disconnectConfirmTitle": "Déconnecter le portefeuille",
+    "disconnectConfirmMessage": "Êtes-vous sûr de vouloir déconnecter le portefeuille ?"
+  },
+  "ecosystem": {
+    "title": "Avantages de l'écosystème",
+    "items": {
+      "marketplace": {
+        "title": "Soutien à la liquidité du marché",
+        "content": "Le système Stars Base contribue au maintien d'une liquidité stable sur l'ensemble du marché Telegram Stars.\nEn bloquant temporairement des étoiles dans des pools de mise, l'offre en circulation diminue, ce qui contribue à stabiliser l'activité du marché.\nCela garantit un pouvoir d'achat constant, des transactions plus fluides et un environnement commercial plus sain pour tous les participants.\nUn modèle de liquidité équilibré maintient l'écosystème des étoiles durable et résistant aux fluctuations soudaines du marché.\nLa stabilité de la liquidité renforce également la confiance entre les utilisateurs et les développeurs qui intègrent les paiements en étoiles."
+      },
+      "antiInflation": {
+        "title": "Système anti-inflation",
+        "content": "La mise soutient directement les mécanismes anti-inflation de l'écosystème des étoiles en réduisant le volume d'étoiles en circulation.\nPlus les utilisateurs misent, plus la contraction de l'offre contribue naturellement à préserver la valeur à long terme de l'actif.\nCe processus crée une économie auto-équilibrée où la croissance reste stable et organique.\nLe système garantit que les participants aussi bien précoces que tardifs bénéficient de conditions de rendement constantes et équitables.\nEn minimisant l'inflation incontrôlée, l'écosystème préserve la durabilité des récompenses pour tous les utilisateurs."
+      },
+      "infrastructure": {
+        "title": "Financement de l'infrastructure",
+        "content": "Une partie de l'activité de mise soutient le développement continu de l'infrastructure de paiement et de mise des étoiles de Telegram.\nCela inclut le maintien de transactions sécurisées, de systèmes de traitement efficaces et d'une scalabilité fiable pour des millions d'utilisateurs.\nEn participant à la mise, les utilisateurs contribuent indirectement à améliorer les performances et la résilience de l'écosystème.\nLe financement de l'infrastructure garantit que le réseau des étoiles reste rapide, sécurisé et prêt pour l'avenir.\nCes ressources permettent des mises à niveau continues, une maintenance technique et des extensions de fonctionnalités futures."
+      }
+    }
+  },
+  "modal": {
+    "close": "Fermer",
+    "apy": "APY",
+    "stakedStars": "Étoiles misées",
+    "amount": "Montant",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Période de blocage",
+    "unlockDate": "Date de déblocage",
+    "lockPeriodValue": "{days} jours"
+  },
+  "payment": {
+    "processing": "Traitement en cours…",
+    "invalidRequest": "Requête invalide.",
+    "unableStart": "Impossible de démarrer le paiement. Réessayez.",
+    "unableOpen": "Impossible d'ouvrir le paiement. Réessayez.",
+    "paymentSuccessful": "Paiement réussi !",
+    "paymentCancelled": "Paiement annulé",
+    "stakeTitle": "Miser {amount} étoiles",
+    "stakeLabel": "Miser {amount} étoiles"
+  },
+  "paymentSuccess": {
+    "title": "Mise confirmée",
+    "subtitle": "Votre dépôt a été bloqué pendant {days} jours.",
+    "apy": "APY",
+    "stakedStars": "Étoiles misées",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Période de blocage",
+    "unlockDate": "Date de déblocage",
+    "back": "Retour à la vue d'ensemble",
+    "note": "Demandé : {requested} étoiles · Facturé : {paid} étoiles"
+  },
+  "faqs": {
+    "pageTitle": "Questions fréquemment posées",
+    "learnMore": "En savoir plus",
+    "items": {
+      "q1": {
+        "question": "D'où proviennent les récompenses de Stars Base ?",
+        "answer": "Les récompenses sont générées grâce au modèle de distribution de rendement de l'écosystème Stars Base.\nChaque pool de mise contribue à la stabilité de la liquidité et à l'infrastructure réseau, ce qui crée des cycles de récompenses durables.\nUne partie du rendement provient de la croissance de l'écosystème, de l'activité du marché et des incitations à la mise distribuées dans le temps.\nAucune source spéculative n'est impliquée ; toutes les récompenses sont soutenues par une valeur réelle de l'écosystème.\nCette structure garantit l'équité, la durabilité à long terme et la transparence pour tous les participants."
+      },
+      "q2": {
+        "question": "Qu'est-ce que la mise et est-elle sécurisée ?",
+        "answer": "La mise est le processus de blocage de vos étoiles pour soutenir l'écosystème et gagner des récompenses passives en retour.\nLorsque vous misez, vos actifs restent liés en toute sécurité à votre compte et ne sont jamais transférés à des tiers.\nLe système est construit sur l'infrastructure de paiement sécurisée de Telegram et fonctionne avec un chiffrement et une transparence totaux.\nToutes les transactions sont vérifiées et auditables, garantissant sécurité et immuabilité.\nC'est un mécanisme à faible risque conçu pour la croissance de la valeur à long terme et la contribution à l'écosystème."
+      },
+      "q3": {
+        "question": "Comment les récompenses sont-elles calculées ?",
+        "answer": "Les récompenses sont basées sur votre solde total misé et le niveau de palier que vous détenez actuellement.\nChaque palier offre un Rendement en Pourcentage Annuel (APY) plus élevé, à partir de 12,8 % et atteignant 28,7 % pour des engagements plus importants.\nL'APY s'ajuste dynamiquement à mesure que vous augmentez votre mise ; des mises plus importantes débloquent des taux de rendement plus élevés.\nLe système recalcule automatiquement votre APY effectif en temps réel.\nTous les calculs de récompenses sont transparents et vérifiables dans le tableau de bord de l'application."
+      },
+      "q4": {
+        "question": "Puis-je retirer mes étoiles à tout moment ?",
+        "answer": "Oui, les retraits sont disponibles à tout moment après la fin de votre période de blocage minimale.\nVous pouvez choisir de retirer directement en étoiles Telegram ou en Toncoin (TON) selon vos préférences.\nLes retraits en TON peuvent inclure de petits frais de réseau selon le montant.\nToutes les transactions sont traitées automatiquement et en toute sécurité en quelques minutes.\nLe système garantit une expérience fluide avec une traçabilité complète."
+      },
+      "q5": {
+        "question": "Que se passe-t-il si je mise plus d'étoiles ultérieurement ?",
+        "answer": "Lorsque vous ajoutez des étoiles à votre mise existante, votre solde total se met à jour instantanément.\nLe système évalue automatiquement votre nouveau niveau de palier et applique le boost d'APY correspondant.\nVos récompenses précédentes ne sont pas affectées, tandis que vos revenus futurs augmentent en conséquence.\nCela rend votre expérience de mise dynamique — plus vous misez, plus vous gagnez.\nIl n'y a aucune pénalité ni délai lors de l'augmentation de votre montant de mise."
+      },
+      "q6": {
+        "question": "Comment Stars Base bénéficie-t-il à l'écosystème Telegram ?",
+        "answer": "Stars Base aide à maintenir la liquidité et la stabilité au sein du marché Telegram Stars.\nIl soutient également les mesures anti-inflation en réduisant le nombre d'étoiles en circulation.\nUne partie de toute l'activité de mise contribue au développement de l'infrastructure de paiement et de mise.\nCela permet des paiements plus rapides, une plus grande scalabilité et une boucle économique durable.\nEn misant, les utilisateurs non seulement gagnent mais contribuent également à renforcer les fondements à long terme de l'ensemble de l'écosystème des étoiles."
+      },
+      "q7": {
+        "question": "Comment l'APY affecte-t-il les récompenses quotidiennes et mensuelles ?",
+        "answer": "L'APY (Rendement en Pourcentage Annuel) représente votre rendement annuel, mais les récompenses sont calculées et ajoutées quotidiennement.\nPar exemple, un APY de 12,8 % correspond à environ ~1,06 % par mois (composé). Si vous misez 1 000 étoiles, vous en verrez environ 1 039 après un mois (avant l'arrondi à l'affichage).\nVotre solde augmente chaque jour ; la capitalisation fonctionne automatiquement — le rendement de chaque jour s'accumule sur le précédent.\nNous créditons les récompenses quotidiennement avec une précision à deux décimales, tandis que l'écran de mise affiche le solde entier.\nEn résumé, plus vous misez longtemps, plus vos rendements se capitalisent dans le temps."
+      },
+      "q8": {
+        "question": "Y a-t-il un risque de perdre mes étoiles ?",
+        "answer": "Stars Base fonctionne sous une structure non-dépositaire, ce qui signifie que vous conservez la propriété de vos actifs.\nVos fonds restent bloqués en toute sécurité et vérifiables à tout moment.\nL'architecture du système donne la priorité à la transparence et à la sécurité.\nLa principale variable est la fluctuation du rendement, pas la sécurité de vos fonds."
+      },
+      "q9": {
+        "question": "Mon APY est-il fixe ou évolue-t-il dans le temps ?",
+        "answer": "L'APY dans Stars Base est dynamique et dépend de votre montant total misé et de l'état de liquidité du système.\nBien que l'APY de base commence à 12,8 %, il peut augmenter à mesure que vous progressez vers des paliers de mise plus élevés.\nDans de rares cas, des ajustements de réseau ou de liquidité peuvent légèrement influencer le taux de rendement.\nTous les changements de taux sont transparents et immédiatement reflétés dans votre tableau de bord.\nLe système vise à maintenir des rendements stables et compétitifs dans des conditions variables."
+      },
+      "q10": {
+        "question": "Quels sont les montants minimum et maximum que je peux miser ?",
+        "answer": "Le montant minimum pour participer à la mise est de 500 étoiles.\nLe maximum par dépôt unique est de 100 000 étoiles.\nDes montants plus élevés débloquent automatiquement des paliers supérieurs et de meilleurs taux d'APY.\nCe système flexible récompense équitablement les nouveaux utilisateurs et les utilisateurs à long terme."
+      },
+      "q11": {
+        "question": "Qu'est-ce qui distingue Stars Base des plateformes de mise ordinaires ?",
+        "answer": "Stars Base est un modèle de mise natif à l'écosystème construit autour des étoiles Telegram.\nIl combine des récompenses APY élevées avec une utilité réelle, soutenant la liquidité du marché et l'infrastructure.\nContrairement aux applications de mise spéculatives, les flux de valeur restent au sein de l'écosystème.\nCela garantit la transparence, la durabilité à long terme et un impact concret pour chaque utilisateur."
+      },
+      "q12": {
+        "question": "Que se passe-t-il avec mes étoiles pendant la période de blocage ?",
+        "answer": "Vos étoiles restent mises en toute sécurité dans le système pendant la durée de la période de blocage minimale de 30 jours.\nPendant cette période, elles continuent de générer des récompenses sans aucun risque de perte ou de transfert externe.\nVous pouvez surveiller la croissance de vos rendements en temps réel depuis le tableau de bord.\nUne fois la période de blocage terminée, vous pouvez retirer ou remiser à tout moment avec un contrôle total."
+      },
+      "q13": {
+        "question": "Puis-je annuler ma mise avant terme ?",
+        "answer": "La démise anticipée n'est pas disponible pendant la période de blocage initiale de 30 jours afin de maintenir la stabilité de l'écosystème.\nCette règle protège tous les participants en garantissant la cohérence de la liquidité et une distribution équitable des rendements.\nAprès cette période, vous pouvez librement retirer ou remiser à tout moment.\nLe système est conçu pour équilibrer flexibilité et durabilité."
+      },
+      "q14": {
+        "question": "Les récompenses sont-elles distribuées automatiquement ?",
+        "answer": "Oui, les récompenses sont distribuées automatiquement et mises à jour quotidiennement dans votre solde de compte.\nIl n'est pas nécessaire de les réclamer manuellement ni d'effectuer des transferts externes.\nVos récompenses cumulées peuvent être suivies en temps réel depuis votre tableau de bord de mise.\nCette automatisation garantit un maximum de commodité et de transparence pour tous les utilisateurs."
+      },
+      "q15": {
+        "question": "À quelle fréquence l'APY est-il mis à jour ?",
+        "answer": "Les taux d'APY sont recalculés en fonction de votre palier actif et de la santé de la liquidité du système.\nLorsque vous misez ou ajoutez des étoiles, la mise à jour est appliquée instantanément.\nCela garantit que vos récompenses reflètent toujours votre niveau de mise le plus récent.\nCela évite également que des données de rendement obsolètes ou retardées n'apparaissent sur votre compte."
+      },
+      "q16": {
+        "question": "Pourquoi Stars Base utilise-t-il une période de blocage ?",
+        "answer": "La période de blocage minimale de 30 jours contribue à maintenir la liquidité du marché et empêche les flux rapides de capitaux qui pourraient déstabiliser le système.\nElle garantit que les taux de rendement restent équitables et constants pour tous les participants.\nLes périodes de blocage sont standard dans la plupart des systèmes de mise pour protéger l'intégrité de l'écosystème.\nAprès la fin du blocage, vous êtes libre de retirer ou de remiser sans limitation."
+      },
+      "q17": {
+        "question": "Quels facteurs peuvent influencer le taux d'APY ?",
+        "answer": "Le taux d'APY dépend de la liquidité globale de l'écosystème, du volume total misé et de la demande interne du marché.\nLorsque plus d'utilisateurs misent, le pool s'agrandit, permettant des ajustements de rendement pour maintenir l'équilibre.\nDe plus, la santé du système et la stabilité du marché sont continuellement surveillées pour optimiser les rendements.\nTous les ajustements sont algorithmiques et transparents pour maintenir l'équité."
+      },
+      "q18": {
+        "question": "Comment fonctionne la capitalisation dans Stars Base ?",
+        "answer": "La capitalisation signifie que vos récompenses quotidiennes sont automatiquement ajoutées à votre solde.\nChaque nouveau jour, votre rendement est calculé sur le solde précis mis à jour (suivi avec deux décimales), tandis que la page de mise affiche le montant entier.\nCela crée un effet de croissance composée dans le temps, améliorant les rendements à long terme."
+      },
+      "q19": {
+        "question": "Les mises à jour du système peuvent-elles affecter mon solde de mise ?",
+        "answer": "Non, les mises à jour ou les opérations de maintenance n'affectent pas votre montant misé ni vos récompenses accumulées.\nToutes les données de mise sont stockées en toute sécurité et synchronisées.\nDans de rares cas, des retards d'affichage temporaires peuvent survenir, mais vos fonds restent en sécurité.\nVous recevrez une notification si une maintenance planifiée est prévue."
+      }
+    }
+  },
+  "history": {
+    "title": "Historique des transactions",
+    "empty": {
+      "title": "Aucun historique pour l'instant",
+      "subtitle": "Une fois que vous commencerez à effectuer des transactions, elles apparaîtront ici."
+    },
+    "detailsTitle": "Détails de la transaction",
+    "deposit": "Dépôt",
+    "withdraw": "Retrait",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Déposer",
+    "buttonConfirmStake": "Confirmer la mise",
+    "tagDeposit": "Dépôt",
+    "tagStake": "Mise",
+    "stakeAmountAria": "Montant de la mise en étoiles",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Le dépôt minimum est de {min} étoiles.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON"
+  },
+  "apy": {
+    "estimatedYield": "Rendement estimé",
+    "year": "An",
+    "perYear": "par an",
+    "collapseDetails": "Réduire les détails",
+    "expandDetails": "Développer les détails",
+    "yearly": "Annuel",
+    "monthly": "Mensuel",
+    "daily": "Quotidien",
+    "minimumLock": "Blocage minimum",
+    "minimumLockValue": "{days} jours"
+  }
+}

@@ -5,7 +5,32 @@
   padding: 24px 20px;
   border-radius: var(--br-section);
   text-align: center;
-  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+
+  background: var(--app-glass-bg) !important;
+  backdrop-filter: blur(var(--app-glass-blur));
+  -webkit-backdrop-filter: blur(var(--app-glass-blur));
+  border: 1px solid var(--app-glass-border);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 80% 50% at 50% 110%,
+      var(--app-glass-glow),
+      transparent 70%
+    );
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 
   .iconWrap {
     display: flex;
@@ -23,20 +48,19 @@
 
   .title {
     font-size: 20px;
-    font-weight: 600;
-    margin: 4px 0 2px;
-    font-family: 'SF Pro Rounded' !important;
+    font-family: var(--rounded) !important;
     font-weight: bold !important;
+    margin: 4px 0 2px;
   }
 
   .subtitle {
     font-size: 15px;
-    font-family: 'SF Pro Rounded' !important;
+    font-family: var(--rounded) !important;
     color: var(--app-hint);
   }
-  
+
   .error {
     text-align: center;
-    color: var(--app-destructive-text); 
+    color: var(--app-destructive-text);
   }
 }
