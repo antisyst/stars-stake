@@ -140,6 +140,19 @@
     "back": "개요로 돌아가기",
     "note": "요청: 별 {requested}개 · 실제 청구: 별 {paid}개"
   },
+  "tonPay": {
+    "payWithTon": "TON으로 결제",
+    "priceNotReady": "TON 가격이 아직 준비되지 않았습니다. 잠시 후 다시 시도해 주세요.",
+    "userNotDetected": "계정을 감지할 수 없습니다. 앱을 다시 시작해 주세요.",
+    "rejected": "지갑에서 거래가 거부되었습니다.",
+    "cancelled": "지갑 연결이 취소되었습니다.",
+    "verifyFailed": "결제가 전송되었지만 확인이 시간 초과되었습니다. 지원팀에 문의하세요.",
+    "networkError": "네트워크 오류입니다. 연결을 확인하고 다시 시도해 주세요.",
+    "failed": "TON 결제에 실패했습니다. 다시 시도해 주세요.",
+    "connecting": "연결 중…",
+    "confirm": "지갑에서 확인…",
+    "verifying": "결제 확인 중…"
+  },
   "faqs": {
     "pageTitle": "자주 묻는 질문",
     "learnMore": "더 알아보기",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "별 단위 스테이킹 금액",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "최소 입금 금액은 별 {min}개입니다.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "{amount}로 스테이킹"
   },
   "apy": {
     "estimatedYield": "예상 수익",
@@ -254,5 +268,26 @@
     "daily": "일간",
     "minimumLock": "최소 잠금 기간",
     "minimumLockValue": "{days}일"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "오늘",
+      "1W": "이번 주",
+      "1M": "이번 달",
+      "1Y": "올해",
+      "All": "전체 기간"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "시장 통계",
+    "marketCap": "시가총액",
+    "volume24h": "24시간 거래량",
+    "change7d": "7일 변동",
+    "change30d": "30일 변동",
+    "allTimeHigh": "역대 최고가",
+    "allTimeLow": "역대 최저가",
+    "inCirculation": "% 유통 중",
+    "circulatingSupply": "유통 공급량",
+    "totalSupply": "총 공급량"
   }
 }

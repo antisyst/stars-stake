@@ -140,6 +140,19 @@
     "back": "Tillbaka till översikten",
     "note": "Begärt: {requested} stjärnor · Debiterat: {paid} stjärnor"
   },
+  "tonPay": {
+    "payWithTon": "Betala med TON",
+    "priceNotReady": "TON-priset är inte klart än. Försök igen om en stund.",
+    "userNotDetected": "Det gick inte att identifiera ditt konto. Starta om appen.",
+    "rejected": "Transaktionen avvisades i plånboken.",
+    "cancelled": "Plånboksanslutningen avbröts.",
+    "verifyFailed": "Betalningen skickades, men bekräftelsen tog för lång tid. Kontakta support.",
+    "networkError": "Nätverksfel. Kontrollera din anslutning och försök igen.",
+    "failed": "TON-betalningen misslyckades. Försök igen.",
+    "connecting": "Ansluter…",
+    "confirm": "Bekräfta i plånboken…",
+    "verifying": "Verifierar betalning…"
+  },
   "faqs": {
     "pageTitle": "Vanliga frågor",
     "learnMore": "Läs mer",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Stake-belopp i stjärnor",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Minsta insättning är {min} stjärnor.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Stake med {amount}"
   },
   "apy": {
     "estimatedYield": "Uppskattad avkastning",
@@ -254,5 +268,26 @@
     "daily": "Daglig",
     "minimumLock": "Minsta lås",
     "minimumLockValue": "{days} dagar"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Idag",
+      "1W": "Denna vecka",
+      "1M": "Denna månad",
+      "1Y": "Detta år",
+      "All": "Alltid"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Marknadsstatistik",
+    "marketCap": "Marknadsvärde",
+    "volume24h": "Volym 24h",
+    "change7d": "Förändring 7d",
+    "change30d": "Förändring 30d",
+    "allTimeHigh": "Högsta någonsin",
+    "allTimeLow": "Lägsta någonsin",
+    "inCirculation": "% i cirkulation",
+    "circulatingSupply": "I cirkulation",
+    "totalSupply": "Totalt utbud"
   }
 }

@@ -1,0 +1,91 @@
+.tonMarketPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  padding-bottom: 24px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+
+  .titleRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 4px 0 8px;
+
+    .logoWrap {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tonLogo {
+      width: 48px;
+      height: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logoBubble {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(0, 152, 234, 0.35) 0%,
+        rgba(0, 152, 234, 0.08) 60%,
+        transparent 100%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .coinName {
+      font-size: 22px;
+      font-family: var(--rounded) !important;
+      font-weight: 700;
+      color: var(--app-text);
+      letter-spacing: -0.4px;
+      line-height: 1.1;
+    }
+
+    .coinSymbol {
+      font-size: 14px;
+      color: var(--app-hint);
+      font-family: var(--rounded) !important;
+      font-weight: 500;
+    }
+  }
+
+  .card {
+    width: 100%;
+    padding: 16px;
+    border-radius: var(--br-section);
+    background: var(--app-glass-bg) !important;
+    backdrop-filter: blur(var(--app-glass-blur));
+    -webkit-backdrop-filter: blur(var(--app-glass-blur));
+    border: 1px solid var(--app-glass-border);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: linear-gradient(160deg, var(--app-glass-highlight) 0%, transparent 45%);
+      z-index: 0;
+    }
+
+    > * { position: relative; z-index: 1; }
+  }
+}

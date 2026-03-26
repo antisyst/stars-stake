@@ -8,6 +8,7 @@ import { FaqPage } from '@/pages/FaqPage/FaqPage';
 import { UserAgreement } from '@/pages/UserAgreement/UserAgreement';
 import { LanguagePage } from '@/pages/LanguagePage/LanguagePage';
 import { PrivacyPolicy } from '@/pages/PrivacyPolicy/PrivacyPolicy';
+import { TonMarketPage } from '@/pages/TonMarketPage/TonMarketPage';
 import { Route } from '@/types';
 
 export const routes: Route[] = [
@@ -20,5 +21,6 @@ export const routes: Route[] = [
   { path: '/profile', Component: ProfilePage, title: 'Profile' },
   { path: '/privacy-policy', Component: PrivacyPolicy, title: 'Privacy Policy' },
   { path: '/user-agreement', Component: UserAgreement, title: 'User Agreement' },
-  { path: '/language', Component: LanguagePage, title: 'Language' }
+  { path: '/language', Component: LanguagePage, title: 'Language' },
+  { path: '/ton-market', Component: TonMarketPage, title: 'TON Market' },
 ];

@@ -140,6 +140,19 @@
     "back": "返回概览",
     "note": "请求：{requested} 颗星 · 实际收费：{paid} 颗星"
   },
+  "tonPay": {
+    "payWithTon": "使用 TON 支付",
+    "priceNotReady": "TON 价格尚未准备好。请稍后再试。",
+    "userNotDetected": "无法检测到您的账户。请重新启动应用。",
+    "rejected": "钱包中的交易已被拒绝。",
+    "cancelled": "钱包连接已取消。",
+    "verifyFailed": "支付已发送，但确认超时。请联系客服。",
+    "networkError": "网络错误。请检查您的连接并重试。",
+    "failed": "TON 支付失败。请重试。",
+    "connecting": "连接中…",
+    "confirm": "在钱包中确认…",
+    "verifying": "正在验证支付…"
+  },
   "faqs": {
     "pageTitle": "常见问题",
     "learnMore": "了解更多",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "以星为单位的质押金额",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "最低充值金额为 {min} 颗星。",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "用{amount}质押"
   },
   "apy": {
     "estimatedYield": "预计收益",
@@ -254,5 +268,26 @@
     "daily": "每日",
     "minimumLock": "最短锁定期",
     "minimumLockValue": "{days} 天"
+  },
+   "tonChart": {
+    "rangeLabel": {
+      "1D": "今天",
+      "1W": "本周",
+      "1M": "本月",
+      "1Y": "今年",
+      "All": "全部"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "市场统计",
+    "marketCap": "市值",
+    "volume24h": "24小时交易量",
+    "change7d": "7日涨跌",
+    "change30d": "30日涨跌",
+    "allTimeHigh": "历史最高价",
+    "allTimeLow": "历史最低价",
+    "inCirculation": "% 流通中",
+    "circulatingSupply": "流通供应量",
+    "totalSupply": "总供应量"
   }
 }

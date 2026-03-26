@@ -140,6 +140,19 @@
     "back": "Quay lại tổng quan",
     "note": "Yêu cầu: {requested} sao · Đã trừ: {paid} sao"
   },
+  "tonPay": {
+    "payWithTon": "Thanh toán bằng TON",
+    "priceNotReady": "Giá TON chưa sẵn sàng. Vui lòng thử lại sau ít phút.",
+    "userNotDetected": "Không thể phát hiện tài khoản của bạn. Vui lòng khởi động lại ứng dụng.",
+    "rejected": "Giao dịch bị từ chối trong ví.",
+    "cancelled": "Kết nối ví đã bị hủy.",
+    "verifyFailed": "Đã gửi thanh toán nhưng xác nhận đã hết thời gian. Vui lòng liên hệ hỗ trợ.",
+    "networkError": "Lỗi mạng. Vui lòng kiểm tra kết nối và thử lại.",
+    "failed": "Thanh toán TON thất bại. Vui lòng thử lại.",
+    "connecting": "Đang kết nối…",
+    "confirm": "Xác nhận trong ví…",
+    "verifying": "Đang xác minh thanh toán…"
+  },
   "faqs": {
     "pageTitle": "Câu hỏi thường gặp",
     "learnMore": "Tìm hiểu thêm",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Số lượng stake bằng sao",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Số tiền nạp tối thiểu là {min} sao.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Stake với {amount}"
   },
   "apy": {
     "estimatedYield": "Lợi suất ước tính",
@@ -254,5 +268,26 @@
     "daily": "Hàng ngày",
     "minimumLock": "Khóa tối thiểu",
     "minimumLockValue": "{days} ngày"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Hôm nay",
+      "1W": "Tuần này",
+      "1M": "Tháng này",
+      "1Y": "Năm nay",
+      "All": "Mọi thời gian"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Thống kê thị trường",
+    "marketCap": "Vốn hóa thị trường",
+    "volume24h": "Khối lượng 24h",
+    "change7d": "Thay đổi 7 ngày",
+    "change30d": "Thay đổi 30 ngày",
+    "allTimeHigh": "Cao nhất mọi thời đại",
+    "allTimeLow": "Thấp nhất mọi thời đại",
+    "inCirculation": "% đang lưu hành",
+    "circulatingSupply": "Lượng lưu hành",
+    "totalSupply": "Tổng cung"
   }
 }

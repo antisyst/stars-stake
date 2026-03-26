@@ -1,0 +1,43 @@
+.tonPayBtn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--br-section);
+  background: var(--app-text);
+  padding: 6px 9px;
+  color: var(--app-bg);
+  border: none;
+  font-size: 14px;
+  outline: none;
+  font-family: var(--rounded) !important;
+  font-weight: 600;
+  transition: 
+    all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background 0.3s ease;
+
+  &.loading {
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+ 
+  svg {
+    width: 14.5px;
+    height: 14.5px;
+    margin-top: 0.5px;
+    margin: 0 2px;
+    vertical-align: middle;
+  }
+
+  .tonAmt {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--app-bg);
+    font-family: var(--rounded) !important;
+  }
+}

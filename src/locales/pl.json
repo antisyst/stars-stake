@@ -140,6 +140,19 @@
     "back": "Powrót do przeglądu",
     "note": "Zamówiono: {requested} gwiazdek · Naliczono: {paid} gwiazdek"
   },
+  "tonPay": {
+    "payWithTon": "Zapłać przez TON",
+    "priceNotReady": "Cena TON nie jest jeszcze gotowa. Spróbuj ponownie za chwilę.",
+    "userNotDetected": "Nie można wykryć Twojego konta. Uruchom ponownie aplikację.",
+    "rejected": "Transakcja odrzucona w portfelu.",
+    "cancelled": "Połączenie z portfelem zostało anulowane.",
+    "verifyFailed": "Płatność wysłana, ale potwierdzenie przekroczyło limit czasu. Skontaktuj się z pomocą techniczną.",
+    "networkError": "Błąd sieci. Sprawdź połączenie i spróbuj ponownie.",
+    "failed": "Płatność TON nie powiodła się. Spróbuj ponownie.",
+    "connecting": "Łączenie…",
+    "confirm": "Potwierdź w portfelu…",
+    "verifying": "Weryfikacja płatności…"
+  },
   "faqs": {
     "pageTitle": "Często zadawane pytania",
     "learnMore": "Dowiedz się więcej",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Kwota stakowania w gwiazdkach",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Minimalna wpłata to {min} gwiazdek.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Stakuj z {amount}"
   },
   "apy": {
     "estimatedYield": "Szacowany zysk",
@@ -254,5 +268,26 @@
     "daily": "Dzienny",
     "minimumLock": "Minimalna blokada",
     "minimumLockValue": "{days} dni"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Dziś",
+      "1W": "Ten tydzień",
+      "1M": "Ten miesiąc",
+      "1Y": "Ten rok",
+      "All": "Cały czas"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Statystyki rynkowe",
+    "marketCap": "Kapitalizacja",
+    "volume24h": "Wolumen 24h",
+    "change7d": "Zmiana 7d",
+    "change30d": "Zmiana 30d",
+    "allTimeHigh": "Historyczne maximum",
+    "allTimeLow": "Historyczne minimum",
+    "inCirculation": "% w obiegu",
+    "circulatingSupply": "W obiegu",
+    "totalSupply": "Całkowita podaż"
   }
 }

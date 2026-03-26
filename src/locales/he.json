@@ -140,6 +140,19 @@
     "back": "חזרה לסקירה",
     "note": "התבקש: {requested} כוכבים · חויב: {paid} כוכבים"
   },
+  "tonPay": {
+    "payWithTon": "שלם עם TON",
+    "priceNotReady": "מחיר TON עדיין לא מוכן. אנא נסה שוב בקרוב.",
+    "userNotDetected": "לא ניתן לזהות את החשבון שלך. אנא הפעל מחדש את האפליקציה.",
+    "rejected": "העסקה נדחתה בארנק.",
+    "cancelled": "החיבור לארנק בוטל.",
+    "verifyFailed": "התשלום נשלח, אך אישור פג תוקף. אנא פנה לתמיכה.",
+    "networkError": "שגיאת רשת. אנא בדוק את החיבור שלך ונסה שוב.",
+    "failed": "תשלום TON נכשל. אנא נסה שוב.",
+    "connecting": "מתחבר…",
+    "confirm": "אשר בארנק…",
+    "verifying": "מאמת תשלום…"
+  },
   "faqs": {
     "pageTitle": "שאלות נפוצות",
     "learnMore": "למד עוד",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "סכום הימור בכוכבים",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "הפקדה מינימלית היא {min} כוכבים.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "סטייק עם {amount}"
   },
   "apy": {
     "estimatedYield": "תשואה משוערת",
@@ -254,5 +268,26 @@
     "daily": "יומי",
     "minimumLock": "נעילה מינימלית",
     "minimumLockValue": "{days} ימים"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "היום",
+      "1W": "השבוע",
+      "1M": "החודש",
+      "1Y": "השנה",
+      "All": "כל הזמנים"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "סטטיסטיקת שוק",
+    "marketCap": "שווי שוק",
+    "volume24h": "נפח 24ש'",
+    "change7d": "שינוי 7י'",
+    "change30d": "שינוי 30י'",
+    "allTimeHigh": "שיא כל הזמנים",
+    "allTimeLow": "שפל כל הזמנים",
+    "inCirculation": "% במחזור",
+    "circulatingSupply": "היצע במחזור",
+    "totalSupply": "היצע כולל"
   }
 }

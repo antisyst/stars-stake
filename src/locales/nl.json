@@ -140,6 +140,19 @@
     "back": "Terug naar overzicht",
     "note": "Aangevraagd: {requested} sterren · In rekening gebracht: {paid} sterren"
   },
+  "tonPay": {
+    "payWithTon": "Betalen met TON",
+    "priceNotReady": "TON-prijs is nog niet beschikbaar. Probeer het binnenkort opnieuw.",
+    "userNotDetected": "Uw account kon niet worden gedetecteerd. Start de app opnieuw op.",
+    "rejected": "Transactie geweigerd in portemonnee.",
+    "cancelled": "Verbinding met portemonnee geannuleerd.",
+    "verifyFailed": "Betaling verzonden, maar bevestiging is verlopen. Neem contact op met ondersteuning.",
+    "networkError": "Netwerkfout. Controleer uw verbinding en probeer het opnieuw.",
+    "failed": "TON-betaling mislukt. Probeer het opnieuw.",
+    "connecting": "Verbinden…",
+    "confirm": "Bevestig in portemonnee…",
+    "verifying": "Betaling verifiëren…"
+  },
   "faqs": {
     "pageTitle": "Veelgestelde vragen",
     "learnMore": "Meer informatie",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Stake-bedrag in sterren",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Minimale storting is {min} sterren.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Staken met {amount}"
   },
   "apy": {
     "estimatedYield": "Geschat rendement",
@@ -254,5 +268,26 @@
     "daily": "Dagelijks",
     "minimumLock": "Minimale blokkering",
     "minimumLockValue": "{days} dagen"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Vandaag",
+      "1W": "Deze week",
+      "1M": "Deze maand",
+      "1Y": "Dit jaar",
+      "All": "Alle tijd"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Marktstatistieken",
+    "marketCap": "Marktkapitalisatie",
+    "volume24h": "Volume 24u",
+    "change7d": "Wijziging 7d",
+    "change30d": "Wijziging 30d",
+    "allTimeHigh": "All-time high",
+    "allTimeLow": "All-time low",
+    "inCirculation": "% in omloop",
+    "circulatingSupply": "In omloop",
+    "totalSupply": "Totaal aanbod"
   }
 }

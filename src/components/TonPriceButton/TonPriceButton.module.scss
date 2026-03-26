@@ -1,0 +1,38 @@
+.tonPriceButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 12px;
+  border-radius: 20px;
+  height: 40px;
+  border: 1px solid var(--app-glass-border);
+  background: var(--app-glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity 0.18s ease, transform 0.15s ease;
+  flex-shrink: 0;
+
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  .tonIcon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .price {
+    font-size: 13.5px;
+    font-family: var(--rounded) !important;
+    font-weight: 600;
+    color: var(--app-text);
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+
+    &.loading {
+      opacity: 0.4;
+    }
+  }
+}

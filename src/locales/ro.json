@@ -140,6 +140,19 @@
     "back": "Înapoi la prezentare generală",
     "note": "Solicitat: {requested} stele · Taxat: {paid} stele"
   },
+  "tonPay": {
+    "payWithTon": "Plătește cu TON",
+    "priceNotReady": "Prețul TON nu este încă disponibil. Te rugăm să încerci din nou în scurt timp.",
+    "userNotDetected": "Nu s-a putut detecta contul tău. Te rugăm să repornești aplicația.",
+    "rejected": "Tranzacție refuzată în portofel.",
+    "cancelled": "Conexiunea la portofel a fost anulată.",
+    "verifyFailed": "Plata a fost trimisă, dar confirmarea a expirat. Te rugăm să contactezi asistența.",
+    "networkError": "Eroare de rețea. Verifică conexiunea și încearcă din nou.",
+    "failed": "Plata TON a eșuat. Te rugăm să încerci din nou.",
+    "connecting": "Se conectează…",
+    "confirm": "Confirmă în portofel…",
+    "verifying": "Se verifică plata…"
+  },
   "faqs": {
     "pageTitle": "Întrebări frecvente",
     "learnMore": "Află mai multe",

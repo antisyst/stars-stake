@@ -3,11 +3,18 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react-swc';
 import mkcert from 'vite-plugin-mkcert';
 import svgr from "vite-plugin-svgr";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 export default defineConfig({
   base: '/',
   plugins: [
     react(),
+    nodePolyfills({
+      globals: {
+        Buffer: true,
+        process: true,
+      },
+    }),
     svgr({
       svgrOptions: {
         // ...

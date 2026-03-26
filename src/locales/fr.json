@@ -140,6 +140,19 @@
     "back": "Retour à la vue d'ensemble",
     "note": "Demandé : {requested} étoiles · Facturé : {paid} étoiles"
   },
+  "tonPay": {
+    "payWithTon": "Payer avec TON",
+    "priceNotReady": "Le prix TON n'est pas encore prêt. Veuillez réessayer dans un instant.",
+    "userNotDetected": "Impossible de détecter votre compte. Veuillez redémarrer l'application.",
+    "rejected": "Transaction refusée dans le portefeuille.",
+    "cancelled": "La connexion au portefeuille a été annulée.",
+    "verifyFailed": "Paiement envoyé, mais la confirmation a expiré. Veuillez contacter le support.",
+    "networkError": "Erreur réseau. Veuillez vérifier votre connexion et réessayer.",
+    "failed": "Le paiement TON a échoué. Veuillez réessayer.",
+    "connecting": "Connexion…",
+    "confirm": "Confirmez dans le portefeuille…",
+    "verifying": "Vérification du paiement…"
+  },
   "faqs": {
     "pageTitle": "Questions fréquemment posées",
     "learnMore": "En savoir plus",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Montant de la mise en étoiles",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Le dépôt minimum est de {min} étoiles.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Staker avec {amount}"
   },
   "apy": {
     "estimatedYield": "Rendement estimé",
@@ -254,5 +268,26 @@
     "daily": "Quotidien",
     "minimumLock": "Blocage minimum",
     "minimumLockValue": "{days} jours"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Aujourd'hui",
+      "1W": "Cette semaine",
+      "1M": "Ce mois",
+      "1Y": "Cette année",
+      "All": "Depuis toujours"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Statistiques du marché",
+    "marketCap": "Capitalisation",
+    "volume24h": "Volume 24h",
+    "change7d": "Variation 7j",
+    "change30d": "Variation 30j",
+    "allTimeHigh": "Plus haut historique",
+    "allTimeLow": "Plus bas historique",
+    "inCirculation": "% en circulation",
+    "circulatingSupply": "En circulation",
+    "totalSupply": "Offre totale"
   }
 }

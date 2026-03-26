@@ -140,6 +140,19 @@
     "back": "กลับสู่ภาพรวม",
     "note": "ที่ขอ: {requested} ดาว · ที่ชำระ: {paid} ดาว"
   },
+  "tonPay": {
+    "payWithTon": "ชำระด้วย TON",
+    "priceNotReady": "ราคา TON ยังไม่พร้อม โปรดลองอีกครั้งในไม่ช้า",
+    "userNotDetected": "ไม่สามารถตรวจพบบัญชีของคุณได้ โปรดรีสตาร์ทแอป",
+    "rejected": "ธุรกรรมถูกปฏิเสธในกระเป๋าเงิน",
+    "cancelled": "การเชื่อมต่อกระเป๋าเงินถูกยกเลิก",
+    "verifyFailed": "ส่งการชำระเงินแล้ว แต่การยืนยันหมดเวลา โปรดติดต่อฝ่ายสนับสนุน",
+    "networkError": "เกิดข้อผิดพลาดเครือข่าย โปรดตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง",
+    "failed": "การชำระเงิน TON ล้มเหลว โปรดลองอีกครั้ง",
+    "connecting": "กำลังเชื่อมต่อ…",
+    "confirm": "ยืนยันในกระเป๋าเงิน…",
+    "verifying": "กำลังตรวจสอบการชำระเงิน…"
+  },
   "faqs": {
     "pageTitle": "คำถามที่พบบ่อย",
     "learnMore": "เรียนรู้เพิ่มเติม",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "จำนวนการสเตกเป็นดาว",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "การฝากขั้นต่ำคือ {min} ดาว",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "สเตคด้วย {amount}"
   },
   "apy": {
     "estimatedYield": "ผลตอบแทนโดยประมาณ",
@@ -254,5 +268,26 @@
     "daily": "รายวัน",
     "minimumLock": "ล็อกขั้นต่ำ",
     "minimumLockValue": "{days} วัน"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "วันนี้",
+      "1W": "สัปดาห์นี้",
+      "1M": "เดือนนี้",
+      "1Y": "ปีนี้",
+      "All": "ตลอดเวลา"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "สถิติตลาด",
+    "marketCap": "มูลค่าตลาด",
+    "volume24h": "ปริมาณ 24ชม.",
+    "change7d": "เปลี่ยนแปลง 7วัน",
+    "change30d": "เปลี่ยนแปลง 30วัน",
+    "allTimeHigh": "สูงสุดตลอดกาล",
+    "allTimeLow": "ต่ำสุดตลอดกาล",
+    "inCirculation": "% หมุนเวียน",
+    "circulatingSupply": "อุปทานหมุนเวียน",
+    "totalSupply": "อุปทานทั้งหมด"
   }
 }

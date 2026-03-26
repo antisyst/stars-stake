@@ -121,7 +121,7 @@
 
       .usdNote {
         font-family: var(--rounded) !important;
-        font-weight: 500 !important;
+        font-weight: 600 !important;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -164,3 +164,32 @@
    font-weight: 600;
    color: var(--app-text);
 }
+
+.tagRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+}
+
+.depositTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding-top: 40px;
+  padding-right: 16px;
+  gap: 8px;
+}
+ 
+.tonBtnPlaceholder {
+  width: 1px;
+  height: 30px;
+  flex-shrink: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+ 

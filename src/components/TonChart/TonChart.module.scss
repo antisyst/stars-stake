@@ -1,0 +1,138 @@
+.tonChart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .priceHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    .price {
+      font-size: 36px;
+      font-family: var(--rounded) !important;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: var(--app-text);
+      line-height: 1.1;
+    }
+
+    .changeRow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+
+      .changeAbs {
+        font-size: 15px;
+        font-family: var(--rounded) !important;
+        font-weight: 600;
+        &.up   { color: #41bd58; }
+        &.down { color: #e05050; }
+      }
+
+      .changePctBadge {
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        padding: 3px 9px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-family: var(--rounded) !important;
+        font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+
+        --number-flow-char-height: 1em;
+        --number-flow-mask-height: 0.25em;
+
+        * { color: inherit !important; }
+
+        &.up   { background: rgba(65, 189, 88, 0.18); color: #41bd58; }
+        &.down { background: rgba(224, 80, 80, 0.18); color: #e05050; }
+
+        .arrow {
+          font-size: 12px;
+          line-height: 1;
+          color: inherit;
+          flex-shrink: 0;
+        }
+      }
+
+      .rangeLabel {
+        font-size: 15px;
+        color: var(--app-hint);
+        font-family: var(--rounded) !important;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .chartWrapper {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .chartContainer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+
+    * { outline: none !important; }
+    svg {
+      outline: none !important;
+      &:focus, &:focus-visible { outline: none !important; }
+    }
+
+    .chartArea {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 55px;
+      bottom: 0;
+    }
+  }
+
+  .yOverlay {
+    position: absolute;
+    top: 0;
+    right: -8px;
+    width: 52px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .yTick {
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-family: var(--rounded) !important;
+    font-weight: 500;
+    color: var(--app-hint);
+    white-space: nowrap;
+    line-height: 1;
+    text-align: left;
+  }
+
+  .tooltip {
+    background: var(--app-glass-bg, rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--app-glass-border, rgba(255, 255, 255, 0.15));
+    border-radius: 18px;
+    box-shadow:
+      0 2px 12px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    padding: 6px 12px;
+    font-size: 13px;
+    font-family: var(--rounded) !important;
+    font-weight: 600;
+    color: var(--app-text);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+}

@@ -140,6 +140,19 @@
     "back": "Volver al resumen",
     "note": "Solicitado: {requested} estrellas · Cobrados: {paid} estrellas"
   },
+  "tonPay": {
+    "payWithTon": "Pagar con TON",
+    "priceNotReady": "El precio de TON aún no está listo. Por favor, inténtalo de nuevo en breve.",
+    "userNotDetected": "No se pudo detectar tu cuenta. Por favor, reinicia la aplicación.",
+    "rejected": "Transacción rechazada en la billetera.",
+    "cancelled": "La conexión con la billetera fue cancelada.",
+    "verifyFailed": "Pago enviado, pero la confirmación expiró. Por favor, contacta con soporte.",
+    "networkError": "Error de red. Por favor, comprueba tu conexión e inténtalo de nuevo.",
+    "failed": "El pago con TON falló. Por favor, inténtalo de nuevo.",
+    "connecting": "Conectando…",
+    "confirm": "Confirmar en billetera…",
+    "verifying": "Verificando pago…"
+  },
   "faqs": {
     "pageTitle": "Preguntas frecuentes",
     "learnMore": "Aprende más",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Cantidad a stake en estrellas",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "El depósito mínimo es {min} estrellas.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Stake con {amount}"
   },
   "apy": {
     "estimatedYield": "Rendimiento estimado",
@@ -254,5 +268,26 @@
     "daily": "Diario",
     "minimumLock": "Bloqueo mínimo",
     "minimumLockValue": "{days} días"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Hoy",
+      "1W": "Esta semana",
+      "1M": "Este mes",
+      "1Y": "Este año",
+      "All": "Todo el tiempo"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Estadísticas del mercado",
+    "marketCap": "Capitalización",
+    "volume24h": "Volumen 24h",
+    "change7d": "Cambio 7d",
+    "change30d": "Cambio 30d",
+    "allTimeHigh": "Máximo histórico",
+    "allTimeLow": "Mínimo histórico",
+    "inCirculation": "% en circulación",
+    "circulatingSupply": "En circulación",
+    "totalSupply": "Suministro total"
   }
 }

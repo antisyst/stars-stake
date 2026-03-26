@@ -1,0 +1,171 @@
+.tonMarketStats {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--br-section);
+  background: var(--app-glass-bg) !important;
+  backdrop-filter: blur(var(--app-glass-blur));
+  -webkit-backdrop-filter: blur(var(--app-glass-blur));
+  border: 1px solid var(--app-glass-border);
+  box-shadow: var(--app-glass-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(160deg, var(--app-glass-highlight) 0%, transparent 45%);
+    z-index: 0;
+  }
+
+  > * { position: relative; z-index: 1; }
+
+  .sectionTitle {
+    font-size: 16px;
+    font-family: var(--rounded) !important;
+    font-weight: 700;
+    color: var(--app-text);
+    letter-spacing: -0.2px;
+  }
+
+  .statsList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .statRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    &:last-child { border-bottom: none; }
+  }
+
+  .statLabel {
+    font-size: 14px;
+    color: var(--app-hint);
+    font-family: var(--rounded) !important;
+    font-weight: 500;
+  }
+
+  .statRight {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .statValue {
+    font-size: 14px;
+    font-family: var(--rounded) !important;
+    font-weight: 600;
+    color: var(--app-text);
+  }
+
+  .pctBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 13px;
+    font-family: var(--rounded) !important;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+    * { color: inherit !important; }
+
+    &.up {
+      background: rgba(65, 189, 88, 0.15);
+      color: #41bd58;
+    }
+    &.down {
+      background: rgba(224, 80, 80, 0.15);
+      color: #e05050;
+    }
+    &.neutral {
+      background: rgba(255,255,255,0.07);
+      color: var(--app-hint);
+    }
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--app-glass-border) 30%,
+      var(--app-glass-border) 70%,
+      transparent
+    );
+  }
+
+  .supplySection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .supplyHeader,
+  .supplyFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .supplyBarWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .supplyBar {
+    width: 100%;
+    height: 6px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.08);
+    overflow: hidden;
+  }
+
+  .supplyFill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--app-link);
+    transition: width 0.5s ease;
+  }
+
+  .supplyPct {
+    font-size: 12px;
+    color: var(--app-hint);
+    font-family: var(--rounded) !important;
+  }
+
+  .skeletonList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .skeletonRow {
+    height: 18px;
+    border-radius: 6px;
+    background: linear-gradient(
+      90deg,
+      var(--app-glass-bg) 25%,
+      rgba(255,255,255,0.06) 50%,
+      var(--app-glass-bg) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}

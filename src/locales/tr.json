@@ -140,6 +140,19 @@
     "back": "Genel Bakışa Dön",
     "note": "Talep edilen: {requested} yıldız · Ödenen tutar: {paid} yıldız"
   },
+  "tonPay": {
+    "payWithTon": "TON ile Öde",
+    "priceNotReady": "TON fiyatı henüz hazır değil. Lütfen kısa süre sonra tekrar deneyin.",
+    "userNotDetected": "Hesabınız algılanamadı. Lütfen uygulamayı yeniden başlatın.",
+    "rejected": "İşlem cüzdanda reddedildi.",
+    "cancelled": "Cüzdan bağlantısı iptal edildi.",
+    "verifyFailed": "Ödeme gönderildi, ancak onay zaman aşımına uğradı. Lütfen destek ile iletişime geçin.",
+    "networkError": "Ağ hatası. Lütfen bağlantınızı kontrol edin ve tekrar deneyin.",
+    "failed": "TON ödemesi başarısız oldu. Lütfen tekrar deneyin.",
+    "connecting": "Bağlanıyor…",
+    "confirm": "Cüzdanda onayla…",
+    "verifying": "Ödeme doğrulanıyor…"
+  },
   "faqs": {
     "pageTitle": "Sıkça Sorulan Sorular",
     "learnMore": "Daha fazla bilgi",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Yıldız cinsinden stake miktarı",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Minimum yatırım {min} yıldızdır.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "{amount} ile stake et"
   },
   "apy": {
     "estimatedYield": "Tahmini Getiri",
@@ -254,5 +268,26 @@
     "daily": "Günlük",
     "minimumLock": "Minimum Kilitleme",
     "minimumLockValue": "{days} gün"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Bugün",
+      "1W": "Bu hafta",
+      "1M": "Bu ay",
+      "1Y": "Bu yıl",
+      "All": "Tüm zamanlar"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Piyasa İstatistikleri",
+    "marketCap": "Piyasa Değeri",
+    "volume24h": "24s Hacim",
+    "change7d": "7g Değişim",
+    "change30d": "30g Değişim",
+    "allTimeHigh": "Tüm zamanların en yükseği",
+    "allTimeLow": "Tüm zamanların en düşüğü",
+    "inCirculation": "% dolaşımda",
+    "circulatingSupply": "Dolaşımdaki arz",
+    "totalSupply": "Toplam arz"
   }
 }

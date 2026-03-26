@@ -140,6 +140,19 @@
     "back": "Back to Overview",
     "note": "Requested: {requested} Stars · Payable charged: {paid} Stars"
   },
+  "tonPay": {
+    "payWithTon": "Pay with TON",
+    "priceNotReady": "TON price is not ready yet. Please try again shortly.",
+    "userNotDetected": "Could not detect your account. Please restart the app.",
+    "rejected": "Transaction declined in wallet.",
+    "cancelled": "Wallet connection was cancelled.",
+    "verifyFailed": "Payment sent, but confirmation timed out. Please contact support.",
+    "networkError": "Network error. Please check your connection and try again.",
+    "failed": "TON payment failed. Please try again.",
+    "connecting": "Connecting…",
+    "confirm": "Confirm in wallet…",
+    "verifying": "Verifying payment…"
+  },
   "faqs": {
     "pageTitle": "Frequently Asked Questions",
     "learnMore": "Learn more",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Stake amount in Stars",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Minimum deposit is {min} stars.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Stake with {amount}"
   },
   "apy": {
     "estimatedYield": "Estimated Yield",
@@ -254,5 +268,26 @@
     "daily": "Daily",
     "minimumLock": "Minimum Lock",
     "minimumLockValue": "{days} days"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Today",
+      "1W": "This Week",
+      "1M": "This Month",
+      "1Y": "This Year",
+      "All": "All Time"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Market Statistics",
+    "marketCap": "Market Cap",
+    "volume24h": "24h Volume",
+    "change7d": "7d Change",
+    "change30d": "30d Change",
+    "allTimeHigh": "All-Time High",
+    "allTimeLow": "All-Time Low",
+    "inCirculation": "% in circulation",
+    "circulatingSupply": "Circulating Supply",
+    "totalSupply": "Total Supply"
   }
 }

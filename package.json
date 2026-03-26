@@ -18,7 +18,7 @@
     "predeploy": "npm run build"
   },
   "dependencies": {
-    "@number-flow/react": "^0.5.9",
+    "@number-flow/react": "^0.5.14",
     "@tanstack/react-virtual": "^3.13.4",
     "@telegram-apps/analytics": "^1.4.0",
     "@telegram-apps/bridge": "^2.11.0",
@@ -29,6 +29,7 @@
     "@tma.js/bridge": "^2.0.3",
     "@tma.js/sdk": "^3.1.2",
     "@tma.js/sdk-react": "^3.0.11",
+    "@ton/core": "^0.63.1",
     "@tonconnect/ui-react": "^2.0.5",
     "@twa-dev/sdk": "^8.0.2",
     "classnames": "^2.5.1",
@@ -36,13 +37,16 @@
     "eruda": "^3.0.1",
     "firebase": "^11.10.0",
     "framer-motion": "^12.23.24",
+    "lightweight-charts": "^5.1.0",
     "lottie-web": "^5.13.0",
     "pako": "^2.1.0",
     "qrcode.react": "^4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.0",
-    "sass": "^1.86.0"
+    "recharts": "^3.8.1",
+    "sass": "^1.86.0",
+    "vite-plugin-node-polyfills": "^0.25.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.2.0",

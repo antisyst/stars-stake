@@ -140,6 +140,19 @@
     "back": "Bumalik sa Pangkalahatang-tanaw",
     "note": "Hiniling: {requested} na Bituin · Siningil: {paid} na Bituin"
   },
+  "tonPay": {
+    "payWithTon": "Magbayad gamit ang TON",
+    "priceNotReady": "Hindi pa handa ang presyo ng TON. Subukan muli sa ilang sandali.",
+    "userNotDetected": "Hindi ma-detect ang iyong account. Mangyaring i-restart ang app.",
+    "rejected": "Tinanggihan ang transaksyon sa wallet.",
+    "cancelled": "Na-cancel ang koneksyon sa wallet.",
+    "verifyFailed": "Naipadala ang bayad, ngunit nag-timeout ang kumpirmasyon. Makipag-ugnayan sa suporta.",
+    "networkError": "Error sa network. Suriin ang iyong koneksyon at subukan muli.",
+    "failed": "Nabigo ang pagbabayad ng TON. Subukan muli.",
+    "connecting": "Nagkokonekta…",
+    "confirm": "Kumpirmahin sa wallet…",
+    "verifying": "Bine-verify ang bayad…"
+  },
   "faqs": {
     "pageTitle": "Mga Madalas Itanong",
     "learnMore": "Matuto pa",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Halaga ng stake sa mga bituin",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Ang minimum na deposito ay {min} na bituin.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "I-stake gamit ang {amount}"
   },
   "apy": {
     "estimatedYield": "Tinatantyang Kita",
@@ -254,5 +268,26 @@
     "daily": "Araw-araw",
     "minimumLock": "Minimum na Lock",
     "minimumLockValue": "{days} araw"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Ngayon",
+      "1W": "Linggong ito",
+      "1M": "Buwang ito",
+      "1Y": "Taong ito",
+      "All": "Lahat ng oras"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Istatistika ng Merkado",
+    "marketCap": "Market Cap",
+    "volume24h": "Volume 24h",
+    "change7d": "Pagbabago 7d",
+    "change30d": "Pagbabago 30d",
+    "allTimeHigh": "Pinakamataas kailanman",
+    "allTimeLow": "Pinakamababa kailanman",
+    "inCirculation": "% sa sirkulasyon",
+    "circulatingSupply": "Circulating Supply",
+    "totalSupply": "Kabuuang Supply"
   }
 }

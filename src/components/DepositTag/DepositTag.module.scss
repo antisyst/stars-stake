@@ -1,36 +1,205 @@
-.depositTag {
+.shell {
   position: absolute;
   z-index: 1000;
   top: 10px;
   left: 50%;
-  transform-origin: center center;
-  margin-left: 0;
   translate: -50% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  contain: layout paint;
+}
 
+.sizer {
+  position: fixed;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden;
+  pointer-events: none;
   display: inline-flex;
   align-items: center;
-  background: var(--app-secondary-bg);
-  justify-content: center;
+  white-space: nowrap;
+  padding: 0 3px;
+  height: 30px;
   gap: 2px;
-  padding: 0 1px;
-  height: 24px;
-  border-radius: 12px;
-  will-change: transform, opacity, border-radius;
+}
 
-  .iconWrap {
-    display: flex;
-    align-items: center;
+.sizerTon {
+  gap: 2px;
+  padding: 0 10px;
+}
 
-    svg {
-      width: 22px;
-      height: 22px;
+.sizerIconSlot {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.tonIconSizer {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  margin: 0 1px;
+}
+
+.payingDotSizer {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+}
+
+.pill {
+  width: var(--pill-w, 60px);
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--app-secondary-bg);
+  pointer-events: auto;
+  will-change: width, transform, opacity, border-radius, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    width 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.22s ease,
+    opacity 0.22s ease,
+    filter 0.22s ease;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  &.tonMode {
+    background: var(--app-text);
+    border-radius: 26px;
+    -webkit-tap-highlight-color: transparent;
+
+    &:active:not(.paying) {
+      transform: translateZ(0) scale(0.965);
+      opacity: 0.86;
+      transition:
+        transform 0.1s ease,
+        opacity 0.1s ease,
+        width 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+        border-radius 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.22s ease;
     }
   }
 
-  .label {
-    font-weight: 500;
-    font-size: 14px;
-    padding-right: 6px;
-    will-change: opacity, transform, filter;
+  &.paying {
+    opacity: 0.92;
+    pointer-events: none;
+    filter: saturate(0.98);
+  }
+}
+
+.tagContent,
+.tonContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: opacity, transform, filter;
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.tagContent {
+  gap: 2px;
+}
+
+.tonContent {
+  gap: 2px;
+  pointer-events: auto;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.label {
+  font-weight: 500;
+  font-size: 14px;
+  padding-right: 6px;
+  color: var(--app-text);
+  letter-spacing: -0.1px;
+}
+
+.stakeWith {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--app-bg);
+  font-family: var(--rounded) !important;
+  letter-spacing: -0.15px;
+}
+
+.tonIcon {
+  width: 14.5px !important;
+  height: 14.5px !important;
+  margin: 0 1px;
+  overflow: hidden;
+  vertical-align: middle;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.08));
+}
+
+.tonAmt {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--app-bg);
+  font-family: var(--rounded) !important;
+  letter-spacing: -0.2px;
+}
+
+.tonLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app-bg);
+  font-family: var(--rounded, sans-serif);
+  opacity: 0.9;
+  letter-spacing: -0.1px;
+}
+
+.payingDot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--app-bg);
+  flex-shrink: 0;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.18);
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.82);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
   }
 }

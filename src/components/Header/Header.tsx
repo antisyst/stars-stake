@@ -14,6 +14,7 @@ import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firest
 import { db } from '@/configs/firebaseConfig';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useI18n } from '@/i18n';
+import { TonPriceButton } from '@/components/TonPriceButton/TonPriceButton';
 
 export const Header = () => {
   const initDataState = useSignal(initData.state);
@@ -192,12 +193,12 @@ export const Header = () => {
 
   return (
     <div className={styles.mainHeader}>
-      <div 
-       className={styles.profileWrapper}
-       onClick={onProfileClick} 
-       role="button" 
-       tabIndex={0} 
-       aria-label="Open profile"
+      <div
+        className={styles.profileWrapper}
+        onClick={onProfileClick}
+        role="button"
+        tabIndex={0}
+        aria-label="Open profile"
       >
         {user?.photoUrl ? (
           <Avatar
@@ -213,6 +214,7 @@ export const Header = () => {
         )}
       </div>
       <div className={styles.walletButtonWrapper}>
+        <TonPriceButton />
         <Button
           ref={buttonRef}
           mode={wallet ? 'bezeled' : 'filled'}

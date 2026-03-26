@@ -140,6 +140,19 @@
     "back": "Zur Übersicht",
     "note": "Angefordert: {requested} Sterne · Belastet: {paid} Sterne"
   },
+  "tonPay": {
+    "payWithTon": "Mit TON bezahlen",
+    "priceNotReady": "TON-Preis ist noch nicht verfügbar. Bitte versuche es gleich nochmal.",
+    "userNotDetected": "Konto konnte nicht erkannt werden. Bitte starte die App neu.",
+    "rejected": "Transaktion wurde in der Wallet abgelehnt.",
+    "cancelled": "Wallet-Verbindung wurde abgebrochen.",
+    "verifyFailed": "Zahlung gesendet, aber Bestätigung hat das Zeitlimit überschritten. Bitte kontaktiere den Support.",
+    "networkError": "Netzwerkfehler. Bitte überprüfe deine Verbindung und versuche es erneut.",
+    "failed": "TON-Zahlung fehlgeschlagen. Bitte versuche es erneut.",
+    "connecting": "Verbinde…",
+    "confirm": "In Wallet bestätigen…",
+    "verifying": "Zahlung wird überprüft…"
+  },
   "faqs": {
     "pageTitle": "Häufig gestellte Fragen",
     "learnMore": "Mehr erfahren",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Stake-Betrag in Sternen",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Mindestbetrag ist {min} Sternen.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Staken mit {amount}"
   },
   "apy": {
     "estimatedYield": "Geschätzte Rendite",
@@ -254,5 +268,26 @@
     "daily": "Täglich",
     "minimumLock": "Mindestdauer",
     "minimumLockValue": "{days} Tage"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Heute",
+      "1W": "Diese Woche",
+      "1M": "Dieser Monat",
+      "1Y": "Dieses Jahr",
+      "All": "Gesamtzeitraum"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Marktstatistiken",
+    "marketCap": "Marktkapitalisierung",
+    "volume24h": "24h-Volumen",
+    "change7d": "7T Änderung",
+    "change30d": "30T Änderung",
+    "allTimeHigh": "Allzeithoch",
+    "allTimeLow": "Allzeittief",
+    "inCirculation": "% im Umlauf",
+    "circulatingSupply": "Umlaufmenge",
+    "totalSupply": "Gesamtangebot"
   }
 }

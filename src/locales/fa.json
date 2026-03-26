@@ -140,6 +140,19 @@
     "back": "بازگشت به نمای کلی",
     "note": "درخواست‌شده: {requested} ستاره · کارمزد دریافتی: {paid} ستاره"
   },
+  "tonPay": {
+    "payWithTon": "پرداخت با TON",
+    "priceNotReady": "قیمت TON هنوز آماده نیست. لطفاً کمی دیگر دوباره امتحان کنید.",
+    "userNotDetected": "حساب شما شناسایی نشد. لطفاً برنامه را مجدداً راه‌اندازی کنید.",
+    "rejected": "تراکنش در کیف پول رد شد.",
+    "cancelled": "اتصال به کیف پول لغو شد.",
+    "verifyFailed": "پرداخت ارسال شد، اما تأیید به پایان رسید. لطفاً با پشتیبانی تماس بگیرید.",
+    "networkError": "خطای شبکه. لطفاً اتصال خود را بررسی کرده و دوباره امتحان کنید.",
+    "failed": "پرداخت TON ناموفق بود. لطفاً دوباره امتحان کنید.",
+    "connecting": "در حال اتصال…",
+    "confirm": "تأیید در کیف پول…",
+    "verifying": "در حال تأیید پرداخت…"
+  },
   "faqs": {
     "pageTitle": "سؤالات متداول",
     "learnMore": "بیشتر بدانید",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "مقدار استیک به ستاره",
     "onePrice": "۱ ≈ {rate}",
     "minDepositWarning": "حداقل واریز {min} ستاره است.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "استیک با {amount}"
   },
   "apy": {
     "estimatedYield": "بازده تخمینی",
@@ -254,5 +268,26 @@
     "daily": "روزانه",
     "minimumLock": "حداقل قفل",
     "minimumLockValue": "{days} روز"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "امروز",
+      "1W": "این هفته",
+      "1M": "این ماه",
+      "1Y": "امسال",
+      "All": "همه زمان‌ها"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "آمار بازار",
+    "marketCap": "ارزش بازار",
+    "volume24h": "حجم ۲۴ ساعته",
+    "change7d": "تغییر ۷ روزه",
+    "change30d": "تغییر ۳۰ روزه",
+    "allTimeHigh": "بالاترین قیمت تاریخی",
+    "allTimeLow": "پایین‌ترین قیمت تاریخی",
+    "inCirculation": "٪ در گردش",
+    "circulatingSupply": "عرضه در گردش",
+    "totalSupply": "کل عرضه"
   }
 }

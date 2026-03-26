@@ -140,6 +140,19 @@
     "back": "Kembali ke Ikhtisar",
     "note": "Diminta: {requested} bintang · Dikenakan: {paid} bintang"
   },
+  "tonPay": {
+    "payWithTon": "Bayar dengan TON",
+    "priceNotReady": "Harga TON belum siap. Silakan coba lagi sebentar lagi.",
+    "userNotDetected": "Akun Anda tidak dapat terdeteksi. Silakan mulai ulang aplikasi.",
+    "rejected": "Transaksi ditolak di dompet.",
+    "cancelled": "Koneksi dompet dibatalkan.",
+    "verifyFailed": "Pembayaran terkirim, tetapi konfirmasi habis waktu. Silakan hubungi dukungan.",
+    "networkError": "Kesalahan jaringan. Periksa koneksi Anda dan coba lagi.",
+    "failed": "Pembayaran TON gagal. Silakan coba lagi.",
+    "connecting": "Menghubungkan…",
+    "confirm": "Konfirmasi di dompet…",
+    "verifying": "Memverifikasi pembayaran…"
+  },
   "faqs": {
     "pageTitle": "Pertanyaan yang Sering Diajukan",
     "learnMore": "Pelajari lebih lanjut",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Jumlah stake dalam bintang",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Deposit minimum adalah {min} bintang.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Stake dengan {amount}"
   },
   "apy": {
     "estimatedYield": "Perkiraan Hasil",
@@ -254,5 +268,26 @@
     "daily": "Harian",
     "minimumLock": "Kunci minimal",
     "minimumLockValue": "{days} hari"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Hari ini",
+      "1W": "Minggu ini",
+      "1M": "Bulan ini",
+      "1Y": "Tahun ini",
+      "All": "Sepanjang waktu"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Statistik Pasar",
+    "marketCap": "Kapitalisasi Pasar",
+    "volume24h": "Volume 24j",
+    "change7d": "Perubahan 7h",
+    "change30d": "Perubahan 30h",
+    "allTimeHigh": "Tertinggi sepanjang masa",
+    "allTimeLow": "Terendah sepanjang masa",
+    "inCirculation": "% beredar",
+    "circulatingSupply": "Pasokan beredar",
+    "totalSupply": "Total pasokan"
   }
 }

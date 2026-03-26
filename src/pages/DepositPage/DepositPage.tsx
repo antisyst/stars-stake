@@ -19,6 +19,7 @@ import StarIcon from '@/assets/icons/star-gradient.svg?react';
 import styles from './DepositPage.module.scss';
 import { useCurrency } from '@/contexts/CurrencyContext';
 import { useI18n } from '@/i18n';
+import { useTonPay } from '@/components/TonPayButton/TonPayButton';
 
 export const DepositPage: React.FC = () => {
   const navigate = useNavigate();
@@ -52,20 +53,30 @@ export const DepositPage: React.FC = () => {
   const disabledBg = resolveCssVarToHex(disabledBgVar) || undefined;
   const disabledFg = resolveCssVarToHex(disabledFgVar) || undefined;
 
+  // Full TON equivalent at market rate shown in usdNote (pre-discount for display)
+  const usdVal = (amount || 0) * (exchangeRate ?? 0);
+  const tonVal = tonUsd > 0 && usdVal > 0 ? usdVal / tonUsd : 0;
+
+  // Pill morphs to TON mode when amount is valid and live TON rate is available
+  const tonModeActive = valid && tonUsd > 0;
+
+  // ── TON pill ──────────────────────────────────────────────────────────────
+  const { discountedTon, paying: tonPaying, handlePress: handleTonPress } = useTonPay({
+    starsAmount: amount,
+    tonAmount: tonVal,
+    disabled: !valid || tonUsd <= 0,
+  });
+
+  // ── Focus setup ───────────────────────────────────────────────────────────
   useEffect(() => {
     const el = inputRef.current;
     if (!el) return;
-
     if (isIos) {
-      const rafId = requestAnimationFrame(() => {
-        claimIosFocusBridge(el);
-      });
-      return () => cancelAnimationFrame(rafId);
+      const id = requestAnimationFrame(() => claimIosFocusBridge(el));
+      return () => cancelAnimationFrame(id);
     } else {
-      const rafId = requestAnimationFrame(() => {
-        el.focus({ preventScroll: true });
-      });
-      return () => cancelAnimationFrame(rafId);
+      const id = requestAnimationFrame(() => el.focus({ preventScroll: true }));
+      return () => cancelAnimationFrame(id);
     }
   }, []);
 
@@ -75,6 +86,7 @@ export const DepositPage: React.FC = () => {
     return () => { try { miniApp.setHeaderColor('secondary_bg_color'); } catch {} };
   }, []);
 
+  // ── Stars main button (completely untouched) ──────────────────────────────
   const applyButtonStyle = (enabled: boolean) => {
     try {
       mainButton.setParams({
@@ -132,9 +144,8 @@ export const DepositPage: React.FC = () => {
     return () => { try { off?.(); } catch {} };
   }, [valid, amount, navigate, location.pathname]);
 
+  // ── Input ─────────────────────────────────────────────────────────────────
   const displayValue = raw === '' ? '' : formatForInput(parseAmountInput(raw));
-  const usdVal = (amount || 0) * (exchangeRate ?? 0);
-  const tonVal = (tonUsd > 0 && usdVal > 0) ? (usdVal / tonUsd) : 0;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const cleaned = e.target.value.replace(/[^\d]/g, '');
@@ -144,10 +155,7 @@ export const DepositPage: React.FC = () => {
 
   const noSelect = useMemo(() => inputNoSelectGuards(), []);
   const shields = useMemo(() => tdesktopInputShields(isTDesktop), [isTDesktop]);
-  const inputProps = useMemo(
-    () => composeInputProps(noSelect, shields),
-    [noSelect, shields]
-  );
+  const inputProps = useMemo(() => composeInputProps(noSelect, shields), [noSelect, shields]);
 
   const sizerRef = useRef<HTMLSpanElement>(null);
   const [inputWidth, setInputWidth] = useState<number>(0);
@@ -158,15 +166,12 @@ export const DepositPage: React.FC = () => {
     s.textContent = displayValue === '' ? '0' : displayValue;
     if (displayValue === '') s.classList.remove(styles.hasValueStroke);
     else s.classList.add(styles.hasValueStroke);
-    const w = Math.ceil(s.getBoundingClientRect().width) + 6;
-    setInputWidth(w);
+    setInputWidth(Math.ceil(s.getBoundingClientRect().width) + 6);
   }, [displayValue]);
 
   const currentBalance = user?.starsBalance ?? 0;
 
-  useEffect(() => {
-    setFocused(false);
-  }, [location.key]);
+  useEffect(() => { setFocused(false); }, [location.key]);
 
   const apyKey = isMobile ? (focused ? 'focus' : 'blur') : 'stable';
 
@@ -174,19 +179,39 @@ export const DepositPage: React.FC = () => {
     <Page back backTo="/home">
       <div className={styles.depositPage} key={`deposit-${location.key}`}>
         <div className={styles.depositLayout}>
-          <DepositTag text={tagText} />
+
+          {/*
+           * Single DepositTag — always mounted, never unmounted.
+           * Width morphing is a CSS transition on --pill-w, not Framer layout.
+           * This eliminates the 1-second hang completely.
+           */}
+          <DepositTag
+            text={tagText}
+            tonMode={tonModeActive}
+            tonAmount={discountedTon}
+            paying={tonPaying}
+            payStep={null}
+            onTonPress={handleTonPress}
+          />
+
           <div className={styles.mainDepositContainer}>
             <div className={styles.inputCard}>
               <StarIcon />
               <div className={styles.inputWrapper}>
-                <span ref={sizerRef} className={`${styles.sizer} ${styles.amountText}`} aria-hidden="true" />
+                <span
+                  ref={sizerRef}
+                  className={`${styles.sizer} ${styles.amountText}`}
+                  aria-hidden="true"
+                />
                 <input
                   ref={inputRef}
                   id="amount"
                   type="text"
                   inputMode="numeric"
                   pattern="[0-9]*"
-                  className={`${styles.input} ${styles.amountText} ${displayValue !== '' ? styles.hasValueStroke : ''}`}
+                  className={`${styles.input} ${styles.amountText} ${
+                    displayValue !== '' ? styles.hasValueStroke : ''
+                  }`}
                   placeholder="0"
                   value={displayValue}
                   onChange={onChange}
@@ -199,6 +224,7 @@ export const DepositPage: React.FC = () => {
                 />
               </div>
             </div>
+
             <div className={styles.infoTitle}>
               {displayValue === '' ? (
                 <p className={styles.usdNote}>
@@ -216,6 +242,7 @@ export const DepositPage: React.FC = () => {
                 <p className={styles.usdNote}>≈ {formatFromUsd(usdVal, 2)}</p>
               )}
             </div>
+
             <AnimatePresence initial={false} mode="wait">
               {isValidDeposit(amount) ? (
                 <ApyPreview

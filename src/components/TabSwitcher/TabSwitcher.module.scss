@@ -1,0 +1,51 @@
+.tabSwitcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--tg-theme-secondary-bg-color, rgba(255,255,255,0.06));
+  border-radius: 22px;
+  padding: 3px;
+  gap: 2px;
+
+  .tab {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 18px;
+    transition: color 0.2s ease;
+
+    .pill {
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      background: var(--app-glass-bg, rgba(255,255,255,0.12));
+      border: 1px solid var(--app-glass-border, rgba(255,255,255,0.15));
+      z-index: 0;
+    }
+
+    .label {
+      position: relative;
+      z-index: 1;
+      font-size: 13.5px;
+      font-family: var(--rounded) !important;
+      font-weight: 600;
+      color: var(--app-hint);
+      transition: color 0.2s ease;
+    }
+
+    &.active .label {
+      color: var(--app-text);
+    }
+
+    &:active {
+      opacity: 0.75;
+    }
+  }
+}

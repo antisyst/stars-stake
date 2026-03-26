@@ -140,6 +140,19 @@
     "back": "Umumiy ko'rinishga qaytish",
     "note": "Talab qilindi: {requested} yulduz · Hisoblangan: {paid} yulduz"
   },
+  "tonPay": {
+    "payWithTon": "TON orqali to'lash",
+    "priceNotReady": "TON narxi hali tayyor emas. Iltimos, bir oz kutib qayta urinib ko'ring.",
+    "userNotDetected": "Hisobingiz aniqlanmadi. Iltimos, ilovani qayta ishga tushiring.",
+    "rejected": "Tranzaksiya hamyonda rad etildi.",
+    "cancelled": "Hamyon ulanishi bekor qilindi.",
+    "verifyFailed": "To'lov yuborildi, lekin tasdiqlash muddati tugadi. Iltimos, qo'llab-quvvatlash xizmati bilan bog'laning.",
+    "networkError": "Tarmoq xatosi. Iltimos, ulanishingizni tekshiring va qayta urinib ko'ring.",
+    "failed": "TON to'lovi muvaffaqiyatsiz bo'ldi. Iltimos, qayta urinib ko'ring.",
+    "connecting": "Ulanmoqda…",
+    "confirm": "Hamyonda tasdiqlang…",
+    "verifying": "To'lov tekshirilmoqda…"
+  },
   "faqs": {
     "pageTitle": "Ko'p so'raladigan savollar",
     "learnMore": "Ko'proq ma'lumot",
@@ -241,7 +254,8 @@
     "stakeAmountAria": "Yulduzlarda stake miqdori",
     "onePrice": "1 ≈ {rate}",
     "minDepositWarning": "Minimal depozit {min} yulduz.",
-    "approxNote": "≈ {fiat} ≈ {ton} TON"
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "{amount} bilan staking"
   },
   "apy": {
     "estimatedYield": "Taxminiy daromad",
@@ -254,5 +268,26 @@
     "daily": "Kunlik",
     "minimumLock": "Minimal bloklash",
     "minimumLockValue": "{days} kun"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Bugun",
+      "1W": "Bu hafta",
+      "1M": "Bu oy",
+      "1Y": "Bu yil",
+      "All": "Barcha vaqt"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Bozor statistikasi",
+    "marketCap": "Bozor kapitalizatsiyasi",
+    "volume24h": "24s hajmi",
+    "change7d": "7k o'zgarish",
+    "change30d": "30k o'zgarish",
+    "allTimeHigh": "Barcha vaqt rekord",
+    "allTimeLow": "Barcha vaqt pastki",
+    "inCirculation": "% muomalada",
+    "circulatingSupply": "Muomaladagi taklif",
+    "totalSupply": "Umumiy taklif"
   }
 }

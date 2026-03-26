@@ -1,28 +1,39 @@
 .dropdown {
   position: absolute;
   top: calc(100% + 8px);
-  background-color: var(--tgui--bg_color);
   border-radius: 18px;
   z-index: 1000;
   width: max-content;
   min-width: 160px;
-  padding: 8px 0;
-  background: color-mix(in oklab, var(--app-section-bg) 78%, transparent);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  border: 1px solid color-mix(in oklab, var(--app-section-separator, #000) 12%, transparent);
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.24),
-    0 2px 8px rgba(0, 0, 0, 0.14);
+  padding: 6px 0;
+  overflow: hidden;
 
-  &.position-right {
-    right: 0;
+  background: var(--app-glass-bg);
+  backdrop-filter: blur(var(--app-glass-blur)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--app-glass-blur)) saturate(150%);
+  box-shadow: var(--app-glass-shadow);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 80% 50% at 50% 110%,
+      var(--app-glass-glow),
+      transparent 70%
+    );
+    z-index: 0;
   }
 
-  &.position-left {
-    left: 0;
+  > * {
+    position: relative;
+    z-index: 1;
   }
 
+  &.position-right  { right: 0; }
+  &.position-left   { left: 0; }
   &.position-center {
     left: 50%;
     transform: translateX(-50%);
@@ -32,25 +43,31 @@
 .item {
   display: flex;
   align-items: center;
-  padding: 5px 16px;
-  transition: background-color 0.2s;
+  padding: 8px 16px;
+  gap: 0;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+
+  &:active {
+    opacity: 0.65;
+  }
 
   svg {
     margin-right: 8px;
     width: 24px;
     height: 24px;
+    flex-shrink: 0;
   }
 
   span {
     font-size: 15px;
     font-family: var(--rounded) !important;
     font-weight: 600 !important;
+    white-space: nowrap;
   }
 
-  &:last-child {
-    span {
-     color: var(--app-destructive-text);
-     -webkit-text-stroke: 0.07px var(--app-destructive-text);
-    }
+  &:last-child span {
+    color: var(--app-destructive-text);
+    -webkit-text-stroke: 0.07px var(--app-destructive-text);
   }
 }
