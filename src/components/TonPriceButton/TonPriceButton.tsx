@@ -29,7 +29,7 @@ export const TonPriceButton: React.FC = () => {
       onClick={() => navigate('/ton-market')}
       aria-label="View TON price details"
     >
-      <TonIcon className={styles.tonIcon} />
+      <TonIcon className="text-icon" />
       <span className={`${styles.price} ${loading ? styles.loading : ''}`}>
         {formattedPrice}
       </span>
