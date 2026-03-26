@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRates } from '@/contexts/RatesContext';
 import { useCurrency } from '@/contexts/CurrencyContext';
-import TonIcon from '@/assets/icons/toncoin-simple.svg?react';
+import TonIcon from '@/assets/icons/toncoin-symbol.svg?react';
 import styles from './TonPriceButton.module.scss';
 
 export const TonPriceButton: React.FC = () => {
