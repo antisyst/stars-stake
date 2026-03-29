@@ -41,11 +41,11 @@ export default defineConfig({
   },
   publicDir: './public',
   server: {
-    host: '192.168.0.104', 
+    host: '192.168.0.107', 
     port: 5173, 
     https: undefined,
     hmr: {
-      host: 'https://accurately-define-inspector-paul.trycloudflare.com',
+      host: 'https://temporary-apparently-nvidia-scenario.trycloudflare.com',
       protocol: 'wss',
       clientPort: 443,
     },

@@ -1,14 +1,12 @@
 .socialBonusSection {
-  width: 100%;
-  padding: 6px 12px;
-  border-radius: var(--br-section);
+  width: 86%;
+  padding: 3px 8px;
+  border-radius: 0 0 20px 20px;
   display: flex;
   align-items: center;
   background: var(--app-button);
   gap: 8px;
-  justify-content: space-between;
-  margin-bottom: 12px;
-  cursor: pointer;
+  justify-content: center;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 
@@ -23,12 +21,12 @@
     gap: 4px;
 
     .iconWrapper {
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex: 0 0 30px;
+      flex: 0 0 25px;
 
       img {
         width: 100%;
@@ -38,14 +36,14 @@
     }
 
     .socialLabel {
-      font-size: 15px;
+      font-size: 14px;
       font-family: var(--rounded) !important;
       font-weight: 500; 
     }
   }
 
   .arrowWrapper {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: flex-end;
 
@@ -57,7 +55,7 @@
   }
 
   .checkWrapper {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: flex-end;
   }

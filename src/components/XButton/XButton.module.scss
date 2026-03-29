@@ -1,0 +1,21 @@
+.xButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 8px;
+  border-radius: 20px;
+  outline: none;
+  height: 40px;
+  border: 1px solid var(--app-glass-border);
+  background: var(--app-glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity 0.18s ease, transform 0.15s ease;
+  flex-shrink: 0;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}

@@ -8,7 +8,6 @@ import { EcosystemBenefits } from "@/components/EcosystemBenefits/EcosystemBenef
 import { TierProgress } from "@/components/TierProgress/TierProgress";
 import { FaqSection } from "@/components/FaqSection/FaqSection";
 import { HistorySection } from "@/components/HistorySection/HistorySection";
-import { SocialBonusSection } from "@/components/SocialBonusSection/SocialBonusSection";
 import styles from './HomePage.module.scss';
 
 export const HomePage = () => {
@@ -16,7 +15,6 @@ export const HomePage = () => {
     <Page back={false}>
       <div className={styles.homePage}>
        <Header/>
-       <SocialBonusSection/>
        <StakeSection/>
        <StatsSection/>
        <TierProgress/>

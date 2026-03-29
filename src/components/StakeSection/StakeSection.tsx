@@ -15,6 +15,7 @@ import { primeIosFocusBridge } from '@/utils/iosFocusBridge';
 import { useCurrency } from '@/contexts/CurrencyContext';
 import { useRates } from '@/contexts/RatesContext';
 import { useI18n } from '@/i18n';
+// import { SocialBonusSection } from '../SocialBonusSection/SocialBonusSection';
 import styles from './StakeSection.module.scss';
 import TonSymbolIcon from '@/assets/icons/toncoin-symbol.svg?react';
 
@@ -53,8 +54,6 @@ export const StakeSection: React.FC = () => {
 
   const handleStakeEarnOrDeposit = () => {
   if (ensureConnected()) {
-    // Prime the bridge synchronously inside this click handler
-    // so iOS has an active focused input before we navigate
     primeIosFocusBridge();
     navigate('/deposit');
   }
@@ -185,7 +184,7 @@ export const StakeSection: React.FC = () => {
           </div>
         )}
       </div>
-
+      {/* <SocialBonusSection/> */}
       <Modal
         isOpen={isApyOpen}
         title={t('stake.apyTitle')}
