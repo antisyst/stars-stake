@@ -1,5 +1,5 @@
 import styles from './XButton.module.scss';
-import XIcon from '@/assets/icons/x-twitter.png';
+import XIcon from '@/assets/icons/x.svg?react';
 import { openLink } from '@telegram-apps/sdk';
 
 export const XButton = () => {
@@ -15,7 +15,7 @@ export const XButton = () => {
       className={styles.xButton} 
       onClick={handleClick}
     >
-      <img src={XIcon} alt="X" />
+      <XIcon className='text-icon' />
     </button>
   );
 };
