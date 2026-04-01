@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  padding: 0 8px;
+  width: 40px;
   border-radius: 20px;
   outline: none;
   height: 40px;
@@ -15,7 +15,7 @@
   flex-shrink: 0;
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 }
