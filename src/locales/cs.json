@@ -1,0 +1,339 @@
+{
+  "profile": {
+    "unknown": "Neznámý",
+    "wallet": "Peněženka",
+    "connect": "Připojit",
+    "defaultCurrency": "Výchozí měna",
+    "language": "Jazyk",
+    "contactSupport": "Kontaktovat podporu",
+    "faq": "Časté dotazy",
+    "history": "Historie",
+    "userAgreement": "Uživatelská smlouva",
+    "privacyPolicy": "Zásady ochrany soukromí",
+    "supportNotice": "Mini aplikace je provozována společností Stars Base Digital Services Provider. Služba je nezávislá a není spojena s Telegramem.",
+    "currencyUpdated": "Měna aktualizována"
+  },
+  "stake": {
+    "apyTitle": "Co je APY?",
+    "apyLine1": "APY znamená roční procentní výnos a představuje celkový roční výnos včetně složených odměn.",
+    "apyLine2": "Sazby jsou vrstvené a přiřazují se ke každému vkladu (loту); zobrazené APY je vážený průměr všech otevřených lotů.",
+    "apyLine3": "Vaše aktuální efektivní APY: {apy}%",
+    "apyLine4": "Aktuální cena: {price} za Star.",
+    "noBalance": "Nemáte žádný zůstatek k výběru",
+    "lockNotEnded": "Vaše doba uzamčení ještě neskončila.",
+    "lockerNotActive": "Stars Base locker ještě není aktivní",
+    "withdrawUnavailable": "Výběr momentálně není k dispozici.",
+    "minimumLock": "Minimální uzamčení: 30 dní",
+    "balance": "Zůstatek",
+    "apy": "APY",
+    "stakeEarn": "Stakujte a vydělávejte",
+    "deposit": "Vklad",
+    "withdraw": "Výběr",
+    "minimumWithdrawal": "Minimální výběr je 500 Stars"
+  },
+  "socialBonus": {
+    "title": "Ověřte svůj vliv",
+    "subtitle": "Sledujte nás na X a okamžitě získejte odměnu",
+    "reward": "75",
+    "claimed": "Získáno",
+    "connectAndClaim": "Připojit a získat",
+    "userDataUnavailable": "Údaje uživatele nejsou dostupné",
+    "bonusAlreadyClaimed": "Bonus již byl získán",
+    "userDocumentNotFound": "Dokument uživatele nebyl nalezen",
+    "rewardAddedSuccessfully": "Odměna úspěšně přidána",
+    "failedToAddBonus": "Nepodařilo se přidat bonus"
+  },
+  "common": {
+    "copiedToClipboard": "Zkopírováno do schránky",
+    "copyFailed": "Kopírování selhalo",
+    "noWallet": "Není dostupná žádná adresa peněženky",
+    "failedOpenLink": "Nepodařilo se otevřít odkaz Telegram",
+    "openFaq": "Otevřít časté dotazy",
+    "gotIt": "Rozumím"
+  },
+  "stats": {
+    "title": "Přehled systému",
+    "totalStaked": "Celkem ve stakingu",
+    "exchangeRate": "Směnný kurz",
+    "protocol": "Protokol",
+    "protocolValue": "Stars Base Protocol"
+  },
+  "tier": {
+    "title": "Zvýšené odměny",
+    "apyUpdates": "APY se aktualizuje automaticky s růstem vašeho stakingu",
+    "line1": "Systém používá dynamický model úrovní, kde vaše APY roste spolu s celkovým zůstatkem ve stakingu.",
+    "line2": "Každá úroveň odemyká vyšší sazbu výnosu, začínající od 12,8 % a dosahující až 28,7 % APY na nejvyšší úrovni.",
+    "line3": "Když přidáte další Stars a postoupíte na vyšší úroveň, vaše celkové APY se okamžitě přepočítá na základě nového celku.",
+    "line4": "Vaše aktuální a následující prahové hodnoty úrovní se zobrazují v reálném čase, což vám umožňuje sledovat pokrok k dalšímu navýšení APY."
+  },
+  "withdraw": {
+    "title": "Možnosti výběru",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Telegram Stars",
+    "subtitle": "Při výběru v TON může být účtován malý síťový poplatek až 1 % v závislosti na výši výběru.",
+    "line1": "Své odměny můžete vybírat přímo v Telegram Stars nebo v Toncoin (TON) dle vašich preferencí.",
+    "line2": "Při výběru v TON může být v závislosti na celkové částce účtován malý síťový poplatek až 1 %.",
+    "line3": "Všechny výběry jsou zpracovávány bezpečně a obvykle dokončeny do několika minut po potvrzení.",
+    "line4": "Před provedením výběru v TON se ujistěte, že je vaše TON peněženka připojena."
+  },
+  "campaign": {
+    "title": "Podrobnosti kampaně",
+    "minStakeLabel": "Min. staking",
+    "maxStakeLabel": "Max. staking",
+    "line1": "Kampaň umožňuje stakovat od minimálně 500 Stars bez horního limitu maximálního stakingu.",
+    "line2": "Všechny vklady přímo přispívají do aktivního stakingového fondu a začínají generovat odměny ihned po potvrzení."
+  },
+  "header": {
+    "walletConnected": "Peněženka připojena",
+    "copyAddress": "Kopírovat adresu",
+    "disconnect": "Odpojit",
+    "disconnectConfirmTitle": "Odpojit peněženku",
+    "disconnectConfirmMessage": "Opravdu chcete odpojit peněženku?"
+  },
+  "ecosystem": {
+    "title": "Výhody ekosystému",
+    "items": {
+      "marketplace": {
+        "title": "Podpora likvidity tržiště",
+        "content": "Systém Stars Base přispívá k udržení stabilní likvidity na tržišti Telegram Stars.\nDočasným uzamčením Stars ve stakingových fondech se snižuje množství v oběhu, což pomáhá stabilizovat tržní aktivitu.\nTo zajišťuje konzistentní kupní sílu, plynulejší transakce a zdravější obchodní prostředí pro všechny účastníky.\nVyvážený model likvidity udržuje ekosystém Stars udržitelným a odolným vůči náhlým tržním výkyvům.\nStabilita likvidity také posiluje důvěru uživatelů i vývojářů, kteří integrují platby Stars."
+      },
+      "antiInflation": {
+        "title": "Antiinflační systém",
+        "content": "Staking přímo podporuje antiinflační mechaniku ekosystému Stars snižováním objemu Stars v oběhu.\nJak více uživatelů stakuje, kontrakce nabídky přirozeně pomáhá zachovat dlouhodobou hodnotu aktiva.\nTento proces vytváří samorovnovážnou ekonomiku, kde růst zůstává stabilní a organický.\nSystém zajišťuje, že jak raní, tak dlouhodobí účastníci těží z konzistentních a spravedlivých podmínek výnosu.\nMinimalizací nekontrolované inflace ekosystém chrání udržitelnost odměn pro všechny uživatele."
+      },
+      "infrastructure": {
+        "title": "Financování infrastruktury",
+        "content": "Část stakingové aktivity podporuje průběžný vývoj platební a stakingové infrastruktury Stars na Telegramu.\nTo zahrnuje udržování bezpečných transakcí, efektivních systémů zpracování a spolehlivé škálovatelnosti pro miliony uživatelů.\nÚčastí ve stakingu uživatelé nepřímo přispívají ke zlepšení výkonu a odolnosti ekosystému.\nFinancování infrastruktury zajišťuje, že síť Stars zůstane rychlá, bezpečná a připravená na budoucnost.\nTyto zdroje umožňují průběžné upgrady, technickou údržbu a budoucí rozšiřování funkcí."
+      }
+    }
+  },
+  "modal": {
+    "close": "Zavřít",
+    "apy": "APY",
+    "stakedStars": "Stars ve stakingu",
+    "amount": "Částka",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Doba uzamčení",
+    "unlockDate": "Datum odemčení",
+    "lockPeriodValue": "{days} dní"
+  },
+  "payment": {
+    "processing": "Zpracování…",
+    "invalidRequest": "Neplatný požadavek.",
+    "unableStart": "Nelze spustit platbu. Zkuste to znovu.",
+    "unableOpen": "Nelze otevřít platbu. Zkuste to znovu.",
+    "paymentSuccessful": "Platba úspěšná!",
+    "paymentCancelled": "Platba zrušena",
+    "stakeTitle": "Stakovat {amount} Stars",
+    "stakeLabel": "Stakovat {amount} Stars"
+  },
+  "paymentSuccess": {
+    "title": "Staking potvrzen",
+    "subtitle": "Váš vklad byl uzamčen na {days} dní.",
+    "apy": "APY",
+    "stakedStars": "Stars ve stakingu",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Doba uzamčení",
+    "unlockDate": "Datum odemčení",
+    "back": "Zpět na přehled",
+    "note": "Požadováno: {requested} Stars · Účtováno: {paid} Stars"
+  },
+  "tonPay": {
+    "payWithTon": "Zaplatit přes TON",
+    "priceNotReady": "Cena TON ještě není připravena. Zkuste to prosím za chvíli.",
+    "userNotDetected": "Nepodařilo se zjistit váš účet. Restartujte prosím aplikaci.",
+    "rejected": "Transakce zamítnuta v peněžence.",
+    "cancelled": "Připojení peněženky bylo zrušeno.",
+    "verifyFailed": "Platba odeslána, ale potvrzení vypršelo. Kontaktujte prosím podporu.",
+    "networkError": "Chyba sítě. Zkontrolujte připojení a zkuste to znovu.",
+    "failed": "Platba TON selhala. Zkuste to znovu.",
+    "connecting": "Připojování…",
+    "confirm": "Potvrďte v peněžence…",
+    "verifying": "Ověřování platby…"
+  },
+  "faqs": {
+    "pageTitle": "Často kladené dotazy",
+    "learnMore": "Zjistit více",
+    "items": {
+      "q1": {
+        "question": "Odkud pocházejí odměny za Stars Base?",
+        "answer": "Odměny jsou generovány prostřednictvím modelu distribuce výnosů ekosystému Stars Base.\nKaždý stakingový fond přispívá ke stabilitě likvidity a síťové infrastruktuře, což zase vytváří udržitelné cykly odměn.\nČást výnosu pochází z růstu ekosystému, aktivity tržiště a stakingových pobídek distribuovaných v průběhu času.\nNejsou zapojeny žádné spekulativní zdroje; všechny odměny jsou podpořeny reálnou hodnotou ekosystému.\nTato struktura zajišťuje spravedlnost, dlouhodobou udržitelnost a transparentnost pro všechny účastníky."
+      },
+      "q2": {
+        "question": "Co je staking a je bezpečný?",
+        "answer": "Staking je proces uzamčení vašich Stars pro podporu ekosystému a získání pasivních odměn na oplátku.\nKdyž stakujete, vaše aktiva zůstávají bezpečně vázána k vašemu účtu a nikdy nejsou převedena třetím stranám.\nSystém je postaven na bezpečné platební infrastruktuře Telegramu a funguje s plným šifrováním a transparentností.\nVšechny transakce jsou ověřeny a auditovatelné, čímž je zajištěna bezpečnost a neměnnost.\nJde o nízkorizikový mechanismus navržený pro dlouhodobý růst hodnoty a příspěvek k ekosystému."
+      },
+      "q3": {
+        "question": "Jak se počítají odměny?",
+        "answer": "Odměny jsou založeny na vašem celkovém stakingovaném zůstatku a úrovni, kterou aktuálně máte.\nKaždá úroveň nabízí vyšší roční procentní výnos (APY), začínající od 12,8 % a dosahující až 28,7 % pro vyšší závazky.\nAPY se dynamicky přizpůsobuje s tím, jak zvyšujete svůj staking; větší stakingové vklady odemykají vyšší sazby výnosu.\nSystém automaticky přepočítává vaše efektivní APY v reálném čase.\nVšechny výpočty odměn jsou transparentní a ověřitelné v řídicím panelu aplikace."
+      },
+      "q4": {
+        "question": "Mohu kdykoli vybrat své Stars?",
+        "answer": "Ano, výběry jsou k dispozici kdykoli po skončení minimální doby uzamčení.\nMůžete si zvolit výběr přímo v Telegram Stars nebo v Toncoin (TON) dle svých preferencí.\nVýběry v TON mohou zahrnovat malý síťový poplatek v závislosti na částce.\nVšechny transakce jsou zpracovávány automaticky a bezpečně během několika minut.\nSystém zajišťuje plynulý zážitek s plnou sledovatelností."
+      },
+      "q5": {
+        "question": "Co se stane, když přidám více Stars později?",
+        "answer": "Když přidáte více Stars ke svému stávajícímu stakingu, váš celkový zůstatek se okamžitě aktualizuje.\nSystém automaticky vyhodnotí vaši novou úroveň a uplatní odpovídající navýšení APY.\nVaše předchozí odměny zůstávají nedotčeny, zatímco váš budoucí výnos se odpovídajícím způsobem zvýší.\nTo dělá váš stakingový zážitek dynamickým — čím více stakujete, tím více vyděláváte.\nPři zvyšování výše stakingu nejsou žádné sankce ani zpoždění."
+      },
+      "q6": {
+        "question": "Jak Stars Base prospívá ekosystému Telegramu?",
+        "answer": "Stars Base pomáhá udržovat likviditu a stabilitu na tržišti Telegram Stars.\nTaké podporuje antiinflační opatření snižováním počtu Stars v oběhu.\nČást veškeré stakingové aktivity přispívá k rozvoji platební a stakingové infrastruktury.\nTo umožňuje rychlejší platby, vyšší škálovatelnost a udržitelný ekonomický cyklus.\nStakováním uživatelé nejen vydělávají, ale také pomáhají posílit dlouhodobý základ celého ekosystému Stars."
+      },
+      "q7": {
+        "question": "Jak APY ovlivňuje denní a měsíční odměny?",
+        "answer": "APY (roční procentní výnos) představuje váš roční výnos, ale odměny se počítají a přidávají denně.\nNapříklad APY 12,8 % odpovídá přibližně ~1,06 % za měsíc (složeně). Pokud stakujete 1 000 Stars, po jednom měsíci uvidíte přibližně 1 039 (před zaokrouhlením na displeji).\nVáš zůstatek roste každý den; složení probíhá automaticky — výnos každého dne se buduje na předchozím.\nOdměny připisujeme denně s přesností na dvě desetinná místa, zatímco obrazovka stakingu zobrazuje celé číslo zůstatku.\nStručně řečeno, čím déle stakujete, tím více se vaše výnosy v průběhu času skládají."
+      },
+      "q8": {
+        "question": "Existuje riziko ztráty mých Stars?",
+        "answer": "Stars Base funguje pod nekustodní strukturou, což znamená, že si zachováváte vlastnictví svých aktiv.\nVaše prostředky zůstávají bezpečně uzamčeny a ověřitelné po celou dobu.\nArchitektura systému upřednostňuje transparentnost a bezpečnost.\nHlavní proměnnou je kolísání výnosu, nikoli bezpečnost vašich prostředků."
+      },
+      "q9": {
+        "question": "Je moje APY fixní nebo se v průběhu času mění?",
+        "answer": "APY ve Stars Base je dynamické a závisí na celkové výši vašeho stakingu a likviditě systému.\nZatímco základní APY začíná na 12,8 %, může se zvyšovat s postupem na vyšší stakingové úrovně.\nVe vzácných případech mohou úpravy sítě nebo likvidity mírně ovlivnit sazbu výnosu.\nVšechny změny sazeb jsou transparentní a okamžitě se projeví ve vašem řídicím panelu.\nSystém se snaží udržovat výnosy stabilní a konkurenceschopné za různých podmínek."
+      },
+      "q10": {
+        "question": "Jaká je minimální a maximální částka, kterou mohu stakovat?",
+        "answer": "Minimální částka pro účast ve stakingu je 500 Stars.\nMaximum na jeden vklad je 100 000 Stars.\nVyšší částky automaticky odemykají vyšší úrovně a lepší sazby APY.\nTento flexibilní systém spravedlivě odměňuje jak nové, tak dlouhodobé uživatele."
+      },
+      "q11": {
+        "question": "Čím se Stars Base liší od běžných stakingových platforem?",
+        "answer": "Stars Base je nativní stakingový model ekosystému postavený kolem Telegram Stars.\nKombinuje vysoké odměny APY s reálnou užitečností, podporuje likviditu tržiště a infrastrukturu.\nNa rozdíl od spekulativních stakingových aplikací zůstávají toky hodnot uvnitř ekosystému.\nTo zajišťuje transparentnost, dlouhodobou udržitelnost a reálný dopad pro každého uživatele."
+      },
+      "q12": {
+        "question": "Co se děje s mými Stars během doby uzamčení?",
+        "answer": "Vaše Stars zůstávají bezpečně stakované v systému po dobu minimální doby uzamčení 30 dní.\nBěhem této doby nadále generují odměny bez jakéhokoli rizika ztráty nebo externího převodu.\nRůst svého výnosu můžete sledovat v reálném čase prostřednictvím řídicího panelu.\nJakmile doba uzamčení skončí, můžete kdykoli vybrat nebo znovu stakovat s plnou kontrolou."
+      },
+      "q13": {
+        "question": "Mohu svůj staking předčasně zrušit?",
+        "answer": "Předčasné unstakování není k dispozici během počátečního 30denního období uzamčení, aby byla zachována stabilita ekosystému.\nToto pravidlo chrání všechny účastníky tím, že zajišťuje konzistentnost likvidity a spravedlivou distribuci odměn.\nPo uplynutí tohoto období můžete kdykoli volně vybrat nebo znovu stakovat.\nSystém je navržen tak, aby vyvažoval flexibilitu s udržitelností."
+      },
+      "q14": {
+        "question": "Jsou odměny distribuovány automaticky?",
+        "answer": "Ano, odměny jsou distribuovány automaticky a denně aktualizovány v zůstatku vašeho účtu.\nNení třeba ručního nárokování ani externích převodů.\nVaše kumulativní odměny lze sledovat v reálném čase z řídicího panelu stakingu.\nTato automatizace zajišťuje maximální pohodlí a transparentnost pro všechny uživatele."
+      },
+      "q15": {
+        "question": "Jak často se APY aktualizuje?",
+        "answer": "Sazby APY jsou přepočítávány na základě vaší aktivní úrovně a stavu likvidity systému.\nKdyž stakujete nebo přidáte nové Stars, aktualizace se uplatní okamžitě.\nTo zajišťuje, že vaše odměny vždy odrážejí vaši nejnovější stakingovou úroveň.\nTaké brání zobrazení zastaralých nebo zpožděných dat výnosu na vašem účtu."
+      },
+      "q16": {
+        "question": "Proč Stars Base používá dobu uzamčení?",
+        "answer": "Minimální 30denní doba uzamčení pomáhá udržovat tržní likviditu a brání rychlým přílivům a odlivům, které mohou destabilizovat systém.\nZajišťuje, že sazby odměn zůstávají spravedlivé a konzistentní pro všechny účastníky.\nDoby uzamčení jsou standardem ve většině stakingových systémů pro ochranu integrity ekosystému.\nPo skončení uzamčení můžete volně vybírat nebo znovu stakovat bez omezení."
+      },
+      "q17": {
+        "question": "Jaké faktory mohou ovlivnit sazbu APY?",
+        "answer": "Sazba APY závisí na celkové likviditě ekosystému, celkovém stakingovaném objemu a interní tržní poptávce.\nKdyž stakuje více uživatelů, fond se rozrůstá, což umožňuje úpravy výnosu pro udržení rovnováhy.\nNavíc se průběžně monitoruje zdraví systému a tržní stabilita pro optimalizaci výnosů.\nVšechny úpravy jsou algoritmické a transparentní pro zachování spravedlnosti."
+      },
+      "q18": {
+        "question": "Jak funguje složené úročení ve Stars Base?",
+        "answer": "Složené úročení znamená, že vaše denní odměny jsou automaticky přidávány k vašemu zůstatku.\nKaždý nový den je váš výnos počítán na základě aktualizovaného přesného zůstatku (sledovaného se dvěma desetinnými místy), zatímco stránka stakingu zobrazuje celé číslo.\nTo vytváří v průběhu času efekt složeného růstu, který zvyšuje dlouhodobé výnosy."
+      },
+      "q19": {
+        "question": "Mohou systémové aktualizace ovlivnit zůstatek mého stakingu?",
+        "answer": "Ne, aktualizace ani operace údržby neovlivňují vaši stakingovou částku ani naakumulované odměny.\nVšechna stakingová data jsou bezpečně uložena a synchronizována.\nVe vzácných případech mohou nastat dočasná zpoždění zobrazení, ale vaše prostředky zůstávají v bezpečí.\nObdržíte upozornění, pokud je plánována jakákoliv plánovaná údržba."
+      }
+    }
+  },
+  "history": {
+    "title": "Historie transakcí",
+    "empty": {
+      "title": "Zatím žádná historie",
+      "subtitle": "Jakmile začnete provádět transakce, zobrazí se zde."
+    },
+    "detailsTitle": "Podrobnosti transakce",
+    "deposit": "Vklad",
+    "withdraw": "Výběr",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Vložit",
+    "buttonConfirmStake": "Potvrdit staking",
+    "tagDeposit": "Vklad",
+    "tagStake": "Staking",
+    "stakeAmountAria": "Výše stakingu ve Stars",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "Minimální vklad je {min} Stars.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Stakovat s {amount}"
+  },
+  "apy": {
+    "estimatedYield": "Odhadovaný výnos",
+    "year": "Rok",
+    "perYear": "za rok",
+    "collapseDetails": "Skrýt podrobnosti",
+    "expandDetails": "Zobrazit podrobnosti",
+    "yearly": "Ročně",
+    "monthly": "Měsíčně",
+    "daily": "Denně",
+    "minimumLock": "Minimální uzamčení",
+    "minimumLockValue": "{days} dní"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Dnes",
+      "1W": "Tento týden",
+      "1M": "Tento měsíc",
+      "1Y": "Tento rok",
+      "All": "Všechny časy"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Tržní statistiky",
+    "marketCap": "Tržní kapitalizace",
+    "volume24h": "Objem za 24h",
+    "change7d": "Změna za 7d",
+    "change30d": "Změna za 30d",
+    "allTimeHigh": "Historické maximum",
+    "allTimeLow": "Historické minimum",
+    "inCirculation": "% v oběhu",
+    "circulatingSupply": "Oběžná nabídka",
+    "totalSupply": "Celková nabídka"
+  },
+  "passcode": {
+    "profileLabel": "Heslo a Face ID",
+    "profileLabelAndroid": "Heslo",
+    "on": "Zapnuto",
+    "off": "Vypnuto",
+    "introTitle": "Zabezpečte své Stars pomocí hesla",
+    "introSubtitle": "Zvyšte integritu každé stakingové operace a zabezpečte svou interní peněženku.",
+    "enablePasscode": "Zapnout heslo",
+    "enableFaceId": "Zapnout Face ID",
+    "maybeLater": "Možná později",
+    "faceIdSuggestionTitle": "Odemknout pomocí Face ID",
+    "faceIdSuggestionSubtitle": "Používejte Face ID pro rychlý a bezpečný přístup k účtu",
+    "setTitle": "Nastavit heslo",
+    "changeTitle": "Změnit heslo",
+    "confirmTitle": "Potvrdit heslo",
+    "subtitle": "Zadejte 4 číslice hesla",
+    "enterTitle": "Zadat heslo",
+    "enterSubtitle": "Zadejte své 4místné heslo",
+    "setPasscode": "Nastavit heslo",
+    "changePasscode": "Změnit heslo",
+    "turnOff": "Vypnout heslo",
+    "turnOffTitle": "Vypnout heslo",
+    "turnOffMessage": "Opravdu chcete vypnout heslo?",
+    "turnOffConfirm": "Vypnout",
+    "setSuccess": "Heslo úspěšně nastaveno",
+    "turnedOff": "Heslo vypnuto",
+    "mismatch": "Hesla se neshodují. Zkuste to znovu.",
+    "wrongPasscode": "Nesprávné heslo. Zkuste to znovu.",
+    "tooManyAttempts": "Příliš mnoho pokusů. Zkuste to znovu později.",
+    "saveFailed": "Nepodařilo se uložit heslo",
+    "turnOffFailed": "Nepodařilo se vypnout heslo",
+    "faceId": "Odemknout pomocí Face ID",
+    "faceIdEnabled": "Face ID zapnuto",
+    "faceIdDisabled": "Face ID vypnuto",
+    "faceIdDenied": "Přístup k Face ID byl odepřen",
+    "faceIdFailed": "Nepodařilo se aktualizovat nastavení Face ID",
+    "faceIdNotAvailable": "Face ID není na tomto zařízení dostupné",
+    "faceIdHint": "Nejprve nastavte heslo, aby bylo možné zapnout Face ID",
+    "faceIdReason": "Ověřte se pro přístup k nastavení hesla",
+    "faceIdEnableReason": "Zapnout odemykání pomocí Face ID",
+    "faceIdDisableReason": "Vypnutí odemykání pomocí Face ID",
+    "faceIdDeniedTitle": "Přístup k Face ID odepřen",
+    "faceIdDeniedMessage": "Povolte prosím Face ID v nastavení Telegramu.",
+    "openSettings": "Otevřít nastavení",
+    "saving": "Ukládání…"
+  }
+}

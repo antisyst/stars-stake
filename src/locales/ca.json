@@ -1,0 +1,339 @@
+{
+  "profile": {
+    "unknown": "Desconegut",
+    "wallet": "Cartera",
+    "connect": "Connectar",
+    "defaultCurrency": "Moneda predeterminada",
+    "language": "Idioma",
+    "contactSupport": "Contactar amb el suport",
+    "faq": "PMF",
+    "history": "Historial",
+    "userAgreement": "Acord d'usuari",
+    "privacyPolicy": "Política de privadesa",
+    "supportNotice": "La mini aplicació és operada per Stars Base Digital Services Provider. El servei és independent i no està afiliat a Telegram.",
+    "currencyUpdated": "Moneda actualitzada"
+  },
+  "stake": {
+    "apyTitle": "Què és l'APY?",
+    "apyLine1": "APY significa Rendiment Percentual Anual, que representa el retorn anual total incloent-hi les recompenses compostes.",
+    "apyLine2": "Les taxes estan dividides per nivells i s'assignen per cada participació (lot); l'APY mostrat és una mitjana ponderada de tots els lots oberts.",
+    "apyLine3": "El vostre APY efectiu actual: {apy}%",
+    "apyLine4": "Preu actual: {price} per Star.",
+    "noBalance": "No teniu saldo per retirar",
+    "lockNotEnded": "El vostre període de bloqueig encara no ha finalitzat.",
+    "lockerNotActive": "El locker de Stars Base encara no està actiu",
+    "withdrawUnavailable": "La retirada no està disponible ara mateix.",
+    "minimumLock": "Bloqueig mínim: 30 dies",
+    "balance": "Saldo",
+    "apy": "APY",
+    "stakeEarn": "Participa i guanya",
+    "deposit": "Dipòsit",
+    "withdraw": "Retirar",
+    "minimumWithdrawal": "La retirada mínima és de 500 Stars"
+  },
+  "socialBonus": {
+    "title": "Verifiqueu la vostra influència",
+    "subtitle": "Seguiu-nos a X i reclameu la recompensa immediatament",
+    "reward": "75",
+    "claimed": "Reclamat",
+    "connectAndClaim": "Connectar i reclamar",
+    "userDataUnavailable": "Les dades de l'usuari no estan disponibles",
+    "bonusAlreadyClaimed": "El bonus ja s'ha reclamat",
+    "userDocumentNotFound": "No s'ha trobat el document de l'usuari",
+    "rewardAddedSuccessfully": "Recompensa afegida correctament",
+    "failedToAddBonus": "No s'ha pogut afegir el bonus"
+  },
+  "common": {
+    "copiedToClipboard": "Copiat al porta-retalls",
+    "copyFailed": "Error en copiar",
+    "noWallet": "No hi ha cap adreça de cartera disponible",
+    "failedOpenLink": "No s'ha pogut obrir l'enllaç de Telegram",
+    "openFaq": "Obrir PMF",
+    "gotIt": "Entès"
+  },
+  "stats": {
+    "title": "Visió general del sistema",
+    "totalStaked": "Total en participació",
+    "exchangeRate": "Taxa de canvi",
+    "protocol": "Protocol",
+    "protocolValue": "Stars Base Protocol"
+  },
+  "tier": {
+    "title": "Recompenses millorades",
+    "apyUpdates": "L'APY s'actualitza automàticament a mesura que creix la vostra participació",
+    "line1": "El sistema utilitza un model de nivells dinàmic, on el vostre APY augmenta a mesura que creix el vostre saldo total en participació.",
+    "line2": "Cada nivell desbloqueja una taxa de rendiment més alta, començant des del 12,8% i arribant fins al 28,7% d'APY al nivell màxim.",
+    "line3": "Quan aposteu Stars addicionals i passeu a un nivell superior, el vostre APY global es recalcula immediatament basant-se en el nou total.",
+    "line4": "Els llindars del vostre nivell actual i el següent es mostren en temps real, permetent-vos fer un seguiment del vostre progrés cap al proper augment d'APY."
+  },
+  "withdraw": {
+    "title": "Opcions de retirada",
+    "tonLabel": "Toncoin",
+    "starsLabel": "Telegram Stars",
+    "subtitle": "En retirar en TON, pot aplicar-se una petita comissió de xarxa de fins a l'1%, depenent de l'import de la retirada.",
+    "line1": "Podeu retirar les vostres recompenses directament en Telegram Stars o en Toncoin (TON) segons la vostra preferència.",
+    "line2": "En retirar en TON, pot aplicar-se una petita comissió de xarxa de fins a l'1% depenent de l'import total.",
+    "line3": "Totes les retirades es processen de manera segura i normalment es completen en qüestió de minuts després de la confirmació.",
+    "line4": "Abans de procedir amb una retirada en TON, assegureu-vos que la vostra cartera TON estigui connectada."
+  },
+  "campaign": {
+    "title": "Detalls de la campanya",
+    "minStakeLabel": "Participació mín.",
+    "maxStakeLabel": "Participació màx.",
+    "line1": "La campanya permet participar des d'un mínim de 500 Stars, sense límit superior en la participació màxima.",
+    "line2": "Tots els dipòsits contribueixen directament al pool de participació actiu i comencen a generar recompenses immediatament després de la confirmació."
+  },
+  "header": {
+    "walletConnected": "Cartera connectada",
+    "copyAddress": "Copiar adreça",
+    "disconnect": "Desconnectar",
+    "disconnectConfirmTitle": "Desconnectar la cartera",
+    "disconnectConfirmMessage": "Esteu segur que voleu desconnectar la cartera?"
+  },
+  "ecosystem": {
+    "title": "Beneficis de l'ecosistema",
+    "items": {
+      "marketplace": {
+        "title": "Suport a la liquiditat del mercat",
+        "content": "El sistema Stars Base contribueix a mantenir una liquiditat estable al Mercat de Telegram Stars.\nBloquejant temporalment Stars en pools de participació, el subministrament en circulació disminueix, ajudant a estabilitzar l'activitat del mercat.\nAixò garanteix un poder adquisitiu consistent, transaccions més fluides i un entorn comercial més saludable per a tots els participants.\nUn model de liquiditat equilibrat manté l'ecosistema de Stars sostenible i resistent a les fluctuacions sobtades del mercat.\nL'estabilitat de la liquiditat també enforteix la confiança tant dels usuaris com dels desenvolupadors que integren els pagaments Stars."
+      },
+      "antiInflation": {
+        "title": "Sistema anti-inflació",
+        "content": "La participació dóna suport directament a la mecànica anti-inflació de l'ecosistema Stars reduint el volum de Stars en circulació.\nA mesura que més usuaris participen, la contracció de l'oferta ajuda naturalment a preservar el valor a llarg termini de l'actiu.\nAquest procés crea una economia d'autoequilibri on el creixement es manté estable i orgànic.\nEl sistema garanteix que tant els participants inicials com els de llarg termini es beneficiïn de condicions de rendiment consistents i justes.\nMinimitzant la inflació incontrolada, l'ecosistema protegeix la sostenibilitat de les recompenses per a tots els usuaris."
+      },
+      "infrastructure": {
+        "title": "Finançament de la infraestructura",
+        "content": "Una part de l'activitat de participació dona suport al desenvolupament continu de la infraestructura de pagaments i participació Stars de Telegram.\nAixò inclou el manteniment de transaccions segures, sistemes de processament eficients i escalabilitat fiable per a milions d'usuaris.\nParticipant en la participació, els usuaris contribueixen indirectament a millorar el rendiment i la resiliència de l'ecosistema.\nEl finançament de la infraestructura garanteix que la xarxa Stars es mantingui ràpida, segura i preparada per al futur.\nAquests recursos permeten actualitzacions contínues, manteniment tècnic i expansions de funcionalitats futures."
+      }
+    }
+  },
+  "modal": {
+    "close": "Tancar",
+    "apy": "APY",
+    "stakedStars": "Stars en participació",
+    "amount": "Import",
+    "approxUsd": "≈ USD",
+    "approxTon": "≈ TON",
+    "lockPeriod": "Període de bloqueig",
+    "unlockDate": "Data de desbloqueig",
+    "lockPeriodValue": "{days} dies"
+  },
+  "payment": {
+    "processing": "Processant…",
+    "invalidRequest": "Sol·licitud no vàlida.",
+    "unableStart": "No s'ha pogut iniciar el pagament. Torneu-ho a provar.",
+    "unableOpen": "No s'ha pogut obrir el pagament. Torneu-ho a provar.",
+    "paymentSuccessful": "Pagament realitzat correctament!",
+    "paymentCancelled": "Pagament cancel·lat",
+    "stakeTitle": "Participar amb {amount} Stars",
+    "stakeLabel": "Participar amb {amount} Stars"
+  },
+  "paymentSuccess": {
+    "title": "Participació confirmada",
+    "subtitle": "El vostre dipòsit ha estat bloquejat durant {days} dies.",
+    "apy": "APY",
+    "stakedStars": "Stars en participació",
+    "approxFiatLabel": "≈ {fiat}",
+    "approxTonLabel": "≈ TON",
+    "lockPeriod": "Període de bloqueig",
+    "unlockDate": "Data de desbloqueig",
+    "back": "Tornar a la visió general",
+    "note": "Sol·licitat: {requested} Stars · Cobrat: {paid} Stars"
+  },
+  "tonPay": {
+    "payWithTon": "Pagar amb TON",
+    "priceNotReady": "El preu del TON encara no està disponible. Torneu-ho a provar en breu.",
+    "userNotDetected": "No s'ha pogut detectar el vostre compte. Reinicieu l'aplicació.",
+    "rejected": "Transacció rebutjada a la cartera.",
+    "cancelled": "La connexió de la cartera s'ha cancel·lat.",
+    "verifyFailed": "Pagament enviat, però la confirmació ha superat el temps límit. Contacteu amb el suport.",
+    "networkError": "Error de xarxa. Comproveu la connexió i torneu-ho a provar.",
+    "failed": "El pagament TON ha fallat. Torneu-ho a provar.",
+    "connecting": "Connectant…",
+    "confirm": "Confirmeu a la cartera…",
+    "verifying": "Verificant el pagament…"
+  },
+  "faqs": {
+    "pageTitle": "Preguntes freqüents",
+    "learnMore": "Aprendre més",
+    "items": {
+      "q1": {
+        "question": "D'on provenen les recompenses de Stars Base?",
+        "answer": "Les recompenses es generen a través del model de distribució de rendiment de l'ecosistema Stars Base.\nCada pool de participació contribueix a l'estabilitat de la liquiditat i la infraestructura de la xarxa, la qual cosa crea cicles de recompenses sostenibles.\nPart del rendiment prové del creixement de l'ecosistema, l'activitat del mercat i els incentius de participació distribuïts al llarg del temps.\nNo hi intervenen fonts especulatives; totes les recompenses estan recolzades per un valor real de l'ecosistema.\nAquesta estructura garanteix equitat, sostenibilitat a llarg termini i transparència per a tots els participants."
+      },
+      "q2": {
+        "question": "Què és la participació i és segura?",
+        "answer": "La participació és el procés de bloquejar les vostres Stars per donar suport a l'ecosistema i guanyar recompenses passives a canvi.\nQuan participeu, els vostres actius romanen de manera segura vinculats al vostre compte i mai no es transfereixen a tercers.\nEl sistema està construït sobre la infraestructura de pagaments segura de Telegram i opera amb xifratge complet i transparència.\nTotes les transaccions es verifiquen i són auditables, garantint seguretat i immutabilitat.\nÉs un mecanisme de baix risc dissenyat per al creixement del valor a llarg termini i la contribució a l'ecosistema."
+      },
+      "q3": {
+        "question": "Com es calculen les recompenses?",
+        "answer": "Les recompenses es basen en el vostre saldo total en participació i el nivell que teniu actualment.\nCada nivell ofereix un Rendiment Percentual Anual (APY) més alt, començant pel 12,8% i arribant fins al 28,7% per als compromisos més alts.\nL'APY s'ajusta dinàmicament a mesura que augmenteu la vostra participació; les participacions més grans desbloquegen taxes de rendiment més altes.\nEl sistema recalcula automàticament el vostre APY efectiu en temps real.\nTots els càlculs de recompenses són transparents i verificables al tauler de l'aplicació."
+      },
+      "q4": {
+        "question": "Puc retirar les meves Stars en qualsevol moment?",
+        "answer": "Sí, les retirades estan disponibles en qualsevol moment després que hagi finalitzat el vostre període mínim de bloqueig.\nPodeu triar retirar directament en Telegram Stars o en Toncoin (TON) segons la vostra preferència.\nLes retirades en TON poden incloure una petita comissió de xarxa depenent de l'import.\nTotes les transaccions es processen automàticament i de manera segura en qüestió de minuts.\nEl sistema garanteix una experiència fluida amb total traçabilitat."
+      },
+      "q5": {
+        "question": "Què passa si aposto més Stars més endavant?",
+        "answer": "Quan afegiu més Stars a la vostra participació existent, el vostre saldo total s'actualitza immediatament.\nEl sistema avalua automàticament el vostre nou nivell i aplica l'augment d'APY corresponent.\nLes vostres recompenses anteriors no es veuen afectades, mentre que el vostre rendiment futur augmenta en conseqüència.\nAixò fa que la vostra experiència de participació sigui dinàmica: com més aposteu, més guanyeu.\nNo hi ha cap penalització ni retard en augmentar l'import de la vostra participació."
+      },
+      "q6": {
+        "question": "Com beneficia Stars Base a l'ecosistema de Telegram?",
+        "answer": "Stars Base ajuda a mantenir la liquiditat i l'estabilitat al Mercat de Telegram Stars.\nTambé dóna suport a les mesures anti-inflació reduint el nombre de Stars en circulació.\nUna part de tota l'activitat de participació contribueix al desenvolupament de la infraestructura de pagaments i participació.\nAixò permet pagaments més ràpids, major escalabilitat i un cicle econòmic sostenible.\nParticipant, els usuaris no només guanyen sinó que també ajuden a enfortir la base a llarg termini de tot l'ecosistema Stars."
+      },
+      "q7": {
+        "question": "Com afecta l'APY a les recompenses diàries i mensuals?",
+        "answer": "L'APY (Rendiment Percentual Anual) representa el vostre retorn anual, però les recompenses es calculen i s'afegeixen diàriament.\nPer exemple, un APY del 12,8% correspon a aproximadament ~1,06% al mes (compost). Si aposteu 1.000 Stars, veureu uns 1.039 després d'un mes (abans de l'arrodoniment en pantalla).\nEl vostre saldo augmenta cada dia; la composició funciona automàticament: el rendiment de cada dia es construeix sobre l'anterior.\nAcreditem les recompenses diàriament amb una precisió de dos decimals, mentre que la pantalla de participació mostra el saldo en nombre enter.\nEn resum, com més temps aposteu, més es composen els vostres retorns al llarg del temps."
+      },
+      "q8": {
+        "question": "Hi ha algun risc de perdre les meves Stars?",
+        "answer": "Stars Base opera sota una estructura no custodial, és a dir, conserveu la propietat dels vostres actius.\nEls vostres fons romanen de manera segura bloquejats i verificables en tot moment.\nL'arquitectura del sistema prioritza la transparència i la seguretat.\nLa variable principal és la fluctuació del rendiment, no la seguretat dels vostres fons."
+      },
+      "q9": {
+        "question": "El meu APY és fix o canvia amb el temps?",
+        "answer": "L'APY a Stars Base és dinàmic i depèn del vostre import total en participació i la liquiditat del sistema.\nMentre que l'APY base comença al 12,8%, pot augmentar a mesura que avanceu a nivells de participació més alts.\nEn casos rars, els ajustos de xarxa o liquiditat poden influir lleugerament en la taxa de rendiment.\nTots els canvis de taxa són transparents i es reflecteixen immediatament al vostre tauler.\nEl sistema té com a objectiu mantenir els retorns estables i competitius en condicions variables."
+      },
+      "q10": {
+        "question": "Quin és l'import mínim i màxim que puc apostar?",
+        "answer": "L'import mínim per participar en la participació és de 500 Stars.\nEl màxim per dipòsit únic és de 100.000 Stars.\nEls imports més alts desbloquegen automàticament nivells superiors i millors taxes d'APY.\nAquest sistema flexible recompensa equitativament tant els usuaris nous com els de llarg termini."
+      },
+      "q11": {
+        "question": "Què diferencia Stars Base de les plataformes de participació habituals?",
+        "answer": "Stars Base és un model de participació natiu de l'ecosistema construït al voltant de Telegram Stars.\nCombina altes recompenses d'APY amb utilitat real, donant suport a la liquiditat del mercat i la infraestructura.\nA diferència de les aplicacions de participació especulatives, els fluxos de valor romanen dins de l'ecosistema.\nAixò garanteix transparència, sostenibilitat a llarg termini i impacte real per a cada usuari."
+      },
+      "q12": {
+        "question": "Què passa amb les meves Stars durant el període de bloqueig?",
+        "answer": "Les vostres Stars romanen de manera segura en participació dins del sistema durant la durada del període mínim de bloqueig de 30 dies.\nDurant aquest temps, continuen generant recompenses sense cap risc de pèrdua o transferència externa.\nPodeu supervisar el creixement del vostre rendiment en temps real a través del tauler.\nUn cop finalitzat el període de bloqueig, podeu retirar o tornar a participar en qualsevol moment amb control total."
+      },
+      "q13": {
+        "question": "Puc cancel·lar la meva participació anticipadament?",
+        "answer": "La retirada anticipada de la participació no està disponible durant el període inicial de bloqueig de 30 dies per mantenir l'estabilitat de l'ecosistema.\nAquesta norma protegeix tots els participants garantint la consistència de la liquiditat i una distribució justa de les recompenses.\nDesprés d'aquest període, podeu retirar o tornar a participar lliurement en qualsevol moment.\nEl sistema està dissenyat per equilibrar la flexibilitat amb la sostenibilitat."
+      },
+      "q14": {
+        "question": "Les recompenses es distribueixen automàticament?",
+        "answer": "Sí, les recompenses es distribueixen automàticament i s'actualitzen diàriament dins del saldo del vostre compte.\nNo cal cap reclamació manual ni transferències externes.\nLes vostres recompenses acumulades es poden seguir en temps real des del vostre tauler de participació.\nAquesta automatització garanteix la màxima comoditat i transparència per a tots els usuaris."
+      },
+      "q15": {
+        "question": "Amb quina freqüència s'actualitza l'APY?",
+        "answer": "Les taxes d'APY es recalculen en funció del vostre nivell actiu i la salut de la liquiditat del sistema.\nQuan aposteu o afegiu noves Stars, l'actualització s'aplica immediatament.\nAixò garanteix que les vostres recompenses sempre reflecteixin el vostre nivell de participació més recent.\nTambé evita que apareguin dades de rendiment obsoletes o amb retard al vostre compte."
+      },
+      "q16": {
+        "question": "Per què Stars Base utilitza un període de bloqueig?",
+        "answer": "El període mínim de bloqueig de 30 dies ajuda a mantenir la liquiditat del mercat i evita les entrades i sortides ràpides que poden desestabilitzar el sistema.\nGaranteix que les taxes de recompensa es mantinguin justes i consistents per a tots els participants.\nEls períodes de bloqueig són estàndard en la majoria de sistemes de participació per protegir la integritat de l'ecosistema.\nDesprés que acabi el bloqueig, sou lliures de retirar o tornar a participar sense límits."
+      },
+      "q17": {
+        "question": "Quins factors poden influir en la taxa d'APY?",
+        "answer": "La taxa d'APY depèn de la liquiditat global de l'ecosistema, el volum total en participació i la demanda interna del mercat.\nQuan més usuaris participen, el pool s'expandeix, permetent ajustos de rendiment per mantenir l'equilibri.\nA més, la salut del sistema i l'estabilitat del mercat es supervisen contínuament per optimitzar els retorns.\nTots els ajustos són algorítmics i transparents per mantenir l'equitat."
+      },
+      "q18": {
+        "question": "Com funciona la composició a Stars Base?",
+        "answer": "La composició significa que les vostres recompenses diàries s'afegeixen automàticament al vostre saldo.\nCada nou dia, el vostre rendiment es calcula sobre el saldo precís actualitzat (rastrejat amb dos decimals), mentre que la pàgina de participació mostra l'import enter.\nAixò crea un efecte de creixement compost al llarg del temps, augmentant els retorns a llarg termini."
+      },
+      "q19": {
+        "question": "Poden les actualitzacions del sistema afectar el meu saldo de participació?",
+        "answer": "No, les actualitzacions o operacions de manteniment no afecten el vostre import en participació ni les recompenses acumulades.\nTotes les dades de participació s'emmagatzemen de manera segura i es sincronitzen.\nEn casos rars, poden produir-se retards temporals en la visualització, però els vostres fons romanen segurs.\nRebrà una notificació si hi ha algun manteniment programat planificat."
+      }
+    }
+  },
+  "history": {
+    "title": "Historial de transaccions",
+    "empty": {
+      "title": "Encara no hi ha historial",
+      "subtitle": "Un cop comenceu a fer transaccions, apareixeran aquí."
+    },
+    "detailsTitle": "Detalls de la transacció",
+    "deposit": "Dipòsit",
+    "withdraw": "Retirada",
+    "apySuffix": "APY"
+  },
+  "deposit": {
+    "buttonDeposit": "Dipòsit",
+    "buttonConfirmStake": "Confirmar participació",
+    "tagDeposit": "Dipòsit",
+    "tagStake": "Participació",
+    "stakeAmountAria": "Import de la participació en Stars",
+    "onePrice": "1 ≈ {rate}",
+    "minDepositWarning": "El dipòsit mínim és de {min} Stars.",
+    "approxNote": "≈ {fiat} ≈ {ton} TON",
+    "stakeWith": "Participar amb {amount}"
+  },
+  "apy": {
+    "estimatedYield": "Rendiment estimat",
+    "year": "Any",
+    "perYear": "per any",
+    "collapseDetails": "Reduir detalls",
+    "expandDetails": "Ampliar detalls",
+    "yearly": "Anual",
+    "monthly": "Mensual",
+    "daily": "Diari",
+    "minimumLock": "Bloqueig mínim",
+    "minimumLockValue": "{days} dies"
+  },
+  "tonChart": {
+    "rangeLabel": {
+      "1D": "Avui",
+      "1W": "Aquesta setmana",
+      "1M": "Aquest mes",
+      "1Y": "Aquest any",
+      "All": "Sempre"
+    }
+  },
+  "tonMarket": {
+    "sectionTitle": "Estadístiques del mercat",
+    "marketCap": "Capitalització de mercat",
+    "volume24h": "Volum 24h",
+    "change7d": "Canvi 7d",
+    "change30d": "Canvi 30d",
+    "allTimeHigh": "Màxim històric",
+    "allTimeLow": "Mínim històric",
+    "inCirculation": "% en circulació",
+    "circulatingSupply": "Subministrament en circulació",
+    "totalSupply": "Subministrament total"
+  },
+  "passcode": {
+    "profileLabel": "Codi d'accés i Face ID",
+    "profileLabelAndroid": "Codi d'accés",
+    "on": "Activat",
+    "off": "Desactivat",
+    "introTitle": "Protegiu les vostres Stars amb un codi d'accés",
+    "introSubtitle": "Milloreu la integritat de cada operació de participació i protegiu la vostra cartera interna.",
+    "enablePasscode": "Activar codi d'accés",
+    "enableFaceId": "Activar Face ID",
+    "maybeLater": "Potser més tard",
+    "faceIdSuggestionTitle": "Desbloqueja amb Face ID",
+    "faceIdSuggestionSubtitle": "Usa Face ID per accedir al teu compte de manera ràpida i segura",
+    "setTitle": "Establir un codi d'accés",
+    "changeTitle": "Canviar el codi d'accés",
+    "confirmTitle": "Confirmar el codi d'accés",
+    "subtitle": "Introduïu els 4 dígits del codi d'accés",
+    "enterTitle": "Introduïu el codi d'accés",
+    "enterSubtitle": "Introduïu el vostre codi d'accés de 4 dígits",
+    "setPasscode": "Establir codi d'accés",
+    "changePasscode": "Canviar codi d'accés",
+    "turnOff": "Desactivar el codi d'accés",
+    "turnOffTitle": "Desactivar el codi d'accés",
+    "turnOffMessage": "Esteu segur que voleu desactivar el vostre codi d'accés?",
+    "turnOffConfirm": "Desactivar",
+    "setSuccess": "Codi d'accés establert correctament",
+    "turnedOff": "Codi d'accés desactivat",
+    "mismatch": "Els codis d'accés no coincideixen. Torneu-ho a provar.",
+    "wrongPasscode": "Codi d'accés incorrecte. Torneu-ho a provar.",
+    "tooManyAttempts": "Massa intents. Torneu-ho a provar més tard.",
+    "saveFailed": "No s'ha pogut desar el codi d'accés",
+    "turnOffFailed": "No s'ha pogut desactivar el codi d'accés",
+    "faceId": "Desbloqueja amb Face ID",
+    "faceIdEnabled": "Face ID activat",
+    "faceIdDisabled": "Face ID desactivat",
+    "faceIdDenied": "S'ha denegat l'accés a Face ID",
+    "faceIdFailed": "No s'ha pogut actualitzar la configuració de Face ID",
+    "faceIdNotAvailable": "Face ID no està disponible en aquest dispositiu",
+    "faceIdHint": "Primer establiu un codi d'accés per activar Face ID",
+    "faceIdReason": "Autentiqueu-vos per accedir a la configuració del codi d'accés",
+    "faceIdEnableReason": "Activar desbloqueig amb Face ID",
+    "faceIdDisableReason": "Desactivar desbloqueig amb Face ID",
+    "faceIdDeniedTitle": "Accés a Face ID denegat",
+    "faceIdDeniedMessage": "Activeu Face ID a la configuració de Telegram.",
+    "openSettings": "Obrir configuració",
+    "saving": "Desant…"
+  }
+}
