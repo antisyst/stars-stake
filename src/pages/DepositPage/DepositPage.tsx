@@ -53,21 +53,17 @@ export const DepositPage: React.FC = () => {
   const disabledBg = resolveCssVarToHex(disabledBgVar) || undefined;
   const disabledFg = resolveCssVarToHex(disabledFgVar) || undefined;
 
-  // Full TON equivalent at market rate shown in usdNote (pre-discount for display)
   const usdVal = (amount || 0) * (exchangeRate ?? 0);
   const tonVal = tonUsd > 0 && usdVal > 0 ? usdVal / tonUsd : 0;
 
-  // Pill morphs to TON mode when amount is valid and live TON rate is available
   const tonModeActive = valid && tonUsd > 0;
 
-  // ── TON pill ──────────────────────────────────────────────────────────────
   const { discountedTon, paying: tonPaying, handlePress: handleTonPress } = useTonPay({
     starsAmount: amount,
     tonAmount: tonVal,
     disabled: !valid || tonUsd <= 0,
   });
 
-  // ── Focus setup ───────────────────────────────────────────────────────────
   useEffect(() => {
     const el = inputRef.current;
     if (!el) return;
@@ -86,7 +82,6 @@ export const DepositPage: React.FC = () => {
     return () => { try { miniApp.setHeaderColor('secondary_bg_color'); } catch {} };
   }, []);
 
-  // ── Stars main button (completely untouched) ──────────────────────────────
   const applyButtonStyle = (enabled: boolean) => {
     try {
       mainButton.setParams({
@@ -144,7 +139,6 @@ export const DepositPage: React.FC = () => {
     return () => { try { off?.(); } catch {} };
   }, [valid, amount, navigate, location.pathname]);
 
-  // ── Input ─────────────────────────────────────────────────────────────────
   const displayValue = raw === '' ? '' : formatForInput(parseAmountInput(raw));
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,0 +1,9 @@
+.passcodePage {
+  position: fixed;
+  inset: 0;
+  height: calc(var(--stable-vh, 1dvh) * 100);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--app-bg, var(--tg-theme-bg-color));
+}

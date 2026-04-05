@@ -1,0 +1,73 @@
+.settingsPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 22px;
+  align-items: center;
+  justify-content: flex-start;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    border-radius: 26px;
+    padding: 2px 18px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: var(--app-glass-bg) !important;
+    backdrop-filter: blur(var(--app-glass-blur));
+    -webkit-backdrop-filter: blur(var(--app-glass-blur));
+    border: 1px solid var(--app-glass-border);
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 50px;
+      gap: 14px;
+      width: 100%;
+      background: none;
+      outline: none;
+      border: none;
+
+      &.destructiveButton {
+        border-top: 1px solid var(--app-glass-border);
+      }
+
+      span {
+        font-size: 17px;
+
+        &.actionLabel {
+          color: var(--app-link);
+        }
+
+        &.dangerLabel {
+          color: var(--app-destructive-text);
+        }
+      }
+    }
+  }
+
+  .faceIdSection {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 22px;
+    font-size: 17px;
+    padding-left: 18px;
+    padding-right: 12px;
+    border-radius: 36px;
+    height: 56px;
+    background: var(--app-glass-bg) !important;
+    backdrop-filter: blur(var(--app-glass-blur));
+    -webkit-backdrop-filter: blur(var(--app-glass-blur));
+    border: 1px solid var(--app-glass-border);
+  }
+
+  .hint {
+    padding: 8px 16px 0;
+    font-size: 13px;
+    color: var(--app-hint);
+  }
+}

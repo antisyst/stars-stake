@@ -12,7 +12,6 @@ import {
 export function init(debug: boolean): void {
   $debug.set(debug);
 
-
   initSDK();
   if (!backButton.isSupported() || !miniApp.isSupported()) {
     throw new Error('ERR_NOT_SUPPORTED');

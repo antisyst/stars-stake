@@ -68,18 +68,27 @@
       height: 100%;
       gap: 8px;
       width: 100%;
+      // Prevent children from overflowing the row
+      min-width: 0;
       border-bottom: 1px solid var(--app-glass-border);
 
       .label {
         font-size: 17px;
+        // Allow shrinking and truncate with ellipsis
+        flex: 1 1 0;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       .value {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         font-size: 17px;
         color: var(--app-hint);
+        flex-shrink: 0;
         max-width: 180px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -89,8 +98,8 @@
         svg {
           margin-left: 2px;
           vertical-align: middle;
-          width: 18px;
-          height: 18px;
+          width: 16px;
+          height: 16px;
           opacity: 0.45;
         }
       }

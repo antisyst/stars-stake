@@ -1,3 +1,4 @@
+import React, { useContext, useMemo, useRef, useCallback } from 'react';
 import { Page } from '@/components/Page';
 import styles from './ProfilePage.module.scss';
 import { useAppData } from '@/contexts/AppDataContext';
@@ -10,14 +11,18 @@ import ChatIcon from '@/assets/icons/chat.svg?react';
 import GlobeIcon from '@/assets/icons/globe.svg?react';
 import HistoryIcon from '@/assets/icons/history.svg?react';
 import FaqIcon from '@/assets/icons/faq.svg?react';
+import LockIcon from '@/assets/icons/lock.svg?react';
+import FaceIdIcon from '@/assets/icons/face-id.svg?react';
 import { useTonAddress, useTonConnectUI } from '@tonconnect/ui-react';
 import { truncateAddress } from '@/utils/truncateAddress';
-import { useMemo, useRef, useCallback, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContext } from '@/contexts/ToastContext';
 import { copyTextToClipboard, openTelegramLink } from '@telegram-apps/sdk';
 import { useCurrency, CURRENCY_OPTIONS, CurrencyCode } from '@/contexts/CurrencyContext';
 import { useI18n } from '@/i18n';
+import { useLaunchParams } from '@telegram-apps/sdk-react';
+import { lockStableVh } from '@/utils/stableVh';
+import { primeIosFocusBridge } from '@/utils/iosFocusBridge';
 
 export const ProfilePage = () => {
   const { user } = useAppData();
@@ -26,7 +31,7 @@ export const ProfilePage = () => {
   const navigate = useNavigate();
   const { showSuccess, showError } = useContext(ToastContext);
   const { selected, setSelected } = useCurrency();
-
+  const lp = useLaunchParams();
   const { t, lang, languages } = useI18n();
 
   const currencyValueRef = useRef<HTMLDivElement | null>(null);
@@ -39,6 +44,27 @@ export const ProfilePage = () => {
   const walletDisplay = wallet ?? (user as any)?.walletAddress ?? '';
   const isWalletConnected = Boolean(walletDisplay);
   const truncated = walletDisplay ? truncateAddress(walletDisplay) : '';
+
+  const isIos = lp.platform === 'ios';
+  const hasPasscode = Boolean((user as any)?.passcodeHash);
+
+  const passcodeStatusLabel = (): string => {
+    if (!hasPasscode) return t('passcode.off');
+    return t('passcode.on');
+  };
+
+  const passcodeRowLabel = isIos ? t('passcode.profileLabel') : t('passcode.profileLabelAndroid');
+
+  const handlePasscodeEntry = useCallback(() => {
+    lockStableVh();
+
+    if (!hasPasscode) {
+      navigate('/passcode-setup');
+    } else {
+      if (isIos) primeIosFocusBridge();
+      navigate('/passcode-verify');
+    }
+  }, [hasPasscode, isIos, navigate]);
 
   const openConnectModal = useCallback(() => {
     try {
@@ -106,6 +132,16 @@ export const ProfilePage = () => {
     }
 
     arr.push({
+      key: 'passcode',
+      label: passcodeRowLabel,
+      value: passcodeStatusLabel(),
+      icon: isIos ? <FaceIdIcon className='little-icon' /> : <LockIcon />,
+      iconBg: '#34c759',
+      onClick: handlePasscodeEntry,
+      ariaLabel: 'Passcode and Face ID settings',
+    });
+
+    arr.push({
       key: 'language',
       label: t('profile.language'),
       value: (
@@ -115,18 +151,11 @@ export const ProfilePage = () => {
           aria-hidden
         >
           <div style={{ lineHeight: 1 }}>{currentLangItem.nativeLabel}</div>
-          <div style={{ fontSize: 12, opacity: 0.7, marginTop: 2 }} />
         </div>
       ),
       icon: <GlobeIcon />,
       iconBg: '#af52de',
-      onClick: () => {
-        try {
-          navigate('/language');
-        } catch (e) {
-          console.error('Language navigation failed', e);
-        }
-      },
+      onClick: () => navigate('/language'),
       ariaLabel: 'Default language',
     });
 
@@ -162,10 +191,8 @@ export const ProfilePage = () => {
         </div>
       ),
       icon: <CurrencyIcon />,
-      iconBg: '#34c759',
-      onClick: () => {
-        selectRef.current?.focus();
-      },
+      iconBg: '#ff3b30',
+      onClick: () => selectRef.current?.focus(),
       ariaLabel: 'Default currency',
     });
 
@@ -178,13 +205,16 @@ export const ProfilePage = () => {
     user?.defaultCurrency,
     selected,
     currentLangItem,
-    languages,
     t,
     navigate,
+    hasPasscode,
+    isIos,
+    handlePasscodeEntry,
+    passcodeRowLabel,
   ]);
 
-  const secondaryItems: GroupListItem[] = useMemo(() => {
-    return [
+  const secondaryItems: GroupListItem[] = useMemo(
+    () => [
       {
         key: 'faq',
         label: t('profile.faq'),
@@ -210,29 +240,32 @@ export const ProfilePage = () => {
         },
         ariaLabel: 'Contact Stars Base support on Telegram',
       },
-    ];
-  }, [navigate, showError, t]);
+    ],
+    [navigate, showError, t]
+  );
 
-  const historyGroupItems: GroupListItem[] = useMemo(() => {
-    return [
+  const historyGroupItems: GroupListItem[] = useMemo(
+    () => [
       {
         key: 'history',
         label: t('profile.history'),
         value: '',
-        icon: <HistoryIcon className='white-icon'/>,
+        icon: <HistoryIcon className="white-icon" />,
         iconBg: '#8e8e93',
         onClick: () => navigate('/history'),
         ariaLabel: 'Open History',
       },
-    ];
-  }, [navigate, t]);
+    ],
+    [navigate, t]
+  );
 
-  const policyLinks: LinkListItem[] = useMemo(() => {
-    return [
+  const policyLinks: LinkListItem[] = useMemo(
+    () => [
       { key: 'user-agreement', label: t('profile.userAgreement'), to: '/user-agreement' },
       { key: 'privacy-policy', label: t('profile.privacyPolicy'), to: '/privacy-policy' },
-    ];
-  }, [t]);
+    ],
+    [t]
+  );
 
   return (
     <Page back={true}>
@@ -247,7 +280,7 @@ export const ProfilePage = () => {
           </div>
           <div className={styles.userInfo}>
             <div className={styles.name}>{displayName || t('profile.unknown')}</div>
-            <div className={styles.username}>@{username || '—'}</div>
+            {username ? <div className={styles.username}>@{username}</div> : null}
           </div>
         </div>
 
@@ -255,7 +288,6 @@ export const ProfilePage = () => {
           <div className={styles.sectionItem}>
             <GroupList items={mainItems} />
           </div>
-
           <div className={styles.sectionItem}>
             <GroupList items={secondaryItems} />
           </div>

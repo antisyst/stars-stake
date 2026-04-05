@@ -1,3 +1,4 @@
+
 import { useEffect, useMemo } from 'react';
 import { useLaunchParams, miniApp, useSignal, themeParams } from '@telegram-apps/sdk-react';
 import { viewport } from '@telegram-apps/sdk';

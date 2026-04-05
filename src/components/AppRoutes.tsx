@@ -14,6 +14,7 @@ import { usePreloadFonts } from '@/hooks/usePreloadFonts';
 import { waitFor } from '@/utils/wait';
 import { mainButton } from '@telegram-apps/sdk';
 import { DataGate } from '@/components/DataGate';
+import { useRouteHeaderColor } from '@/hooks/useRouteHeaderColor';
 
 export const AppRoutes: React.FC = () => {
   useTelegramSdk();
@@ -31,6 +32,9 @@ const AppRoutesInner: React.FC = () => {
   const [bootLoading, setBootLoading] = useState(true);
   const bootedRef = useRef(false);
   const pageLayoutRef = useRef<HTMLDivElement | null>(null);
+
+  // ─── Universal header color based on current route ───────────────────────
+  useRouteHeaderColor();
 
   useEffect(() => {
     requestAnimationFrame(() => {

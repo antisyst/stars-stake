@@ -27,7 +27,7 @@ export const GroupList: React.FC<Props> = ({ items }) => {
         return (
           <div
             key={item.key}
-            data-key={item.key} 
+            data-key={item.key}
             className={`${styles.row} ${actionable ? styles.actionable : styles.informative}`}
             onClick={() => { if (actionable) item.onClick?.(); }}
             role={actionable ? 'button' : 'group'}

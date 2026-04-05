@@ -180,6 +180,11 @@ body.modal-open {
   color: var(--app-destructive-text);
 }
 
+.little-icon {
+  transform: scale(0.75);
+  color: #FFFF;
+}
+
 .subtitle {
   color: var(--app-hint);
   font-size: 14px;

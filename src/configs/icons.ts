@@ -15,13 +15,16 @@ import CopyIcon from '@/assets/icons/copy.svg';
 import DisconnectIcon from '@/assets/icons/disconnect.svg';
 import TrendingUpIcon from '@/assets/icons/trending-up.svg';
 import FaqIcon from '@/assets/icons/faq.svg';
+import XIcon from '@/assets/icons/x.svg';
 import StarIcon from '@/assets/icons/star-gradient.svg';
 import StarIcon2 from '@/assets/icons/star.svg';
 import TonIcon from '@/assets/icons/toncoin.svg';
 import TonSimple from '@/assets/icons/toncoin-simple.svg';
 import TonSymbol from '@/assets/icons/toncoin-symbol.svg';
+import FaceIDIcon from '@/assets/icons/face-id.svg';
+import LockIcon from '@/assets/icons/lock.svg';
 import RaffleIcon from '@/assets/icons/raffle-banner.png';
-import XIcon from '@/assets/icons/x-twitter.png';
+import XIcon2 from '@/assets/icons/x-twitter.png';
 
 export const icons = [
   RaffleIcon,
@@ -33,9 +36,12 @@ export const icons = [
   TonSymbol,
   StarIcon,
   TonIcon,
+  FaceIDIcon,
+  LockIcon,
   TonSimple,
   FaqIcon,
   ChatIcon,
+  XIcon2,
   HistoryIcon,
   WalletIcon,
   CurrencyIcon,

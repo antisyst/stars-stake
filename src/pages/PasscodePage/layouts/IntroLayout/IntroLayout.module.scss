@@ -1,0 +1,53 @@
+.introPage {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 100px;
+  align-items: center;
+  overflow: hidden;
+  background: var(--app-bg, var(--tg-theme-bg-color));
+
+  .introContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0 30px;
+    width: 100%;
+    max-width: 360px;
+
+    .animation {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 4px;
+    }
+
+    .mainContent {
+        .title {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        color: var(--app-text);
+        margin-bottom: 6px;
+        }
+
+        .subtitle {
+        font-size: 17px;
+        text-align: center;
+        color: var(--app-text);
+        opacity: 0.6;
+        font-family: var(--rounded) !important;
+        margin: 0;
+        }
+    }
+
+    .actions {
+        width: 100%;
+        padding: 0 26px;
+        margin-top: 22px;
+    }
+    }
+}

@@ -117,6 +117,7 @@ export interface Route {
   Component: ComponentType;
   title?: string;
   icon?: JSX.Element;
+  headerColor: string;
 }
 
 export interface GlobalStats {

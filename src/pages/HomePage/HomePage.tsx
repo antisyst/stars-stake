@@ -14,16 +14,16 @@ export const HomePage = () => {
   return (
     <Page back={false}>
       <div className={styles.homePage}>
-       <Header/>
-       <StakeSection/>
-       <StatsSection/>
-       <TierProgress/>
-       <WithdrawOptions/>
-       <EcosystemBenefits/>
-       <CampaignSection/>
-       <FaqSection/>
-       <HistorySection/>
+        <Header />
+        <StakeSection />
+        <StatsSection />
+        <TierProgress />
+        <WithdrawOptions />
+        <EcosystemBenefits />
+        <CampaignSection />
+        <FaqSection />
+        <HistorySection />
       </div>
     </Page>
-  )
-}
+  );
+};

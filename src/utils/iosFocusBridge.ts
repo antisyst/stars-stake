@@ -1,15 +1,6 @@
-/**
- * iOS WebKit only allows .focus() synchronously inside a user-gesture handler.
- * This bridge creates a hidden input, focuses it inside the tap handler,
- * then signals the next page to steal focus from it — which iOS permits
- * because the keyboard is already up.
- */
-
 const BRIDGE_INPUT_ID = '__ios_focus_bridge__';
 
-/** Call this SYNCHRONOUSLY inside a click/touchend handler before navigate. */
 export function primeIosFocusBridge(): void {
-  // Remove any stale bridge
   document.getElementById(BRIDGE_INPUT_ID)?.remove();
 
   const el = document.createElement('input');
@@ -29,19 +20,14 @@ export function primeIosFocusBridge(): void {
     'border:none',
     'outline:none',
     'background:transparent',
-    'font-size:16px', // prevents iOS zoom
+    'font-size:16px',
     'z-index:-1',
   ].join(';');
 
   document.body.appendChild(el);
-  el.focus(); // ← synchronous, inside gesture = iOS allows this
+  el.focus();
 }
 
-/**
- * Call this on the destination page mount.
- * Transfers focus from the bridge input to your real input.
- * iOS allows this because focus is already active (keyboard is up).
- */
 export function claimIosFocusBridge(
   realInput: HTMLInputElement | null
 ): void {
@@ -52,7 +38,14 @@ export function claimIosFocusBridge(
     realInput.focus({ preventScroll: true });
     bridge.remove();
   } else {
-    // Fallback: no bridge found, try direct focus anyway
     realInput.focus({ preventScroll: true });
+  }
+}
+
+export function dismissIosKeyboard(): void {
+  document.getElementById(BRIDGE_INPUT_ID)?.remove();
+  const active = document.activeElement as HTMLElement | null;
+  if (active && typeof active.blur === 'function') {
+    active.blur();
   }
 }
