@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   background: var(--app-button);
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
@@ -21,8 +21,8 @@
     gap: 4px;
 
     .iconWrapper {
-      width: 25px;
-      height: 25px;
+      width: 27px;
+      height: 27px;
       display: flex;
       align-items: center;
       justify-content: center;
