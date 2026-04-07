@@ -1,6 +1,6 @@
 .socialBonusSection {
   width: 86%;
-  padding: 3px 8px;
+  padding: 3px 10px;
   border-radius: 0 0 20px 20px;
   display: flex;
   align-items: center;
@@ -39,6 +39,7 @@
       font-size: 14px;
       font-family: var(--rounded) !important;
       font-weight: 500; 
+      line-height: 1.1;
     }
   }
 
