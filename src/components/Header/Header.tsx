@@ -15,7 +15,7 @@ import { db } from '@/configs/firebaseConfig';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useI18n } from '@/i18n';
 import { TonPriceButton } from '@/components/TonPriceButton/TonPriceButton';
-import { XButton } from '@/components/XButton/XButton';
+// import { XButton } from '@/components/XButton/XButton';
 
 export const Header = () => {
   const initDataState = useSignal(initData.state);
@@ -215,7 +215,7 @@ export const Header = () => {
         )}
       </div>
       <div className={styles.walletButtonWrapper}>
-        <XButton/>
+        {/* <XButton/> */}
         <TonPriceButton />
         <Button
           ref={buttonRef}
