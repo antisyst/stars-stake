@@ -85,7 +85,6 @@ export const TonMarketStats: React.FC<TonMarketStatsProps> = ({ data, loading })
     return [
       { label: t('tonMarket.marketCap',   'Market Cap'),     valueNode: formatLargeUsd(data.marketCap, sym) },
       { label: t('tonMarket.volume24h',   '24h Volume'),     valueNode: formatLargeUsd(data.volume24h, sym) },
-      { label: t('tonMarket.change7d',    '7d Change'),      valueNode: <PctBadge pct={data.priceChange7d} />,  raw: true },
       { label: t('tonMarket.change30d',   '30d Change'),     valueNode: <PctBadge pct={data.priceChange30d} />, raw: true },
       { label: t('tonMarket.allTimeHigh', 'All-Time High'),  valueNode: formatFromUsd(data.allTimeHigh, 3) },
       { label: t('tonMarket.allTimeLow',  'All-Time Low'),   valueNode: formatFromUsd(data.allTimeLow, 4) },
