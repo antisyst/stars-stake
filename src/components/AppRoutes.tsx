@@ -16,7 +16,6 @@ import { mainButton } from '@telegram-apps/sdk';
 import { DataGate } from '@/components/DataGate';
 import { useRouteHeaderColor } from '@/hooks/useRouteHeaderColor';
 import { useRouteBarColors } from '@/hooks/useRouteBarColors';
-import { on } from '@tma.js/bridge';
 
 export const AppRoutes: React.FC = () => {
   useTelegramSdk();
@@ -35,23 +34,8 @@ const AppRoutesInner: React.FC = () => {
   const bootedRef = useRef(false);
   const pageLayoutRef = useRef<HTMLDivElement | null>(null);
 
-  // Keep navigate in a ref so the bridge listener never needs to re-register
-  const navigateRef = useRef(navigate);
-  useEffect(() => { navigateRef.current = navigate; }, [navigate]);
-
   useRouteHeaderColor();
   useRouteBarColors();
-
-  // Register the settings_button_pressed listener exactly ONCE on mount
-  useEffect(() => {
-    const removeListener = on('settings_button_pressed', () => {
-      navigateRef.current('/profile', { replace: false });
-    });
-
-    return () => {
-      try { removeListener(); } catch {}
-    };
-  }, []); // empty deps — never re-registers
 
   useEffect(() => {
     requestAnimationFrame(() => {
@@ -163,7 +147,9 @@ const AppRoutesInner: React.FC = () => {
     };
 
     boot();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [initDataState, navigate, location.pathname, iconsLoaded, fontsLoaded]);
 
   const MAIN_BUTTON_PAGES = ['/deposit', '/unstake'];
