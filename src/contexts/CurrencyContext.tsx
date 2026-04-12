@@ -33,7 +33,47 @@ export type CurrencyCode =
   | 'HKD'
   | 'GEL'
   | 'ARS'
-  | 'BDT';
+  | 'BDT'
+  | 'MXN'
+  | 'SGD'
+  | 'MYR'
+  | 'ZAR'
+  | 'DKK'
+  | 'SEK'
+  | 'NOK'
+  | 'AUD'
+  | 'NZD'
+  | 'PKR'
+  | 'VND'
+  | 'COP'
+  | 'CLP'
+  | 'ILS'
+  | 'MAD'
+  | 'TWD'
+  | 'AZN'
+  | 'AMD'
+  | 'BYN'
+  | 'MDL'
+  | 'QAR'
+  | 'KWD'
+  | 'BHD'
+  | 'OMR'
+  | 'JOD'
+  | 'LBP'
+  | 'IRR'
+  | 'IQD'
+  | 'TZS'
+  | 'KES'
+  | 'GHS'
+  | 'ETB'
+  | 'DZD'
+  | 'TND'
+  | 'LKR'
+  | 'NPR'
+  | 'MMK'
+  | 'KHR'
+  | 'BOB'
+  | 'PEN';
 
 export const CURRENCY_OPTIONS: { code: CurrencyCode; label: string }[] = [
   { code: 'USD', label: 'USD — US Dollar' },
@@ -48,24 +88,64 @@ export const CURRENCY_OPTIONS: { code: CurrencyCode; label: string }[] = [
   { code: 'INR', label: 'INR — Indian Rupee' },
   { code: 'JPY', label: 'JPY — Japanese Yen' },
   { code: 'KRW', label: 'KRW — South Korean Won' },
+  { code: 'AUD', label: 'AUD — Australian Dollar' },
+  { code: 'CAD', label: 'CAD — Canadian Dollar' },
+  { code: 'CHF', label: 'CHF — Swiss Franc' },
+  { code: 'SGD', label: 'SGD — Singapore Dollar' },
+  { code: 'HKD', label: 'HKD — Hong Kong Dollar' },
+  { code: 'SEK', label: 'SEK — Swedish Krona' },
+  { code: 'NOK', label: 'NOK — Norwegian Krone' },
+  { code: 'DKK', label: 'DKK — Danish Krone' },
+  { code: 'NZD', label: 'NZD — New Zealand Dollar' },
+  { code: 'MXN', label: 'MXN — Mexican Peso' },
   { code: 'BRL', label: 'BRL — Brazilian Real' },
+  { code: 'ZAR', label: 'ZAR — South African Rand' },
+  { code: 'TWD', label: 'TWD — Taiwan Dollar' },
+  { code: 'MYR', label: 'MYR — Malaysian Ringgit' },
+  { code: 'THB', label: 'THB — Thai Baht' },
   { code: 'IDR', label: 'IDR — Indonesian Rupiah' },
+  { code: 'PHP', label: 'PHP — Philippine Peso' },
+  { code: 'VND', label: 'VND — Vietnamese Dong' },
+  { code: 'PKR', label: 'PKR — Pakistani Rupee' },
+  { code: 'BDT', label: 'BDT — Bangladeshi Taka' },
   { code: 'SAR', label: 'SAR — Saudi Riyal' },
   { code: 'AED', label: 'AED — UAE Dirham' },
-  { code: 'THB', label: 'THB — Thai Baht' },
-  { code: 'PHP', label: 'PHP — Philippine Peso' },
+  { code: 'QAR', label: 'QAR — Qatari Riyal' },  
+  { code: 'KWD', label: 'KWD — Kuwaiti Dinar' },
+  { code: 'BHD', label: 'BHD — Bahraini Dinar' },
+  { code: 'OMR', label: 'OMR — Omani Rial' },
+  { code: 'JOD', label: 'JOD — Jordanian Dinar' },
+  { code: 'ILS', label: 'ILS — Israeli Shekel' },
+  { code: 'LBP', label: 'LBP — Lebanese Pound' },
+  { code: 'IRR', label: 'IRR — Iranian Rial' },
+  { code: 'IQD', label: 'IQD — Iraqi Dinar' },
   { code: 'EGP', label: 'EGP — Egyptian Pound' },
+  { code: 'MAD', label: 'MAD — Moroccan Dirham' },
+  { code: 'DZD', label: 'DZD — Algerian Dinar' },
+  { code: 'TND', label: 'TND — Tunisian Dinar' },
   { code: 'NGN', label: 'NGN — Nigerian Naira' },
+  { code: 'GHS', label: 'GHS — Ghanaian Cedi' },     
+  { code: 'KES', label: 'KES — Kenyan Shilling' },    
+  { code: 'TZS', label: 'TZS — Tanzanian Shilling' },
+  { code: 'ETB', label: 'ETB — Ethiopian Birr' },
+  { code: 'GEL', label: 'GEL — Georgian Lari' },
+  { code: 'AZN', label: 'AZN — Azerbaijani Manat' },
+  { code: 'AMD', label: 'AMD — Armenian Dram' },
+  { code: 'BYN', label: 'BYN — Belarusian Ruble' },
+  { code: 'MDL', label: 'MDL — Moldovan Leu' },
   { code: 'PLN', label: 'PLN — Polish Złoty' },
   { code: 'CZK', label: 'CZK — Czech Koruna' },
   { code: 'HUF', label: 'HUF — Hungarian Forint' },
   { code: 'RON', label: 'RON — Romanian Leu' },
-  { code: 'CHF', label: 'CHF — Swiss Franc' },
-  { code: 'CAD', label: 'CAD — Canadian Dollar' },
-  { code: 'HKD', label: 'HKD — Hong Kong Dollar' },
-  { code: 'GEL', label: 'GEL — Georgian Lari' },
+  { code: 'LKR', label: 'LKR — Sri Lankan Rupee' },   
+  { code: 'NPR', label: 'NPR — Nepalese Rupee' },
+  { code: 'MMK', label: 'MMK — Myanmar Kyat' },  
+  { code: 'KHR', label: 'KHR — Cambodian Riel' },
+  { code: 'COP', label: 'COP — Colombian Peso' },
+  { code: 'PEN', label: 'PEN — Peruvian Sol' },    
+  { code: 'BOB', label: 'BOB — Bolivian Boliviano' },
+  { code: 'CLP', label: 'CLP — Chilean Peso' },
   { code: 'ARS', label: 'ARS — Argentine Peso' },
-  { code: 'BDT', label: 'BDT — Bangladeshi Taka' },
 ];
 
 type CurrencyState = {
@@ -113,6 +193,46 @@ const SYMBOLS: Record<CurrencyCode, string> = {
   GEL: '₾',
   ARS: '$',
   BDT: '৳',
+  MXN: 'MX$',
+  SGD: 'S$',
+  MYR: 'RM',
+  ZAR: 'R',
+  DKK: 'kr',
+  SEK: 'kr',
+  NOK: 'kr',
+  AUD: 'A$',
+  NZD: 'NZ$',
+  PKR: '₨',
+  VND: '₫',
+  COP: 'COP$',
+  CLP: 'CLP$',
+  ILS: '₪',
+  MAD: 'د.م.',
+  TWD: 'NT$',
+  AZN: '₼',
+  AMD: '֏',
+  BYN: 'Br',
+  MDL: 'L',
+  QAR: '﷼',
+  KWD: 'د.ك',
+  BHD: 'BD',
+  OMR: '﷼',
+  JOD: 'JD',
+  LBP: 'L£',
+  IRR: '﷼',
+  IQD: 'ع.د',
+  TZS: 'TSh',
+  KES: 'KSh',
+  GHS: 'GH₵',
+  ETB: 'Br',
+  DZD: 'دج',
+  TND: 'DT',
+  LKR: '₨',
+  NPR: '₨',
+  MMK: 'K',
+  KHR: '៛',
+  BOB: 'Bs.',
+  PEN: 'S/',
 };
 
 const LOCALES: Record<CurrencyCode, string> = {
@@ -146,9 +266,53 @@ const LOCALES: Record<CurrencyCode, string> = {
   GEL: 'ka-GE',
   ARS: 'es-AR',
   BDT: 'bn-BD',
+  MXN: 'es-MX',
+  SGD: 'en-SG',
+  MYR: 'ms-MY',
+  ZAR: 'en-ZA',
+  DKK: 'da-DK',
+  SEK: 'sv-SE',
+  NOK: 'nb-NO',
+  AUD: 'en-AU',
+  NZD: 'en-NZ',
+  PKR: 'ur-PK',
+  VND: 'vi-VN',
+  COP: 'es-CO',
+  CLP: 'es-CL',
+  ILS: 'he-IL',
+  MAD: 'ar-MA',
+  TWD: 'zh-TW',
+  AZN: 'az-AZ',
+  AMD: 'hy-AM',
+  BYN: 'be-BY',
+  MDL: 'ro-MD',
+  QAR: 'ar-QA',
+  KWD: 'ar-KW',
+  BHD: 'ar-BH',
+  OMR: 'ar-OM',
+  JOD: 'ar-JO',
+  LBP: 'ar-LB',
+  IRR: 'fa-IR',
+  IQD: 'ar-IQ',
+  TZS: 'sw-TZ',
+  KES: 'sw-KE',
+  GHS: 'en-GH',
+  ETB: 'am-ET',
+  DZD: 'ar-DZ',
+  TND: 'ar-TN',
+  LKR: 'si-LK',
+  NPR: 'ne-NP',
+  MMK: 'my-MM',
+  KHR: 'km-KH',
+  BOB: 'es-BO',
+  PEN: 'es-PE',
 };
 
-const ZERO_DECIMAL: Set<CurrencyCode> = new Set(['JPY', 'KRW', 'IDR', 'HUF', 'UZS']);
+const ZERO_DECIMAL: Set<CurrencyCode> = new Set([
+  'JPY', 'KRW', 'IDR', 'HUF', 'UZS',
+  'VND', 'CLP',
+  'IRR', 'IQD', 'LBP', 'KHR', 
+]);
 
 export const useCurrency = () => {
   const ctx = useContext(CurrencyContext);
