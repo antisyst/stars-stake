@@ -153,6 +153,26 @@
     "confirm": "Confirmez dans le portefeuille…",
     "verifying": "Vérification du paiement…"
   },
+  "unstake": {
+    "tagWithdraw": "Retirer",
+    "buttonWithdraw": "Retirer",
+    "amountAria": "Montant du retrait en Stars",
+    "availableBalance": "Solde disponible",
+    "max": "MAX",
+    "maxAria": "Définir le solde maximum",
+    "minWithdrawWarning": "Le retrait minimum est de {min} stars.",
+    "exceedsBalance": "Le montant dépasse votre solde."
+  },
+  "systemStatus": {
+    "pageTitle": "État du système",
+    "allOperational": "Tous les systèmes opérationnels",
+    "operational": "Opérationnel",
+    "pastIncidents": "Incidents passés",
+    "noIncidents": "Aucun incident signalé",
+    "daysAgo": "Il y a {days} jours",
+    "today": "Aujourd'hui",
+    "previewTitle": "Tous les systèmes opérationnels"
+  },
   "faqs": {
     "pageTitle": "Questions fréquemment posées",
     "learnMore": "En savoir plus",

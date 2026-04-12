@@ -153,6 +153,26 @@
     "confirm": "Підтвердити в гаманці…",
     "verifying": "Перевірка платежу…"
   },
+   "unstake": {
+    "tagWithdraw": "Виведення",
+    "buttonWithdraw": "Вивести",
+    "amountAria": "Сума виведення в Stars",
+    "availableBalance": "Доступний баланс",
+    "max": "МАКС",
+    "maxAria": "Встановити максимальний баланс",
+    "minWithdrawWarning": "Мінімальна сума виведення — {min} stars.",
+    "exceedsBalance": "Сума перевищує ваш баланс."
+  },
+  "systemStatus": {
+    "pageTitle": "Статус системи",
+    "allOperational": "Всі системи працюють",
+    "operational": "Працює",
+    "pastIncidents": "Минулі інциденти",
+    "noIncidents": "Інцидентів не зафіксовано",
+    "daysAgo": "{days} дн. тому",
+    "today": "Сьогодні",
+    "previewTitle": "Всі системи працюють"
+  },
   "faqs": {
     "pageTitle": "Поширені запитання",
     "learnMore": "Дізнатися більше",

@@ -153,6 +153,26 @@
     "confirm": "Επιβεβαιώστε στο πορτοφόλι…",
     "verifying": "Επαλήθευση πληρωμής…"
   },
+   "unstake": {
+    "tagWithdraw": "Ανάληψη",
+    "buttonWithdraw": "Ανάληψη",
+    "amountAria": "Ποσό ανάληψης σε Stars",
+    "availableBalance": "Διαθέσιμο υπόλοιπο",
+    "max": "ΜΕΓΙΣΤΟ",
+    "maxAria": "Ορισμός μέγιστου υπολοίπου",
+    "minWithdrawWarning": "Η ελάχιστη ανάληψη είναι {min} stars.",
+    "exceedsBalance": "Το ποσό υπερβαίνει το υπόλοιπό σας."
+  },
+  "systemStatus": {
+    "pageTitle": "Κατάσταση συστήματος",
+    "allOperational": "Όλα τα συστήματα λειτουργούν",
+    "operational": "Λειτουργεί",
+    "pastIncidents": "Προηγούμενα συμβάντα",
+    "noIncidents": "Δεν αναφέρθηκαν συμβάντα",
+    "daysAgo": "Πριν από {days} μέρες",
+    "today": "Σήμερα",
+    "previewTitle": "Όλα τα συστήματα λειτουργούν"
+  },
   "faqs": {
     "pageTitle": "Συχνές ερωτήσεις",
     "learnMore": "Μάθετε περισσότερα",

@@ -153,6 +153,26 @@
     "confirm": "Konfirmasi di dompet…",
     "verifying": "Memverifikasi pembayaran…"
   },
+  "unstake": {
+    "tagWithdraw": "Tarik",
+    "buttonWithdraw": "Tarik",
+    "amountAria": "Jumlah penarikan dalam Stars",
+    "availableBalance": "Saldo Tersedia",
+    "max": "MAKS",
+    "maxAria": "Atur saldo maksimum",
+    "minWithdrawWarning": "Penarikan minimum adalah {min} stars.",
+    "exceedsBalance": "Jumlah melebihi saldo Anda."
+  },
+  "systemStatus": {
+    "pageTitle": "Status Sistem",
+    "allOperational": "Semua Sistem Beroperasi",
+    "operational": "Beroperasi",
+    "pastIncidents": "Insiden Lalu",
+    "noIncidents": "Tidak ada insiden yang dilaporkan",
+    "daysAgo": "{days} hari yang lalu",
+    "today": "Hari ini",
+    "previewTitle": "Semua Sistem Beroperasi"
+  },
   "faqs": {
     "pageTitle": "Pertanyaan yang Sering Diajukan",
     "learnMore": "Pelajari lebih lanjut",

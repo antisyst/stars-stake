@@ -153,6 +153,26 @@
     "confirm": "Hamyonda tasdiqlang…",
     "verifying": "To'lov tekshirilmoqda…"
   },
+   "unstake": {
+    "tagWithdraw": "Yechib olish",
+    "buttonWithdraw": "Yechib olish",
+    "amountAria": "Stars da yechib olish miqdori",
+    "availableBalance": "Mavjud balans",
+    "max": "MAKS",
+    "maxAria": "Maksimal balansni belgilash",
+    "minWithdrawWarning": "Minimal yechib olish miqdori — {min} stars.",
+    "exceedsBalance": "Miqdor balansingizdan oshib ketadi."
+  },
+  "systemStatus": {
+    "pageTitle": "Tizim holati",
+    "allOperational": "Barcha tizimlar ishlayapti",
+    "operational": "Ishlayapti",
+    "pastIncidents": "O'tgan voqealar",
+    "noIncidents": "Hech qanday voqea qayd etilmagan",
+    "daysAgo": "{days} kun oldin",
+    "today": "Bugun",
+    "previewTitle": "Barcha tizimlar ishlayapti"
+  },
   "faqs": {
     "pageTitle": "Ko'p so'raladigan savollar",
     "learnMore": "Ko'proq ma'lumot",

@@ -57,7 +57,6 @@ export const ProfilePage = () => {
 
   const handlePasscodeEntry = useCallback(() => {
     lockStableVh();
-
     if (!hasPasscode) {
       navigate('/passcode-setup');
     } else {
@@ -268,7 +267,9 @@ export const ProfilePage = () => {
   );
 
   return (
-    <Page back={true}>
+    // backTo="/home" ensures back button always has a valid target
+    // regardless of how the user arrived at this page (settings button or nav)
+    <Page back={true} backTo="/home">
       <div className={styles.profilePage}>
         <div className={styles.headerRow}>
           <div className={styles.avatarWrapper}>

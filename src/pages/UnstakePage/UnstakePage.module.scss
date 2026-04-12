@@ -1,4 +1,4 @@
-.depositPage {
+.unstakePage {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   overflow: hidden;
   justify-content: flex-start;
 
-  .depositLayout {
+  .unstakeLayout {
     position: absolute;
     top: 0;
     left: 0;
@@ -20,35 +20,12 @@
     align-items: center;
   }
 
-  .depositTag {
-    position: absolute;
-    z-index: 1000;
-    top: 10px;
-    display: flex;
-    align-items: center;
-    background: var(--app-secondary-bg);
-    justify-content: center;
-    gap: 2px;
-    padding: 0 1px;
-    height: 24px;
-    border-radius: 12px;
-
-    svg { width: 22px; height: 22px; }
-
-    span {
-      font-weight: 500;
-      font-size: 14px;
-      padding-right: 6px;
-    }
-  }
-
-  .mainDepositContainer {
+  .mainUnstakeContainer {
     height: calc(var(--tg-viewport-stable-height) - 45px);
     transition: height 0.2s linear;
     width: 100%;
     display: flex;
     margin-top: 20px;
-    justify-content: center;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
@@ -129,10 +106,7 @@
         font-size: 16px;
         color: var(--app-hint);
 
-        svg {
-          width: 21px;
-          height: 21px;
-        }
+        svg { width: 21px; height: 21px; }
       }
 
       .warning {
@@ -146,50 +120,3 @@
     }
   }
 }
-
-.boostLabel {
-  padding: 1px 4px;
-  margin-left: 6px;
-  font-family: var(--rounded) !important;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  background: var(--tgui--secondary_fill);
-  color: var(--tgui--link_color);
-}
-
-.stakePromoPreview {
-   font-family: var(--rounded) !important;
-   font-size: 18px; 
-   font-weight: 600;
-   color: var(--app-text);
-}
-
-.tagRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 8px;
-}
-
-.depositTopRow {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  padding-top: 40px;
-  padding-right: 16px;
-  gap: 8px;
-}
- 
-.tonBtnPlaceholder {
-  width: 1px;
-  height: 30px;
-  flex-shrink: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
- 

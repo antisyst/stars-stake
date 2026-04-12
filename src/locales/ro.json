@@ -153,6 +153,26 @@
     "confirm": "Confirmă în portofel…",
     "verifying": "Se verifică plata…"
   },
+  "unstake": {
+    "tagWithdraw": "Retragere",
+    "buttonWithdraw": "Retrage",
+    "amountAria": "Suma retragerii în Stars",
+    "availableBalance": "Sold disponibil",
+    "max": "MAX",
+    "maxAria": "Setați soldul maxim",
+    "minWithdrawWarning": "Retragerea minimă este de {min} stars.",
+    "exceedsBalance": "Suma depășește soldul dvs."
+  },
+  "systemStatus": {
+    "pageTitle": "Starea sistemului",
+    "allOperational": "Toate sistemele funcționează",
+    "operational": "Funcționează",
+    "pastIncidents": "Incidente anterioare",
+    "noIncidents": "Nu au fost raportate incidente",
+    "daysAgo": "Acum {days} zile",
+    "today": "Astăzi",
+    "previewTitle": "Toate sistemele funcționează"
+  },
   "faqs": {
     "pageTitle": "Întrebări frecvente",
     "learnMore": "Află mai multe",

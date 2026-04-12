@@ -153,6 +153,26 @@
     "confirm": "ยืนยันในกระเป๋าเงิน…",
     "verifying": "กำลังตรวจสอบการชำระเงิน…"
   },
+   "unstake": {
+    "tagWithdraw": "ถอน",
+    "buttonWithdraw": "ถอนเงิน",
+    "amountAria": "จำนวนเงินถอนใน Stars",
+    "availableBalance": "ยอดคงเหลือที่ใช้ได้",
+    "max": "สูงสุด",
+    "maxAria": "ตั้งค่ายอดคงเหลือสูงสุด",
+    "minWithdrawWarning": "การถอนขั้นต่ำคือ {min} stars",
+    "exceedsBalance": "จำนวนเงินเกินยอดคงเหลือของคุณ"
+  },
+  "systemStatus": {
+    "pageTitle": "สถานะระบบ",
+    "allOperational": "ระบบทั้งหมดทำงานปกติ",
+    "operational": "ทำงานปกติ",
+    "pastIncidents": "เหตุการณ์ที่ผ่านมา",
+    "noIncidents": "ไม่มีเหตุการณ์ที่รายงาน",
+    "daysAgo": "{days} วันที่แล้ว",
+    "today": "วันนี้",
+    "previewTitle": "ระบบทั้งหมดทำงานปกติ"
+  },
   "faqs": {
     "pageTitle": "คำถามที่พบบ่อย",
     "learnMore": "เรียนรู้เพิ่มเติม",

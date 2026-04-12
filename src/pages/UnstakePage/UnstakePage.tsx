@@ -1,85 +1,79 @@
-import React, { useEffect, useMemo, useRef, useState, useLayoutEffect } from 'react';
+import React, { useEffect, useMemo, useRef, useState, useLayoutEffect, useContext } from 'react';
 import { Page } from '@/components/Page';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { mainButton } from '@telegram-apps/sdk';
 import { miniApp, useLaunchParams } from '@telegram-apps/sdk-react';
 import { useAppData } from '@/contexts/AppDataContext';
 import { formatNumber } from '@/utils/formatNumber';
-import { MIN_DEPOSIT, parseAmountInput, isValidDeposit } from '@/utils/deposit';
-import { DepositTag } from '@/components/DepositTag/DepositTag';
+import { parseAmountInput } from '@/utils/deposit';
+import { UnstakeTag } from '@/components/UnstakeTag/UnstakeTag';
+import { UnstakeBalancePreview } from '@/components/UnstakeBalancePreview/UnstakeBalancePreview';
 import { resolveCssVarToHex } from '@/utils/css';
-import { ApyPreview } from '@/components/ApyPreview/ApyPreview';
-import { AnimatePresence } from 'framer-motion';
-import { useRates } from '@/contexts/RatesContext';
+import { ToastContext } from '@/contexts/ToastContext';
 import { formatForInput } from '@/utils/formatForInput';
 import { tdesktopInputShields } from '@/utils/tdesktopShields';
 import { inputNoSelectGuards, composeInputProps } from '@/utils/inputGuards';
 import { claimIosFocusBridge } from '@/utils/iosFocusBridge';
+import { AnimatePresence } from 'framer-motion';
 import StarIcon from '@/assets/icons/star-gradient.svg?react';
-import styles from './DepositPage.module.scss';
+import styles from './UnstakePage.module.scss';
 import { useCurrency } from '@/contexts/CurrencyContext';
 import { useI18n } from '@/i18n';
-import { useTonPay } from '@/components/TonPayButton/TonPayButton';
 
-export const DepositPage: React.FC = () => {
-  const navigate = useNavigate();
+const MIN_UNSTAKE = 500;
+
+export const UnstakePage: React.FC = () => {
   const location = useLocation();
   const { user, exchangeRate } = useAppData();
-  const { tonUsd } = useRates();
   const lp = useLaunchParams();
   const { formatFromUsd } = useCurrency();
   const { t } = useI18n();
+  const { showError } = useContext(ToastContext);
 
   const isIos = lp.platform === 'ios';
-  const isMobile = ['ios', 'android'].includes(lp.platform);
   const isTDesktop = lp.platform === 'tdesktop';
+  const isMobile = ['ios', 'android'].includes(lp.platform);
 
   const [raw, setRaw] = useState<string>('');
   const amount = useMemo(() => parseAmountInput(raw), [raw]);
-  const valid = isValidDeposit(amount);
+  const maxBalance = user?.starsBalance ?? 0;
+  const valid = amount >= MIN_UNSTAKE && amount <= maxBalance;
   const [focused, setFocused] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const mountedRef = useRef(false);
 
-  const hasStakedBefore = (user?.starsBalance ?? 0) > 0;
-  const buttonText = hasStakedBefore ? t('deposit.buttonDeposit') : t('deposit.buttonConfirmStake');
-  const tagText = hasStakedBefore ? t('deposit.tagDeposit') : t('deposit.tagStake');
+  const buttonText = t('unstake.buttonWithdraw');
 
-  const enabledBg = resolveCssVarToHex('--app-button') || undefined;
-  const enabledFg = resolveCssVarToHex('--app-button-text') || undefined;
-  const disabledBgVar = isTDesktop ? '--app-secondary-bg' : '--app-header-bg';
-  const disabledFgVar = isTDesktop ? '--app-subtitle' : '--app-section-separator';
-  const disabledBg = resolveCssVarToHex(disabledBgVar) || undefined;
-  const disabledFg = resolveCssVarToHex(disabledFgVar) || undefined;
+  const enabledBg  = resolveCssVarToHex('--app-button') || undefined;
+  const enabledFg  = resolveCssVarToHex('--app-button-text') || undefined;
+  const disabledBg = resolveCssVarToHex(isTDesktop ? '--app-secondary-bg' : '--app-header-bg') || undefined;
+  const disabledFg = resolveCssVarToHex(isTDesktop ? '--app-subtitle' : '--app-section-separator') || undefined;
 
   const usdVal = (amount || 0) * (exchangeRate ?? 0);
-  const tonVal = tonUsd > 0 && usdVal > 0 ? usdVal / tonUsd : 0;
 
-  const tonModeActive = valid && tonUsd > 0;
-
-  const { discountedTon, paying: tonPaying, handlePress: handleTonPress } = useTonPay({
-    starsAmount: amount,
-    tonAmount: tonVal,
-    disabled: !valid || tonUsd <= 0,
-  });
-
+  // ─── iOS focus: claimIosFocusBridge consumes the token primed by
+  //     primeIosFocusBridge() in StakeSection before navigate('/unstake').
+  //     On non-iOS we just call el.focus() directly.
   useEffect(() => {
     const el = inputRef.current;
     if (!el) return;
     if (isIos) {
+      // claimIosFocusBridge must run inside a rAF so the element is painted,
+      // but the token was already captured during the tap in StakeSection.
       const id = requestAnimationFrame(() => claimIosFocusBridge(el));
       return () => cancelAnimationFrame(id);
     } else {
       const id = requestAnimationFrame(() => el.focus({ preventScroll: true }));
       return () => cancelAnimationFrame(id);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     const hex = resolveCssVarToHex('--app-bg');
-    try { miniApp.setHeaderColor((hex || 'bg_color') as any); } catch {}
-    return () => { try { miniApp.setHeaderColor('bg_color'); } catch {} };
+    try { miniApp.setHeaderColor((hex || '--app-bg') as any); } catch {}
+    return () => { try { miniApp.setHeaderColor('secondary_bg_color'); } catch {} };
   }, []);
 
   const applyButtonStyle = (enabled: boolean) => {
@@ -89,7 +83,7 @@ export const DepositPage: React.FC = () => {
         isVisible: true,
         isEnabled: enabled,
         isLoaderVisible: false,
-        hasShineEffect: enabled,
+        hasShineEffect: false,
         ...(enabled
           ? (enabledBg ? { backgroundColor: enabledBg } : {})
           : (disabledBg ? { backgroundColor: disabledBg } : {})),
@@ -100,27 +94,17 @@ export const DepositPage: React.FC = () => {
     } catch {}
   };
 
-  const resetToDefaultTheme = () => {
-    const defBg = resolveCssVarToHex('--app-button') || undefined;
-    const defFg = resolveCssVarToHex('--app-button-text') || undefined;
-    try {
-      mainButton.setParams({
-        isVisible: false,
-        isLoaderVisible: false,
-        ...(defBg ? { backgroundColor: defBg } : {}),
-        ...(defFg ? { textColor: defFg } : {}),
-      } as any);
-    } catch {}
-  };
-
   useEffect(() => {
     try { mainButton.mount(); mountedRef.current = true; } catch {}
     applyButtonStyle(valid);
     return () => {
-      resetToDefaultTheme();
-      try { if (mainButton.isMounted?.()) mainButton.unmount(); } catch {}
+      try {
+        mainButton.setParams({ isVisible: false, isLoaderVisible: false } as any);
+        if (mainButton.isMounted?.()) mainButton.unmount();
+      } catch {}
       mountedRef.current = false;
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -132,23 +116,31 @@ export const DepositPage: React.FC = () => {
     try {
       off = mainButton.onClick(() => {
         if (!mountedRef.current || !valid) return;
-        try { mainButton.setParams({ isLoaderVisible: true, isEnabled: false }); } catch {}
-        navigate(`/payment/init?amount=${amount}`, { replace: true, state: { from: location.pathname } });
+        showError(t('stake.lockerNotActive'));
       });
     } catch {}
     return () => { try { off?.(); } catch {} };
-  }, [valid, amount, navigate, location.pathname]);
+  }, [valid, showError, t]);
 
   const displayValue = raw === '' ? '' : formatForInput(parseAmountInput(raw));
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const cleaned = e.target.value.replace(/[^\d]/g, '');
     const n = parseAmountInput(cleaned);
-    setRaw(n === 0 ? '' : String(n));
+    setRaw(n === 0 ? '' : String(Math.min(n, maxBalance)));
   };
 
-  const noSelect = useMemo(() => inputNoSelectGuards(), []);
-  const shields = useMemo(() => tdesktopInputShields(isTDesktop), [isTDesktop]);
+  const handleMax = () => {
+    if (maxBalance > 0) {
+      setRaw(String(maxBalance));
+      // Re-focus without stealing the gesture token — plain focus is fine here
+      // because this originates from a tap on the MAX button itself.
+      requestAnimationFrame(() => inputRef.current?.focus({ preventScroll: true }));
+    }
+  };
+
+  const noSelect   = useMemo(() => inputNoSelectGuards(), []);
+  const shields    = useMemo(() => tdesktopInputShields(isTDesktop), [isTDesktop]);
   const inputProps = useMemo(() => composeInputProps(noSelect, shields), [noSelect, shields]);
 
   const sizerRef = useRef<HTMLSpanElement>(null);
@@ -163,32 +155,18 @@ export const DepositPage: React.FC = () => {
     setInputWidth(Math.ceil(s.getBoundingClientRect().width) + 6);
   }, [displayValue]);
 
-  const currentBalance = user?.starsBalance ?? 0;
-
   useEffect(() => { setFocused(false); }, [location.key]);
 
-  const apyKey = isMobile ? (focused ? 'focus' : 'blur') : 'stable';
+  const previewKey = isMobile ? (focused ? 'focus' : 'blur') : 'stable';
 
   return (
     <Page back backTo="/home">
-      <div className={styles.depositPage} key={`deposit-${location.key}`}>
-        <div className={styles.depositLayout}>
+      <div className={styles.unstakePage} key={`unstake-${location.key}`}>
+        <div className={styles.unstakeLayout}>
 
-          {/*
-           * Single DepositTag — always mounted, never unmounted.
-           * Width morphing is a CSS transition on --pill-w, not Framer layout.
-           * This eliminates the 1-second hang completely.
-           */}
-          <DepositTag
-            text={tagText}
-            tonMode={tonModeActive}
-            tonAmount={discountedTon}
-            paying={tonPaying}
-            payStep={null}
-            onTonPress={handleTonPress}
-          />
+          <UnstakeTag text={t('unstake.tagWithdraw')} />
 
-          <div className={styles.mainDepositContainer}>
+          <div className={styles.mainUnstakeContainer}>
             <div className={styles.inputCard}>
               <StarIcon />
               <div className={styles.inputWrapper}>
@@ -199,7 +177,7 @@ export const DepositPage: React.FC = () => {
                 />
                 <input
                   ref={inputRef}
-                  id="amount"
+                  id="unstake-amount"
                   type="text"
                   inputMode="numeric"
                   pattern="[0-9]*"
@@ -211,7 +189,7 @@ export const DepositPage: React.FC = () => {
                   onChange={onChange}
                   onFocus={() => setFocused(true)}
                   onBlur={() => setFocused(false)}
-                  aria-label={t('deposit.stakeAmountAria')}
+                  aria-label={t('unstake.amountAria')}
                   style={{ width: inputWidth ? `${inputWidth}px` : undefined }}
                   autoFocus
                   {...inputProps}
@@ -224,32 +202,29 @@ export const DepositPage: React.FC = () => {
                 <p className={styles.usdNote}>
                   1&nbsp;<StarIcon />&nbsp;≈&nbsp;{formatFromUsd(exchangeRate, 4)}
                 </p>
-              ) : amount > 0 && amount < MIN_DEPOSIT ? (
+              ) : amount > 0 && amount < MIN_UNSTAKE ? (
                 <p className={styles.warning}>
-                  {t('deposit.minDepositWarning').replace('{min}', String(formatNumber(MIN_DEPOSIT)))}
+                  {t('unstake.minWithdrawWarning').replace('{min}', String(formatNumber(MIN_UNSTAKE)))}
                 </p>
-              ) : valid ? (
-                <p className={styles.usdNote}>
-                  ≈ {formatFromUsd(usdVal, 2)}&nbsp;≈ {tonVal ? tonVal.toFixed(3) : '—'} TON
-                </p>
+              ) : amount > maxBalance ? (
+                <p className={styles.warning}>{t('unstake.exceedsBalance')}</p>
               ) : (
                 <p className={styles.usdNote}>≈ {formatFromUsd(usdVal, 2)}</p>
               )}
             </div>
-
-            <AnimatePresence initial={false} mode="wait">
-              {isValidDeposit(amount) ? (
-                <ApyPreview
-                  key={`apy-${apyKey}-${amount}`}
-                  currentBalance={currentBalance}
-                  inputAmount={amount}
-                  exchangeRate={exchangeRate}
-                  inputId="amount"
-                  inputFocused={focused}
-                />
-              ) : null}
-            </AnimatePresence>
           </div>
+
+          <AnimatePresence initial={false} mode="wait">
+            <UnstakeBalancePreview
+              key={`balance-${previewKey}`}
+              balance={maxBalance}
+              exchangeRate={exchangeRate}
+              onMax={handleMax}
+              inputFocused={focused}
+              inputId="unstake-amount"
+              isMobile={isMobile}
+            />
+          </AnimatePresence>
         </div>
       </div>
     </Page>

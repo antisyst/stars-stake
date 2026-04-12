@@ -153,6 +153,26 @@
     "confirm": "تأیید در کیف پول…",
     "verifying": "در حال تأیید پرداخت…"
   },
+  "unstake": {
+    "tagWithdraw": "برداشت",
+    "buttonWithdraw": "برداشت",
+    "amountAria": "مقدار برداشت به Stars",
+    "availableBalance": "موجودی در دسترس",
+    "max": "حداکثر",
+    "maxAria": "تنظیم حداکثر موجودی",
+    "minWithdrawWarning": "حداقل برداشت {min} stars است.",
+    "exceedsBalance": "مقدار از موجودی شما بیشتر است."
+  },
+  "systemStatus": {
+    "pageTitle": "وضعیت سیستم",
+    "allOperational": "همه سیستم‌ها عملیاتی هستند",
+    "operational": "عملیاتی",
+    "pastIncidents": "حوادث گذشته",
+    "noIncidents": "هیچ حادثه‌ای گزارش نشده",
+    "daysAgo": "{days} روز پیش",
+    "today": "امروز",
+    "previewTitle": "همه سیستم‌ها عملیاتی هستند"
+  },
   "faqs": {
     "pageTitle": "سؤالات متداول",
     "learnMore": "بیشتر بدانید",

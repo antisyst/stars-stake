@@ -153,6 +153,26 @@
     "confirm": "在钱包中确认…",
     "verifying": "正在验证支付…"
   },
+  "unstake": {
+    "tagWithdraw": "提现",
+    "buttonWithdraw": "提现",
+    "amountAria": "提现金额（Stars）",
+    "availableBalance": "可用余额",
+    "max": "最大",
+    "maxAria": "设置最大余额",
+    "minWithdrawWarning": "最低提现金额为 {min} stars。",
+    "exceedsBalance": "金额超过您的余额。"
+  },
+  "systemStatus": {
+    "pageTitle": "系统状态",
+    "allOperational": "所有系统正常运行",
+    "operational": "正常运行",
+    "pastIncidents": "历史事件",
+    "noIncidents": "无事件报告",
+    "daysAgo": "{days} 天前",
+    "today": "今天",
+    "previewTitle": "所有系统正常运行"
+  },
   "faqs": {
     "pageTitle": "常见问题",
     "learnMore": "了解更多",

@@ -118,6 +118,8 @@ export interface Route {
   title?: string;
   icon?: JSX.Element;
   headerColor: string;
+  bgColor: string;
+  bottomBarColor: string;
 }
 
 export interface GlobalStats {

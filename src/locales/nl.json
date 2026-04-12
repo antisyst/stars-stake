@@ -153,6 +153,26 @@
     "confirm": "Bevestig in portemonnee…",
     "verifying": "Betaling verifiëren…"
   },
+   "unstake": {
+    "tagWithdraw": "Opnemen",
+    "buttonWithdraw": "Opnemen",
+    "amountAria": "Opnamebedrag in Stars",
+    "availableBalance": "Beschikbaar saldo",
+    "max": "MAX",
+    "maxAria": "Maximumsaldo instellen",
+    "minWithdrawWarning": "Minimale opname is {min} stars.",
+    "exceedsBalance": "Bedrag overschrijdt uw saldo."
+  },
+  "systemStatus": {
+    "pageTitle": "Systeemstatus",
+    "allOperational": "Alle systemen operationeel",
+    "operational": "Operationeel",
+    "pastIncidents": "Eerdere incidenten",
+    "noIncidents": "Geen incidenten gemeld",
+    "daysAgo": "{days} dagen geleden",
+    "today": "Vandaag",
+    "previewTitle": "Alle systemen operationeel"
+  },
   "faqs": {
     "pageTitle": "Veelgestelde vragen",
     "learnMore": "Meer informatie",

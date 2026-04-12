@@ -153,6 +153,26 @@
     "confirm": "Potwierdź w portfelu…",
     "verifying": "Weryfikacja płatności…"
   },
+  "unstake": {
+    "tagWithdraw": "Wypłata",
+    "buttonWithdraw": "Wypłać",
+    "amountAria": "Kwota wypłaty w Stars",
+    "availableBalance": "Dostępne saldo",
+    "max": "MAKS",
+    "maxAria": "Ustaw maksymalne saldo",
+    "minWithdrawWarning": "Minimalna wypłata wynosi {min} stars.",
+    "exceedsBalance": "Kwota przekracza Twoje saldo."
+  },
+  "systemStatus": {
+    "pageTitle": "Status systemu",
+    "allOperational": "Wszystkie systemy działają",
+    "operational": "Działa",
+    "pastIncidents": "Poprzednie incydenty",
+    "noIncidents": "Brak zgłoszonych incydentów",
+    "daysAgo": "{days} dni temu",
+    "today": "Dzisiaj",
+    "previewTitle": "Wszystkie systemy działają"
+  },
   "faqs": {
     "pageTitle": "Często zadawane pytania",
     "learnMore": "Dowiedz się więcej",

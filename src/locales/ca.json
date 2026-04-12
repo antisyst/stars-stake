@@ -153,6 +153,26 @@
     "confirm": "Confirmeu a la cartera…",
     "verifying": "Verificant el pagament…"
   },
+   "unstake": {
+    "tagWithdraw": "Retirar",
+    "buttonWithdraw": "Retirar",
+    "amountAria": "Import de retirada en Stars",
+    "availableBalance": "Saldo disponible",
+    "max": "MÀX",
+    "maxAria": "Establir el saldo màxim",
+    "minWithdrawWarning": "La retirada mínima és de {min} stars.",
+    "exceedsBalance": "L'import supera el vostre saldo."
+  },
+  "systemStatus": {
+    "pageTitle": "Estat del sistema",
+    "allOperational": "Tots els sistemes operatius",
+    "operational": "Operatiu",
+    "pastIncidents": "Incidents passats",
+    "noIncidents": "No s'han reportat incidents",
+    "daysAgo": "Fa {days} dies",
+    "today": "Avui",
+    "previewTitle": "Tots els sistemes operatius"
+  },
   "faqs": {
     "pageTitle": "Preguntes freqüents",
     "learnMore": "Aprendre més",

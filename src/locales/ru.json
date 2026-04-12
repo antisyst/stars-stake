@@ -153,6 +153,26 @@
     "confirm": "Подтвердите в кошельке…",
     "verifying": "Проверка платежа…"
   },
+  "unstake": {
+    "tagWithdraw": "Вывод",
+    "buttonWithdraw": "Вывести",
+    "amountAria": "Сумма вывода в Stars",
+    "availableBalance": "Доступный баланс",
+    "max": "МАКС",
+    "maxAria": "Установить максимальный баланс",
+    "minWithdrawWarning": "Минимальная сумма вывода — {min} stars.",
+    "exceedsBalance": "Сумма превышает ваш баланс."
+  },
+  "systemStatus": {
+    "pageTitle": "Статус системы",
+    "allOperational": "Все системы работают",
+    "operational": "Работает",
+    "pastIncidents": "Прошлые инциденты",
+    "noIncidents": "Инциденты не зафиксированы",
+    "daysAgo": "{days} дн. назад",
+    "today": "Сегодня",
+    "previewTitle": "Все системы работают"
+  },
   "faqs": {
     "pageTitle": "Часто задаваемые вопросы",
     "learnMore": "Подробнее",

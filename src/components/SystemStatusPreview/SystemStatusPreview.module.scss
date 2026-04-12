@@ -1,0 +1,125 @@
+.systemStatus {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 26px;
+  justify-content: flex-start;
+  gap: 5px;
+
+  .previewCard {
+    width: 100%;
+    border-radius: 16px;
+    padding: 16px 12px;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity 0.15s ease, transform 0.1s ease;
+  }
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.leftHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--app-button);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--app-text);
+  letter-spacing: -0.1px;
+}
+
+.chevron {
+  font-size: 20px;
+  color: var(--app-hint);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    opacity: 0.45;
+  }
+}
+
+.systemContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.systemRow {
+  width: 100%;
+}
+
+.systemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.systemName {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--app-text);
+  font-family: var(--rounded) !important;
+}
+
+.statusLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--app-button);
+  font-family: var(--rounded) !important;
+}
+
+.barsContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 26px;
+}
+
+.bar {
+  flex: 1;
+  height: 100%;
+  border-radius: 30px;
+  background: var(--app-button);
+  min-width: 3px;
+  opacity: 0.9;
+}
+
+.timeLabels {
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.timeLabel {
+  font-size: 14px;
+  color: var(--app-hint);
+  font-family: var(--rounded) !important;
+  font-weight: 500;
+}

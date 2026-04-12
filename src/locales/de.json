@@ -153,6 +153,26 @@
     "confirm": "In Wallet bestätigen…",
     "verifying": "Zahlung wird überprüft…"
   },
+   "unstake": {
+    "tagWithdraw": "Abheben",
+    "buttonWithdraw": "Abheben",
+    "amountAria": "Auszahlungsbetrag in Stars",
+    "availableBalance": "Verfügbares Guthaben",
+    "max": "MAX",
+    "maxAria": "Maximalguthaben festlegen",
+    "minWithdrawWarning": "Mindestabhebung beträgt {min} Stars.",
+    "exceedsBalance": "Betrag übersteigt Ihr Guthaben."
+  },
+  "systemStatus": {
+    "pageTitle": "Systemstatus",
+    "allOperational": "Alle Systeme betriebsbereit",
+    "operational": "Betriebsbereit",
+    "pastIncidents": "Vergangene Vorfälle",
+    "noIncidents": "Keine Vorfälle gemeldet",
+    "daysAgo": "Vor {days} Tagen",
+    "today": "Heute",
+    "previewTitle": "Alle Systeme betriebsbereit"
+  },
   "faqs": {
     "pageTitle": "Häufig gestellte Fragen",
     "learnMore": "Mehr erfahren",

@@ -153,6 +153,26 @@
     "confirm": "Confirmar en billetera…",
     "verifying": "Verificando pago…"
   },
+   "unstake": {
+    "tagWithdraw": "Retirar",
+    "buttonWithdraw": "Retirar",
+    "amountAria": "Cantidad de retiro en Stars",
+    "availableBalance": "Saldo disponible",
+    "max": "MÁX",
+    "maxAria": "Establecer saldo máximo",
+    "minWithdrawWarning": "El retiro mínimo es de {min} stars.",
+    "exceedsBalance": "La cantidad supera tu saldo."
+  },
+  "systemStatus": {
+    "pageTitle": "Estado del sistema",
+    "allOperational": "Todos los sistemas operativos",
+    "operational": "Operativo",
+    "pastIncidents": "Incidentes pasados",
+    "noIncidents": "No se han reportado incidentes",
+    "daysAgo": "Hace {days} días",
+    "today": "Hoy",
+    "previewTitle": "Todos los sistemas operativos"
+  },
   "faqs": {
     "pageTitle": "Preguntas frecuentes",
     "learnMore": "Aprende más",

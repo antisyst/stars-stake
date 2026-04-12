@@ -9,7 +9,6 @@ import { EnvUnsupported } from '@/components/EnvUnsupported.tsx';
 import { init } from '@/init.ts';
 
 import './index.scss';
-
 import './mockEnv.ts';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
@@ -19,9 +18,9 @@ try {
 
   root.render(
     <StrictMode>
-      <Root/>
+      <Root />
     </StrictMode>,
   );
 } catch (e) {
-  root.render(<EnvUnsupported/>);
+  root.render(<EnvUnsupported />);
 }

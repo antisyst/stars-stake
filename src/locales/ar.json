@@ -153,6 +153,26 @@
     "confirm": "التأكيد في المحفظة…",
     "verifying": "جارٍ التحقق من الدفع…"
   },
+   "unstake": {
+    "tagWithdraw": "سحب",
+    "buttonWithdraw": "سحب",
+    "amountAria": "مبلغ السحب بالنجوم",
+    "availableBalance": "الرصيد المتاح",
+    "max": "الحد الأقصى",
+    "maxAria": "تعيين الرصيد الأقصى",
+    "minWithdrawWarning": "الحد الأدنى للسحب هو {min} stars.",
+    "exceedsBalance": "المبلغ يتجاوز رصيدك."
+  },
+  "systemStatus": {
+    "pageTitle": "حالة النظام",
+    "allOperational": "جميع الأنظمة تعمل",
+    "operational": "يعمل",
+    "pastIncidents": "الحوادث السابقة",
+    "noIncidents": "لا توجد حوادث مُبلَّغ عنها",
+    "daysAgo": "منذ {days} أيام",
+    "today": "اليوم",
+    "previewTitle": "جميع الأنظمة تعمل"
+  },
   "faqs": {
     "pageTitle": "الأسئلة الشائعة",
     "learnMore": "اعرف المزيد",

@@ -45,7 +45,7 @@ export default defineConfig({
     port: 5173, 
     https: undefined,
     hmr: {
-      host: 'https://temporary-apparently-nvidia-scenario.trycloudflare.com',
+      host: 'https://skiing-respondents-watson-resource.trycloudflare.com',
       protocol: 'wss',
       clientPort: 443,
     },

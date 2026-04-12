@@ -140,18 +140,25 @@
     "back": "חזרה לסקירה",
     "note": "התבקש: {requested} כוכבים · חויב: {paid} כוכבים"
   },
-  "tonPay": {
-    "payWithTon": "שלם עם TON",
-    "priceNotReady": "מחיר TON עדיין לא מוכן. אנא נסה שוב בקרוב.",
-    "userNotDetected": "לא ניתן לזהות את החשבון שלך. אנא הפעל מחדש את האפליקציה.",
-    "rejected": "העסקה נדחתה בארנק.",
-    "cancelled": "החיבור לארנק בוטל.",
-    "verifyFailed": "התשלום נשלח, אך אישור פג תוקף. אנא פנה לתמיכה.",
-    "networkError": "שגיאת רשת. אנא בדוק את החיבור שלך ונסה שוב.",
-    "failed": "תשלום TON נכשל. אנא נסה שוב.",
-    "connecting": "מתחבר…",
-    "confirm": "אשר בארנק…",
-    "verifying": "מאמת תשלום…"
+   "unstake": {
+    "tagWithdraw": "משיכה",
+    "buttonWithdraw": "משוך",
+    "amountAria": "סכום משיכה ב-Stars",
+    "availableBalance": "יתרה זמינה",
+    "max": "מקס",
+    "maxAria": "הגדר יתרה מקסימלית",
+    "minWithdrawWarning": "משיכה מינימלית היא {min} stars.",
+    "exceedsBalance": "הסכום עולה על יתרתך."
+  },
+  "systemStatus": {
+    "pageTitle": "מצב המערכת",
+    "allOperational": "כל המערכות פועלות",
+    "operational": "פועל",
+    "pastIncidents": "תקלות קודמות",
+    "noIncidents": "לא דווחו תקלות",
+    "daysAgo": "לפני {days} ימים",
+    "today": "היום",
+    "previewTitle": "כל המערכות פועלות"
   },
   "faqs": {
     "pageTitle": "שאלות נפוצות",

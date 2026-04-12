@@ -153,6 +153,26 @@
     "confirm": "Conferma nel portafoglio…",
     "verifying": "Verifica del pagamento…"
   },
+   "unstake": {
+    "tagWithdraw": "Prelievo",
+    "buttonWithdraw": "Preleva",
+    "amountAria": "Importo del prelievo in Stars",
+    "availableBalance": "Saldo disponibile",
+    "max": "MAX",
+    "maxAria": "Imposta saldo massimo",
+    "minWithdrawWarning": "Il prelievo minimo è di {min} stars.",
+    "exceedsBalance": "L'importo supera il tuo saldo."
+  },
+  "systemStatus": {
+    "pageTitle": "Stato del sistema",
+    "allOperational": "Tutti i sistemi operativi",
+    "operational": "Operativo",
+    "pastIncidents": "Incidenti passati",
+    "noIncidents": "Nessun incidente segnalato",
+    "daysAgo": "{days} giorni fa",
+    "today": "Oggi",
+    "previewTitle": "Tutti i sistemi operativi"
+  },
   "faqs": {
     "pageTitle": "Domande frequenti",
     "learnMore": "Scopri di più",

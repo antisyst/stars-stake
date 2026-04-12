@@ -153,6 +153,26 @@
     "confirm": "지갑에서 확인…",
     "verifying": "결제 확인 중…"
   },
+  "unstake": {
+    "tagWithdraw": "출금",
+    "buttonWithdraw": "출금하기",
+    "amountAria": "Stars 출금 금액",
+    "availableBalance": "사용 가능한 잔액",
+    "max": "최대",
+    "maxAria": "최대 잔액 설정",
+    "minWithdrawWarning": "최소 출금액은 {min} stars입니다.",
+    "exceedsBalance": "금액이 잔액을 초과합니다."
+  },
+  "systemStatus": {
+    "pageTitle": "시스템 상태",
+    "allOperational": "모든 시스템 정상 운영 중",
+    "operational": "정상 운영",
+    "pastIncidents": "과거 장애",
+    "noIncidents": "보고된 장애 없음",
+    "daysAgo": "{days}일 전",
+    "today": "오늘",
+    "previewTitle": "모든 시스템 정상 운영 중"
+  },
   "faqs": {
     "pageTitle": "자주 묻는 질문",
     "learnMore": "더 알아보기",

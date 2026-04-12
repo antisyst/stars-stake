@@ -153,6 +153,26 @@
     "confirm": "Kumpirmahin sa wallet…",
     "verifying": "Bine-verify ang bayad…"
   },
+    "unstake": {
+    "tagWithdraw": "Mag-withdraw",
+    "buttonWithdraw": "Mag-withdraw",
+    "amountAria": "Halaga ng withdrawal sa Stars",
+    "availableBalance": "Available na Balanse",
+    "max": "MAKS",
+    "maxAria": "Itakda ang maximum na balanse",
+    "minWithdrawWarning": "Ang minimum na withdrawal ay {min} stars.",
+    "exceedsBalance": "Ang halaga ay lumagpas sa iyong balanse."
+  },
+  "systemStatus": {
+    "pageTitle": "Katayuan ng System",
+    "allOperational": "Lahat ng Sistema ay Gumagana",
+    "operational": "Gumagana",
+    "pastIncidents": "Mga Nakaraang Insidente",
+    "noIncidents": "Walang insidenteng naiulat",
+    "daysAgo": "{days} araw na ang nakalipas",
+    "today": "Ngayon",
+    "previewTitle": "Lahat ng Sistema ay Gumagana"
+  },
   "faqs": {
     "pageTitle": "Mga Madalas Itanong",
     "learnMore": "Matuto pa",

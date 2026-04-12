@@ -1,0 +1,137 @@
+.statusPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  .dateText {
+    font-weight: 700;
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .allOperationalBanner {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    background: var(--app-button);
+    border-radius: 60px;
+    padding: 12px;
+
+    .checkIcon {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .allOpText {
+      font-size: 17px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: -0.2px;
+    }
+  }
+}
+
+.systemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.systemRow {
+  padding: 18px 0 16px;
+  border-bottom: 1px solid var(--app-section-separator);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.systemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.systemName {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--app-text);
+  font-family: var(--rounded) !important;
+  letter-spacing: -0.1px;
+}
+
+.statusLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--app-button);
+  font-family: var(--rounded) !important;
+}
+
+.barsContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 32px;
+}
+
+.bar {
+  flex: 1;
+  height: 100%;
+  border-radius: 30px;
+  background: var(--app-button);
+  min-width: 4px;
+  opacity: 0.9;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.timeLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.timeLabel {
+  font-size: 15px;
+  color: var(--app-hint);
+  font-family: var(--rounded) !important;
+  font-weight: 500;
+}
+
+.incidentsSection {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--app-section-separator);
+}
+
+.incidentsTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--app-text);
+  font-family: var(--rounded) !important;
+  margin: 0 0 12px;
+  letter-spacing: -0.2px;
+}
+
+.noIncidents {
+  font-size: 15px;
+  color: var(--app-hint);
+  font-family: var(--rounded) !important;
+  font-weight: 500;
+  margin: 0;
+}

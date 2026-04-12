@@ -158,7 +158,7 @@ export const useCurrency = () => {
 
 export const CurrencyProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { user, uid } = useAppData();
-  const initial = ((user?.defaultCurrency ?? 'USD') as CurrencyCode) ?? 'USD';
+  const initial = (user?.defaultCurrency ?? 'USD') as CurrencyCode;
   const [selected, setSelectedLocal] = useState<CurrencyCode>(initial);
   const [rates, setRates] = useState<Record<string, number>>({ USD: 1 });
   const [lastUpdated, setLastUpdated] = useState<number | null>(null);

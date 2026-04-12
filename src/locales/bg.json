@@ -153,6 +153,26 @@
     "confirm": "Потвърдете в портфейла…",
     "verifying": "Проверка на плащането…"
   },
+   "unstake": {
+    "tagWithdraw": "Теглене",
+    "buttonWithdraw": "Тегли",
+    "amountAria": "Сума за теглене в Stars",
+    "availableBalance": "Наличен баланс",
+    "max": "МАКС",
+    "maxAria": "Задайте максимален баланс",
+    "minWithdrawWarning": "Минималното теглене е {min} stars.",
+    "exceedsBalance": "Сумата надвишава вашия баланс."
+  },
+  "systemStatus": {
+    "pageTitle": "Статус на системата",
+    "allOperational": "Всички системи работят",
+    "operational": "Работи",
+    "pastIncidents": "Минали инциденти",
+    "noIncidents": "Няма докладвани инциденти",
+    "daysAgo": "Преди {days} дни",
+    "today": "Днес",
+    "previewTitle": "Всички системи работят"
+  },
   "faqs": {
     "pageTitle": "Често задавани въпроси",
     "learnMore": "Научете повече",

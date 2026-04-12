@@ -153,6 +153,26 @@
     "confirm": "Пацвердзіце ў кашальку…",
     "verifying": "Праверка аплаты…"
   },
+    "unstake": {
+    "tagWithdraw": "Вывад",
+    "buttonWithdraw": "Вывесці",
+    "amountAria": "Сума выводу ў Stars",
+    "availableBalance": "Даступны баланс",
+    "max": "МАКС",
+    "maxAria": "Усталяваць максімальны баланс",
+    "minWithdrawWarning": "Мінімальная сума выводу — {min} stars.",
+    "exceedsBalance": "Сума перавышае ваш баланс."
+  },
+  "systemStatus": {
+    "pageTitle": "Стан сістэмы",
+    "allOperational": "Усе сістэмы працуюць",
+    "operational": "Працуе",
+    "pastIncidents": "Мінулыя інцыдэнты",
+    "noIncidents": "Інцыдэнтаў не зафіксавана",
+    "daysAgo": "{days} дзён таму",
+    "today": "Сёння",
+    "previewTitle": "Усе сістэмы працуюць"
+  },
   "faqs": {
     "pageTitle": "Часта задаваемыя пытанні",
     "learnMore": "Даведацца больш",

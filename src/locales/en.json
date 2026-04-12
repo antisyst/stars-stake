@@ -20,7 +20,7 @@
     "apyLine3": "Your current effective APY: {apy}%",
     "apyLine4": "Current price: {price} per Star.",
     "noBalance": "You have no balance to withdraw",
-    "lockNotEnded": "Your lock period hasn’t ended yet.",
+    "lockNotEnded": "Your lock period hasn't ended yet.",
     "lockerNotActive": "Stars Base locker is not yet active",
     "withdrawUnavailable": "Withdrawal is not available right now.",
     "minimumLock": "Minimum Lock: 30 Days",
@@ -31,7 +31,7 @@
     "withdraw": "Withdraw",
     "minimumWithdrawal": "Minimum withdrawal is 500 stars"
   },
- "socialBonus": {
+  "socialBonus": {
     "title": "Verify Your Influence",
     "subtitle": "Follow us on X and claim reward instantly",
     "reward": "75",
@@ -90,7 +90,7 @@
     "disconnectConfirmTitle": "Disconnect Wallet",
     "disconnectConfirmMessage": "Are you sure you want to disconnect wallet?"
   },
-   "ecosystem": {
+  "ecosystem": {
     "title": "Ecosystem Benefits",
     "items": {
       "marketplace": {
@@ -103,7 +103,7 @@
       },
       "infrastructure": {
         "title": "Infrastructure Funding",
-        "content": "A portion of staking activity supports the ongoing development of Telegram’s Stars payment and staking infrastructure.\nThis includes maintaining secure transactions, efficient processing systems, and reliable scalability for millions of users.\nBy participating in staking, users indirectly contribute to improving the performance and resilience of the ecosystem.\nInfrastructure funding ensures that the Stars network remains fast, secure, and future-ready.\nThese resources enable continuous upgrades, technical maintenance, and future feature expansions."
+        "content": "A portion of staking activity supports the ongoing development of Telegram's Stars payment and staking infrastructure.\nThis includes maintaining secure transactions, efficient processing systems, and reliable scalability for millions of users.\nBy participating in staking, users indirectly contribute to improving the performance and resilience of the ecosystem.\nInfrastructure funding ensures that the Stars network remains fast, secure, and future-ready.\nThese resources enable continuous upgrades, technical maintenance, and future feature expansions."
       }
     }
   },
@@ -153,21 +153,41 @@
     "confirm": "Confirm in wallet…",
     "verifying": "Verifying payment…"
   },
+  "unstake": {
+    "tagWithdraw": "Withdraw",
+    "buttonWithdraw": "Withdraw",
+    "amountAria": "Withdraw amount in Stars",
+    "availableBalance": "Available Balance",
+    "max": "MAX",
+    "maxAria": "Set maximum balance",
+    "minWithdrawWarning": "Minimum withdrawal is {min} stars.",
+    "exceedsBalance": "Amount exceeds your balance."
+  },
+  "systemStatus": {
+    "pageTitle": "System Status",
+    "allOperational": "All Systems Operational",
+    "operational": "Operational",
+    "pastIncidents": "Past Incidents",
+    "noIncidents": "No incidents reported",
+    "daysAgo": "{days} days ago",
+    "today": "Today",
+    "previewTitle": "All Systems Operational"
+  },
   "faqs": {
     "pageTitle": "Frequently Asked Questions",
     "learnMore": "Learn more",
     "items": {
       "q1": {
         "question": "Where do rewards for Stars Base come from?",
-        "answer": "Rewards are generated through the Stars Base ecosystem’s yield distribution model.\nEach staking pool contributes to liquidity stability and network infrastructure, which in turn creates sustainable reward cycles.\nPart of the yield comes from ecosystem growth, marketplace activity, and staking incentives distributed over time.\nNo speculative sources are involved, all rewards are backed by real ecosystem value.\nThis structure ensures fairness, long-term sustainability, and transparency for all participants."
+        "answer": "Rewards are generated through the Stars Base ecosystem's yield distribution model.\nEach staking pool contributes to liquidity stability and network infrastructure, which in turn creates sustainable reward cycles.\nPart of the yield comes from ecosystem growth, marketplace activity, and staking incentives distributed over time.\nNo speculative sources are involved, all rewards are backed by real ecosystem value.\nThis structure ensures fairness, long-term sustainability, and transparency for all participants."
       },
       "q2": {
         "question": "What is staking and is it secure?",
-        "answer": "Staking is the process of locking your Stars to support the ecosystem and earn passive rewards in return.\nWhen you stake, your assets remain safely tied to your account and are never transferred to third parties.\nThe system is built on Telegram’s secure payment infrastructure and operates with full encryption and transparency.\nAll transactions are verified and auditable, ensuring safety and immutability.\nIt’s a low-risk mechanism designed for long-term value growth and ecosystem contribution."
+        "answer": "Staking is the process of locking your Stars to support the ecosystem and earn passive rewards in return.\nWhen you stake, your assets remain safely tied to your account and are never transferred to third parties.\nThe system is built on Telegram's secure payment infrastructure and operates with full encryption and transparency.\nAll transactions are verified and auditable, ensuring safety and immutability.\nIt's a low-risk mechanism designed for long-term value growth and ecosystem contribution."
       },
       "q3": {
         "question": "How are rewards calculated?",
-        "answer": "Rewards are based on your total staked balance and the tier level you currently hold.\nEach tier offers a higher Annual Percentage Yield (APY), starting at 12.8% and going up to 28.7% for higher commitments.\nAPY dynamically adjusts as you increase your stake; larger stakes unlock higher yield rates.\nThe system automatically recalculates your effective APY in real time.\nAll reward calculations are transparent and verifiable within the app’s dashboard."
+        "answer": "Rewards are based on your total staked balance and the tier level you currently hold.\nEach tier offers a higher Annual Percentage Yield (APY), starting at 12.8% and going up to 28.7% for higher commitments.\nAPY dynamically adjusts as you increase your stake; larger stakes unlock higher yield rates.\nThe system automatically recalculates your effective APY in real time.\nAll reward calculations are transparent and verifiable within the app's dashboard."
       },
       "q4": {
         "question": "Can I withdraw my Stars anytime?",
@@ -175,7 +195,7 @@
       },
       "q5": {
         "question": "What happens if I stake more Stars later?",
-        "answer": "When you add more Stars to your existing stake, your total balance updates instantly.\nThe system automatically evaluates your new tier level and applies the corresponding APY boost.\nYour previous rewards remain unaffected, while your future yield increases accordingly.\nThis makes your staking experience dynamic — the more you stake, the more you earn.\nThere’s no penalty or delay when increasing your stake amount."
+        "answer": "When you add more Stars to your existing stake, your total balance updates instantly.\nThe system automatically evaluates your new tier level and applies the corresponding APY boost.\nYour previous rewards remain unaffected, while your future yield increases accordingly.\nThis makes your staking experience dynamic — the more you stake, the more you earn.\nThere's no penalty or delay when increasing your stake amount."
       },
       "q6": {
         "question": "How does Stars Base benefit the Telegram ecosystem?",
@@ -183,11 +203,11 @@
       },
       "q7": {
         "question": "How does APY affect daily and monthly rewards?",
-        "answer": "APY (Annual Percentage Yield) represents your yearly return, but rewards are calculated and added daily.\nFor example, a 12.8% APY corresponds to roughly ~1.06% per month (compounded). If you stake 1,000 Stars, you’ll see about 1,039 after one month (before rounding on display).\nYour balance increases every day; compounding works automatically — each day’s yield builds upon the last.\nWe credit rewards daily with two-decimal precision, while the Stake screen shows the integer balance.\nIn short, the longer you stake, the more your returns compound over time."
+        "answer": "APY (Annual Percentage Yield) represents your yearly return, but rewards are calculated and added daily.\nFor example, a 12.8% APY corresponds to roughly ~1.06% per month (compounded). If you stake 1,000 Stars, you'll see about 1,039 after one month (before rounding on display).\nYour balance increases every day; compounding works automatically — each day's yield builds upon the last.\nWe credit rewards daily with two-decimal precision, while the Stake screen shows the integer balance.\nIn short, the longer you stake, the more your returns compound over time."
       },
       "q8": {
         "question": "Is there any risk of losing my Stars?",
-        "answer": "Stars Base operates under a non-custodial structure, meaning you retain ownership of your assets.\nYour funds remain securely locked and verifiable at all times.\nThe system’s architecture prioritizes transparency and security.\nThe primary variable is yield fluctuation, not the safety of your funds."
+        "answer": "Stars Base operates under a non-custodial structure, meaning you retain ownership of your assets.\nYour funds remain securely locked and verifiable at all times.\nThe system's architecture prioritizes transparency and security.\nThe primary variable is yield fluctuation, not the safety of your funds."
       },
       "q9": {
         "question": "Is my APY fixed or does it change over time?",
@@ -211,15 +231,15 @@
       },
       "q14": {
         "question": "Are rewards distributed automatically?",
-        "answer": "Yes, rewards are distributed automatically and updated daily within your account balance.\nThere’s no need for manual claiming or external transfers.\nYour cumulative rewards can be tracked in real time from your staking dashboard.\nThis automation ensures maximum convenience and transparency for all users."
+        "answer": "Yes, rewards are distributed automatically and updated daily within your account balance.\nThere's no need for manual claiming or external transfers.\nYour cumulative rewards can be tracked in real time from your staking dashboard.\nThis automation ensures maximum convenience and transparency for all users."
       },
       "q15": {
         "question": "How often is APY updated?",
-        "answer": "APY rates are recalculated based on your active tier and the system’s liquidity health.\nWhen you stake or add new Stars, the update is applied instantly.\nThis ensures your rewards always reflect your most recent stake level.\nIt also prevents outdated or delayed yield data from appearing on your account."
+        "answer": "APY rates are recalculated based on your active tier and the system's liquidity health.\nWhen you stake or add new Stars, the update is applied instantly.\nThis ensures your rewards always reflect your most recent stake level.\nIt also prevents outdated or delayed yield data from appearing on your account."
       },
       "q16": {
         "question": "Why does Stars Base use a lock period?",
-        "answer": "The 30-day minimum lock period helps maintain market liquidity and prevents rapid inflows and outflows that can destabilize the system.\nIt ensures reward rates remain fair and consistent for all participants.\nLock periods are standard in most staking systems to protect ecosystem integrity.\nAfter the lock ends, you’re free to withdraw or restake without limits."
+        "answer": "The 30-day minimum lock period helps maintain market liquidity and prevents rapid inflows and outflows that can destabilize the system.\nIt ensures reward rates remain fair and consistent for all participants.\nLock periods are standard in most staking systems to protect ecosystem integrity.\nAfter the lock ends, you're free to withdraw or restake without limits."
       },
       "q17": {
         "question": "What factors can influence the APY rate?",
@@ -231,7 +251,7 @@
       },
       "q19": {
         "question": "Can system updates affect my staking balance?",
-        "answer": "No, updates or maintenance operations do not affect your staked amount or accumulated rewards.\nAll staking data is stored securely and synchronized.\nIn rare cases, temporary display delays may occur, but your funds remain safe.\nYou’ll receive a notification if any scheduled maintenance is planned."
+        "answer": "No, updates or maintenance operations do not affect your staked amount or accumulated rewards.\nAll staking data is stored securely and synchronized.\nIn rare cases, temporary display delays may occur, but your funds remain safe.\nYou'll receive a notification if any scheduled maintenance is planned."
       }
     }
   },
@@ -246,7 +266,7 @@
     "withdraw": "Withdraw",
     "apySuffix": "APY"
   },
-   "deposit": {
+  "deposit": {
     "buttonDeposit": "Deposit",
     "buttonConfirmStake": "Confirm Stake",
     "tagDeposit": "Deposit",

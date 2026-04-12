@@ -153,6 +153,26 @@
     "confirm": "Cüzdanda onayla…",
     "verifying": "Ödeme doğrulanıyor…"
   },
+  "unstake": {
+    "tagWithdraw": "Çekim",
+    "buttonWithdraw": "Çek",
+    "amountAria": "Stars cinsinden çekim miktarı",
+    "availableBalance": "Kullanılabilir Bakiye",
+    "max": "MAKS",
+    "maxAria": "Maksimum bakiyeyi ayarla",
+    "minWithdrawWarning": "Minimum çekim miktarı {min} stars.",
+    "exceedsBalance": "Miktar bakiyenizi aşıyor."
+  },
+  "systemStatus": {
+    "pageTitle": "Sistem Durumu",
+    "allOperational": "Tüm Sistemler Çalışıyor",
+    "operational": "Çalışıyor",
+    "pastIncidents": "Geçmiş Olaylar",
+    "noIncidents": "Rapor edilen olay yok",
+    "daysAgo": "{days} gün önce",
+    "today": "Bugün",
+    "previewTitle": "Tüm Sistemler Çalışıyor"
+  },
   "faqs": {
     "pageTitle": "Sıkça Sorulan Sorular",
     "learnMore": "Daha fazla bilgi",

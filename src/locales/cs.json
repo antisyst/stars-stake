@@ -153,6 +153,26 @@
     "confirm": "Potvrďte v peněžence…",
     "verifying": "Ověřování platby…"
   },
+   "unstake": {
+    "tagWithdraw": "Výběr",
+    "buttonWithdraw": "Vybrat",
+    "amountAria": "Částka výběru ve Stars",
+    "availableBalance": "Dostupný zůstatek",
+    "max": "MAX",
+    "maxAria": "Nastavit maximální zůstatek",
+    "minWithdrawWarning": "Minimální výběr je {min} stars.",
+    "exceedsBalance": "Částka přesahuje váš zůstatek."
+  },
+  "systemStatus": {
+    "pageTitle": "Stav systému",
+    "allOperational": "Všechny systémy fungují",
+    "operational": "Funkční",
+    "pastIncidents": "Minulé incidenty",
+    "noIncidents": "Žádné incidenty nebyly hlášeny",
+    "daysAgo": "Před {days} dny",
+    "today": "Dnes",
+    "previewTitle": "Všechny systémy fungují"
+  },
   "faqs": {
     "pageTitle": "Často kladené dotazy",
     "learnMore": "Zjistit více",

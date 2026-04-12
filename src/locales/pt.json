@@ -153,6 +153,26 @@
     "confirm": "Confirmar na carteira…",
     "verifying": "A verificar pagamento…"
   },
+   "unstake": {
+    "tagWithdraw": "Retirar",
+    "buttonWithdraw": "Retirar",
+    "amountAria": "Valor de retirada em Stars",
+    "availableBalance": "Saldo disponível",
+    "max": "MÁX",
+    "maxAria": "Definir saldo máximo",
+    "minWithdrawWarning": "A retirada mínima é de {min} stars.",
+    "exceedsBalance": "O valor excede o seu saldo."
+  },
+  "systemStatus": {
+    "pageTitle": "Status do sistema",
+    "allOperational": "Todos os sistemas operacionais",
+    "operational": "Operacional",
+    "pastIncidents": "Incidentes passados",
+    "noIncidents": "Nenhum incidente reportado",
+    "daysAgo": "Há {days} dias",
+    "today": "Hoje",
+    "previewTitle": "Todos os sistemas operacionais"
+  },
   "faqs": {
     "pageTitle": "Perguntas frequentes",
     "learnMore": "Saber mais",

@@ -153,6 +153,26 @@
     "confirm": "Xác nhận trong ví…",
     "verifying": "Đang xác minh thanh toán…"
   },
+   "unstake": {
+    "tagWithdraw": "Rút tiền",
+    "buttonWithdraw": "Rút tiền",
+    "amountAria": "Số tiền rút bằng Stars",
+    "availableBalance": "Số dư khả dụng",
+    "max": "TỐI ĐA",
+    "maxAria": "Đặt số dư tối đa",
+    "minWithdrawWarning": "Số tiền rút tối thiểu là {min} stars.",
+    "exceedsBalance": "Số tiền vượt quá số dư của bạn."
+  },
+  "systemStatus": {
+    "pageTitle": "Trạng thái hệ thống",
+    "allOperational": "Tất cả hệ thống hoạt động bình thường",
+    "operational": "Hoạt động bình thường",
+    "pastIncidents": "Sự cố trong quá khứ",
+    "noIncidents": "Không có sự cố nào được báo cáo",
+    "daysAgo": "{days} ngày trước",
+    "today": "Hôm nay",
+    "previewTitle": "Tất cả hệ thống hoạt động bình thường"
+  },
   "faqs": {
     "pageTitle": "Câu hỏi thường gặp",
     "learnMore": "Tìm hiểu thêm",

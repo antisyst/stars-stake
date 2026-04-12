@@ -1,0 +1,89 @@
+.shell {
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  contain: layout paint;
+}
+
+.sizer {
+  position: fixed;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0 3px;
+  height: 30px;
+  gap: 2px;
+}
+
+.sizerIconSlot {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.pill {
+  width: var(--pill-w, 90px);
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--app-secondary-bg);
+  pointer-events: none;
+  will-change: width, transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    width 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.22s ease,
+    opacity 0.22s ease;
+}
+
+.tagContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  pointer-events: none;
+  gap: 2px;
+  will-change: opacity, transform, filter;
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  svg { width: 22px; height: 22px; }
+}
+
+.label {
+  font-weight: 500;
+  font-size: 14px;
+  padding-right: 6px;
+  color: var(--app-text);
+  letter-spacing: -0.1px;
+}

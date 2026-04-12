@@ -19,6 +19,8 @@ import { SocialBonusSection } from '../SocialBonusSection/SocialBonusSection';
 import styles from './StakeSection.module.scss';
 import TonSymbolIcon from '@/assets/icons/toncoin-symbol.svg?react';
 
+const MIN_WITHDRAW = 500;
+
 export const StakeSection: React.FC = () => {
   const [isApyOpen, setIsApyOpen] = useState(false);
   const { user, balanceUsd, exchangeRate, effectiveApy, positions } = useAppData();
@@ -42,35 +44,26 @@ export const StakeSection: React.FC = () => {
 
   const ensureConnected = (): boolean => {
     if (!wallet) {
-      try {
-        tonConnectUI.openModal();
-      } catch (e) {
-        console.error('Failed to open connect modal', e);
-      }
+      try { tonConnectUI.openModal(); } catch (e) { console.error(e); }
       return false;
     }
     return true;
   };
 
   const handleStakeEarnOrDeposit = () => {
-  if (ensureConnected()) {
-    primeIosFocusBridge();
-    navigate('/deposit');
-  }
-};
+    if (ensureConnected()) {
+      primeIosFocusBridge();
+      navigate('/deposit');
+    }
+  };
 
   const now = useMemo(() => new Date(), [positions?.length]);
 
   const toDate = (v: any): Date | null => {
     if (!v) return null;
     if (typeof v?.toDate === 'function') return v.toDate();
-    if (typeof v === 'number') {
-      return v > 2_000_000_000 ? new Date(v) : new Date(v * 1000);
-    }
-    if (typeof v === 'string') {
-      const d = new Date(v);
-      return Number.isNaN(d.getTime()) ? null : d;
-    }
+    if (typeof v === 'number') return v > 2_000_000_000 ? new Date(v) : new Date(v * 1000);
+    if (typeof v === 'string') { const d = new Date(v); return Number.isNaN(d.getTime()) ? null : d; }
     if (v instanceof Date) return v;
     return null;
   };
@@ -93,40 +86,33 @@ export const StakeSection: React.FC = () => {
 
   const isBonusOnlyUser =
     balanceInt > 0 &&
-    balanceInt < 500 &&
+    balanceInt < MIN_WITHDRAW &&
     Boolean(user?.hasClaimedTwitterBonus) &&
     positions.length === 0;
 
   const handleWithdraw = () => {
-    if (ensureConnected()) {
-      if (balanceInt <= 0) {
-        showError(t('stake.noBalance'));
-        return;
-      }
+    if (!ensureConnected()) return;
 
-      if (isBonusOnlyUser) {
-        showError(t('stake.minimumWithdrawal'));
-        return;
-      }
+    if (balanceInt <= 0) { showError(t('stake.noBalance')); return; }
 
-      if (allLocked) {
-        showError(t('stake.lockNotEnded'));
-        return;
-      }
+    if (isBonusOnlyUser) { showError(t('stake.minimumWithdrawal')); return; }
 
-      if (anyUnlocked) {
-        showError(t('stake.lockerNotActive'));
-        return;
-      }
+    if (balanceInt < MIN_WITHDRAW) { showError(t('stake.minimumWithdrawal')); return; }
 
-      showError(t('stake.withdrawUnavailable'));
+    if (allLocked) { showError(t('stake.lockNotEnded')); return; }
+
+    if (anyUnlocked && balanceInt >= MIN_WITHDRAW) {
+      primeIosFocusBridge(); 
+      navigate('/unstake');
+      return;
     }
+
+    showError(t('stake.withdrawUnavailable'));
   };
 
   const totalTon = useMemo(() => {
     if (!tonUsd || tonUsd <= 0) return null;
-    const ton = (balanceUsd || 0) / tonUsd;
-    return ton;
+    return (balanceUsd || 0) / tonUsd;
   }, [balanceUsd, tonUsd]);
 
   const formattedTon = useMemo(() => {
@@ -184,7 +170,7 @@ export const StakeSection: React.FC = () => {
           </div>
         )}
       </div>
-      <SocialBonusSection/>
+      <SocialBonusSection />
       <Modal
         isOpen={isApyOpen}
         title={t('stake.apyTitle')}

@@ -153,6 +153,26 @@
     "confirm": "Bekräfta i plånboken…",
     "verifying": "Verifierar betalning…"
   },
+  "unstake": {
+    "tagWithdraw": "Ta ut",
+    "buttonWithdraw": "Ta ut",
+    "amountAria": "Uttagsbelopp i Stars",
+    "availableBalance": "Tillgängligt saldo",
+    "max": "MAX",
+    "maxAria": "Ange maximalt saldo",
+    "minWithdrawWarning": "Minsta uttag är {min} stars.",
+    "exceedsBalance": "Beloppet överstiger ditt saldo."
+  },
+  "systemStatus": {
+    "pageTitle": "Systemstatus",
+    "allOperational": "Alla system fungerar",
+    "operational": "Fungerar",
+    "pastIncidents": "Tidigare händelser",
+    "noIncidents": "Inga händelser rapporterade",
+    "daysAgo": "För {days} dagar sedan",
+    "today": "Idag",
+    "previewTitle": "Alla system fungerar"
+  },
   "faqs": {
     "pageTitle": "Vanliga frågor",
     "learnMore": "Läs mer",
