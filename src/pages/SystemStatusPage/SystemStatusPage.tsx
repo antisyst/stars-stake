@@ -5,7 +5,6 @@ import { Page } from '@/components/Page';
 import { useI18n } from '@/i18n';
 import styles from './SystemStatusPage.module.scss';
 
-// System names are intentionally NOT translated — they are technical identifiers
 const SYSTEMS = [
   'Core Protocol',
   'TON Network Gateway',

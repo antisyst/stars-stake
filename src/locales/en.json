@@ -62,7 +62,7 @@
     "title": "Boosted Rewards",
     "apyUpdates": "APY updates automatically as your stake grows",
     "line1": "System uses a dynamic tier model, where your APY increases as your total staked balance grows.",
-    "line2": "Each tier unlocks a higher yield rate, starting from 12.8% and reaching up to 28.7% APY at the highest level.",
+    "line2": "Each tier unlocks a higher yield rate, starting from 14.2% and reaching up to 32.5% APY at the highest level.",
     "line3": "When you stake additional Stars and move to a higher tier, your overall APY is recalculated instantly based on the new total.",
     "line4": "Your current and next tier thresholds are displayed in real-time, allowing you to track your progress toward the next APY boost."
   },
@@ -187,7 +187,7 @@
       },
       "q3": {
         "question": "How are rewards calculated?",
-        "answer": "Rewards are based on your total staked balance and the tier level you currently hold.\nEach tier offers a higher Annual Percentage Yield (APY), starting at 12.8% and going up to 28.7% for higher commitments.\nAPY dynamically adjusts as you increase your stake; larger stakes unlock higher yield rates.\nThe system automatically recalculates your effective APY in real time.\nAll reward calculations are transparent and verifiable within the app's dashboard."
+        "answer": "Rewards are based on your total staked balance and the tier level you currently hold.\nEach tier offers a higher Annual Percentage Yield (APY), starting at 14.2% and going up to 32.5% for higher commitments.\nAPY dynamically adjusts as you increase your stake; larger stakes unlock higher yield rates.\nThe system automatically recalculates your effective APY in real time.\nAll reward calculations are transparent and verifiable within the app's dashboard."
       },
       "q4": {
         "question": "Can I withdraw my Stars anytime?",
@@ -203,7 +203,7 @@
       },
       "q7": {
         "question": "How does APY affect daily and monthly rewards?",
-        "answer": "APY (Annual Percentage Yield) represents your yearly return, but rewards are calculated and added daily.\nFor example, a 12.8% APY corresponds to roughly ~1.06% per month (compounded). If you stake 1,000 Stars, you'll see about 1,039 after one month (before rounding on display).\nYour balance increases every day; compounding works automatically — each day's yield builds upon the last.\nWe credit rewards daily with two-decimal precision, while the Stake screen shows the integer balance.\nIn short, the longer you stake, the more your returns compound over time."
+        "answer": "APY (Annual Percentage Yield) represents your yearly return, but rewards are calculated and added daily.\nFor example, a 14.2% APY corresponds to roughly ~1.06% per month (compounded). If you stake 1,000 Stars, you'll see about 1,039 after one month (before rounding on display).\nYour balance increases every day; compounding works automatically — each day's yield builds upon the last.\nWe credit rewards daily with two-decimal precision, while the Stake screen shows the integer balance.\nIn short, the longer you stake, the more your returns compound over time."
       },
       "q8": {
         "question": "Is there any risk of losing my Stars?",
@@ -211,7 +211,7 @@
       },
       "q9": {
         "question": "Is my APY fixed or does it change over time?",
-        "answer": "APY in Stars Base is dynamic and depends on your total staked amount and system liquidity.\nWhile the base APY starts at 12.8%, it can increase as you move through higher staking tiers.\nIn rare cases, network or liquidity adjustments may slightly influence the yield rate.\nAll rate changes are transparent and reflected instantly in your dashboard.\nThe system aims to keep returns stable and competitive under varying conditions."
+        "answer": "APY in Stars Base is dynamic and depends on your total staked amount and system liquidity.\nWhile the base APY starts at 14.2%, it can increase as you move through higher staking tiers.\nIn rare cases, network or liquidity adjustments may slightly influence the yield rate.\nAll rate changes are transparent and reflected instantly in your dashboard.\nThe system aims to keep returns stable and competitive under varying conditions."
       },
       "q10": {
         "question": "What is the minimum and maximum amount I can stake?",

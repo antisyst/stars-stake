@@ -62,7 +62,7 @@
     "title": "Recompensas mejoradas",
     "apyUpdates": "El APY se actualiza automáticamente conforme aumenta tu stake",
     "line1": "El sistema usa un modelo de niveles dinámico, donde tu APY aumenta al crecer el balance total apostado.",
-    "line2": "Cada nivel desbloquea una tasa más alta, comenzando en 12.8% y llegando hasta 28.7% APY en el nivel más alto.",
+    "line2": "Cada nivel desbloquea una tasa más alta, comenzando en 14.2% y llegando hasta 32.5% APY en el nivel más alto.",
     "line3": "Cuando apuestas estrellas adicionales y subes de nivel, tu APY total se recalcula instantáneamente según el nuevo total.",
     "line4": "Los umbrales de tu nivel actual y el siguiente se muestran en tiempo real para que puedas seguir el progreso hacia el próximo aumento de APY."
   },
@@ -187,7 +187,7 @@
       },
       "q3": {
         "question": "¿Cómo se calculan las recompensas?",
-        "answer": "Las recompensas se basan en tu balance total apostado y en el nivel (tier) que actualmente posees.\nCada nivel ofrece un APY más alto, comenzando en 12.8% y llegando hasta 28.7% para compromisos mayores.\nEl APY se ajusta dinámicamente a medida que aumentas tu stake; stakes más grandes desbloquean tasas más altas.\nEl sistema recalcula automáticamente tu APY efectivo en tiempo real.\nTodos los cálculos de recompensas son transparentes y verificables desde el panel de la app."
+        "answer": "Las recompensas se basan en tu balance total apostado y en el nivel (tier) que actualmente posees.\nCada nivel ofrece un APY más alto, comenzando en 14.2% y llegando hasta 32.5% para compromisos mayores.\nEl APY se ajusta dinámicamente a medida que aumentas tu stake; stakes más grandes desbloquean tasas más altas.\nEl sistema recalcula automáticamente tu APY efectivo en tiempo real.\nTodos los cálculos de recompensas son transparentes y verificables desde el panel de la app."
       },
       "q4": {
         "question": "¿Puedo retirar mis estrellas en cualquier momento?",
@@ -203,7 +203,7 @@
       },
       "q7": {
         "question": "¿Cómo afecta el APY a las recompensas diarias y mensuales?",
-        "answer": "El APY (Annual Percentage Yield) representa tu rendimiento anual, pero las recompensas se calculan y añaden diariamente.\nPor ejemplo, un APY del 12.8% corresponde aproximadamente a ~1.06% por mes (compuesto). Si apuestas 1,000 estrellas, verás alrededor de 1,039 después de un mes (antes del redondeo en la pantalla).\nTu balance aumenta cada día; la capitalización funciona automáticamente: cada día el rendimiento se suma al saldo para el cálculo del día siguiente.\nAcreditamos recompensas diariamente con precisión a dos decimales, mientras la pantalla Stake muestra el saldo entero.\nEn resumen, cuanto más tiempo apuestes, más se componen tus retornos con el tiempo."
+        "answer": "El APY (Annual Percentage Yield) representa tu rendimiento anual, pero las recompensas se calculan y añaden diariamente.\nPor ejemplo, un APY del 14.2% corresponde aproximadamente a ~1.06% por mes (compuesto). Si apuestas 1,000 estrellas, verás alrededor de 1,039 después de un mes (antes del redondeo en la pantalla).\nTu balance aumenta cada día; la capitalización funciona automáticamente: cada día el rendimiento se suma al saldo para el cálculo del día siguiente.\nAcreditamos recompensas diariamente con precisión a dos decimales, mientras la pantalla Stake muestra el saldo entero.\nEn resumen, cuanto más tiempo apuestes, más se componen tus retornos con el tiempo."
       },
       "q8": {
         "question": "¿Existe riesgo de perder mis estrellas?",
@@ -211,7 +211,7 @@
       },
       "q9": {
         "question": "¿Mi APY es fijo o cambia con el tiempo?",
-        "answer": "El APY en Stars Base es dinámico y depende de tu total apostado y de la liquidez del sistema.\nSi bien el APY base comienza en 12.8%, puede aumentar a medida que pasas a niveles de staking superiores.\nEn casos raros, ajustes de red o de liquidez pueden influir ligeramente en la tasa.\nTodos los cambios de tasa son transparentes y se reflejan instantáneamente en tu panel.\nEl sistema busca mantener retornos estables y competitivos bajo diferentes condiciones."
+        "answer": "El APY en Stars Base es dinámico y depende de tu total apostado y de la liquidez del sistema.\nSi bien el APY base comienza en 14.2%, puede aumentar a medida que pasas a niveles de staking superiores.\nEn casos raros, ajustes de red o de liquidez pueden influir ligeramente en la tasa.\nTodos los cambios de tasa son transparentes y se reflejan instantáneamente en tu panel.\nEl sistema busca mantener retornos estables y competitivos bajo diferentes condiciones."
       },
       "q10": {
         "question": "¿Cuál es la cantidad mínima y máxima que puedo apostar?",

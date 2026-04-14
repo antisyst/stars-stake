@@ -41,7 +41,7 @@ export default defineConfig({
   },
   publicDir: './public',
   server: {
-    host: '192.168.0.107', 
+    host: '192.168.0.108', 
     port: 5173, 
     https: undefined,
     hmr: {

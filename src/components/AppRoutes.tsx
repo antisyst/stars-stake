@@ -70,7 +70,7 @@ const AppRoutesInner: React.FC = () => {
                 lastName: user.lastName || '',
                 starsBalance: 0,
                 starsCents: 0,
-                currentApy: 12.8,
+                currentApy: 14.2,
                 walletConnected: false,
                 walletAddress: '',
                 hasClaimedTwitterBonus: false,
@@ -102,7 +102,7 @@ const AppRoutesInner: React.FC = () => {
               }
               if (typeof data.hasClaimedTwitterBonus !== 'boolean') patch.hasClaimedTwitterBonus = false;
               if (!Number.isFinite(data.twitterBonusStars)) patch.twitterBonusStars = 0;
-              if (typeof data.currentApy !== 'number') patch.currentApy = 12.8;
+              if (typeof data.currentApy !== 'number') patch.currentApy = 14.2;
 
               const keys = Object.keys(patch);
               if (keys.length > 0) {

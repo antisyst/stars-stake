@@ -62,7 +62,7 @@
     "title": "Hadiah Ditingkatkan",
     "apyUpdates": "APY diperbarui secara otomatis saat stake Anda meningkat",
     "line1": "Sistem menggunakan model tingkat dinamis, di mana APY Anda meningkat seiring dengan pertumbuhan total saldo yang di-stake.",
-    "line2": "Setiap tingkat membuka tingkat hasil yang lebih tinggi, mulai dari 12.8% hingga 28.7% APY pada level tertinggi.",
+    "line2": "Setiap tingkat membuka tingkat hasil yang lebih tinggi, mulai dari 14.2% hingga 32.5% APY pada level tertinggi.",
     "line3": "Ketika Anda men-stake tambahan bintang dan pindah ke tingkat yang lebih tinggi, APY keseluruhan Anda dihitung ulang secara instan berdasarkan total baru.",
     "line4": "Ambang tingkat Anda saat ini dan berikutnya ditampilkan secara real-time, memungkinkan Anda melacak kemajuan menuju peningkatan APY berikutnya."
   },
@@ -187,7 +187,7 @@
       },
       "q3": {
         "question": "Bagaimana hadiah dihitung?",
-        "answer": "Hadiah didasarkan pada total saldo yang di-stake dan tingkat (tier) yang Anda miliki saat ini.\nSetiap tingkat menawarkan APY yang lebih tinggi, mulai dari 12.8% hingga 28.7% untuk komitmen yang lebih tinggi.\nAPY disesuaikan secara dinamis saat Anda menambah stake; stake yang lebih besar membuka tingkat hasil yang lebih tinggi.\nSistem secara otomatis menghitung ulang APY efektif Anda secara real-time.\nSemua perhitungan hadiah transparan dan dapat diverifikasi di dashboard aplikasi."
+        "answer": "Hadiah didasarkan pada total saldo yang di-stake dan tingkat (tier) yang Anda miliki saat ini.\nSetiap tingkat menawarkan APY yang lebih tinggi, mulai dari 14.2% hingga 32.5% untuk komitmen yang lebih tinggi.\nAPY disesuaikan secara dinamis saat Anda menambah stake; stake yang lebih besar membuka tingkat hasil yang lebih tinggi.\nSistem secara otomatis menghitung ulang APY efektif Anda secara real-time.\nSemua perhitungan hadiah transparan dan dapat diverifikasi di dashboard aplikasi."
       },
       "q4": {
         "question": "Bisakah saya menarik bintang saya kapan saja?",
@@ -203,7 +203,7 @@
       },
       "q7": {
         "question": "Bagaimana APY memengaruhi hadiah harian dan bulanan?",
-        "answer": "APY (Annual Percentage Yield) mewakili pengembalian tahunan Anda, tetapi hadiah dihitung dan ditambahkan setiap hari.\nMisalnya, APY 12.8% kira-kira setara ~1.06% per bulan (terkompaun). Jika Anda men-stake 1.000 bintang, Anda akan melihat sekitar 1.039 setelah satu bulan (sebelum pembulatan pada tampilan).\nSaldo Anda meningkat setiap hari; kompaun bekerja otomatis — hasil setiap hari membangun atas hasil hari sebelumnya.\nKami memberikan hadiah harian dengan presisi dua desimal, sementara layar Stake menampilkan saldo sebagai bilangan bulat.\nSingkatnya, semakin lama Anda men-stake, semakin banyak pengembalian Anda terkompaun seiring waktu."
+        "answer": "APY (Annual Percentage Yield) mewakili pengembalian tahunan Anda, tetapi hadiah dihitung dan ditambahkan setiap hari.\nMisalnya, APY 14.2% kira-kira setara ~1.06% per bulan (terkompaun). Jika Anda men-stake 1.000 bintang, Anda akan melihat sekitar 1.039 setelah satu bulan (sebelum pembulatan pada tampilan).\nSaldo Anda meningkat setiap hari; kompaun bekerja otomatis — hasil setiap hari membangun atas hasil hari sebelumnya.\nKami memberikan hadiah harian dengan presisi dua desimal, sementara layar Stake menampilkan saldo sebagai bilangan bulat.\nSingkatnya, semakin lama Anda men-stake, semakin banyak pengembalian Anda terkompaun seiring waktu."
       },
       "q8": {
         "question": "Adakah risiko kehilangan bintang saya?",
@@ -211,7 +211,7 @@
       },
       "q9": {
         "question": "Apakah APY saya tetap atau berubah seiring waktu?",
-        "answer": "APY di Stars Base bersifat dinamis dan bergantung pada total yang Anda stake dan likuiditas sistem.\nMeskipun APY dasar dimulai pada 12.8%, itu dapat meningkat saat Anda melewati tingkat staking yang lebih tinggi.\nDalam kasus langka, penyesuaian jaringan atau likuiditas dapat sedikit mempengaruhi tingkat hasil.\nSemua perubahan tingkat bersifat transparan dan tercermin secara instan di dashboard Anda.\nSistem bertujuan menjaga pengembalian tetap stabil dan kompetitif di berbagai kondisi."
+        "answer": "APY di Stars Base bersifat dinamis dan bergantung pada total yang Anda stake dan likuiditas sistem.\nMeskipun APY dasar dimulai pada 14.2%, itu dapat meningkat saat Anda melewati tingkat staking yang lebih tinggi.\nDalam kasus langka, penyesuaian jaringan atau likuiditas dapat sedikit mempengaruhi tingkat hasil.\nSemua perubahan tingkat bersifat transparan dan tercermin secara instan di dashboard Anda.\nSistem bertujuan menjaga pengembalian tetap stabil dan kompetitif di berbagai kondisi."
       },
       "q10": {
         "question": "Berapa jumlah minimum dan maksimum yang dapat saya stake?",

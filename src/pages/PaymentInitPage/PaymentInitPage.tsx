@@ -84,8 +84,6 @@ export const PaymentInitPage: React.FC = () => {
     setTimeout(() => navigate(target, { replace: true }), 0);
   };
 
-  // ─── STARS FLOW — 100% untouched ─────────────────────────────────────────
-
   const settle = (status: InvoiceStatus) => {
     if (settledRef.current) return;
     settledRef.current = true;
@@ -93,7 +91,7 @@ export const PaymentInitPage: React.FC = () => {
     switch (status) {
       case 'paid': {
         (async () => {
-          let apyUsed = 12.8;
+          let apyUsed = 14.2;
           try {
             if (userId) {
               const userRef  = doc(db, 'users', userId);

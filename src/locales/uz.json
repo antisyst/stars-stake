@@ -62,7 +62,7 @@
     "title": "Kuchaytirilgan mukofotlar",
     "apyUpdates": "Sizning stake miqdoringiz oshgan sari APY avtomatik yangilanadi",
     "line1": "Tizim dinamik bosqich modelidan foydalanadi: jami stake qilingan balans oshgani sayin APY ortadi.",
-    "line2": "Har bir bosqich yuqori daromad stavkasini ochadi, boshlang'ich 12.8% dan eng yuqori darajada 28.7% APY gacha.",
+    "line2": "Har bir bosqich yuqori daromad stavkasini ochadi, boshlang'ich 14.2% dan eng yuqori darajada 32.5% APY gacha.",
     "line3": "Qo'shimcha yulduzlarni stake qilganingizda va yuqori bosqichga o'tganingizda, umumiy APY yangi jami miqdorga qarab darhol qayta hisoblanadi.",
     "line4": "Joriy va keyingi bosqich chegaralari real vaqt rejimida ko'rsatiladi, shunda keyingi APY oshishiga qancha qolganini kuzatishingiz mumkin."
   },
@@ -187,7 +187,7 @@
       },
       "q3": {
         "question": "Mukofotlar qanday hisoblanadi?",
-        "answer": "Mukofotlar sizning jami stake qilingan balansingiz va hozirgi bosqichingizga asoslanadi.\nHar bir bosqich yuqori APY taklif qiladi, boshlang'ich 12.8% dan katta majburiyatlar uchun 28.7% gacha.\nAPY siz stake qo'shganda dinamik tarzda moslashadi; katta stake-lar yuqori daromad stavkalarini ochadi.\nTizim amaldagi APY ni real vaqtda avtomatik qayta hisoblaydi.\nBarcha mukofot hisob-kitoblari ilova dashboardida shaффof va tekshirilishi mumkin."
+        "answer": "Mukofotlar sizning jami stake qilingan balansingiz va hozirgi bosqichingizga asoslanadi.\nHar bir bosqich yuqori APY taklif qiladi, boshlang'ich 14.2% dan katta majburiyatlar uchun 32.5% gacha.\nAPY siz stake qo'shganda dinamik tarzda moslashadi; katta stake-lar yuqori daromad stavkalarini ochadi.\nTizim amaldagi APY ni real vaqtda avtomatik qayta hisoblaydi.\nBarcha mukofot hisob-kitoblari ilova dashboardida shaффof va tekshirilishi mumkin."
       },
       "q4": {
         "question": "Men yulduzlarimni istalgan vaqtda yechib olsam bo'ladimi?",
@@ -203,7 +203,7 @@
       },
       "q7": {
         "question": "APY har kunlik va oylik mukofotlarga qanday ta'sir qiladi?",
-        "answer": "APY (Annual Percentage Yield) yillik daromadni ifodalaydi, ammo mukofotlar kundalik hisoblanadi va qo'shiladi.\nMasalan, 12.8% APY taxminan oyiga ~1.06% ga teng (kompoundlangan). Agar siz 1,000 yulduz stake qilsangiz, bir oy o'tgach taxminan 1,039 ko'rasiz (ko'rsatishda yaxlitlashdan oldin).\nBalansingiz har kuni oshadi; birikma avtomatik ishlaydi — har kunning daromadi keyingi kun hisob-kitobiga qo'shiladi.\nBiz mukofotlarni kundalik ikkita o'nlik aniqlik bilan hisoblaymiz, Stake sahifasi esa butun sonni ko'rsatadi.\nQisqasi, qancha uzoq stake qilsangiz, shuncha ko'p daromad kompound orqali oshadi."
+        "answer": "APY (Annual Percentage Yield) yillik daromadni ifodalaydi, ammo mukofotlar kundalik hisoblanadi va qo'shiladi.\nMasalan, 14.2% APY taxminan oyiga ~1.06% ga teng (kompoundlangan). Agar siz 1,000 yulduz stake qilsangiz, bir oy o'tgach taxminan 1,039 ko'rasiz (ko'rsatishda yaxlitlashdan oldin).\nBalansingiz har kuni oshadi; birikma avtomatik ishlaydi — har kunning daromadi keyingi kun hisob-kitobiga qo'shiladi.\nBiz mukofotlarni kundalik ikkita o'nlik aniqlik bilan hisoblaymiz, Stake sahifasi esa butun sonni ko'rsatadi.\nQisqasi, qancha uzoq stake qilsangiz, shuncha ko'p daromad kompound orqali oshadi."
       },
       "q8": {
         "question": "Yulduzlarimni yo'qotish xavfi bormi?",
@@ -211,7 +211,7 @@
       },
       "q9": {
         "question": "APY doimiymi yoki vaqt o'tishi bilan o'zgaradimi?",
-        "answer": "Stars Base dagi APY dinamik bo'lib, sizning jami stake va tizim likvidligiga bog'liq.\nAsosiy APY 12.8% dan boshlansa ham, siz yuqori bosqichlarga o'tganingizda u oshishi mumkin.\nKamdan-kam hollarda tarmoq yoki likvidlik sozlamalari daromad stavkasiga ozgina ta'sir qilishi mumkin.\nBarcha stavka o'zgarishlari shaффof va darhol dashboard-ga aks etadi.\nTizim turli sharoitlarda barqaror va raqobatbardosh daromadni saqlashga intiladi."
+        "answer": "Stars Base dagi APY dinamik bo'lib, sizning jami stake va tizim likvidligiga bog'liq.\nAsosiy APY 14.2% dan boshlansa ham, siz yuqori bosqichlarga o'tganingizda u oshishi mumkin.\nKamdan-kam hollarda tarmoq yoki likvidlik sozlamalari daromad stavkasiga ozgina ta'sir qilishi mumkin.\nBarcha stavka o'zgarishlari shaффof va darhol dashboard-ga aks etadi.\nTizim turli sharoitlarda barqaror va raqobatbardosh daromadni saqlashga intiladi."
       },
       "q10": {
         "question": "Qancha minimal va maksimal miqdorni stake qilish mumkin?",

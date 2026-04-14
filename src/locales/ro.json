@@ -62,7 +62,7 @@
     "title": "Recompense sporite",
     "apyUpdates": "APY se actualizează automat pe măsură ce crește stake-ul dvs.",
     "line1": "Sistemul folosește un model dinamic pe niveluri, în care APY-ul dvs. crește odată cu mărirea soldului total blocat.",
-    "line2": "Fiecare nivel deblochează o rată de randament mai mare, începând de la 12.8% și ajungând până la 28.7% APY la cel mai înalt nivel.",
+    "line2": "Fiecare nivel deblochează o rată de randament mai mare, începând de la 14.2% și ajungând până la 32.5% APY la cel mai înalt nivel.",
     "line3": "Când adăugați stele în stake și treceți la un nivel superior, APY-ul total este recalculat imediat pe baza noului total.",
     "line4": "Nivelurile curente și următoare sunt afișate în timp real, astfel încât să puteți urmări progresul către următoarea creștere a APY-ului."
   },
@@ -187,7 +187,7 @@
       },
       "q3": {
         "question": "Cum se calculează recompensele?",
-        "answer": "Recompensele se calculează în funcție de soldul total blocat și de nivelul (tier) pe care îl deții.\nFiecare nivel oferă un APY mai mare, începând de la 12.8% și până la 28.7% pentru angajamente mai mari.\nAPY se ajustează dinamic pe măsură ce îți mărești stake-ul; stake-urile mai mari deblochează rate de randament mai mari.\nSistemul recalculează automat APY-ul efectiv în timp real.\nToate calculele recompenselor sunt transparente și verificabile în tabloul de bord al aplicației."
+        "answer": "Recompensele se calculează în funcție de soldul total blocat și de nivelul (tier) pe care îl deții.\nFiecare nivel oferă un APY mai mare, începând de la 14.2% și până la 32.5% pentru angajamente mai mari.\nAPY se ajustează dinamic pe măsură ce îți mărești stake-ul; stake-urile mai mari deblochează rate de randament mai mari.\nSistemul recalculează automat APY-ul efectiv în timp real.\nToate calculele recompenselor sunt transparente și verificabile în tabloul de bord al aplicației."
       },
       "q4": {
         "question": "Pot să-mi retrag stelele oricând?",
@@ -203,7 +203,7 @@
       },
       "q7": {
         "question": "Cum afectează APY recompensele zilnice și lunare?",
-        "answer": "APY (Annual Percentage Yield) reprezintă randamentul tău anual, dar recompensele sunt calculate și adăugate zilnic.\nDe exemplu, un APY de 12.8% corespunde aproximativ ~1.06% pe lună (compus). Dacă stake-uiești 1.000 de stele, vei avea ~1.039 după o lună (înainte de rotunjire la afișare).\nSoldul tău crește în fiecare zi; compunerea funcționează automat — fiecare zi de câștig se adaugă la următorul calcul.\nCredităm recompensele zilnic cu precizie la două zecimale, în timp ce ecranul Stake afișează valoarea întreagă.\nPe scurt: cu cât stake-uiești mai mult timp, cu atât crește randamentul datorită compunerii."
+        "answer": "APY (Annual Percentage Yield) reprezintă randamentul tău anual, dar recompensele sunt calculate și adăugate zilnic.\nDe exemplu, un APY de 14.2% corespunde aproximativ ~1.06% pe lună (compus). Dacă stake-uiești 1.000 de stele, vei avea ~1.039 după o lună (înainte de rotunjire la afișare).\nSoldul tău crește în fiecare zi; compunerea funcționează automat — fiecare zi de câștig se adaugă la următorul calcul.\nCredităm recompensele zilnic cu precizie la două zecimale, în timp ce ecranul Stake afișează valoarea întreagă.\nPe scurt: cu cât stake-uiești mai mult timp, cu atât crește randamentul datorită compunerii."
       },
       "q8": {
         "question": "Există riscul de a-mi pierde stelele?",
@@ -211,7 +211,7 @@
       },
       "q9": {
         "question": "APY-ul meu este fix sau se schimbă în timp?",
-        "answer": "APY în Stars Base este dinamic și depinde de suma totală blocată și de lichiditatea sistemului.\nDeși APY-ul de bază pornește de la 12.8%, acesta poate crește pe măsură ce treci la niveluri superioare de staking.\nÎn cazuri rare, ajustările de rețea sau lichiditate pot influența ușor rata.\nToate modificările de rată sunt transparente și reflectate imediat în tabloul tău de bord.\nSistemul urmărește menținerea unor randamente stabile și competitive în condiții variate."
+        "answer": "APY în Stars Base este dinamic și depinde de suma totală blocată și de lichiditatea sistemului.\nDeși APY-ul de bază pornește de la 14.2%, acesta poate crește pe măsură ce treci la niveluri superioare de staking.\nÎn cazuri rare, ajustările de rețea sau lichiditate pot influența ușor rata.\nToate modificările de rată sunt transparente și reflectate imediat în tabloul tău de bord.\nSistemul urmărește menținerea unor randamente stabile și competitive în condiții variate."
       },
       "q10": {
         "question": "Care este suma minimă și maximă pe care o pot stake-ui?",

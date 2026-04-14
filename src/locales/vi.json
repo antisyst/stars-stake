@@ -62,7 +62,7 @@
     "title": "Phần thưởng tăng cường",
     "apyUpdates": "APY tự động cập nhật khi số dư stake của bạn tăng",
     "line1": "Hệ thống sử dụng mô hình bậc động — APY của bạn tăng khi tổng số đã stake tăng lên.",
-    "line2": "Mỗi bậc mở khóa tỷ lệ lợi nhuận cao hơn, bắt đầu từ 12.8% và lên đến 28.7% APY ở bậc cao nhất.",
+    "line2": "Mỗi bậc mở khóa tỷ lệ lợi nhuận cao hơn, bắt đầu từ 14.2% và lên đến 32.5% APY ở bậc cao nhất.",
     "line3": "Khi bạn stake thêm sao và lên bậc cao hơn, APY tổng sẽ được tính lại ngay lập tức dựa trên tổng mới.",
     "line4": "Ngưỡng bậc hiện tại và bậc tiếp theo được hiển thị theo thời gian thực để bạn theo dõi tiến độ đến lần tăng APY tiếp theo."
   },
@@ -187,7 +187,7 @@
       },
       "q3": {
         "question": "Phần thưởng được tính như thế nào?",
-        "answer": "Phần thưởng dựa trên tổng số dư bạn đã stake và bậc (tier) bạn đang nắm giữ.\nMỗi bậc cung cấp APY cao hơn, bắt đầu từ 12.8% và lên đến 28.7% cho các cam kết lớn hơn.\nAPY điều chỉnh động khi bạn tăng stake; stake lớn hơn mở khóa tỷ lệ lợi nhuận cao hơn.\nHệ thống tự động tính lại APY hiệu dụng của bạn theo thời gian thực.\nTất cả phép tính phần thưởng đều minh bạch và có thể xác minh trên bảng điều khiển ứng dụng."
+        "answer": "Phần thưởng dựa trên tổng số dư bạn đã stake và bậc (tier) bạn đang nắm giữ.\nMỗi bậc cung cấp APY cao hơn, bắt đầu từ 14.2% và lên đến 32.5% cho các cam kết lớn hơn.\nAPY điều chỉnh động khi bạn tăng stake; stake lớn hơn mở khóa tỷ lệ lợi nhuận cao hơn.\nHệ thống tự động tính lại APY hiệu dụng của bạn theo thời gian thực.\nTất cả phép tính phần thưởng đều minh bạch và có thể xác minh trên bảng điều khiển ứng dụng."
       },
       "q4": {
         "question": "Tôi có thể rút sao bất cứ lúc nào không?",
@@ -203,7 +203,7 @@
       },
       "q7": {
         "question": "APY ảnh hưởng thế nào đến phần thưởng hàng ngày và hàng tháng?",
-        "answer": "APY (Annual Percentage Yield) biểu thị lợi nhuận hàng năm của bạn, nhưng phần thưởng được tính và cộng hàng ngày.\nVí dụ, APY 12.8% tương đương khoảng ~1.06% mỗi tháng (có lãi kép). Nếu bạn stake 1.000 sao, bạn sẽ thấy khoảng 1.039 sau một tháng (trước khi làm tròn hiển thị).\nSố dư của bạn tăng mỗi ngày; lãi kép hoạt động tự động — lợi nhuận mỗi ngày được cộng vào cho ngày tiếp theo.\nChúng tôi ghi có phần thưởng hàng ngày với độ chính xác hai chữ số thập phân, trong khi màn hình Stake hiển thị số nguyên.\nTóm lại, bạn stake càng lâu, lợi nhuận của bạn càng tăng do lãi kép."
+        "answer": "APY (Annual Percentage Yield) biểu thị lợi nhuận hàng năm của bạn, nhưng phần thưởng được tính và cộng hàng ngày.\nVí dụ, APY 14.2% tương đương khoảng ~1.06% mỗi tháng (có lãi kép). Nếu bạn stake 1.000 sao, bạn sẽ thấy khoảng 1.039 sau một tháng (trước khi làm tròn hiển thị).\nSố dư của bạn tăng mỗi ngày; lãi kép hoạt động tự động — lợi nhuận mỗi ngày được cộng vào cho ngày tiếp theo.\nChúng tôi ghi có phần thưởng hàng ngày với độ chính xác hai chữ số thập phân, trong khi màn hình Stake hiển thị số nguyên.\nTóm lại, bạn stake càng lâu, lợi nhuận của bạn càng tăng do lãi kép."
       },
       "q8": {
         "question": "Có nguy cơ mất sao không?",
@@ -211,7 +211,7 @@
       },
       "q9": {
         "question": "APY của tôi có cố định hay thay đổi theo thời gian?",
-        "answer": "APY trong Stars Base là động và phụ thuộc vào tổng số bạn đã stake và thanh khoản hệ thống.\nMặc dù APY cơ bản bắt đầu từ 12.8%, nó có thể tăng khi bạn lên các bậc stake cao hơn.\nTrong những trường hợp hiếm hoi, điều chỉnh mạng hoặc thanh khoản có thể ảnh hưởng nhẹ đến tỷ lệ.\nTất cả thay đổi về tỷ lệ đều minh bạch và phản ánh ngay lập tức trên bảng điều khiển.\nHệ thống hướng tới giữ lợi nhuận ổn định và cạnh tranh trong các điều kiện khác nhau."
+        "answer": "APY trong Stars Base là động và phụ thuộc vào tổng số bạn đã stake và thanh khoản hệ thống.\nMặc dù APY cơ bản bắt đầu từ 14.2%, nó có thể tăng khi bạn lên các bậc stake cao hơn.\nTrong những trường hợp hiếm hoi, điều chỉnh mạng hoặc thanh khoản có thể ảnh hưởng nhẹ đến tỷ lệ.\nTất cả thay đổi về tỷ lệ đều minh bạch và phản ánh ngay lập tức trên bảng điều khiển.\nHệ thống hướng tới giữ lợi nhuận ổn định và cạnh tranh trong các điều kiện khác nhau."
       },
       "q10": {
         "question": "Số tiền tối thiểu và tối đa tôi có thể stake là bao nhiêu?",

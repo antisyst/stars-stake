@@ -62,7 +62,7 @@
     "title": "Pinahusay na mga Gantimpala",
     "apyUpdates": "Awtomatikong naa-update ang APY habang lumalaki ang iyong stake",
     "line1": "Gumagamit ang sistema ng dynamic na tier model, kung saan tumataas ang iyong APY habang lumalaki ang iyong kabuuang naka-stake na balanse.",
-    "line2": "Bawat tier ay nagbubukas ng mas mataas na rate ng kita, simula sa 12.8% hanggang sa 28.7% APY sa pinakamataas na antas.",
+    "line2": "Bawat tier ay nagbubukas ng mas mataas na rate ng kita, simula sa 14.2% hanggang sa 32.5% APY sa pinakamataas na antas.",
     "line3": "Kapag nag-stake ka ng karagdagang mga bituin at lumipat sa mas mataas na tier, agad na muling kinakalkula ang iyong kabuuang APY batay sa bagong kabuuan.",
     "line4": "Ang iyong kasalukuyan at susunod na mga threshold ng tier ay ipinapakita nang real-time, na nagbibigay-daan sa iyo na subaybayan ang iyong pag-unlad patungo sa susunod na APY boost."
   },
@@ -187,7 +187,7 @@
       },
       "q3": {
         "question": "Paano kinakalkula ang mga gantimpala?",
-        "answer": "Ang mga gantimpala ay batay sa iyong kabuuang naka-stake na balanse at ang antas ng tier na hawak mo sa kasalukuyan.\nBawat tier ay nag-aalok ng mas mataas na Annual Percentage Yield (APY), simula sa 12.8% at aabot sa 28.7% para sa mas mataas na mga pangako.\nAng APY ay dinamikong nag-a-adjust habang pinapataas mo ang iyong stake; ang mas malalaking stake ay nagbubukas ng mas mataas na mga rate ng kita.\nAwtomatikong muling kinakalkula ng sistema ang iyong epektibong APY nang real-time.\nLahat ng kalkulasyon ng gantimpala ay transparent at mabe-verify sa loob ng dashboard ng app."
+        "answer": "Ang mga gantimpala ay batay sa iyong kabuuang naka-stake na balanse at ang antas ng tier na hawak mo sa kasalukuyan.\nBawat tier ay nag-aalok ng mas mataas na Annual Percentage Yield (APY), simula sa 14.2% at aabot sa 32.5% para sa mas mataas na mga pangako.\nAng APY ay dinamikong nag-a-adjust habang pinapataas mo ang iyong stake; ang mas malalaking stake ay nagbubukas ng mas mataas na mga rate ng kita.\nAwtomatikong muling kinakalkula ng sistema ang iyong epektibong APY nang real-time.\nLahat ng kalkulasyon ng gantimpala ay transparent at mabe-verify sa loob ng dashboard ng app."
       },
       "q4": {
         "question": "Maaari ko bang i-withdraw ang aking mga bituin anumang oras?",
@@ -203,7 +203,7 @@
       },
       "q7": {
         "question": "Paano nakakaapekto ang APY sa araw-araw at buwanang mga gantimpala?",
-        "answer": "Ang APY (Annual Percentage Yield) ay kumakatawan sa iyong taunang kita, ngunit ang mga gantimpala ay kinakalkula at idinaragdag araw-araw.\nHalimbawa, ang 12.8% APY ay katumbas ng humigit-kumulang ~1.06% bawat buwan (compound). Kung mag-stake ka ng 1,000 na bituin, makikita mo ang humigit-kumulang 1,039 pagkatapos ng isang buwan (bago mag-round sa display).\nTumataas ang iyong balanse araw-araw; awtomatikong gumagana ang compounding — ang kita ng bawat araw ay nagtatayo sa nakaraang araw.\nInikredit namin ang mga gantimpala araw-araw nang may katumpakan na dalawang decimal, habang ipinapakita ng screen ng Stake ang integer na balanse.\nSa madaling salita, habang mas matagal kang nag-stake, mas lumalaki ang compound ng iyong mga kita sa paglipas ng panahon."
+        "answer": "Ang APY (Annual Percentage Yield) ay kumakatawan sa iyong taunang kita, ngunit ang mga gantimpala ay kinakalkula at idinaragdag araw-araw.\nHalimbawa, ang 14.2% APY ay katumbas ng humigit-kumulang ~1.06% bawat buwan (compound). Kung mag-stake ka ng 1,000 na bituin, makikita mo ang humigit-kumulang 1,039 pagkatapos ng isang buwan (bago mag-round sa display).\nTumataas ang iyong balanse araw-araw; awtomatikong gumagana ang compounding — ang kita ng bawat araw ay nagtatayo sa nakaraang araw.\nInikredit namin ang mga gantimpala araw-araw nang may katumpakan na dalawang decimal, habang ipinapakita ng screen ng Stake ang integer na balanse.\nSa madaling salita, habang mas matagal kang nag-stake, mas lumalaki ang compound ng iyong mga kita sa paglipas ng panahon."
       },
       "q8": {
         "question": "May panganib ba na mawala ang aking mga bituin?",
@@ -211,7 +211,7 @@
       },
       "q9": {
         "question": "Naayos ba ang aking APY o nagbabago ito sa paglipas ng panahon?",
-        "answer": "Ang APY sa Stars Base ay dynamic at depende sa iyong kabuuang naka-stake na halaga at kalusugan ng liquidity ng sistema.\nHabang nagsisimula ang base APY sa 12.8%, maaari itong tumaas habang sumusulong ka sa mas mataas na mga tier ng pag-stake.\nSa mga bihirang kaso, ang mga pagsasaayos ng network o liquidity ay maaaring bahagyang maimpluwensyahan ang rate ng kita.\nLahat ng pagbabago ng rate ay transparent at agad na narerepresenta sa iyong dashboard.\nLayunin ng sistema na panatilihing matatag at mapagkumpetensya ang mga kita sa iba't ibang kundisyon."
+        "answer": "Ang APY sa Stars Base ay dynamic at depende sa iyong kabuuang naka-stake na halaga at kalusugan ng liquidity ng sistema.\nHabang nagsisimula ang base APY sa 14.2%, maaari itong tumaas habang sumusulong ka sa mas mataas na mga tier ng pag-stake.\nSa mga bihirang kaso, ang mga pagsasaayos ng network o liquidity ay maaaring bahagyang maimpluwensyahan ang rate ng kita.\nLahat ng pagbabago ng rate ay transparent at agad na narerepresenta sa iyong dashboard.\nLayunin ng sistema na panatilihing matatag at mapagkumpetensya ang mga kita sa iba't ibang kundisyon."
       },
       "q10": {
         "question": "Ano ang minimum at maximum na halaga na maaari kong i-stake?",

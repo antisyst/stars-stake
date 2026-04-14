@@ -30,9 +30,9 @@ export const TierProgress: React.FC = () => {
             <span>{t('tier.apyUpdates')}</span>
             <HelpIcon className="icon" />
           </h2>
-          <ProgressiveTiersBar
+         <ProgressiveTiersBar
             widths={[46, 17, 17, 20]}
-            topLabels={['12.8%', '+5.1%', '+5.8%', '+6.0%']}
+            topLabels={['14.2%', '+5.6%', '+6.6%', '+6.1%']}
           />
           <TierRanges/>
         </div>

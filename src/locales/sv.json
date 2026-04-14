@@ -62,7 +62,7 @@
     "title": "Förstärkta belöningar",
     "apyUpdates": "APY uppdateras automatiskt när din stake växer",
     "line1": "Systemet använder en dynamisk nivåmodell där din APY ökar när ditt totala stakade saldo växer.",
-    "line2": "Varje nivå låser upp en högre avkastningsnivå, med start på 12.8% och upp till 28.7% APY på högsta nivån.",
+    "line2": "Varje nivå låser upp en högre avkastningsnivå, med start på 14.2% och upp till 32.5% APY på högsta nivån.",
     "line3": "När du stakar ytterligare stjärnor och går upp en nivå, beräknas din totala APY omedelbart utifrån det nya totalvärdet.",
     "line4": "Dina nuvarande och nästa nivågränser visas i realtid så att du kan följa hur nära du är nästa APY-ökning."
   },
@@ -187,7 +187,7 @@
       },
       "q3": {
         "question": "Hur beräknas belöningarna?",
-        "answer": "Belöningarna baseras på ditt totala stakade saldo och den nivå (tier) du för närvarande har.\nVarje nivå erbjuder en högre Annual Percentage Yield (APY), från 12.8% upp till 28.7% för större åtaganden.\nAPY justeras dynamiskt när du ökar din stake; större stakes låser upp högre avkastningsnivåer.\nSystemet beräknar automatiskt din effektiva APY i realtid.\nAlla belöningsberäkningar är transparenta och går att verifiera i appens instrumentpanel."
+        "answer": "Belöningarna baseras på ditt totala stakade saldo och den nivå (tier) du för närvarande har.\nVarje nivå erbjuder en högre Annual Percentage Yield (APY), från 14.2% upp till 32.5% för större åtaganden.\nAPY justeras dynamiskt när du ökar din stake; större stakes låser upp högre avkastningsnivåer.\nSystemet beräknar automatiskt din effektiva APY i realtid.\nAlla belöningsberäkningar är transparenta och går att verifiera i appens instrumentpanel."
       },
       "q4": {
         "question": "Kan jag ta ut mina stjärnor när som helst?",
@@ -203,7 +203,7 @@
       },
       "q7": {
         "question": "Hur påverkar APY dagliga och månatliga belöningar?",
-        "answer": "APY (Annual Percentage Yield) representerar din årliga avkastning, men belöningar beräknas och läggs till dagligen.\nTill exempel motsvarar en APY på 12.8% ungefär ~1.06% per månad (med sammansatt ränta). Om du stakar 1 000 stjärnor blir det cirka 1 039 efter en månad (före avrundning i visning).\nDitt saldo ökar varje dag; sammansättning sker automatiskt — varje dags avkastning bygger på föregående dags saldo.\nVi krediterar belöningar dagligen med två decimalers precision, medan Stake-skärmen visar heltalsvärdet.\nKort sagt: ju längre du stakar, desto mer växer dina avkastningar genom ränta-på-ränta."
+        "answer": "APY (Annual Percentage Yield) representerar din årliga avkastning, men belöningar beräknas och läggs till dagligen.\nTill exempel motsvarar en APY på 14.2% ungefär ~1.06% per månad (med sammansatt ränta). Om du stakar 1 000 stjärnor blir det cirka 1 039 efter en månad (före avrundning i visning).\nDitt saldo ökar varje dag; sammansättning sker automatiskt — varje dags avkastning bygger på föregående dags saldo.\nVi krediterar belöningar dagligen med två decimalers precision, medan Stake-skärmen visar heltalsvärdet.\nKort sagt: ju längre du stakar, desto mer växer dina avkastningar genom ränta-på-ränta."
       },
       "q8": {
         "question": "Finns det någon risk att förlora mina stjärnor?",
@@ -211,7 +211,7 @@
       },
       "q9": {
         "question": "Är min APY fast eller ändras den över tid?",
-        "answer": "APY i Stars Base är dynamisk och beror på ditt totala stakade belopp och systemets likviditet.\nÄven om baskursen börjar på 12.8% kan den öka när du avancerar till högre staking-nivåer.\nI sällsynta fall kan nätverks- eller likviditetsjusteringar påverka räntesatsen något.\nAlla ändringar i räntesatser är transparenta och syns omedelbart i din instrumentpanel.\nSystemet strävar efter att hålla avkastningen stabil och konkurrenskraftig under varierande förhållanden."
+        "answer": "APY i Stars Base är dynamisk och beror på ditt totala stakade belopp och systemets likviditet.\nÄven om baskursen börjar på 14.2% kan den öka när du avancerar till högre staking-nivåer.\nI sällsynta fall kan nätverks- eller likviditetsjusteringar påverka räntesatsen något.\nAlla ändringar i räntesatser är transparenta och syns omedelbart i din instrumentpanel.\nSystemet strävar efter att hålla avkastningen stabil och konkurrenskraftig under varierande förhållanden."
       },
       "q10": {
         "question": "Vilket är minsta och största belopp jag kan staka?",
