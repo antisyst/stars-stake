@@ -4,7 +4,7 @@ import styles from './ProfilePage.module.scss';
 import { useAppData } from '@/contexts/AppDataContext';
 import { Avatar, Button } from '@telegram-apps/telegram-ui';
 import { GroupList, GroupListItem } from '@/components/GroupList/GroupList';
-import LinkList, { LinkListItem } from '@/components/LinkList/LinkList';
+// import LinkList, { LinkListItem } from '@/components/LinkList/LinkList';
 import WalletIcon from '@/assets/icons/wallet.svg?react';
 import CurrencyIcon from '@/assets/icons/currency.svg?react';
 import ChatIcon from '@/assets/icons/chat.svg?react';
@@ -258,13 +258,13 @@ export const ProfilePage = () => {
     [navigate, t]
   );
 
-  const policyLinks: LinkListItem[] = useMemo(
-    () => [
-      { key: 'user-agreement', label: t('profile.userAgreement'), to: '/user-agreement' },
-      { key: 'privacy-policy', label: t('profile.privacyPolicy'), to: '/privacy-policy' },
-    ],
-    [t]
-  );
+  // const policyLinks: LinkListItem[] = useMemo(
+  //   () => [
+  //     { key: 'user-agreement', label: t('profile.userAgreement'), to: '/user-agreement' },
+  //     { key: 'privacy-policy', label: t('profile.privacyPolicy'), to: '/privacy-policy' },
+  //   ],
+  //   [t]
+  // );
 
   return (
     // backTo="/home" ensures back button always has a valid target
@@ -294,11 +294,11 @@ export const ProfilePage = () => {
           </div>
           <div className={styles.sectionItem}>
             <GroupList items={historyGroupItems} />
-          </div>
-          <div className={styles.sectionItem}>
-            <LinkList items={policyLinks} />
             <p className={styles.subtitle}>{t('profile.supportNotice')}</p>
           </div>
+          {/* <div className={styles.sectionItem}>
+            <LinkList items={policyLinks} />
+          </div> */}
         </div>
       </div>
     </Page>
