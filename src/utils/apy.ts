@@ -18,11 +18,22 @@ export function formatApy(apy: number): string {
   return Number.isFinite(apy) ? apy.toFixed(1) : '0.0';
 }
 
-export function weightedApy(positions: { amount: number; apy: number }[]): number {
+export function effectiveApyForUser(
+  positions: { amount: number; apy: number }[],
+  currentApy?: number | null,
+): number {
   const total = positions.reduce((s, p) => s + (p.amount || 0), 0);
-  if (total <= 0) return 14.2;
-  const sum = positions.reduce((s, p) => s + (p.amount * p.apy), 0);
-  return sum / total;
+  const { apy: tierApy } = tierForTotal(total);
+
+  const legacy = typeof currentApy === 'number' && Number.isFinite(currentApy) ? currentApy : null;
+
+  if (positions.length === 0) return tierApy;
+  if (legacy !== null && legacy > tierApy) return legacy;
+  return tierApy; 
+}
+
+export function weightedApy(positions: { amount: number; apy: number }[]): number {
+  return effectiveApyForUser(positions);
 }
 
 export function apyDailyRate(apyPct: number): number {

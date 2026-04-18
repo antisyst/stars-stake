@@ -14,7 +14,7 @@ import {
 } from 'firebase/firestore';
 import type { GlobalStats, UserData, Position } from '@/types';
 import { useTelegramSdk } from '@/hooks/useTelegramSdk';
-import { weightedApy } from '@/utils/apy';
+import { effectiveApyForUser } from '@/utils/apy';
 import { AppDataContextType } from '@/types';
 import { applyDailyAccrualTx } from '@/utils/accrual';
 
@@ -24,7 +24,7 @@ const AppDataContext = createContext<AppDataContextType>({
   user: null,
   stats: null,
   positions: [],
-  effectiveApy: 12.8,
+  effectiveApy: 14.2,
   exchangeRate: 0.0199,
   balanceUsd: 0,
 });
@@ -90,7 +90,7 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
               photoUrl: tgUser?.photoUrl || '',
               starsCents: 0,
               starsBalance: 0,
-              currentApy: 12.8,
+              currentApy: 14.2,
               walletConnected: false,
               walletAddress: '',
               defaultCurrency: 'USD',
@@ -117,7 +117,7 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
             patch.starsCents = Math.max(0, Math.floor(sb * 100));
           }
           if (typeof (data as any).starsBalance !== 'number') patch.starsBalance = 0;
-          if (typeof data.currentApy !== 'number') patch.currentApy = 12.8;
+          if (typeof data.currentApy !== 'number') patch.currentApy = 14.2;
           if (!data.defaultCurrency) patch.defaultCurrency = 'USD';
           if (typeof data.hasClaimedTwitterBonus !== 'boolean') patch.hasClaimedTwitterBonus = false;
           if (!Number.isFinite(data.twitterBonusStars)) patch.twitterBonusStars = 0;
@@ -277,7 +277,10 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({ children })
   const balanceIntDisplay = Math.floor(cents / 100);
   const balanceUsd = (cents / 100) * exchangeRate;
 
-  const effectiveApy = useMemo(() => weightedApy(positions), [positions]);
+  const effectiveApy = useMemo(
+    () => effectiveApyForUser(positions, user?.currentApy),
+    [positions, user?.currentApy],
+  );
 
   const value = useMemo(
     () => ({
