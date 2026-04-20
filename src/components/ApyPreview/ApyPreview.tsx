@@ -6,6 +6,7 @@ import ChevronIcon from '@/assets/icons/chevron-up.svg?react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { useLaunchParams } from '@telegram-apps/sdk-react';
 import { useRates } from '@/contexts/RatesContext';
+import TonIcon from '@/assets/icons/toncoin-symbol.svg?react';
 import styles from './ApyPreview.module.scss';
 import { useCurrency } from '@/contexts/CurrencyContext';
 import { useI18n } from '@/i18n';
@@ -183,11 +184,8 @@ export const ApyPreview: React.FC<Props> = ({
                 variants={compactFade}
                 animate={expanded ? 'hide' : 'show'}
               >
-                <span className={styles.yearlyGain}>
-                  {view.ton.y ? view.ton.y.toFixed(3) : '—'} TON <span>/{t('apy.year')}</span>
-                </span>
+                  <TonIcon /> {view.ton.y ? view.ton.y.toFixed(3) : '—'}
               </motion.span>
-
               <button
                 type="button"
                 className={`${styles.toggle} gradient-move`}

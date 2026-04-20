@@ -6,21 +6,8 @@ import { TON_PAYMENT_DISCOUNT } from '@/utils/tonPaymentsApi';
 import { useI18n } from '@/i18n';
 import { isValidDeposit } from '@/utils/deposit';
 
-export type TonPayStep = null; // DepositPage only needs idle/paying boolean now
+export type TonPayStep = null; 
 
-/**
- * useTonPay
- *
- * Validates, computes the discounted TON amount, then navigates to
- * /payment/init?amount=X&method=ton  — identical to how the Stars flow works.
- * PaymentInitPage owns the full TON lifecycle (connect → send → verify →
- * Firestore write → /payment/success).
- *
- * Returns:
- *   discountedTon  — what the user pays; shown in the DepositTag pill
- *   paying         — true for the brief moment between tap and navigation
- *   handlePress    — call when the user taps the TON pill
- */
 export function useTonPay({
   starsAmount,
   tonAmount,

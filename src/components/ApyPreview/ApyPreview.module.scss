@@ -30,15 +30,12 @@
       font-size: 16px;
       font-weight: 600;
       line-height: 1.15;
-      max-width: 175px;
       color: var(--app-text);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      flex: 1 1 auto;
-      min-width: 0;
     }
 
     .value {
@@ -76,27 +73,26 @@
       align-items: center;
       gap: 6px;
       flex: 0 0 auto;
+      font-size: 16px;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      white-space: nowrap;
+      -webkit-font-smoothing: antialiased;
+      font-family: var(--rounded) !important;
+      font-weight: 600;
 
-      .yearlyGain {
-        font-size: 16px;
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        gap: 3px;
-        white-space: nowrap;
-        -webkit-font-smoothing: antialiased;
+      svg {
+        color: #007aff;
+        margin-right: 1px;
+        width: 15px;
+        height: 15px;
+      }
+
+      &::before {
+        content: '+';
         font-family: var(--rounded) !important;
-        font-weight: 600;
-
-        &::before {
-          content: '+';
-          font-family: var(--rounded) !important;
-        }
-
-        span {
-          text-transform: lowercase;
-          font-family: var(--rounded) !important;
-        }
       }
 
       svg {
