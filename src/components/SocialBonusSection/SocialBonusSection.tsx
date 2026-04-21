@@ -11,7 +11,7 @@ import { useI18n } from '@/i18n';
 import styles from './SocialBonusSection.module.scss';
 import XIcon from '@/assets/icons/x-twitter.png';
 
-const BONUS_STARS = 75;
+const BONUS_STARS = 50;
 const X_TARGET_USERNAME = 'starsbase_bot';
 const X_TARGET_URL = `https://x.com/${X_TARGET_USERNAME}`;
 const VISIT_FLAG_KEY = 'x_bonus_follow_visit_started';
